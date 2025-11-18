@@ -1497,6 +1497,62 @@ export const flashcards = [
     question: 'How long should agents keep tax records?',
     answer: 'Minimum 3 years from filing (IRS audit period), but 7 years recommended. Keep receipts, mileage logs, bank statements, commission statements, 1099s, expense records. Digital copies acceptable. Essential for deductions and audit protection.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc215',
+    category: 'Agency Law',
+    question: 'What are the 3 types of law that govern real estate transactions?',
+    answer: '(1) Common Law - rules established by tradition and court decisions (Tristam\'s Landing Rule), (2) Statutory Law - laws enacted by legislation (10-day lead paint inspection right), (3) Administrative Law - rules & regulations authorized by R.E. Commissions as approved by legislature.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc216',
+    category: 'Agency Law',
+    question: 'What is Caveat Emptor and when was it the norm?',
+    answer: 'Caveat Emptor = "let the buyer beware". In the 1950s, this was the norm - buyers were on their own. Real estate brokers represented the SELLER\'S interests, and buyers often failed to realize that fact. Buyer agency didn\'t exist yet.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc217',
+    category: 'Agency Law',
+    question: 'What happened in the 1960s regarding broker cooperation?',
+    answer: 'In the 1960s, brokers started sharing information about properties they listed, which resulted in two brokers cooperating to sell a property. This exchange was formalized by creating the Multiple Listing Service (MLS). However, even when seller and buyer each used a broker, BOTH brokers still represented the SELLER\'S interest.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc218',
+    category: 'Agency Law',
+    question: 'What is Tristam\'s Landing Rule and what type of law is it?',
+    answer: 'Tristam\'s Landing Rule is a Common Law rule (established by court decision and tradition) regarding agency relationships in real estate. Common Law rules are not enacted by legislature but established through court decisions and accepted practices.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc219',
+    category: 'Agency Law',
+    question: 'What is an example of Statutory Law in Massachusetts real estate?',
+    answer: 'Statutory Law example: Buyer has 10-day right to conduct a lead paint risk assessment or inspection (for properties built before 1978). Statutory Laws are laws enacted by legislation, not court decisions or agency regulations.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc220',
+    category: 'Agency Law',
+    question: 'What is an example of Administrative Law in Massachusetts real estate?',
+    answer: 'Administrative Law example: Must be a Salesperson for 3 years AND work 25 hours per week before you can become a broker to open a real estate office. Administrative Laws are rules & regulations authorized by Real Estate Commissions as approved by legislature.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc221',
+    category: 'Agency Law',
+    question: 'What was the historical problem with dual broker representation?',
+    answer: 'Even when seller and buyer each made use of a broker\'s services in the 1960s-1980s, BOTH brokers still represented the seller\'s interest. Buyers didn\'t have true representation - both agents worked for the seller. This created conflicts and buyer vulnerability until buyer agency was established.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc222',
+    category: 'Agency Law',
+    question: 'How did MLS creation change real estate but maintain seller representation?',
+    answer: 'MLS formalized broker cooperation and information exchange, allowing properties to be shared and marketed widely. However, it maintained seller-only representation - cooperating brokers shared commission but both still represented the seller, not the buyer. Buyer agency came later.',
+    difficulty: 'hard'
   }
 ];
 
@@ -4283,5 +4339,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Minimum 3 years (IRS audit period), but 7 years recommended. Keep receipts, mileage logs, bank statements, commission statements, 1099s, expense records. Digital copies acceptable.'
+  },
+  {
+    id: 'q215',
+    category: 'Agency Law',
+    question: 'What are the 3 types of law governing real estate transactions?',
+    options: [
+      'Federal, State, Local',
+      'Common Law, Statutory Law, Administrative Law',
+      'Civil, Criminal, Contract',
+      'Public, Private, Corporate'
+    ],
+    correctIndex: 1,
+    explanation: '(1) Common Law - tradition/court decisions (Tristam\'s Landing), (2) Statutory Law - enacted by legislature (10-day lead paint), (3) Administrative Law - R.E. Commission rules (3 years + 25 hrs/week for broker).'
+  },
+  {
+    id: 'q216',
+    category: 'Agency Law',
+    question: 'What does "Caveat Emptor" mean and when was it the norm?',
+    options: [
+      '"Buyer beware" - 1950s norm, brokers represented sellers only',
+      '"Seller beware" - 1990s',
+      '"Agent beware" - 2000s',
+      '"Broker beware" - 1980s'
+    ],
+    correctIndex: 0,
+    explanation: 'Caveat Emptor = "let the buyer beware". In the 1950s, brokers represented SELLER\'S interests only. Buyers were on their own and often didn\'t realize brokers didn\'t represent them.'
+  },
+  {
+    id: 'q217',
+    category: 'Agency Law',
+    question: 'What happened in the 1960s with broker cooperation?',
+    options: [
+      'Brokers stopped working together',
+      'Brokers started sharing property info, created MLS, but both brokers still represented seller',
+      'Buyer agency was established',
+      'Nothing changed'
+    ],
+    correctIndex: 1,
+    explanation: 'In 1960s, brokers started sharing property information, formalizing cooperation through MLS creation. However, even when each party had a broker, BOTH brokers still represented the seller\'s interest.'
+  },
+  {
+    id: 'q218',
+    category: 'Agency Law',
+    question: 'Tristam\'s Landing Rule is an example of which type of law?',
+    options: [
+      'Statutory Law',
+      'Administrative Law',
+      'Common Law',
+      'Federal Law'
+    ],
+    correctIndex: 2,
+    explanation: 'Tristam\'s Landing Rule is Common Law - established by court decision and tradition, not enacted by legislature or created by administrative agencies.'
+  },
+  {
+    id: 'q219',
+    category: 'Agency Law',
+    question: 'The 10-day lead paint inspection right is an example of which type of law?',
+    options: [
+      'Common Law',
+      'Statutory Law',
+      'Administrative Law',
+      'Case Law'
+    ],
+    correctIndex: 1,
+    explanation: 'Statutory Law - enacted by legislation. Buyers have 10-day right to conduct lead paint risk assessment or inspection for properties built before 1978.'
+  },
+  {
+    id: 'q220',
+    category: 'Agency Law',
+    question: 'The requirement to be a salesperson for 3 years working 25 hrs/week before becoming a broker is which type of law?',
+    options: [
+      'Common Law',
+      'Statutory Law',
+      'Administrative Law',
+      'Constitutional Law'
+    ],
+    correctIndex: 2,
+    explanation: 'Administrative Law - rules and regulations authorized by Real Estate Commissions as approved by legislature. R.E. Commission sets licensing requirements like 3 years + 25 hrs/week.'
+  },
+  {
+    id: 'q221',
+    category: 'Agency Law',
+    question: 'What was the historical problem with broker cooperation in the 1960s-1980s?',
+    options: [
+      'Brokers wouldn\'t work together',
+      'Both brokers still represented seller even when each party had a broker',
+      'No one represented sellers',
+      'Buyers had too much representation'
+    ],
+    correctIndex: 1,
+    explanation: 'Even when seller and buyer each used a broker, BOTH brokers still represented the seller\'s interest. Buyers didn\'t have true representation - created conflicts until buyer agency was established.'
+  },
+  {
+    id: 'q222',
+    category: 'Agency Law',
+    question: 'How did MLS creation affect agency representation?',
+    options: [
+      'Created buyer agency',
+      'Formalized broker cooperation and info exchange but maintained seller-only representation',
+      'Eliminated all agency relationships',
+      'Required dual agency'
+    ],
+    correctIndex: 1,
+    explanation: 'MLS formalized broker cooperation and allowed property information sharing. However, it maintained seller-only representation - cooperating brokers shared commission but both still represented seller, not buyer.'
   }
 ];
