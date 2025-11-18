@@ -46,6 +46,9 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ **Section mastery tracking** - mark sections as mastered or review later
 - ✅ **Note-taking system** - add personal notes to any section
 - ✅ **Smart persistence** - remembers last active section and all preferences
+- ✅ **Interactive scenarios** - branching decision trees for real-world practice
+- ✅ **Buyer/Seller/Investor paths** - role-specific scenarios with outcomes
+- ✅ **Expert feedback** - detailed analysis and recommendations on every ending
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -183,10 +186,12 @@ The guide covers comprehensive topics including:
 - [x] Add quiz history and grade display.
 - [ ] Add "exam cram" printable PDF export.
 
-### v1.3 – Interactive Scenarios
-- [ ] Scenario-based walkthroughs: choose buyer/seller/investor paths and see recommended clauses.
-- [ ] Simple decision trees that show how offers, counters, and contingencies play out.
-- [ ] Toggle between “Exam Explanation” and “Real World Strategy” overlays for each section.
+### ✅ v1.3 – Interactive Scenarios (COMPLETED)
+- [x] Scenario-based walkthroughs: choose buyer/seller/investor paths and see recommended outcomes.
+- [x] Decision trees that show how offers, counters, and contingencies play out.
+- [x] Expert feedback and recommendations on every scenario ending.
+- [x] Multiple endings based on user choices (positive, negative, neutral).
+- [x] Scenario completion tracking with localStorage.
 
 ### ✅ v1.4 – Personalization (COMPLETED)
 - [x] Allow users to mark sections as "mastered" or "review later".

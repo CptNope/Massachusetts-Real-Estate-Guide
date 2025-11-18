@@ -3,6 +3,7 @@ import { sections } from './content.jsx';
 import FlashcardMode from './FlashcardMode';
 import QuizMode from './QuizMode';
 import PersonalDashboard from './PersonalDashboard';
+import ScenarioMode from './ScenarioMode';
 import { useLocalStorage } from './useLocalStorage';
 
 export default function App() {
@@ -139,6 +140,12 @@ export default function App() {
           >
             📊 Dashboard
           </button>
+          <button 
+            className={`mode-btn ${studyMode === 'scenarios' ? 'active' : ''}`}
+            onClick={() => setStudyMode('scenarios')}
+          >
+            🎭 Scenarios
+          </button>
         </div>
         <div className="search-container">
           <input
@@ -221,6 +228,12 @@ export default function App() {
               onToggleReview={toggleReview}
               onClearAll={clearAllProgress}
             />
+          </main>
+        )}
+
+        {studyMode === 'scenarios' && (
+          <main className="content content-full">
+            <ScenarioMode />
           </main>
         )}
       </div>
