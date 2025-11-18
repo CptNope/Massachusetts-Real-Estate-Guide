@@ -1833,6 +1833,62 @@ export const flashcards = [
     question: 'To whom do agents owe fiduciary duties?',
     answer: 'Agents owe fiduciary duties ONLY to their clients (principals) - the party they represent under written agency agreement. Seller agents owe to seller. Buyer agents owe to buyer. Do NOT owe fiduciary duties to customers (other party), though must be honest and fair. Fiduciary = special relationship of trust and confidence with CLIENT only.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc263',
+    category: 'Ethics',
+    question: 'What is the difference between "Realtor®" and "real estate agent"?',
+    answer: 'Realtor® = trademarked term for NAR (National Association of Realtors) members who pledge to follow Code of Ethics. Real estate agent = licensed but may not be NAR member. Only Realtors® can use the term and R logo. Realtors® have higher ethical standards, continuing ethics education, and can be disciplined by Professional Standards.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc264',
+    category: 'Ethics',
+    question: 'How do ethics differ from law in real estate?',
+    answer: 'LAW = minimum legal requirements enforced by state (license law). ETHICS = higher professional standards enforced by associations (NAR Code). Can be legal but unethical. Ethics violations = fines, suspension from association. Law violations = license suspension/revocation, criminal/civil penalties. Ethics are aspirational; law is mandatory baseline.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc265',
+    category: 'Ethics',
+    question: 'What are the 3 major sections of the NAR Code of Ethics?',
+    answer: 'Article 1-9: Duties to CLIENTS and customers (fiduciary duties, honesty, competence, disclosure). Article 10-14: Duties to the PUBLIC (fair housing, truthful advertising, no unauthorized practice of law). Article 15-17: Duties to REALTORS® (cooperation, arbitration, respect). Total: 17 Articles with Standards of Practice explaining each.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc266',
+    category: 'Ethics',
+    question: 'What is a Professional Standards proceeding?',
+    answer: 'NAR process to handle ethics complaints between Realtors® or arbitration of commission disputes. Process: Complaint filed → Grievance Committee reviews → Hearing Panel decides → Sanctions if violated (warning, fine up to $15,000, suspension, expulsion from association). Separate from state license board. Can lose Realtor® status while keeping license.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc267',
+    category: 'Ethics',
+    question: 'What are common ethics violations in real estate?',
+    answer: 'Common violations: Misrepresentation/exaggeration in marketing, failure to present all offers, undisclosed dual agency, discrimination, unauthorized practice of law, disparaging competitors, failure to cooperate with other Realtors®, commission disputes, property condition misrepresentation, kickbacks without disclosure, failure to disclose interest in property.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc268',
+    category: 'Ethics',
+    question: 'What are consequences of ethics violations?',
+    answer: 'NAR Sanctions: Letter of warning, fine ($0-$15,000), education requirement, probation, suspension from association (1-3 years), expulsion from association (lose Realtor® status). Does NOT affect license (that\'s state board). Can also face: civil lawsuit, loss of commission, reputation damage, loss of MLS access. Ethics violation can LEAD to license complaint.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc269',
+    category: 'Ethics',
+    question: 'What is Article 1 of the Code of Ethics?',
+    answer: 'Article 1: "When representing a buyer, seller, landlord, tenant, or other client as an agent, Realtors® pledge themselves to protect and promote the interests of their client. This obligation to the client is primary, but it does not relieve Realtors® of their obligation to treat all parties honestly." Foundation of fiduciary duty and loyalty.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc270',
+    category: 'Ethics',
+    question: 'How can ethics violations lead to legal liability?',
+    answer: 'Ethics violations that also violate law create legal liability: Discrimination → Fair Housing lawsuit, Misrepresentation → fraud lawsuit, Undisclosed dual agency → license revocation + lawsuit, Unauthorized practice of law → license suspension + client damages, Kickbacks → RESPA violation (3x damages + attorney fees). Ethics complaint can trigger license investigation and civil lawsuit.',
+    difficulty: 'hard'
   }
 ];
 
@@ -5243,5 +5299,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Agents owe fiduciary duties ONLY to their clients (principals) - the party they represent under written agency agreement. Seller agents owe to seller. Buyer agents owe to buyer. Do NOT owe fiduciary duties to customers (other party), though must be honest/fair. Fiduciary = special trust with CLIENT only.'
+  },
+  {
+    id: 'q263',
+    category: 'Ethics',
+    question: 'What is the difference between "Realtor®" and "real estate agent"?',
+    options: [
+      'No difference - same thing',
+      'Realtor® = NAR member pledged to Code of Ethics; real estate agent = licensed but may not be NAR member',
+      'Realtor® is higher license level',
+      'Only commercial agents are Realtors®'
+    ],
+    correctIndex: 1,
+    explanation: 'Realtor® = trademarked term for NAR (National Association of Realtors) members who pledge to follow Code of Ethics. Real estate agent = licensed but may not be NAR member. Only Realtors® can use term/logo. Realtors® have higher ethical standards, ethics education, can be disciplined by Professional Standards.'
+  },
+  {
+    id: 'q264',
+    category: 'Ethics',
+    question: 'How do ethics differ from law in real estate?',
+    options: [
+      'Ethics and law are the same',
+      'LAW = minimum legal baseline (state enforced); ETHICS = higher professional standards (NAR enforced)',
+      'Ethics don\'t matter if you follow the law',
+      'Law is optional, ethics are required'
+    ],
+    correctIndex: 1,
+    explanation: 'LAW = minimum legal requirements enforced by state (license law). ETHICS = higher professional standards enforced by associations (NAR Code). Can be legal but unethical. Ethics violations = fines, suspension from association. Law violations = license suspension/revocation, criminal/civil penalties. Ethics aspirational; law mandatory baseline.'
+  },
+  {
+    id: 'q265',
+    category: 'Ethics',
+    question: 'What are the 3 major sections of the NAR Code of Ethics?',
+    options: [
+      'Buying, Selling, Leasing',
+      'Articles 1-9 (clients/customers), 10-14 (public), 15-17 (Realtors®)',
+      'Residential, Commercial, Industrial',
+      'Federal, State, Local'
+    ],
+    correctIndex: 1,
+    explanation: 'Article 1-9: Duties to CLIENTS and customers (fiduciary duties, honesty, competence, disclosure). Article 10-14: Duties to the PUBLIC (fair housing, truthful advertising, no unauthorized practice of law). Article 15-17: Duties to REALTORS® (cooperation, arbitration, respect). Total: 17 Articles with Standards of Practice.'
+  },
+  {
+    id: 'q266',
+    category: 'Ethics',
+    question: 'What is a Professional Standards proceeding?',
+    options: [
+      'State license board hearing',
+      'NAR process for ethics complaints - Grievance Committee → Hearing Panel → Sanctions (fine up to $15k, suspension, expulsion)',
+      'Court trial',
+      'MLS rules enforcement'
+    ],
+    correctIndex: 1,
+    explanation: 'NAR process to handle ethics complaints between Realtors® or arbitration of commission disputes. Process: Complaint filed → Grievance Committee reviews → Hearing Panel decides → Sanctions if violated (warning, fine up to $15,000, suspension, expulsion). Separate from state license board. Can lose Realtor® status while keeping license.'
+  },
+  {
+    id: 'q267',
+    category: 'Ethics',
+    question: 'What are common ethics violations in real estate?',
+    options: [
+      'Being too nice to clients',
+      'Misrepresentation in marketing, failure to present all offers, undisclosed dual agency, discrimination',
+      'Working too many hours',
+      'Charging commission'
+    ],
+    correctIndex: 1,
+    explanation: 'Common violations: Misrepresentation/exaggeration in marketing, failure to present all offers, undisclosed dual agency, discrimination, unauthorized practice of law, disparaging competitors, failure to cooperate with other Realtors®, commission disputes, property condition misrepresentation, kickbacks without disclosure, failure to disclose interest.'
+  },
+  {
+    id: 'q268',
+    category: 'Ethics',
+    question: 'What are consequences of ethics violations?',
+    options: [
+      'Automatic license revocation',
+      'NAR sanctions: warning, fine ($0-$15k), probation, suspension, expulsion from association - separate from license',
+      'No consequences',
+      'Only a verbal warning'
+    ],
+    correctIndex: 1,
+    explanation: 'NAR Sanctions: Letter of warning, fine ($0-$15,000), education requirement, probation, suspension from association (1-3 years), expulsion (lose Realtor® status). Does NOT affect license (that\'s state board). Can also face: civil lawsuit, loss of commission, reputation damage, loss of MLS access. Ethics violation can LEAD to license complaint.'
+  },
+  {
+    id: 'q269',
+    category: 'Ethics',
+    question: 'What is Article 1 of the Code of Ethics?',
+    options: [
+      'Always get the highest commission',
+      'Protect and promote client interests (primary), but treat all parties honestly',
+      'Never work with buyers',
+      'Only show expensive properties'
+    ],
+    correctIndex: 1,
+    explanation: 'Article 1: "When representing a buyer, seller, landlord, tenant, or other client as an agent, Realtors® pledge themselves to protect and promote the interests of their client. This obligation to the client is primary, but it does not relieve Realtors® of their obligation to treat all parties honestly." Foundation of fiduciary duty and loyalty.'
+  },
+  {
+    id: 'q270',
+    category: 'Ethics',
+    question: 'How can ethics violations lead to legal liability?',
+    options: [
+      'They can\'t - ethics and law are completely separate',
+      'Ethics violations that also violate law create liability: discrimination → lawsuit, misrepresentation → fraud, kickbacks → RESPA violation',
+      'Only NAR can punish you',
+      'Ethics violations don\'t matter'
+    ],
+    correctIndex: 1,
+    explanation: 'Ethics violations that also violate law create legal liability: Discrimination → Fair Housing lawsuit, Misrepresentation → fraud lawsuit, Undisclosed dual agency → license revocation + lawsuit, Unauthorized practice of law → license suspension + client damages, Kickbacks → RESPA violation (3x damages + attorney fees). Ethics complaint can trigger license investigation and civil lawsuit.'
   }
 ];
