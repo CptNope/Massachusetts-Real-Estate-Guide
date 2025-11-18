@@ -454,6 +454,76 @@ export const flashcards = [
     question: 'What is a quitclaim deed?',
     answer: 'Deed transferring whatever interest seller has with NO guarantees or warranties. Common for transfers between family members or clearing title defects. Offers no protection to buyer.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc66',
+    category: 'Bonds & Licensing',
+    question: 'What is a surety bond for real estate brokers?',
+    answer: 'A bond required by some states guaranteeing the broker will comply with real estate laws. If broker violates laws causing financial harm, injured parties can make claims against the bond.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc67',
+    category: 'Bonds & Licensing',
+    question: 'What is an errors and omissions (E&O) insurance?',
+    answer: 'Professional liability insurance protecting agents and brokers against claims of negligence, mistakes, or failure to perform professional duties. Covers legal defense and damages.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc68',
+    category: 'Protection Clauses',
+    question: 'What is a financing contingency?',
+    answer: 'Contract clause allowing buyer to cancel and receive deposit back if they cannot obtain financing within specified timeframe. Must specify loan amount, interest rate, and deadline.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc69',
+    category: 'Protection Clauses',
+    question: 'What is a home sale contingency?',
+    answer: 'Clause making the purchase contingent on buyer selling their current home first. Protects buyer from owning two properties but makes offer less competitive.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc70',
+    category: 'Protection Clauses',
+    question: 'What is a kick-out clause?',
+    answer: 'Seller\'s protection in a home sale contingency allowing them to continue marketing. If they receive a better offer, buyer has limited time (24-72 hours) to remove contingency or lose the deal.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc71',
+    category: 'Protection Clauses',
+    question: 'What is an attorney review clause?',
+    answer: 'Provision giving parties a specified period (typically 3-7 days) for attorneys to review and approve the contract. Either party can cancel during this period.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc72',
+    category: 'MA Law',
+    question: 'What is the Massachusetts Consumer Protection Act (Chapter 93A)?',
+    answer: 'State law prohibiting unfair or deceptive business practices. Allows consumers to sue for damages (including triple damages for willful violations). Covers real estate transactions.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc73',
+    category: 'MA Law',
+    question: 'What is required for lead paint disclosure in Massachusetts?',
+    answer: 'For pre-1978 homes: seller must provide lead disclosure form, EPA pamphlet, known lead paint info, and give buyer 10-day inspection period. Violations can result in significant fines.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc74',
+    category: 'MA Law',
+    question: 'What is the Massachusetts Smoke Detector Law?',
+    answer: 'Requires working smoke and carbon monoxide detectors on every level, outside bedrooms, and in basements. Seller must provide certificate of compliance before closing. Enforced by fire department.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc75',
+    category: 'Trust Accounts',
+    question: 'What is a real estate trust account?',
+    answer: 'A separate bank account where brokers must deposit client funds (deposits, rents, etc.). Funds must be kept separate from broker\'s operating funds. Commingling is illegal and can result in license loss.',
+    difficulty: 'medium'
   }
 ];
 
@@ -1303,5 +1373,135 @@ export const quizQuestions = [
     ],
     correctIndex: 0,
     explanation: 'Essential deed elements: competent grantor, grantee identified, words of conveyance, legal description, grantor signature, and delivery/acceptance. (Notarization required for recording but not validity)'
+  },
+  {
+    id: 'q66',
+    category: 'Bonds & Licensing',
+    question: 'What is the purpose of E&O (Errors and Omissions) insurance?',
+    options: [
+      'Protects against property damage',
+      'Protects against professional negligence claims',
+      'Required for all home sales',
+      'Covers criminal violations'
+    ],
+    correctIndex: 1,
+    explanation: 'E&O insurance protects real estate professionals against claims of negligence, mistakes, or failure to perform duties. It covers legal defense costs and damages awarded.'
+  },
+  {
+    id: 'q67',
+    category: 'Bonds & Licensing',
+    question: 'Who can make a claim against a broker\'s surety bond?',
+    options: [
+      'Anyone who feels wronged',
+      'Only other brokers',
+      'Parties who suffered financial harm due to broker\'s legal violations',
+      'The state only'
+    ],
+    correctIndex: 2,
+    explanation: 'Surety bonds protect the public. Injured parties who suffered financial harm due to the broker violating real estate laws can make claims against the bond for compensation.'
+  },
+  {
+    id: 'q68',
+    category: 'Protection Clauses',
+    question: 'A buyer\'s financing contingency expires in 30 days. On day 35, they still don\'t have loan approval. What happens?',
+    options: [
+      'Contingency automatically extends',
+      'Seller can cancel and keep deposit',
+      'Nothing changes',
+      'Buyer gets extra time automatically'
+    ],
+    correctIndex: 1,
+    explanation: 'Once a contingency deadline passes without the buyer exercising or removing it, the buyer typically loses that protection. Seller can cancel the contract and may keep the deposit.'
+  },
+  {
+    id: 'q69',
+    category: 'Protection Clauses',
+    question: 'What is the main risk for sellers accepting a home sale contingency?',
+    options: [
+      'Higher commission',
+      'Their property is tied up while buyer tries to sell their home',
+      'Lower sale price',
+      'More inspections required'
+    ],
+    correctIndex: 1,
+    explanation: 'Home sale contingencies tie up the property (taking it off market) while the buyer attempts to sell their current home, which could take months. This is why kick-out clauses exist.'
+  },
+  {
+    id: 'q70',
+    category: 'Protection Clauses',
+    question: 'A seller accepts an offer with a home sale contingency and a 72-hour kick-out clause. A better offer comes in. What happens?',
+    options: [
+      'Seller must wait for first buyer to sell',
+      'Seller can immediately accept the new offer',
+      'First buyer has 72 hours to remove contingency or lose the deal',
+      'New buyer must wait'
+    ],
+    correctIndex: 2,
+    explanation: 'A kick-out clause allows the seller to notify the first buyer that they have 72 hours (or specified time) to remove the contingency or the seller can accept the new offer.'
+  },
+  {
+    id: 'q71',
+    category: 'MA Law',
+    question: 'Under MA Chapter 93A, what can consumers receive for WILLFUL unfair practices?',
+    options: [
+      'Single damages only',
+      'Double damages',
+      'Triple damages (treble damages)',
+      'No damages, just an apology'
+    ],
+    correctIndex: 2,
+    explanation: 'Massachusetts Chapter 93A allows for triple damages (treble damages) plus attorney fees for willful or knowing violations of unfair or deceptive practices.'
+  },
+  {
+    id: 'q72',
+    category: 'MA Law',
+    question: 'In Massachusetts, who enforces smoke detector compliance before closing?',
+    options: [
+      'Real estate agent',
+      'Local fire department',
+      'Home inspector',
+      'Lender'
+    ],
+    correctIndex: 1,
+    explanation: 'The local fire department inspects and issues a certificate of compliance for smoke and carbon monoxide detectors. This certificate is required before closing in Massachusetts.'
+  },
+  {
+    id: 'q73',
+    category: 'MA Law',
+    question: 'What is the penalty for failing to provide lead paint disclosure on a pre-1978 home?',
+    options: [
+      'Warning letter only',
+      'Up to $10,000 fine and possible triple damages',
+      'No penalty if unintentional',
+      'License suspension only'
+    ],
+    correctIndex: 1,
+    explanation: 'Federal law provides for penalties up to $11,000+ per violation. Sellers can also be liable for triple damages if buyer\'s children are harmed by lead paint.'
+  },
+  {
+    id: 'q74',
+    category: 'Trust Accounts',
+    question: 'What is "commingling" in real estate?',
+    options: [
+      'Mixing client funds with broker\'s personal or business funds',
+      'Having multiple clients',
+      'Working with multiple brokerages',
+      'Dual agency'
+    ],
+    correctIndex: 0,
+    explanation: 'Commingling is illegally mixing client funds (deposits, rents) with the broker\'s own money. All client funds must be kept in a separate trust account.'
+  },
+  {
+    id: 'q75',
+    category: 'Trust Accounts',
+    question: 'A broker receives a $5,000 earnest money deposit. What must they do?',
+    options: [
+      'Deposit it in their business checking account',
+      'Keep it in cash',
+      'Deposit it in a trust account within specified timeframe (typically 1-3 business days)',
+      'Give it directly to the seller'
+    ],
+    correctIndex: 2,
+    explanation: 'Earnest money must be promptly deposited into a trust account (usually within 1-3 business days per state law). It cannot be commingled with broker\'s personal funds.'
   }
 ];
