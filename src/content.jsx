@@ -1158,5 +1158,333 @@ Always understand your agent’s split and cap – it influences incentives.`}
         </p>
       </>
     )
+  },
+  {
+    id: 'professional-development',
+    icon: '🎓',
+    title: '16. Professional Development & Licensing',
+    subtitle: 'Continuing Education, Certifications & Career Growth',
+    body: (
+      <>
+        <h3>16.1 Massachusetts Continuing Education (CE)</h3>
+        <div className="ce-requirements">
+          <p><strong>Required:</strong> 12 hours every 2 years for license renewal</p>
+          <h4>Must Include:</h4>
+          <ul>
+            <li>Fair Housing Law (required topic)</li>
+            <li>Board-approved courses from accredited providers</li>
+            <li>Complete before license expiration</li>
+            <li>Keep certificates for records</li>
+          </ul>
+          <p><strong>Renewal Cycle:</strong> Every 2 years on your birth month</p>
+          <p><strong>Fees:</strong> $200-250 for renewal + $100-300 for CE courses</p>
+        </div>
+
+        <h3>16.2 Broker vs Salesperson Requirements</h3>
+        <div className="license-comparison">
+          <h4>Salesperson (Agent):</h4>
+          <ul>
+            <li>40-hour pre-license course</li>
+            <li>Pass state exam</li>
+            <li>Affiliate with licensed broker</li>
+            <li>Cannot operate independently</li>
+            <li>12 hrs CE every 2 years</li>
+          </ul>
+
+          <h4>Broker:</h4>
+          <ul>
+            <li>3+ years as licensed salesperson (in MA or equivalent)</li>
+            <li>30-hour broker course</li>
+            <li>Pass broker exam</li>
+            <li>Can supervise salespeople</li>
+            <li>Can operate own brokerage</li>
+            <li>12 hrs CE every 2 years</li>
+          </ul>
+        </div>
+
+        <h3>16.3 Professional Certifications</h3>
+        <div className="certifications">
+          <h4>GRI (Graduate, REALTOR® Institute)</h4>
+          <ul>
+            <li><strong>Requirements:</strong> 90+ hours of coursework</li>
+            <li><strong>Focus:</strong> Advanced real estate topics, sales strategies</li>
+            <li><strong>Cost:</strong> $800-1,200 total</li>
+            <li><strong>Benefits:</strong> Enhanced credibility, advanced knowledge</li>
+          </ul>
+
+          <h4>CRS (Certified Residential Specialist)</h4>
+          <ul>
+            <li><strong>Requirements:</strong> Experience + advanced courses</li>
+            <li><strong>Focus:</strong> Residential transaction expertise</li>
+            <li><strong>Cost:</strong> $1,000-1,500</li>
+            <li><strong>Benefits:</strong> Top 3% designation, market leader status</li>
+          </ul>
+
+          <h4>ABR (Accredited Buyer's Representative)</h4>
+          <ul>
+            <li><strong>Requirements:</strong> ABR course + 5+ buyer transactions</li>
+            <li><strong>Focus:</strong> Buyer representation expertise</li>
+            <li><strong>Cost:</strong> $400-600</li>
+            <li><strong>Benefits:</strong> Specialized buyer agency knowledge</li>
+          </ul>
+
+          <h4>SRES (Seniors Real Estate Specialist)</h4>
+          <ul>
+            <li><strong>Focus:</strong> Serving 50+ demographic</li>
+            <li><strong>Cost:</strong> $400-600</li>
+            <li><strong>Benefits:</strong> Niche market expertise</li>
+          </ul>
+
+          <h4>CNE (Certified Negotiation Expert)</h4>
+          <ul>
+            <li><strong>Focus:</strong> Advanced negotiation strategies</li>
+            <li><strong>Cost:</strong> $300-500</li>
+            <li><strong>Benefits:</strong> Enhanced deal-making skills</li>
+          </ul>
+
+          <p><em>All certifications are optional but enhance marketability and expertise.</em></p>
+        </div>
+
+        <h3>16.4 Mandatory vs Optional Requirements</h3>
+        <div className="requirements-table">
+          <h4>✅ MANDATORY (Required to Practice):</h4>
+          <ul>
+            <li>Real estate license (active status)</li>
+            <li>Broker affiliation</li>
+            <li>12 hrs CE every 2 years</li>
+            <li>License renewal every 2 years</li>
+            <li>Fair Housing compliance</li>
+          </ul>
+
+          <h4>💡 OPTIONAL (Recommended for Success):</h4>
+          <ul>
+            <li>Professional certifications (GRI, CRS, ABR, etc.)</li>
+            <li>NAR/MAR membership (often required by brokerage)</li>
+            <li>MLS access (often required by brokerage)</li>
+            <li>Additional training and education</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Career Path:</strong> Salesperson (3+ years) → Broker → Brokerage Owner → Multi-State Broker.
+          Continuous learning and professional certifications accelerate growth and income potential.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'insurance',
+    icon: '🛡️',
+    title: '17. Insurance & Risk Management',
+    subtitle: 'E&O, Liability, Cyber & Fidelity Coverage',
+    body: (
+      <>
+        <h3>17.1 Errors & Omissions (E&O) Insurance</h3>
+        <div className="eo-insurance">
+          <p><strong>What It Covers:</strong> Professional mistakes, negligence, failure to perform duties</p>
+          <p><strong>Cost:</strong> $300-800 per year (individual agent)</p>
+          <p><strong>Required:</strong> Not mandatory by MA law, but required by most brokers</p>
+
+          <h4>Coverage Examples:</h4>
+          <ul>
+            <li>Missing a deadline causing client financial loss</li>
+            <li>Errors in paperwork or disclosures</li>
+            <li>Failure to disclose (if unintentional)</li>
+            <li>Breach of fiduciary duty</li>
+            <li>Misrepresentation (if not intentional)</li>
+          </ul>
+
+          <h4>Does NOT Cover:</h4>
+          <ul>
+            <li>❌ Intentional acts or fraud</li>
+            <li>❌ Criminal violations</li>
+            <li>❌ Embezzlement</li>
+            <li>❌ Discrimination</li>
+          </ul>
+
+          <h4>Claims-Made vs Occurrence:</h4>
+          <ul>
+            <li><strong>Claims-Made:</strong> Covers claims filed during policy period (need tail coverage after)</li>
+            <li><strong>Occurrence:</strong> Covers incidents during policy period (no tail needed)</li>
+          </ul>
+
+          <p><strong>Typical Coverage Limits:</strong> $1M per claim / $2M aggregate</p>
+          <p><strong>Deductibles:</strong> $500-2,500 per claim</p>
+        </div>
+
+        <h3>17.2 General Liability Insurance</h3>
+        <ul>
+          <li><strong>Covers:</strong> Bodily injury, property damage during showings/open houses</li>
+          <li><strong>Cost:</strong> $400-600 per year</li>
+          <li><strong>Example:</strong> Client slips and falls during property showing</li>
+        </ul>
+
+        <h3>17.3 Cyber Liability Insurance</h3>
+        <ul>
+          <li><strong>Covers:</strong> Data breaches, hacking, stolen client information</li>
+          <li><strong>Cost:</strong> $500-1,000 per year</li>
+          <li><strong>Important:</strong> Increasingly critical as transactions go digital</li>
+        </ul>
+
+        <h3>17.4 Fidelity Bonds</h3>
+        <ul>
+          <li><strong>Covers:</strong> Dishonest acts, theft of client funds</li>
+          <li><strong>Required:</strong> For brokers handling trust accounts</li>
+          <li><strong>Cost:</strong> $300-500 per year</li>
+          <li><strong>Purpose:</strong> Protects clients if agent steals or misappropriates funds</li>
+        </ul>
+
+        <h3>17.5 Complete Insurance Package</h3>
+        <div className="insurance-summary">
+          <h4>Typical Agent Annual Insurance Costs:</h4>
+          <ul>
+            <li>E&O Insurance: $300-800</li>
+            <li>General Liability: $400-600</li>
+            <li>Cyber Liability: $500-1,000 (optional but recommended)</li>
+            <li><strong>Total: $1,200-2,400 per year</strong></li>
+          </ul>
+
+          <h4>Broker Additional Costs:</h4>
+          <ul>
+            <li>Fidelity Bond: $300-500</li>
+            <li>Higher coverage limits</li>
+            <li>Workers' comp (if employees)</li>
+            <li><strong>Total: $2,000-4,000+ per year</strong></li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Bottom Line:</strong> Insurance is a BUSINESS EXPENSE, not an option. One uninsured claim 
+          can bankrupt you. Always verify coverage includes all states where you're licensed and covers 
+          all your business activities.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'legal-protections',
+    icon: '⚖️',
+    title: '18. Legal Protections & MA Compliance',
+    subtitle: 'Bonds, Protection Clauses, Chapter 93A & Trust Accounts',
+    body: (
+      <>
+        <h3>18.1 Bonds in Massachusetts Real Estate</h3>
+        <div className="bonds-section">
+          <h4>Broker Bond/Fidelity Bond:</h4>
+          <ul>
+            <li><strong>Purpose:</strong> Protects clients from broker's dishonest acts</li>
+            <li><strong>Amount:</strong> Typically $25,000-100,000</li>
+            <li><strong>Cost:</strong> $300-500 per year</li>
+            <li><strong>Required:</strong> For brokers managing trust accounts</li>
+          </ul>
+
+          <p><em>Note: MA does not require a license bond, but E&O insurance and fidelity bonds 
+          are standard practice and often required by brokerages.</em></p>
+        </div>
+
+        <h3>18.2 Protection Clauses in Contracts</h3>
+        <div className="protection-clauses">
+          <h4>Financing Contingency:</h4>
+          <ul>
+            <li>Buyer can cancel if financing falls through</li>
+            <li>Must specify deadline and loan terms</li>
+            <li>Protects buyer's deposit if loan denied</li>
+          </ul>
+
+          <h4>Home Sale Contingency:</h4>
+          <ul>
+            <li>Buyer must sell current home first</li>
+            <li>Sets deadline for sale</li>
+            <li>Often includes "kick-out clause" for seller protection</li>
+          </ul>
+
+          <h4>Kick-Out Clause:</h4>
+          <ul>
+            <li>Seller can accept backup offers</li>
+            <li>Gives first buyer 24-72 hours to remove contingency</li>
+            <li>Protects seller from being tied up indefinitely</li>
+          </ul>
+
+          <h4>Attorney Review Period:</h4>
+          <ul>
+            <li>Attorneys can review and suggest changes</li>
+            <li>Typically 5-7 business days</li>
+            <li>Either party can cancel during this period</li>
+          </ul>
+        </div>
+
+        <h3>18.3 Massachusetts Chapter 93A - Consumer Protection</h3>
+        <div className="chapter93a">
+          <p><strong>What It Is:</strong> MA law prohibiting unfair or deceptive business practices</p>
+          
+          <h4>Prohibits:</h4>
+          <ul>
+            <li>Misrepresentation of property condition</li>
+            <li>False advertising</li>
+            <li>Failure to disclose material defects (if known)</li>
+            <li>Unfair or deceptive trade practices</li>
+          </ul>
+
+          <h4>Penalties:</h4>
+          <ul>
+            <li>Double or triple damages</li>
+            <li>Attorney's fees for winning plaintiff</li>
+            <li>License suspension</li>
+          </ul>
+
+          <p><strong>Demand Letter:</strong> Consumer must send 30-day demand letter before lawsuit. 
+          Respond promptly and professionally!</p>
+        </div>
+
+        <h3>18.4 Lead Paint Disclosure (Federal & MA)</h3>
+        <ul>
+          <li><strong>Applies to:</strong> Properties built before 1978</li>
+          <li><strong>Required:</strong> Lead paint disclosure form</li>
+          <li><strong>10-Day Inspection Period:</strong> Buyer has right to inspect for lead</li>
+          <li><strong>Pamphlet:</strong> Must provide EPA's "Protect Your Family from Lead" pamphlet</li>
+          <li><strong>Penalties:</strong> Up to $16,000 per violation, plus triple damages</li>
+        </ul>
+
+        <h3>18.5 MA Smoke Detector & CO Alarm Law</h3>
+        <ul>
+          <li><strong>Required:</strong> Working smoke/CO detectors on every level</li>
+          <li><strong>Certificate:</strong> Seller must provide compliance certificate at closing</li>
+          <li><strong>Responsibility:</strong> Seller's obligation to bring up to code</li>
+          <li><strong>Inspection:</strong> By local fire department</li>
+        </ul>
+
+        <h3>18.6 Trust Accounts</h3>
+        <div className="trust-accounts">
+          <p><strong>Purpose:</strong> Hold client funds (deposits, rents) separate from broker's funds</p>
+          
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Separate bank account from operating funds</li>
+            <li>Detailed records of all transactions</li>
+            <li>Cannot comingle with personal or business funds</li>
+            <li>Regular reconciliation</li>
+            <li>State board can audit anytime</li>
+          </ul>
+
+          <h4>Deposits Held Until:</h4>
+          <ul>
+            <li>Closing (released per contract)</li>
+            <li>Transaction cancels (returned per contract terms)</li>
+            <li>Dispute resolved (court order or agreement)</li>
+          </ul>
+
+          <p className="warning">
+            <strong>⚠️ Critical:</strong> Mishandling trust accounts = immediate license suspension + criminal charges. 
+            Never "borrow" from trust accounts, even temporarily!
+          </p>
+        </div>
+
+        <p className="highlight">
+          <strong>Compliance Summary:</strong> MA has strict consumer protection laws. Always disclose, 
+          document everything, and when in doubt, consult your broker or real estate attorney. 
+          Prevention is cheaper than lawsuits!
+        </p>
+      </>
+    )
   }
 ];
