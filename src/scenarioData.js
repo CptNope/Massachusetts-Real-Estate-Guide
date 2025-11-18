@@ -344,5 +344,780 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario4',
+    title: 'Dual Agency Ethical Dilemma',
+    description: 'Your buyer client wants to make an offer on your own listing.',
+    difficulty: 'hard',
+    category: 'buyer',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your buyer client loves one of your own listings. They want to make an offer. The seller trusts you completely. What do you do?',
+        choices: [
+          { text: 'Proceed with dual agency - disclose fully', nextNode: 'dual_agency' },
+          { text: 'Refer buyer to another agent', nextNode: 'refer_out' },
+          { text: 'Represent seller only, buyer unrepresented', nextNode: 'buyer_unrepresented' },
+          { text: 'Suggest designated agency with colleague', nextNode: 'designated_agency' }
+        ]
+      },
+      dual_agency: {
+        text: 'You disclose dual agency to both parties in writing. Both sign. During negotiations, buyer asks "What\'s the seller\'s bottom line?"',
+        choices: [
+          { text: 'Tell them - they\'re your client too', nextNode: 'breach_confidentiality' },
+          { text: '"I can\'t disclose that information"', nextNode: 'maintain_confidentiality' },
+          { text: 'Give vague hint about flexibility', nextNode: 'grey_area' }
+        ]
+      },
+      refer_out: {
+        text: 'You refer the buyer to a trusted colleague. Deal proceeds smoothly. Both parties get full representation. You lose some commission but maintain integrity.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent ethical decision! Avoiding dual agency protects both clients and your reputation.',
+        recommendations: [
+          'Referring out is often the cleanest solution',
+          'Build referral network for these situations',
+          'Explain to clients why full representation is better',
+          'Your reputation is worth more than one commission',
+          'Some brokerages prohibit dual agency entirely'
+        ]
+      },
+      buyer_unrepresented: {
+        text: 'Buyer proceeds unrepresented. They make mistakes in offer. Later claim you took advantage of them. Complaint filed with Board.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Leaving a client unrepresented in a transaction you\'re involved in creates liability.',
+        recommendations: [
+          'Don\'t abandon existing client relationships',
+          'Unrepresented parties often make poor decisions',
+          'Your previous buyer relationship creates ethical duty',
+          'This creates appearance of impropriety',
+          'Always ensure all parties have representation'
+        ]
+      },
+      designated_agency: {
+        text: 'Your colleague represents the buyer, you keep the seller. Both clients get full representation. Deal closes smoothly with proper firewall.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Smart solution! Designated agency allows both clients full representation while keeping the deal in-house.',
+        recommendations: [
+          'Designated agency is ideal for this situation',
+          'Maintain strict information firewall',
+          'Document all communications separately',
+          'Both agents can advocate fully for their client',
+          'Check your brokerage policy on designated agency'
+        ]
+      },
+      breach_confidentiality: {
+        text: 'You reveal seller will take $20k less. Buyer offers that. Seller is upset you disclosed. Files ethics complaint. You face suspension.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'CRITICAL ERROR. Confidentiality continues even in dual agency. This is a serious ethics violation.',
+        recommendations: [
+          'NEVER disclose confidential info - even in dual agency',
+          'Dual agency means LIMITED representation, not zero confidentiality',
+          'Each client\'s private info stays private',
+          'This violates fiduciary duty of confidentiality',
+          'Can result in license suspension and lawsuit'
+        ]
+      },
+      maintain_confidentiality: {
+        text: 'You properly maintain confidentiality for both parties. Negotiations proceed fairly. Deal closes at $385k. Both parties satisfied.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Correct! Even in dual agency, confidential information stays confidential.',
+        recommendations: [
+          'Dual agency requires strict confidentiality from both sides',
+          'You facilitate, not advocate in dual agency',
+          'Document all disclosures in writing',
+          'Both parties should understand limitations of dual agency',
+          'Some agents refuse dual agency to avoid these conflicts'
+        ]
+      },
+      grey_area: {
+        text: 'You hint "I think there\'s some flexibility." Seller finds out, feels betrayed. Threatens to fire you and sue for breach of fiduciary duty.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Vague hints are still breaches of confidentiality. Don\'t try to walk the line.',
+        recommendations: [
+          'There\'s no "grey area" with confidentiality',
+          'Any hint about the other party violates duty',
+          'Be direct: "I cannot discuss that"',
+          'Document your refusal to disclose',
+          'When in doubt, over-protect confidential info'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario5',
+    title: 'Handling Discriminatory Client Request',
+    description: 'A seller client makes a request that violates Fair Housing laws.',
+    difficulty: 'medium',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your seller says: "I don\'t want to sell to families with children. This is an adult community." The property is NOT legally age-restricted. What do you do?',
+        choices: [
+          { text: 'Explain you cannot discriminate, educate on Fair Housing', nextNode: 'educate_client' },
+          { text: 'Quietly steer showings away from families', nextNode: 'comply_illegally' },
+          { text: 'Terminate the listing immediately', nextNode: 'terminate_immediately' },
+          { text: 'Suggest legal alternatives like 55+ certification', nextNode: 'suggest_legal_path' }
+        ]
+      },
+      educate_client: {
+        text: 'You explain Fair Housing Act protects familial status. Discrimination could result in $65k+ fines and lawsuit. Client says "Fine, but screen buyers carefully."',
+        choices: [
+          { text: 'Agree to "screen" knowing what they mean', nextNode: 'implicit_discrimination' },
+          { text: 'Clarify you\'ll screen for financials only', nextNode: 'proper_screening' },
+          { text: 'Terminate the listing', nextNode: 'terminate_after_education' }
+        ]
+      },
+      comply_illegally: {
+        text: 'You quietly avoid showing to families. A tester from HUD poses as family with children. You make excuses. HUD investigation begins.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'CRITICAL VIOLATION. Fair Housing testers exist specifically to catch this. You face $65k HUD fine, unlimited civil damages, and license revocation.',
+        recommendations: [
+          'NEVER comply with discriminatory requests - EVER',
+          'Fair Housing is NON-NEGOTIABLE regardless of client wishes',
+          'HUD uses testers to catch violations',
+          'You are personally liable, not just the seller',
+          'License revocation is likely outcome',
+          'Document and refuse all discriminatory requests immediately'
+        ]
+      },
+      terminate_immediately: {
+        text: 'You terminate the listing citing Fair Housing concerns. Document everything. Client is angry but you protected yourself legally.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Bold but correct decision! When a client insists on discrimination, termination is appropriate.',
+        recommendations: [
+          'Document discriminatory requests thoroughly',
+          'Termination letter should reference Fair Housing concern',
+          'Report serious violations to your broker',
+          'Your license is more valuable than one commission',
+          'Some violations should trigger termination immediately',
+          'NAR Code of Ethics Article 10 requires fair treatment'
+        ]
+      },
+      suggest_legal_path: {
+        text: 'You explain the property would need proper 55+ or 62+ certification, which requires 80% occupancy and amenities. Client says it\'s not feasible.',
+        choices: [
+          { text: 'Explain they must accept all qualified buyers', nextNode: 'proper_education' },
+          { text: 'Keep trying to find loopholes', nextNode: 'seeking_loopholes' }
+        ]
+      },
+      implicit_discrimination: {
+        text: 'You "screen carefully" avoiding families. Fair Housing complaint filed. Investigation shows pattern. You face HUD charges and license suspension.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Code words like "screen carefully" don\'t protect you. Actions speak louder than words.',
+        recommendations: [
+          'Pattern of avoiding protected classes proves discrimination',
+          'You cannot hide behind euphemisms',
+          'Document all showings to prove fair treatment',
+          'If it feels wrong, it probably is illegal',
+          'Implicit discrimination is still discrimination'
+        ]
+      },
+      proper_screening: {
+        text: 'You clarify you\'ll only screen for: pre-approval, credit, ability to purchase. Client reluctantly agrees. You show to ALL qualified buyers including families. Property sells!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! You educated the client and maintained legal compliance.',
+        recommendations: [
+          'Legal screening: finances, qualifications, timing',
+          'Illegal screening: race, religion, familial status, etc.',
+          'Document all buyer qualifications equally',
+          'Treat all qualified prospects the same',
+          'Education often corrects client misconceptions',
+          'Most clients comply when they understand legal risks'
+        ]
+      },
+      terminate_after_education: {
+        text: 'Client persists after education. You terminate the listing and document their discriminatory intent. Your broker commends your ethical decision.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Right decision! After proper education, continued insistence requires termination.',
+        recommendations: [
+          'Give clients one chance to correct after education',
+          'Persistence after warning = termination',
+          'Document the education you provided',
+          'Notify your broker of the situation',
+          'This protects you from future liability',
+          'Your reputation matters more than difficult clients'
+        ]
+      },
+      proper_education: {
+        text: 'You thoroughly explain Fair Housing requirements. Client understands legal obligations. You market to all buyers. Family purchases, seller realizes they\'re great buyers!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent! Education and firmness often resolves these situations.',
+        recommendations: [
+          'Many discriminatory requests stem from ignorance, not malice',
+          'Proper education often changes minds',
+          'Explain personal liability seller faces for violations',
+          'Focus on financial qualifications only',
+          'Great buyers come from all protected classes',
+          'Fair Housing protects everyone - including sellers from lawsuits'
+        ]
+      },
+      seeking_loopholes: {
+        text: 'You waste time looking for loopholes. Client gets frustrated. Another agent takes listing and proceeds legally. You lost time and income.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'There are no loopholes in Fair Housing. Wasting time looking for them helps no one.',
+        recommendations: [
+          'Fair Housing has limited exemptions - none apply here',
+          'Don\'t try to outsmart Fair Housing Law',
+          'Be direct: this request is illegal',
+          'Waffling damages your credibility',
+          'Decisive education is more effective than searching for workarounds'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario6',
+    title: 'FSBO Legal Boundaries',
+    description: 'A FSBO seller asks for advice that crosses into unauthorized practice of law.',
+    difficulty: 'medium',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'A FSBO seller calls you asking to review their P&S agreement and explain some clauses. They\'re not represented. What do you do?',
+        choices: [
+          { text: 'Review it and explain - build relationship', nextNode: 'unauthorized_practice' },
+          { text: 'Decline and recommend an attorney', nextNode: 'refer_attorney' },
+          { text: 'Offer to represent them for reduced commission', nextNode: 'pitch_representation' },
+          { text: 'Give general info only, no specific advice', nextNode: 'general_info' }
+        ]
+      },
+      unauthorized_practice: {
+        text: 'You review the P&S and explain clauses. Seller makes decision based on your advice. Deal falls through. Seller sues you for unauthorized practice of law and bad advice.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'CRITICAL ERROR. Reviewing and explaining P&S agreements is practicing law without a license.',
+        recommendations: [
+          'Agents CANNOT review or explain P&S agreements',
+          'Only attorneys can interpret legal documents',
+          '"Helping" can create liability',
+          'Board can suspend license for unauthorized practice',
+          'You could face lawsuit for damages AND legal fees',
+          'Use phrase: "You have the right to consult an attorney"'
+        ]
+      },
+      refer_attorney: {
+        text: 'You say "I cannot review legal documents, but I can recommend 2-3 real estate attorneys." You provide names without kickbacks. Seller appreciates the professionalism.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! You protected yourself legally while being helpful.',
+        recommendations: [
+          'Always recommend attorney for document review',
+          'Provide 2-3 names to show no preference',
+          'Never accept referral fees from attorneys',
+          'Disclose any relationships if they exist',
+          'This builds trust and professionalism',
+          'Attorney consultation is ALWAYS appropriate to suggest'
+        ]
+      },
+      pitch_representation: {
+        text: 'You aggressively pitch your services. Seller feels you\'re just trying to make money from their situation. They hang up and list with competitor.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Timing and approach matter. Hard sell when they need help feels predatory.',
+        recommendations: [
+          'Help first, sell later',
+          'Build relationship before pitching',
+          'Aggressive tactics backfire',
+          'Focus on their needs, not your commission',
+          'Soft approach: "If you decide you want representation..."',
+          'Being genuinely helpful creates future business'
+        ]
+      },
+      general_info: {
+        text: 'You provide general information: "P&S agreements typically include contingencies, closing date, etc. But an attorney should review your specific document."',
+        choices: [
+          { text: 'Continue answering specific questions about their contract', nextNode: 'cross_line' },
+          { text: 'Maintain boundaries, recommend attorney again', nextNode: 'maintain_boundaries' }
+        ]
+      },
+      cross_line: {
+        text: 'You keep answering specific questions. Seller acts on your interpretation. Title issue emerges. Seller blames you. Board investigation for unauthorized practice of law.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'You crossed from general information to specific legal advice. That\'s unauthorized practice.',
+        recommendations: [
+          'General market info is OK, specific document interpretation is NOT',
+          'Know where the line is and don\'t cross it',
+          'Each specific answer increases liability',
+          'Stop and redirect to attorney when questions get specific',
+          'Document that you recommended attorney consultation'
+        ]
+      },
+      maintain_boundaries: {
+        text: 'You maintain boundaries. Seller hires attorney who finds issues in their P&S. Seller thanks you for the referral. Later calls you to list their next property!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent! Professional boundaries create trust and future business.',
+        recommendations: [
+          'Proper boundaries protect both parties',
+          'Attorneys often find issues non-lawyers miss',
+          'Seller appreciates competent attorney referral',
+          'Your professionalism creates future opportunities',
+          'Word-of-mouth from ethical behavior is powerful',
+          'Long-term relationships beat short-term gains'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario7',
+    title: 'Multi-Party Estate Sale Negotiation',
+    description: 'You\'re listing an estate property with three sibling heirs who disagree on everything.',
+    difficulty: 'hard',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'You\'re selling an estate for three siblings. Sister wants $500k, Brother A wants quick sale at $450k, Brother B wants to rent it. They\'re arguing. What\'s your approach?',
+        choices: [
+          { text: 'Side with sister - highest price best for all', nextNode: 'take_sides' },
+          { text: 'Present market data, let them decide', nextNode: 'objective_approach' },
+          { text: 'Suggest all three get separate agents', nextNode: 'suggest_separate' },
+          { text: 'Recommend mediation or estate attorney', nextNode: 'recommend_mediation' }
+        ]
+      },
+      take_sides: {
+        text: 'You support sister\'s price. Brothers feel you\'re biased. Brother A demands you be fired. Sister wants to keep you. Family conflict escalates. Estate attorney stops the sale.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Never take sides in family disputes. You represent ALL parties equally.',
+        recommendations: [
+          'Stay neutral in multi-party situations',
+          'Each heir is equally your client',
+          'Taking sides destroys trust with other parties',
+          'Family dynamics are not your problem to solve',
+          'Present facts, not opinions on who\'s right',
+          'Document all communications equally to all parties'
+        ]
+      },
+      objective_approach: {
+        text: 'You present comparables showing market value $475k-$490k. Show days on market data. Present rental income analysis. Ask for their decision as a group.',
+        choices: [
+          { text: 'Push for decision today', nextNode: 'push_decision' },
+          { text: 'Give them time to discuss privately', nextNode: 'allow_time' }
+        ]
+      },
+      suggest_separate: {
+        text: 'You suggest separate agents. This creates conflict of interest and likely lawsuit between siblings. Estate attorney advises against. Family is confused and upset.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Separate agents in estate sale creates conflicts. One neutral agent is proper.',
+        recommendations: [
+          'Estate sales need ONE neutral agent',
+          'Multiple agents create competing interests',
+          'Your job is to represent the ESTATE, not individuals',
+          'Separate representation escalates family conflict',
+          'Work with estate attorney to clarify your role'
+        ]
+      },
+      recommend_mediation: {
+        text: 'You recommend they consult their estate attorney or mediator about the disagreement. Attorney facilitates discussion. They agree to list at $485k.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Smart move! Recognizing when professional help is needed shows wisdom.',
+        recommendations: [
+          'Estate attorneys can resolve heir disputes',
+          'Mediation is appropriate for deadlocked parties',
+          'You\'re not a family therapist or mediator',
+          'Stepping back shows professional maturity',
+          'Attorney\'s guidance often unlocks decisions',
+          'Your role is real estate, not conflict resolution'
+        ]
+      },
+      push_decision: {
+        text: 'You pressure them to decide. They feel rushed. Sister accuses you of favoring brothers. Complaints to broker. You lose the listing and your reputation suffers.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Pushing multi-party clients rarely works. Family decisions need time.',
+        recommendations: [
+          'Multi-party decisions take longer - accept this',
+          'Pressure creates resentment and accusations',
+          'Let families process at their pace',
+          'Set reasonable timelines, don\'t push arbitrarily',
+          'Patience in difficult situations builds trust'
+        ]
+      },
+      allow_time: {
+        text: 'You give them a week to discuss. They come back unified at $480k. You get an offer at $475k.',
+        choices: [
+          { text: 'Present offer equally to all three', nextNode: 'equal_presentation' },
+          { text: 'Try to convince the flexible brother first', nextNode: 'divide_conquer' }
+        ]
+      },
+      divide_conquer: {
+        text: 'You call Brother A separately trying to get his support first. Sister finds out. Accuses you of conspiracy. Trust destroyed. Listing terminated.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Treating co-clients differently or separately creates appearance of impropriety.',
+        recommendations: [
+          'All communications in multi-party deals should include ALL parties',
+          'No separate "side deals" or conversations',
+          'Equal treatment is critical',
+          'Divide and conquer destroys trust',
+          'Group emails, group calls, group meetings',
+          'Transparency prevents accusations'
+        ]
+      },
+      equal_presentation: {
+        text: 'You present offer to all three together via conference call. You provide objective analysis of offer strength. After discussion, they counter at $478k. Buyer accepts!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Equal treatment and objective guidance led to unified decision.',
+        recommendations: [
+          'Group communications ensure equality',
+          'Objective analysis helps clients decide together',
+          'Transparency builds trust in multi-party deals',
+          'Document all parties received same information',
+          'Neutral facilitation is your role, not advocacy for one party',
+          'Success in multi-party deals requires patience and fairness',
+          'Get all parties on signature together'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario8',
+    title: 'Material Defect Disclosure Dilemma',
+    description: 'Your seller client reveals a hidden defect but doesn\'t want to disclose it.',
+    difficulty: 'hard',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your seller admits: "The basement floods in heavy rain, but I fixed the stains. Don\'t mention it - buyer inspection will miss it if it hasn\'t rained." What do you do?',
+        choices: [
+          { text: 'Comply with seller\'s wishes', nextNode: 'conceal_defect' },
+          { text: 'Insist on proper disclosure', nextNode: 'demand_disclosure' },
+          { text: 'Disclose it yourself without seller permission', nextNode: 'disclose_directly' },
+          { text: 'Terminate listing immediately', nextNode: 'terminate_listing' }
+        ]
+      },
+      conceal_defect: {
+        text: 'You don\'t disclose. Sale closes. Next spring, basement floods. Buyer discovers seller\'s repairs. They sue BOTH of you for fraud. You face license revocation.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'CRITICAL VIOLATION. Concealing known material defects is fraud. You\'re liable even if seller ordered you to hide it.',
+        recommendations: [
+          'Material defects MUST be disclosed - NO EXCEPTIONS',
+          'You cannot hide defects even if seller demands it',
+          'You are personally liable for fraudulent concealment',
+          'License revocation is standard penalty',
+          'Buyer can sue for fraud, rescission, and damages',
+          'E&O insurance may not cover intentional fraud',
+          'Criminal charges are possible in serious cases'
+        ]
+      },
+      demand_disclosure: {
+        text: 'You insist the flooding must be disclosed on the Property Condition Statement. Seller reluctantly agrees. You list it with full disclosure.',
+        choices: [
+          { text: 'Market "priced accordingly for known issue"', nextNode: 'honest_marketing' },
+          { text: 'Bury the disclosure in fine print', nextNode: 'minimize_disclosure' }
+        ]
+      },
+      disclose_directly: {
+        text: 'You tell buyers about flooding without seller permission. Seller fires you and sues for breach of confidentiality. Listing agreement protects seller\'s private info.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Wrong approach. You must REQUIRE seller to disclose, but you cannot disclose seller\'s private communications without permission.',
+        recommendations: [
+          'Require seller to make disclosure, don\'t do it for them',
+          'Seller must sign disclosure documents',
+          'Your private conversations with seller are confidential',
+          'If seller refuses to disclose, terminate the listing',
+          'Disclosing seller\'s private info breaches confidentiality',
+          'Proper procedure: require disclosure or terminate'
+        ]
+      },
+      terminate_listing: {
+        text: 'You terminate listing citing material defect disclosure concerns. You document seller\'s refusal. Seller lists with another agent. That agent faces lawsuit. You protected yourself.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Correct, though demanding disclosure first is preferable. Termination is appropriate if seller refuses.',
+        recommendations: [
+          'Termination is appropriate after seller refuses disclosure',
+          'Document the disclosure issue thoroughly',
+          'Notify your broker of the situation',
+          'Send termination letter referencing disclosure concern',
+          'This protects you from future liability',
+          'Next agent may not be as ethical - not your problem'
+        ]
+      },
+      honest_marketing: {
+        text: 'You market honestly: "Seller discloses basement water intrusion in heavy rain. Priced to reflect condition. Bring contractor for waterproofing estimate." Cash investor makes fair offer!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Honest disclosure attracts the right buyer and protects everyone.',
+        recommendations: [
+          'Full disclosure attracts informed buyers',
+          'Investors often buy properties with known issues',
+          'Priced correctly, disclosed issues aren\'t deal-killers',
+          'Honest marketing prevents future lawsuits',
+          'Buyer has no grounds to sue with full disclosure',
+          'Your reputation for honesty builds long-term business',
+          'Document that disclosure was prominent, not hidden'
+        ]
+      },
+      minimize_disclosure: {
+        text: 'You disclose in small print on page 5. Buyer signs but doesn\'t notice. After closing, they discover flooding. Claim disclosure was inadequate. Lawsuit follows.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Disclosure must be PROMINENT, not hidden. Courts often side with buyers when disclosure was buried.',
+        recommendations: [
+          'Material defects need PROMINENT disclosure',
+          'Don\'t hide disclosures in fine print',
+          'Highlight issues verbally and in writing',
+          'Have buyer initial specific major disclosures',
+          'Courts evaluate "reasonable notice" standard',
+          'Being technically disclosed isn\'t enough',
+          'Bold, highlight, and verbally emphasize defects'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario9',
+    title: 'Commission Dispute Resolution',
+    description: 'Another agent claims they\'re entitled to part of your commission.',
+    difficulty: 'medium',
+    category: 'buyer',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'You close a deal. Another agent claims they showed the buyer this property first and deserve procuring cause commission. Buyer signed with you later. What do you do?',
+        choices: [
+          { text: 'Refuse - buyer signed with you', nextNode: 'refuse_to_share' },
+          { text: 'Offer 25% to avoid conflict', nextNode: 'offer_split' },
+          { text: 'Suggest arbitration through Board', nextNode: 'arbitration' },
+          { text: 'Contact buyer to verify their relationship', nextNode: 'investigate_claim' }
+        ]
+      },
+      refuse_to_share: {
+        text: 'You refuse. Other agent files ethics complaint for procuring cause. Board investigation reveals they did show first and buyer ghosted them. Board orders you to split 50/50.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Procuring cause disputes go to arbitration. Refusing without investigation looks bad and you may lose everything.',
+        recommendations: [
+          'Procuring cause disputes are common',
+          'NAR arbitration process exists for this reason',
+          'Board reviews who was "procuring cause"',
+          'First showing vs. first contract vs. continuous contact all matter',
+          'Don\'t automatically assume you\'re entitled to full commission',
+          'Cooperation with process shows professionalism'
+        ]
+      },
+      offer_split: {
+        text: 'You offer 25%. They accept immediately and thank you. Later you learn they only showed the property once 6 months ago with no follow-up. You likely owed them nothing.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'You paid unnecessarily, but avoided conflict. Investigation first would have been better.',
+        recommendations: [
+          'Don\'t agree to splits before investigating',
+          'Time gaps matter in procuring cause',
+          'One showing without follow-up usually isn\'t procuring cause',
+          'Get facts before negotiating',
+          'Review NAR procuring cause standards',
+          'Consult broker before agreeing to splits'
+        ]
+      },
+      arbitration: {
+        text: 'You file for arbitration through local Board. Hearing is scheduled. You both present evidence.',
+        choices: [
+          { text: 'Present buyer\'s timeline showing gap in service', nextNode: 'strong_case' },
+          { text: 'Argue technicality: no written agreement with other agent', nextNode: 'technicality_argument' }
+        ]
+      },
+      investigate_claim: {
+        text: 'You contact buyer (with permission). Buyer explains: "Other agent showed me once, never followed up. You found this listing again, wrote the offer, and closed the deal."',
+        choices: [
+          { text: 'Use this to refuse other agent', nextNode: 'defend_position' },
+          { text: 'Offer small courtesy fee (10%) despite weak claim', nextNode: 'courtesy_payment' },
+          { text: 'Share buyer\'s statement and suggest arbitration', nextNode: 'informed_arbitration' }
+        ]
+      },
+      strong_case: {
+        text: 'You show: Other agent showed once 8 months ago, no follow-up. You found property, scheduled showings, wrote offer, negotiated, closed. Board awards you 100% commission.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Good work! You presented facts and timeline. Board determined you were procuring cause.',
+        recommendations: [
+          'Document all buyer interactions with timestamps',
+          'Continuous service demonstrates procuring cause',
+          'Long gaps in service hurt other agent\'s claim',
+          'Who wrote the offer and negotiated matters',
+          'Arbitration is fair when you have documentation',
+          'Board looks at who actually produced the sale'
+        ]
+      },
+      technicality_argument: {
+        text: 'Board says buyer agreements aren\'t required for procuring cause claims. Focus on substance, not technicalities. Board splits commission 60/40 in your favor.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Technicality arguments rarely win. Focus on service provided instead.',
+        recommendations: [
+          'Procuring cause is about service, not paperwork',
+          'Written agreements help but aren\'t determinative',
+          'Focus on what you DID, not what they didn\'t do',
+          'Timeline of services is key evidence',
+          'Board evaluates substantial factors, not technicalities',
+          'Your continuous effort vs. their one-time showing matters'
+        ]
+      },
+      defend_position: {
+        text: 'You refuse based on buyer\'s account. Other agent escalates to arbitration anyway. Board says buyer\'s preference isn\'t the only factor. You split 70/30.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Buyer testimony helps but isn\'t everything. First showing does have some value.',
+        recommendations: [
+          'Buyer preference matters but isn\'t controlling',
+          'First introduction can have value even without follow-up',
+          'Board weighs multiple factors',
+          'Time gap between agents matters',
+          'Your closure work has most weight',
+          'Some split may be fair even if you did most work'
+        ]
+      },
+      courtesy_payment: {
+        text: 'You offer 10% as courtesy. Other agent appreciates the professionalism. They reciprocate on future deal. You build good relationship.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Smart! Small courtesy payment can build relationships and avoid conflict.',
+        recommendations: [
+          'Small courtesy payments can be strategic',
+          'Builds goodwill in local agent community',
+          'Avoids arbitration costs and time',
+          'Demonstrates professionalism',
+          'What goes around comes around',
+          'Document it as courtesy, not admission of procuring cause'
+        ]
+      },
+      informed_arbitration: {
+        text: 'With full facts, other agent withdraws claim before hearing. You keep 100% but offer referral on future deal as goodwill. Relationship preserved.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Investigation led to resolution without formal hearing.',
+        recommendations: [
+          'Facts-first approach resolves most disputes',
+          'Sharing evidence often leads to withdrawal',
+          'Offer future cooperation to maintain relationships',
+          'Arbitration threat focuses negotiation',
+          'Professional handling preserves community relationships',
+          'Document everything in procuring cause situations'
+        ]
+      }
+    }
+  },
+  {
+    id: 'scenario10',
+    title: 'Expired Listing Ethics',
+    description: 'You want to contact a seller whose listing just expired with another agent.',
+    difficulty: 'easy',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'A listing expired yesterday. You want to contact the seller. What\'s the ethical approach?',
+        choices: [
+          { text: 'Call immediately - it\'s public info', nextNode: 'call_immediately' },
+          { text: 'Wait 24-48 hours as courtesy', nextNode: 'wait_courtesy' },
+          { text: 'Contact listing agent first', nextNode: 'contact_agent' },
+          { text: 'Send letter describing your different approach', nextNode: 'send_letter' }
+        ]
+      },
+      call_immediately: {
+        text: 'You call immediately. Seller is annoyed: "I just got 15 calls today. You vultures are all the same." They hang up. Your reputation suffers.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Technically legal but ethically questionable and practically ineffective.',
+        recommendations: [
+          'Expired listings attract many agents',
+          'Immediate calls feel predatory to sellers',
+          'Standing out requires different timing/approach',
+          'Seller is likely frustrated with previous agent',
+          'Give them breathing room before contacting',
+          'Timing and approach matter as much as what you say'
+        ]
+      },
+      wait_courtesy: {
+        text: 'You wait 48 hours. Call with empathy: "I imagine this week has been challenging. When you\'re ready to talk about next steps, I\'d welcome the conversation."',
+        choices: [
+          { text: 'Push for immediate appointment', nextNode: 'push_meeting' },
+          { text: 'Offer to send information, follow up later', nextNode: 'soft_approach' }
+        ]
+      },
+      contact_agent: {
+        text: 'You call listing agent: "Saw the listing expired. Are you re-listing?" They appreciate the courtesy and say seller is interviewing new agents. They even give you a good referral!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent! Professional courtesy to other agents builds reputation and sometimes referrals.',
+        recommendations: [
+          'Contacting listing agent first shows respect',
+          'NAR Code of Ethics encourages cooperation',
+          'They might even refer you if relationship is damaged',
+          'Demonstrates professionalism to seller if they find out',
+          'Builds your reputation in agent community',
+          'What goes around comes around'
+        ]
+      },
+      send_letter: {
+        text: 'You send professional letter: "I noticed your listing expired. I have a different marketing approach that might interest you when you\'re ready. No pressure." Seller calls you next week!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Smart! Written contact is less aggressive and gives seller control over timing.',
+        recommendations: [
+          'Letters are less intrusive than calls',
+          'Seller can review at their convenience',
+          'Focus on YOUR approach, not bashing previous agent',
+          'No pressure creates better response',
+          'Include specific marketing strategies',
+          'Respectful approach differentiates you',
+          'Follow up in 7-10 days if no response'
+        ]
+      },
+      push_meeting: {
+        text: 'You push for meeting today. Seller feels pressured. They tell other agents you\'re pushy. Reputation damage in local market.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Even with good timing, aggressive tactics backfire.',
+        recommendations: [
+          'Sellers talk to each other and other agents',
+          'Pushy reputation spreads quickly',
+          'Let seller control the timeline',
+          'Desperation shows and repels clients',
+          'Confidence is knowing they\'ll come when ready',
+          'Your reputation is built over years, damaged in moments'
+        ]
+      },
+      soft_approach: {
+        text: 'You offer to email your marketing plan. Seller agrees. You send comprehensive package. Week later, they call to interview you. They hire you, impressed by your professionalism!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Soft approach with value-first shows confidence and builds trust.',
+        recommendations: [
+          'Provide value before asking for business',
+          'Let your work speak for itself',
+          'Marketing package should show what you\'ll do differently',
+          'Include testimonials and recent sales',
+          'Professional approach attracts quality clients',
+          'Patience and confidence win long-term',
+          'Don\'t bash previous agent - focus on your strengths'
+        ]
+      }
+    }
   }
 ];

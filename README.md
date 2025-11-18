@@ -179,11 +179,11 @@ The guide covers comprehensive topics including:
 ## 📊 Current App Status
 
 ### Content Library
-- **21 Guide Sections** covering all MA real estate exam topics
-- **270 Flashcards** (easy, medium, hard difficulty levels) - 7.7x expansion!
-- **270 Quiz Questions** with detailed explanations - 7.7x expansion!
-- **540 TOTAL PRACTICE ITEMS** - Comprehensive professional education platform!
-- **3 Interactive Scenarios** with branching paths and multiple endings
+- **22 Guide Sections** covering all MA real estate exam topics (including Fair Housing)
+- **278 Flashcards** (easy, medium, hard difficulty levels) - 7.9x expansion!
+- **278 Quiz Questions** with detailed explanations - 7.9x expansion!
+- **556 TOTAL PRACTICE ITEMS** - Comprehensive professional education platform!
+- **10 Interactive Scenarios** with branching paths and multiple endings (COMPLETE!)
 - **2 Professional Calculators** (commission split & net proceeds)
 - **Complete 2025 Law Coverage** including antitrust and associations
 - **Comprehensive Professional Topics**: WISP Privacy, Escrow/Record Keeping, Two-Contract System, Attorney Role, Tax Information for Agents, Agency Law History, Negotiation Strategies, Tax Advice Boundaries, Open House Seller Protection, OLD CAR Fiduciary Duties, NAR Code of Ethics & Legal Implications
@@ -296,7 +296,7 @@ The guide covers comprehensive topics including:
 
 ---
 
-### 🎓 v2.1 – Content Expansion (IN PROGRESS - 90% COMPLETE!)
+### 🎓 v2.1 – Content Expansion (IN PROGRESS - 95% COMPLETE!)
 
 **Priority: Medium-High** | **Estimated Effort: 2-3 weeks**
 
@@ -317,19 +317,23 @@ The guide covers comprehensive topics including:
   - Negotiation and business skills
   - Client protection strategies
 
-- [ ] **Add 10 More Scenarios** (Currently 3, goal is 10+)
-  - Difficult negotiations
-  - Ethical dilemmas
-  - Legal edge cases
-  - Multi-party transactions
-  - Problem properties
+- [x] **Add 10 More Scenarios** ✅ COMPLETE - Now 10 scenarios!
+  - ✅ Dual Agency Ethical Dilemma (confidentiality, designated agency)
+  - ✅ Handling Discriminatory Client Requests (Fair Housing compliance)
+  - ✅ FSBO Legal Boundaries (unauthorized practice of law)
+  - ✅ Multi-Party Estate Sale Negotiation (family disputes, neutrality)
+  - ✅ Material Defect Disclosure Dilemma (fraud prevention)
+  - ✅ Commission Dispute Resolution (procuring cause, arbitration)
+  - ✅ Expired Listing Ethics (professional courtesy)
+  - ✅ Plus original 3: Competitive buyer, Low offer negotiation, Multi-unit investor
 
 #### New Guide Sections
-- [ ] **Fair Housing Act Deep Dive**
-  - Protected classes in MA
-  - Violations and penalties
-  - Advertising compliance
-  - Case studies
+- [x] **Fair Housing Act Deep Dive** ✅ COMPLETE (Section 21)
+  - Federal & MA protected classes
+  - Violations, penalties, and enforcement
+  - Advertising compliance and safe language
+  - How to handle discriminatory requests
+  - Reasonable accommodations vs modifications
 
 - [ ] **Property Valuation Methods**
   - Comparative Market Analysis (CMA)
