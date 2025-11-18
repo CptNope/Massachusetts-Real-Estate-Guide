@@ -42,7 +42,10 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ Offline capability with service worker caching
 - ✅ **Flashcard mode** for exam prep with progress tracking
 - ✅ **Quiz mode** with scoring, explanations, and history
-- ✅ **Progress tracking** with localStorage persistence
+- ✅ **Personal dashboard** with stats and progress tracking
+- ✅ **Section mastery tracking** - mark sections as mastered or review later
+- ✅ **Note-taking system** - add personal notes to any section
+- ✅ **Smart persistence** - remembers last active section and all preferences
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -185,10 +188,12 @@ The guide covers comprehensive topics including:
 - [ ] Simple decision trees that show how offers, counters, and contingencies play out.
 - [ ] Toggle between “Exam Explanation” and “Real World Strategy” overlays for each section.
 
-### v1.4 – Personalization
-- [ ] Allow users to mark sections as “mastered” or “review later”.
-- [ ] Local storage of last active section and theme preference.
-- [ ] Optional note-taking area stored in browser localStorage.
+### ✅ v1.4 – Personalization (COMPLETED)
+- [x] Allow users to mark sections as "mastered" or "review later".
+- [x] Local storage of last active section and theme preference.
+- [x] Optional note-taking area stored in browser localStorage.
+- [x] Personal dashboard with progress stats and visualization.
+- [x] Comprehensive progress tracking across all features.
 
 ### v2.0 – Data-Driven & Updatable
 - [ ] Move content to JSON/Markdown so it can be updated without touching React components.

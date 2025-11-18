@@ -2,11 +2,15 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { sections } from './content.jsx';
 import FlashcardMode from './FlashcardMode';
 import QuizMode from './QuizMode';
+import PersonalDashboard from './PersonalDashboard';
+import { useLocalStorage } from './useLocalStorage';
 
 export default function App() {
-  const [activeId, setActiveId] = useState(sections[0].id);
+  const [activeId, setActiveId] = useLocalStorage('lastActiveSection', sections[0].id);
   const [searchQuery, setSearchQuery] = useState('');
-  const [studyMode, setStudyMode] = useState(null); // 'flashcards', 'quiz', or null
+  const [studyMode, setStudyMode] = useState(null); // 'flashcards', 'quiz', 'dashboard', or null
+  const [masteredSections, setMasteredSections] = useLocalStorage('masteredSections', []);
+  const [reviewSections, setReviewSections] = useLocalStorage('reviewSections', []);
   const [theme, setTheme] = useState(() => {
     // Load theme from localStorage or default to 'dark'
     return localStorage.getItem('theme') || 'dark';
@@ -21,6 +25,34 @@ export default function App() {
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
   };
+
+  const toggleMastered = (sectionId) => {
+    if (masteredSections.includes(sectionId)) {
+      setMasteredSections(masteredSections.filter(id => id !== sectionId));
+    } else {
+      setMasteredSections([...masteredSections, sectionId]);
+    }
+  };
+
+  const toggleReview = (sectionId) => {
+    if (reviewSections.includes(sectionId)) {
+      setReviewSections(reviewSections.filter(id => id !== sectionId));
+    } else {
+      setReviewSections([...reviewSections, sectionId]);
+    }
+  };
+
+  const clearAllProgress = () => {
+    if (confirm('This will reset all your progress, notes, and study data. Are you sure?')) {
+      setMasteredSections([]);
+      setReviewSections([]);
+      localStorage.removeItem('userNotes');
+      localStorage.removeItem('masteredFlashcards');
+      localStorage.removeItem('quizHistory');
+      alert('All progress has been reset!');
+    }
+  };
+
   const activeSection = sections.find((s) => s.id === activeId);
 
   // Filter sections based on search query
@@ -101,6 +133,12 @@ export default function App() {
           >
             🎯 Quiz
           </button>
+          <button 
+            className={`mode-btn ${studyMode === 'dashboard' ? 'active' : ''}`}
+            onClick={() => setStudyMode('dashboard')}
+          >
+            📊 Dashboard
+          </button>
         </div>
         <div className="search-container">
           <input
@@ -171,6 +209,18 @@ export default function App() {
         {studyMode === 'quiz' && (
           <main className="content content-full">
             <QuizMode />
+          </main>
+        )}
+
+        {studyMode === 'dashboard' && (
+          <main className="content content-full">
+            <PersonalDashboard
+              masteredSections={masteredSections}
+              reviewSections={reviewSections}
+              onToggleMastered={toggleMastered}
+              onToggleReview={toggleReview}
+              onClearAll={clearAllProgress}
+            />
           </main>
         )}
       </div>

@@ -936,4 +936,254 @@ pre {
   .grade {
     font-size: 3rem;
   }
+  
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-item-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .section-item-actions {
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Personal Dashboard Styles */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card.accent {
+  border-color: var(--accent);
+}
+
+.stat-card.review {
+  border-color: #f59e0b;
+}
+
+.stat-card.progress {
+  border-color: #10b981;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.progress-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.progress-section h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.progress-bar-container.large {
+  height: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.progress-description {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.section-management {
+  margin-bottom: 2rem;
+}
+
+.section-management h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.section-item:hover {
+  border-color: var(--accent);
+}
+
+.section-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+}
+
+.section-item-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.section-icon {
+  font-size: 1.3rem;
+}
+
+.section-item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.status-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-nav-hover);
+}
+
+.status-btn.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.status-btn.review.active {
+  border-color: #f59e0b;
+  background: #f59e0b;
+}
+
+.status-btn.note.active {
+  border-color: #8b5cf6;
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.note-editor {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-highlight);
+}
+
+.note-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 0.75rem;
+}
+
+.note-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.note-delete-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #ef4444;
+  border-radius: 0.5rem;
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.note-delete-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.btn-danger {
+  padding: 0.875rem 2rem;
+  background: transparent;
+  border: 2px solid #ef4444;
+  border-radius: 0.75rem;
+  color: #ef4444;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
 }
