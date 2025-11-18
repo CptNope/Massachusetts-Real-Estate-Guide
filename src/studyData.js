@@ -1665,6 +1665,62 @@ export const flashcards = [
     question: 'How do you handle "I found an agent who will work for less" objection?',
     answer: 'Response: "I understand you\'ve received other quotes. My focus is delivering maximum value - selling for the highest price in the shortest time. A 1% higher sale price more than covers the commission difference. Would you like to see my marketing strategy and recent results?" Don\'t compete on price alone - compete on results.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc239',
+    category: 'Tax Advice',
+    question: 'What should you say when a client asks about capital gains taxes on their sale?',
+    answer: 'Proper response: "That\'s an important tax question that requires professional advice from a CPA or tax advisor. Tax implications vary based on your individual situation - ownership period, use of property, income level, and other factors. I can recommend a qualified tax professional who can analyze your specific situation." NEVER explain tax calculations yourself.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc240',
+    category: 'Tax Advice',
+    question: 'What constitutes unauthorized practice of accounting/tax preparation for agents?',
+    answer: 'Agents CANNOT: Calculate capital gains, explain tax implications, recommend specific tax strategies, complete tax forms, advise on 1031 exchanges, explain primary residence exclusion details, tell clients how to avoid taxes, or give personalized tax advice. CAN: mention tax professionals exist, refer to CPA/EA, suggest they discuss with tax advisor.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc241',
+    category: 'Tax Advice',
+    question: 'How should you refer to 1031 exchanges with clients?',
+    answer: 'Proper response: "I\'ve heard of something called a 1031 exchange that may allow tax deferral on investment properties. However, the rules are very complex and specific. You should speak with a CPA or tax attorney who specializes in 1031 exchanges to see if you qualify and understand all requirements." Don\'t explain the rules yourself.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc242',
+    category: 'Tax Advice',
+    question: 'What should you say about the primary residence capital gains exclusion?',
+    answer: 'Proper response: "For primary residences, there may be tax benefits available, but the rules about qualifying are complex. A CPA can tell you if you meet the requirements and how much benefit you might receive. I recommend consulting a tax professional before making decisions based on potential tax implications." Don\'t explain $250k/$500k exclusion rules yourself.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc243',
+    category: 'Tax Advice',
+    question: 'Why is it critical that agents not give tax advice?',
+    answer: 'Reasons: (1) Unauthorized practice of accounting, (2) License suspension/revocation risk, (3) Liability if advice is wrong, (4) Client can sue for damages, (5) Tax laws change frequently, (6) Individual situations vary greatly, (7) Professional boundary violation, (8) Insurance may not cover, (9) Outside agent expertise.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc244',
+    category: 'Tax Advice',
+    question: 'What language should agents AVOID when discussing taxes?',
+    answer: 'AVOID: "You won\'t owe taxes because...", "Your capital gains will be...", "You can avoid taxes by...", "This qualifies for 1031", "You meet the 2 out of 5 years", "Your exclusion is $250k/$500k", "Just report it as...", "I calculated your tax at...". These constitute tax advice and create liability.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc245',
+    category: 'Tax Advice',
+    question: 'How do you recommend a tax professional to clients?',
+    answer: 'Response: "I can provide names of 2-3 CPAs or Enrolled Agents who specialize in real estate taxation. They can analyze your complete situation and provide personalized advice. Would you like those referrals?" Cannot receive kickbacks. Must disclose any business relationships. Client makes final choice.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc246',
+    category: 'Tax Advice',
+    question: 'What is proper response when client says "My friend told me I don\'t owe taxes"?',
+    answer: 'Response: "Everyone\'s tax situation is unique. What applies to your friend may not apply to you. I strongly recommend consulting with your CPA or tax advisor to understand your specific situation. Tax laws are complex and penalties for mistakes can be significant. A tax professional can give you accurate guidance for YOUR circumstances."',
+    difficulty: 'hard'
   }
 ];
 
@@ -4763,5 +4819,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Response: "I understand you\'ve received other quotes. My focus is maximum value - highest price in shortest time. A 1% higher sale price covers the commission difference. See my marketing strategy and results?" Compete on results, not price alone.'
+  },
+  {
+    id: 'q239',
+    category: 'Tax Advice',
+    question: 'Client asks "Will I owe capital gains taxes on this sale?" Best response?',
+    options: [
+      'Calculate their estimated tax',
+      '"That requires professional advice from a CPA who can analyze your specific situation"',
+      'Explain the tax rates',
+      'Tell them about the $250k/$500k exclusion'
+    ],
+    correctIndex: 1,
+    explanation: 'Proper response: "That\'s an important tax question requiring professional advice from a CPA or tax advisor. Implications vary based on YOUR situation - ownership, use, income, other factors. I can recommend a qualified tax professional." NEVER calculate taxes yourself.'
+  },
+  {
+    id: 'q240',
+    category: 'Tax Advice',
+    question: 'What constitutes unauthorized practice of accounting for real estate agents?',
+    options: [
+      'Suggesting they talk to a CPA',
+      'Calculating capital gains, explaining tax implications, or recommending specific tax strategies',
+      'Providing CPA referrals',
+      'Mentioning tax professionals exist'
+    ],
+    correctIndex: 1,
+    explanation: 'Agents CANNOT: Calculate capital gains, explain tax implications, recommend tax strategies, complete tax forms, advise on 1031 exchanges, explain exclusion details, tell how to avoid taxes. CAN: Refer to CPA/EA, suggest tax discussion.'
+  },
+  {
+    id: 'q241',
+    category: 'Tax Advice',
+    question: 'How should you discuss 1031 exchanges with clients?',
+    options: [
+      'Explain all the rules and timelines',
+      '"I\'ve heard of 1031 exchanges that may defer taxes, but rules are complex - speak with a CPA who specializes in this"',
+      'Tell them it definitely applies',
+      'Calculate their potential savings'
+    ],
+    correctIndex: 1,
+    explanation: 'Proper: "I\'ve heard of something called a 1031 exchange that may allow tax deferral on investment properties. However, rules are very complex and specific. Speak with a CPA or tax attorney who specializes in 1031 exchanges." Don\'t explain rules yourself.'
+  },
+  {
+    id: 'q242',
+    category: 'Tax Advice',
+    question: 'Client asks about primary residence capital gains exclusion. What do you say?',
+    options: [
+      '"You get $250k if single, $500k if married"',
+      '"For primary residences, there may be tax benefits available, but qualifying rules are complex - consult a CPA"',
+      '"You lived here 2 years so you qualify"',
+      'Calculate their exact exclusion amount'
+    ],
+    correctIndex: 1,
+    explanation: 'Proper: "For primary residences, there may be tax benefits available, but rules about qualifying are complex. A CPA can tell you if you meet requirements and how much benefit you might receive. Consult a tax professional before making decisions." Don\'t explain rules yourself.'
+  },
+  {
+    id: 'q243',
+    category: 'Tax Advice',
+    question: 'Why is it critical that agents NOT give tax advice?',
+    options: [
+      'It takes too much time',
+      'Unauthorized practice of accounting, license risk, liability if wrong, clients can sue for damages',
+      'CPAs get jealous',
+      'It\'s not important'
+    ],
+    correctIndex: 1,
+    explanation: 'Critical reasons: (1) Unauthorized practice of accounting, (2) License suspension/revocation risk, (3) Liability if advice wrong, (4) Client can sue for damages, (5) Tax laws change frequently, (6) Individual situations vary, (7) Insurance may not cover, (8) Outside agent expertise.'
+  },
+  {
+    id: 'q244',
+    category: 'Tax Advice',
+    question: 'Which phrase should agents AVOID saying?',
+    options: [
+      '"You should consult a tax professional"',
+      '"You won\'t owe taxes because..." or "Your capital gains will be..."',
+      '"Tax implications may exist"',
+      '"A CPA can help with this"'
+    ],
+    correctIndex: 1,
+    explanation: 'AVOID: "You won\'t owe taxes because...", "Your capital gains will be...", "You can avoid taxes by...", "This qualifies for 1031", "You meet the 2/5 years", "Your exclusion is $250k/$500k". These constitute tax advice and create liability.'
+  },
+  {
+    id: 'q245',
+    category: 'Tax Advice',
+    question: 'How do you properly recommend a tax professional?',
+    options: [
+      'Tell them which one to use',
+      '"I can provide names of 2-3 CPAs/EAs who specialize in real estate taxation - would you like referrals?"',
+      'Receive commission for referral',
+      'Only recommend one person'
+    ],
+    correctIndex: 1,
+    explanation: 'Proper: "I can provide names of 2-3 CPAs or Enrolled Agents who specialize in real estate taxation. They can analyze your complete situation and provide personalized advice. Would you like those referrals?" Cannot receive kickbacks. Must disclose business relationships.'
+  },
+  {
+    id: 'q246',
+    category: 'Tax Advice',
+    question: 'Client says "My friend told me I don\'t owe any taxes." Best response?',
+    options: [
+      '"That\'s right, you won\'t"',
+      '"Everyone\'s tax situation is unique - what applies to your friend may not apply to you. Consult YOUR CPA"',
+      '"Your friend is wrong"',
+      'Explain why their friend was mistaken'
+    ],
+    correctIndex: 1,
+    explanation: 'Response: "Everyone\'s tax situation is unique. What applies to your friend may not apply to you. I strongly recommend consulting with your CPA or tax advisor to understand YOUR specific situation. Tax laws are complex and penalties significant. A tax professional gives accurate guidance for YOUR circumstances."'
   }
 ];
