@@ -872,5 +872,291 @@ Always understand your agent’s split and cap – it influences incentives.`}
         </p>
       </>
     )
+  },
+  {
+    id: 'digital-compliance',
+    icon: '📱',
+    title: '13. Digital Compliance & Marketing',
+    subtitle: 'E-Signatures, Do Not Call, TCPA, CAN-SPAM & COPPA',
+    body: (
+      <>
+        <h3>13.1 Electronic Signatures - Legal & Binding</h3>
+        <p><strong>Two Federal Laws Make E-Signatures Valid:</strong></p>
+        <ul>
+          <li><strong>E-Sign Act (2000):</strong> Federal law making electronic signatures legal and binding in interstate commerce</li>
+          <li><strong>UETA:</strong> Uniform Electronic Transactions Act - state-level validation adopted by most states including MA</li>
+        </ul>
+        <p className="highlight">
+          Electronic signatures are <strong>legal and binding</strong> for most real estate documents including offers, 
+          contracts, disclosures, and addendums. All parties must consent to use electronic signatures.
+        </p>
+
+        <h3>13.2 Do Not Call Registry - STRICT COMPLIANCE</h3>
+        <div className="dnc-rules">
+          <h4>Key Requirements:</h4>
+          <ul>
+            <li><strong>Check Every 31 Days:</strong> Search registry at www.donotcall.gov</li>
+            <li><strong>Cannot Call Unless:</strong>
+              <ul>
+                <li>Established Business Relationship (EBR) within 18 months (transaction) or 3 months (inquiry)</li>
+                <li>Written consent to call</li>
+                <li>Calling about listing they inquired about</li>
+              </ul>
+            </li>
+            <li><strong>Penalties:</strong> Up to $11,000-$43,280 per illegal call</li>
+            <li><strong>Internal DNC List:</strong> Required IN ADDITION to National DNC (keep 5 years)</li>
+          </ul>
+
+          <h4>Common Misconception - "FREE OFFER" TRAP:</h4>
+          <p className="warning">
+            ❌ <strong>MYTH:</strong> Offering "free home valuations" or "free CMAs" exempts you from DNC rules.<br/>
+            ✅ <strong>REALITY:</strong> It's STILL telemarketing if purpose is to promote your business. 
+            Requires EBR or consent. NO EXEMPTION for "free" offers!
+          </p>
+
+          <h4>FSBO Contact Rules:</h4>
+          <ul>
+            <li>✅ <strong>CAN call</strong> on behalf of buyer client (representing buyer)</li>
+            <li>❌ <strong>CANNOT call</strong> to solicit listing (marketing yourself)</li>
+          </ul>
+        </div>
+
+        <h3>13.3 TCPA - Telephone Consumer Protection Act</h3>
+        <div className="tcpa-rules">
+          <h4>Key Requirements:</h4>
+          <ul>
+            <li><strong>Time Restrictions:</strong> No calls before 8am or after 9pm LOCAL TIME of person being called</li>
+            <li><strong>Caller Disclosures:</strong> Must provide name, phone number, and address at beginning of call</li>
+            <li><strong>Marketing Texts:</strong> Require prior express written consent</li>
+            <li><strong>Auto-Dialers & Prerecorded Messages:</strong> Require written consent</li>
+            <li><strong>Ringless Voicemails:</strong> Require written consent (NOT a loophole!)</li>
+            <li><strong>Penalties:</strong> $500-1,500 per violation</li>
+          </ul>
+        </div>
+
+        <h3>13.4 CAN-SPAM Act - Email Marketing</h3>
+        <div className="canspam-rules">
+          <h4>Every Commercial Email MUST Include:</h4>
+          <ol>
+            <li>Clear unsubscribe mechanism (single click or reply)</li>
+            <li>Your physical postal address</li>
+            <li>Truthful "From" and subject lines</li>
+            <li>Identify as advertisement if promotional</li>
+          </ol>
+          <p><strong>Unsubscribe Processing:</strong> Within 10 BUSINESS DAYS</p>
+          <p><strong>Penalties:</strong> Up to $43,792 per email</p>
+          <p className="highlight">
+            Can email existing customers/clients (EBR) but MUST provide unsubscribe option in every email.
+          </p>
+        </div>
+
+        <h3>13.5 COPPA - Children's Online Privacy</h3>
+        <p><strong>Effective:</strong> July 1, 2013 (7/1/13)</p>
+        <p><strong>Protects:</strong> Children under 13 years old</p>
+        <ul>
+          <li>Requires privacy policy on websites/apps</li>
+          <li>Requires verifiable parental consent before collecting data from children under 13</li>
+          <li>Limits personal information collection</li>
+        </ul>
+        <p><em>Most real estate sites not directed at children, but be aware if marketing to families.</em></p>
+
+        <p className="highlight">
+          <strong>Bottom Line:</strong> Digital compliance is NON-NEGOTIABLE. One violation can cost thousands 
+          or end your career. Always verify you have proper authorization before calling, texting, or emailing.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'multi-state',
+    icon: '🗺️',
+    title: '14. Multi-State Licensing',
+    subtitle: 'Expanding Your Practice to Neighboring States',
+    body: (
+      <>
+        <h3>14.1 License Reciprocity Explained</h3>
+        <p><strong>What It Is:</strong> Agreement allowing licensed agents from one state to obtain license 
+        in another state with reduced requirements (waiving pre-license education or national exam).</p>
+        <p><strong>What It's NOT:</strong> ❌ Not automatic licensing ❌ Not permission to practice cross-border 
+        ❌ Not the same as having two licenses</p>
+
+        <h3>14.2 Massachusetts Neighboring States</h3>
+        <div className="state-comparison">
+          <h4>Rhode Island (EASIEST) ⭐</h4>
+          <ul>
+            <li><strong>Reciprocity:</strong> ✅ YES</li>
+            <li><strong>Requirements:</strong> State exam only (no course, no national exam)</li>
+            <li><strong>Cost:</strong> ~$100-150</li>
+            <li><strong>Timeline:</strong> 2-4 weeks</li>
+            <li><strong>Best For:</strong> Quick expansion, testing multi-state waters</li>
+          </ul>
+
+          <h4>New Hampshire (POPULAR) ⭐⭐</h4>
+          <ul>
+            <li><strong>Reciprocity:</strong> ✅ YES</li>
+            <li><strong>Requirements:</strong> NH state exam + 40-hour NH course</li>
+            <li><strong>Cost:</strong> ~$150-250 + $200-300 course</li>
+            <li><strong>Timeline:</strong> 4-8 weeks</li>
+            <li><strong>Best For:</strong> Border towns, vacation/second-home market (lakes, mountains, seacoast)</li>
+          </ul>
+
+          <h4>Vermont ⭐⭐</h4>
+          <ul>
+            <li><strong>Reciprocity:</strong> ✅ YES</li>
+            <li><strong>Requirements:</strong> VT state exam + background check</li>
+            <li><strong>Cost:</strong> ~$100-200</li>
+            <li><strong>Timeline:</strong> 3-6 weeks</li>
+            <li><strong>Best For:</strong> Western MA agents, niche market</li>
+          </ul>
+
+          <h4>Connecticut ⭐⭐⭐</h4>
+          <ul>
+            <li><strong>Reciprocity:</strong> ✅ YES</li>
+            <li><strong>Requirements:</strong> CT state exam + 60-hour CT course</li>
+            <li><strong>Cost:</strong> ~$200-300 + $300-400 course</li>
+            <li><strong>Timeline:</strong> 6-10 weeks</li>
+            <li><strong>Best For:</strong> Southwestern MA agents, CT border areas</li>
+          </ul>
+
+          <h4>New York (HARDEST) ⭐⭐⭐⭐⭐</h4>
+          <ul>
+            <li><strong>Reciprocity:</strong> ❌ NO</li>
+            <li><strong>Requirements:</strong> Full 75-hour course + national AND NY state exams</li>
+            <li><strong>Cost:</strong> ~$500-800 total</li>
+            <li><strong>Timeline:</strong> 3-6 months</li>
+            <li><strong>Best For:</strong> Serious expansion, large market opportunity</li>
+          </ul>
+        </div>
+
+        <h3>14.3 Maintaining Multiple Licenses</h3>
+        <ul>
+          <li>Complete CE requirements for EACH state (can be 12-24+ hours annually)</li>
+          <li>Pay renewal fees for each state</li>
+          <li>Maintain active status in all states</li>
+          <li>Comply with each state's laws and regulations</li>
+          <li>Have proper E&O coverage for all states</li>
+        </ul>
+
+        <h3>14.4 Multi-State Broker Operations</h3>
+        <p><strong>Can You Own Brokerages in Multiple States?</strong> YES, but requires:</p>
+        <ul>
+          <li>Obtain broker license meeting each state's requirements</li>
+          <li>Comply with each state's regulations</li>
+          <li>Maintain separate trust accounts per state</li>
+          <li>Have proper insurance coverage in each state</li>
+        </ul>
+
+        <p className="highlight">
+          <strong>Why Expand?</strong> Border town coverage, vacation/second-home markets, client relocation 
+          services, increased income potential, competitive advantage, and professional development.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'referrals',
+    icon: '💰',
+    title: '15. Referrals & Compensation Rules',
+    subtitle: 'Referral Fees, Gifts to Clients & RESPA Compliance',
+    body: (
+      <>
+        <h3>15.1 Referral Fees (20-35%)</h3>
+        <p><strong>What They Are:</strong> Commission paid to agent for referring a client to another agent</p>
+        <p><strong>Typical Range:</strong> 20-35% of receiving agent's commission</p>
+        <p><strong>Example:</strong> Receiving agent earns $10,000 → Referring agent gets $2,000-3,500</p>
+
+        <h4>Out-of-State Referrals:</h4>
+        <ul>
+          <li>✅ Generally ALLOWED if you're licensed in at least one state</li>
+          <li>✅ Can receive fees from states where you're not licensed</li>
+          <li>✅ Must be referring from your home state</li>
+          <li>✅ Receiving agent must be licensed in transaction state</li>
+        </ul>
+
+        <h4>Referral Agreements - REQUIRED:</h4>
+        <ul>
+          <li>Must be in WRITING</li>
+          <li>Include: names, client info, fee %, payment terms, signatures</li>
+          <li>Sign BEFORE transaction closes</li>
+          <li>Between licensed agents/brokers ONLY</li>
+        </ul>
+
+        <h3>15.2 Who CANNOT Receive Referral Fees</h3>
+        <div className="warning">
+          <p><strong>❌ UNLICENSED PERSONS CANNOT RECEIVE REFERRAL FEES</strong></p>
+          <ul>
+            <li>RESPA and state laws prohibit it</li>
+            <li>Only licensed professionals can receive compensation</li>
+            <li>Violations = fines, license suspension, criminal penalties</li>
+          </ul>
+        </div>
+
+        <h3>15.3 Gifts to Clients - The $100 Rule</h3>
+        <div className="gift-rules">
+          <h4>✅ ALLOWED:</h4>
+          <ul>
+            <li>Closing gifts (gift baskets, plants, home items)</li>
+            <li>Keep under $100 (recommended)</li>
+            <li>Thank-you gifts after closing</li>
+            <li>Holiday cards and small tokens</li>
+            <li>Branded marketing items (calendars, magnets)</li>
+          </ul>
+
+          <h4>❌ AVOID:</h4>
+          <ul>
+            <li>Cash or cash equivalents</li>
+            <li>Gift cards (seen as cash)</li>
+            <li>Anything to induce future business</li>
+            <li>Gifts before transaction (inducement)</li>
+          </ul>
+        </div>
+
+        <h3>15.4 RESPA Section 8 - Critical Compliance</h3>
+        <p><strong>Prohibits:</strong></p>
+        <ul>
+          <li>❌ Kickbacks for referrals</li>
+          <li>❌ Unearned fees</li>
+          <li>❌ Gifts in exchange for business referrals</li>
+          <li>❌ Payments to settlement service providers for referrals</li>
+        </ul>
+        <p><strong>Penalties:</strong> $10,000+ fines, up to 1 year prison, license revocation</p>
+
+        <h3>15.5 Unlicensed Assistant Compensation</h3>
+        <div className="assistant-rules">
+          <h4>✅ CAN PAY:</h4>
+          <ul>
+            <li>Hourly wage</li>
+            <li>Annual salary</li>
+            <li>Bonuses (not transaction-based)</li>
+          </ul>
+
+          <h4>❌ CANNOT PAY:</h4>
+          <ul>
+            <li>Commission splits</li>
+            <li>Percentage of sales</li>
+            <li>Transaction-based pay</li>
+          </ul>
+
+          <h4>What Assistants CAN Do:</h4>
+          <ul>
+            <li>Schedule appointments, answer phones</li>
+            <li>Prepare marketing materials</li>
+            <li>Maintain files, coordinate closings</li>
+          </ul>
+
+          <h4>What Assistants CANNOT Do:</h4>
+          <ul>
+            <li>Show properties, discuss terms</li>
+            <li>Negotiate, give advice</li>
+            <li>Anything requiring a license</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Key Takeaway:</strong> Only licensed agents can receive referral fees or commission-based pay. 
+          Always disclose referral arrangements to clients for transparency and trust.
+        </p>
+      </>
+    )
   }
 ];
