@@ -73,7 +73,7 @@ export default function GamificationPanel({ gamification }) {
         </div>
         <div className="quick-stat">
           <span className="stat-icon">📚</span>
-          <span className="stat-value">{stats.masteredFlashcards}/270</span>
+          <span className="stat-value">{stats.masteredFlashcards}/278</span>
           <span className="stat-label">Flashcards</span>
         </div>
         <div className="quick-stat">
@@ -83,7 +83,7 @@ export default function GamificationPanel({ gamification }) {
         </div>
         <div className="quick-stat">
           <span className="stat-icon">📖</span>
-          <span className="stat-value">{stats.masteredSections}/21</span>
+          <span className="stat-value">{stats.masteredSections}/22</span>
           <span className="stat-label">Sections</span>
         </div>
       </div>

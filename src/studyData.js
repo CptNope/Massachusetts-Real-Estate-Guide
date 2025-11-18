@@ -1889,6 +1889,62 @@ export const flashcards = [
     question: 'How can ethics violations lead to legal liability?',
     answer: 'Ethics violations that also violate law create legal liability: Discrimination → Fair Housing lawsuit, Misrepresentation → fraud lawsuit, Undisclosed dual agency → license revocation + lawsuit, Unauthorized practice of law → license suspension + client damages, Kickbacks → RESPA violation (3x damages + attorney fees). Ethics complaint can trigger license investigation and civil lawsuit.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc271',
+    category: 'Fair Housing',
+    question: 'What are the 7 federal Fair Housing protected classes?',
+    answer: 'Federal protected classes: (1) Race, (2) Color, (3) Religion, (4) National Origin, (5) Sex (includes sexual harassment), (6) Familial Status (children under 18, pregnant women, securing custody), (7) Disability (physical or mental). Title VIII of Fair Housing Act 1968 as amended. Violations = HUD fines $16k-$65k, unlimited civil damages, criminal charges, license revocation.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc272',
+    category: 'Fair Housing',
+    question: 'What additional protected classes does Massachusetts law provide beyond federal Fair Housing?',
+    answer: 'MA Chapter 151B adds: Sexual Orientation, Gender Identity, Age, Marital Status, Military/Veteran Status, Ancestry, Public Assistance (Section 8). MA law is BROADER than federal. Always follow law that provides MORE protection to consumers. Agents must comply with both federal AND state law.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc273',
+    category: 'Fair Housing',
+    question: 'What is "steering" and why is it illegal?',
+    answer: 'Steering: Channeling buyers/renters to or away from neighborhoods based on protected class. Examples: "You\'d be happier in this neighborhood" (based on race), "More people like you there", only showing certain areas to certain groups. ILLEGAL under Fair Housing Act. Violation = HUD fines, civil lawsuit, license suspension. Must show all properties meeting stated criteria equally.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc274',
+    category: 'Fair Housing',
+    question: 'What advertising language violates Fair Housing?',
+    answer: 'Prohibited: "No children", "Adults only" (except qualified senior 55+/62+), "Perfect for traditional family", "Christian community", "Integrated neighborhood", "No wheelchairs", "English-speaking only", "Ideal for bachelor". Also prohibited: Photos showing only one race. Must use diverse representation. Use safe words: master bedroom, walk to schools, quiet neighborhood, spacious, pet-friendly.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc275',
+    category: 'Fair Housing',
+    question: 'How should you respond when client says "I don\'t want to sell to [protected class]"?',
+    answer: 'Response: "Federal and state Fair Housing laws prohibit me from discriminating based on [race, religion, etc.]. As a licensed professional, I\'m required to treat all buyers equally. I cannot and will not honor that request. If you cannot comply with Fair Housing law, I must withdraw from representing you." Document refusal in writing. Terminate relationship if client insists.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc276',
+    category: 'Fair Housing',
+    question: 'What are reasonable accommodations vs reasonable modifications for disabilities?',
+    answer: 'Reasonable Accommodations (policy changes): Service animals even in "no pets" buildings, reserved parking, modified payment schedules, communication accommodations. Reasonable Modifications (physical changes at tenant expense): Grab bars, ramps, widen doorways, lower countertops, visual fire alarms. Can ask for disability documentation. CANNOT ask "What\'s wrong with you?" or nature/severity of disability.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc277',
+    category: 'Fair Housing',
+    question: 'What are Fair Housing penalties for violations?',
+    answer: 'HUD Administrative: $16,000 (1st offense), $37,500 (2nd within 5 years), $65,000 (3rd+ within 7 years) + attorney fees + actual damages. Federal Lawsuit: UNLIMITED compensatory damages (emotional distress), punitive damages, attorney fees paid by defendant, criminal charges if willful (fines + imprisonment). State: License suspension/revocation. NAR: Article 10 violation, up to $15,000 fine, expulsion.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc278',
+    category: 'Fair Housing',
+    question: 'Do Fair Housing exemptions apply to real estate agents?',
+    answer: 'NO! Exemptions are very narrow: Religious organizations (non-commercial property only), private clubs, senior housing 55+/62+, owner-occupied 3 units or fewer (but loses exemption if use broker/agent!). If you\'re involved as real estate professional, exemptions DON\'T APPLY. Always assume Fair Housing applies. Cannot use discriminatory advertising even if exempt. Fair Housing is NON-NEGOTIABLE.',
+    difficulty: 'hard'
   }
 ];
 
@@ -5403,5 +5459,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Ethics violations that also violate law create legal liability: Discrimination → Fair Housing lawsuit, Misrepresentation → fraud lawsuit, Undisclosed dual agency → license revocation + lawsuit, Unauthorized practice of law → license suspension + client damages, Kickbacks → RESPA violation (3x damages + attorney fees). Ethics complaint can trigger license investigation and civil lawsuit.'
+  },
+  {
+    id: 'q271',
+    category: 'Fair Housing',
+    question: 'What are the 7 federal Fair Housing protected classes?',
+    options: [
+      'Race, Color, Religion, Age, Sex, Disability, Income',
+      'Race, Color, Religion, National Origin, Sex, Familial Status, Disability',
+      'Race, Religion, Age, Marital Status, Sex, Disability, Ancestry',
+      'Race, Color, National Origin, Age, Gender Identity, Disability, Veteran Status'
+    ],
+    correctIndex: 1,
+    explanation: 'Federal protected classes (Title VIII Fair Housing Act 1968): (1) Race, (2) Color, (3) Religion, (4) National Origin, (5) Sex (includes sexual harassment), (6) Familial Status (children under 18, pregnant, custody), (7) Disability. Violations = HUD fines $16k-$65k, unlimited civil damages, criminal charges, license revocation.'
+  },
+  {
+    id: 'q272',
+    category: 'Fair Housing',
+    question: 'What additional protected classes does MA provide beyond federal Fair Housing?',
+    options: [
+      'None - MA follows federal only',
+      'Sexual Orientation, Gender Identity, Age, Marital Status, Military/Veteran, Ancestry, Public Assistance',
+      'Only Age and Sexual Orientation',
+      'Income and Education'
+    ],
+    correctIndex: 1,
+    explanation: 'MA Chapter 151B adds: Sexual Orientation, Gender Identity, Age, Marital Status, Military/Veteran Status, Ancestry, Public Assistance (Section 8). MA law is BROADER than federal. Always follow law that provides MORE protection. Agents must comply with both federal AND state law.'
+  },
+  {
+    id: 'q273',
+    category: 'Fair Housing',
+    question: 'What is "steering" in Fair Housing context?',
+    options: [
+      'Guiding clients through the buying process',
+      'Channeling buyers/renters to or away from neighborhoods based on protected class - ILLEGAL',
+      'Recommending certain properties',
+      'Showing properties in specific order'
+    ],
+    correctIndex: 1,
+    explanation: 'Steering: Channeling buyers/renters to or away from neighborhoods based on protected class. Examples: "You\'d be happier in this neighborhood" (race-based), "More people like you there", only showing certain areas to certain groups. ILLEGAL under Fair Housing. Violation = HUD fines, civil lawsuit, license suspension. Must show all properties equally.'
+  },
+  {
+    id: 'q274',
+    category: 'Fair Housing',
+    question: 'Which advertising phrase violates Fair Housing?',
+    options: [
+      'Master bedroom, walk to schools, quiet neighborhood',
+      '"No children", "Adults only" (except qualified senior), "Perfect for traditional family"',
+      'Spacious, updated, modern, charming',
+      'Pet-friendly, near parks, convenient to shopping'
+    ],
+    correctIndex: 1,
+    explanation: 'Prohibited: "No children", "Adults only" (except qualified senior 55+/62+), "Perfect for traditional family", "Christian community", "No wheelchairs", "English-speaking only". Photos showing only one race also prohibited. SAFE: master bedroom, walk to schools, quiet neighborhood, spacious, pet-friendly. Must use diverse representation.'
+  },
+  {
+    id: 'q275',
+    category: 'Fair Housing',
+    question: 'Client says "I don\'t want to sell to [protected class]." Best response?',
+    options: [
+      'Agree to accommodate their request',
+      '"Fair Housing laws prohibit me from discriminating. I cannot honor that request and must withdraw if you insist"',
+      'Just don\'t tell anyone',
+      'Ignore the comment'
+    ],
+    correctIndex: 1,
+    explanation: 'Response: "Federal and state Fair Housing laws prohibit me from discriminating based on [race, religion, etc.]. As licensed professional, I\'m required to treat all buyers equally. I cannot and will not honor that request. If you cannot comply with Fair Housing law, I must withdraw from representing you." Document refusal. Terminate if client insists.'
+  },
+  {
+    id: 'q276',
+    category: 'Fair Housing',
+    question: 'Difference between reasonable accommodations vs reasonable modifications?',
+    options: [
+      'No difference - same thing',
+      'Accommodations = policy changes (service animals, parking); Modifications = physical changes at tenant expense (ramps, grab bars)',
+      'Accommodations are free, modifications cost money',
+      'Only accommodations are required by law'
+    ],
+    correctIndex: 1,
+    explanation: 'Reasonable Accommodations (policy changes): Service animals in "no pets" buildings, reserved parking, modified payments, communication accommodations. Reasonable Modifications (physical at tenant expense): Grab bars, ramps, widen doorways, lower countertops. Can ask for disability documentation. CANNOT ask "What\'s wrong?" or severity.'
+  },
+  {
+    id: 'q277',
+    category: 'Fair Housing',
+    question: 'What are Fair Housing violation penalties?',
+    options: [
+      'Just a warning',
+      'HUD: $16k-$65k; Federal Lawsuit: UNLIMITED damages + criminal charges; State: license revocation; NAR: $15k + expulsion',
+      'Small fine only',
+      'No penalties if client requested it'
+    ],
+    correctIndex: 1,
+    explanation: 'HUD Administrative: $16k (1st), $37.5k (2nd in 5yr), $65k (3rd+ in 7yr) + fees + damages. Federal Lawsuit: UNLIMITED compensatory/punitive damages, attorney fees, criminal charges if willful (fines + prison). State: License suspension/revocation. NAR: Article 10 violation, $15k fine, expulsion. Career ending.'
+  },
+  {
+    id: 'q278',
+    category: 'Fair Housing',
+    question: 'Do Fair Housing exemptions apply to real estate agents?',
+    options: [
+      'Yes - we get all exemptions',
+      'NO - exemptions are narrow (religious orgs, private clubs, senior 55+/62+, owner-occupied 3 units) and DON\'T APPLY to agents',
+      'Only religious exemption applies',
+      'We can decide which exemptions to use'
+    ],
+    correctIndex: 1,
+    explanation: 'NO! Exemptions very narrow: Religious organizations (non-commercial only), private clubs, senior housing 55+/62+, owner-occupied 3 units or fewer (but LOSES exemption if use broker/agent!). If you\'re involved as real estate professional, exemptions DON\'T APPLY. Always assume Fair Housing applies. Fair Housing is NON-NEGOTIABLE.'
   }
 ];
