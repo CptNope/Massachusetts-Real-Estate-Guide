@@ -1294,6 +1294,41 @@ export const flashcards = [
     question: 'Why is the P&S Agreement significant in Massachusetts transactions?',
     answer: 'P&S makes transaction more binding (harder to cancel), increases deposit amount, sets closing date, includes all terms and conditions. Signed typically 10 days after offer acceptance. Between offer and P&S, buyer conducts due diligence and inspection.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc186',
+    category: 'WISP',
+    question: 'What is WISP in Massachusetts?',
+    answer: 'Written Information Security Program - MA law requiring businesses to protect personal information collected from residents. Must have written plan safeguarding paper, electronic records, computer systems, laptops, and portable drives containing personal information.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc187',
+    category: 'WISP',
+    question: 'What is considered "personal information" under MA WISP law?',
+    answer: 'Resident\'s first name and last name (or first initial and last name) PLUS any of: Social Security Number, Driver\'s License/state ID number, financial account numbers, credit/debit card numbers with security codes/passwords. Public information is excluded.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc188',
+    category: 'WISP',
+    question: 'What must be safeguarded under WISP?',
+    answer: 'ALL paper, electronic, and other records; computer systems; laptops; and portable drive devices that contain personal information. Includes client files, transaction documents, financial info, SSNs, and ID numbers.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc189',
+    category: 'WISP',
+    question: 'What must you do if you discover a data breach?',
+    answer: 'MUST file a notice with the Massachusetts Attorney General AND Director of Office of Consumer Affairs. Required for anyone who knows of a breach in security laws. Notify affected individuals as well.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc190',
+    category: 'WISP',
+    question: 'What are key components of a WISP compliance program?',
+    answer: 'Written security plan, employee training, access controls (limit who can access data), encryption of electronic data, secure disposal of records, regular security assessments, vendor management, and incident response plan.',
+    difficulty: 'hard'
   }
 ];
 
@@ -3703,5 +3738,70 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'P&S makes transaction more binding (harder to cancel), increases deposit amount, sets closing date, and includes all final terms. Signed typically 10 days after offer acceptance.'
+  },
+  {
+    id: 'q186',
+    category: 'WISP',
+    question: 'What does WISP stand for in Massachusetts?',
+    options: [
+      'Written Insurance Security Protocol',
+      'Written Information Security Program',
+      'Wireless Internet Security Protection',
+      'Written Identity Safety Plan'
+    ],
+    correctIndex: 1,
+    explanation: 'WISP stands for Written Information Security Program - MA law requiring businesses to protect personal information collected from residents with a written security plan.'
+  },
+  {
+    id: 'q187',
+    category: 'WISP',
+    question: 'What constitutes "personal information" under MA WISP?',
+    options: [
+      'Just email addresses',
+      'Only Social Security Numbers',
+      'Name + SSN, Driver\'s License number, or financial account numbers',
+      'Public information from websites'
+    ],
+    correctIndex: 2,
+    explanation: 'Personal information = resident\'s name (first + last or first initial + last) PLUS any of: SSN, Driver\'s License/state ID number, financial account numbers, or credit/debit card numbers with access codes. Public information is excluded.'
+  },
+  {
+    id: 'q188',
+    category: 'WISP',
+    question: 'What must be safeguarded under WISP?',
+    options: [
+      'Only computer files',
+      'All paper, electronic records, computer systems, laptops & portable drives with personal info',
+      'Just client contracts',
+      'Only financial documents'
+    ],
+    correctIndex: 1,
+    explanation: 'WISP requires safeguarding ALL paper, electronic, and other records; computer systems; laptops; and portable drive devices that contain personal information. Comprehensive protection required.'
+  },
+  {
+    id: 'q189',
+    category: 'WISP',
+    question: 'If you discover a data breach, who must you notify?',
+    options: [
+      'Only your broker',
+      'Just the affected clients',
+      'MA Attorney General AND Director of Office of Consumer Affairs',
+      'No one if it\'s minor'
+    ],
+    correctIndex: 2,
+    explanation: 'MUST file notice with Massachusetts Attorney General AND Director of Office of Consumer Affairs. Also notify affected individuals. Required for anyone who knows of a breach in security laws.'
+  },
+  {
+    id: 'q190',
+    category: 'WISP',
+    question: 'Which is a required component of WISP compliance?',
+    options: [
+      'Website design',
+      'Written security plan with employee training and access controls',
+      'Social media policy only',
+      'Marketing materials'
+    ],
+    correctIndex: 1,
+    explanation: 'WISP requires written security plan, employee training, access controls, encryption, secure disposal, regular assessments, vendor management, and incident response plan.'
   }
 ];
