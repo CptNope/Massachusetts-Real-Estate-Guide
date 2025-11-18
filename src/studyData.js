@@ -1154,6 +1154,76 @@ export const flashcards = [
     question: 'What is the difference between 3-month and 18-month DNC exemptions?',
     answer: 'INQUIRY = 3 months (open house attendance, showing request, website inquiry). TRANSACTION = 18 months (completed purchase/sale where you were agent). Transaction creates longer EBR than inquiry. After expiration, need consent if on DNC.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc166',
+    category: 'CAN-SPAM Act',
+    question: 'What is the CAN-SPAM Act?',
+    answer: 'Federal law prohibiting deceptive email practices and junk email (spam). Requires: truthful subject lines, identify as advertisement, include physical address, provide unsubscribe mechanism. Violations = $43,792 per email. Applies to all commercial emails.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc167',
+    category: 'CAN-SPAM Act',
+    question: 'What must be included in commercial emails under CAN-SPAM?',
+    answer: 'Must include: (1) clear unsubscribe mechanism, (2) your physical postal address, (3) truthful "From" and subject lines, (4) identify as advertisement if promotional. Must honor unsubscribe within 10 business days. No deceptive headers.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc168',
+    category: 'CAN-SPAM Act',
+    question: 'How quickly must you honor email unsubscribe requests?',
+    answer: 'Within 10 BUSINESS DAYS. Must stop sending emails to anyone who unsubscribes. Cannot require login, payment, or more than email address to unsubscribe. Make it easy - single click or reply. Violations subject to penalties.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc169',
+    category: 'CAN-SPAM Act',
+    question: 'Can you send marketing emails to clients without permission?',
+    answer: 'Depends on relationship. CAN-SPAM allows emailing existing customers/clients (EBR). For cold emails, best practice: get consent first. Must always provide unsubscribe option. Different from TCPA (which requires consent for texts).',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc170',
+    category: 'COPPA',
+    question: 'What is COPPA?',
+    answer: 'Children\'s Online Privacy Protection Act - federal law protecting children under 13 online. Went into effect 7/1/13. Requires: privacy policy on websites/apps, parental consent before collecting personal info from kids under 13, limits on data collection.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc171',
+    category: 'COPPA',
+    question: 'What does COPPA require for real estate websites?',
+    answer: 'If website/app directed at or knowingly collects info from children under 13, must: (1) post clear privacy policy, (2) get verifiable parental consent before collecting data, (3) limit personal information collected. Most real estate sites not directed at children, but be aware.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc172',
+    category: 'COPPA',
+    question: 'When did COPPA restrictions go into effect?',
+    answer: 'July 1, 2013 (7/1/13). This date marked most recent restrictions on internet, including mobile apps and networks. Requires posting privacy policy and limits personal information collection from children younger than 13 years old.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc173',
+    category: 'CAN-SPAM Act',
+    question: 'What are CAN-SPAM penalties?',
+    answer: 'Up to $43,792 per email violation (adjusted for inflation). FTC can enforce. Violations include: no unsubscribe, deceptive subject lines, false headers, missing address. Each separate email can be separate violation. Criminal penalties possible for egregious cases.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc174',
+    category: 'Digital Compliance',
+    question: 'What is a privacy policy and when is it required?',
+    answer: 'Statement explaining how you collect, use, and protect personal information. Required by: COPPA (if collecting from children under 13), various state laws (CA, VA, CO), best practice for all websites collecting data. Must be clear, accessible, and accurate.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc175',
+    category: 'Digital Compliance',
+    question: 'What personal information requires protection online?',
+    answer: 'Email addresses, phone numbers, physical addresses, financial info, social security numbers, children\'s information. Real estate agents collecting leads must: secure data, have privacy policy, comply with CAN-SPAM/COPPA, provide unsubscribe options, protect from breaches.',
+    difficulty: 'medium'
   }
 ];
 
@@ -3303,5 +3373,135 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Commonly cited as $11,000 per call (some sources cite up to $43,280 adjusted for inflation). FTC can impose civil penalties. Amount depends on circumstances and when violation occurred.'
+  },
+  {
+    id: 'q166',
+    category: 'CAN-SPAM Act',
+    question: 'What does the CAN-SPAM Act regulate?',
+    options: [
+      'Phone calls',
+      'Commercial email and junk email (spam)',
+      'Text messages only',
+      'Social media'
+    ],
+    correctIndex: 1,
+    explanation: 'CAN-SPAM Act is a federal law prohibiting deceptive email practices and junk email (spam). Requires truthful subject lines, unsubscribe options, physical address, and proper identification.'
+  },
+  {
+    id: 'q167',
+    category: 'CAN-SPAM Act',
+    question: 'What MUST be included in all commercial marketing emails?',
+    options: [
+      'Just your name',
+      'Unsubscribe mechanism, physical address, truthful subject lines',
+      'Only an email address',
+      'Nothing required'
+    ],
+    correctIndex: 1,
+    explanation: 'CAN-SPAM requires: (1) clear unsubscribe mechanism, (2) physical postal address, (3) truthful From/subject lines, (4) identify as advertisement if promotional. Must honor unsubscribe within 10 days.'
+  },
+  {
+    id: 'q168',
+    category: 'CAN-SPAM Act',
+    question: 'How quickly must you process email unsubscribe requests?',
+    options: [
+      'Immediately',
+      'Within 10 business days',
+      'Within 30 days',
+      'No requirement'
+    ],
+    correctIndex: 1,
+    explanation: 'Must honor unsubscribe requests within 10 BUSINESS DAYS. Cannot require login, payment, or more than email address to unsubscribe. Make it easy - single click or reply preferred.'
+  },
+  {
+    id: 'q169',
+    category: 'CAN-SPAM Act',
+    question: 'What is the penalty for CAN-SPAM violations per email?',
+    options: [
+      '$500',
+      '$5,000',
+      '$43,792 (adjusted for inflation)',
+      '$100'
+    ],
+    correctIndex: 2,
+    explanation: 'CAN-SPAM violations can result in penalties up to $43,792 per email (adjusted for inflation). Each separate email can be a separate violation. Criminal penalties possible for egregious cases.'
+  },
+  {
+    id: 'q170',
+    category: 'COPPA',
+    question: 'What does COPPA stand for?',
+    options: [
+      'Consumer Online Privacy Protection Act',
+      'Children\'s Online Privacy Protection Act',
+      'Commercial Online Privacy Act',
+      'California Privacy Protection Act'
+    ],
+    correctIndex: 1,
+    explanation: 'COPPA stands for Children\'s Online Privacy Protection Act - federal law protecting children under 13 online. Went into effect 7/1/13.'
+  },
+  {
+    id: 'q171',
+    category: 'COPPA',
+    question: 'COPPA protects children under what age?',
+    options: [
+      'Under 16',
+      'Under 13',
+      'Under 18',
+      'Under 21'
+    ],
+    correctIndex: 1,
+    explanation: 'COPPA protects children under 13 years old. Requires privacy policy and parental consent before collecting personal information from children younger than 13.'
+  },
+  {
+    id: 'q172',
+    category: 'COPPA',
+    question: 'When did COPPA restrictions go into effect?',
+    options: [
+      'January 1, 2000',
+      'July 1, 2013',
+      'January 1, 2020',
+      'July 1, 2010'
+    ],
+    correctIndex: 1,
+    explanation: 'July 1, 2013 (7/1/13) marked when most recent COPPA restrictions went into effect, including for mobile apps and networks. Requires posting privacy policy and limits data collection from children.'
+  },
+  {
+    id: 'q173',
+    category: 'COPPA',
+    question: 'What does COPPA require before collecting data from children under 13?',
+    options: [
+      'Nothing special',
+      'Verifiable parental consent',
+      'Just a privacy policy',
+      'Only applies to schools'
+    ],
+    correctIndex: 1,
+    explanation: 'COPPA requires verifiable parental consent before collecting personal information from children under 13. Must also have clear privacy policy and limit data collection.'
+  },
+  {
+    id: 'q174',
+    category: 'Digital Compliance',
+    question: 'When is a privacy policy required for a real estate website?',
+    options: [
+      'Never required',
+      'If collecting from children under 13 (COPPA) or in certain states',
+      'Only for large brokerages',
+      'Only if selling products'
+    ],
+    correctIndex: 1,
+    explanation: 'Privacy policy required by: COPPA (if collecting from children under 13), various state laws (CA, VA, CO), and best practice for all websites collecting personal data like email addresses and phone numbers.'
+  },
+  {
+    id: 'q175',
+    category: 'CAN-SPAM Act',
+    question: 'Can you email past clients without getting consent first?',
+    options: [
+      'No, never allowed',
+      'Yes, existing customer/client relationship (EBR) allows emails',
+      'Only with written permission',
+      'Only once per year'
+    ],
+    correctIndex: 1,
+    explanation: 'CAN-SPAM allows emailing existing customers/clients based on established business relationship (EBR). Must still provide unsubscribe option. Different from TCPA which requires consent for marketing texts.'
   }
 ];
