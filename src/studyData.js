@@ -1224,6 +1224,76 @@ export const flashcards = [
     question: 'What personal information requires protection online?',
     answer: 'Email addresses, phone numbers, physical addresses, financial info, social security numbers, children\'s information. Real estate agents collecting leads must: secure data, have privacy policy, comply with CAN-SPAM/COPPA, provide unsubscribe options, protect from breaches.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc176',
+    category: 'Transaction Cycle',
+    question: 'What is the typical timeline for Purchase & Sales Agreement (P&S) from offer acceptance?',
+    answer: 'P&S is typically executed within 10 DAYS from offer acceptance. Also called "P&S Agreement" or just "P&S". This is when transaction becomes more binding and deposit increases. Must be signed by buyer and seller.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc177',
+    category: 'Transaction Cycle',
+    question: 'What is the home inspection/due diligence period?',
+    answer: 'Typically 10 DAYS from offer acceptance. Buyer performs home inspection, reviews property condition, and can request repairs or negotiate. If issues found, buyer may cancel (with inspection contingency), request repairs, or accept as-is.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc178',
+    category: 'Transaction Cycle',
+    question: 'When does the lender\'s financing process begin?',
+    answer: 'Starts a couple days after signed P&S Agreement. Lender orders appraisal and title search, processes loan application, underwrites loan, and works toward commitment letter. Buyer must cooperate and provide requested documents promptly.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc179',
+    category: 'Transaction Cycle',
+    question: 'What does the lender order at the start of financing?',
+    answer: 'Appraisal (property valuation by licensed appraiser) and Title Search (examination of property ownership history and liens). Both required for mortgage approval. Buyer typically pays for appraisal; lender reviews title search.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc180',
+    category: 'Transaction Cycle',
+    question: 'What is a mortgage commitment letter and when is it obtained?',
+    answer: 'Formal written promise from lender to provide mortgage loan. Typically obtained 30-45 DAYS from P&S Agreement. Contains loan terms, conditions that must be met, and expiration date. Subject to clearing conditions prior to closing.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc181',
+    category: 'Transaction Cycle',
+    question: 'What are "clear conditions" in a commitment letter?',
+    answer: 'Requirements that must be satisfied before loan approval. Examples: proof of insurance, final walkthrough, income verification, explanation of credit issues. Must be cleared PRIOR to closing AND at time of closing. Failure to clear = no loan.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc182',
+    category: 'Transaction Cycle',
+    question: 'What does "Clear to Close" mean?',
+    answer: 'Lender approval confirming all loan conditions have been met and loan is ready to fund. Obtained shortly before closing (days before). Signals closing can proceed as scheduled. Final step before actual closing day.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc183',
+    category: 'Transaction Cycle',
+    question: 'What are the broker\'s main responsibilities in the transaction cycle?',
+    answer: 'Listing property, qualifying buyers, showing property, writing offer, coordinating home inspection/due diligence (within 10 days of offer), executing P&S Agreement (within 10 days), and guiding parties through closing per contract terms.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc184',
+    category: 'Transaction Cycle',
+    question: 'What is the typical sequence of major transaction milestones?',
+    answer: 'Offer → P&S within 10 days → Inspection within 10 days → Financing starts (couple days after P&S) → Appraisal/title ordered → Commitment letter (30-45 days from P&S) → Clear conditions → Clear to Close → Closing per contract terms.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc185',
+    category: 'Transaction Cycle',
+    question: 'Why is the P&S Agreement significant in Massachusetts transactions?',
+    answer: 'P&S makes transaction more binding (harder to cancel), increases deposit amount, sets closing date, includes all terms and conditions. Signed typically 10 days after offer acceptance. Between offer and P&S, buyer conducts due diligence and inspection.',
+    difficulty: 'medium'
   }
 ];
 
@@ -3503,5 +3573,135 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'CAN-SPAM allows emailing existing customers/clients based on established business relationship (EBR). Must still provide unsubscribe option. Different from TCPA which requires consent for marketing texts.'
+  },
+  {
+    id: 'q176',
+    category: 'Transaction Cycle',
+    question: 'How many days after offer acceptance is the P&S Agreement typically signed?',
+    options: [
+      '3 days',
+      '10 days',
+      '30 days',
+      'Same day'
+    ],
+    correctIndex: 1,
+    explanation: 'P&S (Purchase & Sales Agreement) is typically executed within 10 DAYS from offer acceptance. This is when the transaction becomes more binding and deposit usually increases.'
+  },
+  {
+    id: 'q177',
+    category: 'Transaction Cycle',
+    question: 'What is the typical home inspection/due diligence period?',
+    options: [
+      '3 days',
+      '10 days from offer acceptance',
+      '30 days',
+      '60 days'
+    ],
+    correctIndex: 1,
+    explanation: 'Home inspection and due diligence period is typically 10 DAYS from offer acceptance. Buyer performs inspection, reviews condition, and can request repairs, negotiate, or cancel (with contingency).'
+  },
+  {
+    id: 'q178',
+    category: 'Transaction Cycle',
+    question: 'When does the lender\'s financing process typically begin?',
+    options: [
+      'At offer acceptance',
+      'A couple days after signed P&S Agreement',
+      '30 days before closing',
+      'At closing'
+    ],
+    correctIndex: 1,
+    explanation: 'Financing process starts a couple days after the signed P&S Agreement. Lender then orders appraisal and title search, processes application, and works toward commitment letter.'
+  },
+  {
+    id: 'q179',
+    category: 'Transaction Cycle',
+    question: 'What two items does the lender order at the start of financing?',
+    options: [
+      'Survey and inspection',
+      'Appraisal and Title Search',
+      'Insurance and warranty',
+      'Credit report and tax returns'
+    ],
+    correctIndex: 1,
+    explanation: 'Lender orders: (1) Appraisal - property valuation by licensed appraiser, and (2) Title Search - examination of ownership history and liens. Both required for mortgage approval.'
+  },
+  {
+    id: 'q180',
+    category: 'Transaction Cycle',
+    question: 'When is a mortgage commitment letter typically obtained?',
+    options: [
+      '10 days from offer',
+      '30-45 days from P&S Agreement',
+      'At closing',
+      '7 days before closing'
+    ],
+    correctIndex: 1,
+    explanation: 'Commitment letter is typically obtained 30-45 DAYS from P&S Agreement. It\'s the lender\'s formal written promise to provide the mortgage loan, subject to clearing conditions.'
+  },
+  {
+    id: 'q181',
+    category: 'Transaction Cycle',
+    question: 'What are "clear conditions" in a commitment letter?',
+    options: [
+      'Inspection requirements',
+      'Requirements that must be satisfied before loan approval',
+      'Seller obligations',
+      'Closing costs'
+    ],
+    correctIndex: 1,
+    explanation: 'Clear conditions are requirements that must be satisfied before final loan approval. Examples: proof of insurance, income verification, credit explanations. Must be cleared PRIOR to closing AND at time of closing.'
+  },
+  {
+    id: 'q182',
+    category: 'Transaction Cycle',
+    question: 'What does "Clear to Close" mean?',
+    options: [
+      'Property passes inspection',
+      'Lender confirms all loan conditions met and loan is ready to fund',
+      'Seller can move out',
+      'Closing date is set'
+    ],
+    correctIndex: 1,
+    explanation: 'Clear to Close means lender approval confirming all loan conditions have been met and loan is ready to fund. Obtained shortly before closing (days before). Final step before closing day.'
+  },
+  {
+    id: 'q183',
+    category: 'Transaction Cycle',
+    question: 'Which is a broker\'s responsibility in the transaction cycle?',
+    options: [
+      'Approving the mortgage',
+      'Qualifying buyers and writing offers',
+      'Conducting the appraisal',
+      'Issuing title insurance'
+    ],
+    correctIndex: 1,
+    explanation: 'Broker responsibilities include: listing property, qualifying buyers, showing property, writing offers, coordinating inspections, executing P&S, and guiding parties through closing.'
+  },
+  {
+    id: 'q184',
+    category: 'Transaction Cycle',
+    question: 'What is the correct sequence of major transaction milestones?',
+    options: [
+      'Offer → Closing → P&S → Inspection',
+      'Offer → P&S (10 days) → Inspection (10 days) → Commitment (30-45 days from P&S) → Closing',
+      'Inspection → Offer → P&S → Closing',
+      'P&S → Offer → Commitment → Closing'
+    ],
+    correctIndex: 1,
+    explanation: 'Correct sequence: Offer → P&S within 10 days → Inspection within 10 days → Financing starts → Commitment letter 30-45 days from P&S → Clear conditions → Clear to Close → Closing.'
+  },
+  {
+    id: 'q185',
+    category: 'Transaction Cycle',
+    question: 'Why is the P&S Agreement significant in Massachusetts?',
+    options: [
+      'It\'s the first offer',
+      'Makes transaction more binding, increases deposit, sets closing date',
+      'It\'s when buyer gets keys',
+      'It replaces the offer'
+    ],
+    correctIndex: 1,
+    explanation: 'P&S makes transaction more binding (harder to cancel), increases deposit amount, sets closing date, and includes all final terms. Signed typically 10 days after offer acceptance.'
   }
 ];
