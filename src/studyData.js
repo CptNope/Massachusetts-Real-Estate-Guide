@@ -174,6 +174,76 @@ export const flashcards = [
     question: 'What is an escalation clause?',
     answer: 'A clause that automatically increases the buyer\'s offer by a specified amount above competing offers, up to a maximum ceiling price.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc26',
+    category: 'Antitrust',
+    question: 'What is the Sherman Antitrust Act?',
+    answer: 'Federal law prohibiting agreements that restrain trade or commerce, including price-fixing, market allocation, boycotts, and tie-in arrangements in real estate.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc27',
+    category: 'Antitrust',
+    question: 'What is price-fixing in real estate?',
+    answer: 'An illegal agreement between competing brokers or agents to set commission rates, fees, or prices. Each firm must independently set its own rates.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc28',
+    category: 'Antitrust',
+    question: 'What is market allocation?',
+    answer: 'An illegal agreement where competing brokers divide up territories or types of properties, agreeing not to compete in each other\'s designated areas.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc29',
+    category: 'Antitrust',
+    question: 'What is a group boycott?',
+    answer: 'An illegal agreement among competitors to exclude or refuse to deal with another business or individual. For example, multiple brokers agreeing not to show properties from a specific brokerage.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc30',
+    category: 'Associations',
+    question: 'What is the Massachusetts Association of REALTORS® (MAR)?',
+    answer: 'The statewide trade organization for real estate professionals in MA, providing advocacy, education, legal resources, and the Standard Form library to members.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc31',
+    category: 'Associations',
+    question: 'What is the difference between a real estate agent and a REALTOR®?',
+    answer: 'A REALTOR® is a licensed agent who is a member of the National Association of REALTORS® (NAR) and agrees to follow the NAR Code of Ethics. Not all agents are REALTORS®.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc32',
+    category: 'Associations',
+    question: 'What is Multiple Listing Service (MLS)?',
+    answer: 'A cooperative database where brokers share property listings to facilitate cooperation and compensation between brokers. Access requires membership through a local REALTOR® association.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc33',
+    category: 'Ethics',
+    question: 'What are the three primary duties in the NAR Code of Ethics?',
+    answer: 'Duties to clients and customers, duties to the public, and duties to other REALTORS®. The Code emphasizes honesty, integrity, and fair dealing in all transactions.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc34',
+    category: 'Antitrust',
+    question: 'What is a tie-in arrangement?',
+    answer: 'An illegal agreement requiring someone to buy or use one service as a condition of using another. For example, requiring clients to use a specific mortgage company to work with you.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc35',
+    category: 'Associations',
+    question: 'What benefits does MLS membership provide?',
+    answer: 'Access to comprehensive property data, broker cooperation, compensation offers, market statistics, and exposure for your listings to thousands of agents and buyers.',
+    difficulty: 'easy'
   }
 ];
 
@@ -503,5 +573,135 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'As of October 2025, sellers and listing agents cannot require or request that buyers waive home inspection rights. However, inspection timing and scope remain negotiable.'
+  },
+  {
+    id: 'q26',
+    category: 'Antitrust',
+    question: 'Which of the following is an antitrust violation?',
+    options: [
+      'Setting your own commission rate',
+      'Refusing to work with difficult clients',
+      'Agreeing with competing brokers to charge 6% commission',
+      'Negotiating commission with a seller'
+    ],
+    correctIndex: 2,
+    explanation: 'Price-fixing (agreeing on commission rates with competitors) is illegal under the Sherman Antitrust Act. Each broker must independently set their own rates.'
+  },
+  {
+    id: 'q27',
+    category: 'Antitrust',
+    question: 'Two brokers agree to divide the town: one takes the north side, one takes the south. This is:',
+    options: [
+      'Legal business strategy',
+      'Market allocation (illegal)',
+      'Acceptable if in writing',
+      'Required for fair competition'
+    ],
+    correctIndex: 1,
+    explanation: 'Market allocation is illegal under antitrust law. Competitors cannot agree to divide territories or customer types to avoid competing with each other.'
+  },
+  {
+    id: 'q28',
+    category: 'Associations',
+    question: 'To use the REALTOR® trademark, an agent must:',
+    options: [
+      'Just have a real estate license',
+      'Be a member of NAR and follow the Code of Ethics',
+      'Complete 100 transactions',
+      'Pay an annual fee to the state'
+    ],
+    correctIndex: 1,
+    explanation: 'The REALTOR® trademark requires membership in the National Association of REALTORS® and adherence to their Code of Ethics. It\'s not automatic with licensing.'
+  },
+  {
+    id: 'q29',
+    category: 'Associations',
+    question: 'What is the primary benefit of MLS membership?',
+    options: [
+      'Lower commission rates',
+      'Guaranteed sales',
+      'Access to cooperative listing database and broker cooperation',
+      'Automatic license renewal'
+    ],
+    correctIndex: 2,
+    explanation: 'MLS provides access to a shared database of listings, enabling broker cooperation and compensation. This significantly expands market exposure for your clients\' properties.'
+  },
+  {
+    id: 'q30',
+    category: 'Ethics',
+    question: 'Under the NAR Code of Ethics, what must you disclose when representing both sides?',
+    options: [
+      'Nothing, if both agree verbally',
+      'Only to the buyer',
+      'Dual agency in writing to both parties before confidential information is shared',
+      'Only at closing'
+    ],
+    correctIndex: 2,
+    explanation: 'The Code of Ethics requires written disclosure of dual agency to both parties before any confidential information is shared, ensuring informed consent.'
+  },
+  {
+    id: 'q31',
+    category: 'Antitrust',
+    question: 'A broker requires clients to use their affiliated mortgage company. This is:',
+    options: [
+      'Smart business practice',
+      'A tie-in arrangement (illegal)',
+      'Required by law',
+      'Only illegal if the rate is high'
+    ],
+    correctIndex: 1,
+    explanation: 'Requiring the use of one service (mortgage) as a condition of another service (real estate) is a tie-in arrangement, which violates antitrust law. Clients must have freedom of choice.'
+  },
+  {
+    id: 'q32',
+    category: 'Associations',
+    question: 'Which provides the Standard Forms used in Massachusetts real estate transactions?',
+    options: [
+      'The state licensing board',
+      'Massachusetts Association of REALTORS® (MAR)',
+      'Individual brokerages create their own',
+      'The federal government'
+    ],
+    correctIndex: 1,
+    explanation: 'MAR provides the Standard Forms library to its members, including Offer to Purchase, P&S Agreement, and other commonly used forms in MA transactions.'
+  },
+  {
+    id: 'q33',
+    category: 'Antitrust',
+    question: 'Multiple brokers agree not to work with a discount brokerage. This is:',
+    options: [
+      'Fair competition',
+      'Group boycott (illegal)',
+      'Quality control',
+      'Industry standard'
+    ],
+    correctIndex: 1,
+    explanation: 'A group boycott occurs when competitors agree to exclude another business. This restrains trade and is illegal under the Sherman Antitrust Act.'
+  },
+  {
+    id: 'q34',
+    category: 'Ethics',
+    question: 'Which is NOT a duty under the NAR Code of Ethics?',
+    options: [
+      'Honesty in advertising',
+      'Duty to clients',
+      'Guaranteeing property appreciation',
+      'Duty to other REALTORS®'
+    ],
+    correctIndex: 2,
+    explanation: 'The Code of Ethics emphasizes honesty, fiduciary duties, and professional cooperation. No one can guarantee future property values or appreciation.'
+  },
+  {
+    id: 'q35',
+    category: 'Associations',
+    question: 'What is the purpose of local REALTOR® boards in Massachusetts?',
+    options: [
+      'Issue real estate licenses',
+      'Set commission rates for the area',
+      'Provide local MLS access, education, and networking',
+      'Approve all real estate transactions'
+    ],
+    correctIndex: 2,
+    explanation: 'Local boards provide MLS access, continuing education, networking opportunities, and local market resources. They do not issue licenses or set commission rates.'
   }
 ];
