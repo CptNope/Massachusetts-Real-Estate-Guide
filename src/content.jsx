@@ -2043,6 +2043,25 @@ Always understand your agent’s split and cap – it influences incentives.`}
             <li>"No wheelchairs" or "no disabled persons"</li>
           </ul>
 
+          <h5>❌ Medical Condition Discrimination (CRITICAL!)</h5>
+          <div className="medical-discrimination-warning">
+            <p className="highlight">
+              <strong>🚨 It's ILLEGAL to discriminate in the sale or rental of housing based on HIV or AIDS status.</strong>
+            </p>
+            <ul>
+              <li><strong>HIPAA Laws:</strong> Cannot state anyone's current or past MEDICAL conditions</li>
+              <li><strong>HIV/AIDS:</strong> Protected under disability discrimination laws</li>
+              <li><strong>COVID-19:</strong> Medical condition - cannot discriminate based on COVID status or history</li>
+              <li><strong>Privacy:</strong> Medical information is confidential and protected</li>
+              <li><strong>Cannot Ask:</strong> You cannot inquire about applicant's medical history or conditions</li>
+              <li><strong>Cannot Disclose:</strong> Even if you somehow know, you cannot share medical information</li>
+            </ul>
+            <p className="liability-warning">
+              <strong>⚠️ Violations:</strong> HIPAA violations can result in criminal penalties up to $250,000 and 10 years in prison, 
+              plus Fair Housing Act violations with fines up to $100,000+.
+            </p>
+          </div>
+
           <h5>❌ Familial Status Discrimination</h5>
           <ul>
             <li>"No children allowed"</li>
@@ -4874,7 +4893,91 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <p><strong>Note:</strong> Remediated contamination sits between physical defect and stigma - disclose when asked!</p>
         </div>
 
-        <h3>29.7 How Buyers Can Research</h3>
+        <h3>29.7 Megan's Law - Sex Offender Registry</h3>
+        <div className="megans-law">
+          <p className="highlight">
+            <strong>Megan's Law</strong> is a federal law requiring sex offender registration. The registry is 
+            <strong> PUBLIC KNOWLEDGE</strong> and available online. Offenders MUST disclose where they live and work 
+            immediately upon being released.
+          </p>
+
+          <h4>Three Risk Levels:</h4>
+          <div className="risk-levels">
+            <div className="risk-level-1">
+              <h5>📗 Level 1 - Low Risk</h5>
+              <ul>
+                <li><strong>Risk:</strong> Low risk of re-offense</li>
+                <li><strong>Public Access:</strong> Limited public access to information</li>
+                <li><strong>Notification:</strong> Police and certain agencies notified</li>
+                <li><strong>Typical Offenses:</strong> Non-violent, first-time offenses</li>
+              </ul>
+            </div>
+
+            <div className="risk-level-2">
+              <h5>📙 Level 2 - Moderate Risk</h5>
+              <ul>
+                <li><strong>Risk:</strong> Moderate risk of re-offense</li>
+                <li><strong>Public Access:</strong> Available online to public (searchable)</li>
+                <li><strong>Notification:</strong> Schools, daycare centers, and neighbors may be notified</li>
+                <li><strong>Typical Offenses:</strong> Repeat offenses or more serious crimes</li>
+                <li><strong>⚠️ Note:</strong> Level 2 and 3 offenders are PUBLICLY AVAILABLE online</li>
+              </ul>
+            </div>
+
+            <div className="risk-level-3">
+              <h5>📕 Level 3 - High Risk</h5>
+              <ul>
+                <li><strong>Risk:</strong> High risk of re-offense and danger to public</li>
+                <li><strong>Public Access:</strong> Widely available to public (searchable online)</li>
+                <li><strong>Notification:</strong> Active community notification, flyers, public meetings</li>
+                <li><strong>Typical Offenses:</strong> Violent, predatory offenses or multiple convictions</li>
+                <li><strong>🚨 Alert:</strong> Law enforcement actively notifies community</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4>Agent's Role with Sex Offender Information:</h4>
+          <ul>
+            <li>✅ <strong>Can Direct to Database:</strong> "You can search the public sex offender registry at [state website]"</li>
+            <li>✅ <strong>Can Acknowledge It's Public:</strong> "Sex offender information is public knowledge available online"</li>
+            <li>✅ <strong>Should Recommend Research:</strong> Suggest buyers research if they have concerns</li>
+            <li>❌ <strong>NOT Required to Research:</strong> You don't have to check the registry for every property</li>
+            <li>❌ <strong>NOT Required to Volunteer:</strong> Don't have to tell buyer "there's an offender 3 blocks away"</li>
+            <li>⚠️ <strong>If Asked:</strong> Must answer truthfully if you have knowledge (but can admit you don't know)</li>
+          </ul>
+
+          <h4>How Offenders Are Registered:</h4>
+          <p>
+            Upon release from incarceration, sex offenders MUST:
+          </p>
+          <ul>
+            <li>📍 <strong>Register Address:</strong> Where they live (and update within days if they move)</li>
+            <li>🏢 <strong>Register Workplace:</strong> Where they work or go to school</li>
+            <li>📸 <strong>Provide Photo:</strong> Recent photograph for database</li>
+            <li>🔄 <strong>Update Regularly:</strong> Annual or more frequent verification</li>
+            <li>⚠️ <strong>Failure to Register:</strong> Criminal offense with serious penalties</li>
+          </ul>
+
+          <h4>Accessing the Registry (Recommend to Buyers):</h4>
+          <ul>
+            <li>🌐 <strong>Massachusetts:</strong> Mass.gov Sex Offender Registry Board (SORB)</li>
+            <li>🗺️ <strong>Search by Address:</strong> Enter property address to see offenders nearby</li>
+            <li>📱 <strong>Mobile Apps:</strong> Various apps available for smartphone alerts</li>
+            <li>🔍 <strong>National:</strong> National Sex Offender Public Website (NSOPW.gov)</li>
+            <li>📧 <strong>Email Alerts:</strong> Some states offer notification services</li>
+          </ul>
+
+          <div className="megans-law-note">
+            <p className="highlight">
+              <strong>Critical Distinction:</strong> Sex offender information is PUBLIC KNOWLEDGE (not confidential like 
+              medical conditions). The registry exists specifically to inform the public. However, agents are still not 
+              required to research or volunteer this information - buyers should do their own due diligence. If asked 
+              and you know, answer truthfully. If you don't know, say so and direct them to the public registry.
+            </p>
+          </div>
+        </div>
+
+        <h3>29.8 How Buyers Can Research</h3>
         <div className="buyer-research">
           <h4>Recommend These Resources to Buyers:</h4>
           <ul>
@@ -4884,7 +4987,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
             <li>💻 <strong>Online Databases:</strong> 
               <ul>
                 <li>DiedInHouse.com (paid service checking death records)</li>
-                <li>Megan's Law database (sex offender registry)</li>
+                <li><strong>Megan's Law Database</strong> (Mass.gov SORB - sex offender registry Level 2 & 3 available)</li>
                 <li>Local crime maps</li>
               </ul>
             </li>
@@ -4893,7 +4996,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>29.8 Impact on Property Value</h3>
+        <h3>29.9 Impact on Property Value</h3>
         <div className="value-impact">
           <h4>Stigmatized Properties Typically Sell For:</h4>
           <ul>
@@ -4914,7 +5017,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>29.9 Seller Strategies</h3>
+        <h3>29.10 Seller Strategies</h3>
         <div className="seller-strategies">
           <h4>If Selling Stigmatized Property:</h4>
           <ul>
@@ -4927,7 +5030,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>29.10 Legal Risks & Liability</h3>
+        <h3>29.11 Legal Risks & Liability</h3>
         
         <h4>Agent Can Be Liable For:</h4>
         <div className="liability-warning">
@@ -4947,7 +5050,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>✅ Buyer's failure to ask about property history</li>
         </ul>
 
-        <h3>29.11 Best Practices for Agents</h3>
+        <h3>29.12 Best Practices for Agents</h3>
         <div className="best-practices">
           <ol>
             <li><strong>Ask Seller Direct Questions:</strong> "To your knowledge, have any deaths, crimes, or unusual events occurred on this property?" Document answer.</li>
@@ -4961,7 +5064,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ol>
         </div>
 
-        <h3>29.12 Sample Language for Agents</h3>
+        <h3>29.13 Sample Language for Agents</h3>
         <div className="sample-language">
           <h4>When Buyer Asks About Deaths/Crimes:</h4>
           <p><strong>✅ Good Response:</strong> "To the best of my knowledge, [state the facts]. I recommend you research public records if you'd like more detailed information."</p>
