@@ -629,6 +629,111 @@ export const flashcards = [
     question: 'Can you transfer your license between brokers in Massachusetts?',
     answer: 'Yes. Must notify the Massachusetts Board of Registration, complete transfer paperwork, and have new broker acceptance. Cannot practice during transfer period. Some brokerages may have non-compete clauses.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc91',
+    category: 'Insurance',
+    question: 'What does E&O (Errors & Omissions) insurance cover?',
+    answer: 'Covers professional negligence claims: mistakes, errors, omissions, misrepresentations, failure to disclose, breach of duty. Pays for legal defense and damages awarded. Does NOT cover intentional wrongdoing or criminal acts.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc92',
+    category: 'Insurance',
+    question: 'What is typical E&O insurance cost for real estate agents?',
+    answer: '$300-800 per year depending on coverage limits, deductible, claims history, and number of transactions. Higher limits ($1M-2M) cost more but provide better protection. Group rates through associations often cheaper.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc93',
+    category: 'Insurance',
+    question: 'What is general liability insurance for real estate professionals?',
+    answer: 'Covers bodily injury and property damage that occurs during business operations. Example: client trips at showing and gets injured. Typical cost $300-600/year. Separate from E&O (which covers professional mistakes).',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc94',
+    category: 'Insurance',
+    question: 'What is a claims-made vs occurrence E&O policy?',
+    answer: 'Claims-made: Covers claims filed during policy period, regardless of when incident occurred (requires tail coverage after canceling). Occurrence: Covers incidents that occurred during policy period, regardless of when claim is filed (more expensive).',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc95',
+    category: 'Insurance',
+    question: 'What is tail coverage for E&O insurance?',
+    answer: 'Extended reporting period coverage purchased when ending a claims-made policy. Covers claims filed after policy ends for incidents that occurred while insured. Essential when changing carriers or retiring. Can cost 1.5-3x annual premium.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc96',
+    category: 'Insurance',
+    question: 'What is cyber liability insurance for real estate?',
+    answer: 'Covers data breaches, hacking, identity theft, and cyberattacks. Protects client personal information (SSNs, financial data). Costs $500-2,000/year depending on data volume. Increasingly important with digital transactions.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc97',
+    category: 'Insurance',
+    question: 'What insurance does a broker need for their office?',
+    answer: 'E&O (required by most), general liability, commercial property insurance, workers compensation (if employees, not ICs), cyber liability, business interruption, and potentially fidelity bond. Total cost: $2,000-5,000+/year.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc98',
+    category: 'Insurance',
+    question: 'What is a fidelity bond in real estate?',
+    answer: 'Protects against employee theft or dishonest acts by agents (stealing client funds, forging documents). Required if broker has employees. Different from E&O (which covers mistakes). Costs $200-500/year per broker.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc99',
+    category: 'Insurance',
+    question: 'What is an E&O insurance deductible?',
+    answer: 'Amount you pay out-of-pocket before insurance covers a claim. Common deductibles: $1,000-5,000 per claim. Higher deductibles = lower premiums. Applies to both defense costs and settlements/judgments.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc100',
+    category: 'Insurance',
+    question: 'What are typical E&O coverage limits?',
+    answer: 'Per claim and aggregate (total annual): $500K/$500K (minimum), $1M/$1M (standard), $2M/$2M (recommended for high-volume). Higher limits cost more but provide better protection against large lawsuits.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc101',
+    category: 'Insurance',
+    question: 'When should you report a potential claim to E&O insurance?',
+    answer: 'IMMEDIATELY when you become aware of any error, complaint, or circumstance that could lead to a claim. Most policies require "timely notification." Waiting can result in denied coverage. Even if uncertain, report it.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc102',
+    category: 'Insurance',
+    question: 'Does E&O insurance cover punitive damages?',
+    answer: 'Usually NO. Most policies exclude punitive damages, intentional acts, fraud, and criminal violations. Only covers negligent acts, errors, and omissions. Read policy exclusions carefully.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc103',
+    category: 'Insurance',
+    question: 'What is prior acts coverage (retroactive date)?',
+    answer: 'E&O coverage for incidents that occurred before your current policy start date. Retroactive date determines how far back coverage extends. "Full prior acts" means no retroactive date - covers all past work. Important when switching carriers.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc104',
+    category: 'Insurance',
+    question: 'Can independent contractor agents get their own E&O insurance?',
+    answer: 'Yes. Some agents purchase individual policies for extra protection beyond broker\'s coverage. Costs $300-600/year. Provides coverage if broker\'s policy is exhausted or if you change brokerages. Not required but increasingly common.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc105',
+    category: 'Insurance',
+    question: 'What common situations does E&O insurance cover?',
+    answer: 'Failure to disclose defects, missed deadlines, incorrect property information, breach of fiduciary duty, Fair Housing violations, misrepresentation, failure to explain contract terms, and errors in paperwork. Defense costs alone can be $50K-200K+.',
+    difficulty: 'medium'
   }
 ];
 
@@ -1803,5 +1908,200 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Professional certifications increase your credibility, demonstrate expertise, attract more clients, and can help justify higher commission splits. They show commitment to professional excellence but don\'t waive other requirements.'
+  },
+  {
+    id: 'q91',
+    category: 'Insurance',
+    question: 'What is the typical annual cost of E&O insurance for a real estate agent?',
+    options: [
+      '$100-200',
+      '$300-800',
+      '$2,000-3,000',
+      '$5,000+'
+    ],
+    correctIndex: 1,
+    explanation: 'E&O insurance typically costs $300-800 per year for agents, depending on coverage limits, deductible, claims history, and transaction volume. Group rates through associations are often cheaper.'
+  },
+  {
+    id: 'q92',
+    category: 'Insurance',
+    question: 'What does E&O insurance NOT cover?',
+    options: [
+      'Professional negligence',
+      'Errors in paperwork',
+      'Intentional fraud or criminal acts',
+      'Failure to disclose defects'
+    ],
+    correctIndex: 2,
+    explanation: 'E&O insurance does NOT cover intentional acts, fraud, punitive damages, or criminal violations. It only covers negligent acts, errors, and omissions made in good faith.'
+  },
+  {
+    id: 'q93',
+    category: 'Insurance',
+    question: 'What is the difference between claims-made and occurrence E&O policies?',
+    options: [
+      'No difference, just different names',
+      'Claims-made covers when claim is filed; occurrence covers when incident happened',
+      'Claims-made is cheaper',
+      'Occurrence requires tail coverage'
+    ],
+    correctIndex: 1,
+    explanation: 'Claims-made covers claims filed during the policy period (requires tail coverage after). Occurrence covers incidents that occurred during policy (more expensive but no tail needed).'
+  },
+  {
+    id: 'q94',
+    category: 'Insurance',
+    question: 'You\'re retiring and canceling your claims-made E&O policy. What should you buy?',
+    options: [
+      'Nothing needed',
+      'General liability insurance',
+      'Tail coverage (extended reporting period)',
+      'A new occurrence policy'
+    ],
+    correctIndex: 2,
+    explanation: 'Tail coverage provides extended reporting for claims filed after your policy ends for incidents that occurred while insured. Essential when retiring or switching carriers. Costs 1.5-3x annual premium.'
+  },
+  {
+    id: 'q95',
+    category: 'Insurance',
+    question: 'What are standard E&O coverage limits recommended for agents?',
+    options: [
+      '$100K/$100K',
+      '$500K/$500K',
+      '$1M/$1M',
+      '$10M/$10M'
+    ],
+    correctIndex: 2,
+    explanation: '$1M per claim and $1M aggregate (total annual) is standard. $500K is minimum, $2M recommended for high-volume agents. Higher limits provide better protection against large lawsuits.'
+  },
+  {
+    id: 'q96',
+    category: 'Insurance',
+    question: 'An agent makes an error but hasn\'t been sued yet. Should they report it to E&O insurance?',
+    options: [
+      'No, wait until lawsuit is filed',
+      'Yes, report immediately - policies require timely notification',
+      'Only if damages exceed $10,000',
+      'Only if client complains'
+    ],
+    correctIndex: 1,
+    explanation: 'Report ANY potential claim immediately. Most policies require "timely notification" of errors or circumstances that could lead to claims. Waiting can result in denied coverage.'
+  },
+  {
+    id: 'q97',
+    category: 'Insurance',
+    question: 'What is general liability insurance for real estate agents?',
+    options: [
+      'Same as E&O insurance',
+      'Covers bodily injury and property damage during business operations',
+      'Only for brokers',
+      'Covers professional errors'
+    ],
+    correctIndex: 1,
+    explanation: 'General liability covers bodily injury and property damage (like client tripping at a showing). Separate from E&O which covers professional mistakes. Costs $300-600/year.'
+  },
+  {
+    id: 'q98',
+    category: 'Insurance',
+    question: 'What is cyber liability insurance for real estate?',
+    options: [
+      'Covers website hosting',
+      'Covers data breaches and cyberattacks',
+      'Not needed for real estate',
+      'Same as E&O insurance'
+    ],
+    correctIndex: 1,
+    explanation: 'Cyber liability covers data breaches, hacking, and identity theft involving client personal information (SSNs, financial data). Costs $500-2,000/year. Increasingly important with digital transactions.'
+  },
+  {
+    id: 'q99',
+    category: 'Insurance',
+    question: 'What is a fidelity bond in real estate?',
+    options: [
+      'Same as E&O insurance',
+      'Protects against employee theft or dishonest acts',
+      'Required for all agents',
+      'Covers client lawsuits'
+    ],
+    correctIndex: 1,
+    explanation: 'Fidelity bonds protect against employee theft or dishonest acts (stealing funds, forging documents). Required if broker has employees. Different from E&O. Costs $200-500/year.'
+  },
+  {
+    id: 'q100',
+    category: 'Insurance',
+    question: 'A broker has 20 independent contractor agents. Do they need workers compensation insurance?',
+    options: [
+      'Yes, required for all agents',
+      'No, ICs are not employees - workers comp not required',
+      'Yes, but only for full-time agents',
+      'Only if requested by agents'
+    ],
+    correctIndex: 1,
+    explanation: 'Independent contractors are not employees, so workers compensation is not required for them. Only needed if broker has W-2 employees. ICs are responsible for their own insurance.'
+  },
+  {
+    id: 'q101',
+    category: 'Insurance',
+    question: 'What is a typical E&O insurance deductible?',
+    options: [
+      '$100-250',
+      '$1,000-5,000',
+      '$25,000-50,000',
+      'No deductibles on E&O'
+    ],
+    correctIndex: 1,
+    explanation: 'Common deductibles are $1,000-5,000 per claim. Higher deductibles = lower premiums. Deductible applies to both defense costs and any settlements or judgments.'
+  },
+  {
+    id: 'q102',
+    category: 'Insurance',
+    question: 'Can an independent contractor agent buy their own E&O policy?',
+    options: [
+      'No, must be covered by broker only',
+      'Yes, for extra protection beyond broker\'s coverage',
+      'Only if broker doesn\'t have E&O',
+      'Not allowed in Massachusetts'
+    ],
+    correctIndex: 1,
+    explanation: 'Yes, agents can purchase individual E&O policies ($300-600/year) for extra protection beyond the broker\'s coverage or if changing brokerages. Not required but increasingly common.'
+  },
+  {
+    id: 'q103',
+    category: 'Insurance',
+    question: 'What is prior acts coverage in E&O insurance?',
+    options: [
+      'Coverage for criminal acts',
+      'Coverage for incidents before current policy start date',
+      'Coverage for future claims',
+      'Not applicable to real estate'
+    ],
+    correctIndex: 1,
+    explanation: 'Prior acts coverage extends back before your current policy start date. "Full prior acts" has no retroactive date and covers all past work. Critical when switching carriers.'
+  },
+  {
+    id: 'q104',
+    category: 'Insurance',
+    question: 'Total annual insurance costs for a real estate broker\'s office typically run:',
+    options: [
+      '$500-1,000',
+      '$2,000-5,000+',
+      '$10,000-20,000',
+      '$50,000+'
+    ],
+    correctIndex: 1,
+    explanation: 'Broker office insurance (E&O, general liability, commercial property, cyber liability, fidelity bond, etc.) typically costs $2,000-5,000+ annually depending on coverage limits and business size.'
+  },
+  {
+    id: 'q105',
+    category: 'Insurance',
+    question: 'Which situation would E&O insurance typically cover?',
+    options: [
+      'Intentionally hiding property defects',
+      'Missing a deadline that causes client financial loss',
+      'Embezzling client funds',
+      'Criminal fraud'
+    ],
+    correctIndex: 1,
+    explanation: 'E&O covers negligent acts like missing deadlines, errors in paperwork, failure to disclose (if unintentional), and breach of duty. It does NOT cover intentional acts, fraud, or criminal violations.'
   }
 ];
