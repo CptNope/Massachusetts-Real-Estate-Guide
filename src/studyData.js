@@ -1553,6 +1553,62 @@ export const flashcards = [
     question: 'How did MLS creation change real estate but maintain seller representation?',
     answer: 'MLS formalized broker cooperation and information exchange, allowing properties to be shared and marketed widely. However, it maintained seller-only representation - cooperating brokers shared commission but both still represented the seller, not the buyer. Buyer agency came later.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc223',
+    category: 'Agency History',
+    question: 'What happened in 1990 regarding agency disclosure in Massachusetts?',
+    answer: '1990: Board of Registration created 1st written agency form. All real estate agents represented the SELLER unless otherwise disclosed. Agents of firms outside the listing agency were called "Sub-Agents" of the Listing Agent/Seller.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc224',
+    category: 'Agency History',
+    question: 'What changed in 1993 regarding buyer agency?',
+    answer: '1993: Board of Registration revised Agency Disclosure form to recognize Buyer Agency. However, BUYER AGENTS were considered an OUTCAST - agents would offer ZERO compensation, forcing Buyer Agents to get paid through Buyer directly.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc225',
+    category: 'Agency History',
+    question: 'What major change occurred in 2005 regarding agency disclosure?',
+    answer: '2005: VICARIOUS LIABILITY - MA Regulations require licensees to disclose type of relationship to prospective Buyers/Sellers AND type of business model. Form MUST be given "at the first personal meeting to discuss a specific property." Announced "Facilitators" and "Designated Agency." BUYER AGENCY IS WIDELY RECOGNIZED AND SUB-AGENCY IS DEAD.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc226',
+    category: 'Agency History',
+    question: 'What is the Open House Exemption in Massachusetts?',
+    answer: 'Open House Exemption (from 2005 regulations): Can post or provide written materials explaining relationship of agent conducting the Open House. Don\'t need to give formal agency disclosure at open houses if written materials are available.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc227',
+    category: 'Agency History',
+    question: 'What changes were made to the agency disclosure form in 2017 and 2021?',
+    answer: '2017: State revised form to look less like a contract and easier for consumers to understand. 2021: Revised form to include times when there is no personal meeting (Sight Unseen Buyers - buying without in-person viewing).',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc228',
+    category: 'Agency History',
+    question: 'When did buyer agency become widely recognized in Massachusetts?',
+    answer: 'By 2005, BUYER AGENCY IS WIDELY RECOGNIZED AND SUB-AGENCY IS DEAD. Before 2005, buyer agents were outcasts with zero compensation. After 2005, buyer representation became standard practice with proper compensation and legal recognition.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc229',
+    category: 'Agency History',
+    question: 'What must be disclosed "at the first personal meeting to discuss a specific property"?',
+    answer: 'Must disclose (since 2005): (1) Type of relationship to prospective Buyers/Sellers, and (2) Type of business model. This is the VICARIOUS LIABILITY rule requiring upfront agency disclosure before discussing specific properties.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc230',
+    category: 'Agency History',
+    question: 'What are "Facilitators" and "Designated Agency" in Massachusetts?',
+    answer: 'Terms announced in 2005 regulations. Facilitators: agents who help transaction but don\'t represent either party (transaction brokers). Designated Agency: one agent in firm represents buyer, different agent represents seller, avoiding dual agency while allowing in-house deals.',
+    difficulty: 'hard'
   }
 ];
 
@@ -4443,5 +4499,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'MLS formalized broker cooperation and allowed property information sharing. However, it maintained seller-only representation - cooperating brokers shared commission but both still represented seller, not buyer.'
+  },
+  {
+    id: 'q223',
+    category: 'Agency History',
+    question: 'What happened in 1990 in Massachusetts regarding agency?',
+    options: [
+      'Buyer agency was created',
+      'Board created 1st written agency form - all agents represented seller unless disclosed',
+      'Agency was eliminated',
+      'Dual agency became required'
+    ],
+    correctIndex: 1,
+    explanation: '1990: Board of Registration created 1st written agency form. All real estate agents represented the SELLER unless otherwise disclosed. Outside agents were called "Sub-Agents."'
+  },
+  {
+    id: 'q224',
+    category: 'Agency History',
+    question: 'What was the status of buyer agents in 1993?',
+    options: [
+      'Fully recognized and well-compensated',
+      'Recognized but considered outcasts, offered zero compensation, had to get paid by buyer',
+      'Not allowed',
+      'Required for all transactions'
+    ],
+    correctIndex: 1,
+    explanation: '1993: Buyer Agency was recognized but BUYER AGENTS were considered OUTCASTS. Agents would offer ZERO compensation, forcing Buyer Agents to get paid through Buyer directly.'
+  },
+  {
+    id: 'q225',
+    category: 'Agency History',
+    question: 'What major change occurred in 2005 regarding agency?',
+    options: [
+      'Agency was eliminated',
+      'VICARIOUS LIABILITY - must disclose relationship at first personal meeting, buyer agency widely recognized, sub-agency dead',
+      'Sub-agency became mandatory',
+      'Buyer agency was banned'
+    ],
+    correctIndex: 1,
+    explanation: '2005: VICARIOUS LIABILITY rules - must disclose type of relationship and business model at first personal meeting. Introduced Facilitators and Designated Agency. BUYER AGENCY IS WIDELY RECOGNIZED AND SUB-AGENCY IS DEAD.'
+  },
+  {
+    id: 'q226',
+    category: 'Agency History',
+    question: 'When must agency disclosure be given to prospective buyers/sellers?',
+    options: [
+      'At closing',
+      'At the first personal meeting to discuss a specific property',
+      'Within 30 days',
+      'Only if they ask'
+    ],
+    correctIndex: 1,
+    explanation: 'Since 2005: Form MUST be given "at the first personal meeting to discuss a specific property." Must disclose type of relationship and type of business model.'
+  },
+  {
+    id: 'q227',
+    category: 'Agency History',
+    question: 'What is the Open House Exemption?',
+    options: [
+      'No disclosure ever needed at open houses',
+      'Can post or provide written materials explaining agent relationship instead of formal disclosure',
+      'Must give disclosure to every visitor',
+      'Open houses are banned'
+    ],
+    correctIndex: 1,
+    explanation: 'Open House Exemption (2005): Can post or provide written materials explaining relationship of agent conducting the Open House. Don\'t need formal agency disclosure if written materials available.'
+  },
+  {
+    id: 'q228',
+    category: 'Agency History',
+    question: 'When did buyer agency become widely recognized in MA?',
+    options: [
+      '1990',
+      '1993',
+      '2005',
+      '2021'
+    ],
+    correctIndex: 2,
+    explanation: 'By 2005, BUYER AGENCY IS WIDELY RECOGNIZED AND SUB-AGENCY IS DEAD. Before 2005, buyer agents were outcasts. After 2005, buyer representation became standard with proper compensation.'
+  },
+  {
+    id: 'q229',
+    category: 'Agency History',
+    question: 'What change was made to the agency disclosure form in 2021?',
+    options: [
+      'Eliminated disclosure requirement',
+      'Revised form to include times when there is no personal meeting (Sight Unseen Buyers)',
+      'Made it longer and more complex',
+      'Required notarization'
+    ],
+    correctIndex: 1,
+    explanation: '2021: Revised form to include times when there is no personal meeting (Sight Unseen Buyers - buying without in-person viewing). 2017 had made it easier to understand.'
+  },
+  {
+    id: 'q230',
+    category: 'Agency History',
+    question: 'What are "Facilitators" and "Designated Agency"?',
+    options: [
+      'Types of illegal agency',
+      'Terms from 2005 - Facilitators help but don\'t represent, Designated Agency assigns different agents in firm to each party',
+      'Old terms no longer used',
+      'Federal requirements'
+    ],
+    correctIndex: 1,
+    explanation: 'Announced in 2005: Facilitators help transaction but don\'t represent either party. Designated Agency: one agent in firm represents buyer, different agent represents seller, avoiding dual agency.'
   }
 ];
