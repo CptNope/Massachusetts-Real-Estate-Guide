@@ -1777,6 +1777,62 @@ export const flashcards = [
     question: 'What are key open house best practices for listing agents?',
     answer: 'Best practices: Post agency disclosure signs, have sign-in sheet, take business cards, pre-qualify visitors if possible, don\'t discuss other offers, keep seller away from property, follow up with all attendees, note buyer agent attendance, document showing, maintain security, don\'t leave valuables accessible, lock certain rooms if needed.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc255',
+    category: 'Fiduciary Duties',
+    question: 'What does "OLD CAR" stand for in fiduciary duties?',
+    answer: 'OLD CAR = 6 fiduciary duties agents owe clients: (O)bedience - obey all lawful directions, (L)oyalty - client interests above all, (D)isclosure - disclose material facts/defects, (C)onfidentiality - keep info confidential, (A)ccountability - account for & protect earnest money/documents, (R)easonable Care - use skills/expertise to protect clients.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc256',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of OBEDIENCE?',
+    answer: 'Obedience: Must obey all LAWFUL directions from client. Agent must follow client instructions unless illegal, unethical, or impossible. Cannot substitute own judgment for client\'s wishes. If client gives unlawful direction (discrimination, fraud), agent must refuse and can terminate relationship. Client is the boss within legal bounds.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc257',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of LOYALTY?',
+    answer: 'Loyalty: Client\'s interests above ALL others - including agent\'s own interests. No self-dealing, no secret profits, no dual agency without consent, no steering, must present ALL offers, negotiate best terms for client, disclose all beneficial interest. Agent works FOR client, not against them or for own benefit.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc258',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of DISCLOSURE?',
+    answer: 'Disclosure: Must disclose any "material facts or defects" to client. This includes: property defects known to agent, better offers received, buyer\'s financial weakness, seller\'s motivation if known, conflicts of interest, market conditions, comparable sales. Duty to investigate and inform. Cannot hide information that affects client\'s decision.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc259',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of CONFIDENTIALITY?',
+    answer: 'Confidentiality: "Lips sealed" - keep client information private. Cannot disclose: seller\'s bottom line, buyer\'s max price, client motivation/desperation, personal/financial info, negotiating position, anything client wants confidential. Extends beyond transaction end. Exceptions: court order, client consent, legal requirement (fraud/crime).',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc260',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of ACCOUNTABILITY?',
+    answer: 'Accountability: Duty to account for & protect earnest money and legal documents. Must: deposit funds promptly in escrow, maintain accurate records, provide accounting when requested, protect client assets, never commingle funds, safeguard documents, track all money, return unused funds. Responsible for all client money/property in agent\'s care.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc261',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of REASONABLE CARE?',
+    answer: 'Reasonable Care: Utilize skills and expertise to protect clients. Must: provide competent service, investigate property, verify information, give accurate advice, meet deadlines, communicate promptly, know market, understand contracts, recommend professionals (attorney, inspector, CPA), disclose when beyond expertise. Professional standard of care required.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc262',
+    category: 'Fiduciary Duties',
+    question: 'To whom do agents owe fiduciary duties?',
+    answer: 'Agents owe fiduciary duties ONLY to their clients (principals) - the party they represent under written agency agreement. Seller agents owe to seller. Buyer agents owe to buyer. Do NOT owe fiduciary duties to customers (other party), though must be honest and fair. Fiduciary = special relationship of trust and confidence with CLIENT only.',
+    difficulty: 'hard'
   }
 ];
 
@@ -5083,5 +5139,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Best practices: Post agency disclosure signs, sign-in sheet, take business cards, pre-qualify visitors if possible, don\'t discuss other offers, keep seller away, follow up with all attendees, note buyer agent attendance, document showing, maintain security, lock rooms if needed.'
+  },
+  {
+    id: 'q255',
+    category: 'Fiduciary Duties',
+    question: 'What does "OLD CAR" stand for?',
+    options: [
+      'Old Commercial And Residential',
+      'Obedience, Loyalty, Disclosure, Confidentiality, Accountability, Reasonable Care',
+      'Only Licensed Dealers Can Accept Requests',
+      'Offer, List, Deal, Close, Account, Report'
+    ],
+    correctIndex: 1,
+    explanation: 'OLD CAR = 6 fiduciary duties agents owe clients: (O)bedience - obey lawful directions, (L)oyalty - client interests above all, (D)isclosure - disclose material facts/defects, (C)onfidentiality - keep info private, (A)ccountability - protect money/documents, (R)easonable Care - use skills to protect clients.'
+  },
+  {
+    id: 'q256',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of OBEDIENCE?',
+    options: [
+      'Always do what client says, even if illegal',
+      'Must obey all LAWFUL directions from client; refuse unlawful directions',
+      'Obey broker, not client',
+      'Follow MLS rules'
+    ],
+    correctIndex: 1,
+    explanation: 'Obedience: Must obey all LAWFUL directions from client. Follow client instructions unless illegal, unethical, or impossible. Cannot substitute own judgment. If client gives unlawful direction (discrimination, fraud), must refuse and can terminate. Client is boss within legal bounds.'
+  },
+  {
+    id: 'q257',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of LOYALTY?',
+    options: [
+      'Loyal to broker only',
+      'Client interests above ALL others, including agent\'s own - no self-dealing, present all offers',
+      'Loyal to whichever side pays more',
+      'Loyal to MLS'
+    ],
+    correctIndex: 1,
+    explanation: 'Loyalty: Client\'s interests above ALL others - including agent\'s own. No self-dealing, no secret profits, no dual agency without consent, no steering, must present ALL offers, negotiate best for client. Agent works FOR client, not against or for own benefit.'
+  },
+  {
+    id: 'q258',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of DISCLOSURE?',
+    options: [
+      'Disclose everything to everyone',
+      'Must disclose material facts/defects to CLIENT - property issues, better offers, conflicts of interest',
+      'Never disclose anything',
+      'Only disclose what\'s required by law'
+    ],
+    correctIndex: 1,
+    explanation: 'Disclosure: Must disclose any "material facts or defects" TO CLIENT. Includes: property defects known to agent, better offers, buyer financial weakness, seller motivation if known, conflicts of interest, market conditions, comparables. Duty to investigate and inform. Cannot hide info affecting client decisions.'
+  },
+  {
+    id: 'q259',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of CONFIDENTIALITY?',
+    options: [
+      'Tell everyone everything',
+      '"Lips sealed" - keep client info private (bottom line, max price, motivation); exceptions: court order, consent',
+      'Only keep info private for 30 days',
+      'Confidentiality doesn\'t apply to agents'
+    ],
+    correctIndex: 1,
+    explanation: 'Confidentiality: "Lips sealed" - keep client info private. Cannot disclose: seller bottom line, buyer max price, motivation/desperation, personal/financial info, negotiating position. Extends beyond transaction. Exceptions: court order, client consent, legal requirement (fraud/crime).'
+  },
+  {
+    id: 'q260',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of ACCOUNTABILITY?',
+    options: [
+      'Keep receipts for yourself',
+      'Account for & protect earnest money/documents - prompt deposit, accurate records, never commingle',
+      'Count all showings',
+      'Report to broker only'
+    ],
+    correctIndex: 1,
+    explanation: 'Accountability: Duty to account for & protect earnest money and legal documents. Must: deposit funds promptly in escrow, maintain accurate records, provide accounting when requested, protect client assets, never commingle funds, safeguard documents, track all money, return unused funds.'
+  },
+  {
+    id: 'q261',
+    category: 'Fiduciary Duties',
+    question: 'What is the fiduciary duty of REASONABLE CARE?',
+    options: [
+      'Do minimum required',
+      'Utilize skills/expertise to protect clients - competent service, investigate, verify info, meet deadlines',
+      'Just show properties',
+      'Care only about commission'
+    ],
+    correctIndex: 1,
+    explanation: 'Reasonable Care: Utilize skills and expertise to protect clients. Must: provide competent service, investigate property, verify information, give accurate advice, meet deadlines, communicate promptly, know market, understand contracts, recommend professionals, disclose when beyond expertise. Professional standard required.'
+  },
+  {
+    id: 'q262',
+    category: 'Fiduciary Duties',
+    question: 'To whom do agents owe fiduciary duties?',
+    options: [
+      'Everyone in the transaction',
+      'ONLY to their clients (principals) under written agency agreement - not to customers',
+      'Only to the broker',
+      'To both buyer and seller equally'
+    ],
+    correctIndex: 1,
+    explanation: 'Agents owe fiduciary duties ONLY to their clients (principals) - the party they represent under written agency agreement. Seller agents owe to seller. Buyer agents owe to buyer. Do NOT owe fiduciary duties to customers (other party), though must be honest/fair. Fiduciary = special trust with CLIENT only.'
   }
 ];
