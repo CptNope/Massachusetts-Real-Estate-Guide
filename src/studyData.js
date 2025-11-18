@@ -1084,6 +1084,76 @@ export const flashcards = [
     question: 'What is the intent test for telemarketing calls?',
     answer: 'If the purpose/intent is to promote your business or generate future paid business, it is telemarketing. Offering "free" services still promotes your business. Courts look at intent, not just whether something costs money.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc156',
+    category: 'TCPA',
+    question: 'What are the TCPA time restrictions for calls and texts?',
+    answer: 'TCPA prohibits calls and texts made before 8am or after 9pm LOCAL TIME of the person being called. Applies to all telemarketing calls. Violations subject to penalties. Must respect recipient\'s time zone, not your own.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc157',
+    category: 'TCPA',
+    question: 'What caller disclosure information must be provided under TCPA?',
+    answer: 'Must provide: (1) name of caller or entity on whose behalf call is being made, (2) telephone number and address where person/entity can be reached. Required at beginning of call. Failure to disclose properly violates TCPA.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc158',
+    category: 'TCPA',
+    question: 'What is required for ringless voicemails under TCPA?',
+    answer: 'Ringless voicemails require prior express written consent, same as auto-dialers and prerecorded messages. Technology that drops voicemail without ringing phone is still regulated. Cannot use to circumvent TCPA consent requirements.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc159',
+    category: 'Do Not Call',
+    question: 'What is an internal DNC list and is it required?',
+    answer: 'Company-specific Do Not Call list of people who asked not to be called by your company. TCPA requires maintaining internal DNC list IN ADDITION to checking National DNC database. Must honor opt-out requests immediately and keep for 5 years.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc160',
+    category: 'Do Not Call',
+    question: 'How long after a consumer inquiry can you call them?',
+    answer: 'If consumer makes an inquiry (property showing, open house, website contact), licensee can call up to 3 MONTHS after the inquiry. After 3 months, inquiry-based permission expires unless EBR established through transaction.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc161',
+    category: 'Do Not Call',
+    question: 'Can a buyer\'s agent call a FSBO (For Sale By Owner) on the DNC Registry?',
+    answer: 'YES, if contacting on behalf of agent\'s buyer client. NO, if agent is seeking to solicit the listing. Purpose matters: representing buyer = okay, soliciting listing = violation if on DNC without consent.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc162',
+    category: 'Do Not Call',
+    question: 'What is a commonly cited DNC violation penalty amount?',
+    answer: 'Up to $11,000 per call (some sources cite higher amounts adjusted for inflation up to $43,280). Federal Trade Commission can impose civil penalties. Amount depends on violation circumstances and when violation occurred. Penalties increase over time.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc163',
+    category: 'TCPA',
+    question: 'What technologies require prior express written consent under TCPA?',
+    answer: 'Auto-dialers, artificial voice/prerecorded messages, and ringless voicemails ALL require prior express written consent before calling cell phones. Cannot use technology to circumvent consent requirements. Must be written, not verbal.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc164',
+    category: 'Do Not Call',
+    question: 'How long does an EBR from a transaction last?',
+    answer: 'Up to 18 MONTHS after the end of the transaction. Example: If transaction closed January 1, 2024, you can call that client until July 1, 2025. After 18 months, EBR expires and need written consent to call if on DNC.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc165',
+    category: 'Do Not Call',
+    question: 'What is the difference between 3-month and 18-month DNC exemptions?',
+    answer: 'INQUIRY = 3 months (open house attendance, showing request, website inquiry). TRANSACTION = 18 months (completed purchase/sale where you were agent). Transaction creates longer EBR than inquiry. After expiration, need consent if on DNC.',
+    difficulty: 'hard'
   }
 ];
 
@@ -3103,5 +3173,135 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Offering free CMAs to generate listing business IS telemarketing - you\'re promoting your services. Options A, B, D are generally not telemarketing (existing relationship, client-initiated, transaction-specific).'
+  },
+  {
+    id: 'q156',
+    category: 'TCPA',
+    question: 'What are the time restrictions for telemarketing calls under TCPA?',
+    options: [
+      'Anytime is okay',
+      '8am-9pm local time of the person being called',
+      '9am-5pm business hours',
+      '8am-8pm your local time'
+    ],
+    correctIndex: 1,
+    explanation: 'TCPA prohibits telemarketing calls before 8am or after 9pm LOCAL TIME of the person being called. Must respect recipient\'s time zone, not your own. Violations subject to penalties.'
+  },
+  {
+    id: 'q157',
+    category: 'TCPA',
+    question: 'What caller information must be disclosed under TCPA?',
+    options: [
+      'Just your name',
+      'Name, phone number, and address where you can be reached',
+      'Only company name',
+      'No disclosure required'
+    ],
+    correctIndex: 1,
+    explanation: 'Must provide: (1) name of caller or entity, (2) telephone number and address where person/entity can be reached. Required at beginning of call. Failure to properly disclose violates TCPA.'
+  },
+  {
+    id: 'q158',
+    category: 'TCPA',
+    question: 'Do ringless voicemails require consent under TCPA?',
+    options: [
+      'No, they don\'t ring so they\'re exempt',
+      'Yes, require prior express written consent',
+      'Only if over 30 seconds',
+      'Only for marketing'
+    ],
+    correctIndex: 1,
+    explanation: 'YES - ringless voicemails require prior express written consent, same as auto-dialers and prerecorded messages. Technology that drops voicemail without ringing is still regulated. Cannot circumvent TCPA.'
+  },
+  {
+    id: 'q159',
+    category: 'Do Not Call',
+    question: 'What is an internal DNC list?',
+    options: [
+      'Same as National DNC',
+      'Company-specific list of people who asked not to be called by your company',
+      'Not required',
+      'Optional tracking'
+    ],
+    correctIndex: 1,
+    explanation: 'Internal DNC list is company-specific list of opt-out requests. TCPA requires maintaining it IN ADDITION to checking National DNC. Must honor immediately and keep for 5 years.'
+  },
+  {
+    id: 'q160',
+    category: 'Do Not Call',
+    question: 'How long after an open house attendance can you call someone?',
+    options: [
+      'Forever',
+      '3 months after the inquiry',
+      '18 months',
+      '1 week'
+    ],
+    correctIndex: 1,
+    explanation: 'Open house attendance creates an INQUIRY-based exception lasting 3 MONTHS. After 3 months, permission expires unless EBR established through transaction. Different from 18-month transaction EBR.'
+  },
+  {
+    id: 'q161',
+    category: 'Do Not Call',
+    question: 'Can a buyer\'s agent call a FSBO seller on the DNC Registry to discuss their buyer client?',
+    options: [
+      'No, FSBO are always off-limits',
+      'Yes, if contacting on behalf of agent\'s buyer client',
+      'Only with written permission',
+      'Never allowed'
+    ],
+    correctIndex: 1,
+    explanation: 'YES - buyer\'s agent can contact FSBO on behalf of buyer client. NO if seeking to solicit listing. Purpose matters: representing buyer = okay, soliciting listing = DNC violation without consent.'
+  },
+  {
+    id: 'q162',
+    category: 'Do Not Call',
+    question: 'An agent closed a transaction on March 1, 2024. Until when can they call that client if on DNC?',
+    options: [
+      'Forever, they\'re a past client',
+      'September 1, 2025 (18 months after)',
+      'June 1, 2024 (3 months)',
+      '1 year'
+    ],
+    correctIndex: 1,
+    explanation: 'TRANSACTION-based EBR lasts 18 MONTHS after end of transaction. March 1, 2024 + 18 months = September 1, 2025. After that, EBR expires and need written consent if on DNC.'
+  },
+  {
+    id: 'q163',
+    category: 'Do Not Call',
+    question: 'What\'s the difference between the 3-month and 18-month EBR periods?',
+    options: [
+      'No difference',
+      '3 months = inquiry, 18 months = completed transaction',
+      '3 months for buyers, 18 for sellers',
+      '3 months = first call, 18 = follow-ups'
+    ],
+    correctIndex: 1,
+    explanation: 'INQUIRY (open house, showing, website contact) = 3 months. TRANSACTION (completed purchase/sale as their agent) = 18 months. Transaction creates longer EBR than inquiry.'
+  },
+  {
+    id: 'q164',
+    category: 'TCPA',
+    question: 'Which technologies require prior express written consent under TCPA?',
+    options: [
+      'Only auto-dialers',
+      'Auto-dialers, prerecorded messages, and ringless voicemails',
+      'Just text messages',
+      'None if calling cell phones'
+    ],
+    correctIndex: 1,
+    explanation: 'ALL THREE require prior express written consent: auto-dialers, artificial voice/prerecorded messages, and ringless voicemails. Cannot use technology to circumvent consent requirements.'
+  },
+  {
+    id: 'q165',
+    category: 'Do Not Call',
+    question: 'A commonly cited penalty for DNC violations is:',
+    options: [
+      '$500 per call',
+      '$11,000 per call',
+      '$100 per call',
+      'Just a warning'
+    ],
+    correctIndex: 1,
+    explanation: 'Commonly cited as $11,000 per call (some sources cite up to $43,280 adjusted for inflation). FTC can impose civil penalties. Amount depends on circumstances and when violation occurred.'
   }
 ];
