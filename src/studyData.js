@@ -1721,6 +1721,62 @@ export const flashcards = [
     question: 'What is proper response when client says "My friend told me I don\'t owe taxes"?',
     answer: 'Response: "Everyone\'s tax situation is unique. What applies to your friend may not apply to you. I strongly recommend consulting with your CPA or tax advisor to understand your specific situation. Tax laws are complex and penalties for mistakes can be significant. A tax professional can give you accurate guidance for YOUR circumstances."',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc247',
+    category: 'Open House',
+    question: 'What are the agency disclosure requirements for open houses in Massachusetts?',
+    answer: 'Open House Exemption (from 2005 regulations): Can post or provide written materials explaining the relationship of the agent conducting the open house. Don\'t need to give formal one-on-one agency disclosure IF written materials are clearly posted/available. Must still disclose if discussing specific offers or representation.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc248',
+    category: 'Open House',
+    question: 'What should sellers NEVER say at open houses?',
+    answer: 'NEVER say: "We need to sell by [date]", "We\'ve had no offers", "We already dropped the price", "We\'ll consider all offers/any offer", "We\'re desperate", "We\'re getting divorced", "Job transfer", "Financial problems", "House has been on market X days", "Previous buyer backed out". These destroy negotiating position.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc249',
+    category: 'Open House',
+    question: 'How should you coach sellers before an open house?',
+    answer: 'Tell sellers: "Please leave during open house. If you stay, don\'t discuss: timeline pressure, motivation to sell, price reductions, other offers (or lack of), property issues, or personal situation. Say only: \'My agent can answer that\' or \'Let me get you my agent\'s card.\' Visitors may be buyer agents gathering intel - protect your position!"',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc250',
+    category: 'Open House',
+    question: 'What information damages a seller\'s negotiating position?',
+    answer: 'Damaging info: Time pressure (must sell by date), motivation (divorce, job transfer, financial), lack of offers, previous price drops, days on market, previous deals falling through, property defects not disclosed, seller flexibility/desperation, comparable sales in area, what seller paid. Buyer agents use this info to lowball offers.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc251',
+    category: 'Open House',
+    question: 'What should sellers say if visitors ask questions at open houses?',
+    answer: 'Safe responses: "My agent can answer that - here\'s their card", "That\'s a great question for my agent", "I\'m not sure - my agent has all that information", "My agent is handling all inquiries". Keep it friendly but refer everything to agent. Better yet - LEAVE THE PROPERTY during open house.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc252',
+    category: 'Open House',
+    question: 'Why should sellers leave during open houses?',
+    answer: 'Reasons: (1) Buyers feel uncomfortable looking freely, (2) Sellers accidentally reveal damaging info, (3) Sellers get emotionally attached and defensive, (4) Can\'t ask seller to leave own home when they\'re there, (5) Buyer agents pump sellers for information, (6) Removes pressure/awkwardness, (7) Professional presentation. Best practice: ALWAYS leave.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc253',
+    category: 'Open House',
+    question: 'How do buyer agents use open house information against sellers?',
+    answer: 'Tactics: Ask innocent-sounding questions to get timeline, motivation, financial pressure. Look for clues (moving boxes, job transfer paperwork). Engage seller in conversation to extract info. Ask about offers received, time on market, price changes. Use any admission of pressure/need to justify lowball offers. Information = negotiating power.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc254',
+    category: 'Open House',
+    question: 'What are key open house best practices for listing agents?',
+    answer: 'Best practices: Post agency disclosure signs, have sign-in sheet, take business cards, pre-qualify visitors if possible, don\'t discuss other offers, keep seller away from property, follow up with all attendees, note buyer agent attendance, document showing, maintain security, don\'t leave valuables accessible, lock certain rooms if needed.',
+    difficulty: 'medium'
   }
 ];
 
@@ -4923,5 +4979,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Response: "Everyone\'s tax situation is unique. What applies to your friend may not apply to you. I strongly recommend consulting with your CPA or tax advisor to understand YOUR specific situation. Tax laws are complex and penalties significant. A tax professional gives accurate guidance for YOUR circumstances."'
+  },
+  {
+    id: 'q247',
+    category: 'Open House',
+    question: 'What are the agency disclosure requirements for open houses in MA?',
+    options: [
+      'Must give disclosure to every visitor',
+      'Can post written materials explaining agent relationship instead of formal one-on-one disclosure',
+      'No disclosure needed at open houses',
+      'Only disclose to serious buyers'
+    ],
+    correctIndex: 1,
+    explanation: 'Open House Exemption (2005): Can post or provide written materials explaining relationship of agent conducting open house. Don\'t need formal one-on-one disclosure IF written materials clearly posted/available. Must still disclose if discussing specific offers/representation.'
+  },
+  {
+    id: 'q248',
+    category: 'Open House',
+    question: 'What should sellers NEVER say at open houses?',
+    options: [
+      'Welcome, feel free to look around',
+      '"We need to sell by [date]" or "We\'ve had no offers" or "We already dropped the price"',
+      'My agent\'s card is on the table',
+      'Please sign in'
+    ],
+    correctIndex: 1,
+    explanation: 'NEVER say: "We need to sell by [date]", "We\'ve had no offers", "We already dropped the price", "We\'ll consider any offer", "We\'re desperate/divorced/relocating". These destroy negotiating position and give buyer agents ammunition for lowball offers.'
+  },
+  {
+    id: 'q249',
+    category: 'Open House',
+    question: 'Best advice to give sellers before an open house?',
+    options: [
+      'Stay and answer all questions',
+      'Leave the property - if you must stay, say only "My agent can answer that"',
+      'Tell visitors everything about the house',
+      'Negotiate directly with buyers'
+    ],
+    correctIndex: 1,
+    explanation: 'Tell sellers: "Please LEAVE during open house. If you stay, don\'t discuss timeline, motivation, price reductions, offers, or personal situation. Say only \'My agent can answer that.\' Visitors may be buyer agents gathering intel to lowball you!"'
+  },
+  {
+    id: 'q250',
+    category: 'Open House',
+    question: 'What information damages seller\'s negotiating position?',
+    options: [
+      'Property features and upgrades',
+      'Time pressure, motivation (divorce/job transfer), lack of offers, previous price drops',
+      'School district information',
+      'Square footage'
+    ],
+    correctIndex: 1,
+    explanation: 'Damaging info: Time pressure (must sell by date), motivation (divorce, job transfer, financial), lack of offers, previous price drops, days on market, previous deals falling through, seller desperation. Buyer agents use this to justify lowball offers.'
+  },
+  {
+    id: 'q251',
+    category: 'Open House',
+    question: 'If a visitor asks seller questions at open house, best response?',
+    options: [
+      'Answer everything honestly',
+      '"My agent can answer that - here\'s their card"',
+      'Make up answers',
+      'Ignore them'
+    ],
+    correctIndex: 1,
+    explanation: 'Safe responses: "My agent can answer that - here\'s their card", "That\'s a great question for my agent", "My agent has all that information", "My agent is handling all inquiries". Keep friendly but refer everything to agent. Better yet - LEAVE!'
+  },
+  {
+    id: 'q252',
+    category: 'Open House',
+    question: 'Why should sellers leave during open houses?',
+    options: [
+      'To go shopping',
+      'Buyers uncomfortable, sellers reveal damaging info, removes pressure, professional presentation',
+      'Required by law',
+      'Agent wants the house empty'
+    ],
+    correctIndex: 1,
+    explanation: 'Reasons: (1) Buyers feel uncomfortable looking freely, (2) Sellers accidentally reveal damaging info, (3) Sellers get emotional/defensive, (4) Can\'t ask seller to leave when they\'re there, (5) Buyer agents pump sellers for info, (6) Removes awkwardness, (7) Professional. Best practice: ALWAYS leave.'
+  },
+  {
+    id: 'q253',
+    category: 'Open House',
+    question: 'How do buyer agents extract damaging information at open houses?',
+    options: [
+      'They don\'t',
+      'Ask innocent questions about timeline, motivation, offers; engage seller in conversation; look for clues',
+      'They demand answers',
+      'They threaten sellers'
+    ],
+    correctIndex: 1,
+    explanation: 'Tactics: Ask innocent-sounding questions to get timeline, motivation, financial pressure. Look for clues (moving boxes, transfer papers). Engage seller in conversation. Ask about offers, time on market, price changes. Use any admission of pressure to justify lowball offers. Information = power.'
+  },
+  {
+    id: 'q254',
+    category: 'Open House',
+    question: 'Key open house best practices for listing agents?',
+    options: [
+      'Let anyone wander freely',
+      'Post agency disclosure, sign-in sheet, business cards, keep seller away, follow up with attendees',
+      'No documentation needed',
+      'Only let in pre-approved buyers'
+    ],
+    correctIndex: 1,
+    explanation: 'Best practices: Post agency disclosure signs, sign-in sheet, take business cards, pre-qualify visitors if possible, don\'t discuss other offers, keep seller away, follow up with all attendees, note buyer agent attendance, document showing, maintain security, lock rooms if needed.'
   }
 ];
