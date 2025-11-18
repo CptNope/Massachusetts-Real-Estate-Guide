@@ -176,48 +176,433 @@ The guide covers comprehensive topics including:
 - Offer counter-strategies
 - Exam preparation tips
 
-## Roadmap / Future Improvements
+## 📊 Current App Status
 
-### ✅ v1.1 – Content & UX polish (COMPLETED)
-- [x] Add search/filter to quickly jump to topics (e.g., "dual agency", "inspection").
-- [x] Add "copy to clipboard" buttons for code blocks and clauses.
-- [x] Add a light/dark theme toggle for better printing and accessibility.
-- [x] Add PWA support for offline access and installability.
-- [ ] Add in-page table of contents for long sections.
+### Content Library
+- **21 Guide Sections** covering all MA real estate exam topics
+- **35 Flashcards** (easy, medium, hard difficulty levels)
+- **35 Quiz Questions** with detailed explanations
+- **3 Interactive Scenarios** with branching paths and multiple endings
+- **2 Professional Calculators** (commission split & net proceeds)
+- **Complete 2025 Law Coverage** including antitrust and associations
+
+### Study Tools
+- ✅ Flashcard mode with flip animations
+- ✅ Multiple-choice quiz with scoring system
+- ✅ Personal dashboard with progress tracking
+- ✅ Section mastery & review marking
+- ✅ Note-taking system with localStorage
+- ✅ Quiz history and performance analytics
+
+### User Experience
+- ✅ Light/Dark theme toggle
+- ✅ Real-time search across all content
+- ✅ Keyboard shortcuts (Alt+1-6, arrows, etc.)
+- ✅ Export/Import progress data
+- ✅ Print-friendly CSS
+- ✅ PWA support (installable app)
+- ✅ Offline capability
+- ✅ Mobile-responsive design
+
+---
+
+## 🗺️ Roadmap / Future Improvements
+
+### ✅ v1.1 – Content & UX Polish (COMPLETED)
+- [x] Add search/filter to quickly jump to topics
+- [x] Add "copy to clipboard" buttons for code blocks
+- [x] Add light/dark theme toggle
+- [x] Add PWA support for offline access
+- [x] Mobile-responsive design fixes
+- [ ] Add in-page table of contents for long sections
+- [ ] Add breadcrumb navigation for section hierarchy
 
 ### ✅ v1.2 – Study Mode (COMPLETED)
-- [x] Add flashcard mode for exam prep (question/answer cards).
-- [x] Add multiple-choice quiz questions with scoring.
-- [x] Add progress tracking with localStorage.
-- [x] Add quiz history and grade display.
-- [ ] Add "exam cram" printable PDF export.
+- [x] Add flashcard mode with progress tracking
+- [x] Add multiple-choice quiz with scoring
+- [x] Add progress tracking with localStorage
+- [x] Add quiz history and grade display
+- [ ] Add "exam cram" printable PDF export
+- [ ] Add timed quiz mode (simulate exam conditions)
 
 ### ✅ v1.3 – Interactive Scenarios (COMPLETED)
-- [x] Scenario-based walkthroughs: choose buyer/seller/investor paths and see recommended outcomes.
-- [x] Decision trees that show how offers, counters, and contingencies play out.
-- [x] Expert feedback and recommendations on every scenario ending.
-- [x] Multiple endings based on user choices (positive, negative, neutral).
-- [x] Scenario completion tracking with localStorage.
+- [x] Scenario-based walkthroughs (buyer/seller/investor)
+- [x] Decision trees with multiple outcomes
+- [x] Expert feedback on every ending
+- [x] Scenario completion tracking
+- [ ] Add 5 more advanced scenarios
+- [ ] Add "scenario replay" to try different paths
+- [ ] Add scenario difficulty ratings
 
 ### ✅ v1.4 – Personalization (COMPLETED)
-- [x] Allow users to mark sections as "mastered" or "review later".
-- [x] Local storage of last active section and theme preference.
-- [x] Optional note-taking area stored in browser localStorage.
-- [x] Personal dashboard with progress stats and visualization.
-- [x] Comprehensive progress tracking across all features.
+- [x] Mark sections as "mastered" or "review later"
+- [x] Remember last active section
+- [x] Note-taking with localStorage
+- [x] Personal dashboard with stats
+- [x] Comprehensive progress tracking
+- [ ] Add custom study schedules/reminders
+- [ ] Add goal-setting features
 
-### v2.0 – Data-Driven & Updatable
-- [ ] Move content to JSON/Markdown so it can be updated without touching React components.
-- [ ] Add a simple CMS-like editing mode (for private use only) guarded by a basic auth layer.
-- [ ] Hook into an external data source for law/form updates (when available).
+### ✅ v1.5 – Power User Tools (COMPLETED)
+- [x] Commission split calculator with cap support
+- [x] Net proceeds calculator with itemization
+- [x] Keyboard shortcuts for navigation
+- [x] Export/Import progress feature
+- [x] Print-friendly CSS
+- [ ] Add ROI calculator for investors
+- [ ] Add mortgage payment calculator
+- [ ] Add closing cost estimator
 
-### Stretch Ideas
-- [x] Add calculator widgets (e.g., commission split calculator, net proceeds estimator).
-- [x] Add export/import feature for study progress.
-- [x] Add keyboard shortcuts for power users.
-- [x] Add print-friendly CSS for offline study.
-- [ ] Integrate with spaced repetition tools (e.g., export to Anki).
-- [ ] Embed short explainer videos or audio clips.
+---
+
+### 📈 v2.0 – Advanced Assessment & Analytics (PLANNED)
+
+**Priority: High** | **Estimated Effort: 3-4 weeks**
+
+#### Assessment Features
+- [ ] **Practice Exam Mode**
+  - Full-length timed exams (simulating real MA exam)
+  - 100+ questions with state-like difficulty
+  - Instant results with performance breakdown
+  - Topic-by-topic strength analysis
+  
+- [ ] **Adaptive Learning**
+  - Track which topics you struggle with
+  - Auto-generate custom quizzes focusing on weak areas
+  - Recommend sections to review based on quiz performance
+  - Difficulty adjustment based on success rate
+
+- [ ] **Study Streaks & Gamification**
+  - Daily study streak counter
+  - Achievement badges (e.g., "Quiz Master", "Scenario Expert")
+  - Leaderboard (optional, local-only)
+  - XP points for completing activities
+
+#### Analytics & Insights
+- [ ] **Performance Dashboard**
+  - Time spent per section
+  - Quiz performance trends over time
+  - Mastery level visualization
+  - Weak topic identification
+  - Study session calendar/heatmap
+
+- [ ] **Prediction Model**
+  - "Exam readiness" score based on all activities
+  - Estimated pass probability
+  - Recommended study plan to reach target score
+  - Days until fully prepared estimate
+
+---
+
+### 🎓 v2.1 – Content Expansion (PLANNED)
+
+**Priority: Medium-High** | **Estimated Effort: 2-3 weeks**
+
+#### More Study Materials
+- [ ] **Expand to 100+ Quiz Questions**
+  - 50 more questions covering edge cases
+  - Situational/scenario-based questions
+  - Image-based questions (floor plans, documents)
+  - State-specific regulation questions
+
+- [ ] **Expand to 100+ Flashcards**
+  - Terminology and definitions (50 cards)
+  - Law and regulation cards (25 cards)
+  - Math and calculation cards (25 cards)
+  - Cloze deletion format cards
+
+- [ ] **Add 10 More Scenarios**
+  - Difficult negotiations
+  - Ethical dilemmas
+  - Legal edge cases
+  - Multi-party transactions
+  - Problem properties
+
+#### New Guide Sections
+- [ ] **Fair Housing Act Deep Dive**
+  - Protected classes in MA
+  - Violations and penalties
+  - Advertising compliance
+  - Case studies
+
+- [ ] **Property Valuation Methods**
+  - Comparative Market Analysis (CMA)
+  - Cost approach
+  - Income approach
+  - Market approach
+
+- [ ] **Financing Deep Dive**
+  - Conventional loans
+  - FHA/VA loans
+  - Jumbo loans
+  - Alternative financing
+  - Seller financing
+
+- [ ] **Title & Closing Process**
+  - Title search process
+  - Title insurance types
+  - Closing documents explained
+  - ALTA settlement statement
+
+- [ ] **Tax Implications**
+  - Capital gains (primary residence vs. investment)
+  - 1031 exchanges
+  - Depreciation for investors
+  - First-time homebuyer credits
+
+---
+
+### 🔧 v2.2 – Data-Driven & Updatable (PLANNED)
+
+**Priority: Medium** | **Estimated Effort: 2-3 weeks**
+
+#### Content Management
+- [ ] Move all content to JSON/Markdown files
+- [ ] Add simple CMS-like editing mode (password-protected)
+- [ ] Version control for content updates
+- [ ] Hook into external law/form update API (when available)
+
+#### Dynamic Updates
+- [ ] "What's New" section highlighting recent law changes
+- [ ] Content update notifications
+- [ ] Automatic form update checker (MAR forms)
+- [ ] RSS feed for MA real estate law changes
+
+---
+
+### 🎥 v2.3 – Multimedia Learning (PLANNED)
+
+**Priority: Medium** | **Estimated Effort: 3-4 weeks**
+
+#### Video Integration
+- [ ] Embed short explainer videos (5-10 min each)
+- [ ] Video flashcards with visual demonstrations
+- [ ] Contract walkthrough videos
+- [ ] Interview with practicing agents
+- [ ] Virtual property tour scenarios
+
+#### Audio Content
+- [ ] Audio flashcard mode for commuters
+- [ ] Podcast-style lessons for each section
+- [ ] Audio quizzes (listen and answer)
+- [ ] Text-to-speech for any section
+
+#### Visual Learning
+- [ ] Interactive infographics for complex topics
+- [ ] Flowcharts for decision-making processes
+- [ ] Annotated contract documents
+- [ ] Property inspection photo gallery
+- [ ] Timeline visualizations for transaction process
+
+---
+
+### 🤝 v2.4 – Community & Collaboration (PLANNED)
+
+**Priority: Low-Medium** | **Estimated Effort: 4-5 weeks**
+
+#### Social Features
+- [ ] **Study Groups**
+  - Create private study groups
+  - Share progress with group members
+  - Group leaderboards
+  - Challenge friends to quizzes
+
+- [ ] **Discussion Forums**
+  - Ask questions on specific topics
+  - Share tips and strategies
+  - Real-world experience sharing
+  - Moderated by licensed agents
+
+- [ ] **User-Generated Content**
+  - Submit your own flashcards
+  - Share custom scenarios
+  - Rate and review content
+  - Community voting on best content
+
+#### Mentorship
+- [ ] Connect new agents with experienced mentors
+- [ ] Q&A sessions with practicing brokers
+- [ ] Career guidance resources
+- [ ] Brokerage comparison tool
+
+---
+
+### 🛠️ v2.5 – Professional Tools Suite (PLANNED)
+
+**Priority: Medium** | **Estimated Effort: 2-3 weeks**
+
+#### More Calculators
+- [ ] **Mortgage Calculator**
+  - Principal, interest, taxes, insurance
+  - Amortization schedule
+  - Extra payment scenarios
+  - Refinance calculator
+
+- [ ] **Investment Property Analyzer**
+  - Cap rate calculator
+  - Cash-on-cash return
+  - BRRRR method calculator
+  - Rental property income projections
+
+- [ ] **CMA (Comparative Market Analysis) Tool**
+  - Property comparison grid
+  - Adjustment calculator
+  - Market trend analyzer
+  - Price recommendation
+
+- [ ] **Marketing Budget Calculator**
+  - Cost per lead
+  - ROI on marketing spend
+  - Annual marketing budget planner
+
+#### Document Templates
+- [ ] Downloadable form templates (MAR compliant)
+- [ ] Email templates for common scenarios
+- [ ] Marketing copy templates
+- [ ] Buyer/seller presentation templates
+
+---
+
+### 🚀 v3.0 – Certification Platform (LONG-TERM VISION)
+
+**Priority: Low** | **Estimated Effort: 8-12 weeks**
+
+#### Full Certification Prep
+- [ ] Complete MA real estate exam simulator
+- [ ] National portion coverage
+- [ ] State portion coverage
+- [ ] Practice exams with certification
+- [ ] "Pass guarantee" study plan
+
+#### Post-License Education
+- [ ] Continuing education courses
+- [ ] Designation prep (GRI, CRS, ABR, etc.)
+- [ ] Broker license exam prep
+- [ ] Specialty certifications
+
+#### Backend & API
+- [ ] User authentication system
+- [ ] Cloud sync for progress data
+- [ ] API for third-party integrations
+- [ ] Mobile app (React Native)
+
+---
+
+### 🎯 v3.1 – Advanced Features (LONG-TERM VISION)
+
+**Priority: Low** | **Estimated Effort: Ongoing**
+
+#### AI & Machine Learning
+- [ ] AI-powered study assistant chatbot
+- [ ] Personalized question generation
+- [ ] Natural language Q&A
+- [ ] Speech recognition for voice study
+
+#### Integration & Export
+- [ ] Anki deck export
+- [ ] Quizlet integration
+- [ ] Calendar integration (study reminders)
+- [ ] Notion/OneNote export
+- [ ] Google Classroom integration
+
+#### Accessibility
+- [ ] Screen reader optimization
+- [ ] Multiple language support (Spanish, Portuguese)
+- [ ] Dyslexia-friendly fonts and spacing
+- [ ] High contrast mode
+- [ ] Voice navigation
+
+---
+
+## 💡 Community Suggestions & Ideas
+
+**Have ideas for improvement?** We'd love to hear them!
+
+### How to Suggest Features
+1. Open an issue on GitHub with the "enhancement" label
+2. Describe the feature and why it would be valuable
+3. Include mockups or examples if possible
+4. Vote on existing feature requests
+
+### Most Requested Features
+- [ ] Mobile app version (iOS/Android)
+- [ ] Collaboration mode for study partners
+- [ ] Video content integration
+- [ ] Live webinars or Q&A sessions
+- [ ] Broker-specific training modules
+- [ ] Transaction management practice
+- [ ] Ethics course integration
+
+---
+
+## 🎖️ Stretch Ideas & Experiments
+
+**Low priority but interesting concepts to explore:**
+
+### Learning Innovations
+- [ ] VR property tours with quiz elements
+- [ ] AR overlays for contract explanations
+- [ ] Gamified "real estate empire" mode
+- [ ] Escape room style challenge scenarios
+- [ ] Role-playing negotiation simulator
+
+### Data & Research
+- [ ] Anonymized performance benchmarking
+- [ ] Market trends analysis
+- [ ] Salary expectation calculator by region
+- [ ] Career path simulator
+- [ ] Success factor analysis
+
+### Business Tools
+- [ ] Client database/CRM lite
+- [ ] Transaction tracker
+- [ ] Lead generation calculator
+- [ ] Sphere of influence mapper
+- [ ] Social media post generator
+
+---
+
+## ⏱️ Development Timeline
+
+### Short Term (1-3 months)
+- Complete v2.0 assessment features
+- Expand content to 100+ questions
+- Add practice exam mode
+- Implement study streaks
+
+### Medium Term (3-6 months)
+- Add multimedia content
+- Build out analytics dashboard
+- Create more calculators
+- Develop community features
+
+### Long Term (6-12 months)
+- Full certification platform
+- Mobile app development
+- AI assistant integration
+- Backend API & cloud sync
+
+---
+
+## 📝 Notes on Implementation Priority
+
+**High Priority** (Essential for exam prep):
+- Practice exam mode
+- More quiz questions & flashcards
+- Adaptive learning
+- Performance analytics
+
+**Medium Priority** (Great for engagement):
+- Multimedia content
+- Additional calculators
+- Community features
+- Gamification
+
+**Low Priority** (Nice to have):
+- Advanced integrations
+- AI features
+- Mobile app
+- Business tools
 
 ## 🎨 Customization
 
