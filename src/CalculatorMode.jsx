@@ -6,8 +6,8 @@ export default function CalculatorMode() {
   return (
     <div className="study-mode-container">
       <div className="study-mode-header">
-        <h2>🧮 Real Estate Calculators</h2>
-        <p>Calculate commissions, splits, and net proceeds</p>
+        <h2>🧮 Professional Real Estate Calculators</h2>
+        <p>Calculate commissions, mortgages, investments, and property valuations</p>
       </div>
 
       <div className="calculator-tabs">
@@ -23,10 +23,31 @@ export default function CalculatorMode() {
         >
           📊 Net Proceeds
         </button>
+        <button
+          className={`calc-tab ${activeCalculator === 'mortgage' ? 'active' : ''}`}
+          onClick={() => setActiveCalculator('mortgage')}
+        >
+          🏠 Mortgage
+        </button>
+        <button
+          className={`calc-tab ${activeCalculator === 'investment' ? 'active' : ''}`}
+          onClick={() => setActiveCalculator('investment')}
+        >
+          📈 Investment Property
+        </button>
+        <button
+          className={`calc-tab ${activeCalculator === 'cma' ? 'active' : ''}`}
+          onClick={() => setActiveCalculator('cma')}
+        >
+          🏘️ CMA Tool
+        </button>
       </div>
 
       {activeCalculator === 'commission' && <CommissionCalculator />}
       {activeCalculator === 'proceeds' && <NetProceedsCalculator />}
+      {activeCalculator === 'mortgage' && <MortgageCalculator />}
+      {activeCalculator === 'investment' && <InvestmentPropertyCalculator />}
+      {activeCalculator === 'cma' && <CMACalculator />}
     </div>
   );
 }
@@ -368,6 +389,603 @@ function NetProceedsCalculator() {
         <p className="disclaimer">
           <strong>Note:</strong> This is an estimate. Actual proceeds may vary. Consult with your agent and attorney for precise calculations.
         </p>
+      </div>
+    </div>
+  );
+}
+
+function MortgageCalculator() {
+  const [loanAmount, setLoanAmount] = useState('400000');
+  const [interestRate, setInterestRate] = useState('6.5');
+  const [loanTerm, setLoanTerm] = useState('30');
+  const [propertyTax, setPropertyTax] = useState('6000');
+  const [insurance, setInsurance] = useState('1200');
+
+  const monthlyRate = (parseFloat(interestRate) / 100) / 12;
+  const numPayments = parseFloat(loanTerm) * 12;
+  const principal = parseFloat(loanAmount) || 0;
+  
+  const monthlyPI = monthlyRate > 0 && principal > 0
+    ? (principal * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+      (Math.pow(1 + monthlyRate, numPayments) - 1)
+    : 0;
+
+  const monthlyTax = (parseFloat(propertyTax) || 0) / 12;
+  const monthlyInsurance = (parseFloat(insurance) || 0) / 12;
+  const totalMonthly = monthlyPI + monthlyTax + monthlyInsurance;
+  const totalPaid = monthlyPI * numPayments;
+  const totalInterest = totalPaid - principal;
+
+  return (
+    <div className="calculator-container">
+      <div className="calculator-inputs">
+        <div className="input-group">
+          <label htmlFor="loanAmount">Loan Amount</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="loanAmount"
+              type="number"
+              value={loanAmount}
+              onChange={(e) => setLoanAmount(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="interestRate">Interest Rate</label>
+          <div className="input-wrapper">
+            <input
+              id="interestRate"
+              type="number"
+              step="0.125"
+              value={interestRate}
+              onChange={(e) => setInterestRate(e.target.value)}
+              className="calc-input"
+            />
+            <span className="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="loanTerm">Loan Term</label>
+          <div className="input-wrapper">
+            <input
+              id="loanTerm"
+              type="number"
+              value={loanTerm}
+              onChange={(e) => setLoanTerm(e.target.value)}
+              className="calc-input"
+            />
+            <span className="input-suffix">years</span>
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="propertyTax">Annual Property Tax</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="propertyTax"
+              type="number"
+              value={propertyTax}
+              onChange={(e) => setPropertyTax(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="insurance">Annual Insurance</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="insurance"
+              type="number"
+              value={insurance}
+              onChange={(e) => setInsurance(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="calculator-results">
+        <h3>Monthly Payment (PITI)</h3>
+        
+        <div className="result-card primary large">
+          <div className="result-label">Total Monthly Payment</div>
+          <div className="result-value">${totalMonthly.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+
+        <div className="result-breakdown">
+          <div className="breakdown-item">
+            <span>Principal & Interest</span>
+            <span>${monthlyPI.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+          <div className="breakdown-item">
+            <span>Property Tax</span>
+            <span>${monthlyTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+          <div className="breakdown-item">
+            <span>Insurance</span>
+            <span>${monthlyInsurance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+        </div>
+
+        <div className="result-card">
+          <div className="result-label">Total Interest Over {loanTerm} Years</div>
+          <div className="result-value">${totalInterest.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+      </div>
+
+      <div className="calculator-explanation">
+        <h4>How it works:</h4>
+        <ul>
+          <li><strong>P & I:</strong> Principal and interest payment</li>
+          <li><strong>Taxes:</strong> Property taxes held in escrow</li>
+          <li><strong>Insurance:</strong> Homeowners insurance</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function InvestmentPropertyCalculator() {
+  const [purchasePrice, setPurchasePrice] = useState('300000');
+  const [downPayment, setDownPayment] = useState('20');
+  const [monthlyRent, setMonthlyRent] = useState('2500');
+  const [vacancy, setVacancy] = useState('5');
+  const [propertyTax, setPropertyTax] = useState('4000');
+  const [insurance, setInsurance] = useState('1200');
+  const [maintenance, setMaintenance] = useState('200');
+  const [propertyMgmt, setPropertyMgmt] = useState('10');
+
+  const price = parseFloat(purchasePrice) || 0;
+  const downPct = parseFloat(downPayment) || 0;
+  const downAmount = price * (downPct / 100);
+  const loanAmount = price - downAmount;
+  
+  const grossRent = (parseFloat(monthlyRent) || 0) * 12;
+  const vacancyLoss = grossRent * ((parseFloat(vacancy) || 0) / 100);
+  const effectiveIncome = grossRent - vacancyLoss;
+  
+  const annualTax = parseFloat(propertyTax) || 0;
+  const annualInsurance = parseFloat(insurance) || 0;
+  const annualMaintenance = (parseFloat(maintenance) || 0) * 12;
+  const mgmtFee = effectiveIncome * ((parseFloat(propertyMgmt) || 0) / 100);
+  
+  const totalExpenses = annualTax + annualInsurance + annualMaintenance + mgmtFee;
+  const noi = effectiveIncome - totalExpenses;
+  
+  const capRate = price > 0 ? (noi / price) * 100 : 0;
+  const cashOnCash = downAmount > 0 ? (noi / downAmount) * 100 : 0;
+
+  return (
+    <div className="calculator-container">
+      <div className="calculator-inputs">
+        <div className="input-group">
+          <label htmlFor="purchasePrice">Purchase Price</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="purchasePrice"
+              type="number"
+              value={purchasePrice}
+              onChange={(e) => setPurchasePrice(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="downPayment">Down Payment</label>
+          <div className="input-wrapper">
+            <input
+              id="downPayment"
+              type="number"
+              value={downPayment}
+              onChange={(e) => setDownPayment(e.target.value)}
+              className="calc-input"
+            />
+            <span className="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="monthlyRent">Monthly Rent</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="monthlyRent"
+              type="number"
+              value={monthlyRent}
+              onChange={(e) => setMonthlyRent(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="vacancy">Vacancy Rate</label>
+          <div className="input-wrapper">
+            <input
+              id="vacancy"
+              type="number"
+              value={vacancy}
+              onChange={(e) => setVacancy(e.target.value)}
+              className="calc-input"
+            />
+            <span className="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="propertyTaxInv">Annual Property Tax</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="propertyTaxInv"
+              type="number"
+              value={propertyTax}
+              onChange={(e) => setPropertyTax(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="insuranceInv">Annual Insurance</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="insuranceInv"
+              type="number"
+              value={insurance}
+              onChange={(e) => setInsurance(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="maintenance">Monthly Maintenance</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="maintenance"
+              type="number"
+              value={maintenance}
+              onChange={(e) => setMaintenance(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="propertyMgmt">Property Management Fee</label>
+          <div className="input-wrapper">
+            <input
+              id="propertyMgmt"
+              type="number"
+              value={propertyMgmt}
+              onChange={(e) => setPropertyMgmt(e.target.value)}
+              className="calc-input"
+            />
+            <span className="input-suffix">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="calculator-results">
+        <h3>Investment Analysis</h3>
+        
+        <div className="result-card primary">
+          <div className="result-label">Cap Rate</div>
+          <div className="result-value">{capRate.toFixed(2)}%</div>
+        </div>
+
+        <div className="result-card success">
+          <div className="result-label">Cash-on-Cash Return</div>
+          <div className="result-value">{cashOnCash.toFixed(2)}%</div>
+        </div>
+
+        <div className="result-breakdown">
+          <div className="breakdown-item">
+            <span>Gross Rent (Annual)</span>
+            <span className="positive">${grossRent.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+          <div className="breakdown-item deduction">
+            <span>Vacancy Loss ({vacancy}%)</span>
+            <span className="negative">-${vacancyLoss.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+          <div className="breakdown-item deduction">
+            <span>Total Expenses</span>
+            <span className="negative">-${totalExpenses.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          </div>
+        </div>
+
+        <div className="result-card">
+          <div className="result-label">Net Operating Income (NOI)</div>
+          <div className="result-value">${noi.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+
+        <div className="result-card">
+          <div className="result-label">Cash Invested</div>
+          <div className="result-value">${downAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+      </div>
+
+      <div className="calculator-explanation">
+        <h4>How it works:</h4>
+        <ul>
+          <li><strong>Cap Rate:</strong> NOI ÷ Purchase Price (measures property performance)</li>
+          <li><strong>Cash-on-Cash:</strong> NOI ÷ Cash Invested (measures return on your money)</li>
+          <li><strong>NOI:</strong> Effective Income - Operating Expenses</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function CMACalculator() {
+  const [subjectBeds, setSubjectBeds] = useState('3');
+  const [subjectBaths, setSubjectBaths] = useState('2');
+  const [subjectSqft, setSubjectSqft] = useState('1800');
+  const [subjectGarage, setSubjectGarage] = useState('yes');
+  
+  const [comp1Price, setComp1Price] = useState('425000');
+  const [comp1Beds, setComp1Beds] = useState('3');
+  const [comp1Baths, setComp1Baths] = useState('2');
+  const [comp1Sqft, setComp1Sqft] = useState('1750');
+  const [comp1Garage, setComp1Garage] = useState('yes');
+  
+  const [bedAdjustment, setBedAdjustment] = useState('20000');
+  const [bathAdjustment, setBathAdjustment] = useState('15000');
+  const [sqftAdjustment, setSqftAdjustment] = useState('100');
+  const [garageAdjustment, setGarageAdjustment] = useState('15000');
+
+  const calcAdjustment = () => {
+    let adjustment = 0;
+    const subBeds = parseInt(subjectBeds) || 0;
+    const subBaths = parseFloat(subjectBaths) || 0;
+    const subSqft = parseInt(subjectSqft) || 0;
+    const subGar = subjectGarage === 'yes';
+    
+    const c1Beds = parseInt(comp1Beds) || 0;
+    const c1Baths = parseFloat(comp1Baths) || 0;
+    const c1Sqft = parseInt(comp1Sqft) || 0;
+    const c1Gar = comp1Garage === 'yes';
+    
+    const bedAdj = parseFloat(bedAdjustment) || 0;
+    const bathAdj = parseFloat(bathAdjustment) || 0;
+    const sqftAdj = parseFloat(sqftAdjustment) || 0;
+    const garAdj = parseFloat(garageAdjustment) || 0;
+
+    if (c1Beds > subBeds) adjustment -= (c1Beds - subBeds) * bedAdj;
+    if (c1Beds < subBeds) adjustment += (subBeds - c1Beds) * bedAdj;
+    
+    if (c1Baths > subBaths) adjustment -= (c1Baths - subBaths) * bathAdj;
+    if (c1Baths < subBaths) adjustment += (subBaths - c1Baths) * bathAdj;
+    
+    adjustment += (subSqft - c1Sqft) * sqftAdj;
+    
+    if (c1Gar && !subGar) adjustment -= garAdj;
+    if (!c1Gar && subGar) adjustment += garAdj;
+    
+    return adjustment;
+  };
+
+  const adjustment = calcAdjustment();
+  const adjustedPrice = (parseFloat(comp1Price) || 0) + adjustment;
+
+  return (
+    <div className="calculator-container">
+      <div className="calculator-inputs">
+        <h4>Subject Property</h4>
+        <div className="input-row">
+          <div className="input-group">
+            <label htmlFor="subjectBeds">Bedrooms</label>
+            <input
+              id="subjectBeds"
+              type="number"
+              value={subjectBeds}
+              onChange={(e) => setSubjectBeds(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="subjectBaths">Bathrooms</label>
+            <input
+              id="subjectBaths"
+              type="number"
+              step="0.5"
+              value={subjectBaths}
+              onChange={(e) => setSubjectBaths(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="subjectSqft">Square Feet</label>
+            <input
+              id="subjectSqft"
+              type="number"
+              value={subjectSqft}
+              onChange={(e) => setSubjectSqft(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="subjectGarage">Garage</label>
+            <select
+              id="subjectGarage"
+              value={subjectGarage}
+              onChange={(e) => setSubjectGarage(e.target.value)}
+              className="calc-input"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <h4>Comparable Property #1</h4>
+        <div className="input-group">
+          <label htmlFor="comp1Price">Sale Price</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="comp1Price"
+              type="number"
+              value={comp1Price}
+              onChange={(e) => setComp1Price(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-row">
+          <div className="input-group">
+            <label htmlFor="comp1Beds">Bedrooms</label>
+            <input
+              id="comp1Beds"
+              type="number"
+              value={comp1Beds}
+              onChange={(e) => setComp1Beds(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="comp1Baths">Bathrooms</label>
+            <input
+              id="comp1Baths"
+              type="number"
+              step="0.5"
+              value={comp1Baths}
+              onChange={(e) => setComp1Baths(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="comp1Sqft">Square Feet</label>
+            <input
+              id="comp1Sqft"
+              type="number"
+              value={comp1Sqft}
+              onChange={(e) => setComp1Sqft(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="comp1Garage">Garage</label>
+            <select
+              id="comp1Garage"
+              value={comp1Garage}
+              onChange={(e) => setComp1Garage(e.target.value)}
+              className="calc-input"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <h4>Adjustment Values</h4>
+        <div className="input-row">
+          <div className="input-group">
+            <label htmlFor="bedAdjustment">Per Bedroom</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="bedAdjustment"
+                type="number"
+                value={bedAdjustment}
+                onChange={(e) => setBedAdjustment(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="bathAdjustment">Per Bathroom</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="bathAdjustment"
+                type="number"
+                value={bathAdjustment}
+                onChange={(e) => setBathAdjustment(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="sqftAdjustment">Per Square Foot</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="sqftAdjustment"
+                type="number"
+                value={sqftAdjustment}
+                onChange={(e) => setSqftAdjustment(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="garageAdjustment">Garage</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="garageAdjustment"
+                type="number"
+                value={garageAdjustment}
+                onChange={(e) => setGarageAdjustment(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="calculator-results">
+        <h3>Comp #1 Analysis</h3>
+        
+        <div className="result-card">
+          <div className="result-label">Comp Sale Price</div>
+          <div className="result-value">${parseFloat(comp1Price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+
+        <div className="result-card">
+          <div className="result-label">Total Adjustment</div>
+          <div className="result-value" style={{ color: adjustment >= 0 ? '#16a34a' : '#dc2626' }}>
+            {adjustment >= 0 ? '+' : ''}${adjustment.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </div>
+        </div>
+
+        <div className="result-card primary large">
+          <div className="result-label">Adjusted Comparable Value</div>
+          <div className="result-value">${adjustedPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        </div>
+      </div>
+
+      <div className="calculator-explanation">
+        <h4>How it works:</h4>
+        <ul>
+          <li><strong>If comp is better:</strong> SUBTRACT from comp price</li>
+          <li><strong>If comp is worse:</strong> ADD to comp price</li>
+          <li><strong>Adjusted value:</strong> Estimates what comp would sell for if it matched subject property</li>
+          <li>Use 3-6 comps for accurate CMA</li>
+        </ul>
       </div>
     </div>
   );
