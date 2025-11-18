@@ -1385,6 +1385,62 @@ export const flashcards = [
     question: 'What are the broker\'s responsibilities regarding escrow accounts?',
     answer: 'Acts as Escrow Agent with fiduciary responsibilities, maintains separate account, no commingling, keeps detailed records (checks 3 yrs, register 10 yrs), only broker can sign checks, subject to Board inspection, releases funds only per legal requirements.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc199',
+    category: 'Two-Contract System',
+    question: 'What is the "two-contract system" in Massachusetts?',
+    answer: 'MA uses two separate contracts: (1) Offer to Purchase - initial agreement with basic terms, and (2) Purchase & Sales Agreement (P&S) - comprehensive contract drafted by attorneys typically 10 days after offer acceptance. This differs from most states that use one contract.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc200',
+    category: 'Attorney Role',
+    question: 'When are attorneys typically involved in MA real estate transactions?',
+    answer: 'Attorneys draft and review the P&S Agreement (after offer acceptance), handle title work, conduct closing, and address legal issues. Most MA transactions involve attorneys for both buyer and seller. Attorney involvement is customary but not legally required.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc201',
+    category: 'Attorney Role',
+    question: 'What should agents say when clients ask if they need an attorney?',
+    answer: 'Proper response: "You have the right to consult with an attorney at any time. Many people choose to have an attorney review contracts and represent them at closing. I recommend you consider speaking with a real estate attorney." DO NOT say "You don\'t need an attorney" or give legal advice.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc202',
+    category: 'Unauthorized Practice of Law',
+    question: 'What constitutes unauthorized practice of law for real estate agents?',
+    answer: 'Agents CANNOT: draft contracts (only use standard forms), interpret legal documents, give legal advice, advise if attorney needed, explain legal consequences, or practice law. CAN: explain contract terms in standard forms, recommend consulting attorney, facilitate transaction.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc203',
+    category: 'Attorney Role',
+    question: 'What do attorneys handle in MA real estate closings?',
+    answer: 'Attorneys: draft/review P&S Agreement, conduct title search, resolve title issues, review closing documents, explain legal implications, handle closing/settlement, prepare deed, record documents, disburse funds. Essential for protecting client legal interests.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc204',
+    category: 'Two-Contract System',
+    question: 'What is the purpose of having two separate contracts in MA?',
+    answer: 'Offer to Purchase: establishes basic agreement quickly. P&S Agreement: comprehensive contract with full legal terms, contingencies, and protections drafted by attorneys after due diligence period. Allows time for inspections and attorney review before final binding contract.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc205',
+    category: 'Attorney Role',
+    question: 'What language should agents AVOID when discussing legal matters?',
+    answer: 'AVOID: "This means...", "You should...", "The law requires...", "You don\'t need an attorney", "I\'ll just cross that out." INSTEAD USE: "You should consult your attorney", "An attorney can explain this", "Consider having an attorney review this."',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc206',
+    category: 'Attorney Role',
+    question: 'Can agents recommend specific attorneys to clients?',
+    answer: 'Yes, agents can provide names of attorneys (typically 2-3 recommendations) but should NOT: receive referral fees from attorneys, pressure clients to use specific attorney, or imply attorney kickbacks exist. Must disclose any business relationships with recommended attorneys.',
+    difficulty: 'hard'
   }
 ];
 
@@ -3963,5 +4019,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'VIP NOTE: Contract may not be binding until the earnest money is received by the listing agent/brokerage. Acceptance alone may not create binding contract - deposit receipt is critical.'
+  },
+  {
+    id: 'q199',
+    category: 'Two-Contract System',
+    question: 'What are the two contracts used in Massachusetts real estate transactions?',
+    options: [
+      'Offer and Closing',
+      'Offer to Purchase and Purchase & Sales Agreement (P&S)',
+      'Listing and Sale',
+      'Pre-approval and Final Contract'
+    ],
+    correctIndex: 1,
+    explanation: 'MA uses a two-contract system: (1) Offer to Purchase - initial agreement, and (2) Purchase & Sales Agreement (P&S) - comprehensive contract typically drafted by attorneys 10 days after offer acceptance.'
+  },
+  {
+    id: 'q200',
+    category: 'Attorney Role',
+    question: 'What is the proper response when a client asks "Do I need an attorney?"',
+    options: [
+      '"No, I can handle everything"',
+      '"You have the right to consult with an attorney. Many people choose to have an attorney review contracts and represent them at closing."',
+      '"Only if there are problems"',
+      '"Attorneys are too expensive"'
+    ],
+    correctIndex: 1,
+    explanation: 'Proper response acknowledges their right to an attorney, explains common practice, and recommends consideration without pressuring. NEVER say "You don\'t need an attorney" or discourage attorney involvement.'
+  },
+  {
+    id: 'q201',
+    category: 'Unauthorized Practice of Law',
+    question: 'Which action would be unauthorized practice of law for an agent?',
+    options: [
+      'Explaining terms in a standard form',
+      'Interpreting legal consequences of a contract clause',
+      'Recommending they consult an attorney',
+      'Facilitating the transaction'
+    ],
+    correctIndex: 1,
+    explanation: 'Agents CANNOT interpret legal documents or explain legal consequences - that\'s practicing law. Agents CAN explain standard form terms, recommend consulting attorney, and facilitate the transaction.'
+  },
+  {
+    id: 'q202',
+    category: 'Attorney Role',
+    question: 'When are attorneys typically brought into MA transactions?',
+    options: [
+      'Only if problems arise',
+      'To draft and review the P&S Agreement after offer acceptance',
+      'Only at closing',
+      'Never needed'
+    ],
+    correctIndex: 1,
+    explanation: 'In MA, attorneys are typically involved to draft and review the P&S Agreement after offer acceptance, handle title work, and conduct closing. Most MA transactions involve attorneys for both parties.'
+  },
+  {
+    id: 'q203',
+    category: 'Two-Contract System',
+    question: 'Why does Massachusetts use a two-contract system?',
+    options: [
+      'To make process more complicated',
+      'To allow time for inspections and attorney review before final binding contract',
+      'Required by federal law',
+      'To increase agent commissions'
+    ],
+    correctIndex: 1,
+    explanation: 'Two-contract system allows: Offer to Purchase establishes basic agreement quickly, then P&S Agreement provides comprehensive legal terms after due diligence period with attorney involvement and full protections.'
+  },
+  {
+    id: 'q204',
+    category: 'Attorney Role',
+    question: 'Which phrase should agents AVOID saying?',
+    options: [
+      '"You should consult your attorney"',
+      '"This means you don\'t have to..."',
+      '"An attorney can explain this"',
+      '"Consider having an attorney review"'
+    ],
+    correctIndex: 1,
+    explanation: 'AVOID interpreting or explaining legal meaning ("This means..."). INSTEAD redirect to attorney consultation. Never say "You don\'t need an attorney", "The law requires...", or interpret legal consequences.'
+  },
+  {
+    id: 'q205',
+    category: 'Attorney Role',
+    question: 'Can agents recommend attorneys to clients?',
+    options: [
+      'No, never allowed',
+      'Yes, can provide 2-3 names but no referral fees or pressure',
+      'Only if agent has business relationship',
+      'Yes, but must use agent\'s attorney'
+    ],
+    correctIndex: 1,
+    explanation: 'Agents CAN provide attorney names (typically 2-3 recommendations) but CANNOT receive referral fees, pressure clients, or fail to disclose business relationships. Must be neutral recommendations.'
+  },
+  {
+    id: 'q206',
+    category: 'Attorney Role',
+    question: 'What do attorneys handle in MA real estate transactions?',
+    options: [
+      'Only signing documents',
+      'Draft/review P&S, title search, resolve issues, conduct closing, prepare deed',
+      'Just the closing',
+      'Nothing - agents handle everything'
+    ],
+    correctIndex: 1,
+    explanation: 'MA attorneys: draft/review P&S Agreement, conduct title search, resolve title issues, review all documents, explain legal implications, handle closing, prepare deed, record documents, disburse funds.'
   }
 ];
