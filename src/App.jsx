@@ -5,6 +5,7 @@ import QuizMode from './QuizMode';
 import PersonalDashboard from './PersonalDashboard';
 import ScenarioMode from './ScenarioMode';
 import CalculatorMode from './CalculatorMode';
+import HelpModal from './HelpModal';
 import { useLocalStorage } from './useLocalStorage';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
   const [studyMode, setStudyMode] = useState(null); // 'flashcards', 'quiz', 'dashboard', or null
   const [masteredSections, setMasteredSections] = useLocalStorage('masteredSections', []);
   const [reviewSections, setReviewSections] = useLocalStorage('reviewSections', []);
+  const [showHelp, setShowHelp] = useState(false);
   const [theme, setTheme] = useState(() => {
     // Load theme from localStorage or default to 'dark'
     return localStorage.getItem('theme') || 'dark';
@@ -26,6 +28,141 @@ export default function App() {
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+  };
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // Ignore if user is typing in input/textarea
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      // Alt + number keys for mode switching
+      if (e.altKey) {
+        switch(e.key) {
+          case '1':
+            e.preventDefault();
+            setStudyMode(null);
+            break;
+          case '2':
+            e.preventDefault();
+            setStudyMode('flashcards');
+            break;
+          case '3':
+            e.preventDefault();
+            setStudyMode('quiz');
+            break;
+          case '4':
+            e.preventDefault();
+            setStudyMode('dashboard');
+            break;
+          case '5':
+            e.preventDefault();
+            setStudyMode('scenarios');
+            break;
+          case '6':
+            e.preventDefault();
+            setStudyMode('calculators');
+            break;
+          case 't':
+            e.preventDefault();
+            toggleTheme();
+            break;
+          case '/':
+            e.preventDefault();
+            document.querySelector('.search-input')?.focus();
+            break;
+          default:
+            break;
+        }
+      }
+
+      // ? key for help
+      if (e.key === '?' && !e.altKey && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        setShowHelp(true);
+      }
+
+      // Escape to close help
+      if (e.key === 'Escape' && showHelp) {
+        setShowHelp(false);
+      }
+
+      // Arrow keys for section navigation (only in guide mode)
+      if (!studyMode && !e.altKey && !e.ctrlKey && !e.metaKey) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const currentIndex = sections.findIndex(s => s.id === activeId);
+          if (currentIndex < sections.length - 1) {
+            setActiveId(sections[currentIndex + 1].id);
+          }
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const currentIndex = sections.findIndex(s => s.id === activeId);
+          if (currentIndex > 0) {
+            setActiveId(sections[currentIndex - 1].id);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [studyMode, activeId, sections]);
+
+  const exportProgress = () => {
+    const data = {
+      version: '1.0',
+      exportDate: new Date().toISOString(),
+      theme,
+      lastActiveSection: activeId,
+      masteredSections,
+      reviewSections,
+      notes: localStorage.getItem('userNotes'),
+      masteredFlashcards: localStorage.getItem('masteredFlashcards'),
+      quizHistory: localStorage.getItem('quizHistory'),
+      completedScenarios: localStorage.getItem('completedScenarios')
+    };
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `ma-real-estate-progress-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const importProgress = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const data = JSON.parse(e.target.result);
+        
+        if (confirm('This will overwrite your current progress. Are you sure?')) {
+          setTheme(data.theme || 'dark');
+          setActiveId(data.lastActiveSection || sections[0].id);
+          setMasteredSections(data.masteredSections || []);
+          setReviewSections(data.reviewSections || []);
+          
+          if (data.notes) localStorage.setItem('userNotes', data.notes);
+          if (data.masteredFlashcards) localStorage.setItem('masteredFlashcards', data.masteredFlashcards);
+          if (data.quizHistory) localStorage.setItem('quizHistory', data.quizHistory);
+          if (data.completedScenarios) localStorage.setItem('completedScenarios', data.completedScenarios);
+          
+          alert('Progress imported successfully!');
+          window.location.reload();
+        }
+      } catch (error) {
+        alert('Error importing progress. Please check the file format.');
+        console.error('Import error:', error);
+      }
+    };
+    reader.readAsText(file);
   };
 
   const toggleMastered = (sectionId) => {
@@ -105,6 +242,31 @@ export default function App() {
             </p>
           </div>
           <div className="header-actions">
+            <button 
+              className="icon-btn" 
+              onClick={() => setShowHelp(true)}
+              aria-label="Keyboard shortcuts"
+              title="Keyboard shortcuts (Press ?)"
+            >
+              ⌨️
+            </button>
+            <button 
+              className="icon-btn" 
+              onClick={exportProgress}
+              aria-label="Export progress"
+              title="Export your progress"
+            >
+              ⬇️
+            </button>
+            <label className="icon-btn" title="Import progress">
+              ⬆️
+              <input 
+                type="file" 
+                accept=".json"
+                onChange={importProgress}
+                style={{ display: 'none' }}
+              />
+            </label>
             <button 
               className="theme-toggle" 
               onClick={toggleTheme}
@@ -257,6 +419,8 @@ export default function App() {
           Massachusetts real-estate attorney, your broker, or instructor.
         </p>
       </footer>
+
+      <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
     </div>
   );
 }

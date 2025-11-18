@@ -52,6 +52,9 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ **Commission calculator** - calculate splits, caps, and agent earnings
 - ✅ **Net proceeds calculator** - estimate seller proceeds after all costs
 - ✅ **Real-time calculations** - instant results as you type
+- ✅ **Keyboard shortcuts** - navigate quickly with Alt+1-6, arrow keys, and more
+- ✅ **Export/Import progress** - backup and restore all study data
+- ✅ **Print-friendly** - optimized print styles for offline study
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -210,9 +213,11 @@ The guide covers comprehensive topics including:
 
 ### Stretch Ideas
 - [x] Add calculator widgets (e.g., commission split calculator, net proceeds estimator).
+- [x] Add export/import feature for study progress.
+- [x] Add keyboard shortcuts for power users.
+- [x] Add print-friendly CSS for offline study.
 - [ ] Integrate with spaced repetition tools (e.g., export to Anki).
 - [ ] Embed short explainer videos or audio clips.
-- [ ] Add export/import feature for study progress.
 
 ## 🎨 Customization
 

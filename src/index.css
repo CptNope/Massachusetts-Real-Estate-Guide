@@ -1869,3 +1869,192 @@ pre {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
+
+/* Icon Buttons */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-nav-hover);
+  transform: translateY(-2px);
+}
+
+/* Help Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.shortcut-section {
+  margin-bottom: 2rem;
+}
+
+.shortcut-section:last-child {
+  margin-bottom: 0;
+}
+
+.shortcut-section h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.shortcut-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border-radius: 0.5rem;
+}
+
+.shortcut-item kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-highlight);
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.shortcut-item span {
+  color: var(--text-secondary);
+}
+
+.modal-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-highlight);
+}
+
+.modal-hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* Print Styles */
+@media print {
+  .app-header,
+  .sidebar,
+  .theme-toggle,
+  .icon-btn,
+  .header-actions,
+  .search-container,
+  .study-mode-toggle,
+  .app-footer,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .app-root {
+    background: white;
+    color: black;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .card {
+    border: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  * {
+    color: black !important;
+    background: white !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  code, pre {
+    border: 1px solid #ccc;
+    padding: 0.25rem;
+  }
+}
