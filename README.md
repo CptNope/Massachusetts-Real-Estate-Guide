@@ -40,6 +40,9 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ **Copy-to-clipboard buttons** for code blocks and clauses
 - ✅ **PWA support** - installable on mobile and desktop
 - ✅ Offline capability with service worker caching
+- ✅ **Flashcard mode** for exam prep with progress tracking
+- ✅ **Quiz mode** with scoring, explanations, and history
+- ✅ **Progress tracking** with localStorage persistence
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -170,10 +173,12 @@ The guide covers comprehensive topics including:
 - [x] Add PWA support for offline access and installability.
 - [ ] Add in-page table of contents for long sections.
 
-### v1.2 – Study Mode
-- [ ] Add flashcard mode for exam prep (question/answer cards).
-- [ ] Add multiple-choice quiz questions with scoring.
-- [ ] Add “exam cram” printable PDF export.
+### ✅ v1.2 – Study Mode (COMPLETED)
+- [x] Add flashcard mode for exam prep (question/answer cards).
+- [x] Add multiple-choice quiz questions with scoring.
+- [x] Add progress tracking with localStorage.
+- [x] Add quiz history and grade display.
+- [ ] Add "exam cram" printable PDF export.
 
 ### v1.3 – Interactive Scenarios
 - [ ] Scenario-based walkthroughs: choose buyer/seller/investor paths and see recommended clauses.

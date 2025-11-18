@@ -1,9 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { sections } from './content.jsx';
+import FlashcardMode from './FlashcardMode';
+import QuizMode from './QuizMode';
 
 export default function App() {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [searchQuery, setSearchQuery] = useState('');
+  const [studyMode, setStudyMode] = useState(null); // 'flashcards', 'quiz', or null
   const [theme, setTheme] = useState(() => {
     // Load theme from localStorage or default to 'dark'
     return localStorage.getItem('theme') || 'dark';
@@ -67,13 +70,36 @@ export default function App() {
               Contracts · Law Changes · Commissions · Broker Relationships · Exam Prep · Investor Strategy
             </p>
           </div>
+          <div className="header-actions">
+            <button 
+              className="theme-toggle" 
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+          </div>
+        </div>
+        
+        <div className="study-mode-toggle">
           <button 
-            className="theme-toggle" 
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            className={`mode-btn ${studyMode === null ? 'active' : ''}`}
+            onClick={() => setStudyMode(null)}
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            📖 Guide
+          </button>
+          <button 
+            className={`mode-btn ${studyMode === 'flashcards' ? 'active' : ''}`}
+            onClick={() => setStudyMode('flashcards')}
+          >
+            📚 Flashcards
+          </button>
+          <button 
+            className={`mode-btn ${studyMode === 'quiz' ? 'active' : ''}`}
+            onClick={() => setStudyMode('quiz')}
+          >
+            🎯 Quiz
           </button>
         </div>
         <div className="search-container">
@@ -98,39 +124,55 @@ export default function App() {
       </header>
 
       <div className="app-layout">
-        <nav className="sidebar">
-          <h2 className="sidebar-title">
-            Sections
-            {searchQuery && (
-              <span className="search-results-count">
-                ({filteredSections.length} {filteredSections.length === 1 ? 'result' : 'results'})
-              </span>
-            )}
-          </h2>
-          <ul className="nav-list">
-            {filteredSections.map((section) => (
-              <li key={section.id}>
-                <button
-                  className={section.id === activeId ? 'nav-button nav-button-active' : 'nav-button'}
-                  onClick={() => setActiveId(section.id)}
-                >
-                  {section.icon && <span className="nav-icon">{section.icon}</span>}
-                  {section.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {studyMode === null && (
+          <>
+            <nav className="sidebar">
+              <h2 className="sidebar-title">
+                Sections
+                {searchQuery && (
+                  <span className="search-results-count">
+                    ({filteredSections.length} {filteredSections.length === 1 ? 'result' : 'results'})
+                  </span>
+                )}
+              </h2>
+              <ul className="nav-list">
+                {filteredSections.map((section) => (
+                  <li key={section.id}>
+                    <button
+                      className={section.id === activeId ? 'nav-button nav-button-active' : 'nav-button'}
+                      onClick={() => setActiveId(section.id)}
+                    >
+                      {section.icon && <span className="nav-icon">{section.icon}</span>}
+                      {section.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-        <main className="content">
-          <article className="card">
-            <h2 className="content-title">{activeSection.title}</h2>
-            {activeSection.subtitle && (
-              <p className="content-subtitle">{activeSection.subtitle}</p>
-            )}
-            <div className="content-body">{activeSection.body}</div>
-          </article>
-        </main>
+            <main className="content">
+              <article className="card">
+                <h2 className="content-title">{activeSection.title}</h2>
+                {activeSection.subtitle && (
+                  <p className="content-subtitle">{activeSection.subtitle}</p>
+                )}
+                <div className="content-body">{activeSection.body}</div>
+              </article>
+            </main>
+          </>
+        )}
+
+        {studyMode === 'flashcards' && (
+          <main className="content content-full">
+            <FlashcardMode />
+          </main>
+        )}
+
+        {studyMode === 'quiz' && (
+          <main className="content content-full">
+            <QuizMode />
+          </main>
+        )}
       </div>
 
       <footer className="app-footer">
