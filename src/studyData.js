@@ -734,6 +734,111 @@ export const flashcards = [
     question: 'What common situations does E&O insurance cover?',
     answer: 'Failure to disclose defects, missed deadlines, incorrect property information, breach of fiduciary duty, Fair Housing violations, misrepresentation, failure to explain contract terms, and errors in paperwork. Defense costs alone can be $50K-200K+.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc106',
+    category: 'Multi-State Licensing',
+    question: 'What is license reciprocity between states?',
+    answer: 'Agreement allowing licensed agents from one state to obtain a license in another state with reduced requirements (waiving pre-license education or exam). Not all states have reciprocity. Each state has different agreements and requirements.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc107',
+    category: 'Multi-State Licensing',
+    question: 'Can a Massachusetts agent practice real estate in other states?',
+    answer: 'No, must obtain a separate license in each state where you want to practice. Real estate licenses are state-specific. Some states offer reciprocity (easier licensing), others require full course and exam.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc108',
+    category: 'Multi-State Licensing',
+    question: 'What are Massachusetts\' neighboring states for real estate?',
+    answer: 'Rhode Island (south), Connecticut (south), New Hampshire (north), Vermont (northwest), and New York (west). Each has different licensing requirements, some with reciprocity agreements with MA, others without.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc109',
+    category: 'Rhode Island Licensing',
+    question: 'How can a MA agent get a Rhode Island license?',
+    answer: 'RI offers reciprocity for MA agents. Must pass RI state-specific exam (no national exam required), submit application, background check, and pay fees (~$100-150). No pre-license course required if MA licensed. Easier than starting from scratch.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc110',
+    category: 'Connecticut Licensing',
+    question: 'How can a MA agent get a Connecticut license?',
+    answer: 'CT offers reciprocity. Must pass CT state-specific exam only (waives national portion), complete 60-hour CT-specific course, submit application, fingerprints, and fees (~$200-300). Broker requires additional experience and education.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc111',
+    category: 'New Hampshire Licensing',
+    question: 'How can a MA agent get a New Hampshire license?',
+    answer: 'NH offers reciprocity. Must pass NH state law exam only (waives national), complete 40-hour NH course, submit application, background check, and fees (~$150-250). Active MA license required. Popular for MA agents in border areas.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc112',
+    category: 'Vermont Licensing',
+    question: 'How can a MA agent get a Vermont license?',
+    answer: 'VT offers reciprocity. Must pass VT state-specific exam (waives national), complete background check, and pay fees (~$100-200). May require proof of active MA license and good standing. Less common for MA agents due to smaller market.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc113',
+    category: 'New York Licensing',
+    question: 'How can a MA agent get a New York license?',
+    answer: 'NY does NOT offer reciprocity with MA. Must complete full 75-hour NY pre-license course, pass both national and NY state exams, and meet all NY requirements from scratch. Broker requires 2+ years experience. More difficult path.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc114',
+    category: 'Multi-State Licensing',
+    question: 'What is required to maintain licenses in multiple states?',
+    answer: 'Must complete CE requirements for EACH state (hours vary), pay renewal fees for each, maintain active status in all states, and comply with each state\'s laws and regulations. Can be 12-24+ hours CE annually across states.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc115',
+    category: 'Multi-State Licensing',
+    question: 'What are typical costs for obtaining a second state license through reciprocity?',
+    answer: 'Application fees $100-300, state exam $50-100, required courses $200-400 (if needed), background checks $50-100, fingerprints $50-75. Total: $450-975 per state. Plus ongoing CE and renewal fees every 1-2 years.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc116',
+    category: 'Multi-State Licensing',
+    question: 'Can you work for different brokers in different states?',
+    answer: 'Yes, but must have a supervising broker licensed in EACH state. Can affiliate with same broker\'s offices in multiple states, or different brokers per state. Each license is independent and requires separate broker affiliation.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc117',
+    category: 'Multi-State Licensing',
+    question: 'What is a multi-state broker?',
+    answer: 'A broker licensed in multiple states, allowing them to supervise agents and operate brokerages in each state. Must meet broker requirements for each state separately. Some large brokerages have multi-state broker licenses.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc118',
+    category: 'Multi-State Licensing',
+    question: 'Which neighboring states are easiest for MA agents to get licensed in?',
+    answer: 'Rhode Island (fastest reciprocity, just state exam), New Hampshire (popular border market, 40-hour course), Vermont (simple process but smaller market). Connecticut requires 60-hour course. New York has NO reciprocity (hardest).',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc119',
+    category: 'Multi-State Licensing',
+    question: 'Why would a MA agent get licensed in neighboring states?',
+    answer: 'Expand market area (border towns), serve relocating clients across state lines, access vacation/second-home markets (NH, VT), increase income potential, competitive advantage, and serve clients with properties in multiple states.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc120',
+    category: 'Multi-State Licensing',
+    question: 'Can a MA broker own a brokerage in another state?',
+    answer: 'Yes, if they obtain a broker license in that state and meet all broker requirements. Each state has different broker qualifications (experience years, courses, exams). Must comply with both states\' regulations and maintain separate trust accounts per state.',
+    difficulty: 'hard'
   }
 ];
 
@@ -2103,5 +2208,200 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'E&O covers negligent acts like missing deadlines, errors in paperwork, failure to disclose (if unintentional), and breach of duty. It does NOT cover intentional acts, fraud, or criminal violations.'
+  },
+  {
+    id: 'q106',
+    category: 'Multi-State Licensing',
+    question: 'Can a Massachusetts licensed agent practice real estate in Rhode Island without additional licensing?',
+    options: [
+      'Yes, New England states allow cross-border practice',
+      'No, must obtain a separate RI license',
+      'Yes, if within 50 miles of border',
+      'Only with broker permission'
+    ],
+    correctIndex: 1,
+    explanation: 'Real estate licenses are state-specific. You must obtain a separate license in each state where you practice, even neighboring states. However, RI offers reciprocity making it easier.'
+  },
+  {
+    id: 'q107',
+    category: 'Multi-State Licensing',
+    question: 'What is license reciprocity?',
+    options: [
+      'Automatic licensing in all states',
+      'Reduced requirements for out-of-state licensees (waiving courses or exams)',
+      'Same as having two licenses',
+      'Only for brokers'
+    ],
+    correctIndex: 1,
+    explanation: 'Reciprocity means a state offers reduced licensing requirements (like waiving the national exam or pre-license course) for licensees from other states. Not all states have reciprocity agreements.'
+  },
+  {
+    id: 'q108',
+    category: 'Rhode Island Licensing',
+    question: 'A MA agent wants a Rhode Island license. What must they do?',
+    options: [
+      'Nothing, automatic reciprocity',
+      'Pass RI state exam only (no course or national exam required)',
+      'Complete full 90-hour course',
+      'Wait 5 years'
+    ],
+    correctIndex: 1,
+    explanation: 'RI offers reciprocity for MA agents. Only need to pass the RI state-specific exam (no pre-license course or national exam required). Fastest neighboring state option.'
+  },
+  {
+    id: 'q109',
+    category: 'New Hampshire Licensing',
+    question: 'To get a NH license, a MA agent must:',
+    options: [
+      'Nothing, NH recognizes MA licenses',
+      'Pass NH state exam and complete 40-hour NH course',
+      'Move to New Hampshire',
+      'Only pass national exam'
+    ],
+    correctIndex: 1,
+    explanation: 'NH offers reciprocity but requires passing the NH state law exam and completing a 40-hour NH-specific course. National exam is waived. Popular for MA agents in border areas.'
+  },
+  {
+    id: 'q110',
+    category: 'New York Licensing',
+    question: 'Does New York offer reciprocity with Massachusetts?',
+    options: [
+      'Yes, full reciprocity',
+      'Yes, partial reciprocity',
+      'No, must complete full NY licensing requirements from scratch',
+      'Only for brokers'
+    ],
+    correctIndex: 2,
+    explanation: 'NY does NOT offer reciprocity with MA. Must complete the full 75-hour NY pre-license course and pass both national and NY state exams. Most difficult neighboring state to get licensed in.'
+  },
+  {
+    id: 'q111',
+    category: 'Connecticut Licensing',
+    question: 'What does Connecticut require from MA agents seeking licensure?',
+    options: [
+      'Nothing, automatic reciprocity',
+      'CT state exam only and 60-hour CT course',
+      'Just a background check',
+      'Must retake national exam'
+    ],
+    correctIndex: 1,
+    explanation: 'CT offers reciprocity by waiving the national exam portion, but requires passing the CT state exam and completing a 60-hour CT-specific course. Fees typically $200-300.'
+  },
+  {
+    id: 'q112',
+    category: 'Multi-State Licensing',
+    question: 'What is the typical total cost to obtain a second state license through reciprocity?',
+    options: [
+      '$50-100',
+      '$450-975',
+      '$2,000-3,000',
+      '$10,000+'
+    ],
+    correctIndex: 1,
+    explanation: 'Costs include: application fees ($100-300), state exam ($50-100), required courses ($200-400 if needed), background checks ($50-100), and fingerprints ($50-75). Total: $450-975 per state.'
+  },
+  {
+    id: 'q113',
+    category: 'Multi-State Licensing',
+    question: 'An agent is licensed in both MA and NH. How many CE hours must they complete?',
+    options: [
+      '12 hours total (MA requirement only)',
+      'CE hours for EACH state separately',
+      'Whichever state requires more',
+      'No CE required for second state'
+    ],
+    correctIndex: 1,
+    explanation: 'Must complete CE requirements for EACH state separately. MA requires 12 hrs/2 years, NH has its own requirements. Can be 12-24+ hours annually across multiple states.'
+  },
+  {
+    id: 'q114',
+    category: 'Multi-State Licensing',
+    question: 'Can an agent work for different brokers in different states?',
+    options: [
+      'No, must have same broker everywhere',
+      'Yes, but must have a licensed broker in EACH state',
+      'Only if states are adjacent',
+      'Not allowed'
+    ],
+    correctIndex: 1,
+    explanation: 'Yes, but each license must be affiliated with a broker licensed in that state. Can work for same broker\'s multi-state offices or completely different brokers per state.'
+  },
+  {
+    id: 'q115',
+    category: 'Multi-State Licensing',
+    question: 'Which neighboring state is easiest for MA agents to get licensed in?',
+    options: [
+      'New York',
+      'Connecticut',
+      'Rhode Island (just state exam required)',
+      'All equally difficult'
+    ],
+    correctIndex: 2,
+    explanation: 'Rhode Island is fastest/easiest - only requires passing RI state exam with no additional courses. NH and VT are also relatively easy. NY has NO reciprocity (hardest).'
+  },
+  {
+    id: 'q116',
+    category: 'Multi-State Licensing',
+    question: 'Why would a MA agent get licensed in New Hampshire?',
+    options: [
+      'Required for all MA agents',
+      'To serve border towns, vacation homes, and expand market area',
+      'NH licenses are cheaper',
+      'No reason'
+    ],
+    correctIndex: 1,
+    explanation: 'Popular reasons: serve MA/NH border towns, access vacation/second-home market (lakes, mountains), help relocating clients, expand income potential, and competitive advantage.'
+  },
+  {
+    id: 'q117',
+    category: 'Multi-State Licensing',
+    question: 'Can a MA broker open a brokerage in Connecticut?',
+    options: [
+      'Yes, MA broker license works in all New England',
+      'Yes, if they obtain a CT broker license',
+      'No, never allowed',
+      'Only after 10 years'
+    ],
+    correctIndex: 1,
+    explanation: 'Yes, but must obtain a CT broker license meeting all CT broker requirements (experience, courses, exams). Must comply with CT regulations and maintain separate trust accounts.'
+  },
+  {
+    id: 'q118',
+    category: 'Vermont Licensing',
+    question: 'Vermont offers reciprocity to MA agents. What is typically required?',
+    options: [
+      'Nothing, automatic',
+      'Pass VT state exam and background check',
+      'Complete 90-hour course',
+      'Move to Vermont'
+    ],
+    correctIndex: 1,
+    explanation: 'VT offers reciprocity - requires passing VT state-specific exam (waives national) and background check. Fees typically $100-200. Less common due to smaller market but simpler process.'
+  },
+  {
+    id: 'q119',
+    category: 'Multi-State Licensing',
+    question: 'What is a multi-state broker?',
+    options: [
+      'A broker who travels between states',
+      'A broker licensed in multiple states who can supervise and operate in each',
+      'Automatic status after 5 years',
+      'Only for large companies'
+    ],
+    correctIndex: 1,
+    explanation: 'A multi-state broker holds broker licenses in multiple states, allowing them to supervise agents and operate brokerages in each state. Must meet all broker requirements for each state separately.'
+  },
+  {
+    id: 'q120',
+    category: 'Multi-State Licensing',
+    question: 'Do you need separate E&O insurance for each state license?',
+    options: [
+      'No, one policy covers all states',
+      'Yes, must have separate policy for each state',
+      'Depends on the policy - verify coverage area with carrier',
+      'E&O not required for second states'
+    ],
+    correctIndex: 2,
+    explanation: 'Depends on your E&O policy. Some cover all states where you\'re licensed, others are state-specific. ALWAYS verify with your insurance carrier before practicing in additional states to ensure coverage.'
   }
 ];
