@@ -2323,5 +2323,1287 @@ Always understand your agent’s split and cap – it influences incentives.`}
         </div>
       </>
     )
+  },
+  {
+    id: 'valuation',
+    icon: '💰',
+    title: '22. Property Valuation Methods',
+    subtitle: 'CMA, cost approach, income approach, market approach - pricing properties accurately',
+    body: (
+      <>
+        <h3>22.1 Comparative Market Analysis (CMA)</h3>
+        <p className="highlight">
+          The CMA is the most common valuation method used by agents. It compares the subject property 
+          to similar recently sold properties (comparables or "comps") to estimate market value.
+        </p>
+
+        <h4>Components of a Strong CMA:</h4>
+        <ul>
+          <li><strong>Active Listings:</strong> Current competition (what buyers can choose instead)</li>
+          <li><strong>Pending Sales:</strong> Properties under contract (market direction indicator)</li>
+          <li><strong>Sold Properties:</strong> Actual market values (past 3-6 months, same area)</li>
+          <li><strong>Expired/Withdrawn:</strong> Failed listings (what didn't work)</li>
+        </ul>
+
+        <h4>The 3 C's of Comparables:</h4>
+        <div className="key-points">
+          <p><strong>1. Condition:</strong> Similar physical condition and updates</p>
+          <p><strong>2. Characteristics:</strong> Beds, baths, square footage, lot size, style</p>
+          <p><strong>3. Close Proximity:</strong> Same neighborhood or comparable area</p>
+        </div>
+
+        <h4>Adjustments in CMA:</h4>
+        <ul>
+          <li><strong>If comp is better:</strong> SUBTRACT value from comp price</li>
+          <li><strong>If comp is worse:</strong> ADD value to comp price</li>
+          <li><strong>Common adjustments:</strong>
+            <ul>
+              <li>Extra bedroom: +$15k-$30k</li>
+              <li>Extra bathroom: +$10k-$20k</li>
+              <li>Garage: +$10k-$25k</li>
+              <li>Finished basement: +$15k-$40k</li>
+              <li>Pool: +$10k-$30k (seasonal)</li>
+              <li>Updates (kitchen/bath): +$10k-$50k</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>CMA Best Practices:</h4>
+        <ul>
+          <li>✅ Use 3-6 comparable sales minimum</li>
+          <li>✅ Keep comps within 1 mile and 6 months when possible</li>
+          <li>✅ Adjust for market conditions (appreciation/depreciation)</li>
+          <li>✅ Weight the most similar comps more heavily</li>
+          <li>✅ Consider days on market and list-to-sale price ratios</li>
+          <li>❌ Don't use comps from different school districts unless necessary</li>
+          <li>❌ Don't cherry-pick comps to support desired price</li>
+        </ul>
+
+        <h3>22.2 Cost Approach</h3>
+        <p>
+          Used primarily for new construction, unique properties, or insurance purposes. 
+          Calculates what it would cost to rebuild the property from scratch.
+        </p>
+
+        <h4>Cost Approach Formula:</h4>
+        <div className="formula">
+          <p><strong>Land Value + Replacement Cost New - Depreciation = Property Value</strong></p>
+        </div>
+
+        <h4>Steps in Cost Approach:</h4>
+        <ol>
+          <li><strong>Estimate Land Value:</strong> Use recent land sales in area</li>
+          <li><strong>Calculate Replacement Cost:</strong> Construction cost per square foot × size</li>
+          <li><strong>Subtract Depreciation:</strong>
+            <ul>
+              <li>Physical deterioration (age, wear and tear)</li>
+              <li>Functional obsolescence (outdated design, poor layout)</li>
+              <li>External obsolescence (neighborhood decline, busy road)</li>
+            </ul>
+          </li>
+          <li><strong>Add Land and Depreciated Building:</strong> Final value</li>
+        </ol>
+
+        <h4>When to Use Cost Approach:</h4>
+        <ul>
+          <li>✅ New construction (little to no depreciation)</li>
+          <li>✅ Unique properties (churches, schools, special-use)</li>
+          <li>✅ Insurance valuations</li>
+          <li>✅ Properties with few comparables</li>
+          <li>❌ NOT ideal for older properties (depreciation hard to quantify)</li>
+          <li>❌ NOT ideal for standard residential (CMA is better)</li>
+        </ul>
+
+        <h3>22.3 Income Approach</h3>
+        <p className="highlight">
+          Used for investment properties. Values property based on income it generates. 
+          Primary method for commercial and multi-family properties.
+        </p>
+
+        <h4>Income Approach Formula:</h4>
+        <div className="formula">
+          <p><strong>Net Operating Income (NOI) ÷ Capitalization Rate = Property Value</strong></p>
+        </div>
+
+        <h4>Calculating Net Operating Income (NOI):</h4>
+        <div className="calculation-steps">
+          <p>Gross Potential Rent (all units at market rent)</p>
+          <p>− Vacancy Loss (5-10% typical)</p>
+          <p>= Effective Gross Income</p>
+          <p>− Operating Expenses (NOT including mortgage)</p>
+          <p>= Net Operating Income (NOI)</p>
+        </div>
+
+        <h4>Operating Expenses Include:</h4>
+        <ul>
+          <li>Property taxes</li>
+          <li>Insurance</li>
+          <li>Utilities (if owner-paid)</li>
+          <li>Maintenance and repairs</li>
+          <li>Property management (if applicable)</li>
+          <li>Landscaping/snow removal</li>
+          <li>Common area utilities</li>
+        </ul>
+
+        <h4>Operating Expenses DO NOT Include:</h4>
+        <ul>
+          <li>❌ Mortgage payments (debt service)</li>
+          <li>❌ Depreciation (accounting, not cash)</li>
+          <li>❌ Income taxes (investor-specific)</li>
+          <li>❌ Capital improvements (one-time, not recurring)</li>
+        </ul>
+
+        <h4>Capitalization Rate (Cap Rate):</h4>
+        <ul>
+          <li><strong>Definition:</strong> Rate of return investor expects</li>
+          <li><strong>Market cap rates:</strong> 4-8% typical for residential, 5-12% for commercial</li>
+          <li><strong>Higher cap rate:</strong> Higher risk, lower property value</li>
+          <li><strong>Lower cap rate:</strong> Lower risk (better area), higher property value</li>
+          <li><strong>Example:</strong> $50,000 NOI ÷ 6% cap rate = $833,333 value</li>
+        </ul>
+
+        <h4>When to Use Income Approach:</h4>
+        <ul>
+          <li>✅ Multi-family properties (3+ units)</li>
+          <li>✅ Commercial real estate</li>
+          <li>✅ Investment properties</li>
+          <li>✅ Rent-producing properties</li>
+          <li>❌ NOT for owner-occupied single-family (no income)</li>
+        </ul>
+
+        <h3>22.4 Market Approach (Sales Comparison)</h3>
+        <p>
+          The market approach is similar to CMA but more formal. It's used in professional appraisals 
+          and relies on recent sales of comparable properties.
+        </p>
+
+        <h4>Market Approach Process:</h4>
+        <ol>
+          <li><strong>Identify Comparables:</strong> Recent sales, similar properties, same market</li>
+          <li><strong>Make Adjustments:</strong> Account for differences in size, condition, features</li>
+          <li><strong>Reconcile Values:</strong> Weight most similar comps more heavily</li>
+          <li><strong>Arrive at Value:</strong> Final opinion of market value</li>
+        </ol>
+
+        <h4>Adjustment Grid Example:</h4>
+        <div className="example-grid">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Subject</th>
+                <th>Comp 1</th>
+                <th>Adjustment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sale Price</td>
+                <td>-</td>
+                <td>$400,000</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Bedrooms</td>
+                <td>3</td>
+                <td>4</td>
+                <td>-$20,000</td>
+              </tr>
+              <tr>
+                <td>Garage</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>+$15,000</td>
+              </tr>
+              <tr>
+                <td>Adjusted Price</td>
+                <td>-</td>
+                <td>$395,000</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Difference: CMA vs. Appraisal</h4>
+        <div className="comparison">
+          <h5>CMA (Agent-Prepared):</h5>
+          <ul>
+            <li>Marketing tool for pricing property</li>
+            <li>Less formal, more flexible</li>
+            <li>Free to client</li>
+            <li>Uses agent's local market knowledge</li>
+            <li>Not accepted by lenders</li>
+          </ul>
+
+          <h5>Appraisal (Certified Appraiser):</h5>
+          <ul>
+            <li>Required by lenders for financing</li>
+            <li>Formal, standardized process (USPAP standards)</li>
+            <li>Costs $300-$600+</li>
+            <li>Independent third-party valuation</li>
+            <li>Legally binding for loan purposes</li>
+          </ul>
+        </div>
+
+        <h3>22.5 Valuation Red Flags</h3>
+        <div className="warning-box">
+          <h4>Signs of Overpricing:</h4>
+          <ul>
+            <li>⚠️ No showings after 2-3 weeks</li>
+            <li>⚠️ Priced 10%+ above recent comps</li>
+            <li>⚠️ Days on market exceeding area average</li>
+            <li>⚠️ No offers on well-marketed property</li>
+            <li>⚠️ Price reductions not generating activity</li>
+          </ul>
+
+          <h4>Signs of Underpricing:</h4>
+          <ul>
+            <li>⚠️ Multiple offers within first week</li>
+            <li>⚠️ Showings booked solid immediately</li>
+            <li>⚠️ Offers well above asking price</li>
+            <li>⚠️ Priced below recent comparable sales</li>
+          </ul>
+        </div>
+
+        <h3>22.6 Agent's Role in Valuation</h3>
+        <div className="agent-role">
+          <h4>What Agents SHOULD Do:</h4>
+          <ul>
+            <li>✅ Provide comprehensive CMA with multiple comps</li>
+            <li>✅ Explain how you arrived at suggested price range</li>
+            <li>✅ Discuss market conditions and trends</li>
+            <li>✅ Set realistic expectations with data</li>
+            <li>✅ Recommend pricing strategy (aggressive vs. conservative)</li>
+            <li>✅ Update pricing recommendations as market shifts</li>
+          </ul>
+
+          <h4>What Agents CANNOT Do:</h4>
+          <ul>
+            <li>❌ Guarantee a specific sale price</li>
+            <li>❌ Perform a formal appraisal (unless also licensed appraiser)</li>
+            <li>❌ Guarantee property will appraise at list price</li>
+            <li>❌ Overprice to "win" listing (unethical)</li>
+            <li>❌ Lowball to create quick sale for commission</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> Proper valuation protects both buyer and seller. Overpricing wastes 
+          time and costs money. Underpricing leaves money on the table. Use data, not emotions. Your 
+          credibility depends on accurate pricing guidance backed by solid market analysis.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'financing',
+    icon: '🏦',
+    title: '23. Financing Deep Dive',
+    subtitle: 'Loan types, down payments, approval process, qualification - understanding buyer financing',
+    body: (
+      <>
+        <h3>23.1 Conventional Loans</h3>
+        <p className="highlight">
+          Most common loan type for buyers with good credit and stable income. Not government-backed.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Down Payment:</strong> 3-20% (PMI required if less than 20%)</li>
+          <li><strong>Credit Score:</strong> 620+ minimum (700+ for best rates)</li>
+          <li><strong>Debt-to-Income Ratio:</strong> 43% maximum (36% preferred)</li>
+          <li><strong>Loan Limits (2025):</strong> $766,550 standard, $1,149,825 high-cost areas (MA)</li>
+          <li><strong>PMI (Private Mortgage Insurance):</strong> 0.5-1.5% annually if &lt;20% down</li>
+          <li><strong>Interest Rates:</strong> Typically lowest rates available</li>
+        </ul>
+
+        <h4>Conventional Loan Types:</h4>
+        <div className="loan-types">
+          <p><strong>Conforming:</strong> Meets Fannie Mae/Freddie Mac standards, lower rates</p>
+          <p><strong>Non-Conforming:</strong> Doesn't meet standards (jumbo loans, unique properties)</p>
+          <p><strong>Portfolio:</strong> Lender keeps loan instead of selling it</p>
+        </div>
+
+        <h4>Advantages:</h4>
+        <ul>
+          <li>✅ Lowest interest rates with good credit</li>
+          <li>✅ PMI drops off at 78% LTV (loan-to-value)</li>
+          <li>✅ Can be used for investment properties (higher down payment)</li>
+          <li>✅ Flexible terms (15, 20, 30 years)</li>
+          <li>✅ Fewer property requirements than FHA</li>
+        </ul>
+
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>❌ Stricter credit requirements</li>
+          <li>❌ Larger down payment needed</li>
+          <li>❌ Tougher approval for self-employed</li>
+        </ul>
+
+        <h3>23.2 FHA Loans</h3>
+        <p>
+          Federal Housing Administration insured loans. Popular for first-time buyers with lower down payment.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Down Payment:</strong> 3.5% minimum</li>
+          <li><strong>Credit Score:</strong> 580+ for 3.5% down, 500-579 for 10% down</li>
+          <li><strong>Debt-to-Income Ratio:</strong> Up to 50% allowed</li>
+          <li><strong>Loan Limits (2025 MA):</strong> $498,257 to $1,149,825 (county-dependent)</li>
+          <li><strong>MIP (Mortgage Insurance Premium):</strong> Upfront 1.75% + annual 0.55-1.05%</li>
+          <li><strong>MIP Duration:</strong> Life of loan if &lt;10% down, 11 years if ≥10% down</li>
+        </ul>
+
+        <h4>Property Requirements:</h4>
+        <ul>
+          <li>Must be primary residence (no investment properties)</li>
+          <li>Must meet FHA minimum property standards</li>
+          <li>Requires FHA appraisal (stricter than conventional)</li>
+          <li>Seller can contribute up to 6% toward closing costs</li>
+        </ul>
+
+        <h4>Advantages:</h4>
+        <ul>
+          <li>✅ Low down payment (3.5%)</li>
+          <li>✅ More lenient credit requirements</li>
+          <li>✅ Higher debt-to-income ratios accepted</li>
+          <li>✅ Assumable loans (buyer can take over loan)</li>
+          <li>✅ Gift funds allowed for down payment</li>
+        </ul>
+
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>❌ MIP for life of loan (if &lt;10% down)</li>
+          <li>❌ Stricter property condition requirements</li>
+          <li>❌ Lower loan limits than conventional in some areas</li>
+          <li>❌ Longer closing times (more documentation)</li>
+        </ul>
+
+        <h3>23.3 VA Loans</h3>
+        <p>
+          Department of Veterans Affairs guaranteed loans for eligible military members, veterans, and spouses.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Down Payment:</strong> $0 (100% financing)</li>
+          <li><strong>Credit Score:</strong> No minimum (lender discretion, typically 620+)</li>
+          <li><strong>Loan Limits:</strong> No maximum in most areas (2025)</li>
+          <li><strong>Funding Fee:</strong> 2.15-3.3% (waived for disabled veterans)</li>
+          <li><strong>PMI:</strong> None required</li>
+          <li><strong>Eligibility:</strong> Certificate of Eligibility (COE) required</li>
+        </ul>
+
+        <h4>Eligibility Requirements:</h4>
+        <ul>
+          <li>Active duty: 90 consecutive days during wartime, 181 days during peacetime</li>
+          <li>Veterans: Minimum service requirements met, honorable discharge</li>
+          <li>Reservists/National Guard: 6 years of service</li>
+          <li>Surviving spouses: Eligible in certain circumstances</li>
+        </ul>
+
+        <h4>Advantages:</h4>
+        <ul>
+          <li>✅ No down payment required</li>
+          <li>✅ No PMI ever</li>
+          <li>✅ Competitive interest rates</li>
+          <li>✅ Seller can pay all buyer closing costs</li>
+          <li>✅ Lenient credit requirements</li>
+          <li>✅ Can use multiple times</li>
+          <li>✅ Assumable by qualified buyers</li>
+        </ul>
+
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>❌ Funding fee (unless disabled)</li>
+          <li>❌ Must be primary residence</li>
+          <li>❌ Stricter property condition standards</li>
+          <li>❌ Some sellers hesitate (unfamiliar, longer closing)</li>
+          <li>❌ VA appraisal required (can be conservative)</li>
+        </ul>
+
+        <h3>23.4 USDA Loans</h3>
+        <p>
+          U.S. Department of Agriculture loans for rural and suburban properties. Zero down payment option.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Down Payment:</strong> $0 (100% financing)</li>
+          <li><strong>Credit Score:</strong> 640+ preferred</li>
+          <li><strong>Income Limits:</strong> 115% of area median income</li>
+          <li><strong>Location:</strong> Must be in USDA-eligible area (check map)</li>
+          <li><strong>Guarantee Fee:</strong> 1% upfront + 0.35% annual</li>
+        </ul>
+
+        <h4>Advantages:</h4>
+        <ul>
+          <li>✅ No down payment</li>
+          <li>✅ Low mortgage insurance</li>
+          <li>✅ Competitive rates</li>
+          <li>✅ Seller can pay closing costs</li>
+        </ul>
+
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>❌ Geographic restrictions</li>
+          <li>❌ Income limits</li>
+          <li>❌ Primary residence only</li>
+          <li>❌ Longer processing times</li>
+        </ul>
+
+        <h3>23.5 Jumbo Loans</h3>
+        <p>
+          Loans exceeding conventional conforming limits. Common in high-cost Massachusetts markets.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li><strong>Loan Amount:</strong> Above $766,550 (or local limit)</li>
+          <li><strong>Down Payment:</strong> 10-20% typically required</li>
+          <li><strong>Credit Score:</strong> 700+ minimum (740+ for best rates)</li>
+          <li><strong>Debt-to-Income:</strong> 43% maximum (stricter)</li>
+          <li><strong>Reserves:</strong> 6-12 months cash reserves required</li>
+          <li><strong>Documentation:</strong> Extensive income/asset verification</li>
+        </ul>
+
+        <h4>Advantages:</h4>
+        <ul>
+          <li>✅ Allows purchase of higher-priced homes</li>
+          <li>✅ No PMI if 20% down</li>
+          <li>✅ Competitive rates (if strong financials)</li>
+        </ul>
+
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>❌ Higher interest rates than conforming</li>
+          <li>❌ Larger down payment</li>
+          <li>❌ Stricter qualification requirements</li>
+          <li>❌ More documentation</li>
+          <li>❌ Fewer lenders offer jumbo loans</li>
+        </ul>
+
+        <h3>23.6 Alternative Financing</h3>
+        
+        <h4>Seller Financing:</h4>
+        <ul>
+          <li><strong>How it works:</strong> Seller acts as lender, buyer makes payments to seller</li>
+          <li><strong>Terms:</strong> Negotiable (usually 5-10 years with balloon payment)</li>
+          <li><strong>When used:</strong> Buyer can't qualify traditionally, fast closing needed, property hard to finance</li>
+          <li><strong>Risks:</strong> Seller still liable for existing mortgage (due-on-sale clause), buyer default</li>
+        </ul>
+
+        <h4>Bridge Loans:</h4>
+        <ul>
+          <li><strong>Purpose:</strong> Short-term financing until permanent financing secured</li>
+          <li><strong>Common use:</strong> Buying before selling current home</li>
+          <li><strong>Term:</strong> 6-12 months typically</li>
+          <li><strong>Cost:</strong> Higher interest rates (7-10%)</li>
+        </ul>
+
+        <h4>Hard Money Loans:</h4>
+        <ul>
+          <li><strong>Source:</strong> Private investors, not banks</li>
+          <li><strong>Based on:</strong> Property value, not borrower credit</li>
+          <li><strong>Use:</strong> Fix-and-flip, distressed properties</li>
+          <li><strong>Terms:</strong> 6-18 months, 8-15% interest, high fees</li>
+        </ul>
+
+        <h3>23.7 Pre-Qualification vs. Pre-Approval</h3>
+        <div className="comparison">
+          <h4>Pre-Qualification (Weak):</h4>
+          <ul>
+            <li>Based on stated income/assets (unverified)</li>
+            <li>Quick process (phone/online)</li>
+            <li>No credit check or documentation</li>
+            <li>Estimate only - not reliable</li>
+            <li>❌ Not taken seriously by sellers</li>
+          </ul>
+
+          <h4>Pre-Approval (Strong):</h4>
+          <ul>
+            <li>Verified income, assets, employment</li>
+            <li>Hard credit check performed</li>
+            <li>Documentation reviewed (W2s, pay stubs, bank statements)</li>
+            <li>Conditional commitment from lender</li>
+            <li>✅ Shows buyer is serious and qualified</li>
+          </ul>
+        </div>
+
+        <h3>23.8 Mortgage Approval Process</h3>
+        <div className="process-timeline">
+          <ol>
+            <li><strong>Pre-Approval:</strong> Before house hunting (1-3 days)</li>
+            <li><strong>Offer Accepted:</strong> Start formal application (day 1)</li>
+            <li><strong>Processing:</strong> Lender gathers/verifies documents (days 1-10)</li>
+            <li><strong>Appraisal Ordered:</strong> Property valuation (days 3-7)</li>
+            <li><strong>Underwriting:</strong> Final loan approval (days 10-20)</li>
+            <li><strong>Clear to Close:</strong> All conditions met (day 25-30)</li>
+            <li><strong>Closing:</strong> Sign documents, fund loan (day 30-45)</li>
+          </ol>
+        </div>
+
+        <h3>23.9 Common Financing Issues & Solutions</h3>
+        <div className="issues-solutions">
+          <h4>Issue: Low Appraisal</h4>
+          <ul>
+            <li><strong>Problem:</strong> Property appraises below purchase price</li>
+            <li><strong>Solutions:</strong>
+              <ul>
+                <li>Buyer increases down payment to cover gap</li>
+                <li>Seller reduces price</li>
+                <li>Split the difference</li>
+                <li>Challenge appraisal with better comps</li>
+                <li>Walk away (if contingency exists)</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>Issue: DTI Too High</h4>
+          <ul>
+            <li><strong>Problem:</strong> Debt-to-income ratio exceeds lender limits</li>
+            <li><strong>Solutions:</strong>
+              <ul>
+                <li>Pay off debts before closing</li>
+                <li>Find co-signer</li>
+                <li>Increase down payment</li>
+                <li>Look at lower-priced properties</li>
+                <li>Try different loan program (FHA allows higher DTI)</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>Issue: Employment Gap or Job Change</h4>
+          <ul>
+            <li><strong>Problem:</strong> Buyer changed jobs during process</li>
+            <li><strong>Solutions:</strong>
+              <ul>
+                <li>New job in same field usually OK</li>
+                <li>Provide offer letter and verification</li>
+                <li>May delay closing for pay stub proof</li>
+                <li>DO NOT change jobs during mortgage process if avoidable</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h4>Issue: Large Deposits in Bank Account</h4>
+          <ul>
+            <li><strong>Problem:</strong> Unexplained deposits raise red flags</li>
+            <li><strong>Solutions:</strong>
+              <ul>
+                <li>Document source (gift, bonus, tax refund)</li>
+                <li>Provide gift letter if from family</li>
+                <li>Avoid large deposits during process</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h3>23.10 Agent's Role in Financing</h3>
+        <div className="agent-role">
+          <h4>What Agents SHOULD Do:</h4>
+          <ul>
+            <li>✅ Recommend buyers get pre-approved before house hunting</li>
+            <li>✅ Refer to 2-3 reputable lenders</li>
+            <li>✅ Explain difference between loan types</li>
+            <li>✅ Review pre-approval letters for strength</li>
+            <li>✅ Coordinate with lender during transaction</li>
+            <li>✅ Monitor financing contingency deadlines</li>
+            <li>✅ Help buyer understand closing costs</li>
+          </ul>
+
+          <h4>What Agents CANNOT Do:</h4>
+          <ul>
+            <li>❌ Guarantee loan approval</li>
+            <li>❌ Give specific financial advice</li>
+            <li>❌ Calculate exact loan qualifications</li>
+            <li>❌ Recommend specific loan products</li>
+            <li>❌ Accept kickbacks from lenders (RESPA violation)</li>
+            <li>❌ Pressure buyer to use specific lender</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> Understanding financing helps you guide buyers realistically and spot 
+          potential issues early. Always defer specific loan questions to lenders. Strong pre-approval = 
+          stronger offer. Financing contingencies protect buyers but need clear deadlines.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'title-closing',
+    icon: '📄',
+    title: '24. Title & Closing Process',
+    subtitle: 'Title search, title insurance, closing documents, settlement statements - final transaction steps',
+    body: (
+      <>
+        <h3>24.1 Title Search Process</h3>
+        <p className="highlight">
+          The title search verifies the seller has legal right to sell the property and uncovers any liens, 
+          encumbrances, or defects that could affect ownership transfer.
+        </p>
+
+        <h4>What Title Search Reveals:</h4>
+        <ul>
+          <li><strong>Chain of Title:</strong> Complete ownership history</li>
+          <li><strong>Outstanding Mortgages:</strong> Existing loans that must be paid off</li>
+          <li><strong>Liens:</strong> Tax liens, mechanic's liens, judgment liens</li>
+          <li><strong>Easements:</strong> Rights others have to use the property</li>
+          <li><strong>Encroachments:</strong> Structures crossing property lines</li>
+          <li><strong>Restrictions:</strong> Deed restrictions, covenants, HOA rules</li>
+          <li><strong>Unpaid Taxes:</strong> Property tax arrears</li>
+        </ul>
+
+        <h4>Title Search Timeline:</h4>
+        <div className="timeline">
+          <ol>
+            <li><strong>Ordered:</strong> Shortly after P&S signed (within 3-5 days)</li>
+            <li><strong>Search Performed:</strong> Attorney or title company reviews public records (5-7 days)</li>
+            <li><strong>Preliminary Report:</strong> Issues identified (if any) (day 7-10)</li>
+            <li><strong>Cure Period:</strong> Seller resolves title defects (varies, can be 30+ days)</li>
+            <li><strong>Final Title Commitment:</strong> Clear title confirmed before closing</li>
+          </ol>
+        </div>
+
+        <h4>Common Title Issues:</h4>
+        <div className="common-issues">
+          <p><strong>Tax Liens:</strong> Unpaid federal/state/local taxes attached to property</p>
+          <p><strong>Mechanic's Liens:</strong> Contractors/suppliers unpaid for work done</p>
+          <p><strong>Judgment Liens:</strong> Court judgments against owner</p>
+          <p><strong>Divorce/Estate Issues:</strong> Unclear ownership due to death or divorce</p>
+          <p><strong>Survey Disputes:</strong> Boundary disagreements with neighbors</p>
+          <p><strong>HOA Liens:</strong> Unpaid homeowners association fees</p>
+        </div>
+
+        <h3>24.2 Types of Title Insurance</h3>
+        
+        <h4>Owner's Title Insurance:</h4>
+        <ul>
+          <li><strong>Who it protects:</strong> Buyer/new owner</li>
+          <li><strong>Coverage amount:</strong> Purchase price of property</li>
+          <li><strong>Duration:</strong> As long as owner or heirs have interest in property</li>
+          <li><strong>Cost:</strong> One-time premium at closing ($1,000-$3,000 typical)</li>
+          <li><strong>Who pays:</strong> Usually buyer (negotiable)</li>
+          <li><strong>What it covers:</strong>
+            <ul>
+              <li>Forged documents in chain of title</li>
+              <li>Unknown heirs claiming ownership</li>
+              <li>Undisclosed easements</li>
+              <li>Errors in public records</li>
+              <li>Fraud in prior transactions</li>
+              <li>Liens not discovered in search</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Lender's Title Insurance:</h4>
+        <ul>
+          <li><strong>Who it protects:</strong> Mortgage lender</li>
+          <li><strong>Coverage amount:</strong> Decreases as loan is paid down</li>
+          <li><strong>Duration:</strong> Until loan is paid off</li>
+          <li><strong>Cost:</strong> $500-$1,500 typical</li>
+          <li><strong>Who pays:</strong> Buyer (required by lender if financing)</li>
+          <li><strong>Required:</strong> YES, if obtaining mortgage</li>
+          <li><strong>Note:</strong> Does NOT protect owner (only lender)</li>
+        </ul>
+
+        <h4>Why Both Policies?</h4>
+        <div className="explanation">
+          <p><strong>Lender's Policy:</strong> Required if you have a mortgage. Protects the lender's investment, 
+          coverage decreases as you pay down loan. Expires when loan is paid off.</p>
+          <p><strong>Owner's Policy:</strong> Optional but HIGHLY recommended. Protects your equity investment. 
+          One-time premium covers you forever. Relatively inexpensive protection for major asset.</p>
+        </div>
+
+        <h3>24.3 Closing Documents</h3>
+        
+        <h4>Key Documents Buyer Signs:</h4>
+        <ul>
+          <li><strong>Closing Disclosure:</strong> Final costs breakdown (received 3 days before closing)</li>
+          <li><strong>Promissory Note:</strong> Promise to repay loan</li>
+          <li><strong>Mortgage/Deed of Trust:</strong> Pledges property as collateral</li>
+          <li><strong>Truth in Lending Disclosure:</strong> APR, finance charges, payment schedule</li>
+          <li><strong>Initial Escrow Disclosure:</strong> Estimated property tax and insurance payments</li>
+          <li><strong>Affidavit of Title:</strong> Buyer swears no new liens since title search</li>
+          <li><strong>Occupancy Affidavit:</strong> States buyer will occupy (primary residence)</li>
+        </ul>
+
+        <h4>Key Documents Seller Signs:</h4>
+        <ul>
+          <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
+          <li><strong>Closing Disclosure:</strong> Seller's version showing proceeds</li>
+          <li><strong>Affidavit of Title:</strong> Confirms no new liens, unpaid bills</li>
+          <li><strong>FIRPTA Affidavit:</strong> Confirms seller is U.S. citizen (tax withholding)</li>
+          <li><strong>Payoff Authorization:</strong> Allows payoff of existing mortgage</li>
+          <li><strong>Lead Paint Disclosure:</strong> For pre-1978 properties</li>
+        </ul>
+
+        <h4>The Deed (Most Important Document):</h4>
+        <div className="deed-types">
+          <p><strong>Warranty Deed:</strong> Seller guarantees clear title, defends against all claims (most protection)</p>
+          <p><strong>Quitclaim Deed:</strong> Seller transfers only what they own, no guarantees (least protection)</p>
+          <p><strong>Bargain and Sale Deed:</strong> Middle ground, some warranties but not full</p>
+        </div>
+
+        <h3>24.4 Closing Disclosure (CD) - Formerly HUD-1</h3>
+        <p>
+          The Closing Disclosure replaced the HUD-1 Settlement Statement in 2015 under TRID rules. 
+          It's a 5-page standardized form showing all costs in the transaction.
+        </p>
+
+        <h4>Closing Disclosure Timeline:</h4>
+        <ul>
+          <li><strong>3 Business Days Before Closing:</strong> Lender must provide final CD</li>
+          <li><strong>If Changes Occur:</strong> May require new 3-day waiting period</li>
+          <li><strong>Changes Requiring Re-Disclosure:</strong>
+            <ul>
+              <li>APR changes by more than 0.125%</li>
+              <li>Loan product changes</li>
+              <li>Prepayment penalty added</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Closing Disclosure Pages Breakdown:</h4>
+        <div className="cd-breakdown">
+          <p><strong>Page 1:</strong> Loan terms, projected payments, costs at closing</p>
+          <p><strong>Page 2:</strong> Closing cost details (origination, services, taxes, other costs)</p>
+          <p><strong>Page 3:</strong> Calculating cash to close, summaries for borrower and seller</p>
+          <p><strong>Page 4:</strong> Additional loan disclosures (liability, assumption, etc.)</p>
+          <p><strong>Page 5:</strong> Loan calculations, other disclosures, contact information</p>
+        </div>
+
+        <h4>Common Closing Costs (Buyer):</h4>
+        <ul>
+          <li><strong>Origination Charges:</strong> Loan origination fee (0.5-1% of loan)</li>
+          <li><strong>Appraisal:</strong> $400-$600</li>
+          <li><strong>Credit Report:</strong> $25-$50</li>
+          <li><strong>Title Insurance:</strong> $1,500-$4,000 (both policies)</li>
+          <li><strong>Attorney Fees:</strong> $500-$1,500</li>
+          <li><strong>Recording Fees:</strong> $100-$300</li>
+          <li><strong>Survey:</strong> $300-$600 (if required)</li>
+          <li><strong>Home Inspection:</strong> $300-$500 (paid pre-closing usually)</li>
+          <li><strong>Prepaid Items:</strong> Property taxes, homeowners insurance, HOA</li>
+          <li><strong>Escrow Deposit:</strong> 2-3 months taxes and insurance</li>
+          <li><strong>HOA Transfer Fee:</strong> $200-$500 (if applicable)</li>
+        </ul>
+
+        <h4>Common Closing Costs (Seller):</h4>
+        <ul>
+          <li><strong>Agent Commissions:</strong> 5-6% of sale price (biggest cost)</li>
+          <li><strong>Attorney Fees:</strong> $500-$1,500</li>
+          <li><strong>Mortgage Payoff:</strong> Remaining balance + any prepayment penalty</li>
+          <li><strong>Title Search:</strong> $200-$400</li>
+          <li><strong>Property Tax Prorations:</strong> Pay through closing date</li>
+          <li><strong>HOA Prorations:</strong> Pay through closing date</li>
+          <li><strong>Transfer Taxes:</strong> $4.56 per $1,000 in MA (varies by municipality)</li>
+          <li><strong>Home Warranty:</strong> $300-$600 (if providing to buyer)</li>
+        </ul>
+
+        <h3>24.5 Prorations and Credits</h3>
+        <p>
+          Prorations ensure buyer and seller each pay their fair share of ongoing expenses based on closing date.
+        </p>
+
+        <h4>Items Typically Prorated:</h4>
+        <ul>
+          <li><strong>Property Taxes:</strong> Calculated daily, seller pays through closing</li>
+          <li><strong>HOA Fees:</strong> Monthly or quarterly dues split</li>
+          <li><strong>Utilities:</strong> Usually handled directly (final reading), not on CD</li>
+          <li><strong>Rent (Multi-Family):</strong> If closing mid-month, rent prorated</li>
+          <li><strong>Prepaid Items:</strong> If seller prepaid taxes, buyer reimburses for future</li>
+        </ul>
+
+        <h4>Proration Example:</h4>
+        <div className="example">
+          <p><strong>Situation:</strong> Annual property tax = $7,300 (paid through Dec 31)</p>
+          <p><strong>Closing Date:</strong> October 15</p>
+          <p><strong>Calculation:</strong></p>
+          <ul>
+            <li>Oct 15 - Dec 31 = 77 days buyer will own property</li>
+            <li>$7,300 ÷ 365 = $20/day</li>
+            <li>$20 × 77 days = $1,540</li>
+            <li><strong>Result:</strong> Buyer credits seller $1,540 for prepaid taxes</li>
+          </ul>
+        </div>
+
+        <h3>24.6 The Closing Table</h3>
+        
+        <h4>Who Attends Closing?</h4>
+        <ul>
+          <li>Buyer(s)</li>
+          <li>Seller(s)</li>
+          <li>Buyer's attorney (in MA, typically required)</li>
+          <li>Seller's attorney</li>
+          <li>Closing agent (title company or attorney)</li>
+          <li>Real estate agents (optional but common)</li>
+          <li>Lender representative (rare, usually remote)</li>
+        </ul>
+
+        <h4>What Happens at Closing?</h4>
+        <ol>
+          <li><strong>Review Documents:</strong> Attorney explains each document before signing</li>
+          <li><strong>Sign Documents:</strong> Buyer signs 50-100 pages, seller signs 10-20</li>
+          <li><strong>Transfer Funds:</strong> Buyer's certified funds verified</li>
+          <li><strong>Pay Off Existing Loan:</strong> Seller's mortgage satisfied</li>
+          <li><strong>Disburse Proceeds:</strong> Seller receives net proceeds check</li>
+          <li><strong>Record Deed:</strong> New deed filed with county (may happen after meeting)</li>
+          <li><strong>Hand Over Keys:</strong> Buyer receives keys, garage openers, etc.</li>
+          <li><strong>Final Walk-Through Issues:</strong> Resolve any last-minute concerns</li>
+        </ol>
+
+        <h4>What Buyer Brings:</h4>
+        <ul>
+          <li>✅ Government-issued photo ID</li>
+          <li>✅ Certified check or wire confirmation (closing costs + down payment)</li>
+          <li>✅ Proof of homeowner's insurance</li>
+          <li>✅ Final walk-through checklist</li>
+        </ul>
+
+        <h4>What Seller Brings:</h4>
+        <ul>
+          <li>✅ Government-issued photo ID</li>
+          <li>✅ All keys, garage openers, access codes</li>
+          <li>✅ Appliance manuals and warranties</li>
+          <li>✅ HOA documents and contacts</li>
+          <li>✅ Mailbox key</li>
+        </ul>
+
+        <h3>24.7 Post-Closing</h3>
+        
+        <h4>Buyer's Post-Closing Checklist:</h4>
+        <ul>
+          <li>✅ Change locks (for security)</li>
+          <li>✅ Set up utilities in your name</li>
+          <li>✅ File deed with homestead exemption (MA property tax protection)</li>
+          <li>✅ Update mailing address (USPS, DMV, voter registration)</li>
+          <li>✅ Review first mortgage statement carefully</li>
+          <li>✅ Keep closing documents in safe place (7+ years)</li>
+          <li>✅ Save receipts for capital improvements (tax purposes)</li>
+        </ul>
+
+        <h4>Seller's Post-Closing Checklist:</h4>
+        <ul>
+          <li>✅ Confirm mortgage payoff received by lender</li>
+          <li>✅ Cancel homeowner's insurance (after closing date)</li>
+          <li>✅ Forward mail to new address</li>
+          <li>✅ Transfer or cancel utilities</li>
+          <li>✅ Keep closing documents (capital gains calculation)</li>
+          <li>✅ Track moving expenses if relocating for work (may be deductible)</li>
+        </ul>
+
+        <h3>24.8 Common Closing Problems & Solutions</h3>
+        <div className="problems-solutions">
+          <h4>Problem: Lender Not Clear to Close</h4>
+          <p><strong>Solution:</strong> Postpone closing, provide requested documentation immediately, 
+          stay in close contact with lender and attorney</p>
+
+          <h4>Problem: Title Issue Discovered Late</h4>
+          <p><strong>Solution:</strong> Seller must cure defect (pay off lien, resolve dispute), 
+          may delay closing, buyer can walk if not resolved in reasonable time</p>
+
+          <h4>Problem: Seller Not Ready to Vacate</h4>
+          <p><strong>Solution:</strong> Negotiate rent-back agreement, escrow funds for damage, 
+          or delay closing if buyer agrees</p>
+
+          <h4>Problem: Final Walk-Through Reveals Damage</h4>
+          <p><strong>Solution:</strong> Escrow funds to cover repairs, reduce purchase price, 
+          seller makes repairs before closing, or buyer walks if serious</p>
+
+          <h4>Problem: Wiring Fraud Attempt</h4>
+          <p><strong>Solution:</strong> ALWAYS verify wiring instructions by calling known phone number, 
+          never trust email alone, confirm with attorney verbally</p>
+        </div>
+
+        <h3>24.9 Agent's Role at Closing</h3>
+        <div className="agent-role">
+          <h4>Before Closing:</h4>
+          <ul>
+            <li>✅ Coordinate with all parties</li>
+            <li>✅ Remind clients what to bring</li>
+            <li>✅ Confirm final walk-through completed</li>
+            <li>✅ Verify closing funds wired/certified</li>
+            <li>✅ Review Closing Disclosure with client</li>
+          </ul>
+
+          <h4>At Closing:</h4>
+          <ul>
+            <li>✅ Attend to support client (optional but appreciated)</li>
+            <li>✅ Clarify any last questions</li>
+            <li>✅ Collect commission check (if not wired)</li>
+            <li>✅ Hand over keys and access items</li>
+            <li>✅ Congratulate and thank everyone</li>
+          </ul>
+
+          <h4>After Closing:</h4>
+          <ul>
+            <li>✅ Send thank you notes</li>
+            <li>✅ Request reviews/testimonials</li>
+            <li>✅ Ask for referrals</li>
+            <li>✅ Stay in touch (holiday cards, market updates)</li>
+            <li>✅ Remind about homestead filing (MA)</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> Closing is the culmination of weeks of work. Review the Closing Disclosure 
+          carefully - errors happen! Attorney is there to protect you - ask questions. Wire fraud is REAL - 
+          verify all instructions verbally. Keep all closing documents forever (IRS requires 7 years minimum, 
+          but keep deed and title insurance permanently).
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'tax-implications',
+    icon: '💵',
+    title: '25. Tax Implications for Buyers, Sellers & Investors',
+    subtitle: 'Capital gains, 1031 exchanges, depreciation, deductions - understanding real estate tax strategies',
+    body: (
+      <>
+        <h3>25.1 Capital Gains on Home Sales</h3>
+        <p className="highlight">
+          When you sell a property for more than you paid, the profit is a capital gain. Tax treatment depends 
+          on whether it's your primary residence or an investment property.
+        </p>
+
+        <h4>Primary Residence Exclusion (Section 121):</h4>
+        <ul>
+          <li><strong>Single Filers:</strong> Exclude up to $250,000 in capital gains</li>
+          <li><strong>Married Filing Jointly:</strong> Exclude up to $500,000 in capital gains</li>
+          <li><strong>Requirements:</strong>
+            <ul>
+              <li>Owned the home for at least 2 years out of the last 5</li>
+              <li>Used as primary residence for at least 2 years out of the last 5</li>
+              <li>Haven't claimed the exclusion in the past 2 years</li>
+            </ul>
+          </li>
+          <li><strong>Frequency:</strong> Can use every 2 years (no lifetime limit)</li>
+        </ul>
+
+        <h4>Capital Gains Example - Primary Residence:</h4>
+        <div className="example">
+          <p><strong>Scenario:</strong> Married couple, filed jointly</p>
+          <ul>
+            <li>Purchase Price: $400,000 (2018)</li>
+            <li>Capital Improvements: $50,000 (new roof, kitchen)</li>
+            <li>Adjusted Basis: $450,000</li>
+            <li>Sale Price: $650,000 (2025)</li>
+            <li>Selling Costs: $40,000</li>
+            <li>Capital Gain: $650,000 - $450,000 - $40,000 = $160,000</li>
+            <li><strong>Tax Owed: $0</strong> (under $500,000 exclusion)</li>
+          </ul>
+        </div>
+
+        <h4>Investment Property Capital Gains:</h4>
+        <ul>
+          <li><strong>Short-Term (&lt;1 year):</strong> Taxed as ordinary income (10-37% federal)</li>
+          <li><strong>Long-Term (&gt;1 year):</strong> Taxed at capital gains rates (0%, 15%, or 20%)</li>
+          <li><strong>No Exclusion:</strong> Investment properties don't qualify for $250k/$500k exclusion</li>
+          <li><strong>Depreciation Recapture:</strong> Pay 25% tax on depreciation claimed (see below)</li>
+        </ul>
+
+        <h4>Calculating Your Basis:</h4>
+        <div className="basis-calculation">
+          <p><strong>Original Purchase Price</strong></p>
+          <p>+ Purchase Closing Costs (title, attorney, recording fees)</p>
+          <p>+ Capital Improvements (not repairs)</p>
+          <p>− Depreciation Claimed (investment only)</p>
+          <p>= <strong>Adjusted Basis</strong></p>
+          <p></p>
+          <p><strong>Sale Price</strong></p>
+          <p>− Adjusted Basis</p>
+          <p>− Selling Costs (commission, attorney, repairs to sell)</p>
+          <p>= <strong>Capital Gain (or Loss)</strong></p>
+        </div>
+
+        <h3>25.2 The 1031 Exchange (Like-Kind Exchange)</h3>
+        <p>
+          Named after IRS Code Section 1031. Allows investors to defer capital gains taxes by exchanging 
+          one investment property for another.
+        </p>
+
+        <h4>Key Requirements:</h4>
+        <ul>
+          <li><strong>Like-Kind:</strong> Must exchange investment property for investment property (residential for residential, commercial for commercial, or any combo - all real estate is "like-kind")</li>
+          <li><strong>Investment Use:</strong> Both properties must be held for investment or business use (NOT personal residence)</li>
+          <li><strong>Equal or Greater Value:</strong> Must purchase replacement property of equal or greater value</li>
+          <li><strong>All Equity Must Be Reinvested:</strong> Can't receive cash ("boot") without triggering some tax</li>
+          <li><strong>Qualified Intermediary Required:</strong> Cannot touch proceeds yourself</li>
+        </ul>
+
+        <h4>1031 Exchange Timeline (STRICT DEADLINES):</h4>
+        <div className="timeline-strict">
+          <ol>
+            <li><strong>Day 0:</strong> Close on sale of relinquished property</li>
+            <li><strong>Day 1-45:</strong> Identify up to 3 potential replacement properties (written notice to intermediary)</li>
+            <li><strong>Day 45:</strong> IDENTIFICATION DEADLINE (no extensions, no exceptions)</li>
+            <li><strong>Day 46-180:</strong> Complete purchase of replacement property</li>
+            <li><strong>Day 180:</strong> EXCHANGE DEADLINE (or tax return due date if earlier)</li>
+          </ol>
+        </div>
+
+        <h4>Types of 1031 Exchanges:</h4>
+        <div className="exchange-types">
+          <p><strong>Delayed Exchange:</strong> Most common. Sell first, buy later (45/180 day rules)</p>
+          <p><strong>Simultaneous Exchange:</strong> Close on both properties same day</p>
+          <p><strong>Reverse Exchange:</strong> Buy replacement before selling relinquished (complex, expensive)</p>
+          <p><strong>Improvement/Construction Exchange:</strong> Use proceeds to improve replacement property</p>
+        </div>
+
+        <h4>1031 Exchange Example:</h4>
+        <div className="example">
+          <p><strong>Relinquished Property:</strong> $500k sale, $200k original basis, $300k gain</p>
+          <p><strong>Replacement Property:</strong> $600k purchase</p>
+          <p><strong>Result:</strong> $300k capital gain deferred (not forgiven - tax owed when eventually sell without 1031)</p>
+          <p><strong>New Basis:</strong> $300k (carryover basis from relinquished property)</p>
+        </div>
+
+        <h4>Common 1031 Mistakes:</h4>
+        <ul>
+          <li>❌ Missing 45-day identification deadline (no extensions EVER)</li>
+          <li>❌ Touching the proceeds (must use qualified intermediary)</li>
+          <li>❌ Buying personal residence (must be investment)</li>
+          <li>❌ Trading down in value (triggers partial tax)</li>
+          <li>❌ Taking cash out ("boot" is taxable)</li>
+          <li>❌ Not including debt (new mortgage must be equal or greater)</li>
+        </ul>
+
+        <h3>25.3 Depreciation for Rental Properties</h3>
+        <p>
+          Rental property owners can deduct depreciation - a tax deduction for "wear and tear" even though 
+          property may be appreciating in value.
+        </p>
+
+        <h4>Depreciation Basics:</h4>
+        <ul>
+          <li><strong>Residential Rental:</strong> 27.5 year depreciation schedule</li>
+          <li><strong>Commercial Property:</strong> 39 year depreciation schedule</li>
+          <li><strong>What You Depreciate:</strong> Building value only (NOT land)</li>
+          <li><strong>How to Split:</strong> County assessor's ratio, or allocate based on appraisal</li>
+        </ul>
+
+        <h4>Depreciation Calculation Example:</h4>
+        <div className="example">
+          <p><strong>Property:</strong> 3-unit rental building purchased for $550k</p>
+          <p><strong>Land Value:</strong> $100k (not depreciable)</p>
+          <p><strong>Building Value:</strong> $450k (depreciable)</p>
+          <p><strong>Annual Depreciation:</strong> $450k ÷ 27.5 = $16,364/year</p>
+          <p><strong>Monthly Depreciation:</strong> $1,364/month</p>
+          <p><strong>Tax Savings:</strong> $16,364 × 24% tax bracket = $3,927/year</p>
+        </div>
+
+        <h4>Depreciation Recapture (Section 1250):</h4>
+        <ul>
+          <li><strong>When:</strong> When you sell the property</li>
+          <li><strong>Rate:</strong> 25% federal tax on all depreciation claimed</li>
+          <li><strong>Example:</strong> Claimed $100k depreciation over 10 years = $25k tax owed at sale</li>
+          <li><strong>Important:</strong> You MUST recapture even if you didn't claim depreciation (should have claimed it)</li>
+        </ul>
+
+        <h4>Bonus Depreciation & Cost Segregation:</h4>
+        <div className="advanced-depreciation">
+          <p><strong>Bonus Depreciation:</strong> Accelerate depreciation on personal property (appliances, carpets, fixtures)</p>
+          <p><strong>Cost Segregation Study:</strong> Engineering analysis separating components (5-year, 15-year, 27.5-year)</p>
+          <p><strong>Benefit:</strong> Front-load depreciation deductions in early years</p>
+          <p><strong>Cost:</strong> $5k-$15k for study (worth it for larger properties)</p>
+        </div>
+
+        <h3>25.4 Tax Deductions for Homeowners</h3>
+        
+        <h4>Primary Residence Deductions:</h4>
+        <ul>
+          <li><strong>Mortgage Interest:</strong> Deductible on loans up to $750k ($1M if borrowed before 12/15/17)</li>
+          <li><strong>Property Taxes:</strong> $10k cap (SALT deduction includes state/local income taxes too)</li>
+          <li><strong>Points Paid:</strong> Deductible in year paid if new purchase, amortized if refinance</li>
+          <li><strong>Home Office:</strong> If self-employed and exclusive business use (simplified method: $5/sq ft up to 300 sq ft)</li>
+          <li><strong>Energy Credits:</strong> Solar panels, energy-efficient windows (varies by year)</li>
+          <li><strong>Capital Improvements:</strong> Not immediately deductible, but increase basis (reduces future capital gain)</li>
+        </ul>
+
+        <h4>What's NOT Deductible (Primary Residence):</h4>
+        <ul>
+          <li>❌ Homeowners insurance</li>
+          <li>❌ HOA fees</li>
+          <li>❌ Utilities</li>
+          <li>❌ Repairs and maintenance</li>
+          <li>❌ Principal payments on mortgage</li>
+          <li>❌ Moving expenses (eliminated 2018-2025, except military)</li>
+        </ul>
+
+        <h3>25.5 Tax Deductions for Rental Property Owners</h3>
+        <p className="highlight">
+          Rental property expenses are MUCH more generous than primary residence. Almost all expenses are deductible.
+        </p>
+
+        <h4>Fully Deductible Rental Expenses:</h4>
+        <div className="rental-deductions">
+          <ul>
+            <li>✅ Mortgage interest (no $750k cap)</li>
+            <li>✅ Property taxes (no $10k cap)</li>
+            <li>✅ Insurance (property, liability, landlord)</li>
+            <li>✅ Repairs and maintenance</li>
+            <li>✅ Property management fees</li>
+            <li>✅ Utilities (if owner-paid)</li>
+            <li>✅ Advertising for tenants</li>
+            <li>✅ Legal and professional fees</li>
+            <li>✅ HOA fees</li>
+            <li>✅ Pest control</li>
+            <li>✅ Landscaping</li>
+            <li>✅ Snow removal</li>
+            <li>✅ Depreciation (building + appliances)</li>
+            <li>✅ Travel to property (mileage or actual)</li>
+            <li>✅ Home office (if exclusive rental business use)</li>
+            <li>✅ Continuing education (landlord courses)</li>
+            <li>✅ Software/apps (property management tools)</li>
+            <li>✅ Supplies (cleaning, repairs)</li>
+          </ul>
+        </div>
+
+        <h4>Repairs vs. Capital Improvements:</h4>
+        <div className="comparison">
+          <h5>Repairs (Fully Deductible Immediately):</h5>
+          <ul>
+            <li>Fixing broken items</li>
+            <li>Painting</li>
+            <li>Patching roof</li>
+            <li>Replacing broken appliances</li>
+            <li>Minor plumbing/electrical fixes</li>
+          </ul>
+
+          <h5>Capital Improvements (Depreciate Over Time):</h5>
+          <ul>
+            <li>New roof</li>
+            <li>Room additions</li>
+            <li>New HVAC system</li>
+            <li>Kitchen/bathroom remodel</li>
+            <li>Replacing all windows</li>
+          </ul>
+        </div>
+
+        <h3>25.6 Passive Activity Loss Rules</h3>
+        <p>
+          Rental real estate is generally considered "passive income" which has special tax rules.
+        </p>
+
+        <h4>The $25,000 Exception:</h4>
+        <ul>
+          <li><strong>Who Qualifies:</strong> Active participation in rental (make decisions, approve tenants)</li>
+          <li><strong>Benefit:</strong> Can deduct up to $25,000 in rental losses against ordinary income</li>
+          <li><strong>Phase-Out:</strong> Reduces by 50% of AGI above $100,000, fully phased out at $150,000</li>
+          <li><strong>Example:</strong> W-2 income $90,000, rental loss $15,000 = AGI $75,000 (loss fully deductible)</li>
+        </ul>
+
+        <h4>Real Estate Professional Status:</h4>
+        <ul>
+          <li><strong>Requirements:</strong>
+            <ul>
+              <li>Spend more than 750 hours/year in real estate activities</li>
+              <li>Spend more than 50% of working time in real estate</li>
+              <li>Materially participate in each rental activity</li>
+            </ul>
+          </li>
+          <li><strong>Benefit:</strong> Rental losses NOT subject to passive loss limitations</li>
+          <li><strong>Who Qualifies:</strong> Full-time agents, property managers, developers, house flippers</li>
+        </ul>
+
+        <h3>25.7 First-Time Homebuyer & Tax Credits</h3>
+        
+        <h4>Current Programs (2025):</h4>
+        <ul>
+          <li><strong>Federal:</strong> No current first-time buyer tax credit at federal level</li>
+          <li><strong>MassHousing:</strong> MA state program offering down payment assistance</li>
+          <li><strong>MCC (Mortgage Credit Certificate):</strong> Annual tax credit for portion of mortgage interest (not a deduction, a credit)</li>
+          <li><strong>Energy Credits:</strong> Still available for solar, geothermal, energy-efficient upgrades</li>
+        </ul>
+
+        <h4>Mortgage Credit Certificate (MCC):</h4>
+        <ul>
+          <li><strong>How it Works:</strong> Convert portion of mortgage interest to direct tax credit</li>
+          <li><strong>Credit Amount:</strong> 20-40% of annual interest (MA offers up to 50%)</li>
+          <li><strong>Carryforward:</strong> Unused credit can carry forward up to 3 years</li>
+          <li><strong>Example:</strong> $15,000 annual interest, 30% MCC = $4,500 tax credit</li>
+          <li><strong>Eligibility:</strong> First-time buyers, income limits, purchase price limits</li>
+        </ul>
+
+        <h3>25.8 Tax Forms for Real Estate</h3>
+        <div className="tax-forms">
+          <h4>Homeowners:</h4>
+          <ul>
+            <li><strong>Schedule A:</strong> Itemized deductions (mortgage interest, property taxes)</li>
+            <li><strong>Form 1098:</strong> Mortgage interest statement from lender</li>
+            <li><strong>Form 1099-S:</strong> Sale of property (if gain exceeds exclusion)</li>
+          </ul>
+
+          <h4>Rental Property Owners:</h4>
+          <ul>
+            <li><strong>Schedule E:</strong> Rental income and expenses</li>
+            <li><strong>Form 4562:</strong> Depreciation</li>
+            <li><strong>Form 1099-MISC:</strong> Issue to contractors paid $600+</li>
+          </ul>
+
+          <h4>Real Estate Agents:</h4>
+          <ul>
+            <li><strong>Schedule C:</strong> Business income/expenses (self-employed)</li>
+            <li><strong>Schedule SE:</strong> Self-employment tax</li>
+            <li><strong>Form 1099-NEC:</strong> Received from broker</li>
+            <li><strong>Estimated Tax Vouchers:</strong> Quarterly payments (1040-ES)</li>
+          </ul>
+        </div>
+
+        <h3>25.9 Estate Planning & Real Estate</h3>
+        
+        <h4>Step-Up in Basis at Death:</h4>
+        <ul>
+          <li><strong>How it Works:</strong> Heirs receive property at fair market value on date of death</li>
+          <li><strong>Benefit:</strong> Eliminates all capital gains accrued during owner's lifetime</li>
+          <li><strong>Example:</strong> Property purchased $100k in 1980, worth $800k at death in 2025, heir's basis = $800k (no capital gain if sold soon after)</li>
+          <li><strong>Strategy:</strong> Hold appreciated real estate until death to avoid capital gains tax</li>
+        </ul>
+
+        <h4>Transfer Methods:</h4>
+        <div className="transfer-methods">
+          <p><strong>Will:</strong> Goes through probate, can be contested, becomes public record</p>
+          <p><strong>Trust:</strong> Avoids probate, stays private, more control over distribution</p>
+          <p><strong>Joint Tenancy with Right of Survivorship:</strong> Automatic transfer to surviving owner</p>
+          <p><strong>Transfer on Death Deed (TODD):</strong> MA allows since 2022, transfers at death without probate</p>
+        </div>
+
+        <h3>25.10 Agent's Role in Tax Discussions</h3>
+        <div className="agent-role-tax">
+          <h4>What Agents CAN Do:</h4>
+          <ul>
+            <li>✅ Mention tax implications generally ("Many sellers qualify for capital gains exclusion")</li>
+            <li>✅ Recommend client consult CPA/tax professional</li>
+            <li>✅ Explain 1031 exchange EXISTS (not how to do it)</li>
+            <li>✅ Provide referrals to tax professionals (no kickbacks)</li>
+            <li>✅ Help track capital improvements for basis calculation</li>
+            <li>✅ Explain closing cost deductions in general</li>
+          </ul>
+
+          <h4>What Agents CANNOT Do:</h4>
+          <ul>
+            <li>❌ Calculate capital gains tax</li>
+            <li>❌ Advise which deductions client qualifies for</li>
+            <li>❌ Interpret tax law</li>
+            <li>❌ Complete any tax forms</li>
+            <li>❌ Guarantee tax treatment</li>
+            <li>❌ Give specific 1031 exchange advice</li>
+            <li>❌ Determine if client is real estate professional</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>CRITICAL REMINDER:</strong> You are NOT a CPA, tax attorney, or tax preparer. ALWAYS refer 
+          tax questions to qualified tax professionals. Say: "That's a great question for your CPA. Tax law is 
+          complex and individual situations vary. I can recommend 2-3 tax professionals who specialize in real 
+          estate if you'd like." Giving tax advice you're not qualified to give creates liability and violates 
+          regulations. Focus on what you know - real estate transactions. Let tax professionals handle tax advice.
+        </p>
+      </>
+    )
   }
 ];
