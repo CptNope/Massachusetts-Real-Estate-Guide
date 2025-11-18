@@ -1,9 +1,23 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { sections } from './content.jsx';
 
 export default function App() {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [searchQuery, setSearchQuery] = useState('');
+  const [theme, setTheme] = useState(() => {
+    // Load theme from localStorage or default to 'dark'
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  // Apply theme to document and save to localStorage
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+  };
   const activeSection = sections.find((s) => s.id === activeId);
 
   // Filter sections based on search query
@@ -46,10 +60,22 @@ export default function App() {
   return (
     <div className="app-root">
       <header className="app-header">
-        <h1>Massachusetts Real Estate Negotiation & Brokerage Guide (2025)</h1>
-        <p className="app-subtitle">
-          Contracts · Law Changes · Commissions · Broker Relationships · Exam Prep · Investor Strategy
-        </p>
+        <div className="header-top">
+          <div>
+            <h1>Massachusetts Real Estate Negotiation & Brokerage Guide (2025)</h1>
+            <p className="app-subtitle">
+              Contracts · Law Changes · Commissions · Broker Relationships · Exam Prep · Investor Strategy
+            </p>
+          </div>
+          <button 
+            className="theme-toggle" 
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+        </div>
         <div className="search-container">
           <input
             type="text"

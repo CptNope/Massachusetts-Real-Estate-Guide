@@ -34,7 +34,12 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ Commission negotiation strategies (buyers, sellers, investors)
 - ✅ Broker & sales associate relationship: IC status, splits, caps, rules
 - ✅ Exam prep view and investor strategy view
-- ✅ Mobile-friendly, dark-theme layout
+- ✅ Mobile-friendly, responsive design
+- ✅ **Light/Dark theme toggle** with localStorage persistence
+- ✅ **Real-time search** across all sections and content
+- ✅ **Copy-to-clipboard buttons** for code blocks and clauses
+- ✅ **PWA support** - installable on mobile and desktop
+- ✅ Offline capability with service worker caching
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -158,11 +163,12 @@ The guide covers comprehensive topics including:
 
 ## Roadmap / Future Improvements
 
-### v1.1 – Content & UX polish
-- [ ] Add search/filter to quickly jump to topics (e.g., "dual agency", "inspection").
+### ✅ v1.1 – Content & UX polish (COMPLETED)
+- [x] Add search/filter to quickly jump to topics (e.g., "dual agency", "inspection").
+- [x] Add "copy to clipboard" buttons for code blocks and clauses.
+- [x] Add a light/dark theme toggle for better printing and accessibility.
+- [x] Add PWA support for offline access and installability.
 - [ ] Add in-page table of contents for long sections.
-- [ ] Add “copy to clipboard” buttons for all scripts and sample clauses.
-- [ ] Add a light theme toggle for better printing.
 
 ### v1.2 – Study Mode
 - [ ] Add flashcard mode for exam prep (question/answer cards).
