@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { quizQuestions } from './studyData';
 
-export default function QuizMode() {
+export default function QuizMode({ gamification }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -62,6 +62,12 @@ export default function QuizMode() {
     
     setQuizHistory([finalScore, ...quizHistory.slice(0, 9)]); // Keep last 10 scores
     setQuizComplete(true);
+
+    // Record quiz completion in gamification system
+    if (gamification) {
+      const isPerfect = finalScore.percentage === 100;
+      gamification.recordActivity('COMPLETE_QUIZ', { isPerfect });
+    }
   };
 
   const restartQuiz = () => {

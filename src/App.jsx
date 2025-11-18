@@ -6,7 +6,9 @@ import PersonalDashboard from './PersonalDashboard';
 import ScenarioMode from './ScenarioMode';
 import CalculatorMode from './CalculatorMode';
 import HelpModal from './HelpModal';
+import GamificationPanel from './GamificationPanel';
 import { useLocalStorage } from './useLocalStorage';
+import { useGamification } from './useGamification';
 
 export default function App() {
   const [activeId, setActiveId] = useLocalStorage('lastActiveSection', sections[0].id);
@@ -15,6 +17,8 @@ export default function App() {
   const [masteredSections, setMasteredSections] = useLocalStorage('masteredSections', []);
   const [reviewSections, setReviewSections] = useLocalStorage('reviewSections', []);
   const [showHelp, setShowHelp] = useState(false);
+  const [showGamification, setShowGamification] = useState(true);
+  const gamification = useGamification();
   const [theme, setTheme] = useState(() => {
     // Load theme from localStorage or default to 'dark'
     return localStorage.getItem('theme') || 'dark';
@@ -169,7 +173,10 @@ export default function App() {
     if (masteredSections.includes(sectionId)) {
       setMasteredSections(masteredSections.filter(id => id !== sectionId));
     } else {
-      setMasteredSections([...masteredSections, sectionId]);
+      const newMastered = [...masteredSections, sectionId];
+      setMasteredSections(newMastered);
+      // Record mastery in gamification
+      gamification.recordActivity('MASTER_SECTION', { totalMastered: newMastered.length });
     }
   };
 
@@ -378,13 +385,13 @@ export default function App() {
 
         {studyMode === 'flashcards' && (
           <main className="content content-full">
-            <FlashcardMode />
+            <FlashcardMode gamification={gamification} />
           </main>
         )}
 
         {studyMode === 'quiz' && (
           <main className="content content-full">
-            <QuizMode />
+            <QuizMode gamification={gamification} />
           </main>
         )}
 
@@ -396,20 +403,46 @@ export default function App() {
               onToggleMastered={toggleMastered}
               onToggleReview={toggleReview}
               onClearAll={clearAllProgress}
+              gamification={gamification}
             />
           </main>
         )}
 
         {studyMode === 'scenarios' && (
           <main className="content content-full">
-            <ScenarioMode />
+            <ScenarioMode gamification={gamification} />
           </main>
         )}
 
         {studyMode === 'calculators' && (
           <main className="content content-full">
-            <CalculatorMode />
+            <CalculatorMode gamification={gamification} />
           </main>
+        )}
+
+        {/* Gamification Panel - Floating on Right Side */}
+        {showGamification && (
+          <aside className="gamification-sidebar">
+            <button 
+              className="gamification-toggle"
+              onClick={() => setShowGamification(false)}
+              title="Hide Progress"
+            >
+              ×
+            </button>
+            <GamificationPanel gamification={gamification} />
+          </aside>
+        )}
+
+        {/* Show Gamification Button when hidden */}
+        {!showGamification && (
+          <button 
+            className="show-gamification-btn"
+            onClick={() => setShowGamification(true)}
+            title="Show Progress & Achievements"
+          >
+            🏆
+          </button>
         )}
       </div>
 
