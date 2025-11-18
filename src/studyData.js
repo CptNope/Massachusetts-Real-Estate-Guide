@@ -1049,6 +1049,41 @@ export const flashcards = [
     question: 'What types of real estate documents can use electronic signatures?',
     answer: 'Most documents: offers, purchase agreements, listing agreements, disclosures, addendums, lease agreements. Some states may require original signatures for deeds, wills, or court orders. Check state-specific requirements.',
     difficulty: 'easy'
+  },
+  {
+    id: 'fc151',
+    category: 'Do Not Call',
+    question: 'Can you call Do Not Call registrants if offering something "free" like a home valuation?',
+    answer: 'NO. Offering something free or "of value" does NOT exempt you from DNC rules. It is still telemarketing/solicitation. You still need EBR or written consent. This is a common misconception that leads to violations and penalties.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc152',
+    category: 'Do Not Call',
+    question: 'What is the "free offer" DNC misconception?',
+    answer: 'False belief that offering free home valuations, CMAs, or market reports exempts you from DNC rules. IT DOES NOT. Any call promoting your services (even if "free") is telemarketing requiring EBR or consent. Heavy penalties for violations.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc153',
+    category: 'Do Not Call',
+    question: 'Can you call DNC registrants offering a "free market analysis"?',
+    answer: 'NO, unless you have EBR or written consent. The "free" aspect does not matter - you are still soliciting business. Marketing your services (even free ones) to generate future business is telemarketing under DNC rules.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc154',
+    category: 'Do Not Call',
+    question: 'What makes a call "telemarketing" under DNC rules?',
+    answer: 'Any call to promote goods or services, even if free. Includes: free home valuations, market reports, seminars, open house invitations (if promoting your services). Purpose determines if it is telemarketing, not whether you charge.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc155',
+    category: 'Do Not Call',
+    question: 'What is the intent test for telemarketing calls?',
+    answer: 'If the purpose/intent is to promote your business or generate future paid business, it is telemarketing. Offering "free" services still promotes your business. Courts look at intent, not just whether something costs money.',
+    difficulty: 'hard'
   }
 ];
 
@@ -3003,5 +3038,70 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'An auto-dialer is an automatic telephone dialing system that dials numbers from a list. TCPA heavily restricts auto-dialer use - requires prior express written consent to call cell phones with auto-dialers.'
+  },
+  {
+    id: 'q151',
+    category: 'Do Not Call',
+    question: 'Can you call DNC registrants if you\'re offering a "free home valuation"?',
+    options: [
+      'Yes, free offers are exempt from DNC',
+      'Yes, if it\'s truly free with no obligation',
+      'No, offering "free" services does not exempt you from DNC rules',
+      'Only if they requested it'
+    ],
+    correctIndex: 2,
+    explanation: 'NO - offering something "free" or "of value" does NOT exempt you from DNC rules. It\'s still telemarketing/solicitation promoting your business. You still need EBR or written consent. This is a common misconception.'
+  },
+  {
+    id: 'q152',
+    category: 'Do Not Call',
+    question: 'An agent wants to call offering "free market reports" to get around DNC rules. Is this allowed?',
+    options: [
+      'Yes, educational information is exempt',
+      'Yes, as long as it\'s actually free',
+      'No, it\'s still telemarketing and requires EBR or consent',
+      'Yes, but only once per household'
+    ],
+    correctIndex: 2,
+    explanation: 'NO - this is a common violation attempt. Offering "free" market reports to promote your services is still telemarketing. You cannot use "free offers" to circumvent DNC rules. Requires EBR or consent.'
+  },
+  {
+    id: 'q153',
+    category: 'Do Not Call',
+    question: 'What determines if a call is "telemarketing" under DNC rules?',
+    options: [
+      'Only calls asking for money',
+      'Any call promoting goods or services, even if free',
+      'Only calls selling products',
+      'Calls over 5 minutes'
+    ],
+    correctIndex: 1,
+    explanation: 'Telemarketing is ANY call to promote goods or services, even if free. Includes: free valuations, market reports, seminars, open houses (if promoting services). Purpose/intent matters, not cost.'
+  },
+  {
+    id: 'q154',
+    category: 'Do Not Call',
+    question: 'What is the "intent test" for DNC telemarketing?',
+    options: [
+      'What you say on the call',
+      'Whether you charge for services',
+      'If the purpose is to promote your business or generate future paid business',
+      'How long the call lasts'
+    ],
+    correctIndex: 2,
+    explanation: 'Courts look at PURPOSE/INTENT of the call. If intent is to promote your business or generate future paid business (even if offering something "free"), it\'s telemarketing. Cannot circumvent with "free offers."'
+  },
+  {
+    id: 'q155',
+    category: 'Do Not Call',
+    question: 'Which would still be considered telemarketing under DNC rules?',
+    options: [
+      'Calling about a scheduled appointment',
+      'Returning a call the client made to you',
+      'Offering free CMAs to generate listing business',
+      'Transaction updates to current clients'
+    ],
+    correctIndex: 2,
+    explanation: 'Offering free CMAs to generate listing business IS telemarketing - you\'re promoting your services. Options A, B, D are generally not telemarketing (existing relationship, client-initiated, transaction-specific).'
   }
 ];
