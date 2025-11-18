@@ -244,6 +244,216 @@ export const flashcards = [
     question: 'What benefits does MLS membership provide?',
     answer: 'Access to comprehensive property data, broker cooperation, compensation offers, market statistics, and exposure for your listings to thousands of agents and buyers.',
     difficulty: 'easy'
+  },
+  {
+    id: 'fc36',
+    category: 'Fair Housing',
+    question: 'What are the seven protected classes under the Federal Fair Housing Act?',
+    answer: 'Race, color, religion, national origin, sex (including gender identity and sexual orientation), familial status (families with children under 18), and disability.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc37',
+    category: 'Fair Housing',
+    question: 'What is steering in real estate?',
+    answer: 'Illegally guiding prospective buyers toward or away from certain neighborhoods based on protected class membership, such as showing minority buyers only properties in certain areas.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc38',
+    category: 'Fair Housing',
+    question: 'What is blockbusting?',
+    answer: 'Illegally inducing homeowners to sell by suggesting that people of a certain protected class are moving into the neighborhood and property values will decline.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc39',
+    category: 'Property Valuation',
+    question: 'What are the three approaches to property valuation?',
+    answer: 'Sales Comparison Approach (comparing recent sales), Cost Approach (land value + replacement cost), and Income Approach (based on income-producing potential).',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc40',
+    category: 'Property Valuation',
+    question: 'What is a Comparative Market Analysis (CMA)?',
+    answer: 'A report prepared by real estate agents comparing a subject property to similar recently sold properties (comps) to estimate market value. Not a formal appraisal.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc41',
+    category: 'Financing',
+    question: 'What is loan-to-value (LTV) ratio?',
+    answer: 'The percentage of the property value that is financed. Calculated as loan amount divided by property value or purchase price, whichever is lower. Example: $400k loan on $500k property = 80% LTV.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc42',
+    category: 'Financing',
+    question: 'What is a rate lock?',
+    answer: 'An agreement between borrower and lender to guarantee a specific interest rate for a set period (typically 30-60 days) while the loan processes, protecting against rate increases.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc43',
+    category: 'Financing',
+    question: 'What is the difference between a fixed-rate and adjustable-rate mortgage (ARM)?',
+    answer: 'Fixed-rate: interest rate stays the same for the entire loan term. ARM: interest rate can change periodically based on market indexes, typically lower initial rate but more risk.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc44',
+    category: 'Contracts',
+    question: 'What makes a contract voidable?',
+    answer: 'A voidable contract is valid but can be canceled by one party due to circumstances like fraud, duress, undue influence, misrepresentation, or if a party was a minor or mentally incompetent.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc45',
+    category: 'Contracts',
+    question: 'What is the Statute of Frauds?',
+    answer: 'Law requiring certain contracts, including real estate transactions, to be in writing to be enforceable. Oral real estate contracts are generally not enforceable.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc46',
+    category: 'Property Rights',
+    question: 'What is the difference between real property and personal property?',
+    answer: 'Real property is land and anything permanently attached (house, trees). Personal property is movable items (furniture, appliances). Items can become fixtures if permanently attached.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc47',
+    category: 'Property Rights',
+    question: 'What is an easement?',
+    answer: 'A right to use another person\'s land for a specific purpose without owning it. Examples: utility easement, right-of-way for access. Easements run with the land.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc48',
+    category: 'Zoning',
+    question: 'What is a variance?',
+    answer: 'Permission from local zoning board to deviate from zoning requirements (like setback rules) due to unique hardship with the property. Does not change the zoning of the property.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc49',
+    category: 'Zoning',
+    question: 'What is a non-conforming use (grandfathered)?',
+    answer: 'A property use that was legal when established but doesn\'t comply with current zoning laws. Allowed to continue but typically cannot be expanded or rebuilt if destroyed.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc50',
+    category: 'Environmental',
+    question: 'What is radon and why does it matter in real estate?',
+    answer: 'Radon is a naturally occurring radioactive gas that can seep into homes from soil. It\'s the second leading cause of lung cancer. Many buyers request radon testing during inspections.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc51',
+    category: 'Environmental',
+    question: 'What is asbestos and when is it a concern?',
+    answer: 'A fibrous mineral once used in insulation, flooring, and siding (pre-1980s). Health hazard when disturbed and airborne. Must be disclosed if known; professional removal required.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc52',
+    category: 'Insurance',
+    question: 'What is homeowner\'s insurance (HO-3)?',
+    answer: 'Standard insurance policy covering the dwelling structure, personal property, liability, and additional living expenses if the home becomes uninhabitable. Required by lenders.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc53',
+    category: 'Insurance',
+    question: 'What is flood insurance?',
+    answer: 'Separate insurance policy covering flood damage, typically required for properties in FEMA-designated flood zones. Not covered by standard homeowner\'s insurance.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc54',
+    category: 'Tax',
+    question: 'What is a 1031 exchange?',
+    answer: 'IRS code allowing investors to defer capital gains taxes by selling an investment property and reinvesting proceeds into a "like-kind" property within specific time frames (45/180 days).',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc55',
+    category: 'Tax',
+    question: 'What is the capital gains exclusion for primary residences?',
+    answer: 'Homeowners can exclude up to $250,000 (single) or $500,000 (married) of capital gains from the sale if they lived in the home 2 of the last 5 years.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc56',
+    category: 'Agency',
+    question: 'What is a seller\'s agent also called?',
+    answer: 'A listing agent or seller\'s agent. They represent the seller\'s interests in the transaction and owe fiduciary duties to the seller.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc57',
+    category: 'Agency',
+    question: 'What is a buyer\'s agent?',
+    answer: 'An agent who represents the buyer\'s interests in a transaction, typically through a signed Buyer Representation Agreement. Owes fiduciary duties to the buyer.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc58',
+    category: 'Appraisal',
+    question: 'What is the difference between an appraisal and a CMA?',
+    answer: 'Appraisal: formal opinion of value by licensed appraiser, required for loans. CMA: informal estimate by agent using comps. Appraisals are more detailed and legally binding for lender purposes.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc59',
+    category: 'Appraisal',
+    question: 'What happens if a property appraises below the purchase price?',
+    answer: 'Buyer can negotiate lower price, pay the difference in cash, request seller to lower price, or walk away if they have an appraisal contingency. Lender will only loan based on appraised value.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc60',
+    category: 'Inspection',
+    question: 'What does a home inspection typically cover?',
+    answer: 'Structural components, roof, foundation, electrical, plumbing, HVAC, appliances, and visible signs of water damage, pests, or safety issues. Does not include invasive testing.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc61',
+    category: 'Inspection',
+    question: 'What is a pest inspection?',
+    answer: 'Separate inspection specifically for termites, carpenter ants, and other wood-destroying organisms. Often required by lenders, especially in high-risk areas.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc62',
+    category: 'Settlement',
+    question: 'What is RESPA?',
+    answer: 'Real Estate Settlement Procedures Act - federal law requiring lenders to provide loan estimates, prohibiting kickbacks, and ensuring transparency in closing costs.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc63',
+    category: 'Settlement',
+    question: 'What is a Closing Disclosure (CD)?',
+    answer: 'Document provided to borrower at least 3 business days before closing, detailing final loan terms, closing costs, and cash needed. Replaced the old HUD-1 form.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc64',
+    category: 'Deeds',
+    question: 'What is a warranty deed?',
+    answer: 'Deed providing the highest level of buyer protection, where seller guarantees clear title and defends against all claims. Most common in residential transactions.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc65',
+    category: 'Deeds',
+    question: 'What is a quitclaim deed?',
+    answer: 'Deed transferring whatever interest seller has with NO guarantees or warranties. Common for transfers between family members or clearing title defects. Offers no protection to buyer.',
+    difficulty: 'medium'
   }
 ];
 
@@ -703,5 +913,395 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Local boards provide MLS access, continuing education, networking opportunities, and local market resources. They do not issue licenses or set commission rates.'
+  },
+  {
+    id: 'q36',
+    category: 'Fair Housing',
+    question: 'Which is NOT a protected class under the Federal Fair Housing Act?',
+    options: [
+      'Religion',
+      'Familial status',
+      'Sexual orientation',
+      'Employment status'
+    ],
+    correctIndex: 3,
+    explanation: 'Employment status is NOT a federally protected class. The seven protected classes are: race, color, religion, national origin, sex, familial status, and disability.'
+  },
+  {
+    id: 'q37',
+    category: 'Fair Housing',
+    question: 'An agent suggests to a buyer that they would be "happier" in a different neighborhood. This is:',
+    options: [
+      'Good customer service',
+      'Steering (illegal)',
+      'Required due diligence',
+      'Personal opinion sharing'
+    ],
+    correctIndex: 1,
+    explanation: 'Steering is illegal under fair housing law. Agents cannot guide clients toward or away from neighborhoods based on protected class characteristics.'
+  },
+  {
+    id: 'q38',
+    category: 'Fair Housing',
+    question: 'What is the penalty for violating the Fair Housing Act?',
+    options: [
+      'Warning letter only',
+      'Up to $100,000 fine for first offense',
+      'Community service',
+      'No penalty if unintentional'
+    ],
+    correctIndex: 1,
+    explanation: 'First-time violations can result in fines up to $100,000, plus civil damages. Subsequent violations carry even higher penalties. Intent is not required for liability.'
+  },
+  {
+    id: 'q39',
+    category: 'Property Valuation',
+    question: 'Which valuation approach is most appropriate for a new custom home?',
+    options: [
+      'Sales comparison approach',
+      'Income approach',
+      'Cost approach',
+      'Depreciation approach'
+    ],
+    correctIndex: 2,
+    explanation: 'The cost approach is best for new construction or unique properties. It calculates land value plus cost to build new, minus depreciation.'
+  },
+  {
+    id: 'q40',
+    category: 'Property Valuation',
+    question: 'In a CMA, what is a "comp"?',
+    options: [
+      'Compensation to the agent',
+      'Comparable recently sold property',
+      'Computer analysis',
+      'Complimentary service'
+    ],
+    correctIndex: 1,
+    explanation: 'A "comp" is a comparable property - similar properties that recently sold in the area, used to estimate the subject property\'s value.'
+  },
+  {
+    id: 'q41',
+    category: 'Financing',
+    question: 'A buyer has a $100,000 down payment on a $500,000 home. What is the LTV ratio?',
+    options: [
+      '20%',
+      '50%',
+      '80%',
+      '100%'
+    ],
+    correctIndex: 2,
+    explanation: 'LTV = Loan Amount / Property Value. Loan is $400,000 ($500k - $100k down). $400k / $500k = 0.80 or 80% LTV.'
+  },
+  {
+    id: 'q42',
+    category: 'Financing',
+    question: 'What typically happens to PMI once the LTV drops below 80%?',
+    options: [
+      'It increases',
+      'It can be removed',
+      'It becomes permanent',
+      'Nothing changes'
+    ],
+    correctIndex: 1,
+    explanation: 'PMI can typically be removed once the loan balance drops to 80% of the home\'s value through payments or appreciation. Borrower must request removal.'
+  },
+  {
+    id: 'q43',
+    category: 'Financing',
+    question: 'What is an ARM margin?',
+    options: [
+      'The lender\'s profit',
+      'A fixed percentage added to the index rate',
+      'The down payment amount',
+      'The closing cost'
+    ],
+    correctIndex: 1,
+    explanation: 'The margin is a fixed percentage that the lender adds to the index rate to determine the ARM interest rate. Example: 2% index + 2.5% margin = 4.5% rate.'
+  },
+  {
+    id: 'q44',
+    category: 'Contracts',
+    question: 'What are the four essential elements of a valid contract?',
+    options: [
+      'Offer, acceptance, consideration, competent parties',
+      'Price, property, people, payment',
+      'Buy, sell, sign, close',
+      'Agent, broker, buyer, seller'
+    ],
+    correctIndex: 0,
+    explanation: 'The four essentials are: (1) Offer and Acceptance (mutual agreement), (2) Consideration (something of value exchanged), (3) Legal Purpose, and (4) Competent Parties.'
+  },
+  {
+    id: 'q45',
+    category: 'Contracts',
+    question: 'A contract signed by a 16-year-old is:',
+    options: [
+      'Valid and enforceable',
+      'Void',
+      'Voidable by the minor',
+      'Illegal'
+    ],
+    correctIndex: 2,
+    explanation: 'Contracts with minors (under 18) are voidable by the minor. The minor can choose to void the contract, but the adult party cannot.'
+  },
+  {
+    id: 'q46',
+    category: 'Property Rights',
+    question: 'A built-in dishwasher is considered:',
+    options: [
+      'Personal property',
+      'Real property (fixture)',
+      'Temporary equipment',
+      'Seller\'s choice'
+    ],
+    correctIndex: 1,
+    explanation: 'Built-in appliances are fixtures (real property) because they are permanently attached. They transfer with the home unless specifically excluded in the contract.'
+  },
+  {
+    id: 'q47',
+    category: 'Property Rights',
+    question: 'What is an encumbrance?',
+    options: [
+      'A valuable property feature',
+      'Any claim or liability that affects property value',
+      'A type of deed',
+      'Property insurance'
+    ],
+    correctIndex: 1,
+    explanation: 'An encumbrance is any claim, lien, charge, or liability (like easements, liens, restrictions) that affects or limits the property interest or value.'
+  },
+  {
+    id: 'q48',
+    category: 'Zoning',
+    question: 'A homeowner wants to build a deck 5 feet from the property line, but zoning requires 10 feet. They need:',
+    options: [
+      'A building permit only',
+      'A variance',
+      'An easement',
+      'Nothing, they can proceed'
+    ],
+    correctIndex: 1,
+    explanation: 'A variance is permission to deviate from zoning requirements due to unique hardship. It\'s granted by the local zoning board of appeals.'
+  },
+  {
+    id: 'q49',
+    category: 'Zoning',
+    question: 'Which allows the broadest use of property?',
+    options: [
+      'R-1 (Single-family residential)',
+      'R-2 (Multi-family residential)',
+      'C-1 (Commercial)',
+      'I (Industrial)'
+    ],
+    correctIndex: 3,
+    explanation: 'Industrial zoning typically allows the broadest uses, including industrial, commercial, and often residential. Residential zoning is the most restrictive.'
+  },
+  {
+    id: 'q50',
+    category: 'Environmental',
+    question: 'Who is responsible for lead paint disclosure on a pre-1978 home?',
+    options: [
+      'Only the seller',
+      'Only the buyer\'s agent',
+      'The seller and both agents',
+      'The home inspector'
+    ],
+    correctIndex: 2,
+    explanation: 'Both the seller and all agents involved must provide lead paint disclosure for pre-1978 homes. Buyers must receive the EPA pamphlet and have 10 days for testing.'
+  },
+  {
+    id: 'q51',
+    category: 'Environmental',
+    question: 'What is the primary concern with underground storage tanks (USTs)?',
+    options: [
+      'They take up space',
+      'Potential soil and water contamination from leaks',
+      'They are expensive to install',
+      'They are aesthetically unpleasing'
+    ],
+    correctIndex: 1,
+    explanation: 'Old USTs (like oil tanks) can leak and contaminate soil and groundwater, creating expensive cleanup liability. Many states require disclosure and testing.'
+  },
+  {
+    id: 'q52',
+    category: 'Insurance',
+    question: 'What is the main difference between HO-2 and HO-3 homeowner\'s insurance?',
+    options: [
+      'HO-3 covers more perils (all-risk for dwelling)',
+      'HO-2 is more expensive',
+      'HO-3 is for renters',
+      'No difference'
+    ],
+    correctIndex: 0,
+    explanation: 'HO-3 is "all-risk" (open perils) for the dwelling - covers everything except specifically excluded perils. HO-2 only covers named perils listed in the policy.'
+  },
+  {
+    id: 'q53',
+    category: 'Insurance',
+    question: 'Flood insurance is provided through:',
+    options: [
+      'Private insurance companies only',
+      'FEMA\'s National Flood Insurance Program',
+      'State governments',
+      'Not available'
+    ],
+    correctIndex: 1,
+    explanation: 'Most flood insurance is provided through FEMA\'s National Flood Insurance Program (NFIP), though private flood insurance is becoming more available.'
+  },
+  {
+    id: 'q54',
+    category: 'Tax',
+    question: 'In a 1031 exchange, how many days does the investor have to identify replacement properties?',
+    options: [
+      '30 days',
+      '45 days',
+      '90 days',
+      '180 days'
+    ],
+    correctIndex: 1,
+    explanation: '45 days to identify potential replacement properties, and 180 days total to close on the new property. These are strict IRS deadlines that cannot be extended.'
+  },
+  {
+    id: 'q55',
+    category: 'Tax',
+    question: 'A couple sells their primary home for a $600,000 gain after living there 3 years. How much is taxable?',
+    options: [
+      '$0',
+      '$100,000',
+      '$300,000',
+      '$600,000'
+    ],
+    correctIndex: 1,
+    explanation: 'Married couples can exclude $500,000 of capital gains if they lived in the home 2 of the last 5 years. $600,000 gain - $500,000 exclusion = $100,000 taxable.'
+  },
+  {
+    id: 'q56',
+    category: 'Agency',
+    question: 'What is subagency?',
+    options: [
+      'A junior agent',
+      'When a cooperating broker represents the listing broker\'s client (seller)',
+      'An unlicensed assistant',
+      'A backup agent'
+    ],
+    correctIndex: 1,
+    explanation: 'Subagency means a cooperating broker works for the listing broker and owes fiduciary duties to the seller, not the buyer. Less common now due to buyer agency.'
+  },
+  {
+    id: 'q57',
+    category: 'Agency',
+    question: 'What are the fiduciary duties owed to a client? (OLD-CAR)',
+    options: [
+      'Obedience, Loyalty, Disclosure, Confidentiality, Accounting, Reasonable care',
+      'Openness, Likability, Determination, Communication',
+      'Only honesty is required',
+      'Just do your best'
+    ],
+    correctIndex: 0,
+    explanation: 'The six fiduciary duties (OLD-CAR): Obedience, Loyalty, Disclosure, Confidentiality, Accounting, and Reasonable care/skill. All owed to the principal/client.'
+  },
+  {
+    id: 'q58',
+    category: 'Appraisal',
+    question: 'What is the "subject property" in an appraisal?',
+    options: [
+      'Any comparable property',
+      'The property being appraised',
+      'The most expensive comp',
+      'The appraiser\'s own property'
+    ],
+    correctIndex: 1,
+    explanation: 'The "subject property" is the specific property being appraised and valued. Comparables are other properties used for comparison to determine the subject\'s value.'
+  },
+  {
+    id: 'q59',
+    category: 'Appraisal',
+    question: 'In the sales comparison approach, if a comp has a feature the subject lacks, you:',
+    options: [
+      'Add value to the subject',
+      'Subtract value from the comp',
+      'Ignore the difference',
+      'Add value to the comp'
+    ],
+    correctIndex: 1,
+    explanation: 'CBS: "Comp Better, Subtract" - If the comp has something better than the subject, subtract value from the comp to make it more comparable to the subject.'
+  },
+  {
+    id: 'q60',
+    category: 'Inspection',
+    question: 'A home inspection reveals termite damage. What happens next?',
+    options: [
+      'Sale automatically cancelled',
+      'Buyer can request repairs, credit, or price reduction (if within inspection period)',
+      'Seller must repair everything',
+      'Buyer must accept property as-is'
+    ],
+    correctIndex: 1,
+    explanation: 'Within the inspection contingency period, buyer can request repairs, negotiate credits, request price reduction, or walk away. Seller can accept, counter, or refuse.'
+  },
+  {
+    id: 'q61',
+    category: 'Inspection',
+    question: 'Which is typically NOT included in a standard home inspection?',
+    options: [
+      'Roof condition',
+      'Radon testing',
+      'HVAC system',
+      'Plumbing'
+    ],
+    correctIndex: 1,
+    explanation: 'Radon testing, pest inspections, lead paint testing, and septic/well tests are separate specialized inspections, not included in standard home inspections.'
+  },
+  {
+    id: 'q62',
+    category: 'Settlement',
+    question: 'When must the Closing Disclosure be provided to the borrower?',
+    options: [
+      'At the closing table',
+      'At least 3 business days before closing',
+      'Within 3 days after closing',
+      'Anytime before closing'
+    ],
+    correctIndex: 1,
+    explanation: 'TRID rules require the Closing Disclosure be provided at least 3 business days before closing, giving borrowers time to review final loan terms and costs.'
+  },
+  {
+    id: 'q63',
+    category: 'Settlement',
+    question: 'Who typically pays the buyer agent\'s commission?',
+    options: [
+      'Always the buyer',
+      'Always the seller',
+      'Negotiable - typically seller but can be buyer',
+      'The lender'
+    ],
+    correctIndex: 2,
+    explanation: 'Commission payment is negotiable. Traditionally, the seller paid both agents\' commissions, but under 2025 changes, the buyer may pay their own agent directly.'
+  },
+  {
+    id: 'q64',
+    category: 'Deeds',
+    question: 'Which deed provides the LEAST protection to the buyer?',
+    options: [
+      'General warranty deed',
+      'Special warranty deed',
+      'Quitclaim deed',
+      'Bargain and sale deed'
+    ],
+    correctIndex: 2,
+    explanation: 'A quitclaim deed provides NO warranties or guarantees. The seller transfers only whatever interest they may have, with zero protection to the buyer.'
+  },
+  {
+    id: 'q65',
+    category: 'Deeds',
+    question: 'What must a deed contain to be valid?',
+    options: [
+      'Grantor signature, grantee, legal description, consideration',
+      'Just a signature',
+      'Notarization only',
+      'Witness signatures'
+    ],
+    correctIndex: 0,
+    explanation: 'Essential deed elements: competent grantor, grantee identified, words of conveyance, legal description, grantor signature, and delivery/acceptance. (Notarization required for recording but not validity)'
   }
 ];
