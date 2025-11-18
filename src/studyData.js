@@ -1609,6 +1609,62 @@ export const flashcards = [
     question: 'What are "Facilitators" and "Designated Agency" in Massachusetts?',
     answer: 'Terms announced in 2005 regulations. Facilitators: agents who help transaction but don\'t represent either party (transaction brokers). Designated Agency: one agent in firm represents buyer, different agent represents seller, avoiding dual agency while allowing in-house deals.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc231',
+    category: 'Negotiation',
+    question: 'How should you respond when a seller asks to lower your commission rate?',
+    answer: 'Focus on VALUE not price. Response: "My commission reflects the comprehensive marketing, expertise, and results I deliver. Let me show you my marketing plan and track record. What\'s most important - selling for the highest price or saving on commission?" Demonstrate ROI - higher sale price justifies commission.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc232',
+    category: 'Negotiation',
+    question: 'What are key points to negotiate when joining a brokerage?',
+    answer: 'Commission split, desk fees/monthly costs, cap (if applicable), marketing budget/support, training provided, technology/CRM systems, lead generation, team vs solo, office space access, administrative support, E&O insurance coverage, contract review period.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc233',
+    category: 'Negotiation',
+    question: 'How do you justify your commission rate to clients?',
+    answer: 'Emphasize: Professional photography, staging advice, MLS exposure, social media marketing, open houses, negotiation expertise, contract knowledge, market analysis, transaction coordination, network of buyers/agents, time investment (avg 15-25 hours per transaction), insurance/licensing costs, legal compliance.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc234',
+    category: 'Negotiation',
+    question: 'What is a common commission split structure for new vs experienced agents?',
+    answer: 'New agents: 50/50 to 60/40 split (agent gets 50-60%). Experienced agents: 70/30 to 80/20. Top producers: 85/15 to 95/5 or capped plans (100% after cap reached, typically $16,000-25,000 to broker). Varies by brokerage model (traditional vs discount).',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc235',
+    category: 'Negotiation',
+    question: 'How should you negotiate buyer broker agreements?',
+    answer: 'Explain value: Exclusive representation, property search, showing coordination, negotiation, inspection support, closing assistance. Duration: typically 3-6 months. Compensation: buyer broker fee or seller-paid commission. Include termination clause. Be flexible on exclusivity period based on buyer commitment level.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc236',
+    category: 'Negotiation',
+    question: 'What should you never do when negotiating commission?',
+    answer: 'NEVER: Immediately agree to discount, apologize for your rate, compete solely on price, bad-mouth other agents, work for free, compromise on services to justify lower rate, negotiate against yourself, accept terms that make deal unprofitable, violate antitrust laws by discussing rates with competitors.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc237',
+    category: 'Negotiation',
+    question: 'What is a "value proposition" and how does it help negotiation?',
+    answer: 'Value proposition: clear statement of unique benefits you provide that justify your commission. Components: Expertise (certifications, experience), Results (average sale price vs list, days on market), Services (marketing plan, staging, professional photos), Support (availability, communication), Guarantee (if applicable). Makes price discussion about value received.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc238',
+    category: 'Negotiation',
+    question: 'How do you handle "I found an agent who will work for less" objection?',
+    answer: 'Response: "I understand you\'ve received other quotes. My focus is delivering maximum value - selling for the highest price in the shortest time. A 1% higher sale price more than covers the commission difference. Would you like to see my marketing strategy and recent results?" Don\'t compete on price alone - compete on results.',
+    difficulty: 'hard'
   }
 ];
 
@@ -4603,5 +4659,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'Announced in 2005: Facilitators help transaction but don\'t represent either party. Designated Agency: one agent in firm represents buyer, different agent represents seller, avoiding dual agency.'
+  },
+  {
+    id: 'q231',
+    category: 'Negotiation',
+    question: 'Best response when seller asks you to lower commission rate?',
+    options: [
+      'Immediately agree to lower rate',
+      'Focus on VALUE - show marketing plan, track record, and ROI of higher sale price',
+      'Apologize for high rate',
+      'Say all agents charge the same'
+    ],
+    correctIndex: 1,
+    explanation: 'Focus on VALUE not price. Show marketing plan and track record. Demonstrate ROI - a higher sale price justifies commission. Ask: "What\'s most important - highest price or saving on commission?"'
+  },
+  {
+    id: 'q232',
+    category: 'Negotiation',
+    question: 'What should you negotiate when joining a brokerage?',
+    options: [
+      'Only commission split',
+      'Commission split, desk fees, cap, marketing support, training, technology, leads',
+      'Nothing - accept what\'s offered',
+      'Just the office location'
+    ],
+    correctIndex: 1,
+    explanation: 'Negotiate: Commission split, desk fees/monthly costs, cap, marketing budget, training, technology/CRM, lead generation, team vs solo, office access, admin support, E&O insurance, contract review period.'
+  },
+  {
+    id: 'q233',
+    category: 'Negotiation',
+    question: 'How do you justify your commission rate?',
+    options: [
+      'Say it\'s standard',
+      'Emphasize professional photography, marketing, expertise, time investment, and transaction coordination',
+      'Compare to other agents',
+      'Apologize but say you need it'
+    ],
+    correctIndex: 1,
+    explanation: 'Justify with: Professional photography, staging advice, MLS/social media marketing, open houses, negotiation expertise, market analysis, transaction coordination, network, time (15-25 hrs), insurance/licensing costs.'
+  },
+  {
+    id: 'q234',
+    category: 'Negotiation',
+    question: 'What is a typical commission split for experienced agents?',
+    options: [
+      '50/50',
+      '70/30 to 80/20',
+      '30/70',
+      '100/0'
+    ],
+    correctIndex: 1,
+    explanation: 'New agents: 50/50 to 60/40. Experienced: 70/30 to 80/20. Top producers: 85/15 to 95/5 or capped (100% after $16k-25k to broker). Varies by brokerage model.'
+  },
+  {
+    id: 'q235',
+    category: 'Negotiation',
+    question: 'Key components of buyer broker agreement negotiation?',
+    options: [
+      'Just duration',
+      'Value explanation, duration (3-6 months), compensation, termination clause',
+      'Only compensation',
+      'No negotiation needed'
+    ],
+    correctIndex: 1,
+    explanation: 'Explain value (exclusive rep, search, showings, negotiation, inspection, closing). Duration: 3-6 months. Compensation: buyer fee or seller-paid. Include termination clause. Flexible on exclusivity based on commitment.'
+  },
+  {
+    id: 'q236',
+    category: 'Negotiation',
+    question: 'What should you NEVER do when negotiating commission?',
+    options: [
+      'Show your marketing plan',
+      'Immediately discount, apologize for rate, or compete solely on price',
+      'Explain your services',
+      'Ask about their needs'
+    ],
+    correctIndex: 1,
+    explanation: 'NEVER: Immediately discount, apologize for rate, compete only on price, bad-mouth others, work free, compromise services for lower rate, negotiate against yourself, accept unprofitable terms, violate antitrust.'
+  },
+  {
+    id: 'q237',
+    category: 'Negotiation',
+    question: 'What is a value proposition in real estate?',
+    options: [
+      'Lowest commission rate',
+      'Clear statement of unique benefits: expertise, results, services, support that justify commission',
+      'List of all services',
+      'Comparison to other agents'
+    ],
+    correctIndex: 1,
+    explanation: 'Value proposition: clear statement of unique benefits justifying commission. Components: Expertise (certifications, experience), Results (sale price, days on market), Services (marketing, staging, photos), Support (availability, communication).'
+  },
+  {
+    id: 'q238',
+    category: 'Negotiation',
+    question: 'How to handle "I found an agent who will work for less"?',
+    options: [
+      'Match their price immediately',
+      'Focus on delivering maximum value - 1% higher sale price covers commission difference',
+      'Bad-mouth the other agent',
+      'Give up'
+    ],
+    correctIndex: 1,
+    explanation: 'Response: "I understand you\'ve received other quotes. My focus is maximum value - highest price in shortest time. A 1% higher sale price covers the commission difference. See my marketing strategy and results?" Compete on results, not price alone.'
   }
 ];

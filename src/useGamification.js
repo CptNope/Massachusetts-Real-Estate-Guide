@@ -44,9 +44,9 @@ const ACHIEVEMENTS = [
   {
     id: 'flashcard-guru',
     title: 'Flashcard Guru',
-    description: 'Master all 230 flashcards',
+    description: 'Master all 238 flashcards',
     icon: '🧙',
-    requirement: (stats) => stats.masteredFlashcards >= 230
+    requirement: (stats) => stats.masteredFlashcards >= 238
   },
   {
     id: 'scenario-solver',
