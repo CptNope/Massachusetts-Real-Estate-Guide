@@ -4,6 +4,7 @@ import FlashcardMode from './FlashcardMode';
 import QuizMode from './QuizMode';
 import PersonalDashboard from './PersonalDashboard';
 import ScenarioMode from './ScenarioMode';
+import CalculatorMode from './CalculatorMode';
 import { useLocalStorage } from './useLocalStorage';
 
 export default function App() {
@@ -146,6 +147,12 @@ export default function App() {
           >
             🎭 Scenarios
           </button>
+          <button 
+            className={`mode-btn ${studyMode === 'calculators' ? 'active' : ''}`}
+            onClick={() => setStudyMode('calculators')}
+          >
+            🧮 Calculators
+          </button>
         </div>
         <div className="search-container">
           <input
@@ -234,6 +241,12 @@ export default function App() {
         {studyMode === 'scenarios' && (
           <main className="content content-full">
             <ScenarioMode />
+          </main>
+        )}
+
+        {studyMode === 'calculators' && (
+          <main className="content content-full">
+            <CalculatorMode />
           </main>
         )}
       </div>

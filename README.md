@@ -49,6 +49,9 @@ Automatically deployed via GitHub Actions on every push to `main`.
 - ✅ **Interactive scenarios** - branching decision trees for real-world practice
 - ✅ **Buyer/Seller/Investor paths** - role-specific scenarios with outcomes
 - ✅ **Expert feedback** - detailed analysis and recommendations on every ending
+- ✅ **Commission calculator** - calculate splits, caps, and agent earnings
+- ✅ **Net proceeds calculator** - estimate seller proceeds after all costs
+- ✅ **Real-time calculations** - instant results as you type
 - ✅ Automated GitHub Pages deployment via GitHub Actions
 - ✅ Fast development with Vite HMR (Hot Module Replacement)
 
@@ -206,9 +209,10 @@ The guide covers comprehensive topics including:
 - [ ] Hook into an external data source for law/form updates (when available).
 
 ### Stretch Ideas
+- [x] Add calculator widgets (e.g., commission split calculator, net proceeds estimator).
 - [ ] Integrate with spaced repetition tools (e.g., export to Anki).
 - [ ] Embed short explainer videos or audio clips.
-- [ ] Add calculator widgets (e.g., commission split calculator, net proceeds estimator).
+- [ ] Add export/import feature for study progress.
 
 ## 🎨 Customization
 
