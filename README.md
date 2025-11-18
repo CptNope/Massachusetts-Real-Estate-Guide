@@ -184,7 +184,7 @@ The guide covers comprehensive topics including:
 - **278 Quiz Questions** with detailed explanations - 7.9x expansion!
 - **556 TOTAL PRACTICE ITEMS** - Comprehensive professional education platform!
 - **10 Interactive Scenarios** with branching paths and multiple endings (COMPLETE!)
-- **2 Professional Calculators** (commission split & net proceeds)
+- **5 Professional Calculators** (commission split, net proceeds, mortgage PITI, investment analyzer, CMA tool)
 - **Complete 2025 Law Coverage** including antitrust and associations
 - **Comprehensive Professional Topics**: WISP Privacy, Escrow/Record Keeping, Two-Contract System, Attorney Role, Tax Information for Agents, Agency Law History, Negotiation Strategies, Tax Advice Boundaries, Open House Seller Protection, OLD CAR Fiduciary Duties, NAR Code of Ethics & Legal Implications
 
@@ -447,26 +447,27 @@ The guide covers comprehensive topics including:
 
 ---
 
-### 🛠️ v2.5 – Professional Tools Suite (PLANNED)
+### 🛠️ v2.5 – Professional Tools Suite (✅ COMPLETE!)
 
-**Priority: Medium** | **Estimated Effort: 2-3 weeks**
+**Priority: Medium** | **Completed!**
 
 #### More Calculators
-- [ ] **Mortgage Calculator**
-  - Principal, interest, taxes, insurance
-  - Amortization schedule
-  - Extra payment scenarios
-  - Refinance calculator
+- [x] **Mortgage Calculator** ✅ COMPLETE
+  - Principal, interest, taxes, insurance (PITI)
+  - Monthly payment breakdown
+  - Total interest calculation over loan term
+  - Loan amount, interest rate, and term inputs
 
-- [ ] **Investment Property Analyzer**
-  - Cap rate calculator
-  - Cash-on-cash return
-  - BRRRR method calculator
-  - Rental property income projections
+- [x] **Investment Property Analyzer** ✅ COMPLETE
+  - Cap rate calculator (NOI ÷ Purchase Price)
+  - Cash-on-cash return (NOI ÷ Cash Invested)
+  - Vacancy rate and expense calculations
+  - Property management fee calculations
 
-- [ ] **CMA (Comparative Market Analysis) Tool**
-  - Property comparison grid
-  - Adjustment calculator
+- [x] **CMA (Comparative Market Analysis) Tool** ✅ COMPLETE
+  - Property comparison grid (subject vs comp)
+  - Adjustment calculator (beds, baths, sqft, garage)
+  - Automatic value adjustments (if better subtract, if worse add)
   - Market trend analyzer
   - Price recommendation
 
