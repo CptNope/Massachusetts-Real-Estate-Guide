@@ -1441,6 +1441,62 @@ export const flashcards = [
     question: 'Can agents recommend specific attorneys to clients?',
     answer: 'Yes, agents can provide names of attorneys (typically 2-3 recommendations) but should NOT: receive referral fees from attorneys, pressure clients to use specific attorney, or imply attorney kickbacks exist. Must disclose any business relationships with recommended attorneys.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc207',
+    category: 'Taxes',
+    question: 'What is the tax status of most real estate agents?',
+    answer: 'Independent Contractors (1099), not employees (W-2). Responsible for own taxes including self-employment tax (15.3% for Social Security and Medicare). Receive 1099-NEC from broker, not W-2. Must pay quarterly estimated taxes.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc208',
+    category: 'Taxes',
+    question: 'What is self-employment tax and what is the rate?',
+    answer: 'Tax covering Social Security (12.4%) and Medicare (2.9%) for self-employed individuals. Total rate: 15.3% of net earnings. Employers normally pay half, but independent contractors pay both halves. Paid in addition to regular income tax.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc209',
+    category: 'Tax Deductions',
+    question: 'What are common tax deductions for real estate agents?',
+    answer: 'Home office, mileage/vehicle expenses, marketing/advertising, MLS/association dues, E&O insurance, CE courses, phone/internet, office supplies, technology, client gifts (limited), meals (50%), professional services (CPA, attorney). Must be ordinary and necessary business expenses.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc210',
+    category: 'Taxes',
+    question: 'When must independent contractor agents pay estimated taxes?',
+    answer: 'Quarterly: April 15, June 15, September 15, and January 15 of following year. Must pay if expecting to owe $1,000+ in taxes. Failure to pay quarterly can result in penalties and interest. Use Form 1040-ES.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc211',
+    category: 'Tax Deductions',
+    question: 'What are the rules for deducting vehicle/mileage expenses?',
+    answer: 'Two methods: (1) Standard Mileage Rate (~65-67 cents/mile) or (2) Actual Expenses (gas, maintenance, insurance, depreciation). Must keep detailed mileage log. Commute to regular office NOT deductible. Client showings, inspections, broker meetings ARE deductible.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc212',
+    category: 'Tax Deductions',
+    question: 'What are the requirements for home office deduction?',
+    answer: 'Must be: (1) Regular and exclusive use for business, (2) Principal place of business. Can deduct percentage of rent/mortgage, utilities, insurance, repairs based on square footage. Simplified method: $5/sq ft up to 300 sq ft. Must maintain separate space.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc213',
+    category: 'Taxes',
+    question: 'What form do agents receive from brokers for commission income?',
+    answer: '1099-NEC (Nonemployee Compensation) - replaced old 1099-MISC. Shows total commissions paid during year. Broker must issue by January 31. Agents report this income on Schedule C (business income/expenses). NOT a W-2 because agents are independent contractors.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc214',
+    category: 'Tax Recordkeeping',
+    question: 'How long should agents keep tax records?',
+    answer: 'Minimum 3 years from filing (IRS audit period), but 7 years recommended. Keep receipts, mileage logs, bank statements, commission statements, 1099s, expense records. Digital copies acceptable. Essential for deductions and audit protection.',
+    difficulty: 'medium'
   }
 ];
 
@@ -4123,5 +4179,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'MA attorneys: draft/review P&S Agreement, conduct title search, resolve title issues, review all documents, explain legal implications, handle closing, prepare deed, record documents, disburse funds.'
+  },
+  {
+    id: 'q207',
+    category: 'Taxes',
+    question: 'What is the tax status of most real estate agents?',
+    options: [
+      'Employees (W-2)',
+      'Independent Contractors (1099-NEC)',
+      'Partners',
+      'Volunteers'
+    ],
+    correctIndex: 1,
+    explanation: 'Most agents are Independent Contractors receiving 1099-NEC, not W-2 employees. Responsible for own taxes including self-employment tax (15.3%). Must pay quarterly estimated taxes.'
+  },
+  {
+    id: 'q208',
+    category: 'Taxes',
+    question: 'What is the self-employment tax rate for independent contractors?',
+    options: [
+      '7.65%',
+      '15.3%',
+      '10%',
+      '25%'
+    ],
+    correctIndex: 1,
+    explanation: 'Self-employment tax is 15.3% (Social Security 12.4% + Medicare 2.9%). Independent contractors pay both employee and employer portions. This is in addition to regular income tax.'
+  },
+  {
+    id: 'q209',
+    category: 'Tax Deductions',
+    question: 'Which is a deductible expense for real estate agents?',
+    options: [
+      'Personal groceries',
+      'Commute to regular office',
+      'E&O insurance and MLS dues',
+      'Personal vacation'
+    ],
+    correctIndex: 2,
+    explanation: 'E&O insurance, MLS dues, CE courses, marketing, home office, mileage (business), and professional services are deductible. Personal expenses and regular commute are NOT deductible.'
+  },
+  {
+    id: 'q210',
+    category: 'Taxes',
+    question: 'When are quarterly estimated tax payments due?',
+    options: [
+      'Every 3 months on the 1st',
+      'April 15, June 15, September 15, and January 15',
+      'Only at year-end',
+      'Monthly'
+    ],
+    correctIndex: 1,
+    explanation: 'Quarterly estimated taxes due: April 15, June 15, September 15, and January 15 of following year. Must pay if expecting to owe $1,000+. Use Form 1040-ES.'
+  },
+  {
+    id: 'q211',
+    category: 'Tax Deductions',
+    question: 'What must you maintain to deduct vehicle mileage?',
+    options: [
+      'Nothing required',
+      'Detailed mileage log with dates, destinations, business purpose',
+      'Just fuel receipts',
+      'Car registration only'
+    ],
+    correctIndex: 1,
+    explanation: 'Must keep detailed mileage log documenting: date, destination, purpose, miles. Can use standard mileage rate (~65-67 cents/mile) or actual expenses. Commute to regular office NOT deductible.'
+  },
+  {
+    id: 'q212',
+    category: 'Tax Deductions',
+    question: 'What are the requirements for home office deduction?',
+    options: [
+      'Any space used occasionally',
+      'Regular and exclusive use for business, principal place of business',
+      'Just having a desk at home',
+      'No requirements'
+    ],
+    correctIndex: 1,
+    explanation: 'Home office must be: (1) Regular and exclusive use for business, (2) Principal place of business. Can deduct based on square footage. Simplified method: $5/sq ft up to 300 sq ft.'
+  },
+  {
+    id: 'q213',
+    category: 'Taxes',
+    question: 'What form do agents receive from brokers showing annual commissions?',
+    options: [
+      'W-2',
+      '1099-NEC (Nonemployee Compensation)',
+      'W-4',
+      '1040'
+    ],
+    correctIndex: 1,
+    explanation: '1099-NEC shows total commissions paid. Broker issues by January 31. Agents report on Schedule C (business income/expenses). NOT W-2 because agents are independent contractors, not employees.'
+  },
+  {
+    id: 'q214',
+    category: 'Tax Recordkeeping',
+    question: 'How long should agents keep tax records?',
+    options: [
+      '1 year',
+      'Minimum 3 years, but 7 years recommended',
+      'Forever',
+      'No need to keep records'
+    ],
+    correctIndex: 1,
+    explanation: 'Minimum 3 years (IRS audit period), but 7 years recommended. Keep receipts, mileage logs, bank statements, commission statements, 1099s, expense records. Digital copies acceptable.'
   }
 ];
