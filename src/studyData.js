@@ -839,6 +839,111 @@ export const flashcards = [
     question: 'Can a MA broker own a brokerage in another state?',
     answer: 'Yes, if they obtain a broker license in that state and meet all broker requirements. Each state has different broker qualifications (experience years, courses, exams). Must comply with both states\' regulations and maintain separate trust accounts per state.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc121',
+    category: 'Referrals',
+    question: 'What is a referral fee in real estate?',
+    answer: 'Commission paid to an agent for referring a client to another agent. Common when client moves out-of-state or needs services outside your area. Typically 20-35% of receiving agent\'s commission. Must be licensed to receive referral fees.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc122',
+    category: 'Referrals',
+    question: 'Can you receive a referral fee from a state where you\'re not licensed?',
+    answer: 'Generally YES, if you\'re licensed in at least one state and referring from your home state. The receiving agent must be licensed where the transaction occurs. Check both states\' laws - some states prohibit paying out-of-state referral fees.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc123',
+    category: 'Referrals',
+    question: 'What must be in a referral agreement?',
+    answer: 'Names of both agents/brokers, client information, property details (if known), referral fee percentage or amount, payment terms, signatures, and dates. Should be signed BEFORE transaction closes. Must be between licensed agents/brokers only.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc124',
+    category: 'Referrals',
+    question: 'Can an unlicensed person receive a referral fee?',
+    answer: 'NO. RESPA and state laws prohibit paying referral fees to unlicensed persons. Only licensed real estate professionals can receive compensation for real estate services. Violations can result in fines, license suspension, and criminal penalties.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc125',
+    category: 'Referrals',
+    question: 'What is a typical referral fee percentage?',
+    answer: '20-35% of the receiving agent\'s commission. Example: Receiving agent earns $10,000, referring agent gets $2,000-3,500. Percentage negotiable between agents. Some companies have standard 25% referral programs.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc126',
+    category: 'Gifts to Clients',
+    question: 'Can real estate agents give gifts to clients?',
+    answer: 'YES, but must follow rules: keep gifts reasonable ($100 or less recommended), don\'t use gifts to induce business (RESPA violation), disclose expensive gifts, avoid appearance of kickbacks, and consider tax implications. Closing gifts like gift baskets are common and acceptable.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc127',
+    category: 'Gifts to Clients',
+    question: 'What is RESPA Section 8 regarding gifts?',
+    answer: 'RESPA prohibits kickbacks and unearned fees in real estate transactions. Gifts cannot be given in exchange for referrals or to induce business from settlement service providers. Marketing items under $10 are typically safe. Violations = $10,000+ fines and/or jail.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc128',
+    category: 'Gifts to Clients',
+    question: 'What are safe client gifts for real estate agents?',
+    answer: 'Closing gifts like gift baskets, plants, home items under $100, thank-you gifts after closing, holiday cards, branded marketing items (calendars, magnets), and housewarming presents. Avoid cash, cash equivalents, or anything that could be seen as inducement.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc129',
+    category: 'Compensation Rules',
+    question: 'Can agents pay unlicensed assistants a percentage of commission?',
+    answer: 'NO. Unlicensed assistants must be paid hourly or salary only, never commission or transaction-based pay. This would violate licensing laws. Only licensed agents can receive commission-based compensation.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc130',
+    category: 'Compensation Rules',
+    question: 'What can unlicensed assistants legally do?',
+    answer: 'Administrative tasks: schedule appointments, answer phones, prepare marketing materials, maintain files, coordinate closings, order supplies. CANNOT: show properties, discuss terms, negotiate, give advice, or anything requiring a license. Must be clearly identified as unlicensed.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc131',
+    category: 'Compensation Rules',
+    question: 'Can you pay a "finder\'s fee" to a friend who refers business?',
+    answer: 'NO, if they\'re unlicensed. Only licensed agents can receive compensation for real estate referrals. Unlicensed persons can receive thank-you gifts (not cash), but nothing tied to transaction closing. RESPA prohibits paying unlicensed persons for referrals.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc132',
+    category: 'Referrals',
+    question: 'Who pays the referral fee in a transaction?',
+    answer: 'The receiving agent\'s broker pays the referring agent\'s broker, who then pays the referring agent. Payment comes from the receiving agent\'s commission, not added to client costs. Paid at closing when all commissions are distributed.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc133',
+    category: 'Referrals',
+    question: 'Do referral fees need to be disclosed to clients?',
+    answer: 'Best practice: YES, disclose referral arrangements to clients for transparency. Some states require disclosure. Even if not required, disclosure builds trust and avoids appearance of conflict of interest. Include in agency disclosure forms.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc134',
+    category: 'Gifts to Clients',
+    question: 'Can you give a buyer a "rebate" or cash back at closing?',
+    answer: 'Depends on state law and lender approval. Some states allow commission rebates to buyers, others prohibit. Must comply with state regulations and disclose to lender (may affect financing). Check state laws - Massachusetts allows with proper disclosure.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc135',
+    category: 'Compensation Rules',
+    question: 'Can brokers split commissions with out-of-state brokers?',
+    answer: 'YES, licensed brokers can cooperate and split commissions across state lines. Both must be licensed in their respective states. Common in referral situations and relocation services. Must follow both states\' regulations and have written agreement.',
+    difficulty: 'medium'
   }
 ];
 
@@ -2403,5 +2508,200 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Depends on your E&O policy. Some cover all states where you\'re licensed, others are state-specific. ALWAYS verify with your insurance carrier before practicing in additional states to ensure coverage.'
+  },
+  {
+    id: 'q121',
+    category: 'Referrals',
+    question: 'What is a typical referral fee percentage in real estate?',
+    options: [
+      '5-10%',
+      '20-35%',
+      '50%',
+      '75%'
+    ],
+    correctIndex: 1,
+    explanation: 'Referral fees typically range from 20-35% of the receiving agent\'s commission. Example: Receiving agent earns $10,000, referring agent receives $2,000-3,500. Percentage is negotiable between agents.'
+  },
+  {
+    id: 'q122',
+    category: 'Referrals',
+    question: 'Can a MA agent receive a referral fee from a California transaction where they\'re not licensed?',
+    options: [
+      'No, never allowed',
+      'Yes, if licensed in MA and referring from MA',
+      'Only if they visit the property',
+      'Only with special permission'
+    ],
+    correctIndex: 1,
+    explanation: 'Generally YES - licensed agents can receive referral fees from states where they\'re not licensed, as long as they\'re licensed somewhere and referring from their home state. The receiving agent must be CA-licensed.'
+  },
+  {
+    id: 'q123',
+    category: 'Referrals',
+    question: 'Can an unlicensed person receive a referral fee for sending you business?',
+    options: [
+      'Yes, if under $500',
+      'Yes, if they sign a contract',
+      'No, only licensed agents can receive referral fees',
+      'Yes, but only gift cards'
+    ],
+    correctIndex: 2,
+    explanation: 'NO. RESPA and state laws prohibit paying referral fees to unlicensed persons. Only licensed real estate professionals can receive compensation for referrals. Violations can result in fines and license suspension.'
+  },
+  {
+    id: 'q124',
+    category: 'Referrals',
+    question: 'What should be included in a referral agreement?',
+    options: [
+      'Just verbal agreement is fine',
+      'Names, client info, referral fee %, payment terms, signatures',
+      'Only the referral percentage',
+      'Not necessary if you trust them'
+    ],
+    correctIndex: 1,
+    explanation: 'Written referral agreements should include: both agents\' names, client information, property details (if known), referral fee percentage, payment terms, and signatures. Should be signed BEFORE closing.'
+  },
+  {
+    id: 'q125',
+    category: 'Gifts to Clients',
+    question: 'Can real estate agents give closing gifts to clients?',
+    options: [
+      'No, never allowed under RESPA',
+      'Yes, reasonable gifts ($100 or less recommended) are acceptable',
+      'Only to sellers, not buyers',
+      'Only branded marketing items'
+    ],
+    correctIndex: 1,
+    explanation: 'YES - reasonable closing gifts are acceptable. Keep gifts under $100 (recommended), don\'t use to induce business, and avoid cash. Gift baskets, plants, and home items are common and appropriate.'
+  },
+  {
+    id: 'q126',
+    category: 'Gifts to Clients',
+    question: 'What does RESPA Section 8 prohibit?',
+    options: [
+      'All gifts to anyone',
+      'Kickbacks and unearned fees in exchange for referrals',
+      'Marketing expenses',
+      'Closing gifts'
+    ],
+    correctIndex: 1,
+    explanation: 'RESPA Section 8 prohibits kickbacks and unearned fees - gifts given in exchange for referrals or to induce business from settlement service providers. Violations carry $10,000+ fines and possible jail time.'
+  },
+  {
+    id: 'q127',
+    category: 'Gifts to Clients',
+    question: 'Which is a safe client gift for real estate agents?',
+    options: [
+      'Cash',
+      'Gift card to home improvement store',
+      'Gift basket or plant under $100',
+      'Paying their utility bill'
+    ],
+    correctIndex: 2,
+    explanation: 'Gift baskets, plants, and home items under $100 are safe and appropriate. Avoid cash or cash equivalents (gift cards can be seen as cash). Marketing items under $10 are always safe.'
+  },
+  {
+    id: 'q128',
+    category: 'Compensation Rules',
+    question: 'Can you pay your unlicensed assistant a percentage of each transaction?',
+    options: [
+      'Yes, if they work hard',
+      'Yes, up to 10%',
+      'No, must be hourly or salary only',
+      'Yes, with broker approval'
+    ],
+    correctIndex: 2,
+    explanation: 'NO. Unlicensed assistants must be paid hourly wage or salary only, never commission or transaction-based pay. Only licensed agents can receive commission-based compensation. This is a licensing law violation.'
+  },
+  {
+    id: 'q129',
+    category: 'Compensation Rules',
+    question: 'What CAN unlicensed assistants legally do?',
+    options: [
+      'Show properties',
+      'Negotiate contracts',
+      'Schedule appointments and prepare marketing materials',
+      'Give pricing advice'
+    ],
+    correctIndex: 2,
+    explanation: 'Unlicensed assistants can handle administrative tasks: scheduling, phone calls, marketing prep, file maintenance, closing coordination. CANNOT: show properties, negotiate, discuss terms, or anything requiring a license.'
+  },
+  {
+    id: 'q130',
+    category: 'Compensation Rules',
+    question: 'Your friend refers a client who buys a home. Can you pay them a "finder\'s fee"?',
+    options: [
+      'Yes, up to $500',
+      'Yes, any amount is fine',
+      'No, if they\'re unlicensed - can only give thank-you gift',
+      'Yes, but only after closing'
+    ],
+    correctIndex: 2,
+    explanation: 'NO cash compensation if unlicensed. Only licensed agents can receive referral fees. You can give a thank-you gift (not cash), but nothing tied to the transaction. RESPA prohibits paying unlicensed persons for referrals.'
+  },
+  {
+    id: 'q131',
+    category: 'Referrals',
+    question: 'Who pays the referral fee to the referring agent?',
+    options: [
+      'The buyer or seller',
+      'The receiving agent\'s broker',
+      'The title company',
+      'The referring agent pays themselves'
+    ],
+    correctIndex: 1,
+    explanation: 'The receiving agent\'s broker pays the referring agent\'s broker (from the receiving agent\'s commission), who then pays the referring agent. Not added to client costs - comes from agent\'s earned commission.'
+  },
+  {
+    id: 'q132',
+    category: 'Referrals',
+    question: 'Should referral arrangements be disclosed to clients?',
+    options: [
+      'No, it\'s confidential between agents',
+      'Only if the client asks',
+      'Yes, best practice for transparency even if not legally required',
+      'Never disclose'
+    ],
+    correctIndex: 2,
+    explanation: 'Best practice: YES, disclose referral arrangements to clients for transparency. Some states require it. Even when not required, disclosure builds trust and avoids conflicts of interest. Include in agency disclosures.'
+  },
+  {
+    id: 'q133',
+    category: 'Gifts to Clients',
+    question: 'Can you give a buyer a commission rebate at closing?',
+    options: [
+      'Yes, always allowed',
+      'No, never allowed',
+      'Depends on state law and lender approval',
+      'Only in luxury transactions'
+    ],
+    correctIndex: 2,
+    explanation: 'Depends on state law and lender approval. Some states allow commission rebates, others prohibit them. Massachusetts allows with proper disclosure. Must inform lender as it may affect financing calculations.'
+  },
+  {
+    id: 'q134',
+    category: 'Compensation Rules',
+    question: 'Can MA and California brokers split a commission on a cross-state transaction?',
+    options: [
+      'No, different states cannot cooperate',
+      'Yes, licensed brokers can cooperate across state lines',
+      'Only through a national franchise',
+      'Only for commercial properties'
+    ],
+    correctIndex: 1,
+    explanation: 'YES - licensed brokers can cooperate and split commissions across state lines. Both must be licensed in their respective states. Common in referrals and relocations. Requires written agreement.'
+  },
+  {
+    id: 'q135',
+    category: 'Referrals',
+    question: 'When should a referral agreement be signed?',
+    options: [
+      'After closing',
+      'When commission check arrives',
+      'Before the transaction closes',
+      'Doesn\'t need to be written'
+    ],
+    correctIndex: 2,
+    explanation: 'Referral agreements should be signed BEFORE the transaction closes, ideally when the referral is made. Having a written agreement protects both parties and clarifies terms before any disputes arise.'
   }
 ];
