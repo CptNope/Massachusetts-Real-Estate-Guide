@@ -944,6 +944,111 @@ export const flashcards = [
     question: 'Can brokers split commissions with out-of-state brokers?',
     answer: 'YES, licensed brokers can cooperate and split commissions across state lines. Both must be licensed in their respective states. Common in referral situations and relocation services. Must follow both states\' regulations and have written agreement.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc136',
+    category: 'Electronic Signatures',
+    question: 'What is the E-Sign Act?',
+    answer: 'Federal law (Electronic Signatures in Global and National Commerce Act, 2000) making electronic signatures legal and binding in interstate and foreign commerce. Electronic contracts and signatures have same legal effect as paper/ink signatures.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc137',
+    category: 'Electronic Signatures',
+    question: 'What is UETA?',
+    answer: 'Uniform Electronic Transactions Act - state-level law (adopted by most states) validating electronic signatures and records. Works alongside federal E-Sign Act. Makes e-signatures legally enforceable in real estate transactions.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc138',
+    category: 'Electronic Signatures',
+    question: 'Are electronic signatures valid in real estate contracts?',
+    answer: 'YES. Electronic signatures are legal and binding under E-Sign Act (2000) and UETA. Commonly used in real estate for offers, contracts, disclosures, and addendums. Must ensure all parties consent to use electronic signatures.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc139',
+    category: 'Electronic Signatures',
+    question: 'What is e-filing in real estate?',
+    answer: 'Electronic filing of documents with registry of deeds or county recorder. Conveyancing attorneys can now file documents electronically without recording original paper documents in person. Faster processing and permanent digital records.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc140',
+    category: 'Do Not Call',
+    question: 'What is the Do Not Call Registry?',
+    answer: 'Federal registry (www.donotcall.gov) where consumers can register phone numbers to stop telemarketing calls. Created by Do Not Call Improvement Act (2003, strengthened 2007). ALL real estate professionals must honor and comply.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc141',
+    category: 'Do Not Call',
+    question: 'Can real estate agents call numbers on the Do Not Call Registry?',
+    answer: 'Generally NO, unless: (1) established business relationship (EBR) within last 18 months, (2) consumer gave written consent to call, or (3) calling about listing they inquired about. Must check registry every 31 days.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc142',
+    category: 'Do Not Call',
+    question: 'What is an Established Business Relationship (EBR)?',
+    answer: 'Transaction or inquiry within past 18 months allowing you to call Do Not Call registrants. Example: Previous client, recent property inquiry, attended your open house. EBR expires 18 months after last transaction or 3 months after inquiry.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc143',
+    category: 'Do Not Call',
+    question: 'How often must agents check the Do Not Call Registry?',
+    answer: 'At least once every 31 days. Must remove registered numbers from calling lists. Violation penalties: up to $43,280 per illegal call (adjusted for inflation). Available at www.donotcall.gov.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc144',
+    category: 'TCPA',
+    question: 'What is the TCPA (Telephone Consumer Protection Act)?',
+    answer: 'Federal law restricting telemarketing calls, auto-dialers, prerecorded messages, and texts. Requires prior express written consent for marketing calls/texts to cell phones. Violations: $500-1,500 per call/text. Real estate agents must comply.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc145',
+    category: 'TCPA',
+    question: 'Can agents send marketing text messages to clients?',
+    answer: 'Only with prior express written consent. TCPA requires written permission before sending marketing texts to cell phones. Informational texts about existing transactions are generally okay. Keep records of consent. Violations = $500-1,500 per text.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc146',
+    category: 'Do Not Call',
+    question: 'What are exceptions to Do Not Call rules?',
+    answer: 'Exempt from DNC: charitable organizations, certain non-profits, political contribution solicitations, surveys (if no sales pitch). Real estate agents are NOT exempt and must comply with all DNC rules.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc147',
+    category: 'Electronic Signatures',
+    question: 'What must parties do before using electronic signatures?',
+    answer: 'All parties must consent to conduct business electronically. Best practice: get written/electronic acknowledgment of consent. Parties can revoke consent and request paper documents. Must retain electronic records per state requirements.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc148',
+    category: 'TCPA',
+    question: 'What is an auto-dialer and why does it matter?',
+    answer: 'Automatic telephone dialing system that dials numbers from a list. TCPA restricts auto-dialer use - requires prior express written consent to call cell phones with auto-dialers or prerecorded messages. Heavy penalties for violations.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc149',
+    category: 'Do Not Call',
+    question: 'Can you call expired listings if the owner is on the Do Not Call Registry?',
+    answer: 'NO, unless you have established business relationship (were their listing agent within 18 months) or they gave written consent. Previous listing with another agent does NOT give you exemption. Must honor DNC registry.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc150',
+    category: 'Electronic Signatures',
+    question: 'What types of real estate documents can use electronic signatures?',
+    answer: 'Most documents: offers, purchase agreements, listing agreements, disclosures, addendums, lease agreements. Some states may require original signatures for deeds, wills, or court orders. Check state-specific requirements.',
+    difficulty: 'easy'
   }
 ];
 
@@ -2703,5 +2808,200 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Referral agreements should be signed BEFORE the transaction closes, ideally when the referral is made. Having a written agreement protects both parties and clarifies terms before any disputes arise.'
+  },
+  {
+    id: 'q136',
+    category: 'Electronic Signatures',
+    question: 'When was the federal E-Sign Act passed making electronic signatures legal?',
+    options: [
+      '1995',
+      '2000',
+      '2010',
+      '2020'
+    ],
+    correctIndex: 1,
+    explanation: 'The Electronic Signatures in Global and National Commerce Act (E-Sign Act) was passed in 2000, making electronic signatures legal and binding in interstate and foreign commerce.'
+  },
+  {
+    id: 'q137',
+    category: 'Electronic Signatures',
+    question: 'Are electronic signatures valid for real estate contracts in Massachusetts?',
+    options: [
+      'No, real estate requires wet signatures',
+      'Yes, under E-Sign Act and UETA',
+      'Only for leases',
+      'Only with attorney approval'
+    ],
+    correctIndex: 1,
+    explanation: 'YES - electronic signatures are legal and binding for real estate contracts under the federal E-Sign Act (2000) and state UETA laws. Commonly used for offers, contracts, and disclosures.'
+  },
+  {
+    id: 'q138',
+    category: 'Electronic Signatures',
+    question: 'What does UETA stand for?',
+    options: [
+      'Universal Electronic Transfer Act',
+      'Uniform Electronic Transactions Act',
+      'United Estate Transfer Agreement',
+      'Universal E-Signature Trading Act'
+    ],
+    correctIndex: 1,
+    explanation: 'UETA stands for Uniform Electronic Transactions Act - state-level law (adopted by most states) that validates electronic signatures and records, working alongside the federal E-Sign Act.'
+  },
+  {
+    id: 'q139',
+    category: 'Do Not Call',
+    question: 'When was the Do Not Call Registry created?',
+    options: [
+      '1995',
+      '2000',
+      '2003',
+      '2010'
+    ],
+    correctIndex: 2,
+    explanation: 'The Do Not Call Registry was created in 2003 with the Do Not Call Improvement Act. It was further strengthened in 2007 to enhance consumer protections against telemarketing.'
+  },
+  {
+    id: 'q140',
+    category: 'Do Not Call',
+    question: 'How often must real estate agents check the Do Not Call Registry?',
+    options: [
+      'Once a year',
+      'Every 31 days',
+      'Every 90 days',
+      'Only when starting cold calling'
+    ],
+    correctIndex: 1,
+    explanation: 'Agents must check the Do Not Call Registry at least once every 31 days and remove any registered numbers from their calling lists. Available at www.donotcall.gov.'
+  },
+  {
+    id: 'q141',
+    category: 'Do Not Call',
+    question: 'What is an Established Business Relationship (EBR) for Do Not Call purposes?',
+    options: [
+      'Any previous contact',
+      'Transaction or inquiry within past 18 months',
+      'Permanent exemption once established',
+      'Only applies to current clients'
+    ],
+    correctIndex: 1,
+    explanation: 'EBR is a transaction or inquiry within the past 18 months that allows calling DNC registrants. Expires 18 months after last transaction or 3 months after inquiry.'
+  },
+  {
+    id: 'q142',
+    category: 'Do Not Call',
+    question: 'Can you call an expired listing owner who is on the Do Not Call Registry?',
+    options: [
+      'Yes, expired listings are always exempt',
+      'No, unless you have EBR or written consent',
+      'Yes, they are a lead',
+      'Yes, but only once'
+    ],
+    correctIndex: 1,
+    explanation: 'NO - unless you have an established business relationship (were their listing agent within 18 months) or they gave written consent. Another agent\'s expired listing does NOT give you exemption.'
+  },
+  {
+    id: 'q143',
+    category: 'TCPA',
+    question: 'What does TCPA stand for?',
+    options: [
+      'Telephone Consumer Protection Act',
+      'Telemarketing Consumer Privacy Agreement',
+      'Technology Communication Protection Act',
+      'Text Call Privacy Agreement'
+    ],
+    correctIndex: 0,
+    explanation: 'TCPA stands for Telephone Consumer Protection Act - federal law restricting telemarketing calls, auto-dialers, prerecorded messages, and texts. Requires prior express written consent for marketing to cell phones.'
+  },
+  {
+    id: 'q144',
+    category: 'TCPA',
+    question: 'Can agents send marketing text messages without consent?',
+    options: [
+      'Yes, texts are not regulated',
+      'Yes, to anyone you have business cards from',
+      'No, requires prior express written consent',
+      'Only to clients'
+    ],
+    correctIndex: 2,
+    explanation: 'NO - TCPA requires prior express written consent before sending marketing texts to cell phones. Violations carry penalties of $500-1,500 per text. Must keep records of consent.'
+  },
+  {
+    id: 'q145',
+    category: 'TCPA',
+    question: 'What is the penalty for violating TCPA rules per call or text?',
+    options: [
+      '$50-100',
+      '$500-1,500',
+      '$5,000-10,000',
+      'Just a warning'
+    ],
+    correctIndex: 1,
+    explanation: 'TCPA violations carry penalties of $500-1,500 per illegal call or text message. These can add up quickly if multiple violations occur, making compliance essential.'
+  },
+  {
+    id: 'q146',
+    category: 'Do Not Call',
+    question: 'Which is exempt from Do Not Call rules?',
+    options: [
+      'Real estate cold calling',
+      'Charitable organizations',
+      'All businesses',
+      'Anyone with a license'
+    ],
+    correctIndex: 1,
+    explanation: 'Exempt from DNC: charitable organizations, certain non-profits, political contribution solicitations, and surveys (without sales pitch). Real estate agents are NOT exempt.'
+  },
+  {
+    id: 'q147',
+    category: 'Do Not Call',
+    question: 'What is the maximum penalty per illegal Do Not Call violation?',
+    options: [
+      '$500',
+      '$5,000',
+      '$43,280 (adjusted for inflation)',
+      '$100,000'
+    ],
+    correctIndex: 2,
+    explanation: 'Do Not Call violations can result in penalties up to $43,280 per illegal call (adjusted for inflation). This makes compliance critical for real estate professionals.'
+  },
+  {
+    id: 'q148',
+    category: 'Electronic Signatures',
+    question: 'What must happen before parties use electronic signatures?',
+    options: [
+      'Nothing special required',
+      'All parties must consent to conduct business electronically',
+      'Attorney must approve',
+      'Notary must witness'
+    ],
+    correctIndex: 1,
+    explanation: 'All parties must consent to conduct business electronically before using e-signatures. Best practice: get written acknowledgment of consent. Parties can revoke consent and request paper documents.'
+  },
+  {
+    id: 'q149',
+    category: 'Electronic Signatures',
+    question: 'What is e-filing in real estate?',
+    options: [
+      'Email filing with broker',
+      'Electronic filing of documents with registry of deeds',
+      'Online listing submission',
+      'Digital photo storage'
+    ],
+    correctIndex: 1,
+    explanation: 'E-filing is electronic filing of documents with the registry of deeds or county recorder. Conveyancing attorneys can now file electronically without recording original paper documents in person.'
+  },
+  {
+    id: 'q150',
+    category: 'TCPA',
+    question: 'What is an auto-dialer under TCPA?',
+    options: [
+      'Speed dial function',
+      'Automatic telephone dialing system that dials from a list',
+      'Caller ID system',
+      'Voice mail'
+    ],
+    correctIndex: 1,
+    explanation: 'An auto-dialer is an automatic telephone dialing system that dials numbers from a list. TCPA heavily restricts auto-dialer use - requires prior express written consent to call cell phones with auto-dialers.'
   }
 ];
