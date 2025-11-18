@@ -524,6 +524,111 @@ export const flashcards = [
     question: 'What is a real estate trust account?',
     answer: 'A separate bank account where brokers must deposit client funds (deposits, rents, etc.). Funds must be kept separate from broker\'s operating funds. Commingling is illegal and can result in license loss.',
     difficulty: 'medium'
+  },
+  {
+    id: 'fc76',
+    category: 'Continuing Education',
+    question: 'What are the Massachusetts continuing education (CE) requirements for license renewal?',
+    answer: '12 hours of approved CE every 2 years for salespersons. This includes mandatory topics like fair housing, agency, and ethics. Brokers have same requirements. Must be completed before license expiration.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc77',
+    category: 'Continuing Education',
+    question: 'What happens if you don\'t complete CE requirements before license expiration?',
+    answer: 'License becomes inactive. You cannot practice real estate until you complete the CE requirements and pay reactivation fees. Some states allow a grace period; others require starting over.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc78',
+    category: 'Licensing',
+    question: 'How often must Massachusetts real estate licenses be renewed?',
+    answer: 'Every 2 years. Renewal requires completing 12 hours of CE and paying renewal fees. License expiration date is on your license card.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc79',
+    category: 'Licensing',
+    question: 'What are typical Massachusetts real estate license renewal fees?',
+    answer: 'Approximately $150-200 for salesperson license renewal (fees subject to change). Does not include CE course costs, association dues, or E&O insurance.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc80',
+    category: 'Broker Requirements',
+    question: 'What are the requirements to become a broker in Massachusetts?',
+    answer: '3 years of active experience as a licensed salesperson (within 5 years), complete 40-hour broker pre-license course, pass broker exam, and meet educational requirements. Brokers can supervise agents and own brokerages.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc81',
+    category: 'Broker Requirements',
+    question: 'What is the difference between a salesperson and a broker?',
+    answer: 'Salespersons must work under a supervising broker and cannot operate independently. Brokers can own brokerages, supervise agents, and work independently. Both need licenses and CE, but brokers have higher requirements.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc82',
+    category: 'Certifications',
+    question: 'What is the GRI (Graduate, REALTOR® Institute) designation?',
+    answer: 'Advanced education program (60+ hours) covering legal issues, technology, marketing, and professional standards. Increases agent credibility and knowledge. Offered through state REALTOR® associations.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc83',
+    category: 'Certifications',
+    question: 'What is the CRS (Certified Residential Specialist) designation?',
+    answer: 'Premier credential for residential sales professionals. Requires production requirements, advanced training, and experience. Only about 3% of REALTORS® hold this designation. Shows expertise and commitment.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc84',
+    category: 'Certifications',
+    question: 'What is the ABR (Accredited Buyer\'s Representative) designation?',
+    answer: 'Specialized training for representing buyers. Covers buyer agency, client loyalty, market analysis, and negotiation. Valuable with 2025 buyer representation changes. Offered by NAR.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc85',
+    category: 'Certifications',
+    question: 'What are common optional real estate certifications?',
+    answer: 'GRI (Graduate REALTOR® Institute), CRS (Certified Residential Specialist), ABR (Accredited Buyer\'s Rep), SRES (Seniors Real Estate Specialist), CNE (Certified Negotiation Expert), GREEN (eco-friendly homes). Each shows specialized expertise.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc86',
+    category: 'Mandatory Requirements',
+    question: 'What is required to maintain an active Massachusetts real estate license?',
+    answer: 'Complete 12 hours CE every 2 years, pay renewal fees on time, work under supervising broker (salesperson), maintain E&O insurance if required by broker, and comply with all real estate laws.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc87',
+    category: 'Mandatory Requirements',
+    question: 'Is E&O (Errors & Omissions) insurance mandatory in Massachusetts?',
+    answer: 'Not legally required by the state, but many brokerages require it as a condition of affiliation. Highly recommended for all agents to protect against negligence claims.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc88',
+    category: 'Broker Responsibilities',
+    question: 'What are a broker\'s supervisory responsibilities?',
+    answer: 'Review and approve all contracts, maintain trust accounts properly, ensure agents follow laws, provide training, maintain proper office records, and be responsible for actions of all affiliated agents.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc89',
+    category: 'Professional Development',
+    question: 'Why pursue optional certifications like GRI, CRS, or ABR?',
+    answer: 'Increases expertise and credibility, attracts more clients, justifies higher commission splits, provides competitive advantage, networking opportunities, and demonstrates commitment to professional excellence.',
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc90',
+    category: 'Licensing',
+    question: 'Can you transfer your license between brokers in Massachusetts?',
+    answer: 'Yes. Must notify the Massachusetts Board of Registration, complete transfer paperwork, and have new broker acceptance. Cannot practice during transfer period. Some brokerages may have non-compete clauses.',
+    difficulty: 'medium'
   }
 ];
 
@@ -1503,5 +1608,200 @@ export const quizQuestions = [
     ],
     correctIndex: 2,
     explanation: 'Earnest money must be promptly deposited into a trust account (usually within 1-3 business days per state law). It cannot be commingled with broker\'s personal funds.'
+  },
+  {
+    id: 'q76',
+    category: 'Continuing Education',
+    question: 'How many CE hours are required for Massachusetts license renewal?',
+    options: [
+      '6 hours every year',
+      '12 hours every 2 years',
+      '24 hours every 2 years',
+      'No CE required in MA'
+    ],
+    correctIndex: 1,
+    explanation: 'Massachusetts requires 12 hours of approved continuing education every 2 years for both salespersons and brokers to maintain an active license.'
+  },
+  {
+    id: 'q77',
+    category: 'Continuing Education',
+    question: 'An agent\'s license expired 3 months ago and they haven\'t completed CE. What happens?',
+    options: [
+      'Nothing, they can still practice',
+      'License is inactive - cannot practice until CE completed and reactivated',
+      'Automatic 6-month extension',
+      'CE requirement is waived'
+    ],
+    correctIndex: 1,
+    explanation: 'Once a license expires without completed CE, it becomes inactive. The agent cannot practice real estate until completing CE requirements and paying reactivation fees.'
+  },
+  {
+    id: 'q78',
+    category: 'Licensing',
+    question: 'What is the typical cost for Massachusetts salesperson license renewal (not including CE courses)?',
+    options: [
+      '$50-75',
+      '$150-200',
+      '$500-600',
+      '$1,000+'
+    ],
+    correctIndex: 1,
+    explanation: 'Massachusetts license renewal fees are approximately $150-200 for salespersons. This does not include CE course costs, which are additional, or association/MLS dues.'
+  },
+  {
+    id: 'q79',
+    category: 'Broker Requirements',
+    question: 'How many years of experience are required to become a broker in Massachusetts?',
+    options: [
+      '1 year',
+      '2 years',
+      '3 years within the last 5 years',
+      '5 years'
+    ],
+    correctIndex: 2,
+    explanation: 'Massachusetts requires 3 years of active experience as a licensed salesperson (within the past 5 years), plus completion of a 40-hour broker pre-license course and passing the broker exam.'
+  },
+  {
+    id: 'q80',
+    category: 'Broker Requirements',
+    question: 'What is the main advantage of having a broker license over a salesperson license?',
+    options: [
+      'Lower fees',
+      'Can work independently and own a brokerage',
+      'No CE requirements',
+      'Higher commission guaranteed'
+    ],
+    correctIndex: 1,
+    explanation: 'Brokers can work independently, own brokerages, and supervise other agents. Salespersons must work under a supervising broker and cannot operate independently.'
+  },
+  {
+    id: 'q81',
+    category: 'Certifications',
+    question: 'What does the GRI designation stand for?',
+    options: [
+      'General Real Estate Information',
+      'Graduate, REALTOR® Institute',
+      'Guaranteed Return Investment',
+      'Great Residential Income'
+    ],
+    correctIndex: 1,
+    explanation: 'GRI stands for Graduate, REALTOR® Institute. It\'s a 60+ hour advanced education program covering legal issues, technology, marketing, and professional standards.'
+  },
+  {
+    id: 'q82',
+    category: 'Certifications',
+    question: 'Which designation is specifically focused on representing buyers?',
+    options: [
+      'CRS',
+      'GRI',
+      'ABR (Accredited Buyer\'s Representative)',
+      'SRES'
+    ],
+    correctIndex: 2,
+    explanation: 'ABR (Accredited Buyer\'s Representative) is specialized training for representing buyers, covering buyer agency, loyalty, market analysis, and negotiation - especially valuable post-2025 changes.'
+  },
+  {
+    id: 'q83',
+    category: 'Certifications',
+    question: 'Approximately what percentage of REALTORS® hold the CRS designation?',
+    options: [
+      '3%',
+      '25%',
+      '50%',
+      '75%'
+    ],
+    correctIndex: 0,
+    explanation: 'Only about 3% of REALTORS® hold the CRS (Certified Residential Specialist) designation. It\'s the premier credential for residential sales, requiring production minimums and advanced training.'
+  },
+  {
+    id: 'q84',
+    category: 'Certifications',
+    question: 'Are professional designations like GRI, CRS, and ABR mandatory in Massachusetts?',
+    options: [
+      'Yes, must have at least one',
+      'Yes, GRI is mandatory',
+      'No, all are optional but recommended',
+      'Yes, for brokers only'
+    ],
+    correctIndex: 2,
+    explanation: 'All professional designations are optional. They demonstrate expertise and commitment, help attract clients, and can justify higher commission splits, but they are not legally required.'
+  },
+  {
+    id: 'q85',
+    category: 'Mandatory Requirements',
+    question: 'Which of the following is NOT mandatory to maintain an active MA license?',
+    options: [
+      'Complete 12 hours CE every 2 years',
+      'Pay renewal fees on time',
+      'Have NAR/MAR membership',
+      'Work under a supervising broker (for salespersons)'
+    ],
+    correctIndex: 2,
+    explanation: 'NAR/MAR membership is not legally mandatory, though most brokerages require it for MLS access. CE completion, fee payment, and broker supervision (for salespersons) are mandatory.'
+  },
+  {
+    id: 'q86',
+    category: 'Mandatory Requirements',
+    question: 'Is E&O insurance legally required in Massachusetts?',
+    options: [
+      'Yes, for all licensees',
+      'Yes, but only for brokers',
+      'No, but many brokerages require it',
+      'Only for first-year agents'
+    ],
+    correctIndex: 2,
+    explanation: 'E&O insurance is NOT legally required by Massachusetts, but most brokerages require it as a condition of affiliation. It\'s highly recommended to protect against negligence claims.'
+  },
+  {
+    id: 'q87',
+    category: 'Broker Responsibilities',
+    question: 'Who is responsible if an affiliated agent violates real estate law?',
+    options: [
+      'Only the agent',
+      'Only the broker',
+      'Both the agent and the supervising broker',
+      'Neither, if unintentional'
+    ],
+    correctIndex: 2,
+    explanation: 'Both the agent and broker can be held responsible. The broker has supervisory responsibility for all affiliated agents and must ensure they follow laws and proper procedures.'
+  },
+  {
+    id: 'q88',
+    category: 'Broker Responsibilities',
+    question: 'What must a broker do with all contracts their agents prepare?',
+    options: [
+      'Nothing, agents handle their own',
+      'Review and approve them',
+      'File them with the state',
+      'Only review if problems arise'
+    ],
+    correctIndex: 1,
+    explanation: 'Brokers must review and approve all contracts prepared by their agents. This is part of their supervisory responsibility to ensure legal compliance and protect clients.'
+  },
+  {
+    id: 'q89',
+    category: 'Licensing',
+    question: 'Can you practice real estate while your license transfer between brokers is processing?',
+    options: [
+      'Yes, with written permission',
+      'Yes, for existing clients only',
+      'No, cannot practice during transfer',
+      'Yes, if under 30 days'
+    ],
+    correctIndex: 2,
+    explanation: 'You cannot practice real estate during a license transfer. The license must be officially transferred to the new broker before you can conduct any real estate activities under that broker.'
+  },
+  {
+    id: 'q90',
+    category: 'Professional Development',
+    question: 'What is a key benefit of earning professional certifications like GRI or ABR?',
+    options: [
+      'Avoid CE requirements',
+      'Automatically higher commission',
+      'Increased credibility and client attraction',
+      'No license fees'
+    ],
+    correctIndex: 2,
+    explanation: 'Professional certifications increase your credibility, demonstrate expertise, attract more clients, and can help justify higher commission splits. They show commitment to professional excellence but don\'t waive other requirements.'
   }
 ];
