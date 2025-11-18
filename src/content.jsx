@@ -1453,30 +1453,65 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li><strong>Inspection:</strong> By local fire department</li>
         </ul>
 
-        <h3>18.6 Trust Accounts</h3>
-        <div className="trust-accounts">
-          <p><strong>Purpose:</strong> Hold client funds (deposits, rents) separate from broker's funds</p>
-          
-          <h4>Requirements:</h4>
-          <ul>
-            <li>Separate bank account from operating funds</li>
-            <li>Detailed records of all transactions</li>
-            <li>Cannot comingle with personal or business funds</li>
-            <li>Regular reconciliation</li>
-            <li>State board can audit anytime</li>
-          </ul>
-
-          <h4>Deposits Held Until:</h4>
-          <ul>
-            <li>Closing (released per contract)</li>
-            <li>Transaction cancels (returned per contract terms)</li>
-            <li>Dispute resolved (court order or agreement)</li>
-          </ul>
+        <h3>18.6 Escrow Accounts & Record Keeping</h3>
+        <div className="escrow-accounts">
+          <h4>Escrow Account Requirements:</h4>
+          <p><strong>Immediate Deposit:</strong> Immediately upon acceptance of Contract to Purchase, earnest money 
+          MUST be deposited into broker's Escrow Account. Broker has no claims to the funds - only acts as an 
+          Escrow Agent with fiduciary responsibilities.</p>
 
           <p className="warning">
-            <strong>⚠️ Critical:</strong> Mishandling trust accounts = immediate license suspension + criminal charges. 
-            Never "borrow" from trust accounts, even temporarily!
+            <strong>⚠️ VIP NOTE:</strong> Contract may not be binding until the earnest money is received by the 
+            listing agent/brokerage. Acceptance alone may not create a binding contract - deposit receipt is critical!
           </p>
+
+          <h4>NO COMMINGLING OF FUNDS:</h4>
+          <p className="warning">
+            <strong>Absolutely Prohibited:</strong> Cannot mix escrow money with operating account. Escrow account 
+            can be 1 account for all escrow funds, but MUST be completely separate from broker's personal or business 
+            operating funds. Violation = license suspension + criminal charges.
+          </p>
+
+          <h4>When Funds Can Be Released:</h4>
+          <p>Funds can ONLY be released:</p>
+          <ul>
+            <li><strong>At consummation of sale</strong> (closing)</li>
+            <li><strong>Upon mutual consent/release</strong> from both parties</li>
+            <li><strong>Court ordered directive</strong></li>
+          </ul>
+          <p><em>Account is either interest or non-interest bearing. Cannot release without proper authorization.</em></p>
+
+          <h4>Record Keeping Requirements:</h4>
+          <div className="record-keeping">
+            <p><strong>Copies of Checks:</strong> Keep for <strong>3 YEARS</strong></p>
+            <p><strong>Checkbook Register:</strong> Keep for <strong>10 YEARS</strong></p>
+
+            <h4>Records Must Clearly Indicate:</h4>
+            <ul>
+              <li>Date and from whom deposit was given</li>
+              <li>Date deposited</li>
+              <li>Source of money</li>
+              <li>Check number</li>
+              <li>Date of withdrawal</li>
+              <li>Name of persons receiving money</li>
+              <li>Any other pertinent information</li>
+            </ul>
+          </div>
+
+          <h4>Board Inspection:</h4>
+          <p>Records are subject to inspection by the Board of Registration or its agents at any time. Must maintain 
+          complete and accurate records at all times.</p>
+
+          <h4>Check Signing Authority:</h4>
+          <p className="warning">
+            <strong>BROKER ONLY:</strong> Only a BROKER shall be permitted to have check signing authority on escrow 
+            accounts. Bookkeepers, accountants, salespeople, or unlicensed assistants CANNOT have signing authority. 
+            This is a non-delegable broker responsibility.
+          </p>
+
+          <h4>No Salesperson May Hold Client Funds:</h4>
+          <p>Salespeople cannot hold earnest money checks. All client funds must go directly to broker's escrow account. 
+          Salesperson holding client funds = violation of license law.</p>
         </div>
 
         <p className="highlight">

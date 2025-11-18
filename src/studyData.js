@@ -1329,6 +1329,62 @@ export const flashcards = [
     question: 'What are key components of a WISP compliance program?',
     answer: 'Written security plan, employee training, access controls (limit who can access data), encryption of electronic data, secure disposal of records, regular security assessments, vendor management, and incident response plan.',
     difficulty: 'hard'
+  },
+  {
+    id: 'fc191',
+    category: 'Escrow Accounts',
+    question: 'When must earnest money be deposited into broker\'s escrow account?',
+    answer: 'IMMEDIATELY upon acceptance of Contract to Purchase. Money MUST be deposited into broker\'s escrow account. Broker has no claims to funds, only acts as Escrow Agent with fiduciary responsibilities. No salesperson may hold client funds.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc192',
+    category: 'Escrow Accounts',
+    question: 'When does a contract become binding in relation to earnest money?',
+    answer: 'VIP NOTE: Contract may not be binding until the earnest money is received by the listing agent/brokerage. Acceptance alone may not create binding contract - deposit receipt is critical.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc193',
+    category: 'Escrow Accounts',
+    question: 'What is the rule about commingling escrow funds?',
+    answer: 'NO COMMINGLING OF FUNDS - Cannot mix escrow money with operating account. Escrow account can be 1 account for all escrow funds, but MUST be completely separate from broker\'s personal or business operating funds.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc194',
+    category: 'Escrow Accounts',
+    question: 'When can funds be released from escrow account?',
+    answer: 'Funds can ONLY be released at: (1) consummation of sale, (2) upon mutual consent/release, or (3) court ordered directive. Account is either interest or non-interest bearing. Cannot release without proper authorization.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc195',
+    category: 'Record Keeping',
+    question: 'How long must escrow account records be kept?',
+    answer: 'Copies of checks: keep for 3 YEARS. Checkbook register: keep for 10 YEARS. Records must clearly indicate date, from whom deposit given, date deposited, source of money, check number, withdrawals, and persons receiving money.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc196',
+    category: 'Record Keeping',
+    question: 'What must escrow account records show?',
+    answer: 'Date and from whom deposit given, date deposited, source of money, check number. Date of withdrawal, name of persons receiving money, and any other pertinent info. Records subject to inspection by the Board or agents.',
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc197',
+    category: 'Escrow Accounts',
+    question: 'Who can have check signing authority on escrow accounts?',
+    answer: 'Only a BROKER shall be permitted to have check signing authority. Bookkeepers, accountants, salespeople, or unlicensed assistants CANNOT have signing authority on escrow accounts. Broker-only responsibility.',
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc198',
+    category: 'Escrow Accounts',
+    question: 'What are the broker\'s responsibilities regarding escrow accounts?',
+    answer: 'Acts as Escrow Agent with fiduciary responsibilities, maintains separate account, no commingling, keeps detailed records (checks 3 yrs, register 10 yrs), only broker can sign checks, subject to Board inspection, releases funds only per legal requirements.',
+    difficulty: 'hard'
   }
 ];
 
@@ -3803,5 +3859,109 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'WISP requires written security plan, employee training, access controls, encryption, secure disposal, regular assessments, vendor management, and incident response plan.'
+  },
+  {
+    id: 'q191',
+    category: 'Escrow Accounts',
+    question: 'When must earnest money be deposited into the broker\'s escrow account?',
+    options: [
+      'Within 7 days',
+      'Immediately upon acceptance of Contract to Purchase',
+      'At closing',
+      'When P&S is signed'
+    ],
+    correctIndex: 1,
+    explanation: 'Earnest money MUST be deposited IMMEDIATELY upon acceptance of Contract to Purchase into broker\'s escrow account. Broker acts as Escrow Agent with fiduciary responsibilities.'
+  },
+  {
+    id: 'q192',
+    category: 'Escrow Accounts',
+    question: 'What is the rule about commingling escrow funds?',
+    options: [
+      'Can mix with operating funds temporarily',
+      'NO COMMINGLING - must be completely separate from operating account',
+      'Can combine if tracked separately',
+      'Allowed with written permission'
+    ],
+    correctIndex: 1,
+    explanation: 'NO COMMINGLING OF FUNDS - Cannot mix escrow money with operating account. Escrow account MUST be completely separate from broker\'s personal or business operating funds.'
+  },
+  {
+    id: 'q193',
+    category: 'Escrow Accounts',
+    question: 'When can funds be released from an escrow account?',
+    options: [
+      'Whenever broker decides',
+      'Only at consummation of sale, mutual consent/release, or court order',
+      'When buyer requests',
+      'After 30 days'
+    ],
+    correctIndex: 1,
+    explanation: 'Funds can ONLY be released at: (1) consummation of sale, (2) upon mutual consent/release, or (3) court ordered directive. Cannot release without proper authorization.'
+  },
+  {
+    id: 'q194',
+    category: 'Record Keeping',
+    question: 'How long must copies of escrow account checks be kept?',
+    options: [
+      '1 year',
+      '3 years',
+      '5 years',
+      '10 years'
+    ],
+    correctIndex: 1,
+    explanation: 'Copies of checks must be kept for 3 YEARS. Checkbook register must be kept for 10 YEARS. Records subject to inspection by the Board.'
+  },
+  {
+    id: 'q195',
+    category: 'Record Keeping',
+    question: 'How long must the escrow account checkbook register be kept?',
+    options: [
+      '3 years',
+      '5 years',
+      '10 years',
+      'Forever'
+    ],
+    correctIndex: 2,
+    explanation: 'Checkbook register must be kept for 10 YEARS. Copies of checks must be kept for 3 years. Records must show all deposits and withdrawals with complete details.'
+  },
+  {
+    id: 'q196',
+    category: 'Escrow Accounts',
+    question: 'Who can have check signing authority on broker escrow accounts?',
+    options: [
+      'Broker, salesperson, or bookkeeper',
+      'Only the broker',
+      'Anyone with authorization',
+      'Broker or accountant'
+    ],
+    correctIndex: 1,
+    explanation: 'Only a BROKER shall be permitted to have check signing authority. Bookkeepers, accountants, salespeople, or unlicensed assistants CANNOT have signing authority on escrow accounts.'
+  },
+  {
+    id: 'q197',
+    category: 'Escrow Accounts',
+    question: 'What must escrow account records clearly indicate?',
+    options: [
+      'Just the amounts',
+      'Date, from whom deposit given, date deposited, source, check number, withdrawals, recipients',
+      'Only deposits',
+      'Final balances only'
+    ],
+    correctIndex: 1,
+    explanation: 'Records must clearly show: date and from whom deposit given, date deposited, source of money, check number, date of withdrawal, name of persons receiving money, and any other pertinent info.'
+  },
+  {
+    id: 'q198',
+    category: 'Escrow Accounts',
+    question: 'What is the VIP NOTE about contract binding and earnest money?',
+    options: [
+      'Contract always binding when signed',
+      'Contract may not be binding until earnest money received by listing agent/brokerage',
+      'Earnest money not important',
+      'Can wait 30 days for deposit'
+    ],
+    correctIndex: 1,
+    explanation: 'VIP NOTE: Contract may not be binding until the earnest money is received by the listing agent/brokerage. Acceptance alone may not create binding contract - deposit receipt is critical.'
   }
 ];
