@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sections } from './content';
+import { sections } from './content.jsx';
 
 export default function App() {
   const [activeId, setActiveId] = useState(sections[0].id);
