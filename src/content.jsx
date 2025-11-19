@@ -5960,11 +5960,231 @@ Always understand your agent’s split and cap – it influences incentives.`}
           protections can make the difference between foreclosure and keeping a home.
         </p>
 
+        <h3>23.14 Federal Reserve System - The Fed</h3>
+        <p className="highlight">
+          <strong>Understanding the Fed is crucial for real estate professionals</strong> - Federal Reserve 
+          policies directly impact mortgage rates, lending availability, and the housing market.
+        </p>
+
+        <h4>What is the Federal Reserve?</h4>
+        <p>The Fed operates to maintain sound credit conditions, to help counteract inflationary and 
+        deflationary trends, and to create a favorable economic climate.</p>
+
+        <h4>Federal Reserve Structure:</h4>
+        <ul>
+          <li><strong>12 Districts:</strong> System divides country into 12 districts, each served by a Federal Reserve Bank</li>
+          <li><strong>Regional Banks:</strong> Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, San Francisco</li>
+          <li><strong>Massachusetts:</strong> Part of First District, served by Federal Reserve Bank of Boston</li>
+          <li><strong>Board of Governors:</strong> 7-member board in Washington D.C. oversees entire system</li>
+          <li><strong>FOMC:</strong> Federal Open Market Committee sets monetary policy (meets 8 times/year)</li>
+        </ul>
+
+        <h4>How the Fed Regulates Money Flow:</h4>
+        <p className="highlight">
+          <strong>Key Concept:</strong> The Federal Reserve indirectly regulates the flow of money in the 
+          marketplace through its banks by controlling their reserve requirements and discount rates.
+        </p>
+
+        <div className="fed-tools">
+          <h5>1️⃣ RESERVE REQUIREMENTS</h5>
+          <p><strong>Definition:</strong> Fed requires member banks to keep a certain amount of reserve on hand as 
+          "reserve funds" that are unavailable for loans or other use.</p>
+          
+          <p><strong>Purpose:</strong> Designed to protect consumer deposits.</p>
+
+          <h6>How Reserve Requirements Work:</h6>
+          <ul>
+            <li><strong>Banks hold reserves:</strong> Typically 10% of deposits must be held in reserve</li>
+            <li><strong>Limits lending:</strong> If bank has $100M deposits, can only lend $90M</li>
+            <li><strong>Money multiplier effect:</strong> Controls how much money banks create through lending</li>
+          </ul>
+
+          <h6>Impact on Economy:</h6>
+          <ul>
+            <li><strong>Increase reserve requirements:</strong>
+              <ul>
+                <li>Fed limits amount of money banks can use to make loans</li>
+                <li>Causes interest rates to increase</li>
+                <li>Slows down overactive economy</li>
+                <li>Opposite: decreases reserve → allows more money to be loaned in marketplace</li>
+                <li>Thereby boosting the economy</li>
+              </ul>
+            </li>
+            <li><strong>Decrease reserve requirements:</strong>
+              <ul>
+                <li>Banks can lend more money</li>
+                <li>Interest rates decrease</li>
+                <li>Stimulates borrowing and economy</li>
+                <li>More mortgages available</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h5>2️⃣ DISCOUNT RATES</h5>
+          <p><strong>Definition:</strong> Banks borrow money from Fed Reserve to expand lending operations. 
+          The interest rate the district federal reserve banks charge for use of the money is called "discount rate."</p>
+
+          <h6>How Discount Rates Work:</h6>
+          <ul>
+            <li><strong>Bank needs funds:</strong> Borrows from Federal Reserve at discount rate</li>
+            <li><strong>Sets baseline:</strong> This rate is the basis for what banks charge their loan customers</li>
+            <li><strong>Ripple effect:</strong> Discount rate influences all interest rates in economy</li>
+          </ul>
+
+          <h6>Impact on Mortgage Rates:</h6>
+          <ul>
+            <li><strong>When Fed rates are high:</strong>
+              <ul>
+                <li>Bank rates are high</li>
+                <li>Mortgage rates increase</li>
+                <li>Fewer people can afford to buy</li>
+                <li>Housing market slows down</li>
+                <li>Cools inflation</li>
+              </ul>
+            </li>
+            <li><strong>When Fed rate is low:</strong>
+              <ul>
+                <li>Banks rate is low</li>
+                <li>Mortgage rates decrease</li>
+                <li>More people can afford to buy</li>
+                <li>Housing market heats up</li>
+                <li>Stimulates economy</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h5>3️⃣ OPEN MARKET ACTIVITIES</h5>
+          <p><strong>Definition:</strong> The Fed can buy or sell U.S. Treasury securities and, by doing so, 
+          change the money supply.</p>
+
+          <h6>How Open Market Operations Work:</h6>
+          <ul>
+            <li><strong>Fed buys securities:</strong>
+              <ul>
+                <li>Money supply increases</li>
+                <li>Money flows from GOVT to investors</li>
+                <li>Economy expands</li>
+                <li>More money available for lending</li>
+                <li>Interest rates typically decrease</li>
+              </ul>
+            </li>
+            <li><strong>Fed sells securities:</strong>
+              <ul>
+                <li>Money supply decreases</li>
+                <li>Money flows from investors to GOVT</li>
+                <li>Economy contracts</li>
+                <li>Less money available for lending</li>
+                <li>Interest rates typically increase</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h6>Impact on Real Estate:</h6>
+          <ul>
+            <li><strong>Quantitative Easing (QE):</strong> Fed buying securities to inject money into economy</li>
+            <li><strong>Mortgage-Backed Securities:</strong> Fed can buy MBS to directly lower mortgage rates</li>
+            <li><strong>Historical Example:</strong> 2008-2014, Fed bought trillions in MBS to stabilize housing market</li>
+            <li><strong>Tightening:</strong> Fed selling securities reduces money supply, raises rates</li>
+          </ul>
+        </div>
+
+        <h4>The Fed's Dual Mandate:</h4>
+        <ul>
+          <li>📈 <strong>Maximum Employment:</strong> Keep unemployment low</li>
+          <li>💰 <strong>Price Stability:</strong> Keep inflation around 2% target</li>
+        </ul>
+
+        <h4>Fed Tempers the Economy:</h4>
+        <p>The Fed also tempers the economy through its open-market operations.</p>
+        <ul>
+          <li><strong>Overheating Economy:</strong> Fed raises rates, tightens money supply, slows growth</li>
+          <li><strong>Recession/Slow Growth:</strong> Fed lowers rates, increases money supply, stimulates growth</li>
+          <li><strong>Balancing Act:</strong> Too much stimulus = inflation, too little = recession</li>
+        </ul>
+
+        <h4>Why Real Estate Agents Need to Understand the Fed:</h4>
+        <div className="agent-fed-knowledge">
+          <h5>📊 Market Timing:</h5>
+          <ul>
+            <li>Low rates = more buyers can afford homes</li>
+            <li>Rising rates = buyer urgency increases ("buy before rates go higher")</li>
+            <li>Rate changes affect refinancing activity</li>
+          </ul>
+
+          <h5>💬 Client Education:</h5>
+          <ul>
+            <li>Explain why mortgage rates are changing</li>
+            <li>"Fed raised rates" is why mortgage rates went up</li>
+            <li>Help buyers understand rate lock importance</li>
+            <li>Timing decisions (wait for lower rates vs. buy now)</li>
+          </ul>
+
+          <h5>🏠 Market Conditions:</h5>
+          <ul>
+            <li><strong>Low Rate Environment:</strong> Seller's market, multiple offers, bidding wars</li>
+            <li><strong>High Rate Environment:</strong> Buyer's market, more negotiation power, slower sales</li>
+            <li><strong>Rate Changes:</strong> Can shift market from hot to cold quickly</li>
+          </ul>
+
+          <h5>📈 Economic Indicators to Watch:</h5>
+          <ul>
+            <li><strong>Fed Funds Rate:</strong> Target rate for overnight bank lending</li>
+            <li><strong>FOMC Meetings:</strong> 8 per year - rate decisions announced</li>
+            <li><strong>Fed Chairman Statements:</strong> Jerome Powell's speeches move markets</li>
+            <li><strong>Meeting Minutes:</strong> Published 3 weeks after meetings</li>
+            <li><strong>Economic Data:</strong> Jobs report, inflation (CPI), GDP growth</li>
+          </ul>
+        </div>
+
+        <h4>Recent History - Fed Actions:</h4>
+        <ul>
+          <li><strong>2008-2015:</strong> Near-zero rates, QE to rescue economy from Great Recession</li>
+          <li><strong>2015-2018:</strong> Gradual rate increases as economy recovered</li>
+          <li><strong>2020:</strong> Emergency rate cuts to 0% due to COVID-19 pandemic</li>
+          <li><strong>2022-2023:</strong> Aggressive rate increases (0% → 5.25-5.5%) to fight inflation</li>
+          <li><strong>Impact:</strong> Mortgage rates went from 3% to 7%+ in 18 months</li>
+        </ul>
+
+        <h4>Fed vs. Mortgage Rates:</h4>
+        <p className="warning">
+          <strong>⚠️ Important Distinction:</strong> The Fed does NOT directly set mortgage rates. The Fed sets 
+          the Federal Funds Rate (overnight bank lending rate) and the Discount Rate (rate banks borrow from Fed). 
+          Mortgage rates are influenced by these rates but also by:
+        </p>
+        <ul>
+          <li>10-year Treasury bond yields (biggest influence)</li>
+          <li>Mortgage-backed securities market</li>
+          <li>Inflation expectations</li>
+          <li>Economic growth outlook</li>
+          <li>Credit markets and spreads</li>
+          <li>Lender competition and margins</li>
+        </ul>
+
+        <div className="example">
+          <h5>Real-World Example:</h5>
+          <p><strong>Scenario:</strong> Fed announces 0.25% rate increase</p>
+          <ul>
+            <li><strong>Fed Funds Rate:</strong> Goes from 5.00% to 5.25%</li>
+            <li><strong>Bank Prime Rate:</strong> Increases from 8.00% to 8.25% (usually Fed rate + 3%)</li>
+            <li><strong>Mortgage Rates:</strong> May increase 0.25% to 0.50% (not always exact correlation)</li>
+            <li><strong>30-Year Fixed:</strong> Might go from 7.0% to 7.25-7.5%</li>
+            <li><strong>Buyer Impact:</strong> $400K loan - payment increases ~$70-$140/month</li>
+            <li><strong>Affordability:</strong> Reduces buying power by ~$10,000-$20,000</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Agent Takeaway:</strong> Monitor Fed announcements and rate trends. When the Fed signals rate 
+          changes, it creates urgency or caution in buyers. Use this knowledge to counsel clients on timing 
+          and help them understand the broader economic factors affecting their home purchase or sale. Subscribe 
+          to Fed news and explain rate impacts in simple terms clients can understand.
+        </p>
+
         <p className="highlight">
           <strong>Remember:</strong> Understanding financing helps you guide buyers realistically and spot 
           potential issues early. Always defer specific loan questions to lenders. Strong pre-approval = 
           stronger offer. Financing contingencies protect buyers but need clear deadlines. Know Dodd-Frank 
-          protections to help clients in distress.
+          protections to help clients in distress. Understanding the Fed helps you anticipate market shifts.
         </p>
       </>
     )
