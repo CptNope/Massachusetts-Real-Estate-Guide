@@ -2482,6 +2482,86 @@ ${brandingEmail || ''}`;
             </table>
           </div>
 
+          <div className="security-debt-section">
+            <h4>🔒 Security & Debt</h4>
+            
+            <div className="mortgage-property-box">
+              <h5>What Property May Be Mortgaged?</h5>
+              <ul className="property-mortgage-list">
+                <li>
+                  <strong>Any interest in real estate</strong> that may be sold, may also be pledged as security for a debt.
+                </li>
+                <li>
+                  A person <strong>cannot convey greater rights</strong> in property than they actually have.
+                </li>
+                <li className="example-item">
+                  <strong>EXAMPLE:</strong> An owner of a Fee Simple Estate can mortgage the whole property & it's rights, 
+                  but a large corporation renting space in a shopping center may mortgage it's leasehold interest to finance 
+                  remodeling work.
+                </li>
+              </ul>
+            </div>
+
+            <div className="loan-instruments-box">
+              <h5>📄 LOAN INSTRUMENTS</h5>
+              <p className="instruments-intro">
+                Consist of <strong>2 parts: the debt itself and security for the debt.</strong>
+              </p>
+              
+              <div className="instruments-list">
+                <div className="instrument-card promissory-note">
+                  <div className="instrument-icon">📝</div>
+                  <div className="instrument-content">
+                    <h6>Promissory Note</h6>
+                    <p>
+                      Written promise to repay a debt in specific installments. <strong>Unconditional promise to repay.</strong> 
+                      The note states the amount of debt (loan or "principal") and the method of payment. 
+                      Signed by all parties who have an interest in the property.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="instrument-card mortgage-deed">
+                  <div className="instrument-icon">🏛️</div>
+                  <div className="instrument-content">
+                    <h6>Mortgage or Deed of Trust</h6>
+                    <p>
+                      The instrument which actually provides <strong>security or "collateral"</strong> for the debt. 
+                      The instrument is a <mark className="highlight-yellow">pledge of property to secure the loan</mark>. 
+                      When recorded, it becomes a lien against. Because a pledge is not legally effective unless there 
+                      is a debt to secure, <strong>so the promissory note is fundamental to the transaction.</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="instrument-card hypothecate">
+                  <div className="instrument-icon">🔑</div>
+                  <div className="instrument-content">
+                    <h6>Hypothecate</h6>
+                    <p>
+                      Is to use <strong>real estate as security for the loan without giving up possession.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mortgagor-mortgagee-box">
+              <div className="definition-pair">
+                <div className="definition-item borrower">
+                  <strong>MORTGAGOR</strong>
+                  <span>=</span>
+                  <strong>Borrower</strong>
+                </div>
+                <div className="definition-item lender">
+                  <strong>MORTGAGEE</strong>
+                  <span>=</span>
+                  <strong>Lender</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="agent-implications">
             <h4>💡 Implications for MA Real Estate Agents:</h4>
             <div className="implications-grid">

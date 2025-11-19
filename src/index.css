@@ -3417,6 +3417,211 @@ html {
   line-height: 1.6;
 }
 
+/* Security & Debt Section */
+.security-debt-section {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 2px solid #8b5cf6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.security-debt-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #6b21a8;
+  font-size: 1.3rem;
+}
+
+.mortgage-property-box {
+  background: white;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.mortgage-property-box h5 {
+  margin: 0 0 0.75rem 0;
+  color: #6b21a8;
+  font-size: 1.1rem;
+}
+
+.property-mortgage-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #6b21a8;
+}
+
+.property-mortgage-list li {
+  margin: 0.75rem 0;
+  line-height: 1.7;
+}
+
+.property-mortgage-list strong {
+  color: #7c3aed;
+}
+
+.example-item {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 0.75rem;
+  margin: 1rem 0 0 -1.5rem;
+  padding-left: 1.5rem;
+  border-radius: 4px;
+  color: #78350f;
+}
+
+.example-item strong {
+  color: #92400e;
+}
+
+.loan-instruments-box {
+  background: white;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.loan-instruments-box h5 {
+  margin: 0 0 0.75rem 0;
+  color: #6b21a8;
+  font-size: 1.1rem;
+}
+
+.instruments-intro {
+  margin: 0 0 1rem 0;
+  color: #6b21a8;
+  font-size: 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.instruments-intro strong {
+  color: #1e40af;
+}
+
+.instruments-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.instrument-card {
+  display: flex;
+  gap: 1rem;
+  background: #faf5ff;
+  border: 2px solid #e9d5ff;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.instrument-card:hover {
+  background: #f3e8ff;
+  border-color: #c4b5fd;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.promissory-note {
+  border-left: 4px solid #dc2626;
+}
+
+.mortgage-deed {
+  border-left: 4px solid #f59e0b;
+}
+
+.hypothecate {
+  border-left: 4px solid #10b981;
+}
+
+.instrument-icon {
+  flex-shrink: 0;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e9d5ff, #c4b5fd);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+}
+
+.instrument-content {
+  flex: 1;
+}
+
+.instrument-content h6 {
+  margin: 0 0 0.5rem 0;
+  color: #6b21a8;
+  font-size: 1.1rem;
+}
+
+.instrument-content p {
+  margin: 0;
+  color: #6b21a8;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.instrument-content strong {
+  color: #7c3aed;
+}
+
+.instrument-content mark {
+  background: #fef3c7;
+  color: #78350f;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.mortgagor-mortgagee-box {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.definition-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.definition-item {
+  background: white;
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.borrower {
+  border: 3px solid #10b981;
+}
+
+.lender {
+  border: 3px solid #f59e0b;
+}
+
+.definition-item strong {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.definition-item span {
+  color: #6b7280;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 /* MA Sales Contracts Panel */
 .sales-contracts-panel {
   background: white;
