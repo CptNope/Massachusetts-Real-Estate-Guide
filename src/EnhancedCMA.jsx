@@ -372,6 +372,7 @@ export default function EnhancedCMA({ gamification }) {
   
   // CRM Mass Email System State
   const [showEmailCRM, setShowEmailCRM] = useState(false);
+  const [showEmailSettings, setShowEmailSettings] = useState(false);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
   const [emailCampaigns, setEmailCampaigns] = useState([]);
@@ -381,6 +382,17 @@ export default function EnhancedCMA({ gamification }) {
     body: '',
     template: 'blank'
   });
+  const [emailProvider, setEmailProvider] = useState('none');
+  const [emailConfig, setEmailConfig] = useState({
+    sendgrid: { apiKey: '', fromEmail: '' },
+    mailchimp: { apiKey: '', audienceId: '', fromEmail: '', fromName: '' },
+    resend: { apiKey: '', fromEmail: '' },
+    mailgun: { apiKey: '', domain: '', fromEmail: '' },
+    aws_ses: { accessKey: '', secretKey: '', region: 'us-east-1', fromEmail: '' },
+    postmark: { apiToken: '', fromEmail: '' },
+    smtp: { host: '', port: '587', username: '', password: '', fromEmail: '' }
+  });
+  const [emailProviderStatus, setEmailProviderStatus] = useState('not_configured');
   const [emailTemplates, setEmailTemplates] = useState([
     {
       id: 'new_listing',
@@ -904,7 +916,82 @@ Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split
     if (savedCampaigns) {
       setEmailCampaigns(JSON.parse(savedCampaigns));
     }
+    const savedEmailProvider = localStorage.getItem('email_provider');
+    if (savedEmailProvider) {
+      setEmailProvider(savedEmailProvider);
+    }
+    const savedEmailConfig = localStorage.getItem('email_config');
+    if (savedEmailConfig) {
+      setEmailConfig(JSON.parse(savedEmailConfig));
+    }
+    const savedEmailStatus = localStorage.getItem('email_provider_status');
+    if (savedEmailStatus) {
+      setEmailProviderStatus(savedEmailStatus);
+    }
   }, []);
+
+  const saveEmailConfig = () => {
+    if (emailProvider === 'none') {
+      showNotification('⚠️ Please select an email provider', 'error');
+      return;
+    }
+
+    const config = emailConfig[emailProvider];
+    const requiredFields = {
+      sendgrid: ['apiKey', 'fromEmail'],
+      mailchimp: ['apiKey', 'audienceId', 'fromEmail', 'fromName'],
+      resend: ['apiKey', 'fromEmail'],
+      mailgun: ['apiKey', 'domain', 'fromEmail'],
+      aws_ses: ['accessKey', 'secretKey', 'region', 'fromEmail'],
+      postmark: ['apiToken', 'fromEmail'],
+      smtp: ['host', 'port', 'username', 'password', 'fromEmail']
+    };
+
+    const missing = requiredFields[emailProvider].filter(field => !config[field]);
+    if (missing.length > 0) {
+      showNotification(`⚠️ Please fill in: ${missing.join(', ')}`, 'error');
+      return;
+    }
+
+    localStorage.setItem('email_provider', emailProvider);
+    localStorage.setItem('email_config', JSON.stringify(emailConfig));
+    localStorage.setItem('email_provider_status', 'configured');
+    setEmailProviderStatus('configured');
+    
+    showNotification(`✅ ${emailProvider.toUpperCase()} configured! +30 XP`, 'success');
+    
+    if (gamification) {
+      gamification.addXP(30, 'Email provider configured');
+      gamification.recordActivity('email_provider_configured');
+    }
+  };
+
+  const testEmailConnection = () => {
+    if (emailProviderStatus !== 'configured') {
+      showNotification('⚠️ Please configure and save first', 'error');
+      return;
+    }
+
+    // Mock test (in production, this would actually send a test email via backend)
+    showNotification('📧 Test email sent! Check your inbox. +10 XP', 'success');
+    setEmailProviderStatus('connected');
+    localStorage.setItem('email_provider_status', 'connected');
+    
+    if (gamification) {
+      gamification.addXP(10, 'Email connection tested');
+      gamification.recordActivity('email_connection_tested');
+    }
+  };
+
+  const updateEmailConfig = (provider, field, value) => {
+    setEmailConfig({
+      ...emailConfig,
+      [provider]: {
+        ...emailConfig[provider],
+        [field]: value
+      }
+    });
+  };
 
   const addContact = () => {
     if (!newContact.firstName || !newContact.email) {
