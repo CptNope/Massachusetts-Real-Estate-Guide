@@ -5563,5 +5563,486 @@ export const quizQuestions = [
     ],
     correctIndex: 1,
     explanation: 'NO! Exemptions very narrow: Religious organizations (non-commercial only), private clubs, senior housing 55+/62+, owner-occupied 3 units or fewer (but LOSES exemption if use broker/agent!). If you\'re involved as real estate professional, exemptions DON\'T APPLY. Always assume Fair Housing applies. Fair Housing is NON-NEGOTIABLE.'
+  },
+  {
+    id: 'q279',
+    category: 'Financing - ARMs',
+    question: 'In an Adjustable Rate Mortgage (ARM), what is the "index"?',
+    options: [
+      'The profit margin charged by the lender',
+      'A financial indicator like SOFR or Treasury rates that the rate is tied to',
+      'The maximum rate cap over the life of the loan',
+      'The adjustment period between rate changes'
+    ],
+    correctIndex: 1,
+    explanation: 'The index is a financial indicator (SOFR, Treasury rates, Cost of Funds) that moves up/down with market conditions. The ARM rate = Index + Margin. The index is beyond borrower and lender control.'
+  },
+  {
+    id: 'q280',
+    category: 'Financing - ARMs',
+    question: 'If an ARM has an index of 1.5% and a margin of 2%, what is the total interest rate?',
+    options: [
+      '0.5%',
+      '1.5%',
+      '2%',
+      '3.5%'
+    ],
+    correctIndex: 3,
+    explanation: 'Interest rate = Index + Margin. 1.5% + 2% = 3.5%. The margin is fixed for the life of the loan, but the index changes with market conditions.'
+  },
+  {
+    id: 'q281',
+    category: 'Financing - ARMs',
+    question: 'What is a "5/1 ARM"?',
+    options: [
+      'Fixed for 5 months, then adjusts every 1 month',
+      'Fixed for 5 years, then adjusts every 1 year thereafter',
+      'Adjusts 5 times in the first year',
+      'Has a 5% rate with 1% margin'
+    ],
+    correctIndex: 1,
+    explanation: 'A 5/1 ARM is fixed for the first 5 years, then adjusts every 1 year after that. Common ARM types: 5/1, 7/1, 10/1, 3/1.'
+  },
+  {
+    id: 'q282',
+    category: 'Financing - ARMs',
+    question: 'What is "negative amortization" in an ARM?',
+    options: [
+      'Paying extra principal each month',
+      'When payment cap limits payment but rate increased, causing loan balance to grow',
+      'When the ARM rate decreases',
+      'Refinancing the loan'
+    ],
+    correctIndex: 1,
+    explanation: 'Negative amortization occurs when the payment cap limits your payment but the rate increased, so the shortfall is added to principal. You end up owing MORE than you borrowed!'
+  },
+  {
+    id: 'q283',
+    category: 'Financing - ARMs',
+    question: 'What is a typical periodic rate cap for ARMs?',
+    options: [
+      '0.5% per adjustment',
+      '1% per adjustment',
+      '2% per adjustment',
+      '5% per adjustment'
+    ],
+    correctIndex: 2,
+    explanation: 'ARMs typically have a 2% periodic rate cap (maximum change per adjustment) and 6% lifetime cap over the life of the loan.'
+  },
+  {
+    id: 'q284',
+    category: 'Financing - Amortization',
+    question: 'On a 30-year fixed mortgage, when do principal and interest payments reach 50/50?',
+    options: [
+      'Year 5',
+      'Year 10',
+      'Year 15 (halfway)',
+      'Year 23-24'
+    ],
+    correctIndex: 3,
+    explanation: 'The 50/50 milestone occurs around years 23-24 on a 30-year mortgage. Early years are mostly interest (80% year 1), not principal. This is why extra payments early save so much money.'
+  },
+  {
+    id: 'q285',
+    category: 'Financing - Amortization',
+    question: 'In Year 1 of a 30-year mortgage, approximately what percentage goes to interest?',
+    options: [
+      '20%',
+      '50%',
+      '65%',
+      '80%'
+    ],
+    correctIndex: 3,
+    explanation: 'In Year 1, approximately 80% of your payment goes to interest and only 20% to principal. By Year 10, it\'s about 65% interest. This is why equity builds slowly at first.'
+  },
+  {
+    id: 'q286',
+    category: 'Financing - Default',
+    question: 'What is the typical grace period for mortgage payments before late fees apply?',
+    options: [
+      '5 days',
+      '10-15 days',
+      '30 days',
+      '60 days'
+    ],
+    correctIndex: 1,
+    explanation: 'Most mortgages have a 10-15 day grace period after the due date before late fees (typically 4-5% of payment) are charged. FHA loans have a 3-month grace period before foreclosure can begin.'
+  },
+  {
+    id: 'q287',
+    category: 'Financing - Foreclosure',
+    question: 'What are the two types of foreclosure proceedings?',
+    options: [
+      'Fast and slow',
+      'Judicial (court) and Statutory (power of sale)',
+      'Bank and government',
+      'Voluntary and involuntary'
+    ],
+    correctIndex: 1,
+    explanation: 'Judicial foreclosure requires court proceedings (6-18 months), while Statutory foreclosure uses power of sale clause (2-4 months, no court). Massachusetts primarily uses statutory foreclosure.'
+  },
+  {
+    id: 'q288',
+    category: 'Financing - Foreclosure MA',
+    question: 'Does Massachusetts have a statutory right of redemption after foreclosure sale?',
+    options: [
+      'Yes, 1 year after sale',
+      'Yes, 6 months after sale',
+      'No - right terminates at moment of foreclosure sale',
+      'Yes, 30 days after sale'
+    ],
+    correctIndex: 2,
+    explanation: 'CRITICAL MA RULE: Massachusetts has NO statutory right of redemption. The right terminates at the moment of foreclosure sale. This applies to foreclosure sales, Sheriff\'s Sales, and Tax Sales.'
+  },
+  {
+    id: 'q289',
+    category: 'Financing - Foreclosure MA',
+    question: 'Who does the Soldiers and Sailors Civil Relief Act (SCRA) protect?',
+    options: [
+      'All veterans',
+      'Active duty military and up to 3 months after leaving service',
+      'Only combat veterans',
+      'Military retirees only'
+    ],
+    correctIndex: 1,
+    explanation: 'SCRA bars lenders from foreclosing on active duty service members or until 3 months after leaving service. Court approval required, interest may be capped at 6% during active duty.'
+  },
+  {
+    id: 'q290',
+    category: 'Financing - Short Sale',
+    question: 'What is a short sale?',
+    options: [
+      'Selling a property quickly',
+      'Selling for less than owed with lender approval',
+      'A foreclosure auction',
+      'Selling without an agent'
+    ],
+    correctIndex: 1,
+    explanation: 'Short sale: Home worth less than mortgage owed, lender agrees to accept less than owed (takes a loss). Seller avoids foreclosure but gets no proceeds. Requires lender approval, takes 3-6 months typically.'
+  },
+  {
+    id: 'q291',
+    category: 'Financing - Balloon Payment',
+    question: 'What is a balloon payment?',
+    options: [
+      'Extra payment to reduce interest',
+      'Larger final payment that pays off the loan',
+      'Monthly escrow payment',
+      'Down payment at closing'
+    ],
+    correctIndex: 1,
+    explanation: 'Balloon payment: Larger final payment that pays off the loan. Example: 30-year amortization but loan due in 7 years. Normal monthly payments, then entire remaining balance due at year 7. Common in seller financing.'
+  },
+  {
+    id: 'q292',
+    category: 'Financing - Clauses',
+    question: 'What is the Alienation Clause (due-on-sale clause)?',
+    options: [
+      'Buyer can take over seller\'s loan',
+      'When property sold, lender calls note due in full',
+      'Seller must pay extra fees',
+      'Property cannot be sold for 5 years'
+    ],
+    correctIndex: 1,
+    explanation: 'Alienation Clause: When property is sold, lender will call note due in full. Prevents buyer from taking over old loan at more attractive terms. Standard in nearly all modern mortgages. Exception: FHA/VA loans often assumable.'
+  },
+  {
+    id: 'q293',
+    category: 'Financing - Clauses',
+    question: 'What is the Assignment Clause in a mortgage?',
+    options: [
+      'Borrower can assign mortgage to someone else',
+      'Lender can assign mortgage & note to secondary market (Fannie Mae/Freddie Mac)',
+      'Agent assigns commission to another agent',
+      'Property can be reassigned to new owner'
+    ],
+    correctIndex: 1,
+    explanation: 'Assignment Clause: Gives lender right to sell mortgage to secondary market (Fannie Mae/Freddie Mac) to free up cash. Borrower usually keeps paying same servicer. Most mortgages are sold after origination.'
+  },
+  {
+    id: 'q294',
+    category: 'Financing - Clauses',
+    question: 'What is an Estoppel Clause (Certificate of No Defense)?',
+    options: [
+      'Borrower can dispute loan terms anytime',
+      'Borrower cannot challenge terms if mortgage assigned to 3rd party',
+      'Lender must provide loan history',
+      'Property is free of liens'
+    ],
+    correctIndex: 1,
+    explanation: 'Estoppel Clause: Bars borrower from challenging mortgage terms if assigned to 3rd party. Also called "Certificate of No Defense." Protects new lender/investor. More common in commercial real estate.'
+  },
+  {
+    id: 'q295',
+    category: 'Financing - Clauses',
+    question: 'What is a Partial Release Clause used for?',
+    options: [
+      'Releasing borrower from entire mortgage',
+      'Allowing partial release of property from blanket mortgage (subdivision development)',
+      'Reducing interest rate',
+      'Extending loan term'
+    ],
+    correctIndex: 1,
+    explanation: 'Partial Release Clause: Allows release of portion of security without releasing entire mortgage. Critical for subdivisions - developer can sell individual lots while keeping blanket mortgage. Payment usually required for each release.'
+  },
+  {
+    id: 'q296',
+    category: 'Financing - Subordination',
+    question: 'When is a Subordination Agreement used?',
+    options: [
+      'When refinancing but want to keep 2nd mortgage in 2nd position',
+      'When paying off all mortgages',
+      'When selling property',
+      'When making extra payments'
+    ],
+    correctIndex: 0,
+    explanation: 'Subordination Agreement: When refinancing, old 2nd lender agrees to stay in 2nd position behind new refinanced 1st mortgage. Both lenders must sign. Protects new lender\'s 1st position. Fee typically $200-$500.'
+  },
+  {
+    id: 'q297',
+    category: 'Financing - Straight Loan',
+    question: 'What is a Straight Loan (interest-only loan)?',
+    options: [
+      'Fixed rate for entire term',
+      'Interest-only payments, full principal due at end',
+      'No interest charged',
+      'Automatically renews'
+    ],
+    correctIndex: 1,
+    explanation: 'Straight Loan: Interest-only payments, full principal due at end. Example: $300K at 6%, pay $1,500/mo interest for 5 years, then $300K balloon. Lower payments but no equity building. Rare for residential.'
+  },
+  {
+    id: 'q298',
+    category: 'Financing - CLUE Report',
+    question: 'What does a CLUE Report show?',
+    options: [
+      'Credit score',
+      'Insurance claims on property in past 5 years',
+      'Property taxes owed',
+      'Mortgage payment history'
+    ],
+    correctIndex: 1,
+    explanation: 'CLUE (Comprehensive Loss Underwriting Exchange): Database of insurance claims on property in past 5 years. Shows claim type, amount, status. Frequent claims = red flags (property problems) or higher insurance rates/denial. Free once/year at PersonalReports.LexisNexis.com.'
+  },
+  {
+    id: 'q299',
+    category: 'Financing - Forbearance',
+    question: 'What is mortgage forbearance?',
+    options: [
+      'Forgiveness of debt',
+      'Temporary postponement of payments (not forgiveness)',
+      'Lower interest rate permanently',
+      'Extended loan term'
+    ],
+    correctIndex: 1,
+    explanation: 'Forbearance: POSTPONEMENT of obligations, NOT forgiveness. Lender allows reduced/no payments for 3-12 months, but all missed payments must be repaid later. Life of loan extended. Better than default but requires repayment plan.'
+  },
+  {
+    id: 'q300',
+    category: 'Financing - Dodd-Frank',
+    question: 'When did the Dodd-Frank Act take effect?',
+    options: [
+      'January 10, 2008',
+      'January 10, 2014',
+      'January 10, 2020',
+      'January 10, 2025'
+    ],
+    correctIndex: 1,
+    explanation: 'Dodd-Frank Act took effect January 10, 2014. Major federal consumer protection law regulating mortgage lenders and servicers. Requires 10 specific lender obligations.'
+  },
+  {
+    id: 'q301',
+    category: 'Financing - Dodd-Frank',
+    question: 'Under Dodd-Frank, how much advance notice must lenders give for ARM rate changes?',
+    options: [
+      '30 days',
+      '60-120 days (2 months)',
+      '1 year',
+      'No notice required'
+    ],
+    correctIndex: 1,
+    explanation: 'Dodd-Frank requires lenders give 60-120 days (2 months) warning before ARM rate changes. Notice must show current rate, new rate, and new payment amount. Helps borrower prepare.'
+  },
+  {
+    id: 'q302',
+    category: 'Financing - Dodd-Frank',
+    question: 'Under Dodd-Frank, when can lenders start foreclosure?',
+    options: [
+      'After 30 days delinquent',
+      'After 60 days delinquent',
+      'After 90 days delinquent',
+      'After 120+ days delinquent'
+    ],
+    correctIndex: 3,
+    explanation: 'Dodd-Frank prohibits starting foreclosure until borrower is 120+ days delinquent. Must contact borrower by day 36, offer loss mitigation, review complete application 37+ days before sale. "Dual tracking" (foreclosure + loss mitigation) prohibited.'
+  },
+  {
+    id: 'q303',
+    category: 'Financing - Dodd-Frank',
+    question: 'Within how many days must lenders respond to borrower complaints under Dodd-Frank?',
+    options: [
+      '5 days',
+      '15 days',
+      '30-45 days',
+      '90 days'
+    ],
+    correctIndex: 2,
+    explanation: 'Dodd-Frank requires: Acknowledge complaint in 5 business days, respond within 30 days (45 days max). Response must explain resolution or why no action taken. Must share information about complaint status.'
+  },
+  {
+    id: 'q304',
+    category: 'Financing - Federal Reserve',
+    question: 'How many Federal Reserve Districts are there?',
+    options: [
+      '7',
+      '12',
+      '50',
+      '100'
+    ],
+    correctIndex: 1,
+    explanation: 'The Federal Reserve System divides the country into 12 districts, each served by a Federal Reserve Bank. Massachusetts is in the First District, served by Federal Reserve Bank of Boston.'
+  },
+  {
+    id: 'q305',
+    category: 'Financing - Federal Reserve',
+    question: 'What are the Fed\'s three main tools to control money supply?',
+    options: [
+      'Taxes, spending, borrowing',
+      'Reserve requirements, discount rates, open market operations',
+      'Mortgages, bonds, stocks',
+      'Inflation, employment, GDP'
+    ],
+    correctIndex: 1,
+    explanation: 'The Fed uses: 1) Reserve Requirements (how much banks must hold in reserve), 2) Discount Rates (interest rate Fed charges banks), 3) Open Market Operations (buying/selling Treasury securities). These control money supply and interest rates.'
+  },
+  {
+    id: 'q306',
+    category: 'Financing - Federal Reserve',
+    question: 'If the Fed INCREASES reserve requirements, what happens?',
+    options: [
+      'More money available for loans, rates decrease',
+      'Less money available for loans, rates increase',
+      'No effect on interest rates',
+      'Only affects savings accounts'
+    ],
+    correctIndex: 1,
+    explanation: 'Increase reserve requirements: Banks must hold more in reserve → Less money to lend → Interest rates increase → Economy slows down. Opposite: Decrease reserve → More lending → Rates decrease → Economy stimulated.'
+  },
+  {
+    id: 'q307',
+    category: 'Financing - Federal Reserve',
+    question: 'When Fed rates are HIGH, what typically happens to the housing market?',
+    options: [
+      'More people buy homes',
+      'Mortgage rates decrease',
+      'Fewer people can afford to buy, market slows down',
+      'No effect on housing'
+    ],
+    correctIndex: 2,
+    explanation: 'High Fed rates → High mortgage rates → Fewer buyers can afford homes → Housing market slows → Cools inflation. Low Fed rates → Low mortgage rates → More buyers → Hot housing market → Stimulates economy.'
+  },
+  {
+    id: 'q308',
+    category: 'Financing - Federal Reserve',
+    question: 'If the Fed BUYS Treasury securities (open market operations), what happens?',
+    options: [
+      'Money supply decreases',
+      'Money supply increases, economy expands',
+      'No effect on money supply',
+      'Only affects government'
+    ],
+    correctIndex: 1,
+    explanation: 'Fed buys securities: Money supply increases (money flows from govt to investors) → More money for lending → Interest rates decrease → Economy expands. Fed sells securities: Opposite effect (money supply decreases, rates increase).'
+  },
+  {
+    id: 'q309',
+    category: 'Financing - Federal Reserve',
+    question: 'What is the Fed\'s "dual mandate"?',
+    options: [
+      'Control banks and regulate mortgages',
+      'Maximum employment and price stability (2% inflation)',
+      'Print money and collect taxes',
+      'Set mortgage rates and approve loans'
+    ],
+    correctIndex: 1,
+    explanation: 'The Fed\'s dual mandate: 1) Maximum Employment (keep unemployment low), 2) Price Stability (keep inflation around 2% target). Fed balances these by raising rates (fight inflation) or lowering rates (stimulate employment).'
+  },
+  {
+    id: 'q310',
+    category: 'Financing - Federal Reserve',
+    question: 'Does the Fed directly set mortgage rates?',
+    options: [
+      'Yes, the Fed sets all mortgage rates',
+      'No - Fed influences rates but doesn\'t directly set them',
+      'Only for FHA/VA loans',
+      'Only for jumbo loans'
+    ],
+    correctIndex: 1,
+    explanation: 'NO! The Fed sets Federal Funds Rate (overnight bank lending) and Discount Rate. Mortgage rates are influenced by these but also by: 10-year Treasury yields (biggest factor), mortgage-backed securities market, inflation expectations, credit markets, lender competition.'
+  },
+  {
+    id: 'q311',
+    category: 'Financing - Foreclosure',
+    question: 'What is "Deed in Lieu of Foreclosure"?',
+    options: [
+      'Foreclosure by court order',
+      'Borrower voluntarily gives deed to lender to avoid foreclosure',
+      'Lender sells property at auction',
+      'Borrower refinances to stop foreclosure'
+    ],
+    correctIndex: 1,
+    explanation: 'Deed in Lieu: Borrower voluntarily gives deed to lender ("Jingle Mail") to avoid foreclosure expense. Faster (30-90 days), less credit damage. MAJOR ISSUE: All junior liens remain (unlike foreclosure which wipes them out). Lender loses FHA/PMI/VA guarantees.'
+  },
+  {
+    id: 'q312',
+    category: 'Financing - Foreclosure',
+    question: 'What happens to junior liens when a 1st mortgage forecloses?',
+    options: [
+      'All liens remain on property',
+      'Junior liens (recorded AFTER 1st mortgage) are wiped out',
+      'Only tax liens are wiped out',
+      'Buyer must pay all liens'
+    ],
+    correctIndex: 1,
+    explanation: 'Foreclosure wipes out all junior liens recorded AFTER the foreclosing mortgage. Senior liens (recorded BEFORE) remain. Property taxes ALWAYS survive (priority). Buyer receives deed with no warranties, subject to unpaid taxes and labor liens.'
+  },
+  {
+    id: 'q313',
+    category: 'Financing - Deficiency',
+    question: 'If foreclosure sale price is $250K but debt was $300K + $10K costs, what is deficiency?',
+    options: [
+      '$0 - no deficiency',
+      '$50,000',
+      '$60,000',
+      '$310,000'
+    ],
+    correctIndex: 2,
+    explanation: 'Deficiency = (Debt + Costs) - Sale Price. ($300K + $10K) - $250K = $60,000. Borrower is liable for $60K. Bank may sue or forgive (treated as taxable income, 1099-C form). Excess proceeds (rare) returned to borrower.'
+  },
+  {
+    id: 'q314',
+    category: 'Financing - Recording',
+    question: 'What is "Constructive Notice" in real estate recording?',
+    options: [
+      'Lender must notify borrower of all changes',
+      'Legal presumption everyone knows about recorded documents',
+      'Notice that construction is complete',
+      'Written notice to neighbors'
+    ],
+    correctIndex: 1,
+    explanation: 'Constructive Notice: Legal presumption that everyone has knowledge of recorded documents, whether they actually looked or not. Recording at Registry of Deeds provides constructive notice. Establishes lien priority. Buyers assumed to know about recorded liens.'
+  },
+  {
+    id: 'q315',
+    category: 'Financing - Recording MA',
+    question: 'What are the two recording systems in Massachusetts?',
+    options: [
+      'Public and private',
+      'Registry System and Torrens System',
+      'Federal and state',
+      'Temporary and permanent'
+    ],
+    correctIndex: 1,
+    explanation: 'MA has two systems: 1) Registry System (most common) - documents recorded chronologically, must search all prior documents, first to record has priority. 2) Torrens System (rare) - certificate of title system, state guarantees title, mostly older Boston/Cambridge properties.'
   }
 ];
