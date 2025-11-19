@@ -1464,6 +1464,256 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
+        <h3>16.5 Licensing Requirements & Violations (CRITICAL!)</h3>
+        <div className="licensing-requirements">
+          <h4>🚨 Criminal Conviction Reporting (30-Day Rule)</h4>
+          <div className="conviction-reporting">
+            <p className="warning">
+              <strong>A broker or salesperson shall report to the Board within 30 days his or her conviction 
+              of any crime including any misdemeanor or felony</strong> under the law of the Commonwealth, 
+              the United States or laws of another jurisdiction which if committed in Massachusetts would 
+              constitute a crime under Massachusetts law.
+            </p>
+
+            <h5>What Must Be Reported:</h5>
+            <ul>
+              <li><strong>ANY Crime:</strong> Including misdemeanors and felonies</li>
+              <li><strong>All Jurisdictions:</strong> MA, other states, federal</li>
+              <li><strong>Equivalent Crimes:</strong> If it would be a crime in MA, report it</li>
+              <li><strong>DUI/OUI:</strong> Yes, must report</li>
+              <li><strong>Domestic Incidents:</strong> Yes, must report if convicted</li>
+              <li><strong>Drug Charges:</strong> Yes, must report</li>
+              <li><strong>Theft/Fraud:</strong> Yes, must report</li>
+            </ul>
+
+            <h5>Timeline:</h5>
+            <p><strong>Within 30 DAYS of conviction</strong> (not arrest - conviction!)</p>
+
+            <h5>How to Report:</h5>
+            <ul>
+              <li>Written notice to the Board of Registration of Real Estate Brokers and Salespersons</li>
+              <li>Include: Your name, license number, date of conviction, charge, jurisdiction, court</li>
+              <li>Attach: Copy of court judgment or conviction record</li>
+              <li>Send certified mail with return receipt</li>
+            </ul>
+
+            <h5>Consequences of NOT Reporting:</h5>
+            <ul>
+              <li>❌ Automatic license suspension or revocation</li>
+              <li>❌ Additional disciplinary action for failure to report</li>
+              <li>❌ Cannot claim ignorance of requirement</li>
+              <li>❌ More severe penalties than if you had reported timely</li>
+            </ul>
+
+            <h5>Does the Board Find Out Anyway?</h5>
+            <p className="highlight">
+              <strong>YES!</strong> The Board runs periodic background checks. They WILL find out. Reporting 
+              immediately shows honesty and responsibility. Hiding it shows dishonesty and results in harsher 
+              penalties.
+            </p>
+          </div>
+
+          <h4>📚 Fraudulent Education Certification (License Suspension)</h4>
+          <div className="education-fraud">
+            <p className="warning">
+              <strong>A real estate broker and salesperson who fraudulently certifies to the Board completion 
+              of the educational curriculum</strong> described in 254 CMR 5.03 may, following a hearing, which 
+              hearing may be waived by such broker or salesperson, be subject to the <strong>suspension of their 
+              license until such time that the Board is satisfied that the educational curriculum has been completed.</strong>
+            </p>
+
+            <h5>What This Means:</h5>
+            <ul>
+              <li><strong>Fraudulent Certification:</strong> Lying about completing required CE hours</li>
+              <li><strong>Examples:</strong>
+                <ul>
+                  <li>Submitting fake CE certificates</li>
+                  <li>Claiming credit for courses not taken</li>
+                  <li>Having someone else take courses for you</li>
+                  <li>Forging instructor signatures</li>
+                  <li>Using altered completion certificates</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h5>Consequences:</h5>
+            <ul>
+              <li><strong>Hearing:</strong> Board schedules hearing (you can waive it)</li>
+              <li><strong>License Suspension:</strong> Your license is suspended immediately</li>
+              <li><strong>Cannot Practice:</strong> Cannot work as agent while suspended</li>
+              <li><strong>Complete Education:</strong> Must actually complete ALL required CE</li>
+              <li><strong>Prove Completion:</strong> Submit legitimate certificates to Board</li>
+              <li><strong>Board Review:</strong> Board must be "satisfied" education is complete</li>
+              <li><strong>Reinstatement:</strong> License restored only after Board approval</li>
+            </ul>
+
+            <h5>Additional Penalties:</h5>
+            <ul>
+              <li>Fines from the Board</li>
+              <li>Permanent record of violation</li>
+              <li>Potential Chapter 93A liability if harmed clients</li>
+              <li>Possible criminal charges (fraud)</li>
+              <li>Loss of income during suspension</li>
+              <li>Damage to professional reputation</li>
+            </ul>
+
+            <p className="highlight">
+              <strong>Don't Risk It:</strong> CE courses are not that expensive or time-consuming. The penalty 
+              for faking completion is career-ending. Just do the actual work.
+            </p>
+          </div>
+
+          <h4>🔒 License Surrender (7-Day Rule)</h4>
+          <div className="license-surrender">
+            <p className="warning">
+              <strong>A broker or salesperson upon notice of suspension or revocation of his license shall 
+              deliver his/her license to the offices of the Board within seven days</strong> of the receipt 
+              of such notice.
+            </p>
+
+            <h5>What This Means:</h5>
+            <ul>
+              <li><strong>Notice of Suspension:</strong> Board sends written notice that license is suspended</li>
+              <li><strong>Notice of Revocation:</strong> Board sends written notice that license is revoked (permanent)</li>
+              <li><strong>7 Days:</strong> You have 7 calendar days from receipt of notice</li>
+              <li><strong>Physical License:</strong> Must surrender your actual license card/certificate</li>
+              <li><strong>Board Offices:</strong> Deliver to Board's office (mail certified or in person)</li>
+            </ul>
+
+            <h5>Suspension vs Revocation:</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Suspension</th>
+                  <th>Revocation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Temporary loss of license</td>
+                  <td>Permanent loss of license</td>
+                </tr>
+                <tr>
+                  <td>Can be reinstated after conditions met</td>
+                  <td>Cannot be reinstated (must re-apply for new license)</td>
+                </tr>
+                <tr>
+                  <td>Common: 30 days to 1 year</td>
+                  <td>Serious violations only</td>
+                </tr>
+                <tr>
+                  <td>Example: Failure to complete CE, minor violations</td>
+                  <td>Example: Fraud, embezzlement, serious crimes</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5>What Happens if You Don't Surrender License:</h5>
+            <ul>
+              <li>❌ Additional disciplinary action</li>
+              <li>❌ Extended suspension period</li>
+              <li>❌ Possible contempt charges</li>
+              <li>❌ Harder to get reinstated</li>
+              <li>❌ Shows lack of cooperation with Board</li>
+            </ul>
+
+            <h5>During Suspension/Revocation:</h5>
+            <ul>
+              <li>❌ <strong>CANNOT</strong> practice real estate</li>
+              <li>❌ <strong>CANNOT</strong> earn commissions</li>
+              <li>❌ <strong>CANNOT</strong> represent yourself as licensed agent</li>
+              <li>❌ <strong>CANNOT</strong> work on deals that started before suspension</li>
+              <li>✅ <strong>CAN</strong> work on getting reinstated (if suspension)</li>
+              <li>✅ <strong>MUST</strong> notify broker immediately</li>
+              <li>✅ <strong>MUST</strong> notify clients on active deals</li>
+            </ul>
+
+            <h5>Reinstatement After Suspension:</h5>
+            <ol>
+              <li>Complete all requirements imposed by Board</li>
+              <li>Submit proof of compliance</li>
+              <li>Pay any fines or fees</li>
+              <li>Apply for reinstatement in writing</li>
+              <li>Wait for Board approval</li>
+              <li>Receive reinstated license</li>
+              <li>Can resume practice</li>
+            </ol>
+          </div>
+
+          <h4>Common Reasons for License Suspension/Revocation:</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Violation</th>
+                <th>Typical Penalty</th>
+                <th>Prevention</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Failure to complete CE</td>
+                <td>Suspension until complete</td>
+                <td>Track CE hours, complete early</td>
+              </tr>
+              <tr>
+                <td>Criminal conviction (serious)</td>
+                <td>Revocation</td>
+                <td>Don't commit crimes!</td>
+              </tr>
+              <tr>
+                <td>Fraud/misrepresentation</td>
+                <td>Suspension or revocation</td>
+                <td>Always be honest</td>
+              </tr>
+              <tr>
+                <td>Embezzlement</td>
+                <td>Revocation + criminal charges</td>
+                <td>Never touch client funds improperly</td>
+              </tr>
+              <tr>
+                <td>Chapter 93A violation (repeated)</td>
+                <td>Suspension</td>
+                <td>Follow consumer protection laws</td>
+              </tr>
+              <tr>
+                <td>Fair Housing violation</td>
+                <td>Suspension + fines</td>
+                <td>Never discriminate</td>
+              </tr>
+              <tr>
+                <td>Practicing without license</td>
+                <td>Fines + possible criminal charges</td>
+                <td>Keep license active and renewed</td>
+              </tr>
+              <tr>
+                <td>Failure to report conviction</td>
+                <td>Suspension + additional penalties</td>
+                <td>Report within 30 days</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="licensing-summary">
+            <h4>🎯 Key Takeaways - Licensing Compliance:</h4>
+            <ul>
+              <li>✅ <strong>Report ANY conviction within 30 days</strong> - no exceptions!</li>
+              <li>✅ <strong>Never fake CE completion</strong> - career suicide</li>
+              <li>✅ <strong>Surrender license within 7 days if suspended/revoked</strong></li>
+              <li>✅ <strong>Keep license active and in good standing</strong></li>
+              <li>✅ <strong>Cooperate with the Board</strong> - honesty helps your case</li>
+              <li>✅ <strong>Don't practice during suspension</strong> - serious consequences</li>
+              <li>✅ <strong>Track CE hours religiously</strong> - don't let them lapse</li>
+              <li>✅ <strong>Report violations to broker immediately</strong></li>
+            </ul>
+
+            <p className="warning">
+              <strong>⚠️ The Board Takes These Seriously:</strong> License violations are not minor issues. 
+              The Board has the power to end your real estate career. Follow ALL requirements to the letter. 
+              When in doubt, over-report and over-comply. Your license is your livelihood - protect it!
+            </p>
+          </div>
+        </div>
+
         <p className="highlight">
           <strong>Career Path:</strong> Salesperson (3+ years) → Broker → Brokerage Owner → Multi-State Broker.
           Continuous learning and professional certifications accelerate growth and income potential.
