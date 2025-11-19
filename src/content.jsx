@@ -1714,6 +1714,239 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </div>
         </div>
 
+        <h3>16.6 Real Estate License Exemptions (Who Doesn't Need a License)</h3>
+        <div className="license-exemptions">
+          <p className="highlight">
+            <strong>Not everyone performing real estate activities needs a license.</strong> The following 
+            individuals and entities are EXEMPT from Massachusetts real estate licensing requirements:
+          </p>
+
+          <h4>✅ Persons Exempt from Licensing:</h4>
+          <div className="exemption-list">
+            <div className="exemption-item">
+              <h5>1. Persons Acting on Their Own Behalf</h5>
+              <ul>
+                <li><strong>Example:</strong> Selling your own home (For Sale By Owner - FSBO)</li>
+                <li><strong>Why:</strong> You're not acting as an agent for someone else</li>
+                <li><strong>Rule:</strong> Can sell/buy/lease your own property without license</li>
+                <li><strong>Limitation:</strong> Cannot do this as a business for others</li>
+              </ul>
+            </div>
+
+            <div className="exemption-item">
+              <h5>2. Property Managers (Unless Collecting Additional Commission)</h5>
+              <ul>
+                <li><strong>Example:</strong> Building superintendent managing apartments for fixed salary</li>
+                <li><strong>Rule:</strong> No license needed if paid flat fee/salary for management</li>
+                <li><strong>⚠️ EXCEPTION:</strong> If collecting commission on leasing/sales = license required</li>
+                <li><strong>Key Distinction:</strong> Managing properties ≠ selling/leasing for commission</li>
+              </ul>
+            </div>
+
+            <div className="exemption-item">
+              <h5>3. Licensed Auctioneers</h5>
+              <ul>
+                <li><strong>Example:</strong> Auctioneer conducting real estate auction</li>
+                <li><strong>Rule:</strong> If licensed as auctioneer, don't need RE license</li>
+                <li><strong>Scope:</strong> Can auction real property under auctioneer license</li>
+                <li><strong>Note:</strong> Different license type, same activity permitted</li>
+              </ul>
+            </div>
+
+            <div className="exemption-item">
+              <h5>4. Public Officers/Employees Performing Official Duties</h5>
+              <ul>
+                <li><strong>Examples:</strong>
+                  <ul>
+                    <li>City/town selling municipal property</li>
+                    <li>Sheriff conducting foreclosure sale</li>
+                    <li>Tax collector selling tax-titled property</li>
+                    <li>Government employees handling public land transactions</li>
+                  </ul>
+                </li>
+                <li><strong>Rule:</strong> Government officials acting in official capacity exempt</li>
+                <li><strong>Why:</strong> Public duty, not private business</li>
+              </ul>
+            </div>
+
+            <div className="exemption-item">
+              <h5>5. Attorney-in-Fact Under Power of Attorney (POA)</h5>
+              <ul>
+                <li><strong>Example:</strong> Person with POA selling property for elderly parent</li>
+                <li><strong>Rule:</strong> If owner authorizes you via POA to complete transaction, no license needed</li>
+                <li><strong>Requirement:</strong> Must have valid Power of Attorney document</li>
+                <li><strong>Scope:</strong> Acting on behalf of owner under legal authority</li>
+                <li><strong>Limitation:</strong> Only for properties covered by the POA</li>
+              </ul>
+            </div>
+
+            <div className="exemption-item">
+              <h5>6. Court-Appointed Fiduciaries</h5>
+              <p><strong>Includes:</strong></p>
+              <ul>
+                <li><strong>Receivers:</strong> Court-appointed to manage property in litigation</li>
+                <li><strong>Trustees of Trusts:</strong> Managing trust property</li>
+                <li><strong>Trustees in Bankruptcy:</strong> Liquidating bankrupt estate assets</li>
+                <li><strong>Administrators:</strong> Handling deceased person's estate (no will)</li>
+                <li><strong>Executors:</strong> Handling deceased person's estate (with will)</li>
+                <li><strong>Conservators:</strong> Managing property for incapacitated person</li>
+                <li><strong>Personal Representatives:</strong> Estate representatives</li>
+                <li><strong>Guardians:</strong> Managing property for minor or incapacitated person</li>
+                <li><strong>Other Court-Appointed Persons:</strong> Acting under court order</li>
+              </ul>
+              <p><strong>Rule:</strong> If appointed by court or acting under court order, exempt</p>
+              <p><strong>Why:</strong> Legal fiduciary duty supersedes licensing requirement</p>
+            </div>
+
+            <div className="exemption-item">
+              <h5>7. Financial Institutions Acting as Fiduciaries or for Themselves</h5>
+              <p><strong>Includes:</strong></p>
+              <ul>
+                <li><strong>Banks</strong></li>
+                <li><strong>Credit Unions</strong></li>
+                <li><strong>Insurance Companies</strong></li>
+              </ul>
+              <p><strong>When Exempt:</strong></p>
+              <ul>
+                <li><strong>Acting as Fiduciaries:</strong> Managing real estate in trust capacity</li>
+                <li><strong>Negotiating a Mortgage:</strong> Lending money secured by real estate</li>
+                <li><strong>Acting for Themselves:</strong> Selling/managing their own property</li>
+                <li><strong>Foreclosures:</strong> Foreclosing and selling property they hold mortgage on</li>
+              </ul>
+              <p><strong>Rule:</strong> Financial institutions handling real estate as lenders or owners exempt</p>
+              <p><strong>Why:</strong> Regulated by banking/insurance laws, not real estate laws</p>
+            </div>
+          </div>
+
+          <h4>❌ Who DOES Need a License:</h4>
+          <div className="needs-license">
+            <p className="warning">
+              <strong>If you DON'T fall into one of the above exemptions, you NEED a license to:</strong>
+            </p>
+            <ul>
+              <li>Sell, lease, or rent real estate for others</li>
+              <li>Negotiate real estate transactions for others</li>
+              <li>List properties for sale/lease</li>
+              <li>Show properties to buyers/tenants</li>
+              <li>Collect commissions on real estate transactions</li>
+              <li>Advertise yourself as a real estate professional</li>
+              <li>Perform any real estate services for compensation</li>
+            </ul>
+          </div>
+
+          <h4>Common Misconceptions & Clarifications:</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>License Needed?</th>
+                <th>Why/Why Not</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Selling your own home</td>
+                <td>❌ NO</td>
+                <td>Acting on your own behalf</td>
+              </tr>
+              <tr>
+                <td>Helping friend sell their home for free</td>
+                <td>⚠️ MAYBE</td>
+                <td>If no compensation, likely OK. If "gift" = commission, need license</td>
+              </tr>
+              <tr>
+                <td>Property manager collecting flat monthly fee</td>
+                <td>❌ NO</td>
+                <td>Not collecting commission on sales/leases</td>
+              </tr>
+              <tr>
+                <td>Property manager getting % of rent collected</td>
+                <td>✅ YES</td>
+                <td>Commission-based = license required</td>
+              </tr>
+              <tr>
+                <td>Attorney selling client's property</td>
+                <td>❌ NO</td>
+                <td>If POA or legal representation, exempt</td>
+              </tr>
+              <tr>
+                <td>Executor selling estate property</td>
+                <td>❌ NO</td>
+                <td>Court-appointed fiduciary exempt</td>
+              </tr>
+              <tr>
+                <td>Bank foreclosing and selling property</td>
+                <td>❌ NO</td>
+                <td>Financial institution acting for itself</td>
+              </tr>
+              <tr>
+                <td>Auctioneer selling real estate</td>
+                <td>❌ NO</td>
+                <td>Licensed auctioneer exempt</td>
+              </tr>
+              <tr>
+                <td>Bird-dogging (finding deals for fee)</td>
+                <td>✅ YES</td>
+                <td>Acting as middleman for compensation = license required</td>
+              </tr>
+              <tr>
+                <td>Wholesaling real estate</td>
+                <td>⚠️ GRAY AREA</td>
+                <td>If assigning contracts = might need license. Consult attorney.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>⚠️ Penalties for Practicing Without a License:</h4>
+          <div className="unlicensed-penalties">
+            <ul>
+              <li><strong>Criminal Charges:</strong> Misdemeanor with fines and potential jail time</li>
+              <li><strong>Cannot Collect Commission:</strong> Courts won't enforce your commission agreement</li>
+              <li><strong>Cannot Sue for Fees:</strong> No legal recourse to collect payment</li>
+              <li><strong>Client Can Sue You:</strong> For damages caused by unlicensed activity</li>
+              <li><strong>Chapter 93A Violation:</strong> Unfair/deceptive practice (triple damages!)</li>
+              <li><strong>Permanent Bar:</strong> May never be able to get license later</li>
+            </ul>
+
+            <p className="warning">
+              <strong>⚠️ Important:</strong> If you engage in real estate activity requiring a license without 
+              having one, you cannot enforce any contracts or collect any fees. All your work is void. You may 
+              also face criminal prosecution.
+            </p>
+          </div>
+
+          <h4>When in Doubt:</h4>
+          <div className="doubt-guidance">
+            <p className="highlight">
+              <strong>If you're unsure whether your activity requires a license, ASK:</strong>
+            </p>
+            <ol>
+              <li><strong>Am I acting for someone else's property?</strong> (If yes, likely need license)</li>
+              <li><strong>Am I receiving compensation?</strong> (If yes, likely need license)</li>
+              <li><strong>Am I in one of the exemption categories?</strong> (If no, likely need license)</li>
+              <li><strong>Would a reasonable person think I'm acting as a real estate agent?</strong> (If yes, need license)</li>
+            </ol>
+
+            <p><strong>When in doubt:</strong></p>
+            <ul>
+              <li>Consult the MA Board of Registration of Real Estate Brokers and Salespersons</li>
+              <li>Speak with a real estate attorney</li>
+              <li>Get licensed if there's any question (better safe than sorry)</li>
+            </ul>
+          </div>
+
+          <div className="exemption-summary">
+            <h4>🎯 Exemption Summary:</h4>
+            <p className="highlight">
+              <strong>The Rule of Thumb:</strong> If you're getting paid to help others buy, sell, or lease 
+              real estate, you need a license UNLESS you fall into one of the specific exemption categories 
+              (POA, court-appointed fiduciary, financial institution, auctioneer, government official, or 
+              managing for flat fee). When in doubt, get licensed. The penalties for practicing without a 
+              license are severe and can end your real estate career before it starts.
+            </p>
+          </div>
+        </div>
+
         <p className="highlight">
           <strong>Career Path:</strong> Salesperson (3+ years) → Broker → Brokerage Owner → Multi-State Broker.
           Continuous learning and professional certifications accelerate growth and income potential.
