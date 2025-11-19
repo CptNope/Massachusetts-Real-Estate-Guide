@@ -5465,7 +5465,89 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li><strong>Terms:</strong> 6-18 months, 8-15% interest, high fees</li>
         </ul>
 
-        <h3>23.7 Pre-Qualification vs. Pre-Approval</h3>
+        <h3>23.7 Understanding Loan Amortization</h3>
+        <p className="highlight">
+          Amortization is the process of paying off a loan through regular payments over time. Understanding 
+          how your payment is split between principal and interest is crucial for buyers.
+        </p>
+
+        <h4>Fully Amortized Loan:</h4>
+        <p>A fully amortized loan has fixed payments throughout the loan term. Each payment includes both 
+        principal (paying down the loan balance) and interest (cost of borrowing).</p>
+
+        <div className="amortization-visual">
+          <h5>🔑 Key Insight: The 50/50 Milestone</h5>
+          <p className="info">
+            <strong>On a 30-year mortgage, it's not until years 23-24 before the principal and interest 
+            portions are 50/50.</strong>
+          </p>
+          
+          <h5>How Amortization Works:</h5>
+          <ul>
+            <li><strong>Early Years:</strong> Most of your payment goes toward interest, little toward principal</li>
+            <li><strong>Year 1:</strong> Might be 80% interest / 20% principal</li>
+            <li><strong>Year 10:</strong> Roughly 65% interest / 35% principal</li>
+            <li><strong>Year 23-24:</strong> Finally reaches 50% interest / 50% principal</li>
+            <li><strong>Final Years:</strong> Most of your payment goes toward principal, little interest</li>
+          </ul>
+
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>💰 <strong>Equity Build:</strong> You build equity slowly at first, faster later</li>
+            <li>📊 <strong>Interest Costs:</strong> Most interest is paid in early years</li>
+            <li>🏠 <strong>Refinancing Timing:</strong> Refinancing early means starting the cycle over</li>
+            <li>💵 <strong>Extra Payments:</strong> Extra principal payments early have biggest impact</li>
+            <li>📈 <strong>15-Year vs 30-Year:</strong> 15-year loans reach 50/50 split around year 10</li>
+          </ul>
+        </div>
+
+        <h4>Example: $400,000 Loan at 6.5% (30-Year Fixed)</h4>
+        <div className="example">
+          <p><strong>Monthly Payment:</strong> $2,528 (principal + interest only)</p>
+          
+          <p><strong>Payment #1 (Month 1):</strong></p>
+          <ul>
+            <li>Interest: $2,167 (86% of payment)</li>
+            <li>Principal: $361 (14% of payment)</li>
+            <li>Remaining Balance: $399,639</li>
+          </ul>
+
+          <p><strong>Payment #120 (Year 10):</strong></p>
+          <ul>
+            <li>Interest: $1,746 (69% of payment)</li>
+            <li>Principal: $782 (31% of payment)</li>
+            <li>Remaining Balance: $327,883</li>
+          </ul>
+
+          <p><strong>Payment #280 (Year 23.3):</strong></p>
+          <ul>
+            <li>Interest: $1,264 (50% of payment)</li>
+            <li>Principal: $1,264 (50% of payment) - THE 50/50 POINT!</li>
+            <li>Remaining Balance: $233,000</li>
+          </ul>
+
+          <p><strong>Payment #360 (Final Payment):</strong></p>
+          <ul>
+            <li>Interest: $14</li>
+            <li>Principal: $2,514 (99% of payment)</li>
+            <li>Remaining Balance: $0</li>
+          </ul>
+
+          <p className="highlight">
+            <strong>Total Interest Paid Over 30 Years:</strong> $510,000+ (more than the loan itself!)
+          </p>
+        </div>
+
+        <h4>Strategies to Reduce Interest:</h4>
+        <ul>
+          <li><strong>Extra Principal Payments:</strong> Even $100/month extra saves tens of thousands</li>
+          <li><strong>Bi-Weekly Payments:</strong> Pay half your payment every 2 weeks = 13 payments/year instead of 12</li>
+          <li><strong>Shorter Loan Term:</strong> 15-year loans save massive interest but have higher payments</li>
+          <li><strong>Refinance:</strong> Lower rate can save thousands (but resets amortization schedule)</li>
+          <li><strong>Round Up Payments:</strong> $2,528 → $2,600 = big difference over time</li>
+        </ul>
+
+        <h3>23.8 Pre-Qualification vs. Pre-Approval</h3>
         <div className="comparison">
           <h4>Pre-Qualification (Weak):</h4>
           <ul>
@@ -5486,7 +5568,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>23.8 Mortgage Approval Process</h3>
+        <h3>23.9 Mortgage Approval Process</h3>
         <div className="process-timeline">
           <ol>
             <li><strong>Pre-Approval:</strong> Before house hunting (1-3 days)</li>
@@ -5499,7 +5581,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ol>
         </div>
 
-        <h3>23.9 Common Financing Issues & Solutions</h3>
+        <h3>23.10 Common Financing Issues & Solutions</h3>
         <div className="issues-solutions">
           <h4>Issue: Low Appraisal</h4>
           <ul>
@@ -5555,7 +5637,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>23.10 Agent's Role in Financing</h3>
+        <h3>23.11 Agent's Role in Financing</h3>
         <div className="agent-role">
           <h4>What Agents SHOULD Do:</h4>
           <ul>
