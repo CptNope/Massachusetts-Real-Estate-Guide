@@ -5846,6 +5846,83 @@ Always understand your agent’s split and cap – it influences incentives.`}
             <li>💵 <strong>Payment Required:</strong> Usually requires payment to release each parcel</li>
             <li>🔑 <strong>Developer Tool:</strong> Allows progressive sale of development parcels</li>
           </ul>
+
+          <h5>Alienation Clause (Due-on-Sale Clause):</h5>
+          <p><strong>Definition:</strong> When the property is sold, the lender will call the note due in full. 
+          This prevents a buyer from taking over the old promissory note at more attractive terms.</p>
+          
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>💰 <strong>Protects Lender:</strong> Ensures current market interest rates apply</li>
+            <li>🏠 <strong>No Assumption:</strong> Buyer can't take over seller's low-interest loan</li>
+            <li>📈 <strong>Rate Protection:</strong> If rates increased, lender doesn't lose money</li>
+            <li>⚠️ <strong>Must Pay Off:</strong> Seller must pay off loan at closing (from sale proceeds)</li>
+            <li>🔄 <strong>Standard Today:</strong> Nearly all modern mortgages have this clause</li>
+          </ul>
+
+          <p className="info"><strong>Exception:</strong> FHA and VA loans are often assumable (buyer can take 
+          over the loan with lender approval), but conventional loans typically are not.</p>
+        </div>
+
+        <div className="important-note">
+          <h4>🏚️ Short Sale</h4>
+          <p><strong>Definition:</strong> Homeowners who are having a legitimate financial hardship and are unable 
+          to make mortgage payments may have to sell their home. However, if the home is worth less money than they 
+          owe, a lender may consider a short-sale.</p>
+          <p className="warning"><strong>⚠️ Requires:</strong> The note holder or "investors" approval.</p>
+          
+          <h5>How Short Sales Work:</h5>
+          <ul>
+            <li><strong>Seller Owes:</strong> $350,000 on mortgage</li>
+            <li><strong>Home Worth:</strong> $300,000 (underwater)</li>
+            <li><strong>Seller Can't:</strong> Bring $50,000+ to closing</li>
+            <li><strong>Lender Agrees:</strong> To accept less than owed (takes a loss)</li>
+            <li><strong>Sale Price:</strong> $300,000</li>
+            <li><strong>Lender Gets:</strong> $300,000 (writes off $50,000 loss)</li>
+          </ul>
+
+          <h5>Short Sale Requirements:</h5>
+          <ul>
+            <li>📋 <strong>Financial Hardship:</strong> Job loss, medical bills, divorce, etc.</li>
+            <li>💼 <strong>Lender Approval:</strong> Must approve both price and buyer</li>
+            <li>📄 <strong>Documentation:</strong> Extensive financial paperwork required</li>
+            <li>⏱️ <strong>Long Process:</strong> 3-6 months typical (lender review time)</li>
+            <li>💰 <strong>No Proceeds:</strong> Seller gets nothing, just avoids foreclosure</li>
+          </ul>
+
+          <h5>Short Sale vs. Foreclosure:</h5>
+          <div className="comparison">
+            <p><strong>Short Sale (Better for Seller):</strong></p>
+            <ul>
+              <li>Less damage to credit (still significant, but better)</li>
+              <li>Can buy again in 2-4 years typically</li>
+              <li>More dignified exit</li>
+              <li>May avoid deficiency judgment in some cases</li>
+            </ul>
+
+            <p><strong>Foreclosure (Worst Case):</strong></p>
+            <ul>
+              <li>Severe credit damage (7-10 years)</li>
+              <li>Can't buy again for 5-7 years typically</li>
+              <li>Public record</li>
+              <li>Possible deficiency judgment (lender sues for loss)</li>
+            </ul>
+          </div>
+
+          <h5>Agent's Role in Short Sales:</h5>
+          <ul>
+            <li>✅ <strong>Specialized Knowledge:</strong> Short sales require expertise</li>
+            <li>✅ <strong>Lender Negotiation:</strong> Work with lender's loss mitigation department</li>
+            <li>✅ <strong>Manage Expectations:</strong> Buyers must be patient (long process)</li>
+            <li>✅ <strong>Documentation:</strong> Help seller gather financial hardship docs</li>
+            <li>✅ <strong>Multiple Offers:</strong> Present strongest offer to lender</li>
+            <li>⚠️ <strong>No Guarantee:</strong> Lender may reject even accepted offer</li>
+          </ul>
+
+          <p className="highlight">
+            <strong>For Buyers:</strong> Short sales can be good deals, but require patience. Offer may be accepted 
+            by seller but still need lender approval. Cash buyers or strong financing recommended.
+          </p>
         </div>
 
         <h4>Key Documents Seller Signs:</h4>
