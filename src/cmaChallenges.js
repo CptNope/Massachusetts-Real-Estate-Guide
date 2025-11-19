@@ -1,12 +1,18 @@
-// CMA Calculator Challenge Scenarios
+// CMA Calculator Challenge Scenarios - Progressive Learning Path
 export const cmaChallenges = [
+  // LEVEL 1: BEGINNER - Basics
   {
     id: 1,
-    title: "Basic Residential CMA",
+    title: "🎓 Your First CMA",
     difficulty: "beginner",
-    description: "Complete your first CMA using 3 comparable properties. Learn the fundamentals of property valuation.",
+    description: "Complete your first CMA using 3 comparable properties. Learn the fundamentals of property valuation and basic adjustments.",
     xpReward: 50,
     achievement: "first-cma",
+    learningObjectives: [
+      "Understand comparable property selection",
+      "Learn adjustment calculations",
+      "Interpret value range results"
+    ],
     scenario: {
       subject: {
         address: "123 Maple Street, Boston, MA",
@@ -440,6 +446,250 @@ export const cmaChallenges = [
       "All comps within 1 mile of subject",
       "Verify data accuracy",
       "Generate professional report"
+    ]
+  },
+  // LEVEL 2: INTERMEDIATE - Templates & Efficiency
+  {
+    id: 7,
+    title: "🎯 Market Template Master",
+    difficulty: "intermediate",
+    description: "Learn to use market templates for faster CMA creation. Apply a Boston Suburban template and complete a CMA in record time!",
+    xpReward: 80,
+    achievement: "template-user",
+    instructions: [
+      "Click '🎯 Market Templates' in the toolbar",
+      "Select 'Boston Suburban' template",
+      "Notice how adjustment values auto-populate!",
+      "Enter your subject property and 3 comparables",
+      "See how templates save time and ensure market accuracy",
+      "Complete the CMA with template-provided values"
+    ],
+    learningObjectives: [
+      "Use market templates for efficiency",
+      "Understand regional adjustment values",
+      "Save time with pre-configured settings"
+    ],
+    learningPoints: [
+      "Templates provide market-accurate adjustment values",
+      "9 Massachusetts markets available",
+      "One-click setup saves 5+ minutes per CMA",
+      "Professional agents use templates for consistency"
+    ]
+  },
+  {
+    id: 8,
+    title: "📸 Visual Presentation Pro",
+    difficulty: "intermediate",
+    description: "Create a visually stunning CMA by adding property photos. Learn how images enhance client presentations!",
+    xpReward: 90,
+    achievement: "photographer",
+    instructions: [
+      "Click '📸' (Photos) button in toolbar",
+      "Upload a photo for the subject property",
+      "Upload photos for each comparable",
+      "Review how photos appear in your CMA",
+      "Notice the professional visual appeal",
+      "Photos make CMAs more engaging for clients"
+    ],
+    learningObjectives: [
+      "Upload and manage property photos",
+      "Create visually appealing reports",
+      "Enhance client presentations"
+    ],
+    learningPoints: [
+      "Photos increase client engagement by 40%",
+      "Max 2MB per photo for performance",
+      "Images stored as base64 for portability",
+      "Professional CMAs always include photos"
+    ]
+  },
+  // LEVEL 3: ADVANCED - Professional Tools
+  {
+    id: 9,
+    title: "🎨 Build Your Brand",
+    difficulty: "advanced",
+    description: "Customize the CMA tool with your personal branding. Add your logo, company info, and brand colors!",
+    xpReward: 100,
+    achievement: "brand-builder",
+    instructions: [
+      "Click '🎨' (Branding) button in toolbar",
+      "Enter your company name",
+      "Add your phone number and email",
+      "Enter your license number",
+      "Choose your brand color (try different colors!)",
+      "Click 'Save Branding'",
+      "Your CMAs now show YOUR brand on reports!"
+    ],
+    learningObjectives: [
+      "Customize professional branding",
+      "Create branded reports",
+      "Build professional identity"
+    ],
+    learningPoints: [
+      "Branded reports look more professional",
+      "Builds name recognition with clients",
+      "Logo appears on all printed/PDF reports",
+      "Brand colors make reports memorable"
+    ]
+  },
+  {
+    id: 10,
+    title: "📄 PDF Export Excellence",
+    difficulty: "advanced",
+    description: "Master professional PDF generation. Create a complete CMA and export it as a PDF for client delivery!",
+    xpReward: 110,
+    achievement: "pdf-master",
+    instructions: [
+      "Complete a full CMA with all data",
+      "Add branding if you haven't already",
+      "Click '📄 PDF' button in toolbar",
+      "PDF exports instantly - no print dialog!",
+      "Review the professional format",
+      "This is what you'd send to clients"
+    ],
+    learningObjectives: [
+      "Generate professional PDF reports",
+      "Understand PDF export workflow",
+      "Create client-ready deliverables"
+    ],
+    learningPoints: [
+      "PDFs are portable and professional",
+      "Clients can save and review at leisure",
+      "Branded PDFs build credibility",
+      "One-click export saves time"
+    ]
+  },
+  {
+    id: 11,
+    title: "📧 Client Communication Master",
+    difficulty: "advanced",
+    description: "Learn to email CMA reports directly to clients. Complete the professional delivery workflow!",
+    xpReward: 120,
+    achievement: "communicator",
+    instructions: [
+      "Complete a CMA analysis",
+      "Click '📧' (Email) button in toolbar",
+      "Enter client email address",
+      "Customize the subject line",
+      "Add a personal message to your client",
+      "Click 'Send Email'",
+      "Professional delivery complete!"
+    ],
+    learningObjectives: [
+      "Email reports to clients",
+      "Personalize client communications",
+      "Complete the professional workflow"
+    ],
+    learningPoints: [
+      "Direct email saves time and looks professional",
+      "Personal messages build client relationships",
+      "Instant delivery impresses clients",
+      "Track when clients receive reports"
+    ]
+  },
+  // LEVEL 4: EXPERT - Advanced Analysis
+  {
+    id: 12,
+    title: "📊 Data Visualization Expert",
+    difficulty: "expert",
+    description: "Master advanced charts and visual analytics. Use pie charts, line charts, and comparison tools!",
+    xpReward: 130,
+    achievement: "data-visualizer",
+    instructions: [
+      "Complete a CMA with 4+ comparables",
+      "Click '📊' (Charts) button to view analytics",
+      "Review the visual comparison charts",
+      "See adjustment breakdowns visually",
+      "Notice the Quick Stats Summary Bar",
+      "Use Comparison Matrix for side-by-side analysis",
+      "Visual data tells the story better!"
+    ],
+    learningObjectives: [
+      "Interpret visual data analytics",
+      "Use charts for client presentations",
+      "Master comparison tools"
+    ],
+    learningPoints: [
+      "Charts make complex data understandable",
+      "Clients prefer visual over text-heavy reports",
+      "Comparison matrix shows differences instantly",
+      "Quick stats provide at-a-glance insights"
+    ]
+  },
+  {
+    id: 13,
+    title: "⭐ Organization & Efficiency Pro",
+    difficulty: "expert",
+    description: "Master organizational tools: notes, favorites, bulk actions, and shortcuts. Work like a power user!",
+    xpReward: 140,
+    achievement: "organizer",
+    instructions: [
+      "Complete a CMA and add notes to 2+ comps",
+      "Use '💾 Save/Load' to save your CMA",
+      "Add your CMA to favorites (⭐ star icon)",
+      "Try keyboard shortcut: Press 'M' to toggle modes",
+      "Press 'Ctrl+S' to save quickly",
+      "Click '⚡' for bulk actions menu",
+      "Explore '⌨️' to see all shortcuts",
+      "You're now a power user!"
+    ],
+    learningObjectives: [
+      "Use organizational tools effectively",
+      "Master keyboard shortcuts",
+      "Work at professional speed"
+    ],
+    learningPoints: [
+      "Notes document your reasoning",
+      "Favorites organize important CMAs",
+      "Keyboard shortcuts save hours",
+      "Bulk actions handle repetitive tasks",
+      "Power users are 10x more efficient"
+    ]
+  },
+  // LEVEL 5: ULTIMATE - Complete Professional Workflow
+  {
+    id: 14,
+    title: "🏆 Ultimate CMA Professional",
+    difficulty: "ultimate",
+    description: "The ULTIMATE challenge! Complete a full professional CMA using ALL advanced features: photos, branding, PDF, email, charts, notes, and maps!",
+    xpReward: 500,
+    achievement: "ultimate-pro",
+    instructions: [
+      "✅ STEP 1: Set up your branding (🎨)",
+      "✅ STEP 2: Use a market template (🎯)",
+      "✅ STEP 3: Enter subject property + 4 comparables",
+      "✅ STEP 4: Upload photos for all properties (📸)",
+      "✅ STEP 5: Add notes to each comparable (📝)",
+      "✅ STEP 6: View property map (🗺️)",
+      "✅ STEP 7: Check advanced charts (📊)",
+      "✅ STEP 8: Review comparison matrix",
+      "✅ STEP 9: Export to PDF (📄)",
+      "✅ STEP 10: Email to client (📧)",
+      "✅ STEP 11: Save and favorite the CMA (⭐)",
+      "🎊 CONGRATULATIONS - You're a CMA MASTER!"
+    ],
+    learningObjectives: [
+      "Execute complete professional workflow",
+      "Use all 110+ features together",
+      "Deliver enterprise-quality CMAs"
+    ],
+    learningPoints: [
+      "This is the complete professional workflow",
+      "You've mastered software worth $1,500/month",
+      "You can now compete with licensed agents",
+      "These skills are immediately marketable",
+      "You're ready for real-world CMA work!"
+    ],
+    realWorldChallenge: false,
+    requirements: [
+      "Use branding",
+      "Upload at least 3 photos",
+      "Add notes to 2+ comps",
+      "View map",
+      "View charts",
+      "Export PDF",
+      "Send email",
+      "Save and favorite"
     ]
   }
 ];
