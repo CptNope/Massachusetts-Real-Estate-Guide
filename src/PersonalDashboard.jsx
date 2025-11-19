@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { sections } from './content.jsx';
 import { useLocalStorage } from './useLocalStorage';
+import PerformanceAnalytics from './PerformanceAnalytics';
 
 export default function PersonalDashboard({ 
   masteredSections, 
   reviewSections, 
   onToggleMastered, 
   onToggleReview,
-  onClearAll 
+  onClearAll,
+  gamification
 }) {
   const [notes, setNotes] = useLocalStorage('userNotes', {});
-  const [activeNoteSection, setActiveNoteSection] = React.useState(null);
+  const [activeNoteSection, setActiveNoteSection] = useState(null);
+  const [activeTab, setActiveTab] = useState('overview'); // 'overview' or 'analytics'
 
   const totalSections = sections.length;
   const masteredCount = masteredSections.length;
@@ -40,6 +43,28 @@ export default function PersonalDashboard({
         <p>Track your learning progress and take notes</p>
       </div>
 
+      {/* Tab Switcher */}
+      <div className="dashboard-tabs">
+        <button
+          className={`dashboard-tab ${activeTab === 'overview' ? 'active' : ''}`}
+          onClick={() => setActiveTab('overview')}
+        >
+          📚 Overview
+        </button>
+        <button
+          className={`dashboard-tab ${activeTab === 'analytics' ? 'active' : ''}`}
+          onClick={() => setActiveTab('analytics')}
+        >
+          📊 Analytics
+        </button>
+      </div>
+
+      {activeTab === 'analytics' && gamification && (
+        <PerformanceAnalytics gamification={gamification} />
+      )}
+
+      {activeTab === 'overview' && (
+        <>
       {/* Progress Stats */}
       <div className="dashboard-stats">
         <div className="stat-card">
@@ -167,6 +192,8 @@ export default function PersonalDashboard({
           Reset All Progress
         </button>
       </div>
+        </>
+      )}
     </div>
   );
 }
