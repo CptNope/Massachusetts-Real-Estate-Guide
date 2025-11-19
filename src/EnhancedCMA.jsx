@@ -338,6 +338,59 @@ export default function EnhancedCMA({ gamification }) {
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [notification, setNotification] = useState(null);
   const [lastSaved, setLastSaved] = useState(null);
+  const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const [validationErrors, setValidationErrors] = useState({});
+  
+  // Undo/Redo: Save state to history
+  const saveToHistory = (stateName, value) => {
+    const newHistory = history.slice(0, historyIndex + 1);
+    newHistory.push({ stateName, value, timestamp: Date.now() });
+    if (newHistory.length > 50) newHistory.shift(); // Keep last 50 actions
+    setHistory(newHistory);
+    setHistoryIndex(newHistory.length - 1);
+  };
+
+  const undo = () => {
+    if (historyIndex > 0) {
+      const prevState = history[historyIndex - 1];
+      setHistoryIndex(historyIndex - 1);
+      // Apply the previous state based on stateName
+      showNotification('↶ Undo', 'info');
+    }
+  };
+
+  const redo = () => {
+    if (historyIndex < history.length - 1) {
+      const nextState = history[historyIndex + 1];
+      setHistoryIndex(historyIndex + 1);
+      showNotification('↷ Redo', 'info');
+    }
+  };
+
+  // Input validation
+  const validateInput = (field, value) => {
+    const errors = { ...validationErrors };
+    
+    if (field.includes('Price') && value) {
+      if (isNaN(value) || parseFloat(value) < 0) {
+        errors[field] = 'Must be a positive number';
+      } else {
+        delete errors[field];
+      }
+    }
+    
+    if (field.includes('Sqft') && value) {
+      if (isNaN(value) || parseInt(value) < 100) {
+        errors[field] = 'Must be at least 100 sq ft';
+      } else {
+        delete errors[field];
+      }
+    }
+    
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
   
   // Auto-save draft every 30 seconds
   useEffect(() => {
@@ -395,8 +448,18 @@ export default function EnhancedCMA({ gamification }) {
       // Only if not typing in an input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
       
+      // Ctrl/Cmd + Z = Undo
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      }
+      // Ctrl/Cmd + Y or Ctrl/Cmd + Shift + Z = Redo
+      else if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) {
+        e.preventDefault();
+        redo();
+      }
       // Ctrl/Cmd + S = Save
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      else if ((e.ctrlKey || e.metaKey) && e.key === 's') {
         e.preventDefault();
         saveCMA();
       }
@@ -931,9 +994,57 @@ export default function EnhancedCMA({ gamification }) {
     alert(`🗑️ Deleted: ${saveName}`);
   };
 
+  const exportToCSV = () => {
+    const csvData = [];
+    csvData.push(['CMA Report - ' + (subjectAddress || 'Analysis')]);
+    csvData.push(['Generated:', new Date().toLocaleDateString()]);
+    csvData.push([]);
+    csvData.push(['Client Information']);
+    csvData.push(['Client Name:', clientName]);
+    csvData.push(['Prepared By:', preparedBy]);
+    csvData.push(['Brokerage:', brokerageName]);
+    csvData.push([]);
+    csvData.push(['Subject Property']);
+    csvData.push(['Address:', subjectAddress]);
+    csvData.push(['Beds:', subjectBeds, 'Baths:', subjectBaths, 'Sq Ft:', subjectSqft]);
+    csvData.push([]);
+    csvData.push(['Comparables']);
+    csvData.push(['Comp #', 'Sale Price', 'Beds', 'Baths', 'Sq Ft', 'Garage', 'Condition', 'Age', 'DOM', 'Adjustment', 'Adjusted Value']);
+    
+    adjustedComps.forEach(comp => {
+      csvData.push([
+        comp.id,
+        comp.price,
+        comp.beds,
+        comp.baths,
+        comp.sqft,
+        comp.garage,
+        comp.condition,
+        comp.age,
+        comp.dom,
+        comp.adjustment,
+        comp.adjustedPrice
+      ]);
+    });
+    
+    csvData.push([]);
+    csvData.push(['Summary']);
+    csvData.push(['Average Adjusted Value:', avgAdjustedPrice.toFixed(0)]);
+    csvData.push(['Recommended Range:', recommendedMin.toFixed(0), 'to', recommendedMax.toFixed(0)]);
+    
+    const csvString = csvData.map(row => row.join(',')).join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `CMA_${subjectAddress || 'Report'}_${new Date().toLocaleDateString().replace(/\//g, '-')}.csv`;
+    a.click();
+    showNotification('✅ CSV exported successfully!', 'success');
+  };
+
   const exportToJSON = () => {
     const allComps = [
-      { active: comp1Active, price: comp1Price, beds: comp1Beds, baths: comp1Baths, sqft: comp1Sqft, garage: comp1Garage, condition: comp1Condition, age: comp1Age, dom: comp1DOM, pool: comp1Pool, lotSize: comp1LotSize, location: comp1Location, view: comp1View, upgrades: comp1Upgrades },
+      comp1Active && { id: 1, price: comp1Price, beds: comp1Beds, baths: comp1Baths, sqft: comp1Sqft, garage: comp1Garage, condition: comp1Condition, age: comp1Age, dom: comp1DOM, pool: comp1Pool, lotSize: comp1LotSize, location: comp1Location, view: comp1View, upgrades: comp1Upgrades, active: true },
       { active: comp2Active, price: comp2Price, beds: comp2Beds, baths: comp2Baths, sqft: comp2Sqft, garage: comp2Garage, condition: comp2Condition, age: comp2Age, dom: comp2DOM, pool: comp2Pool, lotSize: comp2LotSize, location: comp2Location, view: comp2View, upgrades: comp2Upgrades },
       { active: comp3Active, price: comp3Price, beds: comp3Beds, baths: comp3Baths, sqft: comp3Sqft, garage: comp3Garage, condition: comp3Condition, age: comp3Age, dom: comp3DOM, pool: comp3Pool, lotSize: comp3LotSize, location: comp3Location, view: comp3View, upgrades: comp3Upgrades },
       { active: comp4Active, price: comp4Price, beds: comp4Beds, baths: comp4Baths, sqft: comp4Sqft, garage: comp4Garage, condition: comp4Condition, age: comp4Age, dom: comp4DOM, pool: comp4Pool, lotSize: comp4LotSize, location: comp4Location, view: comp4View, upgrades: comp4Upgrades },
@@ -1148,6 +1259,14 @@ export default function EnhancedCMA({ gamification }) {
             <div className="shortcuts-grid">
               <div className="shortcut-group">
                 <h4>Actions</h4>
+                <div className="shortcut-item">
+                  <kbd>Ctrl/⌘</kbd> + <kbd>Z</kbd>
+                  <span>Undo</span>
+                </div>
+                <div className="shortcut-item">
+                  <kbd>Ctrl/⌘</kbd> + <kbd>Y</kbd>
+                  <span>Redo</span>
+                </div>
                 <div className="shortcut-item">
                   <kbd>Ctrl/⌘</kbd> + <kbd>S</kbd>
                   <span>Save CMA</span>
