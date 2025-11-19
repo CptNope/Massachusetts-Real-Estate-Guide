@@ -1,6 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { cmaChallenges } from './cmaChallenges';
 
+// Tooltip Component for Learning Mode
+const Tooltip = ({ text, children }) => {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="tooltip-wrapper" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      {children}
+      {show && <div className="tooltip-popup">{text}</div>}
+    </div>
+  );
+};
+
+// Helper to calculate price per sqft
+const calcPricePerSqft = (price, sqft) => {
+  const p = parseFloat(price) || 0;
+  const s = parseInt(sqft) || 1;
+  return s > 0 ? (p / s).toFixed(2) : 0;
+};
+
+// Helper to determine confidence level
+const getConfidenceLevel = (adjustedComps) => {
+  if (adjustedComps.length < 2) return { level: 'low', color: '#ef4444', text: '🔴 Low Confidence - Use 3+ comps' };
+  
+  const values = adjustedComps.map(c => c.adjustedPrice);
+  const avg = values.reduce((a, b) => a + b, 0) / values.length;
+  const range = Math.max(...values) - Math.min(...values);
+  const variance = range / avg;
+  
+  if (variance < 0.05) return { level: 'high', color: '#10b981', text: '🟢 High Confidence - Tight clustering' };
+  if (variance < 0.15) return { level: 'medium', color: '#f59e0b', text: '🟡 Medium Confidence - Moderate spread' };
+  return { level: 'low', color: '#ef4444', text: '🔴 Low Confidence - Wide variance' };
+};
+
 export default function EnhancedCMA({ gamification }) {
   const [showHelp, setShowHelp] = useState(false);
   const [showDataSources, setShowDataSources] = useState(false);
@@ -9,6 +41,22 @@ export default function EnhancedCMA({ gamification }) {
   const [challengeStartTime, setChallengeStartTime] = useState(null);
   const [showChallengeComplete, setShowChallengeComplete] = useState(false);
   const [showSaveLoad, setShowSaveLoad] = useState(false);
+  const [mode, setMode] = useState('learning'); // 'learning' or 'professional'
+  
+  // Mode toggle with gamification
+  const toggleMode = () => {
+    const newMode = mode === 'learning' ? 'professional' : 'learning';
+    setMode(newMode);
+    
+    if (gamification && newMode === 'professional') {
+      // Award XP for first time using Professional mode
+      const stats = gamification.stats || {};
+      if (!stats.usedProfessionalMode) {
+        gamification.addXP(25, 'Unlocked Professional Mode! 💼');
+        gamification.recordActivity('professional_mode_unlocked');
+      }
+    }
+  };
   
   // Client Information
   const [clientName, setClientName] = useState('');
@@ -585,6 +633,13 @@ export default function EnhancedCMA({ gamification }) {
 
       <div className="cma-toolbar">
         <button 
+          className={`mode-toggle-btn ${mode === 'learning' ? 'mode-learning' : 'mode-professional'}`}
+          onClick={toggleMode}
+          title={mode === 'learning' ? 'Switch to Professional Mode - Hide learning aids' : 'Switch to Learning Mode - Show tooltips & guidance'}
+        >
+          {mode === 'learning' ? '🎓 Learning Mode' : '💼 Professional Mode'}
+        </button>
+        <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowHelp(!showHelp)}
           title="How to use CMA Calculator"
@@ -598,13 +653,15 @@ export default function EnhancedCMA({ gamification }) {
         >
           {showDataSources ? '🔍 Hide Data Sources' : '🔍 Data Sources'}
         </button>
-        <button 
-          className="btn-primary cma-help-btn"
-          onClick={() => setShowChallenges(!showChallenges)}
-          title="Practice challenges with XP rewards"
-        >
-          {showChallenges ? '🎮 Hide Challenges' : '🎮 Start Challenge'}
-        </button>
+        {mode === 'learning' && (
+          <button 
+            className="btn-primary cma-help-btn"
+            onClick={() => setShowChallenges(!showChallenges)}
+            title="Practice challenges with XP rewards"
+          >
+            {showChallenges ? '🎮 Hide Challenges' : '🎮 Start Challenge'}
+          </button>
+        )}
         <button 
           className="btn-success cma-help-btn"
           onClick={() => setShowSaveLoad(!showSaveLoad)}
@@ -1470,6 +1527,12 @@ export default function EnhancedCMA({ gamification }) {
                 <span className="value">${comp.adjustedPrice.toLocaleString()}</span>
               </div>
             </div>
+            {mode === 'learning' && Math.abs(comp.adjustment / comp.price) > 0.25 && (
+              <div className="adjustment-warning">
+                ⚠️ <strong>Warning:</strong> Adjustment is {(Math.abs(comp.adjustment / comp.price) * 100).toFixed(1)}% of sale price. 
+                Comps over 25% adjusted may be too different. Consider using a more similar property.
+              </div>
+            )}
           </div>
         ))}
 
@@ -1488,6 +1551,49 @@ export default function EnhancedCMA({ gamification }) {
                 </div>
               </div>
             </div>
+
+            {mode === 'learning' && (
+              <div className="result-card confidence-indicator" style={{ borderLeft: `4px solid ${getConfidenceLevel(adjustedComps).color}` }}>
+                <h4>📊 Data Confidence</h4>
+                <p style={{ color: getConfidenceLevel(adjustedComps).color, fontWeight: 'bold', fontSize: '1.1em' }}>
+                  {getConfidenceLevel(adjustedComps).text}
+                </p>
+                <div style={{ fontSize: '0.9em', color: '#6b7280', marginTop: '0.5rem' }}>
+                  <strong>What this means:</strong> {
+                    getConfidenceLevel(adjustedComps).level === 'high' ? 'Comps are very similar. High accuracy.' :
+                    getConfidenceLevel(adjustedComps).level === 'medium' ? 'Some variance. Review comp differences.' :
+                    'Wide spread in values. Add more comps or verify data.'
+                  }
+                </div>
+              </div>
+            )}
+
+            {mode === 'learning' && adjustedComps.length > 0 && (
+              <div className="result-card price-per-sqft-analysis">
+                <h4>📐 Price Per Square Foot Analysis</h4>
+                <div className="sqft-grid">
+                  <div className="sqft-item subject-sqft">
+                    <span className="sqft-label">Subject (Estimated):</span>
+                    <span className="sqft-value">${calcPricePerSqft(avgAdjustedPrice, subjectSqft)}/sqft</span>
+                  </div>
+                  {adjustedComps.map(comp => (
+                    <div key={comp.id} className="sqft-item">
+                      <span className="sqft-label">Comp #{comp.id} (Adjusted):</span>
+                      <span className="sqft-value">${calcPricePerSqft(comp.adjustedPrice, comp.sqft)}/sqft</span>
+                    </div>
+                  ))}
+                  <div className="sqft-item average-sqft">
+                    <span className="sqft-label">Average $/sqft:</span>
+                    <span className="sqft-value">
+                      ${(adjustedComps.reduce((sum, c) => sum + parseFloat(calcPricePerSqft(c.adjustedPrice, c.sqft)), 0) / adjustedComps.length).toFixed(2)}/sqft
+                    </span>
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.85em', color: '#6b7280', marginTop: '0.75rem' }}>
+                  💡 <strong>Tip:</strong> Typical MA pricing: Urban $250-400/sqft | Suburban $100-200/sqft | Rural $75-150/sqft
+                </p>
+              </div>
+            )}
 
             <div className="result-card recommendation">
               <h4>💡 Recommended Listing Price Range</h4>
