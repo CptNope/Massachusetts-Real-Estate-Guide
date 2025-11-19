@@ -355,6 +355,17 @@ export default function EnhancedCMA({ gamification }) {
   const [showPhotos, setShowPhotos] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showCharts, setShowCharts] = useState(false);
+  const [showMLS, setShowMLS] = useState(false);
+  
+  // MLS Integration State
+  const [mlsConnected, setMlsConnected] = useState(false);
+  const [mlsProvider, setMlsProvider] = useState('');
+  const [mlsUsername, setMlsUsername] = useState('');
+  const [mlsPassword, setMlsPassword] = useState('');
+  const [mlsSearchAddress, setMlsSearchAddress] = useState('');
+  const [mlsSearchRadius, setMlsSearchRadius] = useState('1');
+  const [mlsResults, setMlsResults] = useState([]);
+  const [showMLSImport, setShowMLSImport] = useState(false);
   
   // Photo Upload State
   const [subjectPhoto, setSubjectPhoto] = useState('');
@@ -408,6 +419,137 @@ export default function EnhancedCMA({ gamification }) {
       gamification.recordActivity('branding_set');
     }
   };
+
+  // MLS Integration Functions
+  const connectMLS = () => {
+    if (!mlsProvider || !mlsUsername || !mlsPassword) {
+      showNotification('⚠️ Please fill in all MLS credentials', 'error');
+      return;
+    }
+    
+    // Store credentials (in production, this would connect to MLS API)
+    const mlsCredentials = {
+      provider: mlsProvider,
+      username: mlsUsername,
+      // Note: Never store actual passwords in production
+      connected: true,
+      connectedAt: new Date().toISOString()
+    };
+    localStorage.setItem('mls_credentials', JSON.stringify(mlsCredentials));
+    setMlsConnected(true);
+    showNotification(`✅ Connected to ${mlsProvider} MLS! +25 XP`, 'success');
+    if (gamification) {
+      gamification.addXP(25, 'MLS connected');
+      gamification.recordActivity('mls_connected');
+    }
+  };
+
+  const disconnectMLS = () => {
+    localStorage.removeItem('mls_credentials');
+    setMlsConnected(false);
+    setMlsProvider('');
+    setMlsUsername('');
+    setMlsPassword('');
+    showNotification('Disconnected from MLS', 'info');
+  };
+
+  const searchMLS = () => {
+    if (!mlsConnected) {
+      showNotification('⚠️ Please connect to MLS first', 'error');
+      return;
+    }
+    if (!mlsSearchAddress) {
+      showNotification('⚠️ Please enter a search address', 'error');
+      return;
+    }
+
+    // Mock MLS search results (in production, this would call MLS API)
+    const mockResults = [
+      {
+        mlsNumber: 'MA12345678',
+        address: '789 Commonwealth Ave, Boston, MA',
+        price: 495000,
+        beds: 3,
+        baths: 2,
+        sqft: 1850,
+        yearBuilt: 2015,
+        dom: 12,
+        status: 'Sold',
+        soldDate: '2024-10-15'
+      },
+      {
+        mlsNumber: 'MA12345679',
+        address: '321 Beacon St, Boston, MA',
+        price: 515000,
+        beds: 3,
+        baths: 2.5,
+        sqft: 1950,
+        yearBuilt: 2018,
+        dom: 8,
+        status: 'Sold',
+        soldDate: '2024-11-01'
+      },
+      {
+        mlsNumber: 'MA12345680',
+        address: '654 Mass Ave, Cambridge, MA',
+        price: 475000,
+        beds: 3,
+        baths: 2,
+        sqft: 1750,
+        yearBuilt: 2012,
+        dom: 25,
+        status: 'Sold',
+        soldDate: '2024-09-20'
+      }
+    ];
+
+    setMlsResults(mockResults);
+    setShowMLSImport(true);
+    showNotification(`Found ${mockResults.length} comparables! +10 XP`, 'success');
+    if (gamification) {
+      gamification.addXP(10, 'MLS search performed');
+      gamification.recordActivity('mls_search');
+    }
+  };
+
+  const importMLSProperty = (property, compNumber) => {
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - property.yearBuilt;
+    
+    // Map MLS data to CMA fields
+    const setActive = eval(`setComp${compNumber}Active`);
+    const setPrice = eval(`setComp${compNumber}Price`);
+    const setBeds = eval(`setComp${compNumber}Beds`);
+    const setBaths = eval(`setComp${compNumber}Baths`);
+    const setSqft = eval(`setComp${compNumber}Sqft`);
+    const setAge = eval(`setComp${compNumber}Age`);
+    const setDOM = eval(`setComp${compNumber}DOM`);
+
+    setActive(true);
+    setPrice(property.price.toString());
+    setBeds(property.beds.toString());
+    setBaths(property.baths.toString());
+    setSqft(property.sqft.toString());
+    setAge(age.toString());
+    setDOM(property.dom.toString());
+
+    showNotification(`✅ Imported ${property.address} to Comp #${compNumber}! +15 XP`, 'success');
+    if (gamification) {
+      gamification.addXP(15, 'MLS property imported');
+      gamification.recordActivity('mls_import');
+    }
+  };
+
+  // Load MLS credentials on mount
+  useEffect(() => {
+    const savedMLS = localStorage.getItem('mls_credentials');
+    if (savedMLS) {
+      const data = JSON.parse(savedMLS);
+      setMlsProvider(data.provider || '');
+      setMlsUsername(data.username || '');
+      setMlsConnected(data.connected || false);
+    }
+  }, []);
 
   // Photo upload handler (convert to base64)
   const handlePhotoUpload = (e, setter) => {
@@ -1493,7 +1635,197 @@ export default function EnhancedCMA({ gamification }) {
         >
           📧
         </button>
+        <button 
+          className={`btn-primary cma-help-btn ${mlsConnected ? 'mls-connected' : ''}`}
+          onClick={() => setShowMLS(!showMLS)}
+          title={mlsConnected ? "MLS Connected - Search properties" : "Connect to MLS"}
+        >
+          🏢 {mlsConnected ? 'MLS ✓' : 'MLS'}
+        </button>
       </div>
+
+      {showMLS && (
+        <div className="mls-panel">
+          <h3>🏢 MLS Integration {mlsConnected && <span className="mls-status-badge">Connected</span>}</h3>
+          
+          {!mlsConnected ? (
+            <div className="mls-connect-section">
+              <p className="panel-description">
+                <strong>For Licensed Agents:</strong> Connect your MLS account to import real comparable data directly into your CMAs!
+              </p>
+              <div className="mls-provider-info">
+                <h4>📋 Supported MLS Systems:</h4>
+                <ul>
+                  <li>✅ MLS PIN (Massachusetts)</li>
+                  <li>✅ MLSPIN / MLS Property Information Network</li>
+                  <li>✅ GBREB / Greater Boston Real Estate Board</li>
+                  <li>✅ CRMLS / California Regional MLS</li>
+                  <li>✅ Bright MLS (Mid-Atlantic)</li>
+                  <li>✅ RETS & Web API compatible systems</li>
+                </ul>
+              </div>
+              <div className="mls-credentials-form">
+                <div className="input-group">
+                  <label>MLS Provider *</label>
+                  <select 
+                    value={mlsProvider}
+                    onChange={(e) => setMlsProvider(e.target.value)}
+                    className="calc-input"
+                  >
+                    <option value="">Select your MLS...</option>
+                    <option value="MLSPIN">MLS PIN (Massachusetts)</option>
+                    <option value="GBREB">Greater Boston Real Estate Board</option>
+                    <option value="CRMLS">California Regional MLS</option>
+                    <option value="BrightMLS">Bright MLS</option>
+                    <option value="Other">Other RETS-Compatible</option>
+                  </select>
+                </div>
+                <div className="input-group">
+                  <label>MLS Username *</label>
+                  <input
+                    type="text"
+                    value={mlsUsername}
+                    onChange={(e) => setMlsUsername(e.target.value)}
+                    placeholder="Your MLS username"
+                    className="calc-input"
+                  />
+                </div>
+                <div className="input-group">
+                  <label>MLS Password *</label>
+                  <input
+                    type="password"
+                    value={mlsPassword}
+                    onChange={(e) => setMlsPassword(e.target.value)}
+                    placeholder="Your MLS password"
+                    className="calc-input"
+                  />
+                  <p className="input-hint">
+                    🔒 Demo Mode: Credentials are stored locally for demonstration. 
+                    In production, this would use secure OAuth/API authentication.
+                  </p>
+                </div>
+                <div className="mls-actions">
+                  <button className="btn-primary" onClick={connectMLS}>
+                    🔗 Connect to MLS
+                  </button>
+                  <button className="btn-secondary" onClick={() => setShowMLS(false)}>
+                    ✕ Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="mls-search-section">
+              <div className="mls-connection-info">
+                <p>✅ Connected to <strong>{mlsProvider}</strong> as <strong>{mlsUsername}</strong></p>
+                <button className="btn-secondary btn-small" onClick={disconnectMLS}>
+                  Disconnect
+                </button>
+              </div>
+              
+              <h4>🔍 Search for Comparables</h4>
+              <div className="mls-search-form">
+                <div className="input-group">
+                  <label>Search Address or Area</label>
+                  <input
+                    type="text"
+                    value={mlsSearchAddress}
+                    onChange={(e) => setMlsSearchAddress(e.target.value)}
+                    placeholder="e.g., Boston, MA 02116"
+                    className="calc-input"
+                  />
+                </div>
+                <div className="input-group">
+                  <label>Search Radius (miles)</label>
+                  <select 
+                    value={mlsSearchRadius}
+                    onChange={(e) => setMlsSearchRadius(e.target.value)}
+                    className="calc-input"
+                  >
+                    <option value="0.5">0.5 miles</option>
+                    <option value="1">1 mile</option>
+                    <option value="2">2 miles</option>
+                    <option value="5">5 miles</option>
+                  </select>
+                </div>
+                <button className="btn-primary" onClick={searchMLS}>
+                  🔍 Search MLS
+                </button>
+              </div>
+
+              {showMLSImport && mlsResults.length > 0 && (
+                <div className="mls-results">
+                  <h4>📊 Found {mlsResults.length} Sold Comparables</h4>
+                  <div className="mls-results-grid">
+                    {mlsResults.map((property, index) => (
+                      <div key={property.mlsNumber} className="mls-result-card">
+                        <div className="mls-result-header">
+                          <strong>{property.address}</strong>
+                          <span className="mls-number">MLS# {property.mlsNumber}</span>
+                        </div>
+                        <div className="mls-result-details">
+                          <div className="mls-detail-row">
+                            <span>💰 Sold Price:</span>
+                            <strong>${property.price.toLocaleString()}</strong>
+                          </div>
+                          <div className="mls-detail-row">
+                            <span>🛏️ Beds/Baths:</span>
+                            <span>{property.beds} / {property.baths}</span>
+                          </div>
+                          <div className="mls-detail-row">
+                            <span>📏 Sq Ft:</span>
+                            <span>{property.sqft.toLocaleString()}</span>
+                          </div>
+                          <div className="mls-detail-row">
+                            <span>📅 Sold:</span>
+                            <span>{property.soldDate}</span>
+                          </div>
+                          <div className="mls-detail-row">
+                            <span>⏱️ DOM:</span>
+                            <span>{property.dom} days</span>
+                          </div>
+                        </div>
+                        <div className="mls-import-actions">
+                          {[1, 2, 3, 4, 5, 6].map(num => (
+                            <button 
+                              key={num}
+                              className="btn-success btn-small"
+                              onClick={() => importMLSProperty(property, num)}
+                              title={`Import to Comparable #${num}`}
+                            >
+                              → Comp #{num}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+          
+          <div className="mls-info-section">
+            <h4>ℹ️ About MLS Integration</h4>
+            <p className="mls-info-text">
+              <strong>Current Status:</strong> Demo/Mock Mode - This shows the MLS integration interface.
+            </p>
+            <p className="mls-info-text">
+              <strong>For Production Use:</strong> Real MLS integration requires:
+            </p>
+            <ul className="mls-requirements-list">
+              <li>✅ Active MLS membership & credentials</li>
+              <li>✅ Backend server with MLS API integration</li>
+              <li>✅ RETS or Web API compatibility</li>
+              <li>✅ Compliance with MLS terms of service</li>
+              <li>✅ Secure authentication (OAuth recommended)</li>
+            </ul>
+            <p className="mls-info-text">
+              <strong>Benefits:</strong> Once connected, import real sold comparables directly from MLS with one click!
+            </p>
+          </div>
+        </div>
+      )}
 
       {showPhotos && (
         <div className="photos-panel">
