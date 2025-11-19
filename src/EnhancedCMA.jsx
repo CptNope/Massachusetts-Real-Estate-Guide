@@ -378,6 +378,7 @@ export default function EnhancedCMA({ gamification }) {
   const [showContractEffects, setShowContractEffects] = useState(false);
   const [showContractPerformance, setShowContractPerformance] = useState(false);
   const [showSalesContracts, setShowSalesContracts] = useState(false);
+  const [showMortgageTheory, setShowMortgageTheory] = useState(false);
   const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
@@ -2350,11 +2351,165 @@ ${brandingEmail || ''}`;
           </div>
 
           <div className="legal-footer-actions">
-            <button className="btn-info" onClick={() => { setShowSalesContracts(false); setShowContractInfo(true); }}>
-              Contract Elements →
+            <button className="btn-info" onClick={() => { setShowSalesContracts(false); setShowMortgageTheory(true); }}>
+              💰 Mortgage Theory →
             </button>
             <button className="btn-secondary" onClick={() => { setShowSalesContracts(false); setShowLegalInfo(true); }}>
               ← Back to Law Change
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showMortgageTheory && (
+        <div className="mortgage-theory-panel">
+          <div className="mortgage-panel-header">
+            <h3>💰 Mortgage Theory: Title Theory vs. Lien Theory</h3>
+            <button className="btn-secondary" onClick={() => setShowMortgageTheory(false)}>✕ Close</button>
+          </div>
+
+          <div className="theory-intro">
+            <p>There are <strong>2 theories</strong> concerning the legal effect of a mortgage. They are:</p>
+          </div>
+
+          <div className="mortgage-theories">
+            <div className="theory-card lien-theory">
+              <div className="theory-badge">Lien Theory</div>
+              <h4>🔒 Lien Theory</h4>
+              <p className="theory-definition">
+                The lien theory interprets a mortgage <strong>only as a lien on real property</strong>. Upon default, 
+                the mortgagee (Lender) through <strong>judicial foreclosure</strong>, takes possession and is entitled to rents.
+              </p>
+              
+              <div className="theory-details">
+                <h5>Key Characteristics:</h5>
+                <ul>
+                  <li>Mortgage is treated as a security interest/lien</li>
+                  <li>Borrower retains full title to property</li>
+                  <li>Lender must go through court (judicial foreclosure) to take possession</li>
+                  <li>Upon default, lender entitled to possession and rents</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="theory-card title-theory">
+              <div className="theory-badge title-badge">Title Theory</div>
+              <h4>📜 Title Theory</h4>
+              <p className="theory-definition">
+                The mortgage <strong>splits title to the property</strong>. <mark className="highlight-yellow">The mortgagee (Lender) 
+                takes legal title to the property</mark> while the <mark className="highlight-green">mortgagor (Buyer) takes 
+                equitable title</mark>, <mark className="highlight-purple">subject to the mortgagor's right to redeem legal 
+                title upon repayment</mark> of the promissory note. Upon default, the lender may take possession of the 
+                property and seize the rents.
+              </p>
+              
+              <div className="theory-details">
+                <h5>Key Characteristics:</h5>
+                <ul>
+                  <li><strong>Legal title:</strong> Held by lender (mortgagee)</li>
+                  <li><strong>Equitable title:</strong> Held by borrower (mortgagor)</li>
+                  <li><strong>Right of redemption:</strong> Borrower can reclaim legal title by paying off loan</li>
+                  <li>Upon default, lender can take possession without court action</li>
+                  <li>Lender can seize rents immediately upon default</li>
+                </ul>
+              </div>
+
+              <div className="ma-title-state">
+                <strong>🏛️ Massachusetts is a TITLE THEORY state.</strong>
+              </div>
+            </div>
+
+            <div className="theory-card modified-lien">
+              <div className="theory-badge modified-badge">Modified Lien Theory</div>
+              <h4>⚖️ Modified Lien Theory</h4>
+              <p className="theory-definition">
+                A number of states have modified the strict interpretations of <mark className="highlight-blue">title & 
+                lien theories</mark>. These states allow lender to take possession of the mortgaged <mark className="highlight-blue">real 
+                estate upon default</mark> through the action of a <strong>trustee</strong> who initiates an auction or 
+                sale of property on behalf of lender. <strong>No court action is required.</strong>
+              </p>
+              
+              <div className="theory-details">
+                <h5>Key Characteristics:</h5>
+                <ul>
+                  <li>Hybrid approach between lien and title theories</li>
+                  <li>Trustee holds title for benefit of lender</li>
+                  <li>Non-judicial foreclosure through trustee sale</li>
+                  <li>Faster foreclosure process than judicial</li>
+                  <li>No court involvement required</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="theory-comparison">
+            <h4>📊 Quick Comparison Chart</h4>
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Lien Theory</th>
+                  <th>Title Theory</th>
+                  <th>Modified Lien</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Title Holder</strong></td>
+                  <td>Borrower has full title</td>
+                  <td className="highlight-cell">Lender has legal title<br/>Borrower has equitable title</td>
+                  <td>Trustee holds title</td>
+                </tr>
+                <tr>
+                  <td><strong>Foreclosure Type</strong></td>
+                  <td>Judicial (court required)</td>
+                  <td className="highlight-cell">Non-judicial (no court)</td>
+                  <td>Non-judicial (trustee sale)</td>
+                </tr>
+                <tr>
+                  <td><strong>Right to Possession</strong></td>
+                  <td>After court order</td>
+                  <td className="highlight-cell">Immediate upon default</td>
+                  <td>After trustee sale</td>
+                </tr>
+                <tr>
+                  <td><strong>MA Status</strong></td>
+                  <td>❌ Not MA</td>
+                  <td className="highlight-cell">✅ MA is Title Theory!</td>
+                  <td>❌ Not MA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="agent-implications">
+            <h4>💡 Implications for MA Real Estate Agents:</h4>
+            <div className="implications-grid">
+              <div className="implication-card">
+                <strong>🏦 Lender Rights</strong>
+                <p>In MA (title theory), lender has stronger position with legal title. Can take possession upon default without court.</p>
+              </div>
+              <div className="implication-card">
+                <strong>👤 Borrower Rights</strong>
+                <p>Borrower has equitable title and right of redemption. Can reclaim legal title by paying off mortgage.</p>
+              </div>
+              <div className="implication-card">
+                <strong>⚖️ Foreclosure Process</strong>
+                <p>MA allows non-judicial foreclosure since lender holds legal title. Faster than judicial foreclosure states.</p>
+              </div>
+              <div className="implication-card">
+                <strong>📋 Contract Language</strong>
+                <p>Title theory affects contract language regarding ownership, possession, and foreclosure rights.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowMortgageTheory(false); setShowContractInfo(true); }}>
+              Contract Elements →
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowMortgageTheory(false); setShowSalesContracts(true); }}>
+              ← Back to Sales Contracts
             </button>
           </div>
         </div>
