@@ -1593,6 +1593,201 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </div>
         </div>
 
+        <h3>16.2.6 Broker & Salesperson License Structure</h3>
+        <div className="license-structure">
+          <h4>🏢 Broker License Entity Types</h4>
+          <div className="broker-entity-types">
+            <p className="highlight">
+              <strong>Brokers license can be held by corporation, society, association or partnership.</strong>
+            </p>
+            <ul>
+              <li><strong>Corporation:</strong> Real estate brokerage structured as corp (Inc., LLC, etc.)</li>
+              <li><strong>Society:</strong> Organized group operating as brokerage</li>
+              <li><strong>Association:</strong> Professional association acting as brokerage</li>
+              <li><strong>Partnership:</strong> Two or more people operating brokerage together</li>
+              <li><strong>Sole Proprietorship:</strong> Individual broker (also allowed)</li>
+            </ul>
+            <p><strong>Key Point:</strong> Broker license is not limited to individuals - business entities can hold broker licenses</p>
+          </div>
+
+          <h4>📝 D/B/A's (Doing Business As) - Agency Disclosure Requirements</h4>
+          <div className="dba-requirements">
+            <p className="warning">
+              <strong>D/B/A's - agency use name of broker owner & their license # on the Agency Disclosure forms</strong>
+            </p>
+            <ul>
+              <li><strong>D/B/A Explained:</strong> "Doing Business As" - trade name different from legal entity name</li>
+              <li><strong>Example:</strong> "John Smith Real Estate" (D/B/A) owned by "Smith Properties LLC" (legal entity)</li>
+              <li><strong>Agency Disclosure Forms Must Show:</strong>
+                <ul>
+                  <li>Name of broker owner (legal entity or individual)</li>
+                  <li>Broker's license number</li>
+                  <li>Cannot just list D/B/A name without broker owner info</li>
+                </ul>
+              </li>
+              <li><strong>Why:</strong> Public must know who is legally responsible (licensed broker)</li>
+              <li><strong>Transparency:</strong> Prevents confusion about who holds the license</li>
+            </ul>
+            <p className="highlight">
+              <strong>Example:</strong> If you work for "Boston Dream Homes" (D/B/A) owned by "Jane Doe Realty Corp" 
+              (licensed broker), your agency disclosure must list "Jane Doe Realty Corp, License #123456" not just 
+              "Boston Dream Homes."
+            </p>
+          </div>
+
+          <h4>👥 Teams Cannot Get Licensed</h4>
+          <div className="team-licensing">
+            <p className="warning">
+              <strong>Teams cannot get licensed.</strong>
+            </p>
+            <ul>
+              <li><strong>What This Means:</strong> Real estate "teams" are marketing groups, not legal entities</li>
+              <li><strong>Examples:</strong>
+                <ul>
+                  <li>❌ "The Smith Team" cannot hold a broker license</li>
+                  <li>❌ "Premier Sales Group" cannot get licensed as a team</li>
+                  <li>✅ Team members must be individually licensed under a broker</li>
+                </ul>
+              </li>
+              <li><strong>How Teams Work:</strong>
+                <ul>
+                  <li>Team is marketing brand, not legal entity</li>
+                  <li>Each team member must have individual salesperson or broker license</li>
+                  <li>All team members must be affiliated with same licensed broker</li>
+                  <li>Team name can be used for marketing but not for licensing</li>
+                </ul>
+              </li>
+              <li><strong>Agency Disclosure:</strong> Must use individual agent's name and broker's name, not team name</li>
+              <li><strong>Advertising:</strong> Team name can be used but must include broker's name and license info</li>
+            </ul>
+            <p className="highlight">
+              <strong>Common Scenario:</strong> "The Smith Team" works for "ABC Realty Corp" (licensed broker). Each 
+              team member has individual license under ABC Realty Corp. They can market as "The Smith Team" but all 
+              legal documents and disclosures must show individual agent names and ABC Realty Corp broker info.
+            </p>
+          </div>
+
+          <h4>👔 Designated Officer Requirement (For Entity Brokers)</h4>
+          <div className="designated-officer">
+            <p className="warning">
+              <strong>(1) person must be Designated Officer of entity</strong><br/>
+              <strong>Designated Officer must hold a broker license.</strong>
+            </p>
+            <ul>
+              <li><strong>When Required:</strong> If brokerage is corporation, LLC, partnership, or other entity</li>
+              <li><strong>One Person Only:</strong> Exactly ONE person must be designated officer</li>
+              <li><strong>Must Hold Broker License:</strong> Designated officer cannot be just a salesperson</li>
+              <li><strong>Responsibilities:</strong>
+                <ul>
+                  <li>Supervise all real estate activities of the entity</li>
+                  <li>Ensure compliance with MA real estate laws</li>
+                  <li>Responsible for all agents affiliated with entity</li>
+                  <li>Sign official documents on behalf of entity</li>
+                  <li>Handle Board communications</li>
+                </ul>
+              </li>
+              <li><strong>Liability:</strong> Designated officer is responsible for entity's compliance</li>
+              <li><strong>Cannot Have Multiple:</strong> Entity can only have ONE designated officer at a time</li>
+            </ul>
+            <p className="highlight">
+              <strong>Example:</strong> "Smith Realty LLC" is a corporation. John Smith (broker license #12345) is 
+              the Designated Officer. He's responsible for overseeing all agents, ensuring compliance, and is the 
+              point of contact with the Board. Even though the entity holds the broker license, John is personally 
+              responsible as the designated officer.
+            </p>
+          </div>
+
+          <h4>📅 Examination Frequency Requirements</h4>
+          <div className="exam-frequency">
+            <p className="warning">
+              <strong>Broker examination must be offered at least 6 times a year and Salesperson exams at least 
+              8 times per year. (minimum)</strong>
+            </p>
+            <ul>
+              <li><strong>Broker Exam:</strong> Minimum 6 times per year
+                <ul>
+                  <li>Approximately every 2 months</li>
+                  <li>Actual schedule may offer more frequently</li>
+                  <li>Ensures reasonable access to exam</li>
+                </ul>
+              </li>
+              <li><strong>Salesperson Exam:</strong> Minimum 8 times per year
+                <ul>
+                  <li>Approximately every 1.5 months</li>
+                  <li>More frequent because higher demand</li>
+                  <li>Actual schedule may offer more frequently</li>
+                </ul>
+              </li>
+              <li><strong>Why Different?</strong> More people take salesperson exam, so offered more often</li>
+              <li><strong>Scheduling:</strong> Check with testing center for exact dates</li>
+              <li><strong>Re-Takes:</strong> If you fail, must wait until next scheduled exam date</li>
+            </ul>
+            <p className="highlight">
+              <strong>Practical Impact:</strong> If you fail the exam, you won't have to wait more than 2 months 
+              (broker) or 1.5 months (salesperson) for the next opportunity. In reality, most testing centers offer 
+              exams more frequently than the minimum.
+            </p>
+          </div>
+
+          <h4>♿ Fee Waivers for Disabled Veterans and Blind Persons</h4>
+          <div className="fee-waivers">
+            <p className="warning">
+              <strong>Fees for issuance or renewal of broker or salespersons license are waived for blind persons 
+              or paraplegic veterans.</strong>
+            </p>
+            <ul>
+              <li><strong>Who Qualifies:</strong>
+                <ul>
+                  <li>Blind persons (legally blind)</li>
+                  <li>Paraplegic veterans (service-connected paralysis)</li>
+                </ul>
+              </li>
+              <li><strong>What's Waived:</strong>
+                <ul>
+                  <li>License issuance fees (first-time license)</li>
+                  <li>License renewal fees (every 2 years)</li>
+                  <li>Both broker AND salesperson licenses covered</li>
+                </ul>
+              </li>
+              <li><strong>What's NOT Waived:</strong>
+                <ul>
+                  <li>Pre-license course fees (still must pay school)</li>
+                  <li>Exam fees (may still apply - check with testing center)</li>
+                  <li>CE course fees (must still pay for continuing education)</li>
+                  <li>E&O insurance, MLS fees, NAR dues (private fees not waived)</li>
+                </ul>
+              </li>
+              <li><strong>How to Apply:</strong>
+                <ul>
+                  <li>Complete standard license application</li>
+                  <li>Include documentation of blindness or paraplegic veteran status</li>
+                  <li>Medical certification for blindness</li>
+                  <li>VA documentation for paraplegic veteran status</li>
+                  <li>Board will review and approve waiver</li>
+                </ul>
+              </li>
+              <li><strong>Renewal:</strong> Waiver applies to renewals too - must re-submit documentation each renewal</li>
+            </ul>
+            <p className="highlight">
+              <strong>Savings:</strong> License fees are typically $100-200 for issuance and $200-250 for renewal 
+              every 2 years. This waiver can save $400-700 over a typical 4-year period. It's a significant benefit 
+              for qualified individuals.
+            </p>
+          </div>
+
+          <div className="license-structure-summary">
+            <h4>🎯 License Structure Summary:</h4>
+            <ul>
+              <li>✅ <strong>Broker licenses:</strong> Can be held by corporations, societies, associations, partnerships, or individuals</li>
+              <li>✅ <strong>D/B/A's:</strong> Must show broker owner name & license # on agency disclosure forms</li>
+              <li>✅ <strong>Teams:</strong> Cannot get licensed (marketing groups only, individuals must be licensed)</li>
+              <li>✅ <strong>Designated Officer:</strong> Entities must have ONE designated officer with broker license</li>
+              <li>✅ <strong>Exams:</strong> Broker minimum 6x/year, Salesperson minimum 8x/year</li>
+              <li>✅ <strong>Fee Waivers:</strong> Available for blind persons and paraplegic veterans</li>
+            </ul>
+          </div>
+        </div>
+
         <h3>16.3 Professional Certifications</h3>
         <div className="certifications">
           <h4>GRI (Graduate, REALTOR® Institute)</h4>
