@@ -1352,5 +1352,155 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario13',
+    title: 'New Construction Purchase',
+    description: 'Buyer wants new construction. Navigate builder contracts, upgrades, and warranty issues.',
+    difficulty: 'medium',
+    category: 'buyer',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Buyer loves new construction home. Builder: "Use our preferred lender and attorney, or add $15k to price." What do you advise?',
+        choices: [
+          { text: 'Accept builder\'s lender and attorney', nextNode: 'builder_team' },
+          { text: 'Refuse - buyer has right to choose', nextNode: 'refuse' },
+          { text: 'Negotiate to reduce premium', nextNode: 'negotiate' },
+          { text: 'Use builder lender but own attorney', nextNode: 'hybrid' }
+        ]
+      },
+      builder_team: {
+        text: 'Builder lender quotes 6.5% rate. Buyer\'s bank quoted 6.0%. Over 30 years, that\'s $47k more in interest!',
+        choices: [
+          { text: 'Stick with builder lender', nextNode: 'bad_ending' },
+          { text: 'Switch to buyer\'s lender, pay $15k', nextNode: 'pay_premium' },
+          { text: 'Ask builder lender to match 6.0%', nextNode: 'match_rate' }
+        ]
+      },
+      refuse: {
+        text: 'Builder: "Non-negotiable." You review - requiring specific lender/attorney is illegal in MA.',
+        choices: [
+          { text: 'Cite MA law, insist on choice', nextNode: 'cite_law' },
+          { text: 'Walk away, find different builder', nextNode: 'different_builder' }
+        ]
+      },
+      negotiate: {
+        text: 'Builder: "We\'ll reduce to $8k if you use our lender, but choose your own attorney."',
+        choices: [
+          { text: 'Accept - $8k reasonable', nextNode: 'accept_8k' },
+          { text: 'Still push for buyer\'s lender', nextNode: 'cite_law' }
+        ]
+      },
+      hybrid: {
+        text: 'Attorney reviews: No inspection contingency, all upgrades non-refundable, warranty limited to 1 year.',
+        choices: [
+          { text: 'Negotiate for inspection contingency', nextNode: 'inspection_fight' },
+          { text: 'Accept contract as-is', nextNode: 'accept_contract' },
+          { text: 'Walk away - too risky', nextNode: 'walk_away' }
+        ]
+      },
+      bad_ending: {
+        text: 'Buyer pays $47k more over loan life to avoid conflict.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Rate differences add up. Should have negotiated or paid premium.',
+        recommendations: [
+          'Calculate true cost over 30 years',
+          'Builder "preferred" requirements illegal in MA',
+          'Always get competing quotes'
+        ]
+      },
+      pay_premium: {
+        text: 'Buyer pays $15k but saves $47k in interest. Net: $32k savings.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Good math! Premium worth it for better rate.',
+        recommendations: [
+          'Calculate total cost over loan life',
+          'Financial analysis beats emotions'
+        ]
+      },
+      match_rate: {
+        text: 'Builder lender matches 6.0%. Best of both worlds!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Always ask! Builder lenders often have flexibility.',
+        recommendations: [
+          'Show competing offer in writing',
+          'Lenders don\'t want to lose deal'
+        ]
+      },
+      cite_law: {
+        text: 'You cite RESPA law. Builder backs down, allows any lender at base price.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Knowing law protects clients.',
+        recommendations: [
+          'RESPA prohibits tying transactions',
+          'Builders often back down when called out'
+        ]
+      },
+      different_builder: {
+        text: 'Find better builder with flexible contract. Buyer happy.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Walking away sometimes best. Many builders exist.',
+        recommendations: [
+          'Don\'t get attached to one property',
+          'Red flags early mean bigger problems later'
+        ]
+      },
+      accept_8k: {
+        text: 'Reasonable compromise. Own attorney reviews thoroughly. Smooth transaction.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Good compromise. Saved $7k and got independent review.',
+        recommendations: [
+          'Meeting middle often best',
+          'Own attorney critical for new construction'
+        ]
+      },
+      inspection_fight: {
+        text: 'Builder refuses: "New construction doesn\'t need inspection."',
+        choices: [
+          { text: 'Accept without contingency', nextNode: 'no_inspection' },
+          { text: 'Walk if denied', nextNode: 'walk_away' }
+        ]
+      },
+      accept_contract: {
+        text: 'Build completes. Find cracked foundation, uneven floors. No inspection = limited recourse.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'New construction needs inspection too! Builders make mistakes.',
+        recommendations: [
+          'ALWAYS recommend inspection on new builds',
+          'New doesn\'t mean perfect',
+          'Inspection contingency is critical'
+        ]
+      },
+      no_inspection: {
+        text: 'Hire inspector as "consultant" anyway. Finds major HVAC issues. Builder fixes to maintain reputation.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Creative! "Consulting" inspection found issues.',
+        recommendations: [
+          'Do inspection even without contingency',
+          'Frame as educational walkthrough',
+          'Document everything'
+        ]
+      },
+      walk_away: {
+        text: 'Find 5-year-old home. Better value, issues resolved, no builder games.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Smart! Slightly used homes often better value.',
+        recommendations: [
+          'New not always best choice',
+          '3-5 year homes have issues resolved',
+          'Avoid builder games'
+        ]
+      }
+    }
   }
 ];
