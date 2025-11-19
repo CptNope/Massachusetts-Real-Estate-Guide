@@ -358,6 +358,17 @@ export default function EnhancedCMA({ gamification }) {
   const [showMLS, setShowMLS] = useState(false);
   const [showAPI, setShowAPI] = useState(false);
   const [showAI, setShowAI] = useState(false);
+  const [showChatGPT, setShowChatGPT] = useState(false);
+  const [showAISettings, setShowAISettings] = useState(false);
+  
+  // ChatGPT Integration State
+  const [openaiKey, setOpenaiKey] = useState('');
+  const [chatMessages, setChatMessages] = useState([]);
+  const [chatInput, setChatInput] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiReport, setAiReport] = useState('');
+  const [aiDescription, setAiDescription] = useState('');
+  const [aiInsights, setAiInsights] = useState([]);
   
   // API Token System State
   const [apiTokens, setApiTokens] = useState([]);
@@ -677,6 +688,170 @@ export default function EnhancedCMA({ gamification }) {
     if (avgDOM > 45) return 'falling';
     // Stable market
     return 'stable';
+  };
+
+  // Load OpenAI key on mount
+  useEffect(() => {
+    const savedKey = localStorage.getItem('openai_key');
+    if (savedKey) {
+      setOpenaiKey(savedKey);
+    }
+  }, []);
+
+  // ChatGPT & AI Assistant Functions
+  const saveOpenAIKey = () => {
+    if (!openaiKey) {
+      showNotification('⚠️ Please enter your OpenAI API key', 'error');
+      return;
+    }
+    localStorage.setItem('openai_key', openaiKey);
+    showNotification('✅ OpenAI API key saved! +20 XP', 'success');
+    if (gamification) {
+      gamification.addXP(20, 'OpenAI configured');
+      gamification.recordActivity('openai_configured');
+    }
+  };
+
+  const sendChatMessage = async () => {
+    if (!chatInput.trim()) return;
+    if (!openaiKey) {
+      showNotification('⚠️ Please configure OpenAI API key first', 'error');
+      return;
+    }
+
+    const userMessage = { role: 'user', content: chatInput };
+    setChatMessages([...chatMessages, userMessage]);
+    setChatInput('');
+    setAiLoading(true);
+
+    // Mock AI response (in production, this would call OpenAI API)
+    setTimeout(() => {
+      const aiResponse = generateMockAIResponse(chatInput);
+      setChatMessages(prev => [...prev, { role: 'assistant', content: aiResponse }]);
+      setAiLoading(false);
+      
+      if (gamification) {
+        gamification.addXP(10, 'ChatGPT query');
+        gamification.recordActivity('chatgpt_used');
+      }
+    }, 1500);
+  };
+
+  const generateMockAIResponse = (question) => {
+    const lowerQ = question.toLowerCase();
+    
+    if (lowerQ.includes('value') || lowerQ.includes('price')) {
+      return `Based on your CMA with ${adjustedComps.length} comparables, the estimated value range is $${Math.round(avgAdjustedValue - 15000).toLocaleString()} - $${Math.round(avgAdjustedValue + 15000).toLocaleString()}. The market appears to be ${marketTrend || 'stable'} based on the average days on market and pricing patterns.`;
+    }
+    if (lowerQ.includes('market') || lowerQ.includes('trend')) {
+      return `The current market trend is ${marketTrend || 'stable'}. This is determined by analyzing the average days on market (${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 'N/A'} days) and pricing patterns across your comparables.`;
+    }
+    if (lowerQ.includes('recommendation') || lowerQ.includes('suggest')) {
+      return `I recommend pricing the property at $${Math.round(avgAdjustedValue).toLocaleString()} based on the CMA analysis. Consider highlighting the property's best features and ensuring it's in excellent condition to maximize value. The current ${marketTrend || 'stable'} market conditions suggest this is a good time to list.`;
+    }
+    return `I'm an AI assistant for your CMA analysis. I can help explain valuations, market trends, and provide recommendations based on your comparable properties. What specific aspect of the CMA would you like to discuss?`;
+  };
+
+  const generateAIReport = () => {
+    if (adjustedComps.length === 0) {
+      showNotification('⚠️ Add comparables first', 'error');
+      return;
+    }
+
+    setAiLoading(true);
+    
+    // Mock AI report generation (in production, use OpenAI)
+    setTimeout(() => {
+      const report = `PROFESSIONAL MARKET ANALYSIS REPORT
+
+EXECUTIVE SUMMARY
+This Comparative Market Analysis (CMA) has been prepared for ${subjectAddress || 'the subject property'}. After analyzing ${adjustedComps.length} comparable properties in the area, we have determined an estimated market value range.
+
+PROPERTY VALUATION
+Based on our comprehensive analysis of ${adjustedComps.length} comparable sales, the estimated market value is:
+• Low Estimate: $${Math.round(avgAdjustedValue - 20000).toLocaleString()}
+• Mid-Range Value: $${Math.round(avgAdjustedValue).toLocaleString()}
+• High Estimate: $${Math.round(avgAdjustedValue + 20000).toLocaleString()}
+
+MARKET CONDITIONS
+The current market is trending ${marketTrend || 'stable'}. ${marketTrend === 'rising' ? 'Strong buyer demand and low inventory are driving prices upward.' : marketTrend === 'falling' ? 'Increased inventory and longer days on market indicate a cooling market.' : 'The market shows balanced conditions with consistent pricing and moderate activity.'}
+
+COMPARABLE ANALYSIS
+We analyzed ${adjustedComps.length} recent sales that are similar in size, condition, and location to the subject property. These comparables range from $${Math.min(...adjustedComps.map(c => c.adjustedPrice)).toLocaleString()} to $${Math.max(...adjustedComps.map(c => c.adjustedPrice)).toLocaleString()}, with an average of $${Math.round(avgAdjustedValue).toLocaleString()}.
+
+RECOMMENDATION
+Based on this analysis, we recommend ${marketTrend === 'rising' ? 'pricing competitively but not undervaluing the property given strong market conditions' : marketTrend === 'falling' ? 'strategic pricing to generate interest in a slower market' : 'pricing within the established range to attract qualified buyers'}. The property should be positioned to highlight its best features and generate strong buyer interest.`;
+
+      setAiReport(report);
+      setAiLoading(false);
+      showNotification('✅ AI report generated! +75 XP', 'success');
+      
+      if (gamification) {
+        gamification.addXP(75, 'AI report generated');
+        gamification.recordActivity('ai_report_generated');
+      }
+    }, 2000);
+  };
+
+  const generateAIDescription = () => {
+    setAiLoading(true);
+    
+    setTimeout(() => {
+      const desc = `Welcome to ${subjectAddress || 'this exceptional property'}! This beautifully maintained home offers ${subjectBeds || '3'} bedrooms and ${subjectBaths || '2'} bathrooms across ${subjectSqft || '1,800'} square feet of thoughtfully designed living space.
+
+Located in a ${marketTrend === 'rising' ? 'highly desirable and sought-after' : 'well-established'} neighborhood, this property combines comfort, convenience, and quality. ${subjectGarage === 'yes' ? 'The attached garage provides secure parking and additional storage space.' : ''} ${subjectCondition === 'excellent' ? 'The home is in pristine condition, move-in ready for discerning buyers.' : 'With some updates, this property offers tremendous potential for the right buyer.'}
+
+The current market valuation of approximately $${Math.round(avgAdjustedValue).toLocaleString()} reflects the property's excellent location, desirable features, and the ${marketTrend || 'stable'} market conditions. This is an outstanding opportunity for ${marketTrend === 'rising' ? 'buyers looking to invest in an appreciating market' : 'value-conscious buyers seeking quality at a fair price'}.
+
+Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split(',')[1]?.trim() || 'this wonderful community' : 'this wonderful community'}!`;
+
+      setAiDescription(desc);
+      setAiLoading(false);
+      showNotification('✅ AI description generated! +40 XP', 'success');
+      
+      if (gamification) {
+        gamification.addXP(40, 'AI description generated');
+        gamification.recordActivity('ai_description_generated');
+      }
+    }, 1500);
+  };
+
+  const generateAIInsights = () => {
+    if (adjustedComps.length === 0) {
+      showNotification('⚠️ Add comparables first', 'error');
+      return;
+    }
+
+    const insights = [
+      {
+        icon: '💰',
+        title: 'Pricing Strategy',
+        insight: `Price at $${Math.round(avgAdjustedValue).toLocaleString()} to align with ${adjustedComps.length} comparable sales. ${marketTrend === 'rising' ? 'Strong market supports premium pricing.' : marketTrend === 'falling' ? 'Competitive pricing recommended for faster sale.' : 'Fair pricing ensures steady buyer interest.'}`
+      },
+      {
+        icon: '📈',
+        title: 'Market Position',
+        insight: `${marketTrend === 'rising' ? 'Hot market! Expect strong buyer competition and potential multiple offers.' : marketTrend === 'falling' ? 'Cooling market. Plan for longer marketing period and negotiation.' : 'Balanced market provides stable conditions for both parties.'}`
+      },
+      {
+        icon: '🎯',
+        title: 'Competitive Edge',
+        insight: `${subjectCondition === 'excellent' ? 'Excellent condition is a major selling point - emphasize this!' : subjectCondition === 'good' ? 'Good condition competes well. Minor upgrades could boost value.' : 'Consider strategic improvements to maximize sale price.'}`
+      },
+      {
+        icon: '⏱️',
+        title: 'Time to Sell',
+        insight: `Average DOM in area: ${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 30} days. ${marketTrend === 'rising' ? 'Expect faster-than-average sale time.' : marketTrend === 'falling' ? 'Plan for extended marketing period.' : 'Normal timeline expected.'}`
+      }
+    ];
+
+    setAiInsights(insights);
+    showNotification('✅ AI insights generated! +60 XP', 'success');
+    
+    if (gamification) {
+      gamification.addXP(60, 'AI insights generated');
+      gamification.recordActivity('ai_insights_generated');
+    }
   };
 
   // Photo upload handler (convert to base64)
