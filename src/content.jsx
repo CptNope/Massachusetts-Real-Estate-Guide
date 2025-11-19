@@ -6356,6 +6356,187 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
+        <div className="important-note">
+          <h4>📚 More Financing Terms to Know</h4>
+          
+          <h5>Subordination Agreement:</h5>
+          <p><strong>Definition:</strong> In the event that a second lien has a higher amount than the first, 
+          the lender may require a subordination agreement, in which the first lender subordinates or lowers 
+          its lien position to that of the second lender.</p>
+          <p className="warning"><strong>⚠️ To be valid, both lenders must sign the agreement.</strong></p>
+          
+          <h6>When Subordination Agreements Are Used:</h6>
+          <ul>
+            <li><strong>Refinancing:</strong> Original mortgage was $400K, now worth $500K, refinancing to $450K</li>
+            <li><strong>2nd mortgage stays:</strong> Want to keep 2nd mortgage in place</li>
+            <li><strong>Problem:</strong> New refinance becomes 1st position, bumps 2nd mortgage to 3rd</li>
+            <li><strong>Solution:</strong> Subordination agreement keeps 2nd mortgage in 2nd position</li>
+          </ul>
+
+          <h6>How Subordination Works:</h6>
+          <ul>
+            <li><strong>Original situation:</strong> 1st mortgage $400K, 2nd mortgage $50K</li>
+            <li><strong>Refinance new 1st:</strong> $450K would normally become 1st position</li>
+            <li><strong>Old 1st paid off:</strong> 2nd mortgage jumps to 1st position (bad for new lender!)</li>
+            <li><strong>Subordination agreement:</strong> Old 2nd agrees to stay in 2nd position behind new loan</li>
+            <li><strong>Result:</strong> New loan 1st position, old 2nd stays 2nd position</li>
+          </ul>
+
+          <h6>Why This Matters:</h6>
+          <ul>
+            <li>🏦 <strong>Lien Priority:</strong> Determines who gets paid first in foreclosure</li>
+            <li>💰 <strong>Protects Lenders:</strong> New lender needs 1st position for better security</li>
+            <li>📋 <strong>Both Must Sign:</strong> Subordinating lender must agree (may charge fee)</li>
+            <li>💵 <strong>Subordination Fee:</strong> Typically $200-$500 for 2nd lender to agree</li>
+            <li>⚠️ <strong>May Refuse:</strong> 2nd lender can refuse if new loan too large or risky</li>
+          </ul>
+
+          <h5>Straight Loan (Interest-Only Loan):</h5>
+          <p><strong>Definition:</strong> Interest only loan followed by payment of the full principle at the 
+          end of the term of the loan.</p>
+          
+          <h6>How Straight Loans Work:</h6>
+          <ul>
+            <li><strong>Example:</strong> $300,000 loan at 6% interest, 5-year term</li>
+            <li><strong>Monthly payment:</strong> $1,500 (interest only: $300K × 6% ÷ 12)</li>
+            <li><strong>Years 1-5:</strong> Pay $1,500/month, principal stays $300,000</li>
+            <li><strong>End of Year 5:</strong> Pay entire $300,000 principal + final interest payment</li>
+            <li><strong>Total due at end:</strong> $300,000 balloon payment</li>
+          </ul>
+
+          <h6>Advantages:</h6>
+          <ul>
+            <li>✅ <strong>Lower Payments:</strong> Much lower than fully amortized loan</li>
+            <li>✅ <strong>Cash Flow:</strong> Frees up cash for other investments</li>
+            <li>✅ <strong>Tax Deduction:</strong> All payment is tax-deductible interest</li>
+            <li>✅ <strong>Short-Term:</strong> Good if planning to sell or refinance soon</li>
+          </ul>
+
+          <h6>Disadvantages:</h6>
+          <ul>
+            <li>❌ <strong>No Equity Building:</strong> Principal never decreases</li>
+            <li>❌ <strong>Balloon Risk:</strong> Must pay entire principal at end</li>
+            <li>❌ <strong>Refinance Risk:</strong> What if can't refinance when due?</li>
+            <li>❌ <strong>Not Common:</strong> Few lenders offer for residential (more for commercial)</li>
+          </ul>
+
+          <p className="example"><strong>Comparison:</strong></p>
+          <ul>
+            <li><strong>Straight Loan:</strong> $300K at 6%, 30 years = $1,500/mo + $300K balloon</li>
+            <li><strong>Amortized Loan:</strong> $300K at 6%, 30 years = $1,799/mo, no balloon</li>
+            <li><strong>Savings:</strong> $299/month, but owe full principal at end</li>
+          </ul>
+
+          <h5>CLUE Report (Comprehensive Loss Underwriting Exchange):</h5>
+          <p><strong>Definition:</strong> Database of insurance claims that have been made in past 5 years. 
+          Insurance company can provide upon request.</p>
+          
+          <h6>What CLUE Reports Show:</h6>
+          <ul>
+            <li><strong>Property Claims:</strong> All insurance claims on property (last 5 years)</li>
+            <li><strong>Personal Claims:</strong> Claims made by homeowner (follows the person)</li>
+            <li><strong>Claim Details:</strong> Date, type of claim, amount paid</li>
+            <li><strong>Claim Status:</strong> Paid, denied, or pending</li>
+            <li><strong>Inquiries Only:</strong> Even inquiries (not just claims) may show</li>
+          </ul>
+
+          <h6>Why CLUE Reports Matter:</h6>
+          <ul>
+            <li>🏠 <strong>Buying a Home:</strong> Shows property's claim history (water damage, fire, etc.)</li>
+            <li>💰 <strong>Insurance Rates:</strong> Multiple claims = higher rates or denied coverage</li>
+            <li>🔍 <strong>Red Flags:</strong> Frequent claims may indicate property problems</li>
+            <li>📋 <strong>Disclosure:</strong> Seller should disclose major issues, CLUE verifies</li>
+            <li>⚠️ <strong>Denied Coverage:</strong> Too many claims can make property uninsurable</li>
+          </ul>
+
+          <h6>How to Get CLUE Report:</h6>
+          <ul>
+            <li><strong>Free Report:</strong> Once per year at PersonalReports.LexisNexis.com</li>
+            <li><strong>Request from Seller:</strong> Buyer can ask seller to provide during due diligence</li>
+            <li><strong>Through Insurance Agent:</strong> Agent can pull when quoting insurance</li>
+            <li><strong>Review Before Listing:</strong> Sellers should check their report before selling</li>
+          </ul>
+
+          <h5>FORBEARANCE:</h5>
+          <p><strong>Definition:</strong> Mortgage forbearance is a <strong>postponement of obligations</strong> 
+          under a mortgage loan but not forgiveness of the debt.</p>
+          
+          <p className="warning"><strong>⚠️ CRITICAL:</strong> Payments postponed are not forgiven; rather, 
+          the life of the loan is extended so that all regular payments are made over a longer loan term.</p>
+
+          <h6>How Forbearance Works:</h6>
+          <ul>
+            <li><strong>Temporary Relief:</strong> Lender allows reduced or no payments for set period</li>
+            <li><strong>Typical Duration:</strong> 3-12 months</li>
+            <li><strong>Payments Resume:</strong> After forbearance period, resume normal payments</li>
+            <li><strong>Missed Payments Due:</strong> Must repay skipped payments (various methods)</li>
+            <li><strong>Not Free Money:</strong> All missed payments must eventually be repaid</li>
+          </ul>
+
+          <h6>COVID-19 Forbearance (Historical Context):</h6>
+          <p>The COVID-19 virus pandemic that began in 2020 affected all parts of the U.S. and world economies. 
+          With a large part of our economy shut down for months, many homeowners and renters found themselves 
+          unable to meet financial obligations.</p>
+          
+          <ul>
+            <li><strong>Federal Response:</strong> Government announced moratorium on foreclosures of government-backed mortgages</li>
+            <li><strong>Extended Program:</strong> Was extended through September 30, 2021</li>
+            <li><strong>Up to 3 Months:</strong> Up to three months of additional forbearance allowed for certain borrowers</li>
+            <li><strong>Participation:</strong> As of July 2021, almost 7.2 million households had taken advantage</li>
+            <li><strong>Widespread Impact:</strong> Largest forbearance program in U.S. history</li>
+          </ul>
+
+          <h6>Repayment Options After Forbearance:</h6>
+          <ul>
+            <li><strong>Lump Sum:</strong> Pay all missed payments at once when forbearance ends</li>
+            <li><strong>Repayment Plan:</strong> Add extra amount to monthly payments (12-24 months)</li>
+            <li><strong>Loan Modification:</strong> Extend loan term, add missed payments to principal</li>
+            <li><strong>Partial Claim:</strong> FHA creates 2nd loan for missed payments (no payments, due at sale)</li>
+            <li><strong>Deferral:</strong> Add missed payments to end of loan (due when house sold or refinanced)</li>
+          </ul>
+
+          <h6>Forbearance vs. Other Options:</h6>
+          <div className="comparison">
+            <p><strong>Forbearance:</strong></p>
+            <ul>
+              <li>Temporary pause or reduction</li>
+              <li>All payments still owed</li>
+              <li>Less credit impact than default</li>
+              <li>Must be paid back</li>
+            </ul>
+
+            <p><strong>Loan Modification:</strong></p>
+            <ul>
+              <li>Permanent change to loan terms</li>
+              <li>May reduce rate or extend term</li>
+              <li>Harder to qualify for</li>
+              <li>Long-term solution</li>
+            </ul>
+
+            <p><strong>Refinance:</strong></p>
+            <ul>
+              <li>New loan replaces old</li>
+              <li>Must have good credit</li>
+              <li>May get better rate</li>
+              <li>Closing costs apply</li>
+            </ul>
+          </div>
+
+          <h6>Who Qualifies for Forbearance?</h6>
+          <ul>
+            <li>✅ <strong>Financial Hardship:</strong> Job loss, medical emergency, natural disaster</li>
+            <li>✅ <strong>Government-Backed:</strong> FHA, VA, USDA loans have protections</li>
+            <li>✅ <strong>Conventional Loans:</strong> Fannie Mae/Freddie Mac also offer forbearance</li>
+            <li>✅ <strong>Private Loans:</strong> Must negotiate with lender (not guaranteed)</li>
+            <li>⏱️ <strong>Apply Early:</strong> Don't wait until in default</li>
+          </ul>
+
+          <p className="highlight">
+            <strong>Remember:</strong> Forbearance is temporary relief, not loan forgiveness. All postponed 
+            payments must eventually be repaid. It's better than defaulting but requires a repayment plan.
+          </p>
+        </div>
+
         <h4>Key Documents Seller Signs:</h4>
         <ul>
           <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
