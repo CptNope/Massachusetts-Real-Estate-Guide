@@ -2258,6 +2258,153 @@ html {
   }
 }
 
+/* Photo Upload Panel */
+.photos-panel, .email-panel, .charts-panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photos-panel h3, .email-panel h3, .charts-panel h3 {
+  margin: 0 0 0.5rem 0;
+  color: #111827;
+}
+
+.panel-description {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.photo-upload-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.photo-upload-item label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.file-input {
+  padding: 0.5rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-input:hover {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+}
+
+.photo-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-photo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.remove-photo:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Email Panel */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.email-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Charts Panel */
+.charts-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.chart-card {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.chart-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.chart-placeholder {
+  background: white;
+  border-radius: 6px;
+  padding: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.chart-placeholder p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.chart-note {
+  margin: 1rem 0 0 0;
+  padding: 0.75rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #1e40af;
+}
+
 /* Branding Panel */
 .branding-panel {
   background: white;
