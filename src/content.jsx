@@ -5685,6 +5685,22 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li><strong>Occupancy Affidavit:</strong> States buyer will occupy (primary residence)</li>
         </ul>
 
+        <div className="important-note">
+          <h4>⚠️ Critical Mortgage Terms to Understand:</h4>
+          
+          <h5>Acceleration Clause:</h5>
+          <p><strong>What it is:</strong> Lender's right to declare the entire amount of the note payable in full 
+          upon the happening of a certain event (such as payment default).</p>
+          <p><strong>Impact:</strong> If borrower defaults, they would have to either refinance with a new lender 
+          or sell the property to satisfy the full loan balance immediately.</p>
+          
+          <h5>Lender's Protection Rights:</h5>
+          <p>If borrower doesn't fulfill its obligations, the lender can step in and make repairs, pay the real 
+          estate taxes, insurance, condo fees, etc. in order to protect its investment.</p>
+          <p className="warning"><strong>⚠️ Important:</strong> Money advanced by lender will be due immediately 
+          from borrower or added to unpaid debt.</p>
+        </div>
+
         <h4>Key Documents Seller Signs:</h4>
         <ul>
           <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
