@@ -375,6 +375,7 @@ export default function EnhancedCMA({ gamification }) {
   const [showEmailSettings, setShowEmailSettings] = useState(false);
   const [showLegalInfo, setShowLegalInfo] = useState(false);
   const [showContractInfo, setShowContractInfo] = useState(false);
+  const [showContractEffects, setShowContractEffects] = useState(false);
   const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
@@ -2375,8 +2376,131 @@ ${brandingEmail || ''}`;
           </div>
 
           <div className="legal-footer-actions">
-            <button className="btn-info" onClick={() => { setShowContractInfo(false); setShowLegalInfo(true); }}>
+            <button className="btn-info" onClick={() => { setShowContractInfo(false); setShowContractEffects(true); }}>
+              Legal Effects of Contracts →
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowContractInfo(false); setShowLegalInfo(true); }}>
               ← Back to Law Change
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showContractEffects && (
+        <div className="contract-effects-panel">
+          <div className="effects-panel-header">
+            <h3>📜 Legal Effects of Contracts</h3>
+            <button className="btn-secondary" onClick={() => setShowContractEffects(false)}>✕ Close</button>
+          </div>
+
+          <p className="effects-intro">
+            Understanding the legal status of contracts is essential. Here are the different legal effects a contract can have:
+          </p>
+
+          <div className="effects-grid">
+            <div className="effect-card effect-valid">
+              <div className="effect-icon">✅</div>
+              <h4>VALID</h4>
+              <p className="effect-definition">
+                Binding and enforceable on both parties.
+              </p>
+              <p className="effect-note">
+                This is what you want! A proper contract that can be enforced by law.
+              </p>
+            </div>
+
+            <div className="effect-card effect-void">
+              <div className="effect-icon">🚫</div>
+              <h4>VOID</h4>
+              <p className="effect-definition">
+                No legal force or effect.
+              </p>
+              <p className="effect-note">
+                <strong>Example:</strong> A contract to commit a crime. This contract never existed legally.
+              </p>
+            </div>
+
+            <div className="effect-card effect-voidable">
+              <div className="effect-icon">⚠️</div>
+              <h4>VOIDABLE</h4>
+              <p className="effect-definition">
+                Valid on the surface but may be disaffirmed by one of the parties.
+              </p>
+              <p className="effect-note">
+                <strong>Examples:</strong> Contract agreed to under duress, contract by minor, or P&S subject to financing.
+              </p>
+            </div>
+
+            <div className="effect-card effect-unenforceable">
+              <div className="effect-icon">⛔</div>
+              <h4>UNENFORCEABLE</h4>
+              <p className="effect-definition">
+                Valid between the parties, but neither can force performance.
+              </p>
+              <p className="effect-note">
+                <strong>Example:</strong> A verbal listing agreement. Valid but can't be enforced in court.
+              </p>
+            </div>
+          </div>
+
+          <div className="effects-important-concepts">
+            <h4>⚡ Important Concepts</h4>
+
+            <div className="concept-item">
+              <div className="concept-header">
+                <span className="concept-icon">🎭</span>
+                <h5>DURESS, MENACE & UNDUE INFLUENCE</h5>
+              </div>
+              <p>
+                To be Valid, every contract must be signed by the <strong>"free and voluntary act"</strong> of each party. 
+                Cannot obtain signatures of parties to a contract under these circumstances.
+              </p>
+            </div>
+
+            <div className="concept-item">
+              <div className="concept-header">
+                <span className="concept-icon">❌</span>
+                <h5>CANCEL OR REVOKE</h5>
+              </div>
+              <p>
+                Offeror may withdraw or revoke contract anytime prior to acceptance & delivery. 
+                Buyer's commonly get what we call, <strong>"Cold Feet."</strong>
+              </p>
+            </div>
+
+            <div className="concept-item vip-tip-concept">
+              <div className="concept-header">
+                <span className="concept-icon">🍾</span>
+                <h5>V.I.P. TIP - Know WHEN to CELEBRATE!</h5>
+              </div>
+              <p>
+                <strong>Cannot be under the influence of alcohol when signing contracts</strong> or it can be deemed voidable. 
+                Celebrate AFTER the contract is signed, not before!
+              </p>
+            </div>
+          </div>
+
+          <div className="effects-summary">
+            <h4>📚 Quick Reference</h4>
+            <div className="summary-grid">
+              <div className="summary-item">
+                <strong>VALID:</strong> ✅ Enforceable
+              </div>
+              <div className="summary-item">
+                <strong>VOID:</strong> 🚫 Never existed
+              </div>
+              <div className="summary-item">
+                <strong>VOIDABLE:</strong> ⚠️ Can be canceled
+              </div>
+              <div className="summary-item">
+                <strong>UNENFORCEABLE:</strong> ⛔ Can't force it
+              </div>
+            </div>
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowContractEffects(false); setShowContractInfo(true); }}>
+              ← Back to Contract Elements
             </button>
           </div>
         </div>
