@@ -5838,10 +5838,133 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
+        <h3>23.13 Dodd-Frank Act - Consumer Protection</h3>
+        <p className="highlight">
+          <strong>Took effect January 10, 2014</strong> - Major federal consumer protection law regulating 
+          mortgage lenders and servicers.
+        </p>
+
+        <h4>What is the Dodd-Frank Act?</h4>
+        <p>A consumer information pamphlet explains the information the mortgage lender MUST provide to borrower. 
+        Also provides contact info for consumers to file a complaint if lender isn't following rules.</p>
+
+        <h4>📋 What Lenders MUST Do Under Dodd-Frank:</h4>
+        <div className="dodd-frank-requirements">
+          
+          <h5>1. Give Billing Info in Writing:</h5>
+          <ul>
+            <li>Clear, written statements showing payment amounts, dates, fees</li>
+            <li>Itemized breakdown of how payment is applied (principal, interest, escrow)</li>
+            <li>Annual summary of payments and loan balance</li>
+            <li>Must be provided monthly</li>
+          </ul>
+
+          <h5>2. Give Borrower 2 Months Warning if ARM Will Have Rate Change:</h5>
+          <ul>
+            <li>Notice must be sent 60-120 days before adjustable rate mortgage rate changes</li>
+            <li>Must show: current rate, new rate, new payment amount</li>
+            <li>Helps borrower prepare for payment increase</li>
+            <li>Required for all ARM adjustments</li>
+          </ul>
+
+          <h5>3. Promptly Credit Borrowers Payments:</h5>
+          <ul>
+            <li>Must credit payment on day received</li>
+            <li>Cannot hold payments to generate late fees</li>
+            <li>If payment arrives by 5pm, credit that day</li>
+            <li>Must apply to principal, interest, escrow appropriately</li>
+          </ul>
+
+          <h5>4. Respond Quickly When Borrower Inquires About Paying Off Loan:</h5>
+          <ul>
+            <li>Must provide payoff quote within 7 business days of request</li>
+            <li>Quote must be accurate and show exact amount to pay off</li>
+            <li>Include per-diem interest if paid off on different date</li>
+            <li>Cannot delay payoff requests</li>
+          </ul>
+
+          <h5>5. Not Charge for Insurance Borrower Doesn't Need:</h5>
+          <ul>
+            <li><strong>Force-placed insurance:</strong> Lender can only charge if borrower actually lacks coverage</li>
+            <li>Must give 45-day notice before charging for lender-placed insurance</li>
+            <li>Cannot over-charge for insurance that lender provides if borrower fails to do so</li>
+            <li>Must accept borrower's own insurance if adequate</li>
+          </ul>
+
+          <h5>6. Quickly Resolve Complaint - Within 30-45 Days:</h5>
+          <ul>
+            <li>Must acknowledge complaint in writing within 5 business days</li>
+            <li>Must respond to complaint within 30 days (45 days maximum)</li>
+            <li>Response must explain resolution or why no action taken</li>
+            <li>Must share information with borrower about complaint status</li>
+          </ul>
+
+          <h5>7. Have and Follow Good Customer Service Policy & Procedures:</h5>
+          <ul>
+            <li>Maintain written servicing policies</li>
+            <li>Train staff on servicing requirements</li>
+            <li>Provide borrowers with multiple ways to contact (phone, email, mail)</li>
+            <li>Assign single point of contact for borrowers in foreclosure</li>
+            <li>Keep accurate records of communications</li>
+          </ul>
+
+          <h5>8. Contact Borrowers Who Are Having Trouble Making Payments:</h5>
+          <ul>
+            <li>Must reach out to borrower by 36th day of delinquency</li>
+            <li>Inform about loss mitigation options (forbearance, modification, etc.)</li>
+            <li>Cannot wait until foreclosure to contact borrower</li>
+            <li>Must make good faith effort to establish live contact</li>
+          </ul>
+
+          <h5>9. Work with Borrowers Before Starting or Continuing Foreclosure:</h5>
+          <ul>
+            <li><strong>Dual tracking prohibited:</strong> Cannot pursue foreclosure while evaluating for loss mitigation</li>
+            <li>Must review complete loss mitigation application 37+ days before foreclosure sale</li>
+            <li>Give borrower time to submit complete application</li>
+            <li>Cannot start foreclosure until borrower is 120+ days delinquent</li>
+            <li>Must notify borrower of foreclosure alternatives</li>
+          </ul>
+
+          <h5>10. Allow Borrowers to Seek Review of Decision About Loan Workout Request:</h5>
+          <ul>
+            <li>Must provide reason for denial of loss mitigation application</li>
+            <li>Borrower has right to appeal denial</li>
+            <li>Must give deadline for appeal (typically 14 days)</li>
+            <li>Different person must review appeal</li>
+            <li>Cannot proceed with foreclosure during appeal period</li>
+          </ul>
+        </div>
+
+        <h4>Why Dodd-Frank Matters for Real Estate Agents:</h4>
+        <ul>
+          <li>🏠 <strong>Know Your Buyers' Rights:</strong> Educate clients about lender obligations</li>
+          <li>📞 <strong>Spot Red Flags:</strong> If buyer reports lender not following rules, refer to attorney</li>
+          <li>⏰ <strong>Timeline Awareness:</strong> Understand 120-day pre-foreclosure timeline</li>
+          <li>💼 <strong>Loss Mitigation:</strong> Know alternatives to foreclosure (short sale, modification)</li>
+          <li>📋 <strong>Documentation:</strong> Encourage buyers to keep all lender communications</li>
+          <li>⚖️ <strong>Complaint Process:</strong> Know where to direct borrowers (CFPB - Consumer Financial Protection Bureau)</li>
+        </ul>
+
+        <h4>Where to File Complaints:</h4>
+        <ul>
+          <li><strong>CFPB:</strong> Consumer Financial Protection Bureau - consumerfinance.gov/complaint</li>
+          <li><strong>State Banking Regulator:</strong> Massachusetts Division of Banks</li>
+          <li><strong>HUD:</strong> For FHA loans</li>
+          <li><strong>VA:</strong> For VA loans</li>
+          <li><strong>Attorney General:</strong> MA Attorney General's Office - Consumer Protection Division</li>
+        </ul>
+
+        <p className="warning">
+          <strong>⚠️ Agent Responsibility:</strong> While you can't give legal advice, you should know these 
+          protections exist and refer clients to appropriate resources if they're having lender issues. Dodd-Frank 
+          protections can make the difference between foreclosure and keeping a home.
+        </p>
+
         <p className="highlight">
           <strong>Remember:</strong> Understanding financing helps you guide buyers realistically and spot 
           potential issues early. Always defer specific loan questions to lenders. Strong pre-approval = 
-          stronger offer. Financing contingencies protect buyers but need clear deadlines.
+          stronger offer. Financing contingencies protect buyers but need clear deadlines. Know Dodd-Frank 
+          protections to help clients in distress.
         </p>
       </>
     )
