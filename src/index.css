@@ -2352,6 +2352,46 @@ html {
   color: #1e40af;
 }
 
+.legal-purpose {
+  background: #f0fdf4;
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-purpose h4 {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+  font-size: 1.2rem;
+}
+
+.legal-purpose p {
+  margin: 0 0 1rem 0;
+  color: #047857;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.legal-reference {
+  background: white;
+  border-left: 4px solid #10b981;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.legal-reference p {
+  margin: 0;
+  color: #065f46;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.legal-reference strong {
+  color: #047857;
+}
+
 .legal-content h4 {
   margin: 1.5rem 0 1rem 0;
   color: #1f2937;

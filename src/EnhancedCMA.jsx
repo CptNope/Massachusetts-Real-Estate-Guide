@@ -2143,6 +2143,24 @@ ${brandingEmail || ''}`;
             <strong>Effective Date:</strong> October 15, 2025
           </div>
 
+          <div className="legal-purpose">
+            <h4>🎯 Purpose of New Law Change</h4>
+            <p>
+              The regulation protects the <strong>informed decision-making of homebuyers</strong>. It prohibits 
+              sellers and their agents from requiring or encouraging buyers to waive their right to a home 
+              inspection as a condition for having their offer accepted — except in limited, clearly defined circumstances.
+            </p>
+            <div className="legal-reference">
+              <p>
+                <strong>Legal Authority:</strong> Required pursuant to the <strong>Affordable Homes Act</strong>, 
+                Chapter 150 of the Acts of 2024, the Executive Office of Housing and Livable Communities (EOHLC) 
+                has adopted <strong>760 CMR 74.00</strong>, a regulation designed to protect prospective homebuyers 
+                by ensuring their right to obtain a home inspection is not unfairly waived, restricted, or undermined 
+                in residential real estate transactions.
+              </p>
+            </div>
+          </div>
+
           <div className="legal-content">
             <h4>📋 What the Law Does:</h4>
             
