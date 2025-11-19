@@ -8,6 +8,7 @@ import CalculatorMode from './CalculatorMode';
 import HelpModal from './HelpModal';
 import GamificationPanel from './GamificationPanel';
 import TableOfContents from './TableOfContents';
+import Breadcrumb from './Breadcrumb';
 import { useLocalStorage } from './useLocalStorage';
 import { useGamification } from './useGamification';
 
@@ -373,6 +374,11 @@ export default function App() {
             </nav>
 
             <main className="content">
+              <Breadcrumb 
+                activeSection={activeSection} 
+                sections={sections}
+                onNavigate={setActiveId}
+              />
               <article className="card">
                 <h2 className="content-title">{activeSection.title}</h2>
                 {activeSection.subtitle && (
