@@ -1999,18 +1999,14 @@ pre {
 }
 
 .icon-btn:hover {
-  border-color: var(--accent);
   background: var(--bg-nav-hover);
   transform: translateY(-2px);
 }
 
-/* Help Modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Advanced Statistics */
+.advanced-stats {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(99, 102, 241, 0.05));
+  border: 1px solid rgba(139, 92, 246, 0.2);
   background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;

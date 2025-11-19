@@ -2,6 +2,61 @@ import React, { useState, useEffect } from 'react';
 import { cmaChallenges } from './cmaChallenges';
 import { marketTemplates, getTemplate } from './marketTemplates';
 
+// Visual Adjustment Breakdown Component
+const AdjustmentBreakdown = ({ comp, subject, adjustments }) => {
+  const breakdowns = [];
+  
+  // Beds
+  const bedDiff = parseInt(comp.beds) - parseInt(subject.beds);
+  if (bedDiff !== 0) {
+    breakdowns.push({ factor: 'Bedrooms', diff: bedDiff, value: bedDiff * parseInt(adjustments.bed), unit: 'bed' });
+  }
+  
+  // Baths
+  const bathDiff = parseFloat(comp.baths) - parseFloat(subject.baths);
+  if (bathDiff !== 0) {
+    breakdowns.push({ factor: 'Bathrooms', diff: bathDiff, value: bathDiff * parseInt(adjustments.bath), unit: 'bath' });
+  }
+  
+  // Sqft
+  const sqftDiff = parseInt(comp.sqft) - parseInt(subject.sqft);
+  if (sqftDiff !== 0) {
+    breakdowns.push({ factor: 'Square Footage', diff: sqftDiff, value: sqftDiff * parseFloat(adjustments.sqft), unit: 'sqft' });
+  }
+  
+  // Garage
+  if (comp.garage !== subject.garage) {
+    const garageAdj = comp.garage === 'yes' && subject.garage === 'no' ? -parseInt(adjustments.garage) : 
+                      comp.garage === 'no' && subject.garage === 'yes' ? parseInt(adjustments.garage) : 0;
+    if (garageAdj !== 0) {
+      breakdowns.push({ factor: 'Garage', diff: garageAdj > 0 ? '+1' : '-1', value: garageAdj, unit: '' });
+    }
+  }
+  
+  return (
+    <div className="adjustment-breakdown">
+      <h5>📊 Adjustment Breakdown</h5>
+      <div className="breakdown-items">
+        {breakdowns.map((item, idx) => (
+          <div key={idx} className={`breakdown-item ${item.value >= 0 ? 'positive' : 'negative'}`}>
+            <span className="breakdown-factor">{item.factor}</span>
+            <span className="breakdown-calc">
+              {item.diff > 0 ? '+' : ''}{item.diff} {item.unit} × ${Math.abs(item.value / (item.diff || 1)).toLocaleString()}
+            </span>
+            <span className="breakdown-result">
+              = {item.value >= 0 ? '+' : ''}${item.value.toLocaleString()}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="breakdown-total">
+        <span>Total Adjustment:</span>
+        <span className="total-value">${breakdowns.reduce((sum, item) => sum + item.value, 0).toLocaleString()}</span>
+      </div>
+    </div>
+  );
+};
+
 // Tooltip Component for Learning Mode
 const Tooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
@@ -32,6 +87,33 @@ const getConfidenceLevel = (adjustedComps) => {
   if (variance < 0.05) return { level: 'high', color: '#10b981', text: '🟢 High Confidence - Tight clustering' };
   if (variance < 0.15) return { level: 'medium', color: '#f59e0b', text: '🟡 Medium Confidence - Moderate spread' };
   return { level: 'low', color: '#ef4444', text: '🔴 Low Confidence - Wide variance' };
+};
+
+// Advanced statistics helpers
+const calculateMedian = (values) => {
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+};
+
+const calculateStdDev = (values) => {
+  const avg = values.reduce((a, b) => a + b, 0) / values.length;
+  const squaredDiffs = values.map(v => Math.pow(v - avg, 2));
+  const variance = squaredDiffs.reduce((a, b) => a + b, 0) / values.length;
+  return Math.sqrt(variance);
+};
+
+const detectOutliers = (adjustedComps) => {
+  if (adjustedComps.length < 3) return [];
+  
+  const values = adjustedComps.map(c => c.adjustedPrice);
+  const median = calculateMedian(values);
+  const stdDev = calculateStdDev(values);
+  
+  return adjustedComps.filter(comp => {
+    const zScore = Math.abs((comp.adjustedPrice - median) / stdDev);
+    return zScore > 2; // More than 2 standard deviations away
+  }).map(comp => comp.id);
 };
 
 export default function EnhancedCMA({ gamification }) {
@@ -1684,6 +1766,13 @@ export default function EnhancedCMA({ gamification }) {
                 Comps over 25% adjusted may be too different. Consider using a more similar property.
               </div>
             )}
+            {mode === 'learning' && (
+              <AdjustmentBreakdown 
+                comp={comp}
+                subject={{ beds: subjectBeds, baths: subjectBaths, sqft: subjectSqft, garage: subjectGarage }}
+                adjustments={{ bed: bedAdjustment, bath: bathAdjustment, sqft: sqftAdjustment, garage: garageAdjustment }}
+              />
+            )}
           </div>
         ))}
 
@@ -1702,6 +1791,34 @@ export default function EnhancedCMA({ gamification }) {
                 </div>
               </div>
             </div>
+
+            {adjustedComps.length >= 3 && (
+              <div className="result-card advanced-stats">
+                <h4>📈 Advanced Statistics</h4>
+                <div className="advanced-stats-grid">
+                  <div className="stat-box">
+                    <span className="stat-label">Median Value</span>
+                    <span className="stat-value">${calculateMedian(adjustedComps.map(c => c.adjustedPrice)).toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
+                    {mode === 'learning' && <span className="stat-hint">Middle value when sorted</span>}
+                  </div>
+                  <div className="stat-box">
+                    <span className="stat-label">Standard Deviation</span>
+                    <span className="stat-value">${calculateStdDev(adjustedComps.map(c => c.adjustedPrice)).toLocaleString('en-US', { maximumFractionDigits: 0 })}</span>
+                    {mode === 'learning' && <span className="stat-hint">Measure of spread/variance</span>}
+                  </div>
+                  <div className="stat-box">
+                    <span className="stat-label">Coefficient of Variation</span>
+                    <span className="stat-value">{((calculateStdDev(adjustedComps.map(c => c.adjustedPrice)) / avgAdjustedPrice) * 100).toFixed(2)}%</span>
+                    {mode === 'learning' && <span className="stat-hint">Lower is better (&lt;10% excellent)</span>}
+                  </div>
+                </div>
+                {detectOutliers(adjustedComps).length > 0 && (
+                  <div className="outlier-warning">
+                    ⚠️ <strong>Statistical Outliers Detected:</strong> Comp(s) #{detectOutliers(adjustedComps).join(', #')} are more than 2 standard deviations from the median. Consider removing or verifying data.
+                  </div>
+                )}
+              </div>
+            )}
 
             {mode === 'learning' && (
               <div className="result-card confidence-indicator" style={{ borderLeft: `4px solid ${getConfidenceLevel(adjustedComps).color}` }}>
