@@ -5701,6 +5701,23 @@ Always understand your agent’s split and cap – it influences incentives.`}
           from borrower or added to unpaid debt.</p>
         </div>
 
+        <div className="important-note">
+          <h4>💰 Usury & Prepayment</h4>
+          
+          <h5>USURY:</h5>
+          <p><strong>Definition:</strong> Maximum interest rates that may be charged on loans are set by state laws.</p>
+          <p className="warning"><strong>⚠️ Violation:</strong> Charging rates in excess of this rate is called 
+          <strong> Usury</strong>. Lenders may be penalized for making these loans.</p>
+          
+          <h5>PREPAYMENT:</h5>
+          <p>Lenders make their money over time by charging interest each year. The quicker the borrower pays off 
+          the mortgage, the less amount of money they will pay in interest.</p>
+          <p><strong>Prepayment Penalty:</strong> For this reason, some lenders charge a "prepayment penalty" for 
+          paying off the loan before scheduled. Many states don't allow lenders to charge a prepayment penalty.</p>
+          <p className="info"><strong>Federal Protection:</strong> Federal law prohibits penalties on FHA, VA and 
+          Fannie Mae / Freddie Mac conforming loans.</p>
+        </div>
+
         <h4>Key Documents Seller Signs:</h4>
         <ul>
           <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
