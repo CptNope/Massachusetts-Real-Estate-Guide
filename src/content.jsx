@@ -6611,6 +6611,201 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>✅ Protection from misunderstandings</li>
         </ul>
 
+        <h4>Types of Listing Agreements</h4>
+        <p>
+          When representing a seller, several types of listing agreements can be used. Understanding each type is critical 
+          for proper client service and legal compliance.
+        </p>
+
+        <div className="listing-types">
+          <div className="listing-type">
+            <h5>1. Exclusive Right to Sell (Named Exclusions)</h5>
+            <p className="highlight">
+              <strong>✅ MOST COMMONLY USED IN TODAY'S MARKET</strong>
+            </p>
+            <p>
+              <strong>Definition:</strong> One broker is hired to represent the seller. Regardless of who sells the home 
+              (listing broker, cooperating broker, or even the seller themselves), a commission is due to the listing brokerage.
+            </p>
+            <ul>
+              <li><strong>Exclusive Rights:</strong> Listing broker earns commission NO MATTER WHO finds the buyer</li>
+              <li><strong>Seller Protection:</strong> Broker has strong incentive to market aggressively</li>
+              <li><strong>Cooperating Brokers Permitted:</strong> Listing broker can work with other brokerages</li>
+              <li><strong>Named Exclusions:</strong> Seller can exclude specific known potential buyers from commission obligation</li>
+              <li><strong>Industry Standard:</strong> This is the default and expected listing type</li>
+              <li><strong>MLS Inclusion:</strong> Property can be listed on MLS with cooperation offered</li>
+            </ul>
+            <div className="key-point">
+              <p><strong>Key Point:</strong> Even if seller finds their own buyer, commission is still owed. This motivates 
+              maximum broker effort and cooperation with other agents.</p>
+            </div>
+          </div>
+
+          <div className="listing-type">
+            <h5>2. Exclusive Agency</h5>
+            <p className="warning">
+              <strong>⚠️ RARELY USED</strong>
+            </p>
+            <p>
+              <strong>Definition:</strong> Only ONE office/brokerage is hired to represent the seller. No cooperating with 
+              other brokerages is permitted. If the seller sells the house themselves, NO commission is due.
+            </p>
+            <ul>
+              <li><strong>One Office Only:</strong> Listing brokerage cannot cooperate with outside agents</li>
+              <li><strong>Seller Can Sell:</strong> If seller finds their own buyer, no commission owed</li>
+              <li><strong>Limited Exposure:</strong> Property cannot be shown by other brokerages</li>
+              <li><strong>Reduced Marketing:</strong> Only listing office markets the property</li>
+              <li><strong>Why Rarely Used:</strong> Limits exposure and reduces likelihood of sale</li>
+            </ul>
+            <div className="warning-box">
+              <p><strong>Problem:</strong> Severely limits property exposure. Sellers miss out on buyers represented by 
+              other agents. Most brokers refuse this type of listing.</p>
+            </div>
+          </div>
+
+          <div className="listing-type">
+            <h5>3. Open Listing</h5>
+            <p className="warning">
+              <strong>❌ NEVER USED IN PROFESSIONAL PRACTICE</strong>
+            </p>
+            <p>
+              <strong>Definition:</strong> Seller allows SEVERAL agencies to list the home for sale. Seller only agrees 
+              to pay commission to the ONE who actually sells it. Seller retains the right to sell themselves without 
+              paying any commission.
+            </p>
+            <ul>
+              <li><strong>Multiple Listings:</strong> Property listed with multiple brokerages simultaneously</li>
+              <li><strong>Commission to Procuring Broker Only:</strong> Only the broker who brings the buyer gets paid</li>
+              <li><strong>Seller Can Sell:</strong> No commission if seller finds buyer</li>
+              <li><strong>No Exclusivity:</strong> No broker has exclusive rights</li>
+              <li><strong>Why Never Used:</strong> No broker will invest time/money with no guarantee of commission</li>
+              <li><strong>Unethical Competition:</strong> Creates race between brokers instead of cooperation</li>
+            </ul>
+            <div className="warning-box">
+              <p><strong>Reality:</strong> Professional brokers refuse open listings. No MLS exposure. No marketing 
+              budget investment. Property sits unsold. This benefits no one.</p>
+            </div>
+          </div>
+
+          <div className="listing-type">
+            <h5>4. Net Listing</h5>
+            <p className="danger">
+              <strong>🚫 ILLEGAL IN MASSACHUSETTS (over $300,000)</strong>
+            </p>
+            <p>
+              <strong>Definition:</strong> Seller specifies a minimum "net" amount they want to receive. Agent/brokerage 
+              keeps EVERYTHING above that amount as their commission. Commission is unlimited.
+            </p>
+            <ul>
+              <li><strong>Fixed Seller Amount:</strong> Seller receives specified net amount</li>
+              <li><strong>Unlimited Broker Commission:</strong> Broker keeps whatever they can get above the net</li>
+              <li><strong>Conflict of Interest:</strong> Broker incentivized to withhold true market value from seller</li>
+              <li><strong>Potential for Fraud:</strong> Seller may receive far less than property's worth</li>
+              <li><strong>Legal Prohibition:</strong> Banned over $300,000 in Massachusetts</li>
+            </ul>
+            <div className="danger-box">
+              <p><strong>⚠️ LICENSE VIOLATION:</strong> Using net listings over $300,000 can result in license suspension 
+              or revocation. This is considered a conflict of interest and potential fraud.</p>
+              <p><strong>Example of Problem:</strong> Seller wants net $400k. Property worth $500k. Agent sells for $480k, 
+              keeps $80k commission (16%!). Seller never knows they could have gotten $500k.</p>
+            </div>
+            <div className="best-practice">
+              <p><strong>BEST PRACTICE:</strong> Never use net listings. Use standard percentage-based exclusive right 
+              to sell agreements. Provide accurate CMA showing true market value. Seller deserves to know what their 
+              property is worth and what they'll net AFTER standard commission.</p>
+            </div>
+          </div>
+
+          <div className="listing-type">
+            <h5>5. Entry Only (Flat Fee MLS)</h5>
+            <p>
+              <strong>Definition:</strong> Seller pays a flat fee for LIMITED services - typically just posting the listing 
+              in the MLS. No OLDCAR fiduciary duties are required from the broker.
+            </p>
+            <ul>
+              <li><strong>Flat Fee:</strong> One-time payment (not percentage commission)</li>
+              <li><strong>MLS Posting Only:</strong> Property listed in Multiple Listing Service</li>
+              <li><strong>No Agent Services:</strong> No showings, no negotiations, no advice</li>
+              <li><strong>No Fiduciary Duties:</strong> Broker is not acting as traditional listing agent</li>
+              <li><strong>Seller Handles Rest:</strong> Seller manages showings, negotiations, paperwork</li>
+              <li><strong>Limited Brokerage Service:</strong> Brokerage provides minimal support</li>
+            </ul>
+            <div className="info-box">
+              <p><strong>Common Use:</strong> Sellers trying to save on commission but still get MLS exposure. Works for 
+              very experienced sellers or those willing to handle all buyer inquiries and negotiations themselves.</p>
+              <p><strong>Typical Fee:</strong> $300-$1,000 flat fee for MLS posting. Seller may still offer buyer agent 
+              commission to attract buyers with representation.</p>
+            </div>
+          </div>
+        </div>
+
+        <h4>📋 Important Disclosure Requirement</h4>
+        <div className="warning-box">
+          <p className="highlight">
+            <strong>⚠️ CRITICAL:</strong> If you don't give the seller a copy of the signed listing agreement, 
+            it's considered UNENFORCEABLE.
+          </p>
+          <ul>
+            <li><strong>Requirement:</strong> Seller MUST receive a copy when agreement is executed</li>
+            <li><strong>Timing:</strong> Provide immediately upon signing</li>
+            <li><strong>Consequence of Non-Compliance:</strong> Listing agreement cannot be legally enforced</li>
+            <li><strong>Board Violation:</strong> Failure to provide copies is a licensing violation</li>
+            <li><strong>Best Practice:</strong> Have seller sign acknowledgment of receipt</li>
+          </ul>
+        </div>
+
+        <h4>Comparison Table: Listing Agreement Types</h4>
+        <div className="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Who Gets Paid?</th>
+                <th>Seller Can Sell?</th>
+                <th>Cooperation Allowed?</th>
+                <th>Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Exclusive Right to Sell</strong></td>
+                <td>Listing broker ALWAYS</td>
+                <td>❌ No (commission still owed)</td>
+                <td>✅ Yes</td>
+                <td>✅ Most common</td>
+              </tr>
+              <tr>
+                <td><strong>Exclusive Agency</strong></td>
+                <td>Listing broker if they sell</td>
+                <td>✅ Yes (no commission)</td>
+                <td>❌ No</td>
+                <td>⚠️ Rarely used</td>
+              </tr>
+              <tr>
+                <td><strong>Open Listing</strong></td>
+                <td>Broker who procures buyer</td>
+                <td>✅ Yes (no commission)</td>
+                <td>⚠️ Yes (competing)</td>
+                <td>❌ Never used</td>
+              </tr>
+              <tr className="danger-row">
+                <td><strong>Net Listing</strong></td>
+                <td>Broker (unlimited amount)</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>🚫 ILLEGAL (over $300k)</td>
+              </tr>
+              <tr>
+                <td><strong>Entry Only</strong></td>
+                <td>Flat fee to broker</td>
+                <td>✅ Yes (seller manages)</td>
+                <td>✅ Buyer agents welcome</td>
+                <td>⚠️ Limited use</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <h3>27.3 Implied Agency</h3>
         <p>
           Agency created by the parties' demonstrated acts or conduct, even though no formal written agency 
