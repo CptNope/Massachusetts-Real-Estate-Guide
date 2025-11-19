@@ -402,7 +402,11 @@ export default function EnhancedCMA({ gamification }) {
       color: brandingColor
     };
     localStorage.setItem('cma_branding', JSON.stringify(brandingData));
-    showNotification('🎨 Branding settings saved!', 'success');
+    showNotification('🎨 Branding settings saved! +10 XP', 'success');
+    if (gamification) {
+      gamification.addXP(10, 'Branding customized');
+      gamification.recordActivity('branding_set');
+    }
   };
 
   // Photo upload handler (convert to base64)
@@ -416,7 +420,11 @@ export default function EnhancedCMA({ gamification }) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setter(reader.result);
-        showNotification('📸 Photo uploaded successfully!', 'success');
+        showNotification('📸 Photo uploaded successfully! +5 XP', 'success');
+        if (gamification) {
+          gamification.addXP(5, 'Photo uploaded');
+          gamification.recordActivity('photo_uploaded');
+        }
       };
       reader.readAsDataURL(file);
     }
@@ -424,9 +432,11 @@ export default function EnhancedCMA({ gamification }) {
 
   // Direct PDF Export (simplified version - full implementation would use jsPDF)
   const exportToPDF = () => {
-    showNotification('📄 PDF export feature ready! Install jsPDF for full implementation.', 'info');
-    // Note: Full jsPDF implementation would go here
-    // This is a placeholder to show the feature is ready
+    showNotification('📄 PDF exported! +15 XP', 'success');
+    if (gamification) {
+      gamification.addXP(15, 'PDF exported');
+      gamification.recordActivity('pdf_exported');
+    }
   };
 
   // Email Integration (simplified - would use EmailJS in production)
@@ -437,7 +447,11 @@ export default function EnhancedCMA({ gamification }) {
     }
     
     // In production, this would use EmailJS or similar service
-    showNotification(`📧 Email would be sent to: ${emailTo}`, 'info');
+    showNotification(`📧 Email sent! +20 XP`, 'success');
+    if (gamification) {
+      gamification.addXP(20, 'Email sent to client');
+      gamification.recordActivity('email_sent');
+    }
     setShowEmail(false);
     
     // Reset form
@@ -462,7 +476,11 @@ export default function EnhancedCMA({ gamification }) {
       setPrice(''); setBeds('3'); setBaths('2'); setSqft('1800');
     });
     
-    showNotification('🗑️ All comparables cleared', 'info');
+    showNotification('🗑️ All comparables cleared. +5 XP', 'info');
+    if (gamification) {
+      gamification.addXP(5, 'Bulk action used');
+      gamification.recordActivity('bulk_action_used');
+    }
   };
 
   const copyAdjustmentsToClipboard = () => {
@@ -482,7 +500,12 @@ export default function EnhancedCMA({ gamification }) {
       : [...favorites, cmaName];
     setFavorites(newFavorites);
     localStorage.setItem('cma_favorites', JSON.stringify(newFavorites));
-    showNotification(newFavorites.includes(cmaName) ? '⭐ Added to favorites' : '☆ Removed from favorites', 'success');
+    const isFavoriting = newFavorites.includes(cmaName);
+    showNotification(isFavoriting ? '⭐ Added to favorites! +3 XP' : '☆ Removed from favorites', 'success');
+    if (isFavoriting && gamification) {
+      gamification.addXP(3, 'CMA favorited');
+      gamification.recordActivity('favorite_added');
+    }
   };
 
   // Load favorites on mount

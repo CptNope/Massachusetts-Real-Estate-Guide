@@ -525,5 +525,107 @@ export const cmaAchievements = [
     icon: "🎯",
     xpReward: 125,
     requirement: (stats) => stats.accurateCompleted >= 5
+  },
+  // NEW ADVANCED FEATURE ACHIEVEMENTS
+  {
+    id: "photographer",
+    title: "📸 Property Photographer",
+    description: "Upload photos to 5 different CMAs",
+    icon: "📸",
+    xpReward: 75,
+    requirement: (stats) => stats.photosUploaded >= 5
+  },
+  {
+    id: "pdf-master",
+    title: "📄 PDF Export Master",
+    description: "Export 10 CMAs to PDF",
+    icon: "📄",
+    xpReward: 100,
+    requirement: (stats) => stats.pdfExports >= 10
+  },
+  {
+    id: "data-visualizer",
+    title: "📊 Data Visualizer",
+    description: "Use advanced charts 5 times",
+    icon: "📊",
+    xpReward: 85,
+    requirement: (stats) => stats.chartsViewed >= 5
+  },
+  {
+    id: "communicator",
+    title: "📧 Professional Communicator",
+    description: "Email 3 CMA reports to clients",
+    icon: "📧",
+    xpReward: 90,
+    requirement: (stats) => stats.emailsSent >= 3
+  },
+  {
+    id: "brand-builder",
+    title: "🎨 Brand Builder",
+    description: "Customize your branding settings",
+    icon: "🎨",
+    xpReward: 60,
+    requirement: (stats) => stats.brandingSet === true
+  },
+  {
+    id: "power-user",
+    title: "⚡ Power User",
+    description: "Use bulk actions 10 times",
+    icon: "⚡",
+    xpReward: 80,
+    requirement: (stats) => stats.bulkActionsUsed >= 10
+  },
+  {
+    id: "organizer",
+    title: "⭐ Super Organizer",
+    description: "Favorite 5 CMAs",
+    icon: "⭐",
+    xpReward: 50,
+    requirement: (stats) => stats.favoritesAdded >= 5
+  },
+  {
+    id: "note-taker",
+    title: "📝 Detailed Analyst",
+    description: "Add notes to 10 comparables",
+    icon: "📝",
+    xpReward: 70,
+    requirement: (stats) => stats.notesAdded >= 10
+  },
+  {
+    id: "map-explorer",
+    title: "🗺️ Map Explorer",
+    description: "View property map 5 times",
+    icon: "🗺️",
+    xpReward: 65,
+    requirement: (stats) => stats.mapsViewed >= 5
+  },
+  {
+    id: "keyboard-ninja",
+    title: "⌨️ Keyboard Ninja",
+    description: "Use keyboard shortcuts 20 times",
+    icon: "⌨️",
+    xpReward: 95,
+    requirement: (stats) => stats.shortcutsUsed >= 20
+  },
+  {
+    id: "template-master",
+    title: "🎯 Template Master",
+    description: "Use all 9 market templates",
+    icon: "🎯",
+    xpReward: 120,
+    requirement: (stats) => stats.uniqueTemplatesUsed >= 9
+  },
+  {
+    id: "ultimate-pro",
+    title: "🏆 Ultimate CMA Professional",
+    description: "Use all advanced features (photos, PDF, charts, email, branding)",
+    icon: "🏆",
+    xpReward: 500,
+    requirement: (stats) => 
+      stats.photosUploaded >= 1 && 
+      stats.pdfExports >= 1 && 
+      stats.chartsViewed >= 1 && 
+      stats.emailsSent >= 1 && 
+      stats.brandingSet === true
   }
 ];
