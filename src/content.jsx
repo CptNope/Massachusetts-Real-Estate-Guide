@@ -6102,6 +6102,150 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </p>
         </div>
 
+        <div className="important-note">
+          <h4>📋 Additional Financing Terms</h4>
+          
+          <h5>Balloon Payment:</h5>
+          <p><strong>Definition:</strong> Larger final payment of loan, usually pays off the loan.</p>
+          
+          <h6>How Balloon Payments Work:</h6>
+          <ul>
+            <li><strong>Example:</strong> 30-year amortization, but loan due in 7 years</li>
+            <li><strong>Payments 1-83:</strong> Normal monthly payments (as if 30-year loan)</li>
+            <li><strong>Payment 84 (7 years):</strong> BALLOON - entire remaining balance due</li>
+            <li><strong>Typical balloon:</strong> $300,000 loan → 7 years later owe $250,000+ in one payment</li>
+          </ul>
+
+          <h6>Why Balloon Payments Exist:</h6>
+          <ul>
+            <li>💰 <strong>Lower Payments:</strong> Monthly payments lower than fully amortized</li>
+            <li>🏦 <strong>Seller Financing:</strong> Common in seller-financed deals</li>
+            <li>💼 <strong>Commercial Loans:</strong> Standard in commercial real estate</li>
+            <li>🔄 <strong>Assumption:</strong> Borrower expects to refinance or sell before balloon due</li>
+          </ul>
+
+          <h6>Balloon Payment Risks:</h6>
+          <ul>
+            <li>⚠️ <strong>Refinance Risk:</strong> What if rates are high when balloon due?</li>
+            <li>📉 <strong>Value Risk:</strong> What if property value dropped? Can't refinance</li>
+            <li>💵 <strong>Must Pay:</strong> If can't refinance or sell, lose property</li>
+            <li>🏚️ <strong>Foreclosure Risk:</strong> Many foreclosures happen at balloon date</li>
+          </ul>
+
+          <h5>Default:</h5>
+          <p><strong>Definition:</strong> Failure to pay or comply with terms of mortgage or promissory note.</p>
+          
+          <h6>What Constitutes Default:</h6>
+          <ul>
+            <li>❌ <strong>Missed Payments:</strong> Not paying monthly mortgage</li>
+            <li>❌ <strong>Late Payments:</strong> Consistently paying after due date</li>
+            <li>❌ <strong>Property Taxes:</strong> Not paying real estate taxes</li>
+            <li>❌ <strong>Insurance:</strong> Letting homeowner's insurance lapse</li>
+            <li>❌ <strong>Property Condition:</strong> Allowing property to deteriorate (waste)</li>
+            <li>❌ <strong>HOA Fees:</strong> Not paying condo/HOA fees</li>
+          </ul>
+
+          <h6>Consequences of Default:</h6>
+          <p className="warning"><strong>Late payment fees & grace period given.</strong></p>
+          <ul>
+            <li>💵 <strong>Late Fees:</strong> Typically 4-5% of payment amount</li>
+            <li>📅 <strong>Grace Period:</strong> Usually 10-15 days after due date</li>
+            <li>📞 <strong>Collection Calls:</strong> Lender begins calling after 30 days</li>
+            <li>📋 <strong>Demand Letter:</strong> Formal notice to cure default (60-90 days)</li>
+            <li>⚖️ <strong>Acceleration:</strong> Lender can call entire loan due</li>
+            <li>🏚️ <strong>Foreclosure:</strong> Legal process to take property begins</li>
+          </ul>
+
+          <p className="info"><strong>FHA Loans:</strong> 3 months grace period before starting foreclosure process.</p>
+
+          <h5>Foreclosure:</h5>
+          <p><strong>Definition:</strong> Process of terminating borrower's equitable right of redemption.</p>
+          
+          <h6>What is "Equitable Right of Redemption"?</h6>
+          <p>Borrower's right to reclaim property by paying off entire debt + costs before foreclosure sale. 
+          This right exists even after default, giving borrower chance to save home.</p>
+
+          <h6>2 Types of Foreclosure Proceedings:</h6>
+
+          <div className="foreclosure-type">
+            <h5>1️⃣ Judicial Foreclosure (Court Process):</h5>
+            <p><strong>Process:</strong> Lender brings suit asking to cut off borrower's rights & sell property 
+            at Auction.</p>
+            
+            <ul>
+              <li><strong>Must go through courts:</strong> Lawsuit filed, court hearing required</li>
+              <li><strong>Takes longer:</strong> 6-18 months typical (varies by state)</li>
+              <li><strong>Borrower rights:</strong> May be allowed up to 1 year or more to bring payments up to date</li>
+              <li><strong>Public auction:</strong> Property sold to highest bidder at courthouse steps</li>
+              <li><strong>Redemption period:</strong> Some states allow time after sale to reclaim property</li>
+              <li><strong>Deficiency judgment possible:</strong> Lender can sue for difference if sale price &lt; debt</li>
+            </ul>
+
+            <h6>Judicial Foreclosure Timeline:</h6>
+            <ol>
+              <li><strong>Day 1:</strong> Borrower defaults (misses payments)</li>
+              <li><strong>90 days:</strong> Lender files lawsuit (lis pendens)</li>
+              <li><strong>6-12 months:</strong> Court hearings, borrower can contest</li>
+              <li><strong>12-18 months:</strong> Judgment entered, auction scheduled</li>
+              <li><strong>Auction Day:</strong> Property sold to highest bidder</li>
+              <li><strong>Post-Sale:</strong> Possible redemption period (if state allows)</li>
+            </ol>
+          </div>
+
+          <div className="foreclosure-type">
+            <h5>2️⃣ Statutory Foreclosure (Power of Sale):</h5>
+            <p><strong>Process:</strong> Quicker method - permitted to enter & take possession without courts 
+            permission.</p>
+            
+            <ul>
+              <li><strong>No court required:</strong> Based on power of sale clause in mortgage</li>
+              <li><strong>Much faster:</strong> 2-4 months typical</li>
+              <li><strong>If payments not brought current:</strong> Right of redemption is terminated</li>
+              <li><strong>Debt deemed paid:</strong> To extent of property value (sale proceeds satisfy debt)</li>
+              <li><strong>Lender in possession:</strong> While lender is in possession, they have rights to collect 
+              rents & must manage & maintain property for benefit of Borrower</li>
+              <li><strong>Less expensive:</strong> No court costs, faster process</li>
+            </ul>
+
+            <h6>Statutory Foreclosure Timeline:</h6>
+            <ol>
+              <li><strong>Day 1:</strong> Borrower defaults</li>
+              <li><strong>30-45 days:</strong> Notice of Default (NOD) filed & mailed</li>
+              <li><strong>90 days:</strong> Notice of Sale published</li>
+              <li><strong>21 days later:</strong> Auction held</li>
+              <li><strong>Auction Day:</strong> Property sold, borrower must vacate</li>
+              <li><strong>No redemption:</strong> Usually no post-sale redemption period</li>
+            </ol>
+          </div>
+
+          <h6>Which States Use Which Method?</h6>
+          <ul>
+            <li><strong>Judicial States:</strong> Connecticut, Florida, Illinois, New Jersey, New York, Ohio, Pennsylvania</li>
+            <li><strong>Non-Judicial States:</strong> California, Georgia, Texas, Virginia, Washington</li>
+            <li><strong>Massachusetts:</strong> Uses non-judicial (statutory) foreclosure primarily</li>
+            <li><strong>Hybrid States:</strong> Some allow both methods</li>
+          </ul>
+
+          <h6>Avoiding Foreclosure - Options:</h6>
+          <ul>
+            <li>💰 <strong>Reinstatement:</strong> Pay all missed payments + fees to bring current</li>
+            <li>📝 <strong>Forbearance:</strong> Temporary payment reduction/pause from lender</li>
+            <li>🔄 <strong>Loan Modification:</strong> Permanently change loan terms</li>
+            <li>🏠 <strong>Short Sale:</strong> Sell for less than owed (with lender approval)</li>
+            <li>🤝 <strong>Deed in Lieu:</strong> Voluntarily give property back to lender</li>
+            <li>⚖️ <strong>Bankruptcy:</strong> Chapter 13 can stop foreclosure temporarily</li>
+          </ul>
+
+          <h6>Impact on Credit:</h6>
+          <ul>
+            <li>📉 <strong>Foreclosure:</strong> Drops credit 200-300+ points, stays 7 years</li>
+            <li>📉 <strong>Short Sale:</strong> Drops credit 100-200 points, stays 7 years</li>
+            <li>📉 <strong>Deed in Lieu:</strong> Similar to short sale impact</li>
+            <li>📉 <strong>Bankruptcy:</strong> Drops credit 150-250 points, stays 7-10 years</li>
+            <li>⏱️ <strong>Recovery Time:</strong> 3-7 years before qualifying for new mortgage</li>
+          </ul>
+        </div>
+
         <h4>Key Documents Seller Signs:</h4>
         <ul>
           <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
