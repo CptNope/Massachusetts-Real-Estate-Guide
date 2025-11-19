@@ -2099,6 +2099,285 @@ Always understand your agent’s split and cap – it influences incentives.`}
               When in doubt, over-report and over-comply. Your license is your livelihood - protect it!
             </p>
           </div>
+
+          <h4>⚠️ Complete List: Suspension or Refusal to Renew License</h4>
+          <div className="suspension-reasons">
+            <p className="warning">
+              <strong>The following violations can result in license suspension, revocation, or refusal to renew:</strong>
+            </p>
+
+            <div className="violation-list">
+              <div className="violation-item">
+                <h5>1. DUTY TO PRESENT ALL OFFERS</h5>
+                <p className="warning">
+                  <strong>Agent must present all offers immediately unless other arrangements have been made 
+                  between Seller & Listing Agent.</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Every offer must be presented to seller promptly</li>
+                  <li><strong>Exception:</strong> Only if seller and listing agent have written agreement otherwise</li>
+                  <li><strong>Cannot:</strong> Withhold offers because you think they're too low</li>
+                  <li><strong>Cannot:</strong> Delay presenting offers to favor another buyer</li>
+                  <li><strong>Must:</strong> Present offers even if property is under agreement (backup offers)</li>
+                  <li><strong>Violation:</strong> Breach of fiduciary duty to seller</li>
+                  <li><strong>Penalty:</strong> License suspension, fines, lawsuit from seller</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>2. IMPAIRMENT - Drugs & Alcohol</h5>
+                <p className="warning">
+                  <strong>Cannot practice real estate impaired by drugs & or alcohol</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Must be sober and mentally competent while performing RE duties</li>
+                  <li><strong>Includes:</strong> Showing properties, meetings, negotiations, signings</li>
+                  <li><strong>Cannot:</strong> Work under influence of drugs (illegal or prescription)</li>
+                  <li><strong>Cannot:</strong> Work under influence of alcohol</li>
+                  <li><strong>Penalty:</strong> Immediate license suspension, potential permanent revocation</li>
+                  <li><strong>Liability:</strong> Civil liability for damages caused while impaired</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>3. CONFLICTS OF INTEREST</h5>
+                <p className="warning">
+                  <strong>If don't disclose personal or family interest in the transaction</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Must disclose ANY personal or family interest</li>
+                  <li><strong>Examples:</strong>
+                    <ul>
+                      <li>You or family member is buyer/seller</li>
+                      <li>You own the property being sold</li>
+                      <li>You have financial interest in transaction</li>
+                      <li>Family member has interest in transaction</li>
+                    </ul>
+                  </li>
+                  <li><strong>Must:</strong> Disclose in writing before any agreements signed</li>
+                  <li><strong>Cannot:</strong> Hide your interest and act as neutral agent</li>
+                  <li><strong>Penalty:</strong> License suspension, commission forfeiture, Chapter 93A liability</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>4. DUAL AGENCY WITHOUT CONSENT</h5>
+                <p className="warning">
+                  <strong>Acted as Dual Agency or other capacity without both Buyer & Sellers written consent</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> MUST have written consent from BOTH parties for dual agency</li>
+                  <li><strong>Cannot:</strong> Represent both sides without full disclosure and written consent</li>
+                  <li><strong>Required:</strong>
+                    <ul>
+                      <li>MA Mandatory Agency Disclosure Form</li>
+                      <li>Dual Agency Disclosure Form</li>
+                      <li>Written consent from buyer</li>
+                      <li>Written consent from seller</li>
+                    </ul>
+                  </li>
+                  <li><strong>Violation:</strong> Undisclosed dual agency = serious ethical and legal breach</li>
+                  <li><strong>Penalty:</strong> License suspension/revocation, lawsuit, triple damages</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>5. ESCROW VIOLATIONS</h5>
+                <p className="warning">
+                  <strong>Failure to account or remit escrow money</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> All deposits must be placed in escrow account immediately</li>
+                  <li><strong>Cannot:</strong> Delay depositing client funds</li>
+                  <li><strong>Cannot:</strong> Use client funds for own purposes (commingling)</li>
+                  <li><strong>Cannot:</strong> Fail to return funds when required</li>
+                  <li><strong>Must:</strong> Keep accurate records of all escrow transactions</li>
+                  <li><strong>Must:</strong> Remit funds promptly per agreement</li>
+                  <li><strong>Violation:</strong> Conversion of funds = theft</li>
+                  <li><strong>Penalty:</strong> License revocation, criminal charges, restitution</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>6. PAYING NON-LICENSEES</h5>
+                <p className="warning">
+                  <strong>Paid commissions to non-licensees</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Can ONLY pay commissions to licensed real estate professionals</li>
+                  <li><strong>Cannot:</strong> Pay referral fees to unlicensed individuals</li>
+                  <li><strong>Cannot:</strong> Split commission with unlicensed person</li>
+                  <li><strong>Cannot:</strong> Give "finder's fees" to unlicensed bird dogs</li>
+                  <li><strong>Exception:</strong> Can give gifts (small value, not tied to transaction)</li>
+                  <li><strong>Violation:</strong> Aiding unlicensed practice of real estate</li>
+                  <li><strong>Penalty:</strong> License suspension, fines, commission forfeiture</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>7. UNDISCLOSED COMPENSATION</h5>
+                <p className="warning">
+                  <strong>Accepted, gave or charged any undisclosed commission, rebate or profit on 
+                  expenditures for a principal.</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> ALL compensation must be disclosed to your client</li>
+                  <li><strong>Cannot:</strong> Receive kickbacks from vendors without disclosure</li>
+                  <li><strong>Cannot:</strong> Mark up services and pocket difference</li>
+                  <li><strong>Cannot:</strong> Accept referral fees from inspectors, contractors without disclosure</li>
+                  <li><strong>Must:</strong> Disclose any financial benefit you receive</li>
+                  <li><strong>Example:</strong> Inspector pays you $100 for referral → MUST disclose to client</li>
+                  <li><strong>Violation:</strong> Breach of fiduciary duty (Accounting)</li>
+                  <li><strong>Penalty:</strong> License suspension, return of hidden profits, lawsuits</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>8. INDUCING BREACH OF CONTRACT</h5>
+                <p className="warning">
+                  <strong>Induced or assisted any party in breaking a contract or listing agreement for 
+                  personal gain</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Cannot encourage breach of existing agreements</li>
+                  <li><strong>Cannot:</strong> Tell buyer to back out of deal so they can use you instead</li>
+                  <li><strong>Cannot:</strong> Convince seller to break listing with another agent</li>
+                  <li><strong>Cannot:</strong> Help client avoid contractual obligations for your benefit</li>
+                  <li><strong>Violation:</strong> Tortious interference with contract</li>
+                  <li><strong>Penalty:</strong> License suspension, lawsuit from other agent, damages</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>9. FAILURE TO PROVIDE COPIES</h5>
+                <p className="warning">
+                  <strong>Failed to give buyer or seller a copy of the P&S (Listing Agreements & Buyer Broker 
+                  Agreements must also be given to respective clients when executed)</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Clients MUST receive copies of all signed documents</li>
+                  <li><strong>Must Provide Immediately:</strong>
+                    <ul>
+                      <li>Listing agreement (to seller)</li>
+                      <li>Buyer broker agreement (to buyer)</li>
+                      <li>Purchase & Sale agreement (to both)</li>
+                      <li>Any amendments or addendums</li>
+                    </ul>
+                  </li>
+                  <li><strong>When:</strong> At time of execution (when signed)</li>
+                  <li><strong>Cannot:</strong> Delay providing copies</li>
+                  <li><strong>Violation:</strong> Deprives clients of their rights</li>
+                  <li><strong>Penalty:</strong> License suspension, Chapter 93A violation</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>10. NET LISTING PROHIBITION</h5>
+                <p className="warning">
+                  <strong>Accepted a Net Listing</strong>
+                </p>
+                <ul>
+                  <li><strong>Net Listing:</strong> Agent keeps everything above a set price</li>
+                  <li><strong>Example:</strong> Seller wants $200k net, agent lists for $250k, keeps $50k</li>
+                  <li><strong>Why Prohibited:</strong> Creates conflict of interest - agent benefits from getting less for seller</li>
+                  <li><strong>Rule:</strong> Net listings are ILLEGAL in Massachusetts</li>
+                  <li><strong>Must Use:</strong> Percentage commission or flat fee</li>
+                  <li><strong>Violation:</strong> Accepting net listing = automatic violation</li>
+                  <li><strong>Penalty:</strong> License suspension, commission forfeiture</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>11. OUT-OF-STATE PROPERTY VIOLATIONS</h5>
+                <p className="warning">
+                  <strong>Engaged in sale of real property located in a land development in another state 
+                  that was promoted or advertised in Massachusetts without the owner/developer complying 
+                  with all filing requirements.</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> Out-of-state developers must register with MA before marketing here</li>
+                  <li><strong>Cannot:</strong> Market out-of-state development without proper filings</li>
+                  <li><strong>Cannot:</strong> Help developer avoid MA registration requirements</li>
+                  <li><strong>Must:</strong> Verify developer has complied with MA laws</li>
+                  <li><strong>Violation:</strong> Consumer protection violation</li>
+                  <li><strong>Penalty:</strong> License suspension, fines</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>12. LAPSED LICENSE</h5>
+                <p className="warning">
+                  <strong>Cannot practice with lapsed license</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> License must be current and active</li>
+                  <li><strong>Cannot:</strong> Work during renewal period if not renewed</li>
+                  <li><strong>Cannot:</strong> Complete transactions started before lapse</li>
+                  <li><strong>Cannot:</strong> Claim "I'm renewing it" as excuse</li>
+                  <li><strong>Must:</strong> Renew BEFORE expiration</li>
+                  <li><strong>Commission:</strong> Cannot collect commission for work done while lapsed</li>
+                  <li><strong>Violation:</strong> Practicing without license</li>
+                  <li><strong>Penalty:</strong> Fines, cannot collect commission, license issues</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>13. RENTAL APARTMENT ADVERTISING</h5>
+                <p className="warning">
+                  <strong>Advertisement regarding availability of an apartment for rent must contain 
+                  following language: "the apartment advertised may no longer be available for rent."</strong>
+                </p>
+                <ul>
+                  <li><strong>Rule:</strong> All rental ads MUST include this disclaimer</li>
+                  <li><strong>Exact Language Required:</strong> "the apartment advertised may no longer be available for rent."</li>
+                  <li><strong>Why:</strong> Prevents bait-and-switch tactics</li>
+                  <li><strong>Applies To:</strong> All rental apartment advertising</li>
+                  <li><strong>Cannot:</strong> Advertise rental apartments without this disclaimer</li>
+                  <li><strong>Violation:</strong> Consumer protection violation</li>
+                  <li><strong>Penalty:</strong> Fines, license suspension for repeated violations</li>
+                </ul>
+              </div>
+
+              <div className="violation-item">
+                <h5>14. DISCRIMINATION VIOLATIONS (M.G.L. c. 151B)</h5>
+                <p className="warning">
+                  <strong>Persons committed unlawful discrimination in violation of M.G.L. c. 151B, license 
+                  will be suspended for 60 days. If occurred within 2 years of prior violation, suspended 
+                  for 90 days.</strong>
+                </p>
+                <ul>
+                  <li><strong>First Violation:</strong> 60-day suspension (mandatory)</li>
+                  <li><strong>Second Violation (within 2 years):</strong> 90-day suspension (mandatory)</li>
+                  <li><strong>What Counts:</strong>
+                    <ul>
+                      <li>Fair Housing violations</li>
+                      <li>Discrimination based on protected classes</li>
+                      <li>Steering, blockbusting, redlining</li>
+                      <li>Discriminatory advertising</li>
+                      <li>Refusing to show properties based on protected class</li>
+                    </ul>
+                  </li>
+                  <li><strong>Cannot:</strong> Discriminate in any way</li>
+                  <li><strong>Violation:</strong> Civil rights violation</li>
+                  <li><strong>Penalty:</strong> Mandatory suspension, fines up to $100,000+, civil lawsuit</li>
+                  <li><strong>Career Ending:</strong> Multiple violations = permanent revocation likely</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="suspension-summary">
+              <h4>🎯 Suspension/Refusal to Renew Summary:</h4>
+              <p className="warning">
+                <strong>ANY of these violations can result in license suspension, revocation, or refusal 
+                to renew. The Board takes ALL violations seriously. Your license is a PRIVILEGE, not a right. 
+                Follow all laws, rules, and ethical standards. When in doubt, consult your broker or an attorney.</strong>
+              </p>
+              <p className="highlight">
+                <strong>Most Common Violations:</strong> Failure to present all offers, undisclosed dual agency, 
+                escrow violations, paying non-licensees, and discrimination. Avoid these at all costs!
+              </p>
+            </div>
+          </div>
         </div>
 
         <h3>16.6 Real Estate License Exemptions (Who Doesn't Need a License)</h3>
