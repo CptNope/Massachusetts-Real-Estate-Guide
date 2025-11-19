@@ -377,6 +377,7 @@ export default function EnhancedCMA({ gamification }) {
   const [showContractInfo, setShowContractInfo] = useState(false);
   const [showContractEffects, setShowContractEffects] = useState(false);
   const [showContractPerformance, setShowContractPerformance] = useState(false);
+  const [showSalesContracts, setShowSalesContracts] = useState(false);
   const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
@@ -2232,8 +2233,128 @@ ${brandingEmail || ''}`;
           </div>
 
           <div className="legal-footer-actions">
-            <button className="btn-info" onClick={() => { setShowLegalInfo(false); setShowContractInfo(true); }}>
-              📄 View Contract Elements →
+            <button className="btn-info" onClick={() => { setShowLegalInfo(false); setShowSalesContracts(true); }}>
+              📋 MA Sales Contracts →
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowLegalInfo(false); setShowContractInfo(true); }}>
+              📄 Contract Elements →
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showSalesContracts && (
+        <div className="sales-contracts-panel">
+          <div className="sales-panel-header">
+            <h3>📋 Massachusetts Sales Contracts</h3>
+            <button className="btn-secondary" onClick={() => setShowSalesContracts(false)}>✕ Close</button>
+          </div>
+
+          <div className="ma-specific-notice">
+            <strong>🏛️ MA-Specific:</strong> Massachusetts is one of the few states that uses <strong>2 contracts</strong> in most real estate transactions.
+          </div>
+
+          <div className="two-contract-system">
+            <div className="contract-box contract-1">
+              <div className="contract-number">1st</div>
+              <h4>📝 CONTRACT TO PURCHASE (a/k/a "Offer")</h4>
+              <p className="contract-subtitle">First contract written by agent. PURCHASE & SALES AGREEMENT is the 2nd contract.</p>
+              
+              <div className="contract-elements-list">
+                <h5>Required Elements:</h5>
+                <div className="elements-grid">
+                  <div className="element-item">✓ Date</div>
+                  <div className="element-item">✓ Name of parties</div>
+                  <div className="element-item">✓ Property Address</div>
+                  <div className="element-item">✓ Offer price</div>
+                  <div className="element-item highlight-red">✓ Binder (a/k/a Earnest Money Deposit amounts given for Offer & P&S) (DepositLink) <strong>Deliver ASAP!</strong></div>
+                  <div className="element-item">✓ Date Offer good until (Acceptance, Counter, Rejected)</div>
+                  <div className="element-item">✓ Inspection timeframe</div>
+                  <div className="element-item">✓ Date for signing a Purchase & Sales Agreement (2nd Contract) (2nd Deposit)</div>
+                  <div className="element-item">✓ Closing Date</div>
+                  <div className="element-item">✓ Mortgage Contingency</div>
+                  <div className="element-item">✓ Other conditions (personal property included/excluded, due diligence period, home sale contingency, appraisal, repairs, etc.)</div>
+                  <div className="element-item">✓ Addendums, Riders & Amendments attached & made part of the agreement</div>
+                  <div className="element-item">✓ Contract is valid only after it has been fully executed, delivered to all parties and earnest money deposit delivered</div>
+                  <div className="element-item">✓ Buyer's Agent has the right to present their offer to seller/seller's agent 😊</div>
+                </div>
+              </div>
+
+              <div className="important-notes">
+                <div className="note-item note-warning">
+                  <strong>⏰ NOTE:</strong> Time is of essence for agent to present offer to seller. No requirement to sign rejected offers. 
+                  Listing agent only must provide written affirmation to selling agent with a reasonable amount of time that the offer was presented.
+                </div>
+                <div className="note-item note-critical">
+                  <strong>⚖️ CRITICAL:</strong> *The Offer on its own IS BINDING & doesn't require the signing of a P&S to be considered enforceable. 
+                  <em>Decision of MA Supreme Judicial Court McCarthy v. Tobin 1999</em>
+                </div>
+              </div>
+            </div>
+
+            <div className="contract-box contract-2">
+              <div className="contract-number">2nd</div>
+              <h4>📄 PURCHASE & SALES AGREEMENT</h4>
+              <p className="contract-subtitle">The formal second contract that finalizes the transaction details.</p>
+              
+              <div className="ps-agreement-note">
+                <p>
+                  This is the comprehensive contract that includes all final terms, conditions, and legal provisions 
+                  for the real estate transaction. It builds upon the initial Contract to Purchase and includes:
+                </p>
+                <ul>
+                  <li>Complete legal description of property</li>
+                  <li>All contingencies and conditions</li>
+                  <li>Detailed financial terms</li>
+                  <li>Seller disclosures</li>
+                  <li>Title and conveyance details</li>
+                  <li>Closing procedures</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mccarthy-case">
+            <h4>⚖️ McCarthy v. Tobin (1999) - Landmark Case</h4>
+            <p>
+              The Massachusetts Supreme Judicial Court ruled that the Contract to Purchase (Offer) is legally binding 
+              on its own, even without a signed Purchase & Sales Agreement. This makes the initial offer much more 
+              significant in MA than in many other states.
+            </p>
+            <p className="case-implication">
+              <strong>Implication for Agents:</strong> Ensure all terms are clearly stated in the initial offer, as it 
+              can be enforced as a binding contract!
+            </p>
+          </div>
+
+          <div className="agent-tips-box">
+            <h4>💡 Critical Tips for MA Agents:</h4>
+            <div className="tips-grid">
+              <div className="tip-card">
+                <strong>📮 Deliver Deposits ASAP</strong>
+                <p>Earnest money deposits must be delivered promptly. Use DepositLink or deliver within required timeframe.</p>
+              </div>
+              <div className="tip-card">
+                <strong>⏰ Present Offers Promptly</strong>
+                <p>Time is of essence. Present all offers to seller/seller's agent in timely manner with written confirmation.</p>
+              </div>
+              <div className="tip-card">
+                <strong>✍️ Complete Offer Thoroughly</strong>
+                <p>Since the offer is binding (McCarthy v. Tobin), include ALL terms clearly in the first contract.</p>
+              </div>
+              <div className="tip-card">
+                <strong>📋 Track Both Contracts</strong>
+                <p>Calendar dates for both contracts. The P&S date is in the offer and must be met.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowSalesContracts(false); setShowContractInfo(true); }}>
+              Contract Elements →
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowSalesContracts(false); setShowLegalInfo(true); }}>
+              ← Back to Law Change
             </button>
           </div>
         </div>

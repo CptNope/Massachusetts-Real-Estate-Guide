@@ -3034,6 +3034,281 @@ html {
   color: #92400e;
 }
 
+/* MA Sales Contracts Panel */
+.sales-contracts-panel {
+  background: white;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.sales-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #a7f3d0;
+}
+
+.sales-panel-header h3 {
+  margin: 0;
+  color: #065f46;
+}
+
+.ma-specific-notice {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #065f46;
+  font-size: 1.1rem;
+}
+
+.ma-specific-notice strong {
+  color: #047857;
+}
+
+.two-contract-system {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contract-box {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: 10px;
+  padding: 1.25rem;
+  position: relative;
+}
+
+.contract-1 {
+  border-left: 5px solid #10b981;
+}
+
+.contract-2 {
+  border-left: 5px solid #059669;
+}
+
+.contract-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.contract-box h4 {
+  margin: 0.5rem 0 0.5rem 0;
+  color: #065f46;
+  font-size: 1.2rem;
+}
+
+.contract-subtitle {
+  margin: 0 0 1rem 0;
+  color: #047857;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.contract-elements-list {
+  margin-top: 1rem;
+}
+
+.contract-elements-list h5 {
+  margin: 0 0 0.75rem 0;
+  color: #047857;
+}
+
+.elements-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.element-item {
+  background: white;
+  border: 1px solid #d1fae5;
+  border-left: 3px solid #10b981;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #065f46;
+  transition: all 0.2s;
+}
+
+.element-item:hover {
+  background: #ecfdf5;
+  border-left-width: 4px;
+}
+
+.highlight-red {
+  background: #fee2e2 !important;
+  border-left-color: #ef4444 !important;
+  font-weight: 600;
+}
+
+.highlight-red strong {
+  color: #991b1b;
+}
+
+.important-notes {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.note-item {
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.note-warning {
+  background: #fef3c7;
+  border-left-color: #f59e0b;
+  color: #78350f;
+}
+
+.note-warning strong {
+  color: #92400e;
+}
+
+.note-critical {
+  background: #fee2e2;
+  border-left-color: #ef4444;
+  color: #7f1d1d;
+}
+
+.note-critical strong {
+  color: #991b1b;
+}
+
+.note-critical em {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #991b1b;
+}
+
+.ps-agreement-note {
+  background: white;
+  border: 1px solid #a7f3d0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.ps-agreement-note p {
+  margin: 0 0 0.75rem 0;
+  color: #065f46;
+  line-height: 1.6;
+}
+
+.ps-agreement-note ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #047857;
+}
+
+.ps-agreement-note li {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.mccarthy-case {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.mccarthy-case h4 {
+  margin: 0 0 0.75rem 0;
+  color: #1e40af;
+}
+
+.mccarthy-case p {
+  margin: 0 0 0.75rem 0;
+  color: #1e40af;
+  line-height: 1.7;
+}
+
+.case-implication {
+  background: white;
+  border-left: 3px solid #3b82f6;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.case-implication strong {
+  color: #1e3a8a;
+}
+
+.agent-tips-box {
+  background: #f0fdf4;
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.agent-tips-box h4 {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.tip-card {
+  background: white;
+  border: 2px solid #a7f3d0;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.tip-card:hover {
+  background: #ecfdf5;
+  border-color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.tip-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #047857;
+  font-size: 1rem;
+}
+
+.tip-card p {
+  margin: 0;
+  color: #065f46;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 /* API Token Management Panel */
 .api-panel {
   background: white;
