@@ -3622,6 +3622,204 @@ html {
   font-weight: 700;
 }
 
+/* Release of Lien Section */
+.release-lien-section {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border: 2px solid #10b981;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.release-lien-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #065f46;
+  font-size: 1.3rem;
+}
+
+.defeasance-clause-box,
+.recording-box {
+  background: white;
+  border: 2px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.release-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.release-icon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.release-header h5 {
+  margin: 0;
+  color: #065f46;
+  font-size: 1.2rem;
+}
+
+.defeasance-definition,
+.recording-definition {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.defeasance-definition strong,
+.recording-definition strong {
+  color: #047857;
+}
+
+.defeasance-definition mark,
+.recording-definition mark {
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.defeasance-key-points,
+.recording-details {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.key-point,
+.recording-item {
+  background: #f0fdf4;
+  border-left: 3px solid #10b981;
+  padding: 0.75rem;
+  border-radius: 4px;
+  color: #065f46;
+}
+
+.key-point strong,
+.recording-item strong {
+  color: #047857;
+  margin-right: 0.5rem;
+}
+
+.torrens-system-note {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.torrens-system-note strong {
+  color: #1e40af;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.torrens-system-note p {
+  margin: 0;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+.release-timeline {
+  background: white;
+  border: 2px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.release-timeline h5 {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.timeline-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-step {
+  flex: 1;
+  min-width: 150px;
+  background: linear-gradient(135deg, #f0fdf4, #d1fae5);
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.timeline-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.2);
+}
+
+.step-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 auto 0.75rem auto;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step-content strong {
+  color: #065f46;
+  font-size: 1rem;
+}
+
+.step-content span {
+  color: #047857;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.timeline-arrow {
+  color: #10b981;
+  font-size: 2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline-steps {
+    flex-direction: column;
+  }
+  
+  .timeline-arrow {
+    transform: rotate(90deg);
+  }
+}
+
 /* MA Sales Contracts Panel */
 .sales-contracts-panel {
   background: white;
