@@ -6226,6 +6226,116 @@ Always understand your agent’s split and cap – it influences incentives.`}
             <li><strong>Hybrid States:</strong> Some allow both methods</li>
           </ul>
 
+          <div className="ma-specific">
+            <h5>🏛️ Massachusetts-Specific Foreclosure Rules</h5>
+
+            <h6>Power of Sale Foreclosure in MA:</h6>
+            <p className="highlight"><strong>⭐ Commonly used in MA.</strong> Right to sell property at Auction.</p>
+            
+            <ul>
+              <li><strong>Notice of Sale:</strong> Must be given to Borrower by registered mail</li>
+              <li><strong>Publication Required:</strong> Notice of sale must be publicized in local newspapers</li>
+              <li><strong>Timeline:</strong> Typically 90-120 days from first notice to auction</li>
+              <li><strong>Auction:</strong> Property sold to highest bidder at public auction</li>
+            </ul>
+
+            <h6>⚔️ Soldiers and Sailors Civil Relief Act (SCRA):</h6>
+            <p className="warning"><strong>Protection for Military Members:</strong> Bars lenders from foreclosing 
+            against person in military or until a person has been out of service for 3 months. Other limitations 
+            also apply.</p>
+            <ul>
+              <li>Cannot foreclose on active duty service member</li>
+              <li>Protection extends 3 months after leaving service</li>
+              <li>Court approval required if attempting foreclosure</li>
+              <li>Interest rate may be capped at 6% during active duty</li>
+              <li>Applies to mortgages originated before active duty</li>
+            </ul>
+
+            <h6>Mortgagor's Equitable Right of Redemption in MA:</h6>
+            <p>Allows borrower in default to redeem title prior to foreclosure.</p>
+            <p className="warning"><strong>⚠️ CRITICAL MA RULE:</strong> In MA, right of redemption is terminated 
+            at the moment of foreclosure sale; as with Sheriff's Sales or Tax Sales. <strong>MA has NO statutory 
+            right of redemption.</strong></p>
+            
+            <ul>
+              <li><strong>Before Sale:</strong> Borrower can pay off debt + costs to stop foreclosure</li>
+              <li><strong>At Auction:</strong> Right terminates - no redemption after sale</li>
+              <li><strong>Different from other states:</strong> Many states allow post-sale redemption (MA does not)</li>
+              <li><strong>Sheriff's Sales:</strong> Same rule - no post-sale redemption</li>
+              <li><strong>Tax Sales:</strong> Same rule - no post-sale redemption</li>
+            </ul>
+
+            <h6>Deficiency Due After the Sale:</h6>
+            <p>Any excess proceeds after payment of all expenses related to foreclosure are returned to borrower.</p>
+            <p><strong>If after sale there is still a deficiency, borrower is liable.</strong></p>
+            
+            <ul>
+              <li><strong>Sale Price &gt; Debt:</strong> Borrower receives excess (rare)</li>
+              <li><strong>Sale Price &lt; Debt:</strong> Borrower owes deficiency</li>
+              <li><strong>Bank may forgive:</strong> In which case treated as taxable income to borrower</li>
+              <li><strong>Bank may sue:</strong> Deficiency judgment for remaining balance</li>
+              <li><strong>1099-C Form:</strong> Cancelled debt reported to IRS as income</li>
+            </ul>
+
+            <p className="example"><strong>Example:</strong></p>
+            <ul>
+              <li>Mortgage balance: $300,000</li>
+              <li>Foreclosure costs: $10,000</li>
+              <li>Auction sale price: $250,000</li>
+              <li>Deficiency: $60,000 ($300K + $10K - $250K)</li>
+              <li>Borrower liable for $60,000</li>
+            </ul>
+
+            <h6>Effect of Mortgage Foreclosure Sale Upon Other Liens:</h6>
+            <p>Foreclosure sale concludes (eliminates) the rights of all other lienholders dated AFTER the 
+            mortgage was recorded.</p>
+            
+            <ul>
+              <li><strong>Senior Liens:</strong> Recorded BEFORE mortgage remain (property taxes, earlier mortgages)</li>
+              <li><strong>Junior Liens:</strong> Recorded AFTER mortgage are wiped out (2nd mortgages, HOA liens, judgments)</li>
+              <li><strong>Buyer Receives:</strong> Deed with no warranties and is subject to paying unpaid taxes and any labor liens</li>
+              <li><strong>Tax Liens:</strong> Always survive foreclosure (property taxes have priority)</li>
+              <li><strong>Mechanic's Liens:</strong> May survive depending on recording date</li>
+            </ul>
+
+            <p className="warning"><strong>⚠️ Buyer Beware:</strong> Buying foreclosed property means accepting 
+            it "as-is" with potential tax and lien issues!</p>
+
+            <h6>Deed in Lieu of Foreclosure:</h6>
+            <p>In order to avoid expense of foreclosure sale, lender may accept a deed (friendly foreclosure - 
+            "Jingle Mail") in full payment of debt.</p>
+            
+            <h5>How Deed in Lieu Works:</h5>
+            <ul>
+              <li><strong>Borrower surrenders:</strong> Voluntarily gives deed to lender</li>
+              <li><strong>Avoids foreclosure:</strong> No public auction or legal proceedings</li>
+              <li><strong>Faster process:</strong> Typically 30-90 days vs. 6+ months foreclosure</li>
+              <li><strong>Less credit damage:</strong> Better than foreclosure on credit report</li>
+              <li><strong>May avoid deficiency:</strong> Lender may agree to forgive remaining balance</li>
+            </ul>
+
+            <h5>Disadvantage of Deed in Lieu:</h5>
+            <p className="warning"><strong>⚠️ MAJOR ISSUE:</strong> Conveyance is subject to ALL existing liens 
+            by borrower, whereas they would be eliminated by a foreclosure sale.</p>
+            
+            <ul>
+              <li><strong>Junior liens remain:</strong> 2nd mortgages, HOA liens, judgments stay attached</li>
+              <li><strong>Lender gets messy title:</strong> Must deal with junior lienholders</li>
+              <li><strong>Loses insurance guarantees:</strong> Lender loses rights to FHA, PMI or VA guarantees</li>
+              <li><strong>Why lenders resist:</strong> Foreclosure gives cleaner title</li>
+              <li><strong>Best when:</strong> No junior liens exist</li>
+            </ul>
+
+            <p className="example"><strong>Example:</strong></p>
+            <ul>
+              <li>1st Mortgage: $300,000</li>
+              <li>2nd Mortgage: $50,000 (junior lien)</li>
+              <li>HOA Lien: $5,000 (junior lien)</li>
+              <li><strong>Foreclosure:</strong> Wipes out $50K + $5K = clean title</li>
+              <li><strong>Deed in Lieu:</strong> All liens remain = lender inherits $55K in junior debt</li>
+            </ul>
+          </div>
+
           <h6>Avoiding Foreclosure - Options:</h6>
           <ul>
             <li>💰 <strong>Reinstatement:</strong> Pay all missed payments + fees to bring current</li>
