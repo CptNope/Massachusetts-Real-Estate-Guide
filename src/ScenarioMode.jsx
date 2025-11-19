@@ -7,6 +7,7 @@ export default function ScenarioMode() {
   const [currentNode, setCurrentNode] = useState('start');
   const [history, setHistory] = useState([]);
   const [completedScenarios, setCompletedScenarios] = useLocalStorage('completedScenarios', []);
+  const [discoveredEndings, setDiscoveredEndings] = useLocalStorage('discoveredEndings', {});
   const [difficultyFilter, setDifficultyFilter] = useState('all');
 
   const startScenario = (scenario) => {
@@ -35,12 +36,22 @@ export default function ScenarioMode() {
     const completion = {
       scenarioId: selectedScenario.id,
       outcome,
+      endingNode: currentNode,
       date: new Date().toISOString(),
       choices: history
     };
 
     const existing = completedScenarios.filter(c => c.scenarioId !== selectedScenario.id);
     setCompletedScenarios([completion, ...existing]);
+
+    // Track discovered ending
+    const scenarioEndings = discoveredEndings[selectedScenario.id] || [];
+    if (!scenarioEndings.includes(currentNode)) {
+      setDiscoveredEndings({
+        ...discoveredEndings,
+        [selectedScenario.id]: [...scenarioEndings, currentNode]
+      });
+    }
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -62,6 +73,27 @@ export default function ScenarioMode() {
       hard: { icon: '⭐⭐⭐', label: 'Hard', class: 'hard' }
     };
     return badges[difficulty] || badges.medium;
+  };
+
+  // Count total endings in a scenario
+  const countTotalEndings = (scenario) => {
+    return Object.values(scenario.nodes).filter(node => node.isEnding).length;
+  };
+
+  // Get discovered endings for a scenario
+  const getDiscoveredCount = (scenarioId) => {
+    return (discoveredEndings[scenarioId] || []).length;
+  };
+
+  // Get all endings for a scenario
+  const getAllEndings = (scenario) => {
+    return Object.entries(scenario.nodes)
+      .filter(([_, node]) => node.isEnding)
+      .map(([nodeId, node]) => ({
+        id: nodeId,
+        outcome: node.outcome,
+        discovered: (discoveredEndings[scenario.id] || []).includes(nodeId)
+      }));
   };
   
   // Filter scenarios by difficulty
@@ -144,6 +176,23 @@ export default function ScenarioMode() {
                 <h3>{scenario.title}</h3>
                 <p className="scenario-description">{scenario.description}</p>
                 
+                <div className="scenario-progress">
+                  <div className="endings-discovered">
+                    <span className="progress-icon">🔍</span>
+                    <span className="progress-text">
+                      Endings: {getDiscoveredCount(scenario.id)}/{countTotalEndings(scenario)}
+                    </span>
+                  </div>
+                  <div className="endings-bar">
+                    <div 
+                      className="endings-bar-fill"
+                      style={{ 
+                        width: `${(getDiscoveredCount(scenario.id) / countTotalEndings(scenario)) * 100}%` 
+                      }}
+                    />
+                  </div>
+                </div>
+                
                 {isCompleted && lastCompletion && (
                   <div className={`scenario-badge ${lastCompletion.outcome}`}>
                     {lastCompletion.outcome === 'positive' ? '✓ Completed Successfully' :
@@ -156,7 +205,9 @@ export default function ScenarioMode() {
                   className="btn-primary"
                   onClick={() => startScenario(scenario)}
                 >
-                  {isCompleted ? 'Play Again' : 'Start Scenario'}
+                  {getDiscoveredCount(scenario.id) === countTotalEndings(scenario) 
+                    ? '✓ All Endings Found' 
+                    : isCompleted ? 'Explore More Endings' : 'Start Scenario'}
                 </button>
               </div>
             );
@@ -222,10 +273,52 @@ export default function ScenarioMode() {
             </div>
           </div>
 
+          <div className="endings-tracker">
+            <h3>🔍 Ending Discovery</h3>
+            <div className="tracker-progress">
+              <span className="tracker-count">
+                {getDiscoveredCount(selectedScenario.id)} of {countTotalEndings(selectedScenario)} endings discovered
+              </span>
+              <div className="tracker-bar">
+                <div 
+                  className="tracker-bar-fill"
+                  style={{ 
+                    width: `${(getDiscoveredCount(selectedScenario.id) / countTotalEndings(selectedScenario)) * 100}%` 
+                  }}
+                />
+              </div>
+            </div>
+            <div className="endings-list">
+              {getAllEndings(selectedScenario).map((ending, index) => (
+                <div key={ending.id} className={`ending-item ${ending.discovered ? 'discovered' : 'locked'}`}>
+                  <span className="ending-icon">
+                    {ending.discovered 
+                      ? (ending.outcome === 'positive' ? '✅' : ending.outcome === 'negative' ? '❌' : '✓')
+                      : '🔒'
+                    }
+                  </span>
+                  <span className="ending-label">
+                    {ending.discovered 
+                      ? `Ending ${index + 1} - ${ending.outcome === 'positive' ? 'Success' : ending.outcome === 'negative' ? 'Challenge' : 'Complete'}`
+                      : `Ending ${index + 1} - ???`
+                    }
+                  </span>
+                </div>
+              ))}
+            </div>
+            {getDiscoveredCount(selectedScenario.id) < countTotalEndings(selectedScenario) && (
+              <div className="discovery-hint">
+                💡 Try different choices to discover all {countTotalEndings(selectedScenario)} endings!
+              </div>
+            )}
+            {getDiscoveredCount(selectedScenario.id) === countTotalEndings(selectedScenario) && (
+              <div className="discovery-complete">
+                🎉 You've discovered all endings for this scenario!
+              </div>
+            )}
+          </div>
+
           <div className="ending-actions">
-            <button className="btn-primary" onClick={resetScenario}>
-              Try Another Scenario
-            </button>
             <button
               className="btn-secondary"
               onClick={() => {
@@ -233,7 +326,10 @@ export default function ScenarioMode() {
                 setHistory([]);
               }}
             >
-              Restart This Scenario
+              🔄 Try Different Path
+            </button>
+            <button className="btn-primary" onClick={resetScenario}>
+              Choose Another Scenario
             </button>
           </div>
         </div>

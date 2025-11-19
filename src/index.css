@@ -3375,6 +3375,148 @@ h3[id], h4[id] {
   }
 }
 
+/* Scenario Replay & Ending Discovery Styles */
+.scenario-progress {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+}
+
+.endings-discovered {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.progress-icon {
+  font-size: 1.1rem;
+}
+
+.endings-bar {
+  background: var(--bg-main);
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.endings-bar-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: width 0.5s ease;
+}
+
+.endings-tracker {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.endings-tracker h3 {
+  margin-bottom: 1rem;
+}
+
+.tracker-progress {
+  margin-bottom: 1.5rem;
+}
+
+.tracker-count {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.tracker-bar {
+  background: var(--bg-main);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tracker-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.5s ease;
+}
+
+.endings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.ending-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.ending-item.discovered {
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.ending-item.locked {
+  opacity: 0.6;
+}
+
+.ending-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.ending-label {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.discovery-hint {
+  padding: 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 3px solid #f59e0b;
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.discovery-complete {
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid #10b981;
+  border-radius: 0.5rem;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Mobile adjustments for endings tracker */
+@media (max-width: 768px) {
+  .endings-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .ending-item {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .ending-label {
+    font-size: 0.85rem;
+  }
+}
+
 /* Closing Cost Calculator Styles */
 .view-toggle {
   display: flex;
