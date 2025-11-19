@@ -1401,6 +1401,198 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
+        <h3>16.2.5 License Application Requirements</h3>
+        <div className="application-requirements">
+          <p className="highlight">
+            <strong>Additional requirements for obtaining a Massachusetts real estate license:</strong>
+          </p>
+
+          <h4>📋 Citizenship Requirement (Constitutionally Defective - NOT Enforced)</h4>
+          <div className="citizenship-requirement">
+            <p className="warning">
+              <strong>Applicant to show evidence of citizenship or intent of citizenship</strong>
+            </p>
+            <p className="highlight">
+              <strong>⚠️ IMPORTANT:</strong> The "board" based on Attorney General's opinion, <strong>declared this 
+              requirement to be constitutionally defective and does not enforce requirement even though still listed 
+              on the MGL's</strong> (Massachusetts General Laws).
+            </p>
+            <ul>
+              <li><strong>Historical Requirement:</strong> Used to require proof of US citizenship or intent to become citizen</li>
+              <li><strong>Current Status:</strong> NOT ENFORCED - declared unconstitutional</li>
+              <li><strong>Why Still Listed:</strong> Legislature hasn't removed from statute yet</li>
+              <li><strong>For Applicants:</strong> You do NOT need to prove citizenship to get licensed</li>
+              <li><strong>Legal Status:</strong> Can obtain license regardless of citizenship status</li>
+            </ul>
+            <p className="success">
+              <strong>✅ Bottom Line:</strong> Don't worry about this requirement - the Board does not enforce it 
+              and will not ask for proof of citizenship. This is an outdated law that remains on the books but is 
+              not applied.
+            </p>
+          </div>
+
+          <h4>💰 Tax Compliance (STRICTLY ENFORCED)</h4>
+          <div className="tax-requirement">
+            <p className="warning">
+              <strong>Must have filed all state tax returns & paid all taxes.</strong>
+            </p>
+            <ul>
+              <li><strong>Requirement:</strong> All MA state tax returns must be filed and current</li>
+              <li><strong>All Taxes Paid:</strong> Cannot have outstanding tax debt to MA</li>
+              <li><strong>Verification:</strong> Board checks with MA Department of Revenue</li>
+              <li><strong>Includes:</strong>
+                <ul>
+                  <li>Income tax</li>
+                  <li>Sales tax (if you have a business)</li>
+                  <li>Any other MA state taxes owed</li>
+                </ul>
+              </li>
+              <li><strong>Payment Plans:</strong> If on payment plan, must be current with payments</li>
+              <li><strong>Federal Taxes:</strong> Not checked by MA Board, only state taxes</li>
+            </ul>
+            <p className="highlight">
+              <strong>⚠️ This IS Enforced:</strong> Unlike the citizenship requirement, tax compliance is strictly 
+              enforced. If you owe MA taxes or haven't filed returns, your license application will be denied or 
+              delayed until resolved.
+            </p>
+          </div>
+
+          <h4>🛡️ Broker Surety Bond Requirement</h4>
+          <div className="surety-bond">
+            <p className="warning">
+              <strong>Brokers must obtain $5,000 Surety Bond</strong>
+            </p>
+            <ul>
+              <li><strong>Who Needs It:</strong> BROKERS only (not salespersons)</li>
+              <li><strong>Amount:</strong> Minimum $5,000</li>
+              <li><strong>Purpose:</strong> Protects public from broker's dishonest acts</li>
+              <li><strong>When Required:</strong> Before broker license is issued</li>
+              <li><strong>How to Obtain:</strong>
+                <ul>
+                  <li>Contact insurance company or surety bond provider</li>
+                  <li>Apply for real estate surety bond</li>
+                  <li>Pay premium (typically $100-200 per year)</li>
+                  <li>Submit proof to Board with application</li>
+                </ul>
+              </li>
+              <li><strong>Renewal:</strong> Must maintain bond while license is active</li>
+              <li><strong>Cost:</strong> Annual premium based on credit score (typically $100-300/year)</li>
+            </ul>
+            <p className="highlight">
+              <strong>Note:</strong> This is different from E&O insurance. The surety bond is a licensing requirement 
+              for brokers. E&O insurance is recommended but not legally required by MA.
+            </p>
+          </div>
+
+          <h4>🎤 Board Interview (If Deemed Necessary)</h4>
+          <div className="board-interview">
+            <p className="warning">
+              <strong>Applicant required to appear before board for personal interview if they deem necessary</strong>
+            </p>
+            <ul>
+              <li><strong>When Required:</strong> Board discretion - not automatic for all applicants</li>
+              <li><strong>Common Triggers:</strong>
+                <ul>
+                  <li>Criminal history on background check</li>
+                  <li>Prior license issues in another state</li>
+                  <li>Questionable information on application</li>
+                  <li>Complaints or concerns about applicant</li>
+                  <li>Gap in work history or education</li>
+                </ul>
+              </li>
+              <li><strong>What to Expect:</strong>
+                <ul>
+                  <li>Appear in person at Board offices</li>
+                  <li>Answer questions about your application</li>
+                  <li>Explain any issues or concerns</li>
+                  <li>Demonstrate knowledge and character</li>
+                  <li>Be honest and professional</li>
+                </ul>
+              </li>
+              <li><strong>Preparation:</strong>
+                <ul>
+                  <li>Review your entire application</li>
+                  <li>Be ready to explain any issues</li>
+                  <li>Bring supporting documents</li>
+                  <li>Dress professionally</li>
+                  <li>Be honest - don't hide anything</li>
+                </ul>
+              </li>
+              <li><strong>Outcome:</strong>
+                <ul>
+                  <li>Board may approve license</li>
+                  <li>Board may deny license</li>
+                  <li>Board may approve with conditions</li>
+                  <li>Board may request additional information</li>
+                </ul>
+              </li>
+            </ul>
+            <p className="highlight">
+              <strong>Best Practice:</strong> Be completely honest on your application. If you have any issues 
+              (criminal history, previous license problems, etc.), disclose them upfront and provide explanation. 
+              Hiding information that comes up in background check is worse than disclosing and explaining.
+            </p>
+          </div>
+
+          <h4>✅ Complete License Application Checklist:</h4>
+          <div className="application-checklist">
+            <h5>For Salesperson License:</h5>
+            <ol>
+              <li>☐ Complete 40-hour pre-license course from approved school</li>
+              <li>☐ Pass state salesperson exam (score 70% or higher)</li>
+              <li>☐ Complete license application (online or paper)</li>
+              <li>☐ Pay application fee ($100-150)</li>
+              <li>☐ Submit background check/fingerprints</li>
+              <li>☐ Verify all MA state taxes filed and paid</li>
+              <li>☐ <s>Provide proof of citizenship</s> (NOT ENFORCED - ignore this)</li>
+              <li>☐ Wait for Board approval</li>
+              <li>☐ Affiliate with licensed broker before license issued</li>
+              <li>☐ Appear for interview if requested by Board</li>
+            </ol>
+
+            <h5>For Broker License (Additional Requirements):</h5>
+            <ol>
+              <li>☐ 3+ years as licensed salesperson (MA or equivalent)</li>
+              <li>☐ Complete 30-hour broker pre-license course</li>
+              <li>☐ Pass state broker exam (score 70% or higher)</li>
+              <li>☐ Complete broker license application</li>
+              <li>☐ Pay broker application fee ($150-200)</li>
+              <li>☐ Submit background check/fingerprints</li>
+              <li>☐ Verify all MA state taxes filed and paid</li>
+              <li>☐ <strong>Obtain $5,000 surety bond</strong> (CRITICAL - broker only!)</li>
+              <li>☐ Submit proof of surety bond to Board</li>
+              <li>☐ <s>Provide proof of citizenship</s> (NOT ENFORCED - ignore this)</li>
+              <li>☐ Wait for Board approval</li>
+              <li>☐ Appear for interview if requested by Board</li>
+            </ol>
+          </div>
+
+          <h4>⏱️ Timeline for License Application:</h4>
+          <ul>
+            <li><strong>Course Completion:</strong> 40 hours (1-4 weeks depending on schedule)</li>
+            <li><strong>Exam Scheduling:</strong> 1-2 weeks after course</li>
+            <li><strong>Application Processing:</strong> 2-4 weeks after passing exam</li>
+            <li><strong>Background Check:</strong> 2-6 weeks</li>
+            <li><strong>Board Review:</strong> 1-4 weeks</li>
+            <li><strong>Total:</strong> 6-12 weeks from starting course to receiving license</li>
+            <li><strong>If Interview Required:</strong> Add 4-8 weeks</li>
+          </ul>
+
+          <div className="application-summary">
+            <h4>🎯 Application Requirements Summary:</h4>
+            <ul>
+              <li>✅ <strong>Tax Compliance:</strong> STRICTLY ENFORCED - must have all MA taxes filed and paid</li>
+              <li>✅ <strong>Broker Surety Bond:</strong> REQUIRED for brokers - $5,000 minimum</li>
+              <li>✅ <strong>Board Interview:</strong> POSSIBLE - be prepared, honest, and professional</li>
+              <li>❌ <strong>Citizenship:</strong> NOT ENFORCED - don't worry about this outdated requirement</li>
+            </ul>
+            <p className="warning">
+              <strong>⚠️ Most Common Application Delays:</strong> Outstanding MA tax debt and incomplete background 
+              checks. Make sure all state taxes are current BEFORE applying!
+            </p>
+          </div>
+        </div>
+
         <h3>16.3 Professional Certifications</h3>
         <div className="certifications">
           <h4>GRI (Graduate, REALTOR® Institute)</h4>
