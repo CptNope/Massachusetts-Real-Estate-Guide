@@ -2736,6 +2736,88 @@ ${brandingEmail || ''}`;
             critical dates immediately. Missing a "time is of essence" deadline can expose your client (and you) to legal liability.
           </div>
 
+          <div className="contract-termination-section">
+            <h4>🔚 Other Reasons for Contract Termination</h4>
+            
+            <div className="termination-reasons">
+              <div className="termination-item">
+                <div className="termination-icon">✅</div>
+                <div className="termination-content">
+                  <h5>Partial Performance of the Terms</h5>
+                  <p className="term-definition">
+                    If the parties agree that the <mark>work performed is close enough to completion</mark>, they can agree 
+                    that the contract is discharged even if some minor elements remain unperformed.
+                  </p>
+                  <div className="term-example">
+                    Parties mutually agree work is substantially complete despite minor unfinished items.
+                  </div>
+                </div>
+              </div>
+
+              <div className="termination-item">
+                <div className="termination-icon">💰</div>
+                <div className="termination-content">
+                  <h5>Substantial Performance</h5>
+                  <p className="term-definition">
+                    One party has substantially performed on the contract but does not complete all the details exactly 
+                    as the contract requires. <mark>Such performance may be enough to force payment</mark>, with certain 
+                    adjustments for any damages suffered by the other party.
+                  </p>
+                  <div className="term-example">
+                    <strong>Example:</strong> If a newly constructed addition to a home is finished except for polishing 
+                    the brass doorknobs, the contractor is entitled to the final payment.
+                  </div>
+                </div>
+              </div>
+
+              <div className="termination-item">
+                <div className="termination-icon">⚠️</div>
+                <div className="termination-content">
+                  <h5>Impossibility of Performance</h5>
+                  <p className="term-definition">
+                    An unforeseen circumstance has made an act required by the contract impossible or impracticable. 
+                    Sometimes, a contract will cover a contingency, such as the destruction of property to be transferred.
+                  </p>
+                  <div className="term-example highlight-yellow">
+                    <strong>Critical:</strong> <mark>An event will occur that makes fulfillment of the contract terms a 
+                    practical impossibility</mark>, such as when a buyer is laid off and can no longer afford to complete the purchase.
+                  </div>
+                </div>
+              </div>
+
+              <div className="termination-item">
+                <div className="termination-icon">🤝</div>
+                <div className="termination-content">
+                  <h5>Mutual Agreement of the Parties to Cancel</h5>
+                  <p className="term-definition">
+                    Cancellation by one party will terminate a contract but <mark>does not automatically return the parties 
+                    to their original position</mark>, unless provided by law (such as the right of cancellation that 
+                    accompanies some consumer contracts) or by the terms of the agreement.
+                  </p>
+                  <div className="term-example">
+                    Both parties must agree to cancel and terms of how to unwind the contract.
+                  </div>
+                </div>
+              </div>
+
+              <div className="termination-item">
+                <div className="termination-icon">⚖️</div>
+                <div className="termination-content">
+                  <h5>Operation of Law</h5>
+                  <p className="term-definition">
+                    The voiding of a contract by a minor, or as a result of fraud, or because a contract was altered 
+                    without the written consent of all parties involved.
+                  </p>
+                  <div className="term-example highlight-yellow">
+                    <strong>Rescission:</strong> <mark>Returns the parties to their original positions before the contract</mark>, 
+                    so any monies or property exchanged must be returned. Rescission is normally a contractual remedy for 
+                    a breach, but a contract may also be rescinded by the mutual agreement of the parties.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="legal-footer-actions">
             <button className="btn-info" onClick={() => { setShowContractPerformance(false); setShowContractEffects(true); }}>
               ← Back to Legal Effects

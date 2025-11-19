@@ -3034,6 +3034,116 @@ html {
   color: #92400e;
 }
 
+/* Contract Termination Section */
+.contract-termination-section {
+  background: #f0fdfa;
+  border: 2px solid #14b8a6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contract-termination-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #115e59;
+  font-size: 1.3rem;
+}
+
+.termination-reasons {
+  display: grid;
+  gap: 1rem;
+}
+
+.termination-item {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  border: 2px solid #99f6e4;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.termination-item:hover {
+  background: #f0fdfa;
+  border-color: #5eead4;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15);
+}
+
+.termination-icon {
+  flex-shrink: 0;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #99f6e4, #5eead4);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+}
+
+.termination-content {
+  flex: 1;
+}
+
+.termination-content h5 {
+  margin: 0 0 0.75rem 0;
+  color: #115e59;
+  font-size: 1.1rem;
+}
+
+.term-definition {
+  margin: 0 0 0.75rem 0;
+  color: #134e4a;
+  line-height: 1.7;
+}
+
+.term-definition mark {
+  background: #fef3c7;
+  color: #78350f;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.term-example {
+  background: #f0fdf4;
+  border-left: 3px solid #10b981;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+  color: #047857;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.term-example strong {
+  color: #065f46;
+}
+
+.term-example mark {
+  background: #fef3c7;
+  color: #78350f;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.highlight-yellow {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-left-color: #f59e0b;
+}
+
+.highlight-yellow strong {
+  color: #92400e;
+}
+
+.highlight-yellow mark {
+  background: #fde68a;
+  color: #92400e;
+}
+
 /* MA Sales Contracts Panel */
 .sales-contracts-panel {
   background: white;
