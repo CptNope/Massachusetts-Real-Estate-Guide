@@ -8479,5 +8479,1000 @@ Always understand your agent’s split and cap – it influences incentives.`}
         </p>
       </>
     )
+  },
+  {
+    id: 'home-inspection-law',
+    icon: '🔍',
+    title: '31. Home Inspection Law & Consumer Protection',
+    subtitle: 'May 1, 2001 law - Facts for Consumers brochure, agent responsibilities, inspector recommendations',
+    body: (
+      <>
+        <h3>31.1 Massachusetts Home Inspection Law</h3>
+        <p className="highlight">
+          <strong>Effective May 1, 2001:</strong> At time of signing the first written Contract to Purchase, licensees or Seller 
+          (if no licensee involved) MUST provide the <strong>"Facts for Consumers"</strong> brochure educating consumers about 
+          the home inspection process.
+        </p>
+
+        <div className="warning-box">
+          <p><strong>⚠️ CRITICAL REQUIREMENT:</strong> This brochure must be provided when the FIRST written offer/contract is signed, 
+          NOT at listing or first showing. Timing is important!</p>
+        </div>
+
+        <h4>When Must the Brochure Be Provided?</h4>
+        <ul>
+          <li><strong>Trigger Event:</strong> Signing the 1st written Contract to Purchase</li>
+          <li><strong>Who Provides:</strong> Licensee involved in transaction, OR Seller if no licensee</li>
+          <li><strong>Not Required At:</strong> Listing appointment, first showing, or verbal offers</li>
+          <li><strong>Purpose:</strong> Educate consumers about their rights and the inspection process</li>
+        </ul>
+
+        <div className="info-box">
+          <p><strong>Important Note:</strong> There is no space for buyer to acknowledge or sign the brochure, so it's recommended 
+          that the buyer initial OR sign each page to document receipt.</p>
+        </div>
+
+        <h3>31.2 Agent Restrictions on Inspector Recommendations</h3>
+        <p>
+          The law places specific restrictions on which agents can recommend home inspectors, designed to prevent conflicts of 
+          interest and ensure buyer protection.
+        </p>
+
+        <h4>Listing Agents & Dual Agents - CANNOT Recommend</h4>
+        <div className="warning-box">
+          <p><strong>❌ PROHIBITED:</strong> Listing Agents and Dual Agents <strong>cannot recommend a specific inspector or 
+          inspection company</strong>.</p>
+        </div>
+
+        <h5>What Listing/Dual Agents CAN Do:</h5>
+        <ul>
+          <li>✅ Provide the state website with list of licensed inspectors</li>
+          <li>✅ Explain the importance of home inspections</li>
+          <li>✅ Encourage buyer to get an inspection</li>
+          <li>✅ Answer general questions about the inspection process</li>
+          <li>✅ Provide the "Facts for Consumers" brochure</li>
+        </ul>
+
+        <h5>What Listing/Dual Agents CANNOT Do:</h5>
+        <ul>
+          <li>❌ Recommend a specific inspector by name</li>
+          <li>❌ Suggest a particular inspection company</li>
+          <li>❌ Give buyer a list of "preferred" inspectors</li>
+          <li>❌ Steer buyer toward any specific inspector</li>
+        </ul>
+
+        <h5>Why This Restriction Exists:</h5>
+        <ul>
+          <li>Listing agent represents seller - conflict of interest in choosing inspector</li>
+          <li>Might recommend inspector who is "easy" on properties</li>
+          <li>Could undermine buyer's ability to get thorough inspection</li>
+          <li>Protects buyers from biased recommendations</li>
+        </ul>
+
+        <h4>Buyer Agents - CAN Recommend (with Disclosure)</h4>
+        <div className="success-box">
+          <p><strong>✅ PERMITTED:</strong> Buyer Agents <strong>can recommend</strong> specific inspectors IF they meet certain conditions.</p>
+        </div>
+
+        <h5>Requirements for Buyer Agent Recommendations:</h5>
+        <ol>
+          <li><strong>Written Agency Disclosure Required:</strong> Must have contractual agreement OR written agency disclosure form 
+          between buyer and broker stating broker is acting exclusively for buyer as Buyer's Broker</li>
+          <li><strong>Document the Relationship:</strong> Agency relationship must be clearly documented</li>
+          <li><strong>Recommend Multiple Options:</strong> Best practice to give 3 home inspector names</li>
+          <li><strong>Buyer Free to Choose:</strong> Always tell consumer they are free to choose ANY company they would like</li>
+        </ol>
+
+        <div className="best-practice">
+          <h5>Best Practice for Buyer Agents:</h5>
+          <ul>
+            <li><strong>Give 3 Names:</strong> Recommend three home inspector names (not just one)</li>
+            <li><strong>Explain Freedom:</strong> "You are free to choose any inspector you want, including ones not on this list"</li>
+            <li><strong>No Pressure:</strong> Don't pressure buyer to use your recommended inspectors</li>
+            <li><strong>Disclose Relationships:</strong> If you have any relationship with inspector (referral fees, etc.), disclose it</li>
+            <li><strong>Provide State List:</strong> Also provide the state website with full list of licensed inspectors</li>
+          </ul>
+        </div>
+
+        <h3>31.3 The "Rule of Three"</h3>
+        <div className="key-concept">
+          <p><strong>Recommend giving 3 home inspector names.</strong> This gives buyer options while still being helpful. 
+          Always tell consumer they are free to choose any company they would like.</p>
+        </div>
+
+        <h4>Why Three Inspectors?</h4>
+        <ul>
+          <li>Provides buyer with choices</li>
+          <li>Shows you're not steering to one specific company</li>
+          <li>Allows buyer to compare prices and services</li>
+          <li>Demonstrates you're acting in buyer's best interest</li>
+          <li>Reduces appearance of kickback arrangements</li>
+        </ul>
+
+        <h3>31.4 State Resources</h3>
+        <div className="info-box">
+          <p><strong>Massachusetts Home Inspector Licensing:</strong> All home inspectors must be licensed by the state. The 
+          state maintains a searchable database of licensed inspectors that agents can direct buyers to.</p>
+        </div>
+
+        <h4>What to Tell Buyers:</h4>
+        <ul>
+          <li>"I can provide you with the state website that lists all licensed home inspectors"</li>
+          <li>"You should verify the inspector is licensed and insured"</li>
+          <li>"You can choose any licensed inspector you prefer"</li>
+          <li>"Feel free to get recommendations from friends, family, or your lender"</li>
+          <li>"The inspection is for YOUR benefit - choose someone you're comfortable with"</li>
+        </ul>
+
+        <h3>31.5 Practical Scenarios</h3>
+
+        <div className="scenario-box">
+          <h4>Scenario 1: Listing Agent Asked for Inspector Recommendation</h4>
+          <p><strong>Situation:</strong> You're the listing agent. Buyer asks: "Can you recommend a good home inspector?"</p>
+          <p><strong>❌ Wrong Answer:</strong> "Sure, use ABC Inspections. They're great."</p>
+          <p><strong>✅ Correct Answer:</strong> "As the listing agent, I cannot recommend a specific inspector. However, I can provide 
+          you with the state website that lists all licensed inspectors. You're free to choose any inspector you'd like. You might 
+          also ask your buyer's agent for recommendations."</p>
+        </div>
+
+        <div className="scenario-box">
+          <h4>Scenario 2: Buyer Agent Providing Recommendations</h4>
+          <p><strong>Situation:</strong> You're the buyer's agent with a signed buyer-broker agreement. Buyer asks for inspector recommendations.</p>
+          <p><strong>✅ Correct Answer:</strong> "Since I'm your buyer's agent, I can provide some recommendations. Here are three 
+          inspectors I've worked with who do thorough inspections: [Name 1], [Name 2], [Name 3]. However, you're absolutely free 
+          to choose any licensed inspector you prefer. I can also give you the state website with the full list."</p>
+        </div>
+
+        <div className="scenario-box">
+          <h4>Scenario 3: Dual Agent Situation</h4>
+          <p><strong>Situation:</strong> You're acting as a dual agent. Buyer asks for inspector recommendations.</p>
+          <p><strong>❌ Wrong Answer:</strong> "I know a great inspector..."</p>
+          <p><strong>✅ Correct Answer:</strong> "As a dual agent representing both parties, I cannot recommend a specific inspector. 
+          I can provide you with the state website listing all licensed inspectors. You have the right to choose any inspector you'd like."</p>
+        </div>
+
+        <h3>31.6 Liability Concerns</h3>
+
+        <h4>Agent Can Be Liable For:</h4>
+        <ul>
+          <li>❌ Recommending unqualified or unlicensed inspector</li>
+          <li>❌ Steering buyer to "easy" inspector who misses major defects</li>
+          <li>❌ Receiving kickbacks from inspector without disclosure</li>
+          <li>❌ Failing to provide "Facts for Consumers" brochure</li>
+          <li>❌ Recommending inspector when acting as listing/dual agent</li>
+        </ul>
+
+        <h4>Agent is Protected When:</h4>
+        <ul>
+          <li>✅ Following the law's restrictions on recommendations</li>
+          <li>✅ Providing multiple inspector names (if buyer's agent)</li>
+          <li>✅ Disclosing any relationships with recommended inspectors</li>
+          <li>✅ Giving buyer freedom to choose any inspector</li>
+          <li>✅ Providing state resources and licensed inspector list</li>
+          <li>✅ Documenting that "Facts for Consumers" brochure was provided</li>
+        </ul>
+
+        <h3>31.7 Key Takeaways</h3>
+        <div className="summary-box">
+          <ul>
+            <li><strong>Brochure Required:</strong> "Facts for Consumers" at signing of 1st written Contract to Purchase</li>
+            <li><strong>Have Buyer Initial:</strong> Get buyer to initial/sign each page for proof of receipt</li>
+            <li><strong>Listing/Dual Agents:</strong> CANNOT recommend specific inspectors</li>
+            <li><strong>Buyer Agents:</strong> CAN recommend IF proper agency disclosure exists</li>
+            <li><strong>Rule of Three:</strong> Give three inspector names, not just one</li>
+            <li><strong>Freedom of Choice:</strong> Always tell buyer they can choose ANY inspector</li>
+            <li><strong>State Resources:</strong> Provide state website with licensed inspectors list</li>
+            <li><strong>No Kickbacks:</strong> Disclose any financial relationships with inspectors</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> The home inspection law is designed to protect consumers. Listing and dual agents cannot 
+          recommend inspectors to avoid conflicts of interest. Buyer's agents can recommend IF they have proper written agency 
+          disclosure. Always give buyers multiple options and remind them they're free to choose any inspector. Document that you 
+          provided the "Facts for Consumers" brochure at the time of the first written offer. When in doubt, err on the side of 
+          providing resources rather than specific recommendations.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'property-condition-disclosure',
+    icon: '⚠️',
+    title: '32. Property Condition - Required Disclosure',
+    subtitle: 'Seller disclosure duties, latent defects, building code violations, material defects definition',
+    body: (
+      <>
+        <h3>32.1 Seller's Duty to Disclose</h3>
+        <p className="highlight">
+          <strong>DISCLOSURE REQUIREMENT:</strong> In properties up to 4 units, the seller has a legal duty to disclose any 
+          <strong> known defects that threaten structural soundness or personal safety</strong>.
+        </p>
+
+        <div className="warning-box">
+          <p><strong>⚠️ CRITICAL:</strong> This is a LEGAL OBLIGATION, not optional. Failure to disclose known defects can result 
+          in lawsuits, rescission of sale, and damages.</p>
+        </div>
+
+        <h4>Scope of Disclosure Duty:</h4>
+        <ul>
+          <li><strong>Property Types:</strong> Up to 4 units (single-family, 2-family, 3-family, 4-family)</li>
+          <li><strong>What Must Be Disclosed:</strong> Defects threatening structural soundness OR personal safety</li>
+          <li><strong>Knowledge Requirement:</strong> Seller must disclose "known" defects</li>
+          <li><strong>Not Required:</strong> Seller doesn't have to investigate or hire inspectors (but must disclose what they know)</li>
+        </ul>
+
+        <h3>32.2 Types of Defects That Must Be Disclosed</h3>
+
+        <h4>1. Latent Defects</h4>
+        <div className="defect-type">
+          <p><strong>Definition:</strong> A hidden structural defect <strong>not discoverable by ordinary inspection</strong>.</p>
+          
+          <h5>Characteristics of Latent Defects:</h5>
+          <ul>
+            <li><strong>Hidden:</strong> Not visible to buyer during normal walkthrough</li>
+            <li><strong>Structural:</strong> Affects the structure or systems of the home</li>
+            <li><strong>Not Discoverable:</strong> Cannot be found by reasonable visual inspection</li>
+            <li><strong>Known to Seller:</strong> Seller is aware of the defect</li>
+          </ul>
+
+          <h5>Examples of Latent Defects:</h5>
+          <ul>
+            <li>Foundation cracks hidden behind finished basement walls</li>
+            <li>Roof trusses that are cracked but covered by finished ceiling</li>
+            <li>Electrical wiring problems inside walls</li>
+            <li>Plumbing leaks within walls or under floors</li>
+            <li>Termite damage inside walls or structural members</li>
+            <li>Septic system failure not visible from surface</li>
+            <li>Previous flooding in basement that seller cleaned up and hid</li>
+          </ul>
+
+          <div className="warning-box">
+            <p><strong>Key Point:</strong> Just because the buyer COULD have discovered it with an inspection doesn't relieve 
+            seller's duty to disclose if it's a latent defect the seller knew about!</p>
+          </div>
+        </div>
+
+        <h4>2. Building Code Violations</h4>
+        <div className="defect-type">
+          <p><strong>Legal Principle:</strong> Courts have ruled <strong>in favor of the Buyer</strong> when seller has neglected 
+          to reveal known violations of zoning or building codes.</p>
+          
+          <h5>What Must Be Disclosed:</h5>
+          <ul>
+            <li><strong>Known Violations:</strong> Any building code violations seller is aware of</li>
+            <li><strong>Unpermitted Work:</strong> Additions, renovations done without permits</li>
+            <li><strong>Zoning Violations:</strong> Non-conforming uses or structures</li>
+            <li><strong>Outstanding Violations:</strong> Notices from building department</li>
+            <li><strong>Failed Inspections:</strong> Work that didn't pass inspection</li>
+          </ul>
+
+          <h5>Common Building Code Issues:</h5>
+          <ul>
+            <li>Unpermitted additions or finished basements</li>
+            <li>Illegal in-law apartments</li>
+            <li>Non-conforming electrical or plumbing work</li>
+            <li>Structures built too close to property lines (setback violations)</li>
+            <li>Converted garages without permits</li>
+            <li>Added bathrooms/bedrooms without required permits</li>
+          </ul>
+
+          <div className="danger-box">
+            <p><strong>Seller Liability:</strong> If seller knew about code violations and didn't disclose, buyer can sue for 
+            damages, cost of bringing property into compliance, or even rescind the sale.</p>
+          </div>
+        </div>
+
+        <h4>3. Material Defects</h4>
+        <div className="defect-type">
+          <p><strong>Definition:</strong> All known 'material facts or defects' must be disclosed to buyer <strong>before making 
+          an offer</strong>.</p>
+          
+          <div className="key-concept">
+            <p><strong>Test for Material Defect:</strong> <em>Had buyer known about the issue, might they have decided not to 
+            purchase the home OR negotiated differently?</em></p>
+            <p>If the answer is YES or MAYBE, it's a material defect that must be disclosed.</p>
+          </div>
+
+          <h5>Examples of Material Defects:</h5>
+          <ul>
+            <li><strong>Structural Issues:</strong>
+              <ul>
+                <li>Foundation cracks or settling</li>
+                <li>Roof leaks or damage</li>
+                <li>Sagging floors or ceilings</li>
+                <li>Water damage or mold</li>
+              </ul>
+            </li>
+            <li><strong>System Failures:</strong>
+              <ul>
+                <li>Non-functioning HVAC, plumbing, or electrical</li>
+                <li>Septic system problems</li>
+                <li>Well water contamination</li>
+                <li>Drainage or flooding issues</li>
+              </ul>
+            </li>
+            <li><strong>Environmental Hazards:</strong>
+              <ul>
+                <li>Lead paint (if known)</li>
+                <li>Asbestos</li>
+                <li>Radon (if tested and levels high)</li>
+                <li>Underground oil tanks</li>
+              </ul>
+            </li>
+            <li><strong>Legal/Title Issues:</strong>
+              <ul>
+                <li>Boundary disputes</li>
+                <li>Easements affecting property use</li>
+                <li>Pending lawsuits related to property</li>
+                <li>Special assessments</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h3>32.3 The Material Defect Test</h3>
+        <div className="rule-box">
+          <p><strong>Would the buyer have made a different decision?</strong></p>
+          <p>A defect is "material" if, had the buyer known about it, they might have:</p>
+          <ul>
+            <li>Decided NOT to purchase the property</li>
+            <li>Negotiated a lower price</li>
+            <li>Required repairs before closing</li>
+            <li>Asked for a credit at closing</li>
+            <li>Walked away from the deal</li>
+          </ul>
+          <p><strong>If any of these are possible, it's material and must be disclosed.</strong></p>
+        </div>
+
+        <h3>32.4 Seller's Knowledge Requirement</h3>
+
+        <h4>What Does "Known" Mean?</h4>
+        <ul>
+          <li><strong>Actual Knowledge:</strong> Seller personally experienced or observed the defect</li>
+          <li><strong>Constructive Knowledge:</strong> Seller received reports, notices, or was told about defect</li>
+          <li><strong>Should Have Known:</strong> In some cases, courts say seller "should have known" about obvious issues</li>
+        </ul>
+
+        <h4>Seller Does NOT Have To:</h4>
+        <ul>
+          <li>❌ Hire inspectors to find defects</li>
+          <li>❌ Conduct invasive testing</li>
+          <li>❌ Investigate rumors or speculation</li>
+          <li>❌ Disclose defects they genuinely don't know about</li>
+        </ul>
+
+        <h4>Seller DOES Have To:</h4>
+        <ul>
+          <li>✅ Disclose all defects they personally know about</li>
+          <li>✅ Disclose defects previous owners told them about</li>
+          <li>✅ Disclose defects found in inspection reports they received</li>
+          <li>✅ Disclose violations or notices received from city/town</li>
+          <li>✅ Be truthful if buyer asks direct questions</li>
+        </ul>
+
+        <h3>32.5 Agent's Role in Disclosure</h3>
+
+        <h4>Listing Agent Duties:</h4>
+        <ul>
+          <li><strong>Ask Seller:</strong> Question seller about known defects</li>
+          <li><strong>Complete Disclosure Form:</strong> Help seller fill out property disclosure statement</li>
+          <li><strong>Disclose What You Know:</strong> Agent must disclose defects THEY observe or know about</li>
+          <li><strong>Don't Hide:</strong> Cannot help seller conceal defects</li>
+          <li><strong>Encourage Honesty:</strong> Advise seller that disclosure protects everyone</li>
+        </ul>
+
+        <h4>Buyer Agent Duties:</h4>
+        <ul>
+          <li><strong>Review Disclosures:</strong> Carefully review seller's disclosure statement with buyer</li>
+          <li><strong>Ask Questions:</strong> Follow up on vague or concerning disclosures</li>
+          <li><strong>Recommend Inspection:</strong> Always recommend professional home inspection</li>
+          <li><strong>Point Out Red Flags:</strong> Alert buyer to potential issues you observe</li>
+          <li><strong>Don't Rely on Seller:</strong> Don't assume seller's disclosure is complete</li>
+        </ul>
+
+        <h3>32.6 Consequences of Non-Disclosure</h3>
+
+        <h4>Seller Liability:</h4>
+        <ul>
+          <li><strong>Lawsuits:</strong> Buyer can sue for fraud, misrepresentation, or breach of duty</li>
+          <li><strong>Damages:</strong> Cost to repair defect, diminution in value, consequential damages</li>
+          <li><strong>Rescission:</strong> In extreme cases, sale can be unwound (buyer gets money back)</li>
+          <li><strong>Punitive Damages:</strong> If fraud is proven, additional punitive damages possible</li>
+          <li><strong>Attorney Fees:</strong> Seller may have to pay buyer's legal fees</li>
+        </ul>
+
+        <h4>Agent Liability:</h4>
+        <ul>
+          <li><strong>Professional Liability:</strong> Agent can be sued alongside seller</li>
+          <li><strong>License Disciplinary Action:</strong> Failure to disclose can result in license suspension</li>
+          <li><strong>Reputation Damage:</strong> Even if not liable, reputation suffers</li>
+          <li><strong>E&O Insurance Claims:</strong> Claims affect future insurance premiums</li>
+        </ul>
+
+        <h3>32.7 Best Practices</h3>
+        <div className="best-practices">
+          <h4>For Sellers:</h4>
+          <ol>
+            <li><strong>Complete Disclosure Form Thoroughly:</strong> Answer all questions honestly and completely</li>
+            <li><strong>When in Doubt, Disclose:</strong> Better to over-disclose than under-disclose</li>
+            <li><strong>Provide Documentation:</strong> Include copies of repair receipts, inspection reports, permits</li>
+            <li><strong>Update Disclosures:</strong> If new issues arise before closing, immediately disclose</li>
+            <li><strong>Don't Hide Defects:</strong> Never paint over, cover up, or conceal problems</li>
+          </ol>
+
+          <h4>For Agents:</h4>
+          <ol>
+            <li><strong>Use Disclosure Forms:</strong> Always use comprehensive property disclosure statement</li>
+            <li><strong>Ask Direct Questions:</strong> Question seller about all potential issues</li>
+            <li><strong>Document Everything:</strong> Keep records of what seller told you</li>
+            <li><strong>Disclose What You See:</strong> If you observe defects, you must disclose</li>
+            <li><strong>Recommend Inspections:</strong> Always recommend professional inspections</li>
+            <li><strong>Follow Up:</strong> If disclosure is vague, get clarification</li>
+            <li><strong>Encourage Honesty:</strong> Explain to seller that disclosure protects them from lawsuits</li>
+          </ol>
+        </div>
+
+        <h3>32.8 Sample Disclosure Language</h3>
+        <div className="sample-language">
+          <h4>Good Disclosure Examples:</h4>
+          <p><strong>✅</strong> "Foundation has minor cracks in northeast corner of basement. Had structural engineer inspect in 2020 
+          who said it was not structural. Report available upon request."</p>
+          
+          <p><strong>✅</strong> "Roof is 18 years old. Had leak in 2019 over master bedroom which was repaired. No leaks since repair."</p>
+          
+          <p><strong>✅</strong> "Finished basement was done without permits in 2015. Town was never notified. Used licensed electrician 
+          and plumber but didn't pull permits."</p>
+
+          <h4>Bad Disclosure Examples:</h4>
+          <p><strong>❌</strong> "Roof has some issues" (Too vague - what issues?)</p>
+          
+          <p><strong>❌</strong> "Everything is fine as far as I know" (Not specific enough)</p>
+          
+          <p><strong>❌</strong> Leaving sections blank or marking "Unknown" when seller actually knows</p>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> Massachusetts law requires sellers of 1-4 unit properties to disclose known defects that 
+          threaten structural soundness or personal safety. Latent defects (hidden but known to seller), building code violations, 
+          and material defects MUST be disclosed. The test for a material defect is: "Would the buyer have made a different decision 
+          if they had known?" When in doubt, disclose! It's better to over-disclose than face a lawsuit later. Agents must also 
+          disclose defects they personally observe. Always use comprehensive disclosure forms, ask sellers direct questions, and 
+          encourage honesty. Disclosure protects everyone - seller, buyer, and agent.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'buyer-representation-agreements',
+    icon: '📝',
+    title: '33. Buyer Client Representation Agreements',
+    subtitle: 'Exclusive vs. Open agreements, success fees, upfront retainers, commission structures',
+    body: (
+      <>
+        <h3>33.1 Understanding Buyer Representation Agreements</h3>
+        <p className="highlight">
+          <strong>Buyer Representation Agreements</strong> formalize the relationship between buyer and their agent, establishing 
+          duties, compensation, duration, and exclusivity. There are TWO main types: Exclusive and Open.
+        </p>
+
+        <h3>33.2 Exclusive Buyer Representation Agreement</h3>
+        <div className="agreement-type">
+          <p><strong>Definition:</strong> A contract creating an exclusive agency relationship where the buyer commits to working 
+          with one specific agent/brokerage for a defined period.</p>
+
+          <h4>Key Characteristics:</h4>
+          <ul>
+            <li><strong>Buyer's Agent is Buyer's Exclusive Agent:</strong> Buyer works only with this agent during the agreement term</li>
+            <li><strong>Specific Time Period:</strong> Contract is for a defined duration (e.g., 90 days, 6 months)</li>
+            <li><strong>Mutual Commitment:</strong> Buyer is committed to agent AND agent is committed to buyer (vice versa)</li>
+            <li><strong>Protected Commission:</strong> Agent earns commission if buyer purchases ANY property during term</li>
+            <li><strong>Cannot Work with Others:</strong> Buyer cannot hire other agents during exclusive period</li>
+          </ul>
+
+          <h4>Commission Structure:</h4>
+          <div className="commission-details">
+            <h5>Success Fee - Most Common</h5>
+            <ul>
+              <li><strong>Definition:</strong> Commission charged as a percentage of purchase price</li>
+              <li><strong>When Paid:</strong> At closing, typically from seller's proceeds or buyer pays</li>
+              <li><strong>Minimum Due:</strong> Agent earns commission for successfully representing buyer</li>
+              <li><strong>Typical Range:</strong> 2-3% of purchase price (negotiable)</li>
+            </ul>
+
+            <h5>Upfront Retainer (Sometimes Required)</h5>
+            <ul>
+              <li><strong>Definition:</strong> Fee paid at beginning of representation for incidental charges to agent</li>
+              <li><strong>Purpose:</strong> Covers costs like showing properties, research, marketing materials</li>
+              <li><strong>Reimbursement:</strong> May be reimbursed upon closing if stated in agreement</li>
+              <li><strong>Not Always Required:</strong> Many buyer agreements don't have retainers</li>
+            </ul>
+          </div>
+
+          <h4>Benefits to Buyer:</h4>
+          <ul>
+            <li>✅ Agent's full commitment and loyalty</li>
+            <li>✅ Exclusive access to agent's time and resources</li>
+            <li>✅ Agent will aggressively represent buyer's interests</li>
+            <li>✅ Clear understanding of agent's duties and compensation</li>
+            <li>✅ Legal protection through written contract</li>
+          </ul>
+
+          <h4>Benefits to Agent:</h4>
+          <ul>
+            <li>✅ Protected compensation for time and effort</li>
+            <li>✅ Buyer cannot "jump" to another agent</li>
+            <li>✅ Investment in relationship is protected</li>
+            <li>✅ Clear expectations and boundaries</li>
+          </ul>
+
+          <h4>Important Terms:</h4>
+          <div className="terms-box">
+            <ul>
+              <li><strong>Duration:</strong> How long the exclusive period lasts</li>
+              <li><strong>Termination:</strong> How either party can end the agreement early</li>
+              <li><strong>Commission Rate:</strong> Percentage or flat fee owed</li>
+              <li><strong>Property Types:</strong> What types of properties agreement covers</li>
+              <li><strong>Geographic Area:</strong> Where agent will help buyer search</li>
+              <li><strong>Excluded Properties:</strong> Properties buyer already knew about before agreement</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>33.3 Open Buyer-Representation Agreements</h3>
+        <div className="agreement-type">
+          <p><strong>Definition:</strong> A non-exclusive agreement where buyer may employ services of multiple buyer brokers 
+          without commitment to one particular agent.</p>
+
+          <h4>Key Characteristics:</h4>
+          <ul>
+            <li><strong>Non-Exclusive:</strong> Buyer can work with multiple agents simultaneously</li>
+            <li><strong>No Commitment:</strong> Buyer is not locked into one agent</li>
+            <li><strong>Freedom to Choose:</strong> Buyer can shop around and use different agents</li>
+            <li><strong>Commission Protection:</strong> Agent who procures the buyer (finds the property) earns commission</li>
+            <li><strong>Other Agents Not Owed:</strong> Only the agent who successfully closes gets paid</li>
+          </ul>
+
+          <h4>How It Works:</h4>
+          <ul>
+            <li>Buyer signs open agreement with Agent A</li>
+            <li>Buyer also works with Agent B and Agent C on different properties</li>
+            <li>Agent B shows buyer a property that buyer ultimately purchases</li>
+            <li><strong>Result:</strong> Agent B is due the commission; Agents A and C get nothing</li>
+          </ul>
+
+          <h4>Commission Structure:</h4>
+          <div className="warning-box">
+            <p><strong>⚠️ CRITICAL:</strong> The agent who <strong>sells Buyer a home</strong> is due a commission. All other 
+            agents involved are not due anything.</p>
+          </div>
+
+          <h4>Benefits to Buyer:</h4>
+          <ul>
+            <li>✅ Flexibility to work with multiple agents</li>
+            <li>✅ Can compare agent services and styles</li>
+            <li>✅ No obligation if not satisfied with one agent</li>
+            <li>✅ Can switch agents without penalty</li>
+          </ul>
+
+          <h4>Drawbacks to Buyer:</h4>
+          <ul>
+            <li>❌ Agents may not fully commit time/resources</li>
+            <li>❌ Less loyalty from agents</li>
+            <li>❌ Potential for confusion and miscommunication</li>
+            <li>❌ Agents competing against each other, not cooperating</li>
+          </ul>
+
+          <h4>Benefits to Agent:</h4>
+          <ul>
+            <li>✅ Can sign up buyers without exclusive commitment</li>
+            <li>✅ Easier to get buyers to sign agreement</li>
+          </ul>
+
+          <h4>Drawbacks to Agent:</h4>
+          <ul>
+            <li>❌ No protected commission - only paid if buyer purchases through you</li>
+            <li>❌ Competing with other agents for same buyer</li>
+            <li>❌ Risk of investing time with no compensation</li>
+            <li>❌ Buyer may use your work to purchase with another agent</li>
+          </ul>
+        </div>
+
+        <h3>33.4 Written vs. Verbal Agreements</h3>
+        <p>
+          Both exclusive and open buyer representation agreements can be written OR verbal, but written is STRONGLY recommended 
+          and now REQUIRED in many situations (see Section 34).
+        </p>
+
+        <h4>Written Agreements (Recommended):</h4>
+        <ul>
+          <li>✅ Clear documentation of terms</li>
+          <li>✅ Legal enforceability</li>
+          <li>✅ Proof of agency relationship</li>
+          <li>✅ Protection for both parties</li>
+          <li>✅ Prevents misunderstandings</li>
+          <li>✅ Required for MLS tours (Aug 2024 rule - see Section 34)</li>
+        </ul>
+
+        <h4>Verbal Agreements (Not Recommended):</h4>
+        <ul>
+          <li>❌ Hard to prove terms</li>
+          <li>❌ Misunderstandings common</li>
+          <li>❌ Difficult to enforce</li>
+          <li>❌ No clear commission agreement</li>
+          <li>❌ Can't tour MLS properties (new rule)</li>
+        </ul>
+
+        <h3>33.5 Comparison: Exclusive vs. Open</h3>
+        <div className="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Exclusive Buyer Agreement</th>
+                <th>Open Buyer Agreement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Exclusivity</strong></td>
+                <td>✅ Yes - One agent only</td>
+                <td>❌ No - Multiple agents allowed</td>
+              </tr>
+              <tr>
+                <td><strong>Buyer Commitment</strong></td>
+                <td>✅ Committed to agent</td>
+                <td>❌ Not committed</td>
+              </tr>
+              <tr>
+                <td><strong>Agent Commitment</strong></td>
+                <td>✅ Agent commits full service</td>
+                <td>⚠️ Less commitment</td>
+              </tr>
+              <tr>
+                <td><strong>Commission Protection</strong></td>
+                <td>✅ Agent paid regardless of who finds property</td>
+                <td>❌ Only if agent procures the sale</td>
+              </tr>
+              <tr>
+                <td><strong>Duration</strong></td>
+                <td>Specific time period</td>
+                <td>Varies or ongoing</td>
+              </tr>
+              <tr>
+                <td><strong>Other Agents Paid?</strong></td>
+                <td>❌ No - exclusive agent only</td>
+                <td>❌ No - only procuring agent</td>
+              </tr>
+              <tr>
+                <td><strong>Buyer Flexibility</strong></td>
+                <td>❌ Low - locked in</td>
+                <td>✅ High - can shop around</td>
+              </tr>
+              <tr>
+                <td><strong>Agent Investment</strong></td>
+                <td>✅ High - protected</td>
+                <td>❌ Low - risky</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>33.6 Negotiating Buyer Representation Agreements</h3>
+
+        <h4>Everything is Negotiable:</h4>
+        <ul>
+          <li><strong>Commission Rate:</strong> Percentage or flat fee can be negotiated</li>
+          <li><strong>Duration:</strong> Length of exclusive period is negotiable</li>
+          <li><strong>Retainer:</strong> Whether upfront fee is required</li>
+          <li><strong>Reimbursement:</strong> Whether retainer is credited at closing</li>
+          <li><strong>Termination:</strong> How and when agreement can be cancelled</li>
+          <li><strong>Geographic Scope:</strong> Where agent will help buyer search</li>
+        </ul>
+
+        <h4>What to Discuss with Buyer:</h4>
+        <ol>
+          <li><strong>Services Provided:</strong> Explain exactly what you'll do for buyer</li>
+          <li><strong>Compensation:</strong> How you get paid and by whom (seller vs. buyer)</li>
+          <li><strong>Duration:</strong> How long buyer will work exclusively with you</li>
+          <li><strong>Termination:</strong> How either party can exit the agreement</li>
+          <li><strong>Expectations:</strong> What buyer should expect and when</li>
+          <li><strong>Communication:</strong> How often you'll update buyer</li>
+        </ol>
+
+        <h3>33.7 Best Practices</h3>
+        <div className="best-practices">
+          <ul>
+            <li><strong>Always Use Written Agreements:</strong> Protects both parties and now required for tours</li>
+            <li><strong>Explain Before Signing:</strong> Review entire agreement with buyer</li>
+            <li><strong>Clarify Compensation:</strong> Make sure buyer understands how/when you're paid</li>
+            <li><strong>Set Realistic Duration:</strong> 90-180 days is common for exclusive agreements</li>
+            <li><strong>Include Termination Clause:</strong> Allow mutual termination with notice</li>
+            <li><strong>Exclude Known Properties:</strong> List properties buyer already knows about</li>
+            <li><strong>Document Everything:</strong> Keep signed copy in file</li>
+            <li><strong>Follow New MLS Rules:</strong> Agreement required before tours (see Section 34)</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> Buyer representation agreements formalize the agent-buyer relationship. Exclusive agreements 
+          provide mutual commitment and protected compensation, while open agreements offer flexibility but less security. All 
+          terms are negotiable, including commission rate, duration, and services. Written agreements are strongly recommended and 
+          now REQUIRED before touring properties listed on MLS (August 2024 rule). Always explain the agreement thoroughly, clarify 
+          compensation, and document the relationship. A clear, written agreement protects both buyer and agent.
+        </p>
+      </>
+    )
+  },
+  {
+    id: 'mls-participation-rule-2024',
+    icon: '🏛️',
+    title: '34. Realtor MLS Participation Rule - August 17, 2024',
+    subtitle: 'NEW requirements for written agreements before touring homes, in-person and virtual tours',
+    body: (
+      <>
+        <h3>34.1 The New MLS Participation Rule</h3>
+        <div className="new-rule-box">
+          <p className="highlight">
+            <strong>Effective August 17, 2024:</strong> Realtors using an MLS will need to have buyers <strong>sign a written 
+            agreement</strong> with the agent <strong>before touring a home</strong>. This allows buyers to understand exactly what 
+            services will be provided and for how much money.
+          </p>
+          <p><strong>Important Note:</strong> Not all agents are Realtors, so this rule applies specifically to Realtor members 
+          using MLS systems.</p>
+        </div>
+
+        <div className="warning-box">
+          <p><strong>⚠️ CRITICAL CHANGE:</strong> This is a MAJOR shift in how buyer representation works. You can NO LONGER show 
+          MLS properties without a signed written agreement first!</p>
+        </div>
+
+        <h3>34.2 What the Rule Requires</h3>
+
+        <h4>Written Agreement Required:</h4>
+        <ul>
+          <li><strong>Before Touring:</strong> Agreement must be signed BEFORE showing property</li>
+          <li><strong>Both In-Person and Virtual:</strong> Applies to physical tours AND virtual home tours</li>
+          <li><strong>Clear Services:</strong> Agreement must specify what services agent will provide</li>
+          <li><strong>Clear Compensation:</strong> Agreement must state how much agent will be paid</li>
+          <li><strong>Transparency Goal:</strong> Ensures buyers understand the relationship upfront</li>
+        </ul>
+
+        <h4>Applies To:</h4>
+        <ul>
+          <li>✅ In-person home tours of MLS-listed properties</li>
+          <li>✅ Virtual home tours of MLS-listed properties</li>
+          <li>✅ Any property tour arranged through MLS</li>
+          <li>✅ Both exclusive and non-exclusive buyer agreements</li>
+        </ul>
+
+        <h4>Does NOT Apply To:</h4>
+        <ul>
+          <li>❌ Open houses (general public, no prior agreement needed)</li>
+          <li>❌ Simply speaking to potential buyer about services</li>
+          <li>❌ Explaining your services at initial meeting</li>
+          <li>❌ Non-MLS properties (for sale by owner, etc.)</li>
+          <li>❌ Agents who are not Realtors (not MLS members)</li>
+        </ul>
+
+        <h3>34.3 When Agreement is Required</h3>
+
+        <div className="timing-requirements">
+          <h4>✅ Written Agreement REQUIRED Before:</h4>
+          <ul>
+            <li>Scheduling in-person tour of MLS property</li>
+            <li>Conducting virtual tour of MLS property</li>
+            <li>Showing buyer inside any MLS-listed home</li>
+            <li>Arranging private showing with listing agent</li>
+          </ul>
+
+          <h4>❌ Written Agreement NOT Required For:</h4>
+          <ul>
+            <li>Buyer attending open house (public event)</li>
+            <li>Initial consultation about your services</li>
+            <li>Discussing buyer's needs and preferences</li>
+            <li>Explaining how homebuying process works</li>
+            <li>Answering general questions about real estate</li>
+          </ul>
+        </div>
+
+        <h3>34.4 What Must Be In The Agreement</h3>
+
+        <h4>Required Elements:</h4>
+        <ol>
+          <li><strong>Services Description:</strong> What specific services agent will provide
+            <ul>
+              <li>Property search assistance</li>
+              <li>Scheduling and attending showings</li>
+              <li>Market analysis and pricing guidance</li>
+              <li>Negotiation representation</li>
+              <li>Transaction coordination</li>
+            </ul>
+          </li>
+          <li><strong>Compensation Terms:</strong> How agent will be paid
+            <ul>
+              <li>Percentage or flat fee amount</li>
+              <li>Who pays (seller, buyer, or split)</li>
+              <li>When payment is due</li>
+              <li>Minimum compensation if any</li>
+            </ul>
+          </li>
+          <li><strong>Duration:</strong> How long agreement lasts (if exclusive)</li>
+          <li><strong>Termination:</strong> How agreement can be ended</li>
+          <li><strong>Agency Relationship:</strong> Clarify you represent buyer's interests</li>
+        </ol>
+
+        <h3>34.5 Why This Rule Was Implemented</h3>
+
+        <h4>Consumer Protection Goals:</h4>
+        <ul>
+          <li><strong>Transparency:</strong> Buyers know what they're getting and what it costs BEFORE touring</li>
+          <li><strong>Informed Consent:</strong> Buyers can make educated decision about representation</li>
+          <li><strong>Prevent Confusion:</strong> Clear agency relationships from the start</li>
+          <li><strong>Fair Compensation:</strong> Agents and buyers agree on payment upfront</li>
+          <li><strong>Professionalism:</strong> Raises standards for buyer representation</li>
+        </ul>
+
+        <h4>Antitrust Settlement Impact:</h4>
+        <p>This rule change came from the National Association of Realtors antitrust settlement requiring greater transparency 
+        in buyer agent compensation and clearer disclosure of services.</p>
+
+        <h3>34.6 Agent Compensation is Fully Negotiable</h3>
+        <div className="key-concept">
+          <p><strong>IMPORTANT:</strong> Agent compensation for home buyers and sellers continues to be <strong>fully negotiable</strong>. 
+          There is no "standard" rate.</p>
+        </div>
+
+        <h4>Negotiable Terms:</h4>
+        <ul>
+          <li><strong>Commission Rate:</strong> Percentage or flat fee amount</li>
+          <li><strong>Who Pays:</strong> Seller, buyer, or shared</li>
+          <li><strong>Minimum Fee:</strong> Whether there's a floor on compensation</li>
+          <li><strong>Success Fee Only:</strong> Paid at closing vs. upfront retainer</li>
+          <li><strong>Rebates/Credits:</strong> Whether agent will credit buyer at closing</li>
+        </ul>
+
+        <h4>What to Discuss with Buyers:</h4>
+        <ul>
+          <li>"My standard fee is X%, but this is negotiable"</li>
+          <li>"Typically seller pays buyer agent commission, but we can discuss alternatives"</li>
+          <li>"I'm happy to discuss different compensation structures that work for you"</li>
+          <li>"Let's talk about what services you need and fair compensation for those services"</li>
+        </ul>
+
+        <h3>34.7 Practical Implementation</h3>
+
+        <h4>Step-by-Step Process:</h4>
+        <ol>
+          <li><strong>Initial Contact:</strong> Buyer calls/emails about seeing property</li>
+          <li><strong>Schedule Meeting:</strong> Set up time to meet BEFORE the tour</li>
+          <li><strong>Explain Services:</strong> Discuss what you'll do for buyer</li>
+          <li><strong>Discuss Compensation:</strong> Explain how you're paid and amount</li>
+          <li><strong>Sign Agreement:</strong> Have buyer sign written buyer representation agreement</li>
+          <li><strong>Provide Copy:</strong> Give buyer their copy of signed agreement</li>
+          <li><strong>Schedule Tour:</strong> NOW you can tour the property</li>
+        </ol>
+
+        <h4>Sample Scripts:</h4>
+        <div className="sample-scripts">
+          <h5>When Buyer Calls About Property:</h5>
+          <p><strong>Buyer:</strong> "I saw a house online I'd like to see. Can you show it to me?"</p>
+          <p><strong>Agent:</strong> "I'd be happy to help you see that property! Due to new rules effective August 2024, I'll 
+          need to meet with you first to discuss my services and have you sign a buyer representation agreement before we can tour 
+          MLS properties. This protects you by ensuring you understand exactly what I'll do for you and how I'm compensated. When 
+          would be a good time to meet? We can meet in person or virtually, and then schedule the property tour right after."</p>
+
+          <h5>At Initial Meeting:</h5>
+          <p><strong>Agent:</strong> "Let me explain how I work with buyers. I provide [list services]. My compensation is [X%] 
+          which is typically paid by the seller from their proceeds, but if the seller isn't offering enough, we'd discuss how to 
+          handle that gap. This agreement is [exclusive/non-exclusive] and lasts [duration]. You're free to negotiate these terms. 
+          Does this work for you?"</p>
+
+          <h5>For Open Houses:</h5>
+          <p><strong>Buyer at Open House:</strong> "Can you show me some other properties?"</p>
+          <p><strong>Agent:</strong> "I'd love to help you! For open houses like this, you don't need an agreement. But to tour 
+          other MLS properties with me, we'd need to sign a buyer representation agreement first. Let's exchange contact info, and 
+          I can send you the agreement to review. Once signed, I can start showing you homes."</p>
+        </div>
+
+        <h3>34.8 Exceptions and Special Situations</h3>
+
+        <h4>Open Houses - No Agreement Needed:</h4>
+        <ul>
+          <li>✅ Buyers can attend open houses without agreement</li>
+          <li>✅ Agent can explain services at open house</li>
+          <li>✅ Agent can provide business card and follow up later</li>
+          <li>❌ But to schedule private tour afterward, agreement needed</li>
+        </ul>
+
+        <h4>Initial Consultations - No Agreement Needed:</h4>
+        <ul>
+          <li>✅ Can meet with buyer to discuss services</li>
+          <li>✅ Can explain homebuying process</li>
+          <li>✅ Can provide market information</li>
+          <li>✅ Can discuss neighborhoods and price ranges</li>
+          <li>❌ Cannot tour MLS property until agreement signed</li>
+        </ul>
+
+        <h4>Non-Realtors Not Bound:</h4>
+        <ul>
+          <li>Rule applies to Realtor members of NAR</li>
+          <li>Licensed agents who aren't Realtors may have different rules</li>
+          <li>However, written agreements are still best practice for ALL agents</li>
+        </ul>
+
+        <h3>34.9 Consequences of Non-Compliance</h3>
+
+        <h4>For Realtors Who Violate Rule:</h4>
+        <ul>
+          <li>⚠️ NAR ethics violation</li>
+          <li>⚠️ Potential fines from local Realtor association</li>
+          <li>⚠️ MLS access restrictions or suspension</li>
+          <li>⚠️ Professional reputation damage</li>
+          <li>⚠️ Could affect E&O insurance</li>
+        </ul>
+
+        <h4>Best Practice for Compliance:</h4>
+        <ul>
+          <li>✅ Never tour MLS property without signed agreement</li>
+          <li>✅ Keep copies of all signed agreements in file</li>
+          <li>✅ Use standard form agreements approved by broker</li>
+          <li>✅ Explain rule to buyers so they understand</li>
+          <li>✅ Date agreements to prove they were signed before tour</li>
+        </ul>
+
+        <h3>34.10 Benefits of This New Rule</h3>
+
+        <h4>For Buyers:</h4>
+        <ul>
+          <li>✅ Clear understanding of services before committing</li>
+          <li>✅ Know how much agent costs upfront</li>
+          <li>✅ Can negotiate terms that work for them</li>
+          <li>✅ Protected by written contract</li>
+          <li>✅ Prevents surprise fees or confusion</li>
+        </ul>
+
+        <h4>For Agents:</h4>
+        <ul>
+          <li>✅ Protected compensation for time/effort</li>
+          <li>✅ Clear expectations from start</li>
+          <li>✅ Reduced risk of unpaid work</li>
+          <li>✅ Professional relationship documented</li>
+          <li>✅ Compliance with new industry standards</li>
+        </ul>
+
+        <h4>For Industry:</h4>
+        <ul>
+          <li>✅ Increased transparency</li>
+          <li>✅ Higher professionalism</li>
+          <li>✅ Better consumer protection</li>
+          <li>✅ Clearer agency relationships</li>
+          <li>✅ Reduced antitrust concerns</li>
+        </ul>
+
+        <h3>34.11 Key Takeaways</h3>
+        <div className="summary-box">
+          <ul>
+            <li><strong>Effective Date:</strong> August 17, 2024</li>
+            <li><strong>Who It Affects:</strong> Realtors using MLS systems</li>
+            <li><strong>What's Required:</strong> Written buyer representation agreement before tours</li>
+            <li><strong>Applies To:</strong> Both in-person and virtual home tours of MLS properties</li>
+            <li><strong>Exceptions:</strong> Open houses and initial consultations</li>
+            <li><strong>Compensation:</strong> Fully negotiable - discuss with buyer</li>
+            <li><strong>Goal:</strong> Transparency and consumer protection</li>
+            <li><strong>Compliance:</strong> Use written agreements, keep copies, date before tours</li>
+          </ul>
+        </div>
+
+        <p className="highlight">
+          <strong>Remember:</strong> As of August 17, 2024, Realtors using MLS must have buyers sign written representation agreements 
+          BEFORE touring homes (both in-person and virtual). This applies to MLS properties only, not open houses or initial consultations. 
+          The agreement must clearly state services provided and compensation terms. Agent compensation is fully negotiable - discuss 
+          options with buyers. This rule increases transparency and protects both buyers and agents. Always sign agreements before tours, 
+          keep dated copies, and explain the rule to buyers. This is a major industry change - compliance is mandatory for Realtors. 
+          Written agreements have always been best practice; now they're required.
+        </p>
+      </>
+    )
   }
 ];
