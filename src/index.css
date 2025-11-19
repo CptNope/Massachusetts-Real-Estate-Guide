@@ -2849,6 +2849,102 @@ h3[id], h4[id] {
   scroll-margin-top: 100px;
 }
 
+/* Closing Cost Calculator Styles */
+.view-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.view-toggle .toggle-btn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-toggle .toggle-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.view-toggle .toggle-btn.active {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.cost-category {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.cost-category h4 {
+  margin: 0 0 1rem 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.cost-item:hover {
+  background: var(--bg-main);
+  transform: translateX(4px);
+}
+
+.cost-item span:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.cost-item span:last-child {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.result-card.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.result-card.success .result-value {
+  color: #10b981;
+}
+
+.result-card.accent {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.15));
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.result-card.accent .result-value {
+  color: #f59e0b;
+}
+
 /* Mobile responsiveness for TOC */
 @media (max-width: 768px) {
   .table-of-contents {

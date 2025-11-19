@@ -7,7 +7,7 @@ export default function CalculatorMode() {
     <div className="study-mode-container">
       <div className="study-mode-header">
         <h2>🧮 Professional Real Estate Calculators</h2>
-        <p>Calculate commissions, mortgages, investments, and property valuations</p>
+        <p>6 calculators: commissions, mortgages, investments, property valuations, and closing costs</p>
       </div>
 
       <div className="calculator-tabs">
@@ -41,6 +41,12 @@ export default function CalculatorMode() {
         >
           🏘️ CMA Tool
         </button>
+        <button
+          className={`calc-tab ${activeCalculator === 'closing' ? 'active' : ''}`}
+          onClick={() => setActiveCalculator('closing')}
+        >
+          📋 Closing Costs
+        </button>
       </div>
 
       {activeCalculator === 'commission' && <CommissionCalculator />}
@@ -48,6 +54,7 @@ export default function CalculatorMode() {
       {activeCalculator === 'mortgage' && <MortgageCalculator />}
       {activeCalculator === 'investment' && <InvestmentPropertyCalculator />}
       {activeCalculator === 'cma' && <CMACalculator />}
+      {activeCalculator === 'closing' && <ClosingCostCalculator />}
     </div>
   );
 }
@@ -985,6 +992,427 @@ function CMACalculator() {
           <li><strong>If comp is worse:</strong> ADD to comp price</li>
           <li><strong>Adjusted value:</strong> Estimates what comp would sell for if it matched subject property</li>
           <li>Use 3-6 comps for accurate CMA</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function ClosingCostCalculator() {
+  const [purchasePrice, setPurchasePrice] = useState('500000');
+  const [downPaymentPercent, setDownPaymentPercent] = useState('20');
+  const [loanType, setLoanType] = useState('conventional');
+  const [hasHOA, setHasHOA] = useState(false);
+  const [hoaMonthly, setHoaMonthly] = useState('200');
+  const [propertyTaxAnnual, setPropertyTaxAnnual] = useState('6000');
+  const [homeownersInsurance, setHomeownersInsurance] = useState('1200');
+  const [attorneyFee, setAttorneyFee] = useState('1000');
+  const [viewingSide, setViewingSide] = useState('buyer'); // 'buyer' or 'seller'
+
+  const price = parseFloat(purchasePrice) || 0;
+  const downPayment = price * (parseFloat(downPaymentPercent) || 0) / 100;
+  const loanAmount = price - downPayment;
+
+  // BUYER COSTS
+  const buyerCosts = {
+    // Lender Fees
+    loanOriginationFee: loanAmount * 0.01, // 1% of loan
+    appraisalFee: 500,
+    creditReportFee: 50,
+    floodCertification: 25,
+    taxServiceFee: 85,
+    
+    // Title & Escrow
+    titleInsurance: price * 0.004, // ~0.4% in MA
+    titleSearch: 300,
+    recordingFees: 125, // Registry of Deeds
+    
+    // Government Fees
+    maStampTax: price * 0.00456, // MA deed stamp tax (buyer pays in some counties)
+    
+    // Inspections
+    homeInspection: 500,
+    
+    // Prepaid Items
+    propertyTaxPrepaid: (parseFloat(propertyTaxAnnual) || 0) / 12 * 3, // 3 months
+    homeownersInsPrepaid: parseFloat(homeownersInsurance) || 0,
+    prepaidInterest: (loanAmount * 0.07 / 365) * 15, // ~15 days interest
+    
+    // HOA
+    hoaTransferFee: hasHOA ? 250 : 0,
+    hoaPrepaid: hasHOA ? (parseFloat(hoaMonthly) || 0) * 2 : 0,
+    
+    // Professional Fees
+    attorneyFeeBuyer: parseFloat(attorneyFee) || 0,
+    
+    // PMI (if down payment < 20%)
+    pmiUpfront: (loanType === 'fha') ? loanAmount * 0.0175 : 0,
+    
+    // Survey
+    surveyCost: 500,
+  };
+
+  // SELLER COSTS
+  const sellerCosts = {
+    // Commission
+    realEstateCommission: price * 0.05, // 5% total commission
+    
+    // Title & Transfer
+    titleInsuranceSeller: price * 0.001, // Seller's portion
+    maStampTaxSeller: price * 0.00456, // MA deed stamp tax
+    
+    // Payoffs
+    existingMortgagePayoff: 0, // User would input actual amount
+    
+    // Repairs & Concessions
+    buyerConcessions: 0, // User would input
+    repairs: 0, // User would input
+    
+    // Professional Fees
+    attorneyFeeSeller: parseFloat(attorneyFee) || 0,
+    
+    // Other
+    homeWarranty: 500,
+    recordingFees: 75,
+    municipalLienCertificate: 100,
+    waterBill: 150,
+    smokeDetectorInspection: 100,
+  };
+
+  const totalBuyerCosts = Object.values(buyerCosts).reduce((sum, cost) => sum + cost, 0);
+  const totalSellerCosts = Object.values(sellerCosts).reduce((sum, cost) => sum + cost, 0);
+  
+  const cashToClose = downPayment + totalBuyerCosts;
+  const netToSeller = price - totalSellerCosts;
+
+  return (
+    <div className="calculator-container">
+      <div className="calculator-inputs">
+        <h3>Property Details</h3>
+        
+        <div className="input-group">
+          <label htmlFor="purchasePrice">Purchase Price</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="purchasePrice"
+              type="number"
+              value={purchasePrice}
+              onChange={(e) => setPurchasePrice(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-row">
+          <div className="input-group">
+            <label htmlFor="downPaymentPercent">Down Payment</label>
+            <div className="input-wrapper">
+              <input
+                id="downPaymentPercent"
+                type="number"
+                step="0.5"
+                value={downPaymentPercent}
+                onChange={(e) => setDownPaymentPercent(e.target.value)}
+                className="calc-input"
+              />
+              <span className="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="loanType">Loan Type</label>
+            <select
+              id="loanType"
+              value={loanType}
+              onChange={(e) => setLoanType(e.target.value)}
+              className="calc-input"
+            >
+              <option value="conventional">Conventional</option>
+              <option value="fha">FHA</option>
+              <option value="va">VA</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="input-row">
+          <div className="input-group">
+            <label htmlFor="propertyTaxAnnual">Annual Property Tax</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="propertyTaxAnnual"
+                type="number"
+                value={propertyTaxAnnual}
+                onChange={(e) => setPropertyTaxAnnual(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="homeownersInsurance">Annual Homeowners Insurance</label>
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                id="homeownersInsurance"
+                type="number"
+                value={homeownersInsurance}
+                onChange={(e) => setHomeownersInsurance(e.target.value)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label htmlFor="attorneyFee">Attorney Fee (Buyer & Seller)</label>
+          <div className="input-wrapper">
+            <span className="input-prefix">$</span>
+            <input
+              id="attorneyFee"
+              type="number"
+              value={attorneyFee}
+              onChange={(e) => setAttorneyFee(e.target.value)}
+              className="calc-input"
+            />
+          </div>
+        </div>
+
+        <div className="input-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={hasHOA}
+              onChange={(e) => setHasHOA(e.target.checked)}
+            />
+            {' '}Property has HOA
+          </label>
+          {hasHOA && (
+            <div className="input-wrapper">
+              <span className="input-prefix">$</span>
+              <input
+                type="number"
+                value={hoaMonthly}
+                onChange={(e) => setHoaMonthly(e.target.value)}
+                placeholder="Monthly HOA fee"
+                className="calc-input"
+              />
+              <span className="input-suffix">/month</span>
+            </div>
+          )}
+        </div>
+
+        <div className="view-toggle">
+          <button
+            className={`toggle-btn ${viewingSide === 'buyer' ? 'active' : ''}`}
+            onClick={() => setViewingSide('buyer')}
+          >
+            👤 Buyer Costs
+          </button>
+          <button
+            className={`toggle-btn ${viewingSide === 'seller' ? 'active' : ''}`}
+            onClick={() => setViewingSide('seller')}
+          >
+            🏠 Seller Costs
+          </button>
+        </div>
+      </div>
+
+      {viewingSide === 'buyer' && (
+        <div className="calculator-results">
+          <h3>Buyer Closing Costs (Massachusetts)</h3>
+          
+          <div className="cost-category">
+            <h4>Lender Fees</h4>
+            <div className="cost-item">
+              <span>Loan Origination Fee (1%)</span>
+              <span>${buyerCosts.loanOriginationFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Appraisal Fee</span>
+              <span>${buyerCosts.appraisalFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Credit Report</span>
+              <span>${buyerCosts.creditReportFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Flood Certification</span>
+              <span>${buyerCosts.floodCertification.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Tax Service Fee</span>
+              <span>${buyerCosts.taxServiceFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Title & Recording</h4>
+            <div className="cost-item">
+              <span>Title Insurance</span>
+              <span>${buyerCosts.titleInsurance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Title Search</span>
+              <span>${buyerCosts.titleSearch.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Recording Fees</span>
+              <span>${buyerCosts.recordingFees.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>MA Deed Stamp Tax (0.456%)</span>
+              <span>${buyerCosts.maStampTax.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Prepaid Items</h4>
+            <div className="cost-item">
+              <span>Property Tax (3 months)</span>
+              <span>${buyerCosts.propertyTaxPrepaid.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Homeowners Insurance (1 year)</span>
+              <span>${buyerCosts.homeownersInsPrepaid.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Prepaid Interest (~15 days)</span>
+              <span>${buyerCosts.prepaidInterest.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Other Costs</h4>
+            <div className="cost-item">
+              <span>Home Inspection</span>
+              <span>${buyerCosts.homeInspection.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Survey</span>
+              <span>${buyerCosts.surveyCost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Attorney Fee</span>
+              <span>${buyerCosts.attorneyFeeBuyer.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            {hasHOA && (
+              <>
+                <div className="cost-item">
+                  <span>HOA Transfer Fee</span>
+                  <span>${buyerCosts.hoaTransferFee.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
+                <div className="cost-item">
+                  <span>HOA Prepaid (2 months)</span>
+                  <span>${buyerCosts.hoaPrepaid.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                </div>
+              </>
+            )}
+            {loanType === 'fha' && buyerCosts.pmiUpfront > 0 && (
+              <div className="cost-item">
+                <span>FHA Upfront MIP (1.75%)</span>
+                <span>${buyerCosts.pmiUpfront.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="result-card primary large">
+            <div className="result-label">Total Closing Costs</div>
+            <div className="result-value">${totalBuyerCosts.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+
+          <div className="result-card accent large">
+            <div className="result-label">Down Payment</div>
+            <div className="result-value">${downPayment.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+
+          <div className="result-card success large">
+            <div className="result-label">💰 Total Cash to Close</div>
+            <div className="result-value">${cashToClose.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+        </div>
+      )}
+
+      {viewingSide === 'seller' && (
+        <div className="calculator-results">
+          <h3>Seller Closing Costs (Massachusetts)</h3>
+          
+          <div className="cost-category">
+            <h4>Commissions & Fees</h4>
+            <div className="cost-item">
+              <span>Real Estate Commission (5%)</span>
+              <span>${sellerCosts.realEstateCommission.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Attorney Fee</span>
+              <span>${sellerCosts.attorneyFeeSeller.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Title & Transfer</h4>
+            <div className="cost-item">
+              <span>Title Insurance (Seller's portion)</span>
+              <span>${sellerCosts.titleInsuranceSeller.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>MA Deed Stamp Tax (0.456%)</span>
+              <span>${sellerCosts.maStampTaxSeller.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Recording Fees</span>
+              <span>${sellerCosts.recordingFees.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Municipal & Inspections</h4>
+            <div className="cost-item">
+              <span>Municipal Lien Certificate</span>
+              <span>${sellerCosts.municipalLienCertificate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Final Water Bill</span>
+              <span>${sellerCosts.waterBill.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+            <div className="cost-item">
+              <span>Smoke Detector Inspection</span>
+              <span>${sellerCosts.smokeDetectorInspection.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="cost-category">
+            <h4>Optional</h4>
+            <div className="cost-item">
+              <span>Home Warranty</span>
+              <span>${sellerCosts.homeWarranty.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            </div>
+          </div>
+
+          <div className="result-card primary large">
+            <div className="result-label">Total Closing Costs</div>
+            <div className="result-value">${totalSellerCosts.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+
+          <div className="result-card success large">
+            <div className="result-label">💵 Net Proceeds to Seller</div>
+            <div className="result-value">${netToSeller.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+          </div>
+        </div>
+      )}
+
+      <div className="calculator-explanation">
+        <h4>Massachusetts Closing Cost Notes:</h4>
+        <ul>
+          <li><strong>Buyer costs:</strong> Typically 2-5% of purchase price</li>
+          <li><strong>Seller costs:</strong> Typically 6-10% (mostly commission)</li>
+          <li><strong>MA Stamp Tax:</strong> $4.56 per $1,000 (0.456%)</li>
+          <li><strong>Attorney required:</strong> MA requires attorney for closings</li>
+          <li><strong>Title insurance:</strong> Split between buyer/seller varies by county</li>
+          <li><strong>PMI:</strong> Required if down payment {"<"} 20% (conventional)</li>
+          <li><strong>FHA MIP:</strong> 1.75% upfront + 0.55-0.85% annual</li>
+          <li>Actual costs vary - get detailed Closing Disclosure from lender</li>
         </ul>
       </div>
     </div>
