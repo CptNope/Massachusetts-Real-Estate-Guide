@@ -7,6 +7,7 @@ export default function ScenarioMode() {
   const [currentNode, setCurrentNode] = useState('start');
   const [history, setHistory] = useState([]);
   const [completedScenarios, setCompletedScenarios] = useLocalStorage('completedScenarios', []);
+  const [difficultyFilter, setDifficultyFilter] = useState('all');
 
   const startScenario = (scenario) => {
     setSelectedScenario(scenario);
@@ -53,6 +54,20 @@ export default function ScenarioMode() {
     if (category === 'seller') return '💰';
     return '📈';
   };
+  
+  const getDifficultyBadge = (difficulty) => {
+    const badges = {
+      easy: { icon: '⭐', label: 'Easy', class: 'easy' },
+      medium: { icon: '⭐⭐', label: 'Medium', class: 'medium' },
+      hard: { icon: '⭐⭐⭐', label: 'Hard', class: 'hard' }
+    };
+    return badges[difficulty] || badges.medium;
+  };
+  
+  // Filter scenarios by difficulty
+  const filteredScenarios = difficultyFilter === 'all' 
+    ? scenarios 
+    : scenarios.filter(s => s.difficulty === difficultyFilter);
 
   // Scenario Selection Screen
   if (!selectedScenario) {
@@ -83,9 +98,36 @@ export default function ScenarioMode() {
             </div>
           </div>
         )}
+        
+        <div className="difficulty-filter">
+          <button 
+            className={`filter-btn ${difficultyFilter === 'all' ? 'active' : ''}`}
+            onClick={() => setDifficultyFilter('all')}
+          >
+            All Scenarios ({scenarios.length})
+          </button>
+          <button 
+            className={`filter-btn ${difficultyFilter === 'easy' ? 'active' : ''}`}
+            onClick={() => setDifficultyFilter('easy')}
+          >
+            ⭐ Easy ({scenarios.filter(s => s.difficulty === 'easy').length})
+          </button>
+          <button 
+            className={`filter-btn ${difficultyFilter === 'medium' ? 'active' : ''}`}
+            onClick={() => setDifficultyFilter('medium')}
+          >
+            ⭐⭐ Medium ({scenarios.filter(s => s.difficulty === 'medium').length})
+          </button>
+          <button 
+            className={`filter-btn ${difficultyFilter === 'hard' ? 'active' : ''}`}
+            onClick={() => setDifficultyFilter('hard')}
+          >
+            ⭐⭐⭐ Hard ({scenarios.filter(s => s.difficulty === 'hard').length})
+          </button>
+        </div>
 
         <div className="scenario-grid">
-          {scenarios.map(scenario => {
+          {filteredScenarios.map(scenario => {
             const isCompleted = completedScenarios.some(c => c.scenarioId === scenario.id);
             const lastCompletion = completedScenarios.find(c => c.scenarioId === scenario.id);
 
@@ -95,11 +137,8 @@ export default function ScenarioMode() {
                   <span className="scenario-category-icon">
                     {getCategoryIcon(scenario.category)}
                   </span>
-                  <span
-                    className="scenario-difficulty"
-                    style={{ color: getDifficultyColor(scenario.difficulty) }}
-                  >
-                    {scenario.difficulty}
+                  <span className={`scenario-difficulty-badge ${getDifficultyBadge(scenario.difficulty).class}`}>
+                    {getDifficultyBadge(scenario.difficulty).icon} {getDifficultyBadge(scenario.difficulty).label}
                   </span>
                 </div>
                 <h3>{scenario.title}</h3>
