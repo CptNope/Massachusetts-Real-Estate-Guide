@@ -1238,5 +1238,119 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario12',
+    title: 'Short Sale Complexity',
+    description: 'Seller owes $380k but property worth $350k. Navigate bank approval and multiple liens.',
+    difficulty: 'hard',
+    category: 'seller',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your seller owes $380k, property worth $350k. Also has $15k HELOC and is 3 months behind. They want to avoid foreclosure. What\'s your first step?',
+        choices: [
+          { text: 'List at $350k and start short sale process', nextNode: 'start_short_sale' },
+          { text: 'Suggest loan modification instead', nextNode: 'loan_mod' },
+          { text: 'Recommend bankruptcy attorney first', nextNode: 'bankruptcy' },
+          { text: 'List at $380k to cover all debts', nextNode: 'overpriced' }
+        ]
+      },
+      start_short_sale: {
+        text: 'You list at $350k, disclose short sale. Get offer at $345k. Bank requests: statements, hardship letter, tax returns. What do you do?',
+        choices: [
+          { text: 'Submit everything immediately with cover letter', nextNode: 'organized' },
+          { text: 'Submit documents piecemeal as seller provides', nextNode: 'slow' }
+        ]
+      },
+      loan_mod: {
+        text: 'Seller applies. 3 months later - denied. Now 6 months behind, foreclosure notice received.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Loan modifications take months and often fail. Should have pursued short sale immediately.',
+        recommendations: [
+          'Loan mods have low success rates when deeply underwater',
+          'Time is critical in pre-foreclosure',
+          'Short sales should start early'
+        ]
+      },
+      bankruptcy: {
+        text: 'Attorney advises Chapter 13 could save house. Seller files, gets payment plan approved.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Good call! For sellers who want to keep home, bankruptcy attorney is right first step.',
+        recommendations: [
+          'Know when to refer to specialists',
+          'Don\'t give legal/financial advice',
+          'Chapter 13 allows payment restructuring'
+        ]
+      },
+      overpriced: {
+        text: 'Property sits 60 days, no showings. Seller gets foreclosure notice.',
+        choices: [
+          { text: 'Drop to $350k and rush short sale', nextNode: 'late_short_sale' },
+          { text: 'Keep at $380k hoping for miracle', nextNode: 'foreclosure' }
+        ]
+      },
+      organized: {
+        text: 'Bank reviews complete package. 45 days later: approved at $345k but HELOC bank wants $10k. How proceed?',
+        choices: [
+          { text: 'Negotiate HELOC to accept $3k', nextNode: 'negotiate_heloc' },
+          { text: 'Ask buyer to increase offer', nextNode: 'buyer_increase' }
+        ]
+      },
+      slow: {
+        text: 'Bank keeps rejecting for missing documents. 90 days pass. Buyer walks. Back to square one.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Short sales require complete submissions. Delays kill deals.',
+        recommendations: [
+          'Create checklist of all required documents',
+          'Submit complete package at once',
+          'Set realistic timelines (3-6 months)'
+        ]
+      },
+      negotiate_heloc: {
+        text: 'You prove HELOC is unsecured. Bank 2 accepts $3k. Deal closes!',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent! 2nd lien holders often accept pennies on dollar.',
+        recommendations: [
+          '2nd liens often accept 10-20% in short sales',
+          'Emphasize they\'d get $0 in foreclosure',
+          'Typical short sale: 4-6 months'
+        ]
+      },
+      buyer_increase: {
+        text: 'Buyer increases to $355k. Bank re-appraises at $350k. Deal closes at $350k.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Closed but bumpy. Short sales have many curveballs.',
+        recommendations: [
+          'Banks often re-appraise if offer high',
+          'Set buyer expectations - unpredictable process'
+        ]
+      },
+      late_short_sale: {
+        text: 'Rushed submission rejected for incomplete docs. Foreclosure happens.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Starting late wasted critical time. Short sales need 4-6 months.',
+        recommendations: [
+          'Price realistically from day one',
+          'Banks won\'t rush regardless of urgency'
+        ]
+      },
+      foreclosure: {
+        text: 'House foreclosed. Sells for $320k. Seller owes $60k deficiency.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Worst case. Foreclosure devastating to credit, seller may owe deficiency.',
+        recommendations: [
+          'Foreclosure stays on credit 7 years',
+          'Short sale far better for seller\'s future'
+        ]
+      }
+    }
   }
 ];
