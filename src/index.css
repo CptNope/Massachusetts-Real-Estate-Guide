@@ -3622,6 +3622,137 @@ html {
   font-weight: 700;
 }
 
+/* Note Provisions Section */
+.note-provisions-box {
+  background: white;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.note-provisions-box h5 {
+  margin: 0 0 1rem 0;
+  color: #6b21a8;
+  font-size: 1.1rem;
+}
+
+.negotiable-instrument-box {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.note-negotiable-definition {
+  margin: 0;
+  color: #1e40af;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.note-negotiable-definition strong {
+  color: #1e3a8a;
+}
+
+.note-negotiable-definition mark {
+  background: #dbeafe;
+  color: #1e3a8a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.ucc-requirements-box {
+  background: #faf5ff;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.ucc-requirements-box h6 {
+  margin: 0 0 0.75rem 0;
+  color: #6b21a8;
+  font-size: 1.05rem;
+}
+
+.ucc-intro {
+  margin: 0 0 1rem 0;
+  color: #6b21a8;
+  line-height: 1.7;
+}
+
+.ucc-intro strong {
+  color: #7c3aed;
+}
+
+.ucc-requirements-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ucc-requirement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: white;
+  border: 2px solid #e9d5ff;
+  border-left: 4px solid #8b5cf6;
+  border-radius: 6px;
+  padding: 0.75rem;
+  transition: all 0.2s;
+}
+
+.ucc-requirement:hover {
+  background: #f5f3ff;
+  border-left-width: 6px;
+  transform: translateX(4px);
+}
+
+.req-icon {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.req-content {
+  flex: 1;
+  color: #6b21a8;
+  line-height: 1.6;
+}
+
+.req-content strong {
+  color: #7c3aed;
+}
+
+.solar-panels-note {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.solar-panels-note strong {
+  color: #92400e;
+}
+
+.red-text {
+  color: #dc2626;
+  font-weight: 700;
+}
+
 /* Release of Lien Section */
 .release-lien-section {
   background: linear-gradient(135deg, #ecfdf5, #d1fae5);

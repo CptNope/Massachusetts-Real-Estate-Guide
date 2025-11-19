@@ -2546,6 +2546,61 @@ ${brandingEmail || ''}`;
               </div>
             </div>
 
+            <div className="note-provisions-box">
+              <h5>📜 PROVISIONS OF A NOTE</h5>
+              
+              <div className="negotiable-instrument-box">
+                <p className="note-negotiable-definition">
+                  <strong>A NOTE</strong> is a <mark className="highlight-blue">'negotiable instrument'</mark> as it may be 
+                  <strong>sold or transferred to a 3rd party</strong>. The new holder is known as the 
+                  <mark className="highlight-blue">'holder in due course'</mark>. Other negotiable instruments include 
+                  checks and bank drafts.
+                </p>
+              </div>
+
+              <div className="ucc-requirements-box">
+                <h6>📋 UCC Requirements for Transferability:</h6>
+                <p className="ucc-intro">
+                  To be transferable, the Note must contain certain requirements of the 
+                  <strong>Uniform Commercial Code (UCC)</strong>. Writing:
+                </p>
+                
+                <div className="ucc-requirements-list">
+                  <div className="ucc-requirement">
+                    <div className="req-icon">✓</div>
+                    <div className="req-content">
+                      <strong>Made by one person to another</strong>
+                    </div>
+                  </div>
+
+                  <div className="ucc-requirement">
+                    <div className="req-icon">✓</div>
+                    <div className="req-content">
+                      <strong>Signed by the Maker (Borrower)</strong>
+                    </div>
+                  </div>
+
+                  <div className="ucc-requirement">
+                    <div className="req-icon">✓</div>
+                    <div className="req-content">
+                      <strong>Contain an unconditional promise to repay</strong> on demand or at a set date in future
+                    </div>
+                  </div>
+
+                  <div className="ucc-requirement">
+                    <div className="req-icon">✓</div>
+                    <div className="req-content">
+                      <strong>Payable to a specifically named person</strong> or to the bearer (person in possession of note)
+                    </div>
+                  </div>
+                </div>
+
+                <div className="solar-panels-note">
+                  <strong>⚡ Note:</strong> <span className="red-text">Leased Solar Panels also require a UCC filing</span>
+                </div>
+              </div>
+            </div>
+
             <div className="mortgagor-mortgagee-box">
               <div className="definition-pair">
                 <div className="definition-item borrower">
