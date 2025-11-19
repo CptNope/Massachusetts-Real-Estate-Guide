@@ -7,6 +7,7 @@ import ScenarioMode from './ScenarioMode';
 import CalculatorMode from './CalculatorMode';
 import HelpModal from './HelpModal';
 import GamificationPanel from './GamificationPanel';
+import TableOfContents from './TableOfContents';
 import { useLocalStorage } from './useLocalStorage';
 import { useGamification } from './useGamification';
 
@@ -377,6 +378,7 @@ export default function App() {
                 {activeSection.subtitle && (
                   <p className="content-subtitle">{activeSection.subtitle}</p>
                 )}
+                <TableOfContents content={activeSection.body} key={activeSection.id} />
                 <div className="content-body">{activeSection.body}</div>
               </article>
             </main>

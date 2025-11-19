@@ -2687,6 +2687,196 @@ input:checked + .toggle-slider:before {
   color: #dc2626;
 }
 
+/* Table of Contents Styles */
+.table-of-contents {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.table-of-contents.sticky {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.toc-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.toc-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.toc-toggle-btn:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  transition: max-height 0.3s ease;
+}
+
+.toc-list.collapsed {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.toc-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-list::-webkit-scrollbar-track {
+  background: var(--bg-main);
+  border-radius: 3px;
+}
+
+.toc-list::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 3px;
+}
+
+.toc-list::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.toc-item {
+  margin: 0.5rem 0;
+  transition: all 0.2s ease;
+}
+
+.toc-item.level-3 {
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.toc-item.level-4 {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.toc-item a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.toc-item a:hover {
+  color: var(--text-primary);
+  background: var(--bg-highlight);
+  padding-left: 1rem;
+}
+
+.toc-item.active a {
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  font-weight: 600;
+  border-left: 3px solid var(--accent);
+}
+
+.toc-item.level-4.active a {
+  padding-left: 1.75rem;
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.5);
+}
+
+.back-to-top-btn:active {
+  transform: translateY(-2px);
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust scroll margin for sections with IDs to account for header */
+h3[id], h4[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Mobile responsiveness for TOC */
+@media (max-width: 768px) {
+  .table-of-contents {
+    padding: 1rem;
+  }
+  
+  .table-of-contents.sticky {
+    position: relative;
+    top: 0;
+  }
+  
+  .toc-list {
+    max-height: 300px;
+  }
+  
+  .toc-item.level-4 {
+    padding-left: 1rem;
+  }
+  
+  .back-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
+
 /* Print Styles */
 @media print {
   .app-header,
@@ -2697,7 +2887,9 @@ input:checked + .toggle-slider:before {
   .search-container,
   .study-mode-toggle,
   .app-footer,
-  .modal-overlay {
+  .modal-overlay,
+  .table-of-contents,
+  .back-to-top-btn {
     display: none !important;
   }
 
