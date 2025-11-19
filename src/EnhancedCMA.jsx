@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { cmaChallenges } from './cmaChallenges';
+import { marketTemplates, getTemplate } from './marketTemplates';
 
 // Tooltip Component for Learning Mode
 const Tooltip = ({ text, children }) => {
@@ -42,6 +43,33 @@ export default function EnhancedCMA({ gamification }) {
   const [showChallengeComplete, setShowChallengeComplete] = useState(false);
   const [showSaveLoad, setShowSaveLoad] = useState(false);
   const [mode, setMode] = useState('learning'); // 'learning' or 'professional'
+  const [showTemplates, setShowTemplates] = useState(false);
+  const [currentTemplate, setCurrentTemplate] = useState('custom');
+  
+  // Apply market template
+  const applyTemplate = (templateId) => {
+    const template = getTemplate(templateId);
+    const adj = template.adjustments;
+    
+    setBedAdjustment(adj.bed);
+    setBathAdjustment(adj.bath);
+    setSqftAdjustment(adj.sqft);
+    setGarageAdjustment(adj.garage);
+    setConditionAdjustment(adj.condition);
+    setAgeAdjustment(adj.age);
+    setDomAdjustment(adj.dom);
+    setPoolAdjustment(adj.pool);
+    setLotSizeAdjustment(adj.lotSize);
+    setLocationAdjustment(adj.location);
+    setViewAdjustment(adj.view);
+    setUpgradesAdjustment(adj.upgrades);
+    
+    setCurrentTemplate(templateId);
+    
+    if (gamification && templateId !== 'custom') {
+      gamification.addXP(10, `Applied ${template.name} template! 🎯`);
+    }
+  };
   
   // Mode toggle with gamification
   const toggleMode = () => {
@@ -669,7 +697,45 @@ export default function EnhancedCMA({ gamification }) {
         >
           {showSaveLoad ? '💾 Hide Save/Load' : '💾 Save/Load'}
         </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowTemplates(!showTemplates)}
+          title="Quick-load market templates"
+        >
+          {showTemplates ? '🎯 Hide Templates' : '🎯 Market Templates'}
+        </button>
       </div>
+
+      {showTemplates && (
+        <div className="market-templates-panel">
+          <h3>🎯 Market Templates</h3>
+          <p className="templates-intro">
+            Quick-load adjustment values for different Massachusetts markets. Perfect for getting started!
+          </p>
+          <div className="templates-grid">
+            {Object.values(marketTemplates).map(template => (
+              <div 
+                key={template.id} 
+                className={`template-card ${currentTemplate === template.id ? 'active' : ''}`}
+                onClick={() => applyTemplate(template.id)}
+              >
+                <div className="template-header">
+                  <h4>{template.name}</h4>
+                  {currentTemplate === template.id && <span className="active-badge">✓ Active</span>}
+                </div>
+                <p className="template-description">{template.description}</p>
+                <div className="template-stats">
+                  <span className="template-stat">Avg: ${template.avgPriceSqft}/sqft</span>
+                  <span className="template-type">{template.marketType}</span>
+                </div>
+                {mode === 'learning' && (
+                  <p className="template-notes">💡 {template.notes}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {showSaveLoad && (
         <div className="cma-save-load-panel">
