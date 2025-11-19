@@ -2818,6 +2818,222 @@ html {
   color: #1e40af;
 }
 
+/* Contract Performance Panel */
+.contract-performance-panel {
+  background: white;
+  border: 2px solid #14b8a6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(20, 184, 166, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.performance-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #99f6e4;
+}
+
+.performance-panel-header h3 {
+  margin: 0;
+  color: #115e59;
+}
+
+.performance-intro {
+  background: #f0fdfa;
+  border-left: 4px solid #14b8a6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #134e4a;
+  font-size: 1.05rem;
+  border-radius: 4px;
+}
+
+.performance-concepts {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.performance-item {
+  display: flex;
+  gap: 1rem;
+  background: #f0fdfa;
+  border: 2px solid #5eead4;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+}
+
+.performance-item:hover {
+  background: #ccfbf1;
+  border-color: #2dd4bf;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15);
+}
+
+.time-essence {
+  border-left: 4px solid #ef4444;
+}
+
+.breach {
+  border-left: 4px solid #f97316;
+}
+
+.assignment {
+  border-left: 4px solid #3b82f6;
+}
+
+.novation {
+  border-left: 4px solid #8b5cf6;
+}
+
+.performance-icon {
+  flex-shrink: 0;
+  font-size: 2.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.performance-content {
+  flex: 1;
+}
+
+.performance-content h4 {
+  margin: 0 0 0.75rem 0;
+  color: #115e59;
+  font-size: 1.25rem;
+}
+
+.performance-definition {
+  margin: 0 0 0.75rem 0;
+  color: #134e4a;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.performance-definition strong {
+  color: #0f766e;
+}
+
+.performance-note {
+  background: white;
+  border: 1px solid #99f6e4;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  color: #134e4a;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.performance-note strong {
+  color: #0f766e;
+}
+
+.performance-remedies {
+  margin-top: 0.75rem;
+}
+
+.performance-remedies h5 {
+  margin: 0 0 0.75rem 0;
+  color: #0f766e;
+  font-size: 1rem;
+}
+
+.remedy-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.remedy-card {
+  background: white;
+  border: 2px solid #99f6e4;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.remedy-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #0f766e;
+  font-size: 0.95rem;
+}
+
+.remedy-card p {
+  margin: 0;
+  color: #134e4a;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.performance-summary-box {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border: 2px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.performance-summary-box h4 {
+  margin: 0 0 1rem 0;
+  color: #075985;
+}
+
+.summary-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.summary-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid #0ea5e9;
+}
+
+.point-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.summary-point span {
+  color: #0c4a6e;
+  font-size: 0.95rem;
+}
+
+.summary-point strong {
+  color: #075985;
+}
+
+.performance-tip-box {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #78350f;
+  line-height: 1.7;
+}
+
+.performance-tip-box strong {
+  color: #92400e;
+}
+
 /* API Token Management Panel */
 .api-panel {
   background: white;

@@ -376,6 +376,7 @@ export default function EnhancedCMA({ gamification }) {
   const [showLegalInfo, setShowLegalInfo] = useState(false);
   const [showContractInfo, setShowContractInfo] = useState(false);
   const [showContractEffects, setShowContractEffects] = useState(false);
+  const [showContractPerformance, setShowContractPerformance] = useState(false);
   const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
@@ -2499,8 +2500,127 @@ ${brandingEmail || ''}`;
           </div>
 
           <div className="legal-footer-actions">
-            <button className="btn-info" onClick={() => { setShowContractEffects(false); setShowContractInfo(true); }}>
-              ← Back to Contract Elements
+            <button className="btn-info" onClick={() => { setShowContractEffects(false); setShowContractPerformance(true); }}>
+              Contract Performance →
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowContractEffects(false); setShowContractInfo(true); }}>
+              ← Back to Elements
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showContractPerformance && (
+        <div className="contract-performance-panel">
+          <div className="performance-panel-header">
+            <h3>⚡ Performance of Contract</h3>
+            <button className="btn-secondary" onClick={() => setShowContractPerformance(false)}>✕ Close</button>
+          </div>
+
+          <p className="performance-intro">
+            Understanding how contracts are performed, breached, and modified is critical for real estate professionals:
+          </p>
+
+          <div className="performance-concepts">
+            <div className="performance-item time-essence">
+              <div className="performance-icon">⏰</div>
+              <div className="performance-content">
+                <h4>Time is of Essence</h4>
+                <p className="performance-definition">
+                  Each of the element of the contract <strong>MUST be performed within the specified time.</strong>
+                </p>
+                <div className="performance-note">
+                  <strong>Critical:</strong> All deadlines in the contract are binding. Missing a deadline can constitute breach of contract.
+                </div>
+              </div>
+            </div>
+
+            <div className="performance-item breach">
+              <div className="performance-icon">⚠️</div>
+              <div className="performance-content">
+                <h4>Breach of Contract</h4>
+                <p className="performance-definition">
+                  A party who violates the terms or conditions of a contract.
+                </p>
+                <div className="performance-remedies">
+                  <h5>Remedies for Breach:</h5>
+                  <div className="remedy-options">
+                    <div className="remedy-card">
+                      <strong>💰 Liquidated Damages</strong>
+                      <p>Pre-determined amount specified in contract (usually earnest money deposit)</p>
+                    </div>
+                    <div className="remedy-card">
+                      <strong>⚖️ Suit for Performance</strong>
+                      <p>Court action to force the breaching party to complete their obligations</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="performance-item assignment">
+              <div className="performance-icon">📝</div>
+              <div className="performance-content">
+                <h4>Assignment of Contract</h4>
+                <p className="performance-definition">
+                  Buyer may exercise their right to assign their rights of the agreement to another buyer.
+                </p>
+                <div className="performance-note">
+                  <strong>Important:</strong> Most contracts have clause either <strong>permitting or forbidding</strong> assignment. 
+                  Always check the contract language regarding assignments.
+                </div>
+              </div>
+            </div>
+
+            <div className="performance-item novation">
+              <div className="performance-icon">🔄</div>
+              <div className="performance-content">
+                <h4>Novation</h4>
+                <p className="performance-definition">
+                  Occurs when there is a substitution of a new contract for an existing agreement with the 
+                  intention of extinguishing the old contract.
+                </p>
+                <div className="performance-note">
+                  <strong>Key Point:</strong> A novation creates an entirely new contract that replaces the original. 
+                  This is different from an amendment, which modifies the existing contract.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="performance-summary-box">
+            <h4>📋 Performance Summary</h4>
+            <div className="summary-points">
+              <div className="summary-point">
+                <span className="point-icon">⏰</span>
+                <span><strong>Time is Essence:</strong> Meet all deadlines or risk breach</span>
+              </div>
+              <div className="summary-point">
+                <span className="point-icon">⚠️</span>
+                <span><strong>Breach:</strong> Remedies include liquidated damages or lawsuit</span>
+              </div>
+              <div className="summary-point">
+                <span className="point-icon">📝</span>
+                <span><strong>Assignment:</strong> Check contract for permission/prohibition</span>
+              </div>
+              <div className="summary-point">
+                <span className="point-icon">🔄</span>
+                <span><strong>Novation:</strong> New contract replaces old entirely</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="performance-tip-box">
+            <strong>💡 Agent Tip:</strong> Always include specific dates and deadlines in contracts, and calendar all 
+            critical dates immediately. Missing a "time is of essence" deadline can expose your client (and you) to legal liability.
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowContractPerformance(false); setShowContractEffects(true); }}>
+              ← Back to Legal Effects
+            </button>
+            <button className="btn-secondary" onClick={() => { setShowContractPerformance(false); setShowLegalInfo(true); }}>
+              ← Back to Law Change
             </button>
           </div>
         </div>
