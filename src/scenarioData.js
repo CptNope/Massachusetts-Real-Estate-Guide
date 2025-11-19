@@ -1119,5 +1119,124 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario11',
+    title: 'Inspection Contingency Negotiation',
+    description: 'Home inspection reveals $15,000 in needed repairs. Navigate negotiation to keep deal together.',
+    difficulty: 'medium',
+    category: 'buyer',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your buyer\'s inspection reveals: $8k roof repair needed, $4k HVAC replacement, $3k electrical updates. Purchase price is $525k. What do you recommend?',
+        choices: [
+          { text: 'Request full $15k credit at closing', nextNode: 'full_credit' },
+          { text: 'Request seller fix everything before closing', nextNode: 'fix_everything' },
+          { text: 'Prioritize safety items only ($7k)', nextNode: 'safety_priority' },
+          { text: 'Split costs 50/50 with seller', nextNode: 'split_costs' }
+        ]
+      },
+      full_credit: {
+        text: 'Seller counters: "We\'ll give $5k credit, take it or leave it. We have backup offers." Your buyer really loves the house.',
+        choices: [
+          { text: 'Accept $5k and advise buyer to budget repairs', nextNode: 'accept_5k' },
+          { text: 'Hold firm at $15k', nextNode: 'lose_deal' },
+          { text: 'Counter at $10k with detailed justification', nextNode: 'reasonable_counter' }
+        ]
+      },
+      fix_everything: {
+        text: 'Seller refuses: "We\'re selling as-is. We can find another buyer."',
+        choices: [
+          { text: 'Walk away and find another property', nextNode: 'walk_away' },
+          { text: 'Switch to credit request instead', nextNode: 'pivot_to_credit' },
+          { text: 'Reduce request to critical safety items', nextNode: 'safety_priority' }
+        ]
+      },
+      safety_priority: {
+        text: 'You present itemized list: Roof repair must be done - it\'s actively leaking. Seller agrees to $8k credit for roof plus $2k goodwill credit.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent negotiation! Prioritizing safety items with documentation shows you understand what matters.',
+        recommendations: [
+          'Prioritize safety hazards (roof leaks, electrical, structural)',
+          'Provide inspection report excerpts to justify requests',
+          'Cosmetic items have little negotiating power',
+          'Get contractor estimates to support numbers'
+        ]
+      },
+      split_costs: {
+        text: 'Seller likes the fairness but counters: "$7,500 credit, we each pay half. Final offer."',
+        choices: [
+          { text: 'Accept $7,500 credit', nextNode: 'good_ending' },
+          { text: 'Push for $8k', nextNode: 'lose_deal' }
+        ]
+      },
+      accept_5k: {
+        text: 'Deal closes with $5k credit. Buyer handles other repairs over first year.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Deal closed but buyer may struggle with remaining repairs. Should have negotiated harder with documentation.',
+        recommendations: [
+          'Know buyer\'s financial cushion before conceding',
+          'Provide repair estimates to justify higher credits',
+          'Test seller\'s "backup offers" claim'
+        ]
+      },
+      reasonable_counter: {
+        text: 'You provide contractor estimates and inspection photos. Seller agrees to $10k credit.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Great job! Backed up request with evidence. Found middle ground that works for both sides.',
+        recommendations: [
+          'Documentation is key - photos, estimates, inspector notes',
+          'Reasonable compromise keeps deals together',
+          'Meet seller halfway on defensible numbers'
+        ]
+      },
+      lose_deal: {
+        text: 'Seller accepts backup offer. Your buyer is devastated.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Inspection negotiations require flexibility. Being too rigid costs deals.',
+        recommendations: [
+          'Evaluate if this is the hill to die on',
+          'Consider buyer\'s emotional attachment',
+          'Have backup properties ready'
+        ]
+      },
+      walk_away: {
+        text: 'You find comparable property next week for same price. Inspection shows only $3k in minor issues.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Sometimes walking away leads to better opportunities.',
+        recommendations: [
+          'Don\'t get emotionally attached to one property',
+          'Always have backup options in mind',
+          'Walking away is powerful negotiating position'
+        ]
+      },
+      pivot_to_credit: {
+        text: 'Seller agrees to $6k credit since you\'re being flexible.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Flexibility saved the deal but buyer might struggle with remaining repairs.',
+        recommendations: [
+          'Starting with hardline position weakens flexibility',
+          'Lead with reasonable request you can defend'
+        ]
+      },
+      good_ending: {
+        text: 'Deal closes smoothly. Buyer uses $7,500 credit for immediate repairs, handles rest over 6 months.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Win-win outcome! Fair split preserved the deal and both parties feel respected.',
+        recommendations: [
+          'Fair splits are easiest to defend',
+          '50/50 cost sharing feels equitable',
+          'Both sides can tell friends they "won"'
+        ]
+      }
+    }
   }
 ];
