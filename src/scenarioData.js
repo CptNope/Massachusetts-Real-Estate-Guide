@@ -1597,5 +1597,104 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario15',
+    title: 'Dual Agency Dilemma',
+    description: 'Your buyer client wants to see your own listing. Navigate conflicts of interest and disclosure.',
+    difficulty: 'hard',
+    category: 'ethics',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your buyer client loves your listing at $475k. You\'d earn both sides of commission. Buyer asks: "Should I offer full price?" What do you say?',
+        choices: [
+          { text: '"Yes, it\'s worth full price"', nextNode: 'biased_advice' },
+          { text: 'Disclose dual agency, suggest other agent', nextNode: 'refer_out' },
+          { text: 'Provide dual agency disclosure, stay neutral', nextNode: 'dual_agency' },
+          { text: 'Share comparable sales objectively', nextNode: 'objective' }
+        ]
+      },
+      biased_advice: {
+        text: 'Buyer offers $475k. Later discovers similar homes sold for $450k. Sues you for breach of fiduciary duty and dual agency violations.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Major ethics violation! Dual agents CANNOT advise on price/terms. You put commission ahead of client.',
+        recommendations: [
+          'Dual agents must remain neutral',
+          'Cannot advise on price or terms',
+          'Disclose all dual agency conflicts',
+          'Your license is at risk'
+        ]
+      },
+      refer_out: {
+        text: 'You refer buyer to colleague. Colleague negotiates $455k purchase. Buyer happy, seller gets fair price, everyone wins.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Avoiding dual agency protects everyone. You lose one commission but keep your reputation.',
+        recommendations: [
+          'Referring out eliminates conflicts',
+          'Both parties get full representation',
+          'Your ethics build long-term referrals',
+          'Reputation worth more than one commission'
+        ]
+      },
+      dual_agency: {
+        text: 'You provide written dual agency disclosure. Buyer asks: "Is the seller motivated?" What do you say?',
+        choices: [
+          { text: 'Share that seller needs quick sale', nextNode: 'breach_confidentiality' },
+          { text: '"I can\'t share seller motivations"', nextNode: 'proper_neutral' },
+          { text: 'Suggest buyer ask seller directly', nextNode: 'punt' }
+        ]
+      },
+      objective: {
+        text: 'You show buyer 3 comparable sales: $455k, $460k, $450k. Buyer offers $460k. Seller accepts. Fair deal for both.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Good approach! Providing objective data isn\'t advice. Let buyer decide based on facts.',
+        recommendations: [
+          'Comparable sales are factual, not advice',
+          'Let client draw own conclusions',
+          'Document your neutrality',
+          'Dual agency requires extra care'
+        ]
+      },
+      breach_confidentiality: {
+        text: 'Seller learns you disclosed their motivation. Files ethics complaint. Board suspends your license for 6 months.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Breached seller confidentiality! Dual agents cannot share private information either direction.',
+        recommendations: [
+          'Seller motivation is confidential',
+          'Cannot favor one client over other',
+          'Dual agency means limited representation for both',
+          'Board takes these violations seriously'
+        ]
+      },
+      proper_neutral: {
+        text: 'You stay neutral. Buyer offers $465k. Seller counters $470k. You facilitate but don\'t advise. They settle at $467k. Both satisfied.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Excellent neutrality! You facilitated without advising. Both clients feel fairly treated.',
+        recommendations: [
+          'Dual agents are transaction facilitators',
+          'Cannot advocate for either side',
+          'Neutrality protects your license',
+          'Both clients must consent in writing'
+        ]
+      },
+      punt: {
+        text: 'Buyer frustrated: "You\'re my agent, help me!" They feel you\'re not representing them. Leave negative review.',
+        isEnding: true,
+        outcome: 'neutral',
+        feedback: 'Legal but clumsy. Should have better explained dual agency limitations from the start.',
+        recommendations: [
+          'Set expectations early about dual agency',
+          'Explain limited representation upfront',
+          'Some clients prefer dedicated representation',
+          'Consider if dual agency worth the limitation'
+        ]
+      }
+    }
   }
 ];
