@@ -1212,6 +1212,52 @@ export default function EnhancedCMA({ gamification }) {
                   <input type="number" value={comp1DOM} onChange={(e) => setComp1DOM(e.target.value)} className="calc-input" />
                 </div>
               </div>
+
+              <div className="input-row">
+                <div className="input-group">
+                  <label>Pool</label>
+                  <select value={comp1Pool} onChange={(e) => setComp1Pool(e.target.value)} className="calc-input">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+                <div className="input-group">
+                  <label>Lot Size (sqft)</label>
+                  <input type="number" value={comp1LotSize} onChange={(e) => setComp1LotSize(e.target.value)} className="calc-input" />
+                </div>
+                <div className="input-group">
+                  <label>Location (1-5)</label>
+                  <select value={comp1Location} onChange={(e) => setComp1Location(e.target.value)} className="calc-input">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="input-row">
+                <div className="input-group">
+                  <label>View</label>
+                  <select value={comp1View} onChange={(e) => setComp1View(e.target.value)} className="calc-input">
+                    <option value="none">None</option>
+                    <option value="park">Park</option>
+                    <option value="water">Water</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="city">City</option>
+                  </select>
+                </div>
+                <div className="input-group">
+                  <label>Upgrades</label>
+                  <select value={comp1Upgrades} onChange={(e) => setComp1Upgrades(e.target.value)} className="calc-input">
+                    <option value="poor">Poor</option>
+                    <option value="average">Average</option>
+                    <option value="good">Good</option>
+                    <option value="excellent">Excellent</option>
+                  </select>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -1285,6 +1331,17 @@ export default function EnhancedCMA({ gamification }) {
                   <label>Days on Market</label>
                   <input type="number" value={comp2DOM} onChange={(e) => setComp2DOM(e.target.value)} className="calc-input" />
                 </div>
+              </div>
+
+              <div className="input-row">
+                <div className="input-group"><label>Pool</label><select value={comp2Pool} onChange={(e) => setComp2Pool(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div>
+                <div className="input-group"><label>Lot Size (sqft)</label><input type="number" value={comp2LotSize} onChange={(e) => setComp2LotSize(e.target.value)} className="calc-input" /></div>
+                <div className="input-group"><label>Location (1-5)</label><select value={comp2Location} onChange={(e) => setComp2Location(e.target.value)} className="calc-input"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+              </div>
+
+              <div className="input-row">
+                <div className="input-group"><label>View</label><select value={comp2View} onChange={(e) => setComp2View(e.target.value)} className="calc-input"><option value="none">None</option><option value="park">Park</option><option value="water">Water</option><option value="mountain">Mountain</option><option value="city">City</option></select></div>
+                <div className="input-group"><label>Upgrades</label><select value={comp2Upgrades} onChange={(e) => setComp2Upgrades(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="average">Average</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div>
               </div>
             </>
           )}
@@ -1360,9 +1417,29 @@ export default function EnhancedCMA({ gamification }) {
                   <input type="number" value={comp3DOM} onChange={(e) => setComp3DOM(e.target.value)} className="calc-input" />
                 </div>
               </div>
+
+              <div className="input-row">
+                <div className="input-group"><label>Pool</label><select value={comp3Pool} onChange={(e) => setComp3Pool(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div>
+                <div className="input-group"><label>Lot Size (sqft)</label><input type="number" value={comp3LotSize} onChange={(e) => setComp3LotSize(e.target.value)} className="calc-input" /></div>
+                <div className="input-group"><label>Location (1-5)</label><select value={comp3Location} onChange={(e) => setComp3Location(e.target.value)} className="calc-input"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+              </div>
+
+              <div className="input-row">
+                <div className="input-group"><label>View</label><select value={comp3View} onChange={(e) => setComp3View(e.target.value)} className="calc-input"><option value="none">None</option><option value="park">Park</option><option value="water">Water</option><option value="mountain">Mountain</option><option value="city">City</option></select></div>
+                <div className="input-group"><label>Upgrades</label><select value={comp3Upgrades} onChange={(e) => setComp3Upgrades(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="average">Average</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div>
+              </div>
             </>
           )}
         </div>
+
+        {/* Comparable 4 */}
+        <div className="comp-section"><div className="comp-header"><h4><input type="checkbox" checked={comp4Active} onChange={(e) => setComp4Active(e.target.checked)} />{' '}Comparable #4</h4></div>{comp4Active && (<><div className="input-group"><label>Sale Price</label><div className="input-wrapper"><span className="input-prefix">$</span><input type="number" value={comp4Price} onChange={(e) => setComp4Price(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Beds</label><input type="number" value={comp4Beds} onChange={(e) => setComp4Beds(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Baths</label><input type="number" step="0.5" value={comp4Baths} onChange={(e) => setComp4Baths(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Sq Ft</label><input type="number" value={comp4Sqft} onChange={(e) => setComp4Sqft(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Garage</label><select value={comp4Garage} onChange={(e) => setComp4Garage(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Condition</label><select value={comp4Condition} onChange={(e) => setComp4Condition(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="fair">Fair</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div><div className="input-group"><label>Age</label><input type="number" value={comp4Age} onChange={(e) => setComp4Age(e.target.value)} className="calc-input" /></div><div className="input-group"><label>DOM</label><input type="number" value={comp4DOM} onChange={(e) => setComp4DOM(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Pool</label><select value={comp4Pool} onChange={(e) => setComp4Pool(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Lot Size</label><input type="number" value={comp4LotSize} onChange={(e) => setComp4LotSize(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Location</label><select value={comp4Location} onChange={(e) => setComp4Location(e.target.value)} className="calc-input"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div></div><div className="input-row"><div className="input-group"><label>View</label><select value={comp4View} onChange={(e) => setComp4View(e.target.value)} className="calc-input"><option value="none">None</option><option value="park">Park</option><option value="water">Water</option><option value="mountain">Mountain</option><option value="city">City</option></select></div><div className="input-group"><label>Upgrades</label><select value={comp4Upgrades} onChange={(e) => setComp4Upgrades(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="average">Average</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div></div></>)}</div>
+
+        {/* Comparable 5 */}
+        <div className="comp-section"><div className="comp-header"><h4><input type="checkbox" checked={comp5Active} onChange={(e) => setComp5Active(e.target.checked)} />{' '}Comparable #5</h4></div>{comp5Active && (<><div className="input-group"><label>Sale Price</label><div className="input-wrapper"><span className="input-prefix">$</span><input type="number" value={comp5Price} onChange={(e) => setComp5Price(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Beds</label><input type="number" value={comp5Beds} onChange={(e) => setComp5Beds(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Baths</label><input type="number" step="0.5" value={comp5Baths} onChange={(e) => setComp5Baths(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Sq Ft</label><input type="number" value={comp5Sqft} onChange={(e) => setComp5Sqft(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Garage</label><select value={comp5Garage} onChange={(e) => setComp5Garage(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Condition</label><select value={comp5Condition} onChange={(e) => setComp5Condition(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="fair">Fair</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div><div className="input-group"><label>Age</label><input type="number" value={comp5Age} onChange={(e) => setComp5Age(e.target.value)} className="calc-input" /></div><div className="input-group"><label>DOM</label><input type="number" value={comp5DOM} onChange={(e) => setComp5DOM(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Pool</label><select value={comp5Pool} onChange={(e) => setComp5Pool(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Lot Size</label><input type="number" value={comp5LotSize} onChange={(e) => setComp5LotSize(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Location</label><select value={comp5Location} onChange={(e) => setComp5Location(e.target.value)} className="calc-input"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div></div><div className="input-row"><div className="input-group"><label>View</label><select value={comp5View} onChange={(e) => setComp5View(e.target.value)} className="calc-input"><option value="none">None</option><option value="park">Park</option><option value="water">Water</option><option value="mountain">Mountain</option><option value="city">City</option></select></div><div className="input-group"><label>Upgrades</label><select value={comp5Upgrades} onChange={(e) => setComp5Upgrades(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="average">Average</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div></div></>)}</div>
+
+        {/* Comparable 6 */}
+        <div className="comp-section"><div className="comp-header"><h4><input type="checkbox" checked={comp6Active} onChange={(e) => setComp6Active(e.target.checked)} />{' '}Comparable #6</h4></div>{comp6Active && (<><div className="input-group"><label>Sale Price</label><div className="input-wrapper"><span className="input-prefix">$</span><input type="number" value={comp6Price} onChange={(e) => setComp6Price(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Beds</label><input type="number" value={comp6Beds} onChange={(e) => setComp6Beds(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Baths</label><input type="number" step="0.5" value={comp6Baths} onChange={(e) => setComp6Baths(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Sq Ft</label><input type="number" value={comp6Sqft} onChange={(e) => setComp6Sqft(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Garage</label><select value={comp6Garage} onChange={(e) => setComp6Garage(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Condition</label><select value={comp6Condition} onChange={(e) => setComp6Condition(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="fair">Fair</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div><div className="input-group"><label>Age</label><input type="number" value={comp6Age} onChange={(e) => setComp6Age(e.target.value)} className="calc-input" /></div><div className="input-group"><label>DOM</label><input type="number" value={comp6DOM} onChange={(e) => setComp6DOM(e.target.value)} className="calc-input" /></div></div><div className="input-row"><div className="input-group"><label>Pool</label><select value={comp6Pool} onChange={(e) => setComp6Pool(e.target.value)} className="calc-input"><option value="yes">Yes</option><option value="no">No</option></select></div><div className="input-group"><label>Lot Size</label><input type="number" value={comp6LotSize} onChange={(e) => setComp6LotSize(e.target.value)} className="calc-input" /></div><div className="input-group"><label>Location</label><select value={comp6Location} onChange={(e) => setComp6Location(e.target.value)} className="calc-input"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div></div><div className="input-row"><div className="input-group"><label>View</label><select value={comp6View} onChange={(e) => setComp6View(e.target.value)} className="calc-input"><option value="none">None</option><option value="park">Park</option><option value="water">Water</option><option value="mountain">Mountain</option><option value="city">City</option></select></div><div className="input-group"><label>Upgrades</label><select value={comp6Upgrades} onChange={(e) => setComp6Upgrades(e.target.value)} className="calc-input"><option value="poor">Poor</option><option value="average">Average</option><option value="good">Good</option><option value="excellent">Excellent</option></select></div></div></>)}</div>
       </div>
 
       <div className="calculator-results">
