@@ -318,14 +318,16 @@ The guide covers comprehensive topics including:
   - Client protection strategies
 
 - [x] **Add 10 More Scenarios** ✅ COMPLETE - Now 10 scenarios!
-  - ✅ Dual Agency Ethical Dilemma (confidentiality, designated agency)
-  - ✅ Handling Discriminatory Client Requests (Fair Housing compliance)
-  - ✅ FSBO Legal Boundaries (unauthorized practice of law)
-  - ✅ Multi-Party Estate Sale Negotiation (family disputes, neutrality)
-  - ✅ Material Defect Disclosure Dilemma (fraud prevention)
-  - ✅ Commission Dispute Resolution (procuring cause, arbitration)
-  - ✅ Expired Listing Ethics (professional courtesy)
-  - ✅ Plus original 3: Competitive buyer, Low offer negotiation, Multi-unit investor
+  - ✅ **Competitive Multiple Offer Scenario** (buyer bidding strategies)
+  - ✅ **Low Offer Negotiation** (seller pricing and counter strategies)
+  - ✅ **Multi-Unit Investment Property** (investor analysis and negotiation)
+  - ✅ **Dual Agency Ethical Dilemma** (confidentiality, designated agency)
+  - ✅ **Handling Discriminatory Client Requests** (Fair Housing compliance)
+  - ✅ **FSBO Legal Boundaries** (unauthorized practice of law)
+  - ✅ **Multi-Party Estate Sale Negotiation** (family disputes, neutrality)
+  - ✅ **Material Defect Disclosure Dilemma** (fraud prevention)
+  - ✅ **Commission Dispute Resolution** (procuring cause, arbitration)
+  - ✅ **Expired Listing Ethics** (professional courtesy)
 
 #### New Guide Sections
 - [x] **Fair Housing Act Deep Dive** ✅ COMPLETE (Section 21)
