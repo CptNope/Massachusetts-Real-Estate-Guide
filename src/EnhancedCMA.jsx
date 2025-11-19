@@ -2660,6 +2660,103 @@ ${brandingEmail || ''}`;
             </div>
           </div>
 
+          <div className="interest-calculation-section">
+            <h4>💵 Interest Calculation</h4>
+            
+            <div className="interest-definition-box">
+              <p className="interest-definition">
+                <strong>INTEREST</strong> is a charge for the use of money. Interest is charged by calculating the 
+                <strong>yearly interest rate</strong>; for example: 6% x unpaid balance $150,000, divided by total number 
+                of payment in the year (12)
+              </p>
+            </div>
+
+            <div className="interest-example-box">
+              <h5>📊 Example: $150,000 loan 6%</h5>
+              
+              <div className="calculation-steps">
+                <div className="calc-step">
+                  <div className="calc-icon">1️⃣</div>
+                  <div className="calc-content">
+                    <strong>Calculate Annual Interest:</strong>
+                    <div className="calc-formula">
+                      $150,000 × 6% = <span className="calc-result">$9,000 annual interest</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="calc-step">
+                  <div className="calc-icon">2️⃣</div>
+                  <div className="calc-content">
+                    <strong>Calculate Monthly Interest:</strong>
+                    <div className="calc-formula">
+                      $9,000 ÷ 12 = <span className="calc-result">$750 (one months interest)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="calc-step">
+                  <div className="calc-icon">3️⃣</div>
+                  <div className="calc-content">
+                    <strong>Monthly Payment Breakdown:</strong>
+                    <div className="calc-formula">
+                      Monthly payment = <span className="calc-result">$899.33</span>
+                      <div className="payment-breakdown">
+                        <span>$750 applied towards interest</span>
+                        <span>$149.33 is this month principal payment</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="payment-arrears-box">
+              <h5>⏰ Payment in Arrears</h5>
+              <p className="arrears-definition">
+                <mark className="highlight-red">Interest is commonly due & charged at the end of each month.</mark> 
+                This is known as <strong>"payment in arrears."</strong> Because payments are normally due at the 
+                beginning of each month, the interest payment is for the previous month.
+              </p>
+              
+              <div className="arrears-implication">
+                <strong>💡 Important:</strong> Many people time the closing to occur at the end of the month so the 
+                amount of interest due at time of closing will be minimal to none.
+              </div>
+            </div>
+
+            <div className="prepaid-interest-box">
+              <h5>📅 Prepaid Interest Examples:</h5>
+              
+              <div className="prepaid-examples">
+                <div className="prepaid-example">
+                  <div className="example-header">
+                    <strong>Example 1:</strong> June 30th closing
+                  </div>
+                  <div className="example-content">
+                    <p>There is <strong>1 day of prepaid interest</strong> due.</p>
+                    <p className="first-payment">FIRST PAYMENT is due <span className="due-date">August 1st</span>.</p>
+                  </div>
+                </div>
+
+                <div className="prepaid-example">
+                  <div className="example-header">
+                    <strong>Example 2:</strong> June 15th closing
+                  </div>
+                  <div className="example-content">
+                    <p>There would be <strong>15 days of prepaid interest</strong> due.</p>
+                    <p className="first-payment">FIRST PAYMENT is due <span className="due-date">August 1st</span>.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="prepaid-note">
+                <strong>📌 Key Concept:</strong> Prepaid interest covers the period from closing date to the end of that month. 
+                The first regular payment is typically due on the 1st of the second month after closing.
+              </div>
+            </div>
+          </div>
+
           <div className="agent-implications">
             <h4>💡 Implications for MA Real Estate Agents:</h4>
             <div className="implications-grid">
