@@ -2258,6 +2258,363 @@ html {
   }
 }
 
+/* API Token Management Panel */
+.api-panel {
+  background: white;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.api-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #6d28d9;
+}
+
+.api-intro {
+  background: #f5f3ff;
+  border: 1px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.api-intro p {
+  margin: 0.5rem 0;
+  color: #5b21b6;
+}
+
+.tokens-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tokens-header h4 {
+  margin: 0;
+  color: #374151;
+}
+
+.token-create-form {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.token-create-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tokens-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.token-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.token-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.token-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.token-value {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.token-value code {
+  flex: 1;
+  background: #1f2937;
+  color: #10b981;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+.token-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.no-tokens {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.api-docs-section {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.api-docs-section h4 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+}
+
+.api-endpoint {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.api-endpoint h5 {
+  margin: 0 0 0.5rem 0;
+  color: #059669;
+  font-family: monospace;
+}
+
+.api-example {
+  margin: 0.5rem 0;
+}
+
+.api-example strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.api-example pre {
+  background: #1f2937;
+  color: #10b981;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+}
+
+.api-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(251, 191, 36, 0.1);
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* AI Prediction Panel */
+.ai-panel {
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+  border: 2px solid #06b6d4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+.ai-panel h3 {
+  margin: 0 0 1.5rem 0;
+  color: #0e7490;
+}
+
+.ai-btn {
+  background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.ai-btn:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490) !important;
+}
+
+.ai-prediction-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-confidence, .ai-trend {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-confidence h4, .ai-trend h4 {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.confidence-meter {
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+  transition: width 0.5s ease;
+}
+
+.confidence-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+.trend-indicator {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.trend-indicator.trend-rising {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.trend-indicator.trend-falling {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.trend-indicator.trend-stable {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.ai-predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prediction-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.prediction-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.prediction-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin: 0.5rem 0;
+}
+
+.prediction-value.current {
+  color: #6b7280;
+}
+
+.prediction-value.predicted {
+  color: #059669;
+}
+
+.prediction-card p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.prediction-card p.rising {
+  color: #059669;
+  font-weight: 600;
+}
+
+.prediction-card p.falling {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.ai-factors {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ai-factors h4 {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+}
+
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.factor-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.factor-item span {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.factor-item strong {
+  color: #111827;
+}
+
+.ai-explanation {
+  background: rgba(6, 182, 212, 0.1);
+  border-left: 3px solid #06b6d4;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.ai-explanation h4 {
+  margin: 0 0 0.5rem 0;
+  color: #0e7490;
+}
+
+.ai-explanation p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
 /* MLS Integration Panel */
 .mls-panel {
   background: white;

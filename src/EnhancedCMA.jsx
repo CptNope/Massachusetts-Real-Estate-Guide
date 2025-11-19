@@ -356,6 +356,18 @@ export default function EnhancedCMA({ gamification }) {
   const [showEmail, setShowEmail] = useState(false);
   const [showCharts, setShowCharts] = useState(false);
   const [showMLS, setShowMLS] = useState(false);
+  const [showAPI, setShowAPI] = useState(false);
+  const [showAI, setShowAI] = useState(false);
+  
+  // API Token System State
+  const [apiTokens, setApiTokens] = useState([]);
+  const [newTokenName, setNewTokenName] = useState('');
+  const [showTokenCreate, setShowTokenCreate] = useState(false);
+  
+  // AI Prediction State
+  const [aiPrediction, setAiPrediction] = useState(null);
+  const [marketTrend, setMarketTrend] = useState(null);
+  const [predictionConfidence, setPredictionConfidence] = useState(0);
   
   // MLS Integration State
   const [mlsConnected, setMlsConnected] = useState(false);
@@ -550,6 +562,122 @@ export default function EnhancedCMA({ gamification }) {
       setMlsConnected(data.connected || false);
     }
   }, []);
+
+  // API Token Management Functions
+  const generateAPIToken = () => {
+    if (!newTokenName) {
+      showNotification('⚠️ Please enter a token name', 'error');
+      return;
+    }
+
+    const token = {
+      id: Date.now().toString(),
+      name: newTokenName,
+      token: `cma_${Math.random().toString(36).substr(2, 9)}_${Date.now().toString(36)}`,
+      created: new Date().toISOString(),
+      lastUsed: null,
+      usageCount: 0
+    };
+
+    const updatedTokens = [...apiTokens, token];
+    setApiTokens(updatedTokens);
+    localStorage.setItem('api_tokens', JSON.stringify(updatedTokens));
+    setNewTokenName('');
+    setShowTokenCreate(false);
+    showNotification(`✅ API token created: ${token.name}! +30 XP`, 'success');
+    
+    if (gamification) {
+      gamification.addXP(30, 'API token generated');
+      gamification.recordActivity('api_token_created');
+    }
+  };
+
+  const deleteAPIToken = (tokenId) => {
+    if (!confirm('Delete this API token? Applications using it will lose access.')) return;
+    
+    const updatedTokens = apiTokens.filter(t => t.id !== tokenId);
+    setApiTokens(updatedTokens);
+    localStorage.setItem('api_tokens', JSON.stringify(updatedTokens));
+    showNotification('🗑️ API token deleted', 'info');
+  };
+
+  const copyTokenToClipboard = (token) => {
+    navigator.clipboard.writeText(token);
+    showNotification('📋 Token copied to clipboard!', 'success');
+  };
+
+  // Load API tokens on mount
+  useEffect(() => {
+    const savedTokens = localStorage.getItem('api_tokens');
+    if (savedTokens) {
+      setApiTokens(JSON.parse(savedTokens));
+    }
+  }, []);
+
+  // AI Market Prediction Engine
+  const generateAIPrediction = () => {
+    if (adjustedComps.length === 0) {
+      showNotification('⚠️ Add comparables first to generate predictions', 'error');
+      return;
+    }
+
+    // Simple ML-inspired prediction algorithm
+    const prices = adjustedComps.map(c => c.adjustedPrice);
+    const avgPrice = prices.reduce((sum, p) => sum + p, 0) / prices.length;
+    const recentTrend = calculateMarketTrend(adjustedComps);
+    
+    // Price prediction with trend adjustment
+    const trendMultiplier = recentTrend === 'rising' ? 1.03 : recentTrend === 'falling' ? 0.97 : 1.0;
+    const predictedPrice = Math.round(avgPrice * trendMultiplier);
+    
+    // Confidence based on data quality
+    const stdDev = calculateStdDev(prices.map(p => parseFloat(p)));
+    const cv = stdDev / avgPrice;
+    const confidence = Math.max(0, Math.min(100, 100 - (cv * 100)));
+    
+    // 3-month and 6-month predictions
+    const threeMonthPrediction = Math.round(predictedPrice * (recentTrend === 'rising' ? 1.02 : recentTrend === 'falling' ? 0.98 : 1.0));
+    const sixMonthPrediction = Math.round(predictedPrice * (recentTrend === 'rising' ? 1.04 : recentTrend === 'falling' ? 0.96 : 1.0));
+
+    const prediction = {
+      currentValue: Math.round(avgPrice),
+      predictedValue: predictedPrice,
+      threeMonth: threeMonthPrediction,
+      sixMonth: sixMonthPrediction,
+      trend: recentTrend,
+      confidence: Math.round(confidence),
+      factors: {
+        compsAnalyzed: adjustedComps.length,
+        priceRange: Math.max(...prices) - Math.min(...prices),
+        avgDOM: adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 0), 0) / adjustedComps.length
+      }
+    };
+
+    setAiPrediction(prediction);
+    setMarketTrend(recentTrend);
+    setPredictionConfidence(Math.round(confidence));
+    setShowAI(true);
+    
+    showNotification('🤖 AI prediction generated! +50 XP', 'success');
+    if (gamification) {
+      gamification.addXP(50, 'AI prediction generated');
+      gamification.recordActivity('ai_prediction_used');
+    }
+  };
+
+  const calculateMarketTrend = (comps) => {
+    // Simplified trend analysis based on DOM and pricing
+    const avgDOM = comps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / comps.length;
+    const prices = comps.map(c => c.adjustedPrice);
+    const avgPrice = prices.reduce((sum, p) => sum + p, 0) / prices.length;
+    
+    // Hot market: low DOM, prices above average
+    if (avgDOM < 20 && avgPrice > 400000) return 'rising';
+    // Cooling market: high DOM, mixed prices  
+    if (avgDOM > 45) return 'falling';
+    // Stable market
+    return 'stable';
+  };
 
   // Photo upload handler (convert to base64)
   const handlePhotoUpload = (e, setter) => {
@@ -1642,7 +1770,238 @@ export default function EnhancedCMA({ gamification }) {
         >
           🏢 {mlsConnected ? 'MLS ✓' : 'MLS'}
         </button>
+        <button 
+          className="btn-primary cma-help-btn"
+          onClick={() => setShowAPI(!showAPI)}
+          title="API Access & Tokens"
+        >
+          🔑 API
+        </button>
+        <button 
+          className="btn-primary cma-help-btn ai-btn"
+          onClick={generateAIPrediction}
+          title="Generate AI Market Prediction"
+        >
+          🤖 AI Predict
+        </button>
       </div>
+
+      {showAPI && (
+        <div className="api-panel">
+          <h3>🔑 API Access & Developer Tokens</h3>
+          
+          <div className="api-intro">
+            <p><strong>For Developers:</strong> Generate API tokens to access your CMA data programmatically!</p>
+            <p>Use these tokens to integrate CMA data into your own applications, websites, or automation tools.</p>
+          </div>
+
+          <div className="api-tokens-section">
+            <div className="tokens-header">
+              <h4>Your API Tokens ({apiTokens.length})</h4>
+              <button 
+                className="btn-primary"
+                onClick={() => setShowTokenCreate(!showTokenCreate)}
+              >
+                + Create Token
+              </button>
+            </div>
+
+            {showTokenCreate && (
+              <div className="token-create-form">
+                <input
+                  type="text"
+                  value={newTokenName}
+                  onChange={(e) => setNewTokenName(e.target.value)}
+                  placeholder="Token name (e.g., 'My Website', 'Mobile App')"
+                  className="calc-input"
+                />
+                <div className="token-create-actions">
+                  <button className="btn-success" onClick={generateAPIToken}>
+                    Generate Token
+                  </button>
+                  <button className="btn-secondary" onClick={() => setShowTokenCreate(false)}>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {apiTokens.length > 0 ? (
+              <div className="tokens-list">
+                {apiTokens.map(token => (
+                  <div key={token.id} className="token-card">
+                    <div className="token-info">
+                      <strong>{token.name}</strong>
+                      <span className="token-date">Created: {new Date(token.created).toLocaleDateString()}</span>
+                    </div>
+                    <div className="token-value">
+                      <code>{token.token}</code>
+                      <button 
+                        className="btn-small btn-secondary"
+                        onClick={() => copyTokenToClipboard(token.token)}
+                      >
+                        📋 Copy
+                      </button>
+                    </div>
+                    <div className="token-stats">
+                      <span>Uses: {token.usageCount}</span>
+                      <span>Last used: {token.lastUsed || 'Never'}</span>
+                    </div>
+                    <button 
+                      className="btn-danger btn-small"
+                      onClick={() => deleteAPIToken(token.id)}
+                    >
+                      🗑️ Delete
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="no-tokens">
+                <p>No API tokens yet. Create one to get started!</p>
+              </div>
+            )}
+          </div>
+
+          <div className="api-docs-section">
+            <h4>📚 API Documentation</h4>
+            <div className="api-endpoint">
+              <h5>GET /api/cma/:id</h5>
+              <p>Retrieve a specific CMA by ID</p>
+              <div className="api-example">
+                <strong>Request:</strong>
+                <pre>curl -H "Authorization: Bearer YOUR_TOKEN" \{'\n'}  https://yoursite.com/api/cma/123</pre>
+              </div>
+              <div className="api-example">
+                <strong>Response:</strong>
+                <pre>{`{
+  "id": "123",
+  "subjectProperty": {...},
+  "comparables": [...],
+  "analysis": {...}
+}`}</pre>
+              </div>
+            </div>
+            <div className="api-endpoint">
+              <h5>POST /api/cma</h5>
+              <p>Create a new CMA programmatically</p>
+              <div className="api-example">
+                <strong>Request:</strong>
+                <pre>{`curl -X POST -H "Authorization: Bearer YOUR_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{"subject": {...}, "comps": [...]}' \\
+  https://yoursite.com/api/cma`}</pre>
+              </div>
+            </div>
+            <p className="api-note">
+              💡 <strong>Note:</strong> Full API implementation requires a backend server. 
+              This interface demonstrates the token management system.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {showAI && aiPrediction && (
+        <div className="ai-panel">
+          <h3>🤖 AI Market Prediction & Analysis</h3>
+          
+          <div className="ai-prediction-header">
+            <div className="ai-confidence">
+              <h4>Confidence Score</h4>
+              <div className="confidence-meter">
+                <div 
+                  className="confidence-fill" 
+                  style={{ width: `${aiPrediction.confidence}%` }}
+                />
+              </div>
+              <span className="confidence-value">{aiPrediction.confidence}%</span>
+            </div>
+            <div className="ai-trend">
+              <h4>Market Trend</h4>
+              <div className={`trend-indicator trend-${aiPrediction.trend}`}>
+                {aiPrediction.trend === 'rising' && '📈 Rising Market'}
+                {aiPrediction.trend === 'falling' && '📉 Cooling Market'}
+                {aiPrediction.trend === 'stable' && '➡️ Stable Market'}
+              </div>
+            </div>
+          </div>
+
+          <div className="ai-predictions-grid">
+            <div className="prediction-card">
+              <h4>Current Value</h4>
+              <div className="prediction-value current">
+                ${aiPrediction.currentValue.toLocaleString()}
+              </div>
+              <p>Based on {aiPrediction.factors.compsAnalyzed} comparables</p>
+            </div>
+            <div className="prediction-card">
+              <h4>Predicted Value (Now)</h4>
+              <div className="prediction-value predicted">
+                ${aiPrediction.predictedValue.toLocaleString()}
+              </div>
+              <p className={aiPrediction.trend}>
+                {aiPrediction.trend === 'rising' && '+3% adjustment'}
+                {aiPrediction.trend === 'falling' && '-3% adjustment'}
+                {aiPrediction.trend === 'stable' && 'No adjustment'}
+              </p>
+            </div>
+            <div className="prediction-card">
+              <h4>3-Month Forecast</h4>
+              <div className="prediction-value">
+                ${aiPrediction.threeMonth.toLocaleString()}
+              </div>
+              <p className={aiPrediction.trend}>
+                {((aiPrediction.threeMonth / aiPrediction.currentValue - 1) * 100).toFixed(1)}% change
+              </p>
+            </div>
+            <div className="prediction-card">
+              <h4>6-Month Forecast</h4>
+              <div className="prediction-value">
+                ${aiPrediction.sixMonth.toLocaleString()}
+              </div>
+              <p className={aiPrediction.trend}>
+                {((aiPrediction.sixMonth / aiPrediction.currentValue - 1) * 100).toFixed(1)}% change
+              </p>
+            </div>
+          </div>
+
+          <div className="ai-factors">
+            <h4>📊 Analysis Factors</h4>
+            <div className="factors-grid">
+              <div className="factor-item">
+                <span>Comparables Analyzed:</span>
+                <strong>{aiPrediction.factors.compsAnalyzed}</strong>
+              </div>
+              <div className="factor-item">
+                <span>Price Range:</span>
+                <strong>${aiPrediction.factors.priceRange.toLocaleString()}</strong>
+              </div>
+              <div className="factor-item">
+                <span>Average DOM:</span>
+                <strong>{Math.round(aiPrediction.factors.avgDOM)} days</strong>
+              </div>
+            </div>
+          </div>
+
+          <div className="ai-explanation">
+            <h4>💡 How This Works</h4>
+            <p>
+              Our AI prediction engine analyzes your comparable properties using machine learning-inspired algorithms. 
+              It considers pricing trends, days on market, and market conditions to forecast future values.
+            </p>
+            <p>
+              <strong>Confidence Score:</strong> Higher scores indicate more reliable predictions based on consistent comparable data.
+            </p>
+            <p>
+              <strong>Market Trend:</strong> Determined by average DOM and pricing patterns in your comparables.
+            </p>
+          </div>
+
+          <button className="btn-secondary" onClick={() => setShowAI(false)} style={{ marginTop: '1rem' }}>
+            ✕ Close Prediction
+          </button>
+        </div>
+      )}
 
       {showMLS && (
         <div className="mls-panel">
