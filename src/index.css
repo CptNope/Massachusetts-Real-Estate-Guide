@@ -2258,6 +2258,169 @@ html {
   }
 }
 
+/* Branding Panel */
+.branding-panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.branding-panel h3 {
+  margin: 0 0 1.5rem 0;
+  color: #111827;
+}
+
+.branding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.branding-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.branding-field label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.branding-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Map Panel */
+.map-panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #111827;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border: 2px dashed #3b82f6;
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-info {
+  text-align: center;
+  max-width: 600px;
+}
+
+.map-info h4 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+  font-size: 1.5rem;
+}
+
+.map-info p {
+  margin: 0.5rem 0;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.map-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.map-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.map-marker {
+  font-size: 1.5rem;
+}
+
+.map-marker.subject {
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.4));
+}
+
+.map-marker.comp {
+  filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.4));
+}
+
+.map-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid #3b82f6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Branded Report Header (for print) */
+.branded-header {
+  display: none;
+  padding: 2rem;
+  border-bottom: 3px solid var(--brand-color, #3b82f6);
+  margin-bottom: 2rem;
+}
+
+.branded-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.branded-logo {
+  max-width: 200px;
+  max-height: 80px;
+}
+
+.branded-info {
+  text-align: right;
+}
+
+.branded-info h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--brand-color, #3b82f6);
+}
+
+.branded-contact {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+@media print {
+  .branded-header {
+    display: block !important;
+  }
+}
+
 /* Bulk Actions Panel */
 .bulk-actions-panel {
   background: white;

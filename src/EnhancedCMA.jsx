@@ -350,6 +350,43 @@ export default function EnhancedCMA({ gamification }) {
   const [comp6Notes, setComp6Notes] = useState('');
   const [showBulkActions, setShowBulkActions] = useState(false);
   const [favorites, setFavorites] = useState([]);
+  const [showBranding, setShowBranding] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+  
+  // Branding Settings
+  const [brandingLogo, setBrandingLogo] = useState('');
+  const [brandingCompany, setBrandingCompany] = useState('');
+  const [brandingPhone, setBrandingPhone] = useState('');
+  const [brandingEmail, setBrandingEmail] = useState('');
+  const [brandingLicense, setBrandingLicense] = useState('');
+  const [brandingColor, setBrandingColor] = useState('#3b82f6');
+  
+  // Load branding settings on mount
+  useEffect(() => {
+    const savedBranding = localStorage.getItem('cma_branding');
+    if (savedBranding) {
+      const data = JSON.parse(savedBranding);
+      setBrandingLogo(data.logo || '');
+      setBrandingCompany(data.company || '');
+      setBrandingPhone(data.phone || '');
+      setBrandingEmail(data.email || '');
+      setBrandingLicense(data.license || '');
+      setBrandingColor(data.color || '#3b82f6');
+    }
+  }, []);
+
+  const saveBranding = () => {
+    const brandingData = {
+      logo: brandingLogo,
+      company: brandingCompany,
+      phone: brandingPhone,
+      email: brandingEmail,
+      license: brandingLicense,
+      color: brandingColor
+    };
+    localStorage.setItem('cma_branding', JSON.stringify(brandingData));
+    showNotification('🎨 Branding settings saved!', 'success');
+  };
   
   // Bulk Actions
   const clearAllComps = () => {
@@ -1245,6 +1282,29 @@ export default function EnhancedCMA({ gamification }) {
         </div>
       )}
       
+      <div className="branded-header" style={{ '--brand-color': brandingColor }}>
+        <div className="branded-header-content">
+          <div className="branded-logo-section">
+            {brandingLogo && <img src={brandingLogo} alt="Company Logo" className="branded-logo" />}
+            {!brandingLogo && brandingCompany && <h2 style={{ color: brandingColor }}>{brandingCompany}</h2>}
+          </div>
+          <div className="branded-info">
+            {brandingCompany && !brandingLogo && <h2>{brandingCompany}</h2>}
+            <div className="branded-contact">
+              {brandingPhone && <div>📞 {brandingPhone}</div>}
+              {brandingEmail && <div>📧 {brandingEmail}</div>}
+              {brandingLicense && <div>License: {brandingLicense}</div>}
+            </div>
+          </div>
+        </div>
+        <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+          <h3>Comparative Market Analysis</h3>
+          <p><strong>Subject Property:</strong> {subjectAddress || 'Not specified'}</p>
+          <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
+          {clientName && <p><strong>Prepared for:</strong> {clientName}</p>}
+        </div>
+      </div>
+      
       <div className="cma-print-header" style={{ display: 'none' }}>
         <h2>Comparative Market Analysis</h2>
         <p>Subject Property: {subjectAddress || 'Not specified'}</p>
@@ -1310,7 +1370,130 @@ export default function EnhancedCMA({ gamification }) {
         >
           ⚡
         </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowBranding(!showBranding)}
+          title="Branding & customization"
+        >
+          🎨
+        </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowMap(!showMap)}
+          title="Map view of properties"
+        >
+          🗺️
+        </button>
       </div>
+
+      {showBranding && (
+        <div className="branding-panel">
+          <h3>🎨 Branding & Customization</h3>
+          <div className="branding-grid">
+            <div className="branding-field">
+              <label>Company Logo URL</label>
+              <input
+                type="url"
+                value={brandingLogo}
+                onChange={(e) => setBrandingLogo(e.target.value)}
+                placeholder="https://example.com/logo.png"
+                className="calc-input"
+              />
+              <p className="input-hint">URL to your company logo (appears on reports)</p>
+            </div>
+            <div className="branding-field">
+              <label>Company Name</label>
+              <input
+                type="text"
+                value={brandingCompany}
+                onChange={(e) => setBrandingCompany(e.target.value)}
+                placeholder="Your Realty Company"
+                className="calc-input"
+              />
+            </div>
+            <div className="branding-field">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                value={brandingPhone}
+                onChange={(e) => setBrandingPhone(e.target.value)}
+                placeholder="(555) 123-4567"
+                className="calc-input"
+              />
+            </div>
+            <div className="branding-field">
+              <label>Email Address</label>
+              <input
+                type="email"
+                value={brandingEmail}
+                onChange={(e) => setBrandingEmail(e.target.value)}
+                placeholder="agent@realty.com"
+                className="calc-input"
+              />
+            </div>
+            <div className="branding-field">
+              <label>License Number</label>
+              <input
+                type="text"
+                value={brandingLicense}
+                onChange={(e) => setBrandingLicense(e.target.value)}
+                placeholder="License #123456"
+                className="calc-input"
+              />
+            </div>
+            <div className="branding-field">
+              <label>Brand Color</label>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <input
+                  type="color"
+                  value={brandingColor}
+                  onChange={(e) => setBrandingColor(e.target.value)}
+                  style={{ width: '60px', height: '40px', cursor: 'pointer', border: '1px solid #d1d5db', borderRadius: '6px' }}
+                />
+                <span style={{ color: '#6b7280', fontSize: '0.875rem' }}>{brandingColor}</span>
+              </div>
+            </div>
+          </div>
+          <div className="branding-actions">
+            <button className="btn-primary" onClick={saveBranding}>
+              💾 Save Branding
+            </button>
+            <button className="btn-secondary" onClick={() => setShowBranding(false)}>
+              ✕ Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showMap && (
+        <div className="map-panel">
+          <h3>🗺️ Property Locations</h3>
+          <div className="map-placeholder">
+            <div className="map-info">
+              <h4>📍 Interactive Map View</h4>
+              <p>Map visualization shows approximate locations based on addresses entered.</p>
+              <p><strong>Subject Property:</strong> {subjectAddress || 'Not specified'}</p>
+              <p><strong>Active Comparables:</strong> {adjustedComps.length} properties</p>
+              <div className="map-features">
+                <div className="map-feature-item">
+                  <span className="map-marker subject">🏠</span>
+                  <span>Subject Property</span>
+                </div>
+                <div className="map-feature-item">
+                  <span className="map-marker comp">📍</span>
+                  <span>Comparable Properties</span>
+                </div>
+              </div>
+              <p className="map-note">
+                💡 <strong>Tip:</strong> In a production environment, this would display an interactive map with property locations plotted using geocoding services.
+              </p>
+            </div>
+          </div>
+          <button className="btn-secondary" onClick={() => setShowMap(false)} style={{ marginTop: '1rem' }}>
+            ✕ Close Map
+          </button>
+        </div>
+      )}
 
       {showBulkActions && (
         <div className="bulk-actions-panel">
