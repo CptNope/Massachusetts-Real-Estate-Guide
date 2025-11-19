@@ -45,6 +45,8 @@ export default function EnhancedCMA({ gamification }) {
   const [mode, setMode] = useState('learning'); // 'learning' or 'professional'
   const [showTemplates, setShowTemplates] = useState(false);
   const [currentTemplate, setCurrentTemplate] = useState('custom');
+  const [libraryView, setLibraryView] = useState('list'); // 'list' or 'grid'
+  const [searchTerm, setSearchTerm] = useState('');
   
   // Apply market template
   const applyTemplate = (templateId) => {
@@ -477,6 +479,32 @@ export default function EnhancedCMA({ gamification }) {
     return Object.keys(JSON.parse(localStorage.getItem('savedCMAs') || '{}'));
   };
 
+  const getSavedCMAsWithData = () => {
+    const savedCMAs = JSON.parse(localStorage.getItem('savedCMAs') || '{}');
+    return Object.entries(savedCMAs).map(([name, data]) => ({
+      name,
+      date: data.savedDate,
+      clientName: data.client?.name || 'N/A',
+      address: data.subject?.address || 'No address',
+      comps: data.comparables?.filter(c => c.active).length || 0,
+      ...data
+    })).sort((a, b) => new Date(b.date) - new Date(a.date));
+  };
+
+  const duplicateCMA = (saveName) => {
+    const savedCMAs = JSON.parse(localStorage.getItem('savedCMAs') || '{}');
+    const original = savedCMAs[saveName];
+    if (!original) return;
+    
+    const newName = `${saveName} (Copy)`;
+    savedCMAs[newName] = {
+      ...original,
+      savedDate: new Date().toISOString()
+    };
+    localStorage.setItem('savedCMAs', JSON.stringify(savedCMAs));
+    alert(`✅ CMA duplicated: ${newName}`);
+  };
+
   const loadCMA = (saveName) => {
     const savedCMAs = JSON.parse(localStorage.getItem('savedCMAs') || '{}');
     const data = savedCMAs[saveName];
@@ -745,17 +773,74 @@ export default function EnhancedCMA({ gamification }) {
             <button className="btn-secondary" onClick={exportToJSON}>📥 Export to JSON</button>
           </div>
           {getSavedCMAs().length > 0 && (
-            <div className="saved-cmas-list">
-              <h4>Saved CMAs:</h4>
-              {getSavedCMAs().map(name => (
-                <div key={name} className="saved-cma-item">
-                  <span className="cma-name">{name}</span>
-                  <div className="cma-actions">
-                    <button className="btn-small" onClick={() => loadCMA(name)}>Load</button>
-                    <button className="btn-small btn-danger" onClick={() => deleteCMA(name)}>Delete</button>
+            <div className="cma-library">
+              <div className="library-header">
+                <h4>📚 CMA Library ({getSavedCMAs().length})</h4>
+                <div className="library-controls">
+                  <input 
+                    type="text" 
+                    className="library-search" 
+                    placeholder="🔍 Search CMAs..." 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <div className="view-toggle">
+                    <button 
+                      className={`view-btn ${libraryView === 'list' ? 'active' : ''}`}
+                      onClick={() => setLibraryView('list')}
+                      title="List view"
+                    >
+                      ☰
+                    </button>
+                    <button 
+                      className={`view-btn ${libraryView === 'grid' ? 'active' : ''}`}
+                      onClick={() => setLibraryView('grid')}
+                      title="Grid view"
+                    >
+                      ⊞
+                    </button>
                   </div>
                 </div>
-              ))}
+              </div>
+              <div className={`cma-library-items ${libraryView}`}>
+                {getSavedCMAsWithData()
+                  .filter(cma => 
+                    searchTerm === '' || 
+                    cma.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    cma.clientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    cma.address.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+                  .map(cma => (
+                    <div key={cma.name} className="cma-library-card">
+                      <div className="cma-card-header">
+                        <div className="cma-card-title">
+                          <span className="cma-icon">📄</span>
+                          <strong>{cma.name}</strong>
+                        </div>
+                        <span className="cma-date">{new Date(cma.date).toLocaleDateString()}</span>
+                      </div>
+                      <div className="cma-card-details">
+                        <div className="cma-detail">
+                          <span className="detail-label">Client:</span>
+                          <span className="detail-value">{cma.clientName}</span>
+                        </div>
+                        <div className="cma-detail">
+                          <span className="detail-label">Address:</span>
+                          <span className="detail-value">{cma.address}</span>
+                        </div>
+                        <div className="cma-detail">
+                          <span className="detail-label">Comps:</span>
+                          <span className="detail-value">{cma.comps} active</span>
+                        </div>
+                      </div>
+                      <div className="cma-card-actions">
+                        <button className="btn-small btn-primary" onClick={() => loadCMA(cma.name)}>📂 Load</button>
+                        <button className="btn-small" onClick={() => duplicateCMA(cma.name)}>📋 Copy</button>
+                        <button className="btn-small btn-danger" onClick={() => { deleteCMA(cma.name); setSearchTerm(''); }}>🗑️ Delete</button>
+                      </div>
+                    </div>
+                  ))}
+              </div>
             </div>
           )}
         </div>
