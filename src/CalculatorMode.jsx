@@ -7,7 +7,7 @@ export default function CalculatorMode() {
     <div className="study-mode-container">
       <div className="study-mode-header">
         <h2>🧮 Professional Real Estate Calculators</h2>
-        <p>6 calculators: commissions, mortgages, investments, property valuations, and closing costs</p>
+        <p>7 calculators: commissions, mortgages, investments, CMA tool, property valuations, and closing costs</p>
       </div>
 
       <div className="calculator-tabs">
