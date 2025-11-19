@@ -122,6 +122,118 @@ const ACHIEVEMENTS = [
     description: 'Study 10 different days',
     icon: '📖',
     requirement: (stats) => stats.totalStudyDays >= 10
+  },
+  {
+    id: 'financing-novice',
+    title: 'Financing Novice',
+    description: 'Complete 5 quiz questions on financing topics',
+    icon: '💰',
+    requirement: (stats) => stats.financingQuestionsCorrect >= 5
+  },
+  {
+    id: 'financing-expert',
+    title: 'Financing Expert',
+    description: 'Master 20 financing quiz questions',
+    icon: '🏦',
+    requirement: (stats) => stats.financingQuestionsCorrect >= 20
+  },
+  {
+    id: 'arm-specialist',
+    title: 'ARM Specialist',
+    description: 'Answer all 5 ARM questions correctly',
+    icon: '📊',
+    requirement: (stats) => stats.armQuestionsCorrect >= 5
+  },
+  {
+    id: 'foreclosure-pro',
+    title: 'Foreclosure Pro',
+    description: 'Master foreclosure & default questions',
+    icon: '🏚️',
+    requirement: (stats) => stats.foreclosureQuestionsCorrect >= 5
+  },
+  {
+    id: 'fed-master',
+    title: 'Federal Reserve Master',
+    description: 'Answer all Federal Reserve questions correctly',
+    icon: '🏛️',
+    requirement: (stats) => stats.fedQuestionsCorrect >= 7
+  },
+  {
+    id: 'dodd-frank-scholar',
+    title: 'Dodd-Frank Scholar',
+    description: 'Master all Dodd-Frank Act questions',
+    icon: '⚖️',
+    requirement: (stats) => stats.doddFrankQuestionsCorrect >= 4
+  },
+  {
+    id: 'mortgage-clause-master',
+    title: 'Mortgage Clause Master',
+    description: 'Know all mortgage clauses (Assignment, Estoppel, etc.)',
+    icon: '📜',
+    requirement: (stats) => stats.clauseQuestionsCorrect >= 4
+  },
+  {
+    id: 'amortization-ace',
+    title: 'Amortization Ace',
+    description: 'Understand the 50/50 milestone & payment breakdown',
+    icon: '📈',
+    requirement: (stats) => stats.amortizationQuestionsCorrect >= 2
+  },
+  {
+    id: 'ma-foreclosure-expert',
+    title: 'MA Foreclosure Expert',
+    description: 'Master Massachusetts-specific foreclosure rules',
+    icon: '🏛️',
+    requirement: (stats) => stats.maForeclosureQuestionsCorrect >= 2
+  },
+  {
+    id: 'comprehensive-quiz-10',
+    title: 'Quiz Marathon',
+    description: 'Complete 10 quizzes with 80%+ score',
+    icon: '🏃',
+    requirement: (stats) => stats.quizzesAbove80 >= 10
+  },
+  {
+    id: 'comprehensive-quiz-25',
+    title: 'Quiz Legend',
+    description: 'Complete 25 quizzes with 80%+ score',
+    icon: '👑',
+    requirement: (stats) => stats.quizzesAbove80 >= 25
+  },
+  {
+    id: 'perfect-streak-3',
+    title: 'Triple Perfect',
+    description: 'Get 3 perfect scores in a row',
+    icon: '🔥',
+    requirement: (stats) => stats.perfectStreakMax >= 3
+  },
+  {
+    id: 'speed-demon',
+    title: 'Speed Demon',
+    description: 'Complete a timed quiz in under 30 minutes',
+    icon: '⚡',
+    requirement: (stats) => stats.fastestQuizTime > 0 && stats.fastestQuizTime <= 1800
+  },
+  {
+    id: 'financing-mastery',
+    title: 'Financing Mastery',
+    description: 'Get 90%+ on all new financing questions',
+    icon: '💎',
+    requirement: (stats) => stats.financingMasteryScore >= 90
+  },
+  {
+    id: 'xp-10000',
+    title: 'Master Learner',
+    description: 'Earn 10,000 XP',
+    icon: '🌟',
+    requirement: (stats) => stats.totalXP >= 10000
+  },
+  {
+    id: 'section-master-24',
+    title: 'Complete Guide Master',
+    description: 'Master all 24 guide sections (updated)',
+    icon: '🎓',
+    requirement: (stats) => stats.masteredSections >= 24
   }
 ];
 
@@ -155,7 +267,21 @@ export const useGamification = () => {
       calculatorsUsed: 0,
       notesAdded: 0,
       totalStudyDays: 0,
-      unlockedAchievements: []
+      unlockedAchievements: [],
+      // New financing-related stats
+      financingQuestionsCorrect: 0,
+      armQuestionsCorrect: 0,
+      foreclosureQuestionsCorrect: 0,
+      fedQuestionsCorrect: 0,
+      doddFrankQuestionsCorrect: 0,
+      clauseQuestionsCorrect: 0,
+      amortizationQuestionsCorrect: 0,
+      maForeclosureQuestionsCorrect: 0,
+      quizzesAbove80: 0,
+      perfectStreakMax: 0,
+      perfectStreakCurrent: 0,
+      fastestQuizTime: 0,
+      financingMasteryScore: 0
     };
   });
 
@@ -218,6 +344,42 @@ export const useGamification = () => {
         if (data.isPerfect) {
           xpAmount += XP_VALUES.PERFECT_QUIZ;
           updates.perfectQuizzes = stats.perfectQuizzes + 1;
+          updates.perfectStreakCurrent = stats.perfectStreakCurrent + 1;
+          updates.perfectStreakMax = Math.max(stats.perfectStreakMax, updates.perfectStreakCurrent);
+        } else {
+          updates.perfectStreakCurrent = 0;
+        }
+        
+        if (data.above80) {
+          updates.quizzesAbove80 = stats.quizzesAbove80 + 1;
+        }
+        
+        if (data.totalTime > 0) {
+          if (stats.fastestQuizTime === 0 || data.totalTime < stats.fastestQuizTime) {
+            updates.fastestQuizTime = data.totalTime;
+          }
+        }
+        
+        // Track category-specific correct answers
+        if (data.categoryStats) {
+          updates.financingQuestionsCorrect = stats.financingQuestionsCorrect + data.categoryStats.financing;
+          updates.armQuestionsCorrect = stats.armQuestionsCorrect + data.categoryStats.arm;
+          updates.foreclosureQuestionsCorrect = stats.foreclosureQuestionsCorrect + data.categoryStats.foreclosure;
+          updates.fedQuestionsCorrect = stats.fedQuestionsCorrect + data.categoryStats.fed;
+          updates.doddFrankQuestionsCorrect = stats.doddFrankQuestionsCorrect + data.categoryStats.doddFrank;
+          updates.clauseQuestionsCorrect = stats.clauseQuestionsCorrect + data.categoryStats.clause;
+          updates.amortizationQuestionsCorrect = stats.amortizationQuestionsCorrect + data.categoryStats.amortization;
+          updates.maForeclosureQuestionsCorrect = stats.maForeclosureQuestionsCorrect + data.categoryStats.maForeclosure;
+          
+          // Calculate financing mastery score
+          const totalFinancingQuestions = data.categoryStats.financing + data.categoryStats.arm + 
+                                          data.categoryStats.foreclosure + data.categoryStats.fed +
+                                          data.categoryStats.doddFrank + data.categoryStats.clause +
+                                          data.categoryStats.amortization + data.categoryStats.maForeclosure;
+          if (totalFinancingQuestions > 0) {
+            const correctFinancing = Object.values(data.categoryStats).reduce((sum, val) => sum + val, 0);
+            updates.financingMasteryScore = Math.round((correctFinancing / totalFinancingQuestions) * 100);
+          }
         }
         break;
 

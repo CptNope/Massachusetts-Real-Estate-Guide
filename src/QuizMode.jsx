@@ -140,7 +140,46 @@ export default function QuizMode({ gamification }) {
     // Record quiz completion in gamification system
     if (gamification) {
       const isPerfect = finalScore.percentage === 100;
-      gamification.recordActivity('COMPLETE_QUIZ', { isPerfect });
+      const above80 = finalScore.percentage >= 80;
+      const totalTime = isTimedMode && questionTimes.length > 0 
+        ? questionTimes.reduce((a, b) => a + b, 0) 
+        : 0;
+      
+      // Count category-specific correct answers
+      const categoryStats = {
+        financing: 0,
+        arm: 0,
+        foreclosure: 0,
+        fed: 0,
+        doddFrank: 0,
+        clause: 0,
+        amortization: 0,
+        maForeclosure: 0
+      };
+      
+      answers.forEach(answer => {
+        if (answer.correct) {
+          const question = quizQuestions.find(q => q.id === answer.questionId);
+          if (question && question.category) {
+            const cat = question.category.toLowerCase();
+            if (cat.includes('financing')) categoryStats.financing++;
+            if (cat.includes('arm')) categoryStats.arm++;
+            if (cat.includes('foreclosure') && !cat.includes('ma')) categoryStats.foreclosure++;
+            if (cat.includes('federal reserve')) categoryStats.fed++;
+            if (cat.includes('dodd-frank')) categoryStats.doddFrank++;
+            if (cat.includes('clause')) categoryStats.clause++;
+            if (cat.includes('amortization')) categoryStats.amortization++;
+            if (cat.includes('foreclosure ma') || cat.includes('ma foreclosure')) categoryStats.maForeclosure++;
+          }
+        }
+      });
+      
+      gamification.recordActivity('COMPLETE_QUIZ', { 
+        isPerfect,
+        above80,
+        totalTime,
+        categoryStats
+      });
     }
   };
 
