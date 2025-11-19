@@ -1502,5 +1502,100 @@ export const scenarios = [
         ]
       }
     }
+  },
+  {
+    id: 'scenario14',
+    title: 'Property Management Dispute',
+    description: 'Tenant claims illegal lockout. Landlord says rent is 3 months late. Navigate tenant rights.',
+    difficulty: 'medium',
+    category: 'commercial',
+    startNode: 'start',
+    nodes: {
+      start: {
+        text: 'Your landlord client changed locks while tenant at work. Tenant is 3 months behind ($6k). Landlord: "They wouldn\'t leave so I locked them out." What do you advise?',
+        choices: [
+          { text: 'Support landlord - tenant owes money', nextNode: 'support_landlord' },
+          { text: 'Warn this is illegal lockout', nextNode: 'warn_illegal' },
+          { text: 'Recommend eviction attorney immediately', nextNode: 'attorney' },
+          { text: 'Suggest negotiating payment plan', nextNode: 'payment_plan' }
+        ]
+      },
+      support_landlord: {
+        text: 'Tenant sues for illegal lockout. Court awards tenant: $18k damages + attorney fees + immediate re-entry. Landlord blames you.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Self-help evictions are ILLEGAL. You should have known better. Landlord faces major liability.',
+        recommendations: [
+          'NEVER support self-help evictions',
+          'Lockouts are illegal even if tenant owes rent',
+          'Only sheriff can remove tenant after court order',
+          'Illegal lockout penalties: 3x damages minimum'
+        ]
+      },
+      warn_illegal: {
+        text: 'You explain illegal lockout penalties. Landlord: "What should I have done?" You advise formal eviction. Landlord must now let tenant back in.',
+        choices: [
+          { text: 'Start formal eviction process', nextNode: 'formal_eviction' },
+          { text: 'Try to negotiate exit first', nextNode: 'cash_for_keys' }
+        ]
+      },
+      attorney: {
+        text: 'Attorney explains: Must restore tenant access, file summary process, 14-day notice required. Landlord follows proper procedure.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Perfect! Eviction law is complex - always refer to attorney. Proper process protects landlord.',
+        recommendations: [
+          'Eviction requires legal process',
+          'Summary process takes 4-8 weeks in MA',
+          'Attorney fees cheaper than illegal lockout damages',
+          'Only court can authorize eviction'
+        ]
+      },
+      payment_plan: {
+        text: 'Tenant agrees to $2k/month payment plan. Month 1: pays. Month 2: nothing. Now 4 months behind.',
+        choices: [
+          { text: 'Start eviction for non-payment', nextNode: 'formal_eviction' },
+          { text: 'Give one more chance', nextNode: 'more_chances' }
+        ]
+      },
+      formal_eviction: {
+        text: '14-day notice served. Tenant doesn\'t pay. File summary process. Court date in 3 weeks. Tenant doesn\'t appear. Judgment for landlord. Sheriff executes in 10 days.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Proper legal process worked. Takes time but protects landlord from liability.',
+        recommendations: [
+          'Legal eviction process: 6-8 weeks total',
+          '14-day notice to quit for non-payment',
+          'Summary process court hearing',
+          'Sheriff execution after judgment',
+          'Landlord can sue for back rent separately'
+        ]
+      },
+      cash_for_keys: {
+        text: 'Offer tenant $2k to vacate by month-end. Tenant accepts, leaves property clean. Landlord re-rents immediately.',
+        isEnding: true,
+        outcome: 'positive',
+        feedback: 'Cash for keys often fastest, cheapest solution. Avoids court, gets property back quicker.',
+        recommendations: [
+          'Cash for keys bypasses court delays',
+          'Cheaper than months of lost rent + legal fees',
+          'Get signed agreement and keys before paying',
+          'Have tenant sign release of claims',
+          'Usually $1k-3k depending on market'
+        ]
+      },
+      more_chances: {
+        text: 'Two more months pass. Now 6 months behind = $12k. Tenant has established pattern of non-payment. Formal eviction takes 8 weeks. Lost $16k total.',
+        isEnding: true,
+        outcome: 'negative',
+        feedback: 'Being "nice" cost landlord $16k. Should have acted after first payment plan failure.',
+        recommendations: [
+          'Payment plans rarely work with chronic non-payers',
+          'Act decisively after first breach',
+          'Every month of delay = more lost rent',
+          'Document everything for court'
+        ]
+      }
+    }
   }
 ];
