@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EnhancedCMA from './EnhancedCMA';
 
-export default function CalculatorMode() {
+export default function CalculatorMode({ gamification }) {
   const [activeCalculator, setActiveCalculator] = useState('commission');
 
   return (
@@ -54,7 +54,7 @@ export default function CalculatorMode() {
       {activeCalculator === 'proceeds' && <NetProceedsCalculator />}
       {activeCalculator === 'mortgage' && <MortgageCalculator />}
       {activeCalculator === 'investment' && <InvestmentPropertyCalculator />}
-      {activeCalculator === 'cma' && <EnhancedCMA />}
+      {activeCalculator === 'cma' && <EnhancedCMA gamification={gamification} />}
       {activeCalculator === 'closing' && <ClosingCostCalculator />}
     </div>
   );

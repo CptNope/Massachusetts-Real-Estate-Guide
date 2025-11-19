@@ -4560,6 +4560,359 @@ h3[id], h4[id] {
   }
 }
 
+/* CMA Challenge System Styles */
+.cma-challenges-panel {
+  background: var(--bg-card);
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.cma-challenges-panel h3 {
+  margin: 0 0 0.5rem 0;
+  color: #10b981;
+}
+
+.challenges-intro {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-card.beginner {
+  border-left: 4px solid #10b981;
+}
+
+.challenge-card.intermediate {
+  border-left: 4px solid #f59e0b;
+}
+
+.challenge-card.advanced {
+  border-left: 4px solid #ef4444;
+}
+
+.challenge-card.expert {
+  border-left: 4px solid #8b5cf6;
+}
+
+.challenge-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.challenge-card-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.difficulty-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.difficulty-badge.beginner {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.difficulty-badge.intermediate {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+}
+
+.difficulty-badge.advanced {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.difficulty-badge.expert {
+  background: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+  border: 1px solid #8b5cf6;
+}
+
+.challenge-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.challenge-instructions,
+.challenge-learning {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+}
+
+.challenge-instructions strong,
+.challenge-learning strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.challenge-instructions ul,
+.challenge-learning ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.challenge-instructions li,
+.challenge-learning li {
+  margin: 0.25rem 0;
+}
+
+.challenge-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.xp-reward {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Active Challenge Banner */
+.active-challenge-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.challenge-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.challenge-icon {
+  font-size: 2rem;
+}
+
+.challenge-info strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Challenge Complete Modal */
+.challenge-complete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.challenge-complete-content {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 3rem;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.challenge-complete-content h2 {
+  margin: 0 0 1rem 0;
+  color: var(--accent);
+}
+
+.challenge-complete-content p {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.completion-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* Button Styles for Challenges */
+.btn-success {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .active-challenge-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .challenge-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .challenge-actions button {
+    width: 100%;
+  }
+  
+  .completion-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .challenge-complete-content {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+}
+
+/* Print - hide challenges */
+@media print {
+  .cma-challenges-panel,
+  .active-challenge-banner,
+  .challenge-complete-modal {
+    display: none !important;
+  }
+}
+
 /* Closing Cost Calculator Styles */
 .view-toggle {
   display: flex;

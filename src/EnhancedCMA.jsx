@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { cmaChallenges } from './cmaChallenges';
 
-export default function EnhancedCMA() {
+export default function EnhancedCMA({ gamification }) {
   const [showHelp, setShowHelp] = useState(false);
   const [showDataSources, setShowDataSources] = useState(false);
+  const [showChallenges, setShowChallenges] = useState(false);
+  const [activeChallenge, setActiveChallenge] = useState(null);
+  const [challengeStartTime, setChallengeStartTime] = useState(null);
+  const [showChallengeComplete, setShowChallengeComplete] = useState(false);
   
   // Subject Property
   const [subjectBeds, setSubjectBeds] = useState('3');
@@ -174,6 +179,115 @@ export default function EnhancedCMA() {
 
   const handlePrint = () => {
     window.print();
+    if (gamification) {
+      gamification.recordActivity('cma_report_generated');
+    }
+  };
+
+  const loadChallenge = (challenge) => {
+    if (challenge.realWorldChallenge) {
+      // Real-world challenge - no pre-loaded data
+      setActiveChallenge(challenge);
+      setShowChallenges(false);
+      setChallengeStartTime(Date.now());
+      alert(`🎯 ${challenge.title}\n\nThis is a REAL-WORLD challenge! Follow the instructions to gather real property data from public sources. Good luck!`);
+      return;
+    }
+
+    const scenario = challenge.scenario;
+    
+    // Load subject property
+    setSubjectAddress(scenario.subject.address);
+    setSubjectBeds(scenario.subject.beds);
+    setSubjectBaths(scenario.subject.baths);
+    setSubjectSqft(scenario.subject.sqft);
+    setSubjectGarage(scenario.subject.garage);
+    setSubjectCondition(scenario.subject.condition);
+    setSubjectAge(scenario.subject.age);
+
+    // Load adjustment values
+    setBedAdjustment(scenario.adjustments.bed);
+    setBathAdjustment(scenario.adjustments.bath);
+    setSqftAdjustment(scenario.adjustments.sqft);
+    setGarageAdjustment(scenario.adjustments.garage);
+    setConditionAdjustment(scenario.adjustments.condition);
+    setAgeAdjustment(scenario.adjustments.age);
+    setDomAdjustment(scenario.adjustments.dom);
+
+    // Load comparables
+    if (scenario.comps[0]) {
+      setComp1Active(scenario.comps[0].active);
+      setComp1Price(scenario.comps[0].price);
+      setComp1Beds(scenario.comps[0].beds);
+      setComp1Baths(scenario.comps[0].baths);
+      setComp1Sqft(scenario.comps[0].sqft);
+      setComp1Garage(scenario.comps[0].garage);
+      setComp1Condition(scenario.comps[0].condition);
+      setComp1Age(scenario.comps[0].age);
+      setComp1DOM(scenario.comps[0].dom);
+    }
+
+    if (scenario.comps[1]) {
+      setComp2Active(scenario.comps[1].active);
+      setComp2Price(scenario.comps[1].price);
+      setComp2Beds(scenario.comps[1].beds);
+      setComp2Baths(scenario.comps[1].baths);
+      setComp2Sqft(scenario.comps[1].sqft);
+      setComp2Garage(scenario.comps[1].garage);
+      setComp2Condition(scenario.comps[1].condition);
+      setComp2Age(scenario.comps[1].age);
+      setComp2DOM(scenario.comps[1].dom);
+    }
+
+    if (scenario.comps[2]) {
+      setComp3Active(scenario.comps[2].active);
+      setComp3Price(scenario.comps[2].price);
+      setComp3Beds(scenario.comps[2].beds);
+      setComp3Baths(scenario.comps[2].baths);
+      setComp3Sqft(scenario.comps[2].sqft);
+      setComp3Garage(scenario.comps[2].garage);
+      setComp3Condition(scenario.comps[2].condition);
+      setComp3Age(scenario.comps[2].age);
+      setComp3DOM(scenario.comps[2].dom);
+    }
+
+    setActiveChallenge(challenge);
+    setShowChallenges(false);
+    setChallengeStartTime(Date.now());
+  };
+
+  const completeChallenge = () => {
+    if (!activeChallenge || !challengeStartTime) return;
+
+    const completionTime = Math.floor((Date.now() - challengeStartTime) / 1000); // seconds
+    const isWithinTarget = activeChallenge.scenario && 
+      avgAdjustedPrice >= activeChallenge.scenario.targetValue.min &&
+      avgAdjustedPrice <= activeChallenge.scenario.targetValue.max;
+
+    if (gamification) {
+      // Award XP
+      gamification.addXP(activeChallenge.xpReward, `Completed: ${activeChallenge.title}`);
+      
+      // Track CMA stats
+      gamification.recordActivity('cma_completed', {
+        challengeId: activeChallenge.id,
+        difficulty: activeChallenge.difficulty,
+        completionTime,
+        avgValue: avgAdjustedPrice,
+        accurate: isWithinTarget,
+        compsUsed: comps.length
+      });
+    }
+
+    setShowChallengeComplete(true);
+    setActiveChallenge(null);
+    setChallengeStartTime(null);
+  };
+
+  const exitChallenge = () => {
+    setActiveChallenge(null);
+    setChallengeStartTime(null);
+    setShowChallengeComplete(false);
   };
 
   return (
@@ -199,7 +313,116 @@ export default function EnhancedCMA() {
         >
           {showDataSources ? '🔍 Hide Data Sources' : '🔍 Data Sources'}
         </button>
+        <button 
+          className="btn-primary cma-help-btn"
+          onClick={() => setShowChallenges(!showChallenges)}
+          title="Practice challenges with XP rewards"
+        >
+          {showChallenges ? '🎮 Hide Challenges' : '🎮 Start Challenge'}
+        </button>
       </div>
+
+      {activeChallenge && (
+        <div className="active-challenge-banner">
+          <div className="challenge-info">
+            <span className="challenge-icon">🎯</span>
+            <div>
+              <strong>{activeChallenge.title}</strong>
+              <span className={`difficulty-badge ${activeChallenge.difficulty}`}>
+                {activeChallenge.difficulty}
+              </span>
+            </div>
+          </div>
+          <div className="challenge-actions">
+            <button className="btn-success" onClick={completeChallenge}>
+              ✅ Complete Challenge ({activeChallenge.xpReward} XP)
+            </button>
+            <button className="btn-secondary" onClick={exitChallenge}>
+              Exit Challenge
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showChallenges && (
+        <div className="cma-challenges-panel">
+          <h3>🎮 CMA Practice Challenges</h3>
+          <p className="challenges-intro">
+            Test your skills with these practice scenarios! Each challenge awards XP and helps you master CMA analysis.
+          </p>
+          <div className="challenges-grid">
+            {cmaChallenges.map(challenge => (
+              <div key={challenge.id} className={`challenge-card ${challenge.difficulty}`}>
+                <div className="challenge-card-header">
+                  <h4>{challenge.title}</h4>
+                  <span className={`difficulty-badge ${challenge.difficulty}`}>
+                    {challenge.difficulty}
+                  </span>
+                </div>
+                <p className="challenge-description">{challenge.description}</p>
+                
+                {challenge.instructions && (
+                  <div className="challenge-instructions">
+                    <strong>📋 Instructions:</strong>
+                    <ul>
+                      {challenge.instructions.slice(0, 3).map((instruction, i) => (
+                        <li key={i}>{instruction}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {challenge.learningPoints && (
+                  <div className="challenge-learning">
+                    <strong>🎓 You'll Learn:</strong>
+                    <ul>
+                      {challenge.learningPoints.slice(0, 2).map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="challenge-card-footer">
+                  <span className="xp-reward">⭐ {challenge.xpReward} XP</span>
+                  <button 
+                    className="btn-primary"
+                    onClick={() => loadChallenge(challenge)}
+                  >
+                    Start Challenge →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {showChallengeComplete && (
+        <div className="challenge-complete-modal">
+          <div className="challenge-complete-content">
+            <div className="success-icon">🎉</div>
+            <h2>Challenge Complete!</h2>
+            <p>Congratulations! You've completed the CMA challenge.</p>
+            <div className="completion-stats">
+              <div className="stat-item">
+                <span className="stat-label">Average Value</span>
+                <span className="stat-value">${avgAdjustedPrice.toLocaleString()}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Comps Used</span>
+                <span className="stat-value">{comps.length}</span>
+              </div>
+            </div>
+            <button 
+              className="btn-primary"
+              onClick={() => setShowChallengeComplete(false)}
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      )}
 
       {showHelp && (
         <div className="cma-help-panel">
