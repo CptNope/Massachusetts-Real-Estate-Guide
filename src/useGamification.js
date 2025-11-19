@@ -13,7 +13,14 @@ const XP_VALUES = {
   STREAK_BONUS_3DAY: 10,
   STREAK_BONUS_7DAY: 25,
   STREAK_BONUS_14DAY: 50,
-  STREAK_BONUS_30DAY: 100
+  STREAK_BONUS_30DAY: 100,
+  GENERATE_CMA: 75,
+  ADD_COMP: 5,
+  MAKE_ADJUSTMENT: 3,
+  GENERATE_PDF: 25,
+  USE_MAP: 10,
+  GENERATE_CHART: 15,
+  SAVE_CMA: 20
 };
 
 // Achievement definitions
@@ -234,6 +241,106 @@ const ACHIEVEMENTS = [
     description: 'Master all 24 guide sections (updated)',
     icon: '🎓',
     requirement: (stats) => stats.masteredSections >= 24
+  },
+  {
+    id: 'first-cma',
+    title: 'First Analysis',
+    description: 'Generate your first CMA report',
+    icon: '📊',
+    requirement: (stats) => stats.cmasGenerated >= 1
+  },
+  {
+    id: 'cma-expert',
+    title: 'CMA Expert',
+    description: 'Generate 10 CMA reports',
+    icon: '📈',
+    requirement: (stats) => stats.cmasGenerated >= 10
+  },
+  {
+    id: 'market-analyst',
+    title: 'Market Analyst',
+    description: 'Generate 25 CMA reports',
+    icon: '💼',
+    requirement: (stats) => stats.cmasGenerated >= 25
+  },
+  {
+    id: 'property-evaluator',
+    title: 'Property Evaluator',
+    description: 'Analyze properties worth over $10M total',
+    icon: '🏘️',
+    requirement: (stats) => stats.totalPropertyValue >= 10000000
+  },
+  {
+    id: 'comp-master',
+    title: 'Comp Master',
+    description: 'Add 50 comparable properties across all CMAs',
+    icon: '🔍',
+    requirement: (stats) => stats.totalCompsAdded >= 50
+  },
+  {
+    id: 'adjustment-pro',
+    title: 'Adjustment Pro',
+    description: 'Make 100 property adjustments',
+    icon: '⚖️',
+    requirement: (stats) => stats.totalAdjustments >= 100
+  },
+  {
+    id: 'report-generator',
+    title: 'Report Generator',
+    description: 'Download 5 professional PDF reports',
+    icon: '📄',
+    requirement: (stats) => stats.pdfReportsGenerated >= 5
+  },
+  {
+    id: 'map-navigator',
+    title: 'Map Navigator',
+    description: 'Use interactive map feature 10 times',
+    icon: '🗺️',
+    requirement: (stats) => stats.mapViewsUsed >= 10
+  },
+  {
+    id: 'chart-visualizer',
+    title: 'Chart Visualizer',
+    description: 'Generate 15 market analysis charts',
+    icon: '📉',
+    requirement: (stats) => stats.chartsGenerated >= 15
+  },
+  {
+    id: 'market-trends-analyst',
+    title: 'Market Trends Analyst',
+    description: 'Analyze market trends for 5 different areas',
+    icon: '📍',
+    requirement: (stats) => stats.uniqueAreasAnalyzed >= 5
+  },
+  {
+    id: 'detailed-analyst',
+    title: 'Detailed Analyst',
+    description: 'Add detailed notes to 10 CMAs',
+    icon: '📝',
+    requirement: (stats) => stats.cmasWithNotes >= 10
+  },
+  {
+    id: 'presentation-ready',
+    title: 'Presentation Ready',
+    description: 'Save 3 CMAs for client presentations',
+    icon: '💾',
+    requirement: (stats) => stats.cmasSaved >= 3
+  },
+  {
+    id: 'advanced-cma-user',
+    title: 'Advanced CMA User',
+    description: 'Use all CMA features (comps, adjustments, maps, charts, PDF)',
+    icon: '🎯',
+    requirement: (stats) => stats.cmasGenerated >= 1 && stats.totalCompsAdded >= 3 && 
+                            stats.totalAdjustments >= 5 && stats.mapViewsUsed >= 1 && 
+                            stats.chartsGenerated >= 1 && stats.pdfReportsGenerated >= 1
+  },
+  {
+    id: 'valuation-master',
+    title: 'Valuation Master',
+    description: 'Generate 5 CMAs with accurate price ranges (within 10%)',
+    icon: '🎖️',
+    requirement: (stats) => stats.accurateCMAs >= 5
   }
 ];
 
@@ -281,7 +388,20 @@ export const useGamification = () => {
       perfectStreakMax: 0,
       perfectStreakCurrent: 0,
       fastestQuizTime: 0,
-      financingMasteryScore: 0
+      financingMasteryScore: 0,
+      // CMA-related stats
+      cmasGenerated: 0,
+      totalPropertyValue: 0,
+      totalCompsAdded: 0,
+      totalAdjustments: 0,
+      pdfReportsGenerated: 0,
+      mapViewsUsed: 0,
+      chartsGenerated: 0,
+      uniqueAreasAnalyzed: 0,
+      cmasWithNotes: 0,
+      cmasSaved: 0,
+      accurateCMAs: 0,
+      analyzedAreas: []
     };
   });
 
@@ -406,6 +526,61 @@ export const useGamification = () => {
       case 'ADD_NOTE':
         xpAmount = XP_VALUES.STUDY_SESSION;
         updates.notesAdded = stats.notesAdded + 1;
+        break;
+
+      case 'GENERATE_CMA':
+        xpAmount = XP_VALUES.GENERATE_CMA;
+        updates.cmasGenerated = stats.cmasGenerated + 1;
+        
+        if (data.propertyValue) {
+          updates.totalPropertyValue = stats.totalPropertyValue + data.propertyValue;
+        }
+        
+        if (data.hasNotes) {
+          updates.cmasWithNotes = stats.cmasWithNotes + 1;
+        }
+        
+        if (data.isAccurate) {
+          updates.accurateCMAs = stats.accurateCMAs + 1;
+        }
+        
+        if (data.area) {
+          const areas = stats.analyzedAreas || [];
+          if (!areas.includes(data.area)) {
+            updates.analyzedAreas = [...areas, data.area];
+            updates.uniqueAreasAnalyzed = (stats.uniqueAreasAnalyzed || 0) + 1;
+          }
+        }
+        break;
+
+      case 'ADD_COMP':
+        xpAmount = XP_VALUES.ADD_COMP;
+        updates.totalCompsAdded = stats.totalCompsAdded + 1;
+        break;
+
+      case 'MAKE_ADJUSTMENT':
+        xpAmount = XP_VALUES.MAKE_ADJUSTMENT;
+        updates.totalAdjustments = stats.totalAdjustments + 1;
+        break;
+
+      case 'GENERATE_PDF':
+        xpAmount = XP_VALUES.GENERATE_PDF;
+        updates.pdfReportsGenerated = stats.pdfReportsGenerated + 1;
+        break;
+
+      case 'USE_MAP':
+        xpAmount = XP_VALUES.USE_MAP;
+        updates.mapViewsUsed = stats.mapViewsUsed + 1;
+        break;
+
+      case 'GENERATE_CHART':
+        xpAmount = XP_VALUES.GENERATE_CHART;
+        updates.chartsGenerated = stats.chartsGenerated + 1;
+        break;
+
+      case 'SAVE_CMA':
+        xpAmount = XP_VALUES.SAVE_CMA;
+        updates.cmasSaved = stats.cmasSaved + 1;
         break;
 
       default:
