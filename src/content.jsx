@@ -5800,6 +5800,54 @@ Always understand your agent’s split and cap – it influences incentives.`}
           Fannie Mae / Freddie Mac conforming loans.</p>
         </div>
 
+        <div className="important-note">
+          <h4>📝 Additional Mortgage Clauses</h4>
+          
+          <h5>Assignment Clause:</h5>
+          <p><strong>Definition:</strong> Gives lender right to assign mortgage & note to a purchaser (typically 
+          sold on the Secondary Market) to Fannie Mae or Freddie Mac in order to free up cash for giving future loans.</p>
+          <p>In most assignments, the borrower is never notified and continues to make payments to the original 
+          lender who services the note by collecting payments, handling payouts, releases and delinquencies.</p>
+          
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>🏦 <strong>Secondary Market:</strong> Most mortgages are sold after origination</li>
+            <li>💰 <strong>Liquidity:</strong> Allows lenders to make more loans</li>
+            <li>📧 <strong>Same Servicer:</strong> You often keep paying the same company</li>
+            <li>📄 <strong>Terms Unchanged:</strong> Your loan terms remain the same</li>
+          </ul>
+
+          <h5>Estoppel Clause:</h5>
+          <p><strong>Definition:</strong> Bars or prevents borrower from challenging the terms of the mortgage 
+          amount due on principle & interest if mortgage & note are assigned to a 3rd party.</p>
+          <p>Some mortgages contain an additional clause requiring the borrower to sign an Estoppel Certificate 
+          when the mortgage is assigned.</p>
+          <p className="info"><strong>A/k/a "Certificate of No Defense"</strong> - You agree not to dispute 
+          the debt if the loan is sold.</p>
+          
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>⚖️ <strong>Waives Defense:</strong> Can't later claim loan terms were different</li>
+            <li>🔒 <strong>Locked In:</strong> Protects the new lender/investor</li>
+            <li>📋 <strong>May Require Signature:</strong> Some require Estoppel Certificate</li>
+            <li>💼 <strong>Commercial Common:</strong> More common in commercial real estate</li>
+          </ul>
+
+          <h5>Partial Release Clause:</h5>
+          <p><strong>Definition:</strong> Allows partial release of mortgagor to be released from a portion of 
+          the security without releasing entire mortgage.</p>
+          <p><strong>Example:</strong> A lender partially releases a mortgage on a lot in a subdivision to allow 
+          developer to build a home on lot and sell it to a buyer.</p>
+          
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>🏗️ <strong>Development:</strong> Critical for subdivisions and land development</li>
+            <li>📊 <strong>Phased Release:</strong> Sell individual lots while keeping blanket mortgage</li>
+            <li>💵 <strong>Payment Required:</strong> Usually requires payment to release each parcel</li>
+            <li>🔑 <strong>Developer Tool:</strong> Allows progressive sale of development parcels</li>
+          </ul>
+        </div>
+
         <h4>Key Documents Seller Signs:</h4>
         <ul>
           <li><strong>Deed:</strong> Transfers ownership to buyer (recorded)</li>
@@ -5817,7 +5865,67 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <p><strong>Bargain and Sale Deed:</strong> Middle ground, some warranties but not full</p>
         </div>
 
-        <h3>24.4 Closing Disclosure (CD) - Formerly HUD-1</h3>
+        <h3>24.4 Release of Lien - Defeasance Clause & Recording</h3>
+        
+        <div className="important-note">
+          <h4>Defeasance Clause:</h4>
+          <p><strong>Definition:</strong> Defeats or cancels upon full repayment of debt.</p>
+          <p>Mortgagee is required to execute a <strong>"satisfaction of mortgage"</strong> when the note is 
+          paid in full. This document returns all interest in the real estate that was transferred to the lender 
+          by recording the original mortgage document.</p>
+          
+          <h5>Why This Matters:</h5>
+          <ul>
+            <li>🔓 <strong>Clear Title:</strong> Removes the lender's claim from your property</li>
+            <li>📄 <strong>Proves Ownership:</strong> Shows you own the property free and clear</li>
+            <li>💼 <strong>Future Transactions:</strong> Required for refinancing or selling</li>
+            <li>⚖️ <strong>Legal Requirement:</strong> Lender must provide this document</li>
+          </ul>
+        </div>
+
+        <div className="recording-info">
+          <h4>RECORDING - Registry of Deeds:</h4>
+          <p className="highlight">
+            <strong>Must be recorded at the county Registry of Deeds.</strong> Recordation gives 
+            <strong> "Constructive Notice"</strong> to the public of the borrower's obligations and 
+            establishes a priority of lien.
+          </p>
+          
+          <h5>Recording Systems in Massachusetts:</h5>
+          
+          <h6>1. Registry System (Most Common):</h6>
+          <ul>
+            <li><strong>How it works:</strong> Documents recorded chronologically at Registry of Deeds</li>
+            <li><strong>Title search:</strong> Must search all prior recorded documents</li>
+            <li><strong>Priority:</strong> First to record has priority</li>
+            <li><strong>Most MA counties:</strong> Use this system</li>
+          </ul>
+
+          <h6>2. Torrens System (Registered Land):</h6>
+          <ul>
+            <li><strong>How it works:</strong> Certificate of title system (land registration)</li>
+            <li><strong>If registered land:</strong> Notice of the lien must be entered on the original 
+            certificate of title on file at registrar's office</li>
+            <li><strong>Benefit:</strong> State guarantees title, easier to verify ownership</li>
+            <li><strong>Rare:</strong> Only some properties in MA (mostly older Boston/Cambridge properties)</li>
+            <li><strong>Initial cost:</strong> Expensive to register, but cleaner title afterwards</li>
+          </ul>
+
+          <h5>Constructive Notice Explained:</h5>
+          <p><strong>Constructive Notice:</strong> Legal presumption that everyone has knowledge of recorded 
+          documents, whether they actually looked or not.</p>
+          <ul>
+            <li>📋 <strong>Public Record:</strong> Anyone can search and find your mortgage</li>
+            <li>🏦 <strong>Lien Priority:</strong> First recorded = first priority (if multiple liens)</li>
+            <li>⚠️ <strong>Buyer Beware:</strong> Buyers are assumed to know about recorded liens</li>
+            <li>🔍 <strong>Title Search Purpose:</strong> Finds all recorded encumbrances</li>
+          </ul>
+
+          <h5>Recording Fees:</h5>
+          <p>Typically $100-$300 depending on document type and county. Usually paid at closing.</p>
+        </div>
+
+        <h3>24.5 Closing Disclosure (CD) - Formerly HUD-1</h3>
         <p>
           The Closing Disclosure replaced the HUD-1 Settlement Statement in 2015 under TRID rules. 
           It's a 5-page standardized form showing all costs in the transaction.
