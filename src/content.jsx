@@ -5295,7 +5295,184 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>❌ Tougher approval for self-employed</li>
         </ul>
 
-        <h3>23.2 FHA Loans</h3>
+        <h3>23.2 Adjustable Rate Mortgage (ARM)</h3>
+        <p className="highlight">
+          Originates with 1 rate of interest, with the rate fluctuating UP or DOWN during the term of the 
+          loan based on economic indicators.
+        </p>
+
+        <p><strong>Key Concept:</strong> Because the interest rate may change, so may the borrower's mortgage 
+        payment. Details of how or when the rate of interest will or may change are detailed in the note.</p>
+
+        <h4>ARM Components Explained:</h4>
+
+        <div className="arm-component">
+          <h5>📊 Index:</h5>
+          <p>Rate is tied to financial indicator, such as <strong>cost-of-funds index</strong> for federally 
+          chartered lenders. Many indexes are tied to <strong>U.S. Treasury Securities</strong>.</p>
+          <ul>
+            <li>Common indexes: SOFR, Treasury rates, Cost of Funds Index (COFI)</li>
+            <li>Index moves up/down with market conditions</li>
+            <li>Beyond borrower's and lender's control</li>
+          </ul>
+        </div>
+
+        <div className="arm-component">
+          <h5>➕ Margin:</h5>
+          <p><strong>Interest rate = Index rate + a premium (margin)</strong></p>
+          <p>Margin represents lender's cost of doing business.</p>
+          <p className="example"><strong>Example:</strong> If index is 1.5% and Margin is 2% over index, 
+          the total rate would be 3.5%.</p>
+          <ul>
+            <li><strong>Margin is fixed:</strong> Doesn't change over life of loan</li>
+            <li><strong>Typical margin:</strong> 2-3%</li>
+            <li><strong>Your rate:</strong> Index + Margin = Total interest rate</li>
+          </ul>
+        </div>
+
+        <div className="arm-component">
+          <h5>🔒 Interest Rate Caps:</h5>
+          <p>Limits the amount a rate can change at 1 time (periodic rate cap) and also limits the total 
+          increase over the life of the loan (aggregate rate cap).</p>
+          
+          <p><strong>Periodic Rate Cap:</strong> Maximum rate change per adjustment period</p>
+          <ul>
+            <li>Typically 2% per adjustment</li>
+            <li>Example: Rate is 4%, can only go up to 6% or down to 2% at next adjustment</li>
+          </ul>
+
+          <p><strong>Lifetime Cap (Aggregate):</strong> Maximum rate over life of loan</p>
+          <ul>
+            <li>Typically 5-6% above starting rate</li>
+            <li>Example: Start at 3%, lifetime cap of 6% = maximum rate of 9%</li>
+          </ul>
+
+          <p className="info">ARM's generally carry a <strong>2% periodic rate cap</strong> (amount rate can 
+          jump or drop at one time) & <strong>6% over life of the loan</strong>.</p>
+        </div>
+
+        <div className="arm-component">
+          <h5>💰 Payment Caps:</h5>
+          <p>Mortgagor is protected against possibility of unaffordable individual payments by the payment cap, 
+          which sets a maximum payment amount.</p>
+          
+          <p className="warning"><strong>⚠️ Negative Amortization Risk:</strong> A rate increase could result in a 
+          <strong> negative amortization</strong>. (Meaning - the principal amount may not decrease if payment cap 
+          is reached)</p>
+
+          <h6>How Negative Amortization Works:</h6>
+          <ul>
+            <li><strong>Rate increases:</strong> Should make payment $2,000</li>
+            <li><strong>Payment cap:</strong> Limits payment to $1,800</li>
+            <li><strong>Shortfall:</strong> $200 per month not covered</li>
+            <li><strong>Result:</strong> $200 added to principal balance each month</li>
+            <li><strong>Your loan grows:</strong> Owe more than you borrowed!</li>
+          </ul>
+        </div>
+
+        <div className="arm-component">
+          <h5>📅 Adjustment Period:</h5>
+          <p><strong>Definition:</strong> How often can the rate adjust. Common periods are monthly, quarterly 
+          and annually.</p>
+          
+          <h6>Common ARM Types:</h6>
+          <ul>
+            <li><strong>5/1 ARM:</strong> Fixed for 5 years, then adjusts every 1 year thereafter</li>
+            <li><strong>7/1 ARM:</strong> Fixed for 7 years, then adjusts annually</li>
+            <li><strong>10/1 ARM:</strong> Fixed for 10 years, then adjusts annually</li>
+            <li><strong>5/6 ARM:</strong> Fixed for 5 years, then adjusts every 6 months</li>
+            <li><strong>3/1 ARM:</strong> Fixed for 3 years, then adjusts annually</li>
+          </ul>
+
+          <p className="example"><strong>Example: 5/1 ARM at 3%</strong></p>
+          <ul>
+            <li>Years 1-5: Fixed at 3%</li>
+            <li>Year 6: Could adjust to 5% (2% cap)</li>
+            <li>Year 7: Could adjust to 7% (2% cap)</li>
+            <li>Year 8: Could adjust to 9% (2% cap, hits 6% lifetime cap)</li>
+            <li>Thereafter: Can't go above 9% (3% start + 6% lifetime cap)</li>
+          </ul>
+        </div>
+
+        <h4>Advantages of ARMs:</h4>
+        <ul>
+          <li>✅ <strong>Lower Initial Rate:</strong> Start 0.5-1% below fixed rates</li>
+          <li>✅ <strong>Lower Initial Payment:</strong> More affordable at first</li>
+          <li>✅ <strong>Rate May Decrease:</strong> If market rates fall, your rate falls</li>
+          <li>✅ <strong>Good for Short-Term:</strong> If selling/refinancing within fixed period</li>
+          <li>✅ <strong>Easier Qualification:</strong> Lower start rate = lower DTI</li>
+        </ul>
+
+        <h4>Disadvantages of ARMs:</h4>
+        <ul>
+          <li>❌ <strong>Uncertainty:</strong> Don't know future payment amounts</li>
+          <li>❌ <strong>Payment Shock:</strong> Payments can increase significantly</li>
+          <li>❌ <strong>Negative Amortization:</strong> May owe more than borrowed</li>
+          <li>❌ <strong>Harder to Budget:</strong> Variable payments complicate planning</li>
+          <li>❌ <strong>Risk if Rates Rise:</strong> Could become unaffordable</li>
+        </ul>
+
+        <h4>When ARMs Make Sense:</h4>
+        <ul>
+          <li>📈 <strong>Expect Income Increase:</strong> Can afford higher payments later</li>
+          <li>🏠 <strong>Planning to Move:</strong> Within 5-7 years (before adjustments)</li>
+          <li>📉 <strong>Rates Expected to Fall:</strong> Benefit from rate decreases</li>
+          <li>💼 <strong>Short-Term Ownership:</strong> Not your forever home</li>
+          <li>🔄 <strong>Plan to Refinance:</strong> Before adjustment period begins</li>
+        </ul>
+
+        <h4>When ARMs DON'T Make Sense:</h4>
+        <ul>
+          <li>🏡 <strong>Forever Home:</strong> Planning to stay 10+ years</li>
+          <li>💰 <strong>Fixed Income:</strong> Retirees, can't afford increases</li>
+          <li>📊 <strong>Tight Budget:</strong> Can barely afford current payment</li>
+          <li>😰 <strong>Risk Averse:</strong> Need payment certainty</li>
+          <li>📈 <strong>Rates Low:</strong> When fixed rates are already low, lock in!</li>
+        </ul>
+
+        <div className="comparison">
+          <h4>ARM vs. Fixed Rate Comparison:</h4>
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>ARM</th>
+              <th>Fixed Rate</th>
+            </tr>
+            <tr>
+              <td>Initial Rate</td>
+              <td>Lower (3%)</td>
+              <td>Higher (4%)</td>
+            </tr>
+            <tr>
+              <td>Rate Changes</td>
+              <td>Yes, periodically</td>
+              <td>Never</td>
+            </tr>
+            <tr>
+              <td>Payment Certainty</td>
+              <td>Low</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Risk Level</td>
+              <td>Higher</td>
+              <td>Lower</td>
+            </tr>
+            <tr>
+              <td>Best For</td>
+              <td>Short-term, expect income growth</td>
+              <td>Long-term, stable income</td>
+            </tr>
+          </table>
+        </div>
+
+        <p className="highlight">
+          <strong>Agent Tip:</strong> Always ensure buyers understand ARM risks. Don't just qualify at start rate - 
+          verify they can afford payments at maximum rate (after caps apply). ARMs caused many foreclosures in 
+          2008 crisis when rates adjusted upward and payments became unaffordable.
+        </p>
+
+        <h3>23.3 FHA Loans</h3>
         <p>
           Federal Housing Administration insured loans. Popular for first-time buyers with lower down payment.
         </p>
@@ -5335,7 +5512,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>❌ Longer closing times (more documentation)</li>
         </ul>
 
-        <h3>23.3 VA Loans</h3>
+        <h3>23.4 VA Loans</h3>
         <p>
           Department of Veterans Affairs guaranteed loans for eligible military members, veterans, and spouses.
         </p>
@@ -5378,7 +5555,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>❌ VA appraisal required (can be conservative)</li>
         </ul>
 
-        <h3>23.4 USDA Loans</h3>
+        <h3>23.5 USDA Loans</h3>
         <p>
           U.S. Department of Agriculture loans for rural and suburban properties. Zero down payment option.
         </p>
@@ -5408,7 +5585,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>❌ Longer processing times</li>
         </ul>
 
-        <h3>23.5 Jumbo Loans</h3>
+        <h3>23.6 Jumbo Loans</h3>
         <p>
           Loans exceeding conventional conforming limits. Common in high-cost Massachusetts markets.
         </p>
@@ -5439,7 +5616,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li>❌ Fewer lenders offer jumbo loans</li>
         </ul>
 
-        <h3>23.6 Alternative Financing</h3>
+        <h3>23.7 Alternative Financing</h3>
         
         <h4>Seller Financing:</h4>
         <ul>
@@ -5465,7 +5642,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li><strong>Terms:</strong> 6-18 months, 8-15% interest, high fees</li>
         </ul>
 
-        <h3>23.7 Understanding Loan Amortization</h3>
+        <h3>23.8 Understanding Loan Amortization</h3>
         <p className="highlight">
           Amortization is the process of paying off a loan through regular payments over time. Understanding 
           how your payment is split between principal and interest is crucial for buyers.
@@ -5547,7 +5724,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <li><strong>Round Up Payments:</strong> $2,528 → $2,600 = big difference over time</li>
         </ul>
 
-        <h3>23.8 Pre-Qualification vs. Pre-Approval</h3>
+        <h3>23.9 Pre-Qualification vs. Pre-Approval</h3>
         <div className="comparison">
           <h4>Pre-Qualification (Weak):</h4>
           <ul>
@@ -5568,7 +5745,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>23.9 Mortgage Approval Process</h3>
+        <h3>23.10 Mortgage Approval Process</h3>
         <div className="process-timeline">
           <ol>
             <li><strong>Pre-Approval:</strong> Before house hunting (1-3 days)</li>
@@ -5581,7 +5758,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ol>
         </div>
 
-        <h3>23.10 Common Financing Issues & Solutions</h3>
+        <h3>23.11 Common Financing Issues & Solutions</h3>
         <div className="issues-solutions">
           <h4>Issue: Low Appraisal</h4>
           <ul>
@@ -5637,7 +5814,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
           </ul>
         </div>
 
-        <h3>23.11 Agent's Role in Financing</h3>
+        <h3>23.12 Agent's Role in Financing</h3>
         <div className="agent-role">
           <h4>What Agents SHOULD Do:</h4>
           <ul>
