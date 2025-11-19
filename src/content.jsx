@@ -6180,11 +6180,229 @@ Always understand your agent’s split and cap – it influences incentives.`}
           to Fed news and explain rate impacts in simple terms clients can understand.
         </p>
 
+        <h3>23.15 Lenders in the Primary Market</h3>
+        <p className="highlight">
+          <strong>Primary Market:</strong> Where loans are originated directly between borrowers and lenders. 
+          Understanding the different types of lenders helps you guide clients to the right financing source.
+        </p>
+
+        <div className="lender-types">
+          <h4>1️⃣ Savings Associations (Thrifts)</h4>
+          <p><strong>What they do:</strong> Specialize in long-term residential loans which are viewed as secured 
+          investments for the benefit of their depositors.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Focus:</strong> Long-term residential mortgages</li>
+            <li><strong>Products:</strong> Primarily provide conventional loans & FHA & VA Loans</li>
+            <li><strong>Security:</strong> Loans secured by real estate</li>
+            <li><strong>Purpose:</strong> Benefit depositors through safe, secured investments</li>
+            <li><strong>Stability:</strong> Conservative lending approach</li>
+          </ul>
+
+          <h4>2️⃣ Mutual Savings Banks</h4>
+          <p><strong>What they do:</strong> Offer limited checking account privileges, primarily investing in loans 
+          secured by income property as well as residential real estate.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Ownership:</strong> Don't issue stock and are mutually owned by their investors</li>
+            <li><strong>Products:</strong> Prefer to originate FHA-insured or VA-guaranteed loans</li>
+            <li><strong>Investment Focus:</strong> Income-producing properties + residential</li>
+            <li><strong>Structure:</strong> Member-owned (like credit unions)</li>
+            <li><strong>Services:</strong> Limited checking, but strong lending</li>
+          </ul>
+
+          <h4>3️⃣ Commercial Banks</h4>
+          <p><strong>What they do:</strong> Specialize in conventional, FHA & VA loans. Home Improvement loans, 
+          short-term construction loans, etc.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Full Service:</strong> Complete banking services (checking, savings, business)</li>
+            <li><strong>Loan Types:</strong> Conventional, FHA, VA mortgages</li>
+            <li><strong>Construction Loans:</strong> Short-term construction financing</li>
+            <li><strong>Home Improvement:</strong> Renovation and improvement loans</li>
+            <li><strong>Business Focus:</strong> Also serve commercial/business needs</li>
+            <li><strong>Flexibility:</strong> Widest range of loan products</li>
+          </ul>
+
+          <h4>4️⃣ Insurance Companies</h4>
+          <p><strong>What they do:</strong> Invest the money paid by their policyholders premiums. Some money is held 
+          for paying claims & cover operating expenses, but more is invested in profit-earning enterprises such as 
+          real estate loans.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Source of Funds:</strong> Policyholder premiums</li>
+            <li><strong>Investment Strategy:</strong> Long-term real estate investments</li>
+            <li><strong>Loan Types:</strong> Large commercial mortgages, apartment buildings</li>
+            <li><strong>Less Common:</strong> Rarely do single-family residential</li>
+            <li><strong>Large Scale:</strong> Prefer bigger loan amounts</li>
+            <li><strong>Conservative:</strong> Secure, long-term investments</li>
+          </ul>
+
+          <h4>5️⃣ Mortgage Banking Companies (Direct Lenders)</h4>
+          <p><strong>What they do:</strong> Use their own money to fund loans which are usually sold later to investors. 
+          Mortgage company receives a fee for the servicing of the loan.</p>
+          
+          <h5>How They Work:</h5>
+          <ul>
+            <li><strong>Origination:</strong> Use own capital to fund loans</li>
+            <li><strong>Secondary Market:</strong> Sell loans to investors (Fannie Mae, Freddie Mac)</li>
+            <li><strong>Servicing:</strong> Often retain servicing rights for fee income</li>
+            <li><strong>Example:</strong> Quicken Loans, loanDepot, Guaranteed Rate</li>
+            <li><strong>Volume Focus:</strong> Originate high volume, sell to free up capital</li>
+          </ul>
+
+          <h5>Revenue Sources:</h5>
+          <ul>
+            <li>💰 <strong>Origination Fees:</strong> Points and fees at closing</li>
+            <li>💰 <strong>Servicing Fees:</strong> Monthly fee (typically 0.25-0.5% annually)</li>
+            <li>💰 <strong>Sale Premium:</strong> Profit from selling loans above par</li>
+          </ul>
+
+          <h4>6️⃣ Mortgage Brokers (NOT Lenders)</h4>
+          <p className="warning"><strong>⚠️ IMPORTANT:</strong> Mortgage brokers are NOT lenders - they are licensed 
+          intermediaries bringing borrowers & lenders together.</p>
+          
+          <h5>How Brokers Work:</h5>
+          <ul>
+            <li><strong>Role:</strong> Intermediary connecting borrowers to lenders</li>
+            <li><strong>No Funds:</strong> Do NOT use their own money</li>
+            <li><strong>Access:</strong> Work with multiple lenders (wholesale rates)</li>
+            <li><strong>Compensation:</strong> Paid commission once loan is sold to lender or investor</li>
+            <li><strong>No Servicing:</strong> DO NOT service the loans after closing</li>
+            <li><strong>Example:</strong> Local mortgage broker shops</li>
+          </ul>
+
+          <h5>Broker vs. Banker:</h5>
+          <div className="comparison">
+            <p><strong>Mortgage Broker:</strong></p>
+            <ul>
+              <li>Works with multiple lenders</li>
+              <li>Shops for best rate/terms</li>
+              <li>Paid by lender (commission)</li>
+              <li>Doesn't fund loans</li>
+              <li>Can offer more options</li>
+            </ul>
+
+            <p><strong>Mortgage Banker:</strong></p>
+            <ul>
+              <li>Uses own funds</li>
+              <li>One set of products</li>
+              <li>Paid by fees + servicing</li>
+              <li>Funds loans directly</li>
+              <li>May have better rates</li>
+            </ul>
+          </div>
+
+          <h4>7️⃣ Credit Unions</h4>
+          <p><strong>What they do:</strong> Members place money in savings accounts. C.U.'s Offer conventional, 
+          FHA & VA loans.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Membership:</strong> Must be member to get loan (job, location, affiliation)</li>
+            <li><strong>Non-Profit:</strong> Member-owned, not-for-profit</li>
+            <li><strong>Lower Rates:</strong> Often offer best rates (no profit motive)</li>
+            <li><strong>Loan Products:</strong> Conventional, FHA, VA</li>
+            <li><strong>Personalized:</strong> More flexible underwriting</li>
+            <li><strong>Service:</strong> Better customer service typically</li>
+          </ul>
+
+          <h4>8️⃣ Pension Funds</h4>
+          <p><strong>What they do:</strong> Invest in low-risk real estate with a potential of higher income.</p>
+          
+          <h5>Key Characteristics:</h5>
+          <ul>
+            <li><strong>Purpose:</strong> Grow retirement funds for members</li>
+            <li><strong>Investment:</strong> Large commercial real estate loans</li>
+            <li><strong>Risk Profile:</strong> Low-risk, stable returns</li>
+            <li><strong>Rare for Residential:</strong> Focus on commercial/multi-family</li>
+            <li><strong>Long-Term:</strong> Matches pension payout timelines</li>
+          </ul>
+
+          <h4>9️⃣ Other Sources of Funds</h4>
+          <p><strong>Alternative Lenders:</strong> Syndications, educational institutions, hospitals, charitable 
+          foundations, etc. invest.</p>
+          
+          <h5>Examples:</h5>
+          <ul>
+            <li><strong>Syndications:</strong> Groups of investors pooling funds</li>
+            <li><strong>Universities:</strong> Endowment investments in real estate</li>
+            <li><strong>Hospitals:</strong> Investment of operating reserves</li>
+            <li><strong>Foundations:</strong> Charitable foundation investments</li>
+            <li><strong>Family Offices:</strong> High-net-worth family investment</li>
+          </ul>
+
+          <h4>🔟 Loan Servicing</h4>
+          <p><strong>What it is:</strong> Lenders who sell of loan tend to hold onto the servicing to make 
+          additional money.</p>
+          
+          <h5>What Servicers Do:</h5>
+          <ul>
+            <li>📧 <strong>Collecting Monthly Payments:</strong> Process borrower payments</li>
+            <li>🏦 <strong>Holding Insurance and Tax Escrows:</strong> Manage escrow accounts</li>
+            <li>💰 <strong>Making Escrow Payments:</strong> Pay property taxes and insurance</li>
+            <li>📮 <strong>Sending Out Notices:</strong> Annual statements, tax forms</li>
+            <li>📞 <strong>Customer Service:</strong> Answer borrower questions</li>
+            <li>⚠️ <strong>Default Management:</strong> Work with delinquent borrowers</li>
+          </ul>
+
+          <h5>Why Servicing is Valuable:</h5>
+          <ul>
+            <li><strong>Steady Income:</strong> 0.25-0.5% of loan balance annually</li>
+            <li><strong>Long-Term:</strong> Income for life of loan (30 years)</li>
+            <li><strong>Asset:</strong> Servicing rights can be bought/sold</li>
+            <li><strong>Float:</strong> Earn interest on escrow funds</li>
+          </ul>
+
+          <p className="example"><strong>Example:</strong> $300K loan serviced at 0.375% = $1,125/year × 30 years = 
+          $33,750 total servicing income from one loan.</p>
+        </div>
+
+        <h4>Primary Market vs. Secondary Market:</h4>
+        <div className="comparison">
+          <h5>Primary Market (Loan Origination):</h5>
+          <ul>
+            <li>Where loans are created/originated</li>
+            <li>Borrower works directly with lender</li>
+            <li>Examples: Banks, credit unions, mortgage companies</li>
+            <li>Lender underwrites and funds loan</li>
+          </ul>
+
+          <h5>Secondary Market (Loan Trading):</h5>
+          <ul>
+            <li>Where existing loans are bought/sold</li>
+            <li>No borrower involvement</li>
+            <li>Examples: Fannie Mae, Freddie Mac, private investors</li>
+            <li>Provides liquidity to primary market</li>
+          </ul>
+        </div>
+
+        <h4>Why This Matters for Agents:</h4>
+        <ul>
+          <li>🏦 <strong>Lender Relationships:</strong> Build network with various lender types</li>
+          <li>💡 <strong>Client Guidance:</strong> Recommend appropriate lender for situation</li>
+          <li>⚡ <strong>Speed:</strong> Credit unions may be slower, mortgage bankers faster</li>
+          <li>💰 <strong>Rates:</strong> Credit unions often have best rates, brokers shop around</li>
+          <li>📋 <strong>Underwriting:</strong> Different lenders have different flexibility</li>
+          <li>🎯 <strong>Specialization:</strong> Some focus on FHA/VA, others conventional</li>
+        </ul>
+
+        <p className="highlight">
+          <strong>Agent Tip:</strong> Develop relationships with 2-3 lenders from different categories (commercial 
+          bank, credit union, mortgage banker, broker). This gives clients options and you backup when one falls 
+          through. Know each lender's strengths: speed, rates, difficult loans, jumbo loans, etc.
+        </p>
+
         <p className="highlight">
           <strong>Remember:</strong> Understanding financing helps you guide buyers realistically and spot 
           potential issues early. Always defer specific loan questions to lenders. Strong pre-approval = 
           stronger offer. Financing contingencies protect buyers but need clear deadlines. Know Dodd-Frank 
-          protections to help clients in distress. Understanding the Fed helps you anticipate market shifts.
+          protections to help clients in distress. Understanding the Fed helps you anticipate market shifts. 
+          Know your local lenders and their specialties.
         </p>
       </>
     )
