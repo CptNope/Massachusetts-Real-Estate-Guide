@@ -4356,6 +4356,210 @@ h3[id], h4[id] {
   }
 }
 
+/* CMA Help and Documentation Styles */
+.cma-toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.cma-help-btn {
+  flex: 1;
+  max-width: 200px;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+.cma-help-panel,
+.cma-data-sources-panel {
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cma-help-panel h3,
+.cma-data-sources-panel h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.75rem;
+}
+
+.help-content,
+.data-sources-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.help-section,
+.data-source {
+  padding: 1.25rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--accent);
+}
+
+.help-section h4,
+.data-source h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.help-section p,
+.data-source p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.help-section ul,
+.data-source ul,
+.data-collection-steps ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.help-section li,
+.data-source li,
+.data-collection-steps li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.help-best-practices {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+}
+
+.help-best-practices h4 {
+  margin: 0 0 1rem 0;
+  color: #10b981;
+}
+
+.help-best-practices ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-best-practices li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.help-best-practices li:last-child {
+  border-bottom: none;
+}
+
+.data-collection-steps {
+  padding: 1.5rem;
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+  border: 2px solid var(--accent);
+}
+
+.data-collection-steps h4 {
+  margin: 0 0 1rem 0;
+  color: var(--accent);
+}
+
+.data-collection-steps ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+}
+
+.data-collection-steps li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 1rem 0;
+}
+
+.data-collection-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.api-note {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+  border: 2px solid #3b82f6;
+  border-radius: 0.75rem;
+  font-style: italic;
+}
+
+.api-note p {
+  margin: 0;
+}
+
+.api-note strong {
+  color: #3b82f6;
+}
+
+/* Mobile responsive for help panels */
+@media (max-width: 768px) {
+  .cma-toolbar {
+    flex-direction: column;
+  }
+  
+  .cma-help-btn {
+    max-width: none;
+  }
+  
+  .cma-help-panel,
+  .cma-data-sources-panel {
+    padding: 1.25rem;
+  }
+  
+  .help-section,
+  .data-source,
+  .data-collection-steps {
+    padding: 1rem;
+  }
+}
+
+/* Print styles - hide help panels */
+@media print {
+  .cma-toolbar,
+  .cma-help-panel,
+  .cma-data-sources-panel {
+    display: none !important;
+  }
+}
+
 /* Closing Cost Calculator Styles */
 .view-toggle {
   display: flex;

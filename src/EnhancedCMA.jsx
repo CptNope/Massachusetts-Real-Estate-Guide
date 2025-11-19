@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 export default function EnhancedCMA() {
+  const [showHelp, setShowHelp] = useState(false);
+  const [showDataSources, setShowDataSources] = useState(false);
+  
   // Subject Property
   const [subjectBeds, setSubjectBeds] = useState('3');
   const [subjectBaths, setSubjectBaths] = useState('2');
@@ -180,6 +183,112 @@ export default function EnhancedCMA() {
         <p>Subject Property: {subjectAddress || 'Not specified'}</p>
         <p>Date: {new Date().toLocaleDateString()}</p>
       </div>
+
+      <div className="cma-toolbar">
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowHelp(!showHelp)}
+          title="How to use CMA Calculator"
+        >
+          {showHelp ? '📖 Hide Guide' : '📖 How to Use'}
+        </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowDataSources(!showDataSources)}
+          title="Where to find property data"
+        >
+          {showDataSources ? '🔍 Hide Data Sources' : '🔍 Data Sources'}
+        </button>
+      </div>
+
+      {showHelp && (
+        <div className="cma-help-panel">
+          <h3>📚 How to Use the CMA Calculator</h3>
+          <div className="help-content">
+            <div className="help-section">
+              <h4>Step 1: Enter Subject Property Details</h4>
+              <p>Input the property you're valuing: address, beds, baths, square footage, garage, condition, and age.</p>
+            </div>
+            <div className="help-section">
+              <h4>Step 2: Set Adjustment Values</h4>
+              <p>These represent market value per feature. Massachusetts defaults:</p>
+              <ul>
+                <li>Bedroom: $20,000 | Bathroom: $15,000 | Sq Ft: $100</li>
+                <li>Garage: $15,000 | Condition Level: $10,000 | Age: $2,000/yr</li>
+                <li>Adjust based on your local market (urban areas higher)</li>
+              </ul>
+            </div>
+            <div className="help-section">
+              <h4>Step 3: Enter 3 Comparable Sales</h4>
+              <p>Find recent sales (last 3-6 months) within 1 mile. Toggle checkboxes to enable/disable comps.</p>
+            </div>
+            <div className="help-section">
+              <h4>Step 4: Analyze Results</h4>
+              <p>Review adjusted values, average, range, and recommended listing price (conservative to aggressive).</p>
+            </div>
+            <div className="help-best-practices">
+              <h4>🌟 Best Practices</h4>
+              <ul>
+                <li>✅ Use 3-6 recent sales (last 3-6 months)</li>
+                <li>✅ Choose similar properties within 1 mile</li>
+                <li>✅ Verify sale prices through official records</li>
+                <li>❌ Don't mix property types or use foreclosures with standard sales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showDataSources && (
+        <div className="cma-data-sources-panel">
+          <h3>🔍 Where to Find Property Data</h3>
+          <div className="data-sources-content">
+            <div className="data-source">
+              <h4>🏛️ FREE: Local Assessor Databases</h4>
+              <p><strong>Access:</strong> Google "[City Name] MA assessor database"</p>
+              <p><strong>Data:</strong> Property characteristics, assessed values, recent sales, tax records</p>
+              <p><strong>Best For:</strong> Verifying property features and finding recent sales</p>
+            </div>
+            <div className="data-source">
+              <h4>📜 FREE: Registry of Deeds (by county)</h4>
+              <p><strong>Access:</strong> Search "[County] Registry of Deeds Massachusetts"</p>
+              <p><strong>Data:</strong> Official sale prices, transfer dates, deed information</p>
+              <p><strong>Best For:</strong> Verifying actual closing prices and dates</p>
+            </div>
+            <div className="data-source">
+              <h4>🌐 FREE: Zillow.com (Manual Lookup)</h4>
+              <p><strong>Access:</strong> www.zillow.com - search by address</p>
+              <p><strong>Data:</strong> Zestimate, recent sales, property details, comparable sales</p>
+              <p><strong>Tip:</strong> Check "Price & Tax History" and "Comparable Sales" sections</p>
+            </div>
+            <div className="data-source">
+              <h4>🏠 FREE: Redfin.com (Manual Lookup)</h4>
+              <p><strong>Access:</strong> www.redfin.com - search by address</p>
+              <p><strong>Data:</strong> Recent sales, DOM (days on market), market stats</p>
+              <p><strong>Tip:</strong> View "Sale & Tax History" and "Nearby Homes"</p>
+            </div>
+            <div className="data-source">
+              <h4>💼 REQUIRES LICENSE: MLS (Multiple Listing Service)</h4>
+              <p><strong>Access:</strong> Must be licensed real estate agent with MLS membership</p>
+              <p><strong>Data:</strong> Complete sales data, active listings, agent notes, exact DOM</p>
+              <p><strong>Note:</strong> Most comprehensive source - you'll get access when licensed!</p>
+            </div>
+            <div className="data-collection-steps">
+              <h4>📋 Quick Data Collection Guide:</h4>
+              <ol>
+                <li>Use Assessor Database → Get property characteristics</li>
+                <li>Search Zillow/Redfin → Find 3-6 recent comparable sales within 1 mile</li>
+                <li>Verify sale prices → Check Registry of Deeds if needed</li>
+                <li>Enter data into calculator → Analyze results</li>
+                <li>Print professional CMA → Present to client</li>
+              </ol>
+            </div>
+            <div className="api-note">
+              <p><strong>⚙️ Why No Real-Time API?</strong> Most real estate APIs (Zillow, Realtor.com) are closed or require expensive licensing. MLS data requires agent credentials. This educational tool teaches manual data gathering - a critical skill for real agents!</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="calculator-inputs">
         <h4>Subject Property</h4>
