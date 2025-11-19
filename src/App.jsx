@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { sections } from './content.jsx';
 import FlashcardMode from './FlashcardMode';
 import QuizMode from './QuizMode';
+import PracticeExamMode from './PracticeExamMode';
 import PersonalDashboard from './PersonalDashboard';
 import ScenarioMode from './ScenarioMode';
 import CalculatorMode from './CalculatorMode';
@@ -68,6 +69,10 @@ export default function App() {
           case '6':
             e.preventDefault();
             setStudyMode('calculators');
+            break;
+          case '7':
+            e.preventDefault();
+            setStudyMode('exam');
             break;
           case 't':
             e.preventDefault();
@@ -324,6 +329,12 @@ export default function App() {
           >
             🧮 Calculators
           </button>
+          <button 
+            className={`mode-btn ${studyMode === 'exam' ? 'active' : ''}`}
+            onClick={() => setStudyMode('exam')}
+          >
+            📝 Practice Exam
+          </button>
         </div>
         <div className="search-container">
           <input
@@ -425,6 +436,12 @@ export default function App() {
         {studyMode === 'calculators' && (
           <main className="content content-full">
             <CalculatorMode gamification={gamification} />
+          </main>
+        )}
+
+        {studyMode === 'exam' && (
+          <main className="content content-full">
+            <PracticeExamMode gamification={gamification} />
           </main>
         )}
 
