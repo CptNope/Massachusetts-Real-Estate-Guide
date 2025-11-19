@@ -374,6 +374,7 @@ export default function EnhancedCMA({ gamification }) {
   const [showEmailCRM, setShowEmailCRM] = useState(false);
   const [showEmailSettings, setShowEmailSettings] = useState(false);
   const [showLegalInfo, setShowLegalInfo] = useState(false);
+  const [showContractInfo, setShowContractInfo] = useState(false);
   const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
@@ -2226,6 +2227,157 @@ ${brandingEmail || ''}`;
           <div className="legal-resources">
             <h4>📚 Additional Resources:</h4>
             <p>For more information about this law and compliance requirements, consult with your broker or legal counsel.</p>
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowLegalInfo(false); setShowContractInfo(true); }}>
+              📄 View Contract Elements →
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showContractInfo && (
+        <div className="contract-info-panel">
+          <div className="contract-panel-header">
+            <h3>⭐ Elements of a Valid Contract</h3>
+            <button className="btn-secondary" onClick={() => setShowContractInfo(false)}>✕ Close</button>
+          </div>
+
+          <p className="contract-intro">
+            For a real estate contract to be legally binding, it must contain all of the following essential elements:
+          </p>
+
+          <div className="contract-elements">
+            <div className="contract-element">
+              <div className="element-number">1</div>
+              <div className="element-content">
+                <h4>👥 Competent Parties</h4>
+                <p className="element-definition">
+                  Legal capacity to enter contract, not under influence of drugs or alcohol.
+                </p>
+                <p className="element-note">
+                  <strong>Important:</strong> Have client sign contract before buying them a beer. If not, contract is <strong>Voidable</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">2</div>
+              <div className="element-content">
+                <h4>🤝 Mutual Assent</h4>
+                <p className="element-definition">
+                  Offer & Acceptance, free and voluntary act.
+                </p>
+                <p className="element-note">
+                  A "meeting of minds" without misrepresentation, fraud or mistake.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">3</div>
+              <div className="element-content">
+                <h4>💰 Consideration</h4>
+                <p className="element-definition">
+                  Earnest Money Deposit.
+                </p>
+                <p className="element-note">
+                  Something of value exchanged between parties to make the contract binding.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">4</div>
+              <div className="element-content">
+                <h4>⚖️ Legality of Object</h4>
+                <p className="element-definition">
+                  Intended purpose is not illegal.
+                </p>
+                <p className="element-note">
+                  The subject matter and purpose of the contract must be legal.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">5</div>
+              <div className="element-content">
+                <h4>📝 Legal Form</h4>
+                <p className="element-definition">
+                  Statute of Frauds requires some contracts to be in writing.
+                </p>
+                <p className="element-note">
+                  Real estate contracts must be in writing to be enforceable.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">6</div>
+              <div className="element-content">
+                <h4>🏠 Description of Property</h4>
+                <p className="element-definition">
+                  Accurate description of property.
+                </p>
+                <p className="element-note">
+                  Must clearly identify the property being sold (legal description, address, etc.).
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">7</div>
+              <div className="element-content">
+                <h4>📅 Date for Performance</h4>
+                <p className="element-definition">
+                  Specific time at or by which the agreed-upon act must be performed.
+                </p>
+                <p className="element-note">
+                  Closing date and other important deadlines must be specified.
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">8</div>
+              <div className="element-content">
+                <h4>⏰ Time is of Essence</h4>
+                <p className="element-definition">
+                  Contract must be performed within the limit specified.
+                </p>
+                <p className="element-note">
+                  Any party who doesn't perform on time is guilty of <strong>"breach of contract."</strong>
+                </p>
+              </div>
+            </div>
+
+            <div className="contract-element">
+              <div className="element-number">9</div>
+              <div className="element-content">
+                <h4>✍️ Signatures</h4>
+                <p className="element-definition">
+                  Signatures of the parties involved. (Buyer and Seller)
+                </p>
+                <p className="element-note">
+                  All parties must sign for the contract to be binding.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="contract-footer">
+            <div className="contract-tip">
+              <strong>💡 Pro Tip:</strong> All 9 elements must be present for a valid, enforceable real estate contract. 
+              Missing even one element can make the entire contract void or voidable.
+            </div>
+          </div>
+
+          <div className="legal-footer-actions">
+            <button className="btn-info" onClick={() => { setShowContractInfo(false); setShowLegalInfo(true); }}>
+              ← Back to Law Change
+            </button>
           </div>
         </div>
       )}
