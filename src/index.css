@@ -2258,6 +2258,187 @@ html {
   }
 }
 
+/* MA Law Change Banner */
+.law-change-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.law-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.law-banner-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.law-banner-text {
+  flex: 1;
+  color: #78350f;
+  font-size: 0.95rem;
+}
+
+.law-banner-text strong {
+  color: #92400e;
+}
+
+.law-banner-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #92400e;
+  padding: 0.25rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.law-banner-close:hover {
+  background: rgba(146, 64, 14, 0.1);
+  border-radius: 4px;
+}
+
+/* Legal Info Panel */
+.legal-info-panel {
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.legal-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.legal-panel-header h3 {
+  margin: 0;
+  color: #1e40af;
+}
+
+.legal-effective-date {
+  background: #dbeafe;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  color: #1e40af;
+}
+
+.legal-content h4 {
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.legal-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legal-item-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.legal-item-title strong {
+  color: #111827;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.legal-item p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.7;
+  padding-left: 2.25rem;
+}
+
+.legal-compliance-checklist {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.legal-compliance-checklist h4 {
+  margin: 0 0 0.75rem 0;
+  color: #065f46;
+}
+
+.legal-compliance-checklist ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.legal-compliance-checklist li {
+  margin: 0.5rem 0;
+  color: #047857;
+  font-weight: 500;
+}
+
+.legal-compliance-checklist li::before {
+  content: "";
+  margin-right: 0.5rem;
+}
+
+.legal-resources {
+  background: #f0f9ff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.legal-resources h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.legal-resources p {
+  margin: 0;
+  color: #1e40af;
+  font-size: 0.9rem;
+}
+
 /* API Token Management Panel */
 .api-panel {
   background: white;

@@ -373,6 +373,8 @@ export default function EnhancedCMA({ gamification }) {
   // CRM Mass Email System State
   const [showEmailCRM, setShowEmailCRM] = useState(false);
   const [showEmailSettings, setShowEmailSettings] = useState(false);
+  const [showLegalInfo, setShowLegalInfo] = useState(false);
+  const [showLawBanner, setShowLawBanner] = useState(true);
   const [contacts, setContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
   const [emailCampaigns, setEmailCampaigns] = useState([]);
@@ -2110,6 +2112,103 @@ ${brandingEmail || ''}`;
       {lastSaved && (
         <div className="auto-save-indicator">
           💾 Auto-saved at {lastSaved}
+        </div>
+      )}
+      
+      {showLawBanner && (
+        <div className="law-change-banner">
+          <div className="law-banner-content">
+            <div className="law-banner-icon">⚖️</div>
+            <div className="law-banner-text">
+              <strong>Important MA Law Change:</strong> New inspection waiver regulations effective October 15, 2025
+            </div>
+            <button className="btn-info btn-small" onClick={() => setShowLegalInfo(true)}>
+              View Details
+            </button>
+            <button className="law-banner-close" onClick={() => setShowLawBanner(false)}>
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showLegalInfo && (
+        <div className="legal-info-panel">
+          <div className="legal-panel-header">
+            <h3>⚖️ Massachusetts Inspection Waiver Law Change</h3>
+            <button className="btn-secondary" onClick={() => setShowLegalInfo(false)}>✕ Close</button>
+          </div>
+
+          <div className="legal-effective-date">
+            <strong>Effective Date:</strong> October 15, 2025
+          </div>
+
+          <div className="legal-content">
+            <h4>📋 What the Law Does:</h4>
+            
+            <div className="legal-item">
+              <div className="legal-item-title">
+                <span className="legal-icon">🚫</span>
+                <strong>Prohibits sellers or their agents from requiring inspection waivers</strong>
+              </div>
+              <p>
+                Sellers cannot make the sale contingent on the buyer waiving their right to a home inspection. 
+                Likewise, they cannot accept offers from buyers who indicate in advance they intend to waive inspections.
+              </p>
+            </div>
+
+            <div className="legal-item">
+              <div className="legal-item-title">
+                <span className="legal-icon">📝</span>
+                <strong>Mandates a written disclosure</strong>
+              </div>
+              <p>
+                At or before signing the first purchase agreement, sellers must provide a separate written disclosure—signed 
+                by both buyer and seller—that clearly states buyers have the right to inspection and their offer is not 
+                conditioned on waiving it.
+              </p>
+            </div>
+
+            <div className="legal-item">
+              <div className="legal-item-title">
+                <span className="legal-icon">⛔</span>
+                <strong>Bars contracts that undermine inspections</strong>
+              </div>
+              <p>
+                Clauses that effectively make inspections meaningless—e.g., severely limiting scheduling or preventing 
+                buyers from backing out based on results—are prohibited. Reasonable, mutually agreed-upon terms, like 
+                repair cost limits or deposit refund conditions, remain allowed.
+              </p>
+            </div>
+
+            <div className="legal-item">
+              <div className="legal-item-title">
+                <span className="legal-icon">🏠</span>
+                <strong>Applies to residential properties</strong>
+              </div>
+              <p>
+                From October 15, 2025 forward, these rules apply to <strong>real estate transactions involving residential 
+                properties</strong> of 1-4 units, condos, and co-ops.
+              </p>
+            </div>
+          </div>
+
+          <div className="legal-compliance-checklist">
+            <h4>✅ Agent Compliance Checklist:</h4>
+            <ul>
+              <li>✓ Never suggest buyers waive inspections</li>
+              <li>✓ Provide required written disclosure</li>
+              <li>✓ Ensure both parties sign disclosure</li>
+              <li>✓ Do not include prohibited contract clauses</li>
+              <li>✓ Allow reasonable inspection scheduling</li>
+              <li>✓ Permit buyers to back out based on inspection results</li>
+            </ul>
+          </div>
+
+          <div className="legal-resources">
+            <h4>📚 Additional Resources:</h4>
+            <p>For more information about this law and compliance requirements, consult with your broker or legal counsel.</p>
+          </div>
         </div>
       )}
       
