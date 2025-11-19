@@ -341,6 +341,62 @@ export default function EnhancedCMA({ gamification }) {
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [validationErrors, setValidationErrors] = useState({});
+  const [analysisNotes, setAnalysisNotes] = useState('');
+  const [comp1Notes, setComp1Notes] = useState('');
+  const [comp2Notes, setComp2Notes] = useState('');
+  const [comp3Notes, setComp3Notes] = useState('');
+  const [comp4Notes, setComp4Notes] = useState('');
+  const [comp5Notes, setComp5Notes] = useState('');
+  const [comp6Notes, setComp6Notes] = useState('');
+  const [showBulkActions, setShowBulkActions] = useState(false);
+  const [favorites, setFavorites] = useState([]);
+  
+  // Bulk Actions
+  const clearAllComps = () => {
+    if (!confirm('Clear all comparable data? This cannot be undone.')) return;
+    
+    setComp1Active(false); setComp2Active(false); setComp3Active(false);
+    setComp4Active(false); setComp5Active(false); setComp6Active(false);
+    
+    [1, 2, 3, 4, 5, 6].forEach(i => {
+      const setPrice = eval(`setComp${i}Price`);
+      const setBeds = eval(`setComp${i}Beds`);
+      const setBaths = eval(`setComp${i}Baths`);
+      const setSqft = eval(`setComp${i}Sqft`);
+      
+      setPrice(''); setBeds('3'); setBaths('2'); setSqft('1800');
+    });
+    
+    showNotification('🗑️ All comparables cleared', 'info');
+  };
+
+  const copyAdjustmentsToClipboard = () => {
+    const adjustments = {
+      bed: bedAdjustment, bath: bathAdjustment, sqft: sqftAdjustment,
+      garage: garageAdjustment, condition: conditionAdjustment, age: ageAdjustment,
+      dom: domAdjustment, pool: poolAdjustment, lotSize: lotSizeAdjustment,
+      location: locationAdjustment, view: viewAdjustment, upgrades: upgradesAdjustment
+    };
+    navigator.clipboard.writeText(JSON.stringify(adjustments, null, 2));
+    showNotification('📋 Adjustment values copied to clipboard', 'success');
+  };
+
+  const toggleFavorite = (cmaName) => {
+    const newFavorites = favorites.includes(cmaName)
+      ? favorites.filter(f => f !== cmaName)
+      : [...favorites, cmaName];
+    setFavorites(newFavorites);
+    localStorage.setItem('cma_favorites', JSON.stringify(newFavorites));
+    showNotification(newFavorites.includes(cmaName) ? '⭐ Added to favorites' : '☆ Removed from favorites', 'success');
+  };
+
+  // Load favorites on mount
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('cma_favorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+  }, []);
   
   // Undo/Redo: Save state to history
   const saveToHistory = (stateName, value) => {
@@ -1247,7 +1303,40 @@ export default function EnhancedCMA({ gamification }) {
         >
           ⌨️
         </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowBulkActions(!showBulkActions)}
+          title="Bulk actions & utilities"
+        >
+          ⚡
+        </button>
       </div>
+
+      {showBulkActions && (
+        <div className="bulk-actions-panel">
+          <h3>⚡ Quick Actions</h3>
+          <div className="bulk-actions-grid">
+            <button className="bulk-action-btn" onClick={clearAllComps}>
+              🗑️ Clear All Comps
+            </button>
+            <button className="bulk-action-btn" onClick={copyAdjustmentsToClipboard}>
+              📋 Copy Adjustments
+            </button>
+            <button className="bulk-action-btn" onClick={exportToCSV}>
+              📊 Export to CSV
+            </button>
+            <button className="bulk-action-btn" onClick={exportToJSON}>
+              📄 Export to JSON
+            </button>
+            <button className="bulk-action-btn" onClick={handlePrint}>
+              🖨️ Print Report
+            </button>
+            <button className="bulk-action-btn" onClick={() => setShowBulkActions(false)}>
+              ✕ Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {showShortcuts && (
         <div className="keyboard-shortcuts-modal">
