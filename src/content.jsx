@@ -2086,6 +2086,244 @@ Always understand your agent’s split and cap – it influences incentives.`}
               93A liability. If you cut corners or deceive consumers, 93A will crush you financially.
             </p>
           </div>
+
+          <h4>📋 MCPA's Recommendations - Disclosure & Confidentiality</h4>
+          <div className="mcpa-recommendations">
+            <p className="highlight">
+              <strong>Cooperating brokers should make independent investigations of property they are involved 
+              with whenever possible. CYA!</strong> (Cover Your Assets!)
+            </p>
+
+            <h5>Agent-Specific Duties:</h5>
+            <div className="agent-duties">
+              <div className="seller-agent-duty">
+                <p><strong>📌 Seller's Agent:</strong></p>
+                <ul>
+                  <li><strong>Material defect/fact & use wide-open eyes!</strong></li>
+                  <li>Inspect property thoroughly</li>
+                  <li>Ask seller direct questions about property condition</li>
+                  <li>Document everything seller tells you</li>
+                  <li>Disclose all known material facts</li>
+                </ul>
+              </div>
+
+              <div className="buyer-agent-duty">
+                <p><strong>🔍 Buyer's Agent:</strong></p>
+                <ul>
+                  <li><strong>Bring a shovel & DIG! DIG! DIG!!!</strong></li>
+                  <li><strong>Caveat Emptor = Let the buyer beware!</strong></li>
+                  <li>Investigate property condition thoroughly</li>
+                  <li>Recommend inspections (home, pest, radon, etc.)</li>
+                  <li>Research property history (permits, violations, sales history)</li>
+                  <li>Don't rely solely on seller's disclosures</li>
+                  <li>Protect your buyer client through due diligence</li>
+                </ul>
+              </div>
+            </div>
+
+            <h5>🚨 When MCPA Overrides Confidentiality (Critical!):</h5>
+            <div className="confidentiality-override">
+              <p className="warning">
+                <strong>MCPA overrides the common-law agency duty of confidentiality in some circumstances.</strong>
+              </p>
+              
+              <p><strong>Rule:</strong> A broker MUST disclose facts about the property to the buyer even if 
+              the seller revealed them to the broker in confidence.</p>
+
+              <h6>Examples When You MUST Disclose (Even if Confidential):</h6>
+              <div className="disclosure-examples">
+                <div className="example-must-disclose">
+                  <p><strong>Example 1: Roof Leaks</strong></p>
+                  <p className="scenario">
+                    If the seller has stated that the roof leaks, for example, the broker MUST pass on this 
+                    information to the prospective buyer.
+                  </p>
+                  <p className="rule">
+                    <strong>Why:</strong> Material defect about the property itself. Property condition facts 
+                    override confidentiality. Buyer has right to know about defects.
+                  </p>
+                </div>
+
+                <div className="example-must-disclose">
+                  <p><strong>Example 2: "As-Is" Sale</strong></p>
+                  <p className="scenario">
+                    "As-Is" Sale doesn't negate seller's need to still disclose any known material facts or defects.
+                  </p>
+                  <p className="rule">
+                    <strong>Why:</strong> "As-Is" means no repairs, NOT no disclosure. Seller and agent still 
+                    must disclose known defects. Buyer accepts property condition, but must know what condition is.
+                  </p>
+                </div>
+              </div>
+
+              <h6>Example When You MUST Keep Confidential:</h6>
+              <div className="example-keep-confidential">
+                <p><strong>Example 3: Seller's Divorce</strong></p>
+                <p className="scenario">
+                  While a Seller revealing that they are selling due to a Divorce - MUST be kept confidential!
+                </p>
+                <p className="rule">
+                  <strong>Why:</strong> Personal information about the seller (not about the property). 
+                  Seller's motivation is private. Not a material fact about property condition. Revealing 
+                  could harm seller's negotiating position.
+                </p>
+              </div>
+            </div>
+
+            <h5>🔐 What You CANNOT Reveal Without Permission:</h5>
+            <div className="cannot-reveal">
+              <p className="warning">
+                <strong>Broker cannot reveal any personal information about the seller, such as the seller's 
+                willingness to accept an offer that is less than the listing price.</strong>
+              </p>
+
+              <p className="highlight">
+                <strong>Get seller's written permission before using the following statements:</strong>
+              </p>
+
+              <ul>
+                <li><strong>"Motivated Seller!"</strong> 
+                  <ul>
+                    <li>❌ Cannot say without permission - reveals seller's urgency</li>
+                    <li>❌ Weakens seller's negotiating position</li>
+                    <li>❌ Personal information about seller (not property)</li>
+                    <li>✅ CAN say if seller gives written permission in listing agreement</li>
+                  </ul>
+                </li>
+                <li><strong>"Make an Offer!"</strong>
+                  <ul>
+                    <li>❌ Cannot say without permission - implies seller will accept less</li>
+                    <li>❌ Suggests seller is willing to negotiate below asking</li>
+                    <li>❌ Personal information about seller's willingness to accept lower price</li>
+                    <li>✅ CAN say if seller authorizes this language</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h6>Other Personal Information You CANNOT Reveal:</h6>
+              <ul>
+                <li>❌ Seller is in financial distress</li>
+                <li>❌ Seller has received other offers (unless authorized)</li>
+                <li>❌ Seller's reason for selling (divorce, job loss, relocation urgency)</li>
+                <li>❌ Seller will accept less than listing price</li>
+                <li>❌ Seller's timeline/urgency to close</li>
+                <li>❌ Seller's personal circumstances that create pressure</li>
+              </ul>
+            </div>
+
+            <h5>Decision Tree: To Disclose or Not to Disclose?</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Information Type</th>
+                  <th>Must Disclose?</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Property defect (roof leak)</strong></td>
+                  <td>✅ YES</td>
+                  <td>Material fact about property - MCPA overrides confidentiality</td>
+                </tr>
+                <tr>
+                  <td><strong>Foundation crack</strong></td>
+                  <td>✅ YES</td>
+                  <td>Material defect - must disclose even if seller told you in confidence</td>
+                </tr>
+                <tr>
+                  <td><strong>Previous flood damage</strong></td>
+                  <td>✅ YES</td>
+                  <td>Material fact affecting property value and safety</td>
+                </tr>
+                <tr>
+                  <td><strong>Stigmatized property event</strong></td>
+                  <td>⚠️ ONLY IF ASKED</td>
+                  <td>Not material defect but must answer truthfully if asked</td>
+                </tr>
+                <tr>
+                  <td><strong>Seller's divorce</strong></td>
+                  <td>❌ NO</td>
+                  <td>Personal information - keep confidential</td>
+                </tr>
+                <tr>
+                  <td><strong>Seller's financial distress</strong></td>
+                  <td>❌ NO</td>
+                  <td>Personal information - weakens seller's position</td>
+                </tr>
+                <tr>
+                  <td><strong>Seller will accept less</strong></td>
+                  <td>❌ NO</td>
+                  <td>Personal information - need written permission</td>
+                </tr>
+                <tr>
+                  <td><strong>"Motivated seller"</strong></td>
+                  <td>❌ NOT WITHOUT PERMISSION</td>
+                  <td>Personal info - get written authorization first</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5>Best Practices for Disclosure:</h5>
+            <ol>
+              <li><strong>Ask Seller Direct Questions:</strong>
+                <ul>
+                  <li>"Are there any defects or issues with the property?"</li>
+                  <li>"Have there been any repairs to roof, foundation, plumbing, electrical?"</li>
+                  <li>"Any water damage, flooding, or moisture issues?"</li>
+                  <li>"Any structural issues or repairs?"</li>
+                  <li>"Any issues with septic, well, or utilities?"</li>
+                </ul>
+              </li>
+              <li><strong>Document Everything:</strong>
+                <ul>
+                  <li>Write down what seller tells you</li>
+                  <li>Get seller signature on disclosure forms</li>
+                  <li>Keep records of when information was disclosed</li>
+                  <li>Email confirmations of verbal disclosures</li>
+                </ul>
+              </li>
+              <li><strong>Property Facts = Must Disclose:</strong>
+                <ul>
+                  <li>Defects, damage, repairs, issues</li>
+                  <li>Disclose even if "As-Is" sale</li>
+                  <li>Disclose even if seller told you in confidence</li>
+                  <li>MCPA overrides confidentiality for property facts</li>
+                </ul>
+              </li>
+              <li><strong>Personal Info = Keep Confidential:</strong>
+                <ul>
+                  <li>Seller's motivation, urgency, financial situation</li>
+                  <li>Willingness to accept lower price</li>
+                  <li>Personal circumstances (divorce, job loss, health)</li>
+                  <li>Get written permission before revealing</li>
+                </ul>
+              </li>
+              <li><strong>When in Doubt:</strong>
+                <ul>
+                  <li>Is it about the PROPERTY? → Disclose</li>
+                  <li>Is it about the SELLER? → Keep confidential</li>
+                  <li>Consult broker or attorney if unclear</li>
+                </ul>
+              </li>
+            </ol>
+
+            <div className="mcpa-summary">
+              <h5>🎯 MCPA Disclosure Summary:</h5>
+              <p className="highlight">
+                <strong>Property Facts Beat Confidentiality:</strong> MCPA consumer protection law overrides 
+                your duty of confidentiality when it comes to material facts about the property. You MUST 
+                disclose property defects even if seller told you in confidence. But you MUST keep personal 
+                information about the seller confidential unless you have written permission to share it.
+              </p>
+              
+              <p className="warning">
+                <strong>⚠️ The Line:</strong> Property condition = disclose. Seller's personal situation = 
+                confidential. When you cross this line wrong, you either violate MCPA (failing to disclose 
+                defect) or breach fiduciary duty (revealing confidential info). Both can end your career.
+              </p>
+            </div>
+          </div>
         </div>
 
         <h3>18.4 Lead Paint Disclosure (Federal & MA)</h3>
