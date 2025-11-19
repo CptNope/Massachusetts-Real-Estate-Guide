@@ -2272,19 +2272,243 @@ Always understand your agent’s split and cap – it influences incentives.`}
               </div>
 
               <div className="violation-item">
-                <h5>10. NET LISTING PROHIBITION</h5>
+                <h5>10. NET LISTING PROHIBITION (Comprehensive Explanation)</h5>
                 <p className="warning">
-                  <strong>Accepted a Net Listing</strong>
+                  <strong>Accepted a Net Listing - ILLEGAL IN MASSACHUSETTS</strong>
                 </p>
+
+                <h6>📋 What is a Net Listing?</h6>
+                <div className="net-listing-definition">
+                  <p className="highlight">
+                    <strong>Net Listing:</strong> A listing agreement where the seller specifies a minimum "net" 
+                    amount they want to receive, and the agent keeps everything above that amount as their commission.
+                  </p>
+                  <p><strong>Structure:</strong> Seller receives fixed amount, agent commission is unlimited (whatever they can get above the net)</p>
+                </div>
+
+                <h6>💰 How Net Listings Work (Example Scenarios):</h6>
+                <div className="net-listing-examples">
+                  <p><strong>Example 1: Basic Net Listing</strong></p>
+                  <ul>
+                    <li>Seller says: "I want $200,000 net from the sale"</li>
+                    <li>Agent lists property for $250,000</li>
+                    <li>Property sells for $250,000</li>
+                    <li>Seller receives: $200,000 (their net)</li>
+                    <li>Agent receives: $50,000 (everything above the net = 20% commission!)</li>
+                  </ul>
+
+                  <p><strong>Example 2: Agent Gets Even More</strong></p>
+                  <ul>
+                    <li>Seller says: "I want $300,000 net from the sale"</li>
+                    <li>Agent lists property for $350,000</li>
+                    <li>Property actually worth $400,000 (agent knows this)</li>
+                    <li>Property sells for $400,000</li>
+                    <li>Seller receives: $300,000 (their net)</li>
+                    <li>Agent receives: $100,000 (25% commission!)</li>
+                    <li><strong>Problem:</strong> Agent had NO incentive to tell seller property was worth $400k</li>
+                  </ul>
+
+                  <p><strong>Example 3: Multiple Offers Scenario</strong></p>
+                  <ul>
+                    <li>Seller wants $250,000 net</li>
+                    <li>Offer A: $280,000 (agent makes $30,000)</li>
+                    <li>Offer B: $320,000 (agent makes $70,000)</li>
+                    <li><strong>Conflict:</strong> Agent is tempted to push for lower offer because they make more money!</li>
+                    <li>If commission was 5%, agent would make $14,000 on A or $16,000 on B (clear incentive for higher price)</li>
+                    <li>With net listing, agent makes MORE on lower offer (reversed incentive!)</li>
+                  </ul>
+                </div>
+
+                <h6>🚫 Why Net Listings are ILLEGAL in Massachusetts:</h6>
+                <div className="net-listing-reasons">
+                  <p className="warning">
+                    <strong>Net listings create inherent conflicts of interest that are fundamentally incompatible 
+                    with an agent's fiduciary duty to their client.</strong>
+                  </p>
+
+                  <p><strong>1. Agent Benefits from Getting LESS for Seller</strong></p>
+                  <ul>
+                    <li>If property worth $400k but seller only wants $300k net</li>
+                    <li>Agent can list at $350k and keep $50k (14% commission)</li>
+                    <li>Or agent lists at $300k and keeps $0 (seller gets true value)</li>
+                    <li><strong>Incentive:</strong> Agent profits from seller's ignorance of true value</li>
+                  </ul>
+
+                  <p><strong>2. Violates Fiduciary Duty of Loyalty</strong></p>
+                  <ul>
+                    <li>Agent's duty: Get highest price possible for seller</li>
+                    <li>Net listing: Agent makes more when sale price is lower relative to true value</li>
+                    <li>Direct conflict between agent's interest and seller's interest</li>
+                  </ul>
+
+                  <p><strong>3. Encourages Fraud and Misrepresentation</strong></p>
+                  <ul>
+                    <li>Agent has incentive to LOW-BALL the comparative market analysis (CMA)</li>
+                    <li>Agent might tell seller property worth $300k when it's worth $400k</li>
+                    <li>Seller sets net at $280k thinking they're getting good deal</li>
+                    <li>Agent sells for $400k and pockets $120k (30% commission!)</li>
+                    <li>Seller never knows they were cheated</li>
+                  </ul>
+
+                  <p><strong>4. Unlimited Commission Potential</strong></p>
+                  <ul>
+                    <li>Normal commission: 5-6% regardless of sale price</li>
+                    <li>Net listing: Commission can be 10%, 20%, 50% or more!</li>
+                    <li>No transparency in compensation</li>
+                    <li>Seller doesn't know how much agent is making</li>
+                  </ul>
+
+                  <p><strong>5. Preys on Unsophisticated Sellers</strong></p>
+                  <ul>
+                    <li>Sellers who don't know market value are vulnerable</li>
+                    <li>Desperate sellers in foreclosure or financial distress targeted</li>
+                    <li>Elderly sellers who trust agent may be exploited</li>
+                    <li>Net listings are a tool for predatory practices</li>
+                  </ul>
+
+                  <p><strong>6. Undermines Public Trust in Real Estate Profession</strong></p>
+                  <ul>
+                    <li>Creates appearance of impropriety</li>
+                    <li>Makes all agents look like they're trying to cheat sellers</li>
+                    <li>Consumer protection concern</li>
+                  </ul>
+                </div>
+
+                <h6>⚖️ Legal Status in Massachusetts:</h6>
                 <ul>
-                  <li><strong>Net Listing:</strong> Agent keeps everything above a set price</li>
-                  <li><strong>Example:</strong> Seller wants $200k net, agent lists for $250k, keeps $50k</li>
-                  <li><strong>Why Prohibited:</strong> Creates conflict of interest - agent benefits from getting less for seller</li>
-                  <li><strong>Rule:</strong> Net listings are ILLEGAL in Massachusetts</li>
-                  <li><strong>Must Use:</strong> Percentage commission or flat fee</li>
-                  <li><strong>Violation:</strong> Accepting net listing = automatic violation</li>
-                  <li><strong>Penalty:</strong> License suspension, commission forfeiture</li>
+                  <li><strong>Illegal:</strong> Net listings are expressly prohibited</li>
+                  <li><strong>Automatic Violation:</strong> Even if seller agrees, still illegal</li>
+                  <li><strong>Cannot Be Waived:</strong> Seller cannot waive this protection</li>
+                  <li><strong>Criminal vs Civil:</strong> May be both licensing violation AND consumer fraud</li>
                 </ul>
+
+                <h6>⚠️ Consequences of Using Net Listing:</h6>
+                <div className="net-listing-penalties">
+                  <p className="warning"><strong>License Penalties:</strong></p>
+                  <ul>
+                    <li>License suspension (immediate)</li>
+                    <li>Potential license revocation</li>
+                    <li>Fines from Board of Registration</li>
+                    <li>Permanent record of violation</li>
+                  </ul>
+
+                  <p className="warning"><strong>Financial Penalties:</strong></p>
+                  <ul>
+                    <li>Commission forfeiture (must return ALL commission)</li>
+                    <li>Chapter 93A liability (consumer protection - triple damages)</li>
+                    <li>Lawsuit from seller for breach of fiduciary duty</li>
+                    <li>Punitive damages if fraud involved</li>
+                  </ul>
+
+                  <p className="warning"><strong>Criminal Consequences:</strong></p>
+                  <ul>
+                    <li>Fraud charges if misrepresented value</li>
+                    <li>Theft by deception</li>
+                    <li>Criminal penalties on top of civil</li>
+                  </ul>
+                </div>
+
+                <h6>✅ LEGAL Alternatives to Net Listings:</h6>
+                <div className="legal-alternatives">
+                  <p className="highlight">
+                    <strong>If seller wants guaranteed minimum amount, use these LEGAL approaches:</strong>
+                  </p>
+
+                  <p><strong>1. Guaranteed Sale Program (with contingencies)</strong></p>
+                  <ul>
+                    <li>Agent offers to buy property for $X if doesn't sell</li>
+                    <li>Must be separate contract, not part of listing</li>
+                    <li>Must have contingencies and escape clauses</li>
+                    <li>Commission still calculated as percentage, not net</li>
+                  </ul>
+
+                  <p><strong>2. Standard Percentage Commission</strong></p>
+                  <ul>
+                    <li><strong>Example:</strong> 5% commission regardless of price</li>
+                    <li>Seller wants $200k net, list at $210,526 (so after 5% commission = $200k net)</li>
+                    <li>If sells for more, seller gets more (and agent commission increases too)</li>
+                    <li><strong>Key Difference:</strong> Both agent AND seller benefit from higher price</li>
+                  </ul>
+
+                  <p><strong>3. Flat Fee Commission</strong></p>
+                  <ul>
+                    <li><strong>Example:</strong> Agent charges $10,000 flat fee regardless of price</li>
+                    <li>Seller wants $200k net, list at $210,000</li>
+                    <li>If sells for $250,000, seller gets $240,000 (agent still gets $10k)</li>
+                    <li><strong>Key Difference:</strong> Agent's compensation is fixed, no incentive to manipulate price</li>
+                  </ul>
+
+                  <p><strong>4. Tiered Commission Structure</strong></p>
+                  <ul>
+                    <li><strong>Example:</strong> 5% on first $300k, 3% on anything above</li>
+                    <li>Still percentage-based, but structured differently</li>
+                    <li>Legal as long as disclosed and agent still wants highest price</li>
+                  </ul>
+
+                  <p><strong>5. Explain Market Value and Set Realistic Expectations</strong></p>
+                  <ul>
+                    <li>Provide accurate CMA showing true market value</li>
+                    <li>Explain closing costs, commission, net proceeds</li>
+                    <li>Use standard listing agreement with percentage commission</li>
+                    <li>Seller understands what they'll net AFTER standard commission</li>
+                  </ul>
+                </div>
+
+                <h6>❌ Common Misconceptions About Net Listings:</h6>
+                <div className="net-listing-myths">
+                  <p><strong>Myth 1: "If the seller agrees, it's okay"</strong></p>
+                  <ul>
+                    <li>❌ <strong>FALSE:</strong> Net listings are illegal even with seller consent</li>
+                    <li>It's a consumer protection law - cannot be waived</li>
+                  </ul>
+
+                  <p><strong>Myth 2: "It benefits the seller because they know what they'll get"</strong></p>
+                  <ul>
+                    <li>❌ <strong>FALSE:</strong> Seller knows minimum but doesn't know if agent is hiding true value</li>
+                    <li>Seller might accept $200k net when property worth $300k</li>
+                    <li>False sense of security</li>
+                  </ul>
+
+                  <p><strong>Myth 3: "It motivates the agent to get the highest price"</strong></p>
+                  <ul>
+                    <li>❌ <strong>FALSE:</strong> Agent profits MORE from hiding true value and listing low</li>
+                    <li>Agent makes 100% of amount above net, not just 5-6%</li>
+                    <li>Perverse incentive</li>
+                  </ul>
+
+                  <p><strong>Myth 4: "It's only illegal if the seller doesn't know"</strong></p>
+                  <ul>
+                    <li>❌ <strong>FALSE:</strong> Illegal regardless of disclosure</li>
+                    <li>Even if seller fully understands, still prohibited</li>
+                  </ul>
+
+                  <p><strong>Myth 5: "I can use net listing in other states"</strong></p>
+                  <ul>
+                    <li>⚠️ <strong>DEPENDS:</strong> Some states allow net listings with heavy disclosure</li>
+                    <li>But MA prohibits them completely</li>
+                    <li>Know the law in your state</li>
+                  </ul>
+                </div>
+
+                <h6>🎯 Bottom Line on Net Listings:</h6>
+                <div className="net-listing-summary">
+                  <p className="warning">
+                    <strong>NEVER use a net listing in Massachusetts. It is automatic license suspension.</strong>
+                  </p>
+                  <ul>
+                    <li><strong>Why They Exist:</strong> Seem to benefit both parties on surface</li>
+                    <li><strong>Why They're Illegal:</strong> Create unavoidable conflicts of interest</li>
+                    <li><strong>What to Use Instead:</strong> Percentage commission or flat fee</li>
+                    <li><strong>If Seller Asks:</strong> Explain why illegal and offer legal alternatives</li>
+                    <li><strong>Your Duty:</strong> Get highest price possible with transparent, legal compensation</li>
+                  </ul>
+                  <p className="highlight">
+                    <strong>Real-World Advice:</strong> If a seller says "I just want $X net," calculate what list 
+                    price would net them $X after a standard percentage commission. Market at that price with 
+                    standard commission structure. This achieves their goal legally while maintaining your 
+                    fiduciary duty to get them the highest possible price.
+                  </p>
+                </div>
               </div>
 
               <div className="violation-item">
