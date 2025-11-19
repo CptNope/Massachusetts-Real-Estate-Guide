@@ -1,7 +1,8 @@
 import React from 'react';
+import StreakDisplay from './StreakDisplay';
 
 export default function GamificationPanel({ gamification }) {
-  const { stats, progress, achievements, newAchievements } = gamification;
+  const { stats, progress, achievements, newAchievements, streak } = gamification;
 
   return (
     <div className="gamification-container">
@@ -42,27 +43,8 @@ export default function GamificationPanel({ gamification }) {
         </div>
       </div>
 
-      {/* Streak Information */}
-      <div className="streak-container">
-        <div className="streak-current">
-          <span className="streak-icon">🔥</span>
-          <div>
-            <div className="streak-number">{stats.currentStreak}</div>
-            <div className="streak-label">Day Streak</div>
-          </div>
-        </div>
-        
-        <div className="streak-stats">
-          <div className="streak-stat">
-            <span className="stat-value">{stats.longestStreak}</span>
-            <span className="stat-label">Longest</span>
-          </div>
-          <div className="streak-stat">
-            <span className="stat-value">{stats.totalStudyDays}</span>
-            <span className="stat-label">Total Days</span>
-          </div>
-        </div>
-      </div>
+      {/* Enhanced Streak Display */}
+      {streak && <StreakDisplay streakInfo={streak} />}
 
       {/* Quick Stats */}
       <div className="quick-stats">
@@ -78,12 +60,12 @@ export default function GamificationPanel({ gamification }) {
         </div>
         <div className="quick-stat">
           <span className="stat-icon">🎭</span>
-          <span className="stat-value">{stats.scenariosCompleted}/3</span>
+          <span className="stat-value">{stats.scenariosCompleted}/15</span>
           <span className="stat-label">Scenarios</span>
         </div>
         <div className="quick-stat">
           <span className="stat-icon">📖</span>
-          <span className="stat-value">{stats.masteredSections}/22</span>
+          <span className="stat-value">{stats.masteredSections}/29</span>
           <span className="stat-label">Sections</span>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useStudyStreak } from './useStudyStreak';
 
 // XP values for different activities
 const XP_VALUES = {
@@ -8,7 +9,11 @@ const XP_VALUES = {
   MASTER_SECTION: 30,
   STUDY_SESSION: 10,
   PERFECT_QUIZ: 100,
-  DAILY_STREAK: 25
+  DAILY_STREAK: 25,
+  STREAK_BONUS_3DAY: 10,
+  STREAK_BONUS_7DAY: 25,
+  STREAK_BONUS_14DAY: 50,
+  STREAK_BONUS_30DAY: 100
 };
 
 // Achievement definitions
@@ -133,6 +138,8 @@ const xpForNextLevel = (currentXP) => {
 };
 
 export const useGamification = () => {
+  const streak = useStudyStreak();
+  
   const [stats, setStats] = useState(() => {
     const saved = localStorage.getItem('gamificationStats');
     if (saved) {
@@ -140,9 +147,6 @@ export const useGamification = () => {
     }
     return {
       totalXP: 0,
-      currentStreak: 0,
-      longestStreak: 0,
-      lastStudyDate: null,
       quizzesCompleted: 0,
       perfectQuizzes: 0,
       masteredFlashcards: 0,
@@ -151,7 +155,6 @@ export const useGamification = () => {
       calculatorsUsed: 0,
       notesAdded: 0,
       totalStudyDays: 0,
-      studyDates: [],
       unlockedAchievements: []
     };
   });
@@ -163,51 +166,19 @@ export const useGamification = () => {
     localStorage.setItem('gamificationStats', JSON.stringify(stats));
   }, [stats]);
 
-  // Check and update streak on load
-  useEffect(() => {
-    updateStreak();
-  }, []);
-
   const updateStreak = () => {
-    const today = new Date().toDateString();
-    const lastDate = stats.lastStudyDate ? new Date(stats.lastStudyDate).toDateString() : null;
-
-    if (lastDate === today) {
-      // Already studied today
-      return;
-    }
-
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayString = yesterday.toDateString();
-
-    setStats(prev => {
-      let newStreak = prev.currentStreak;
-      
-      if (lastDate === yesterdayString) {
-        // Continuing streak
-        newStreak = prev.currentStreak + 1;
-      } else if (lastDate !== today) {
-        // Streak broken or first day
-        newStreak = 1;
-      }
-
-      const newStudyDates = [...prev.studyDates, today].filter((date, index, self) => 
-        self.indexOf(date) === index
-      );
-
-      return {
-        ...prev,
-        currentStreak: newStreak,
-        longestStreak: Math.max(newStreak, prev.longestStreak),
-        lastStudyDate: today,
-        totalStudyDays: newStudyDates.length,
-        studyDates: newStudyDates
-      };
-    });
-
-    // Award streak XP
+    const updatedStreak = streak.recordStudyActivity();
+    const streakBonus = streak.getStreakBonus(updatedStreak.currentStreak);
+    
+    // Award daily streak XP
     addXP(XP_VALUES.DAILY_STREAK, 'Daily Study Streak');
+    
+    // Award milestone bonus if any
+    if (streakBonus > 0) {
+      addXP(streakBonus, `${updatedStreak.currentStreak}-Day Streak Bonus`);
+    }
+    
+    return updatedStreak;
   };
 
   const addXP = (amount, reason) => {
@@ -289,10 +260,18 @@ export const useGamification = () => {
 
   const checkAchievements = () => {
     const newUnlocked = [];
+    
+    // Combine stats with streak data for achievement checking
+    const combinedStats = {
+      ...stats,
+      currentStreak: streak.streakData.currentStreak,
+      longestStreak: streak.streakData.longestStreak,
+      totalStudyDays: streak.streakData.studyDates.length
+    };
 
     ACHIEVEMENTS.forEach(achievement => {
       if (!stats.unlockedAchievements.includes(achievement.id)) {
-        if (achievement.requirement(stats)) {
+        if (achievement.requirement(combinedStats)) {
           newUnlocked.push(achievement);
           setStats(prev => ({
             ...prev,
@@ -343,6 +322,14 @@ export const useGamification = () => {
     newAchievements,
     recordActivity,
     addXP,
-    updateStreak
+    updateStreak,
+    streak: {
+      data: streak.streakData,
+      bonus: streak.getStreakBonus(streak.streakData.currentStreak),
+      milestone: streak.getStreakMilestone(streak.streakData.currentStreak),
+      message: streak.getMotivationalMessage(streak.streakData.currentStreak),
+      isAtRisk: streak.isStreakAtRisk(),
+      hasFreeze: streak.hasStreakFreeze()
+    }
   };
 };
