@@ -370,6 +370,46 @@ export default function EnhancedCMA({ gamification }) {
   const [aiDescription, setAiDescription] = useState('');
   const [aiInsights, setAiInsights] = useState([]);
   
+  // CRM Mass Email System State
+  const [showEmailCRM, setShowEmailCRM] = useState(false);
+  const [contacts, setContacts] = useState([]);
+  const [selectedContacts, setSelectedContacts] = useState([]);
+  const [emailCampaigns, setEmailCampaigns] = useState([]);
+  const [currentCampaign, setCurrentCampaign] = useState({
+    name: '',
+    subject: '',
+    body: '',
+    template: 'blank'
+  });
+  const [emailTemplates, setEmailTemplates] = useState([
+    {
+      id: 'new_listing',
+      name: 'New Listing Alert',
+      subject: 'New Property Alert: {{address}}',
+      body: 'Hi {{firstName}},\n\nI wanted to personally notify you about a new listing that matches your criteria...'
+    },
+    {
+      id: 'market_update',
+      name: 'Monthly Market Update',
+      subject: 'Your {{month}} Market Update',
+      body: 'Dear {{firstName}},\n\nHere\'s your monthly market update for {{area}}...'
+    },
+    {
+      id: 'cma_report',
+      name: 'CMA Report Delivery',
+      subject: 'Your Property Analysis is Ready',
+      body: 'Hello {{firstName}},\n\nI\'ve completed the market analysis for {{address}}...'
+    }
+  ]);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [newContact, setNewContact] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    tags: []
+  });
+  
   // API Token System State
   const [apiTokens, setApiTokens] = useState([]);
   const [newTokenName, setNewTokenName] = useState('');
@@ -852,6 +892,184 @@ Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split
       gamification.addXP(60, 'AI insights generated');
       gamification.recordActivity('ai_insights_generated');
     }
+  };
+
+  // CRM Email System Functions
+  useEffect(() => {
+    const savedContacts = localStorage.getItem('crm_contacts');
+    if (savedContacts) {
+      setContacts(JSON.parse(savedContacts));
+    }
+    const savedCampaigns = localStorage.getItem('email_campaigns');
+    if (savedCampaigns) {
+      setEmailCampaigns(JSON.parse(savedCampaigns));
+    }
+  }, []);
+
+  const addContact = () => {
+    if (!newContact.firstName || !newContact.email) {
+      showNotification('⚠️ Please enter name and email', 'error');
+      return;
+    }
+
+    const contact = {
+      id: Date.now().toString(),
+      ...newContact,
+      created: new Date().toISOString(),
+      lastContact: null
+    };
+
+    const updated = [...contacts, contact];
+    setContacts(updated);
+    localStorage.setItem('crm_contacts', JSON.stringify(updated));
+    setNewContact({ firstName: '', lastName: '', email: '', phone: '', tags: [] });
+    setShowContactForm(false);
+    showNotification(`✅ ${contact.firstName} added to contacts! +15 XP`, 'success');
+    
+    if (gamification) {
+      gamification.addXP(15, 'Contact added');
+      gamification.recordActivity('contact_added');
+    }
+  };
+
+  const deleteContact = (id) => {
+    if (!confirm('Delete this contact?')) return;
+    const updated = contacts.filter(c => c.id !== id);
+    setContacts(updated);
+    localStorage.setItem('crm_contacts', JSON.stringify(updated));
+    showNotification('Contact deleted', 'info');
+  };
+
+  const toggleContactSelection = (id) => {
+    setSelectedContacts(prev => 
+      prev.includes(id) ? prev.filter(c => c !== id) : [...prev, id]
+    );
+  };
+
+  const selectAllContacts = () => {
+    setSelectedContacts(contacts.map(c => c.id));
+  };
+
+  const generateAIEmail = (emailType) => {
+    setAiLoading(true);
+    
+    setTimeout(() => {
+      let subject = '';
+      let body = '';
+
+      if (emailType === 'new_listing') {
+        subject = `Exciting New Listing: ${subjectAddress || 'Premium Property'}`;
+        body = `Hi {{firstName}},
+
+I wanted to reach out personally to let you know about an exceptional new listing that just hit the market!
+
+🏠 Property: ${subjectAddress || 'Beautiful Home'}
+💰 Price: $${Math.round(avgAdjustedValue).toLocaleString()}
+🛏️ ${subjectBeds || '3'} Beds | 🛁 ${subjectBaths || '2'} Baths | 📏 ${subjectSqft || '1,800'} sqft
+
+This property is located in a ${marketTrend === 'rising' ? 'highly sought-after' : 'desirable'} area and represents excellent value. ${marketTrend === 'rising' ? 'The market is hot right now, so I expect this to move quickly!' : 'This is a great opportunity in the current market conditions.'}
+
+Would you like to schedule a showing? I'd be happy to provide you with a complete market analysis and walk you through the property.
+
+Best regards,
+${brandingCompany || 'Your Real Estate Professional'}
+${brandingPhone || ''}`;
+      } else if (emailType === 'market_update') {
+        subject = `Your ${new Date().toLocaleString('default', { month: 'long' })} Market Update`;
+        body = `Dear {{firstName}},
+
+I hope this email finds you well! I wanted to share your monthly market update with some exciting insights about the local real estate market.
+
+📊 MARKET SNAPSHOT:
+• Trend: ${marketTrend === 'rising' ? '📈 Rising' : marketTrend === 'falling' ? '📉 Cooling' : '➡️ Stable'}
+• Average Days on Market: ${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 30} days
+• Median Price: $${Math.round(avgAdjustedValue).toLocaleString()}
+
+${marketTrend === 'rising' ? '🔥 The market is heating up! Great time for sellers, and buyers should act quickly on properties they love.' : marketTrend === 'falling' ? '💡 Opportunities emerging for buyers as inventory increases. Sellers should price strategically.' : '✅ Balanced market conditions provide good opportunities for both buyers and sellers.'}
+
+Thinking about buying or selling? Let's chat about how these trends might affect your plans!
+
+Warmly,
+${brandingCompany || 'Your Trusted Agent'}`;
+      } else if (emailType === 'cma_report') {
+        subject = `Your Property Analysis for ${subjectAddress || 'Your Home'} is Ready`;
+        body = `Hello {{firstName}},
+
+Great news! I've completed the comprehensive market analysis you requested.
+
+📋 PROPERTY ANALYSIS SUMMARY:
+• Subject: ${subjectAddress || 'Your Property'}
+• Estimated Value: $${Math.round(avgAdjustedValue - 10000).toLocaleString()} - $${Math.round(avgAdjustedValue + 10000).toLocaleString()}
+• Market Trend: ${marketTrend || 'Stable'}
+• Comparables Analyzed: ${adjustedComps.length}
+
+Based on my analysis of ${adjustedComps.length} comparable sales in your area, I've prepared a detailed report that shows exactly how your property compares to recent sales.
+
+The current ${marketTrend || 'stable'} market conditions ${marketTrend === 'rising' ? 'are favorable for sellers' : marketTrend === 'falling' ? 'present opportunities for strategic pricing' : 'provide balanced conditions'}.
+
+I'd love to review this analysis with you in detail. When would be a good time for us to connect?
+
+Professional regards,
+${brandingCompany || 'Your Agent'}
+${brandingEmail || ''}`;
+      }
+
+      setCurrentCampaign({ ...currentCampaign, subject, body });
+      setAiLoading(false);
+      showNotification('✅ AI email generated! +50 XP', 'success');
+      
+      if (gamification) {
+        gamification.addXP(50, 'AI email generated');
+        gamification.recordActivity('ai_email_generated');
+      }
+    }, 1500);
+  };
+
+  const personalizeEmail = (template, contact) => {
+    return template
+      .replace(/{{firstName}}/g, contact.firstName)
+      .replace(/{{lastName}}/g, contact.lastName || '')
+      .replace(/{{email}}/g, contact.email)
+      .replace(/{{phone}}/g, contact.phone || '')
+      .replace(/{{month}}/g, new Date().toLocaleString('default', { month: 'long' }))
+      .replace(/{{address}}/g, subjectAddress || 'this property')
+      .replace(/{{area}}/g, subjectAddress ? subjectAddress.split(',')[1]?.trim() || 'your area' : 'your area');
+  };
+
+  const sendMassEmail = () => {
+    if (selectedContacts.length === 0) {
+      showNotification('⚠️ Please select contacts', 'error');
+      return;
+    }
+    if (!currentCampaign.subject || !currentCampaign.body) {
+      showNotification('⚠️ Please write email content', 'error');
+      return;
+    }
+
+    const campaign = {
+      id: Date.now().toString(),
+      ...currentCampaign,
+      recipients: selectedContacts.length,
+      sent: new Date().toISOString(),
+      status: 'sent',
+      opens: 0,
+      clicks: 0
+    };
+
+    const updated = [...emailCampaigns, campaign];
+    setEmailCampaigns(updated);
+    localStorage.setItem('email_campaigns', JSON.stringify(updated));
+
+    showNotification(`✅ Campaign sent to ${selectedContacts.length} contacts! +100 XP`, 'success');
+    
+    if (gamification) {
+      gamification.addXP(100, 'Mass email campaign sent');
+      gamification.recordActivity('mass_email_sent');
+    }
+
+    // Reset
+    setCurrentCampaign({ name: '', subject: '', body: '', template: 'blank' });
+    setSelectedContacts([]);
   };
 
   // Photo upload handler (convert to base64)
