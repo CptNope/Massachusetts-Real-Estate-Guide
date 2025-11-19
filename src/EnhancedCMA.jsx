@@ -336,6 +336,58 @@ export default function EnhancedCMA({ gamification }) {
   const [libraryView, setLibraryView] = useState('list'); // 'list' or 'grid'
   const [searchTerm, setSearchTerm] = useState('');
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [notification, setNotification] = useState(null);
+  const [lastSaved, setLastSaved] = useState(null);
+  
+  // Auto-save draft every 30 seconds
+  useEffect(() => {
+    const autoSaveDraft = () => {
+      const draftData = {
+        client: { name: clientName, preparedBy, brokerage: brokerageName, purpose: reportPurpose },
+        subject: { address: subjectAddress, beds: subjectBeds, baths: subjectBaths, sqft: subjectSqft, 
+                   garage: subjectGarage, pool: subjectPool, lotSize: subjectLotSize, location: subjectLocation,
+                   view: subjectView, upgrades: subjectUpgrades },
+        adjustments: { bed: bedAdjustment, bath: bathAdjustment, sqft: sqftAdjustment, garage: garageAdjustment,
+                      condition: conditionAdjustment, age: ageAdjustment, dom: domAdjustment, pool: poolAdjustment,
+                      lotSize: lotSizeAdjustment, location: locationAdjustment, view: viewAdjustment, upgrades: upgradesAdjustment },
+        savedDate: new Date().toISOString()
+      };
+      localStorage.setItem('cma_draft', JSON.stringify(draftData));
+      setLastSaved(new Date().toLocaleTimeString());
+    };
+
+    const interval = setInterval(autoSaveDraft, 30000); // 30 seconds
+    return () => clearInterval(interval);
+  }, [clientName, preparedBy, brokerageName, reportPurpose, subjectAddress, subjectBeds, subjectBaths, 
+      subjectSqft, subjectGarage, subjectPool, subjectLotSize, subjectLocation, subjectView, subjectUpgrades,
+      bedAdjustment, bathAdjustment, sqftAdjustment, garageAdjustment, conditionAdjustment, ageAdjustment,
+      domAdjustment, poolAdjustment, lotSizeAdjustment, locationAdjustment, viewAdjustment, upgradesAdjustment]);
+
+  // Load draft on mount
+  useEffect(() => {
+    const draft = localStorage.getItem('cma_draft');
+    if (draft) {
+      const data = JSON.parse(draft);
+      if (confirm('Found an auto-saved draft. Would you like to restore it?')) {
+        setClientName(data.client?.name || '');
+        setPreparedBy(data.client?.preparedBy || '');
+        setBrokerageName(data.client?.brokerage || '');
+        setReportPurpose(data.client?.purpose || 'listing');
+        setSubjectAddress(data.subject?.address || '');
+        setSubjectBeds(data.subject?.beds || '3');
+        setSubjectBaths(data.subject?.baths || '2');
+        setSubjectSqft(data.subject?.sqft || '1800');
+        setSubjectGarage(data.subject?.garage || 'yes');
+        showNotification('Draft restored successfully!', 'success');
+      }
+    }
+  }, []);
+
+  // Notification system
+  const showNotification = (message, type = 'info') => {
+    setNotification({ message, type });
+    setTimeout(() => setNotification(null), 3000);
+  };
   
   // Keyboard shortcuts
   useEffect(() => {
@@ -803,7 +855,8 @@ export default function EnhancedCMA({ gamification }) {
     const savedCMAs = JSON.parse(localStorage.getItem('savedCMAs') || '{}');
     savedCMAs[saveName] = cmaData;
     localStorage.setItem('savedCMAs', JSON.stringify(savedCMAs));
-    alert(`✅ CMA saved: ${saveName}`);
+    localStorage.removeItem('cma_draft'); // Clear draft after saving
+    showNotification(`✅ CMA saved: ${saveName}`, 'success');
   };
 
   const getSavedCMAs = () => {
@@ -1012,6 +1065,19 @@ export default function EnhancedCMA({ gamification }) {
 
   return (
     <div className="calculator-container cma-enhanced">
+      {notification && (
+        <div className={`notification-toast ${notification.type}`}>
+          <span>{notification.message}</span>
+          <button onClick={() => setNotification(null)}>✕</button>
+        </div>
+      )}
+      
+      {lastSaved && (
+        <div className="auto-save-indicator">
+          💾 Auto-saved at {lastSaved}
+        </div>
+      )}
+      
       <div className="cma-print-header" style={{ display: 'none' }}>
         <h2>Comparative Market Analysis</h2>
         <p>Subject Property: {subjectAddress || 'Not specified'}</p>
