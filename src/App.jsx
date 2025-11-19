@@ -202,6 +202,23 @@ export default function App() {
   const activeSection = sections.find((s) => s.id === activeId);
 
   // Filter sections based on search query
+  // Helper function to extract text from JSX
+  const getTextFromJSX = (jsx) => {
+    if (typeof jsx === 'string') return jsx;
+    if (typeof jsx === 'number') return String(jsx);
+    if (!jsx) return '';
+    
+    if (Array.isArray(jsx)) {
+      return jsx.map(getTextFromJSX).join(' ');
+    }
+    
+    if (jsx.props && jsx.props.children) {
+      return getTextFromJSX(jsx.props.children);
+    }
+    
+    return '';
+  };
+
   const filteredSections = useMemo(() => {
     if (!searchQuery.trim()) return sections;
     
@@ -220,23 +237,6 @@ export default function App() {
       return false;
     });
   }, [searchQuery]);
-
-  // Helper function to extract text from JSX
-  const getTextFromJSX = (jsx) => {
-    if (typeof jsx === 'string') return jsx;
-    if (typeof jsx === 'number') return String(jsx);
-    if (!jsx) return '';
-    
-    if (Array.isArray(jsx)) {
-      return jsx.map(getTextFromJSX).join(' ');
-    }
-    
-    if (jsx.props && jsx.props.children) {
-      return getTextFromJSX(jsx.props.children);
-    }
-    
-    return '';
-  };
 
   return (
     <div className="app-root">
