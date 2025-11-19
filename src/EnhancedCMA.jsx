@@ -2,6 +2,89 @@ import React, { useState, useEffect } from 'react';
 import { cmaChallenges } from './cmaChallenges';
 import { marketTemplates, getTemplate } from './marketTemplates';
 
+// Comparison Matrix Table Component
+const ComparisonMatrix = ({ comps, subject }) => {
+  return (
+    <div className="comparison-matrix">
+      <h4>📋 Comparison Matrix</h4>
+      <div className="matrix-scroll">
+        <table className="matrix-table">
+          <thead>
+            <tr>
+              <th className="matrix-header">Feature</th>
+              <th className="matrix-subject">Subject</th>
+              {comps.map(comp => (
+                <th key={comp.id} className="matrix-comp">Comp #{comp.id}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="feature-label">Sale Price</td>
+              <td className="subject-cell">-</td>
+              {comps.map(comp => (
+                <td key={comp.id} className="comp-cell">${(comp.price / 1000).toFixed(0)}K</td>
+              ))}
+            </tr>
+            <tr>
+              <td className="feature-label">Bedrooms</td>
+              <td className="subject-cell">{subject.beds}</td>
+              {comps.map(comp => (
+                <td key={comp.id} className={`comp-cell ${parseInt(comp.beds) !== parseInt(subject.beds) ? 'diff' : ''}`}>
+                  {comp.beds}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="feature-label">Bathrooms</td>
+              <td className="subject-cell">{subject.baths}</td>
+              {comps.map(comp => (
+                <td key={comp.id} className={`comp-cell ${parseFloat(comp.baths) !== parseFloat(subject.baths) ? 'diff' : ''}`}>
+                  {comp.baths}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="feature-label">Square Feet</td>
+              <td className="subject-cell">{subject.sqft}</td>
+              {comps.map(comp => (
+                <td key={comp.id} className={`comp-cell ${parseInt(comp.sqft) !== parseInt(subject.sqft) ? 'diff' : ''}`}>
+                  {comp.sqft}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="feature-label">Garage</td>
+              <td className="subject-cell">{subject.garage === 'yes' ? '✓' : '✗'}</td>
+              {comps.map(comp => (
+                <td key={comp.id} className={`comp-cell ${comp.garage !== subject.garage ? 'diff' : ''}`}>
+                  {comp.garage === 'yes' ? '✓' : '✗'}
+                </td>
+              ))}
+            </tr>
+            <tr className="adjustment-row">
+              <td className="feature-label">Adjustment</td>
+              <td className="subject-cell">-</td>
+              {comps.map(comp => (
+                <td key={comp.id} className={`comp-cell ${comp.adjustment >= 0 ? 'positive' : 'negative'}`}>
+                  {comp.adjustment >= 0 ? '+' : ''}${(comp.adjustment / 1000).toFixed(0)}K
+                </td>
+              ))}
+            </tr>
+            <tr className="total-row">
+              <td className="feature-label">Adjusted Value</td>
+              <td className="subject-cell">-</td>
+              {comps.map(comp => (
+                <td key={comp.id} className="comp-cell total">${(comp.adjustedPrice / 1000).toFixed(0)}K</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
 // Visual Price Comparison Chart Component
 const PriceComparisonChart = ({ comps, avgPrice, mode }) => {
   const maxPrice = Math.max(...comps.map(c => c.adjustedPrice));
@@ -174,6 +257,49 @@ export default function EnhancedCMA({ gamification }) {
   const [currentTemplate, setCurrentTemplate] = useState('custom');
   const [libraryView, setLibraryView] = useState('list'); // 'list' or 'grid'
   const [searchTerm, setSearchTerm] = useState('');
+  const [showShortcuts, setShowShortcuts] = useState(false);
+  
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // Only if not typing in an input
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+      
+      // Ctrl/Cmd + S = Save
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        saveCMA();
+      }
+      // Ctrl/Cmd + P = Print
+      else if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        handlePrint();
+      }
+      // Ctrl/Cmd + E = Export
+      else if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+        e.preventDefault();
+        exportToJSON();
+      }
+      // ? = Show shortcuts
+      else if (e.key === '?' && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        setShowShortcuts(!showShortcuts);
+      }
+      // M = Toggle mode
+      else if (e.key === 'm' && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        toggleMode();
+      }
+      // T = Toggle templates
+      else if (e.key === 't' && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        setShowTemplates(!showTemplates);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [showShortcuts, showTemplates]);
   
   // Apply market template
   const applyTemplate = (templateId) => {
@@ -859,7 +985,58 @@ export default function EnhancedCMA({ gamification }) {
         >
           {showTemplates ? '🎯 Hide Templates' : '🎯 Market Templates'}
         </button>
+        <button 
+          className="btn-secondary cma-help-btn"
+          onClick={() => setShowShortcuts(!showShortcuts)}
+          title="Keyboard shortcuts (Press ?)"
+        >
+          ⌨️
+        </button>
       </div>
+
+      {showShortcuts && (
+        <div className="keyboard-shortcuts-modal">
+          <div className="shortcuts-content">
+            <div className="shortcuts-header">
+              <h3>⌨️ Keyboard Shortcuts</h3>
+              <button className="close-btn" onClick={() => setShowShortcuts(false)}>✕</button>
+            </div>
+            <div className="shortcuts-grid">
+              <div className="shortcut-group">
+                <h4>Actions</h4>
+                <div className="shortcut-item">
+                  <kbd>Ctrl/⌘</kbd> + <kbd>S</kbd>
+                  <span>Save CMA</span>
+                </div>
+                <div className="shortcut-item">
+                  <kbd>Ctrl/⌘</kbd> + <kbd>P</kbd>
+                  <span>Print Report</span>
+                </div>
+                <div className="shortcut-item">
+                  <kbd>Ctrl/⌘</kbd> + <kbd>E</kbd>
+                  <span>Export JSON</span>
+                </div>
+              </div>
+              <div className="shortcut-group">
+                <h4>Navigation</h4>
+                <div className="shortcut-item">
+                  <kbd>M</kbd>
+                  <span>Toggle Learning/Pro Mode</span>
+                </div>
+                <div className="shortcut-item">
+                  <kbd>T</kbd>
+                  <span>Toggle Templates</span>
+                </div>
+                <div className="shortcut-item">
+                  <kbd>?</kbd>
+                  <span>Show/Hide Shortcuts</span>
+                </div>
+              </div>
+            </div>
+            <p className="shortcuts-tip">💡 <strong>Tip:</strong> Shortcuts don't work while typing in input fields</p>
+          </div>
+        </div>
+      )}
 
       {showTemplates && (
         <div className="market-templates-panel">
@@ -1951,6 +2128,11 @@ export default function EnhancedCMA({ gamification }) {
             )}
 
             <PriceComparisonChart comps={adjustedComps} avgPrice={avgAdjustedPrice} mode={mode} />
+
+            <ComparisonMatrix 
+              comps={adjustedComps} 
+              subject={{ beds: subjectBeds, baths: subjectBaths, sqft: subjectSqft, garage: subjectGarage }}
+            />
 
             <div className="result-card recommendation">
               <h4>💡 Recommended Listing Price Range</h4>
