@@ -1,8 +1,8 @@
 # Dependencies
 node_modules/
 
-# Build output (committed to dist/ for GitHub Pages)
-# dist/
+# Build output (gh-pages handles deployment, no need to commit dist/)
+dist/
 
 # Environment variables
 .env
