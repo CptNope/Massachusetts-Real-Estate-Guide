@@ -1,0 +1,6 @@
+This file shows the template structure for comparables 4-6.
+Each comparable needs:
+- Price, Beds, Baths, Sqft, Garage, Condition, Age, DOM
+- NEW: Pool, Lot Size, Location, View, Upgrades
+
+Total: 14 fields per comparable x 3 comparables = 42 fields
