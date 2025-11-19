@@ -2602,6 +2602,317 @@ Always understand your agent’s split and cap – it influences incentives.`}
               </p>
             </div>
           </div>
+
+          <h4>⚖️ Enforcement of Board Investigations - Due Process Procedures</h4>
+          <div className="board-investigations">
+            <p className="highlight">
+              <strong>If the Board receives a complaint against you, there is a formal investigation and hearing 
+              process. Understanding your rights and the procedures is critical.</strong>
+            </p>
+
+            <div className="investigation-procedures">
+              <div className="procedure-step">
+                <h5>📝 Step 1: Complaint Must Be in Writing</h5>
+                <p className="warning">
+                  <strong>All complaints must be in writing and signed by complainant</strong>
+                </p>
+                <ul>
+                  <li><strong>Written Requirement:</strong> Verbal complaints are not accepted</li>
+                  <li><strong>Signed by Complainant:</strong> Must have signature of person making complaint</li>
+                  <li><strong>Why:</strong> Prevents frivolous or anonymous accusations</li>
+                  <li><strong>Details Required:</strong>
+                    <ul>
+                      <li>Name and contact info of complainant</li>
+                      <li>Name of licensee being complained about</li>
+                      <li>Description of alleged violation</li>
+                      <li>Dates, locations, and specific facts</li>
+                      <li>Supporting documentation if available</li>
+                    </ul>
+                  </li>
+                  <li><strong>Who Can Complain:</strong> Anyone (clients, other agents, public, Board initiated)</li>
+                  <li><strong>Board Review:</strong> Board reviews complaint for merit before proceeding</li>
+                </ul>
+                <p className="highlight">
+                  <strong>Note:</strong> The Board can also initiate investigations on its own without a complaint 
+                  if it becomes aware of potential violations (e.g., through audits, inspections, or other means).
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>📅 Step 2: Hearing Upon 10 Days Notice</h5>
+                <p className="warning">
+                  <strong>Hearing upon 10 days notice to person being charged</strong>
+                </p>
+                <ul>
+                  <li><strong>Notice Requirement:</strong> Board must give you at least 10 days advance notice</li>
+                  <li><strong>Notice Contents:</strong>
+                    <ul>
+                      <li>Date, time, and location of hearing</li>
+                      <li>Specific charges against you</li>
+                      <li>Your rights at the hearing</li>
+                      <li>Potential penalties</li>
+                    </ul>
+                  </li>
+                  <li><strong>Delivery Method:</strong> Certified mail to your address on file with Board</li>
+                  <li><strong>10-Day Minimum:</strong> Gives you time to prepare defense</li>
+                  <li><strong>Your Rights:</strong>
+                    <ul>
+                      <li>Right to be represented by attorney</li>
+                      <li>Right to present evidence</li>
+                      <li>Right to cross-examine witnesses</li>
+                      <li>Right to testify on your own behalf</li>
+                      <li>Right to bring witnesses</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p className="highlight">
+                  <strong>⚠️ STRONGLY RECOMMENDED:</strong> Hire an attorney who specializes in real estate 
+                  licensing defense. Board hearings are serious legal proceedings. Do not go alone.
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>🛡️ Step 3: No Action Until After Hearing & Finding</h5>
+                <p className="warning">
+                  <strong>No refusal to renew of license or face suspension until after hearing is conducted 
+                  & finding issued</strong>
+                </p>
+                <ul>
+                  <li><strong>Due Process Protection:</strong> You cannot be punished before hearing</li>
+                  <li><strong>License Remains Active:</strong> You can continue working until Board issues finding</li>
+                  <li><strong>Exception:</strong> Board may impose emergency suspension if public safety at risk</li>
+                  <li><strong>Hearing Must Occur:</strong> Board must conduct formal hearing</li>
+                  <li><strong>Finding Must Be Issued:</strong> Board must make written decision</li>
+                  <li><strong>Timeline:</strong> Can take months from complaint to final finding</li>
+                  <li><strong>During Investigation:</strong>
+                    <ul>
+                      <li>Continue working normally</li>
+                      <li>Maintain professional conduct</li>
+                      <li>Do NOT destroy evidence or documents</li>
+                      <li>Cooperate with Board (but through attorney)</li>
+                      <li>Do NOT discuss case publicly or on social media</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p className="warning">
+                  <strong>Emergency Suspension:</strong> In rare cases involving immediate danger to public 
+                  (e.g., ongoing fraud, theft of client funds, violent behavior), Board can impose immediate 
+                  emergency suspension pending full hearing. This is extremely rare.
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>📚 Step 4: Board's Investigative Powers</h5>
+                <p className="warning">
+                  <strong>Board may summons witnesses & books / papers</strong>
+                </p>
+                <ul>
+                  <li><strong>Subpoena Power:</strong> Board has legal authority to compel evidence</li>
+                  <li><strong>Can Summon:</strong>
+                    <ul>
+                      <li>Witnesses to testify under oath</li>
+                      <li>Documents and records</li>
+                      <li>Electronic files and communications</li>
+                      <li>Financial records</li>
+                      <li>Transaction files</li>
+                    </ul>
+                  </li>
+                  <li><strong>Must Comply:</strong> Failing to respond to Board summons is separate violation</li>
+                  <li><strong>What Board Can Request:</strong>
+                    <ul>
+                      <li>Listing agreements and buyer broker agreements</li>
+                      <li>Purchase & sale agreements</li>
+                      <li>Escrow records</li>
+                      <li>Commission records</li>
+                      <li>Emails and text messages</li>
+                      <li>Advertising materials</li>
+                      <li>CE certificates</li>
+                      <li>Any documents related to complaint</li>
+                    </ul>
+                  </li>
+                  <li><strong>Production Timeline:</strong> Must produce within time specified in summons</li>
+                  <li><strong>Privilege:</strong> Attorney-client communications may be privileged (consult lawyer)</li>
+                </ul>
+                <p className="highlight">
+                  <strong>Best Practice:</strong> Work with your attorney to organize and produce all requested 
+                  documents. Do NOT alter, destroy, or hide evidence - this will make things much worse.
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>⚖️ Step 5: Compelling Witness Testimony</h5>
+                <p className="warning">
+                  <strong>If witness fails to show up, Superior Court can issue an order for them to appear.</strong>
+                </p>
+                <ul>
+                  <li><strong>Court Enforcement:</strong> Board can go to Superior Court for help</li>
+                  <li><strong>When Used:</strong> If witness ignores Board summons</li>
+                  <li><strong>Court Order:</strong> Superior Court can issue order to compel appearance</li>
+                  <li><strong>Contempt of Court:</strong> Failing to comply with court order = contempt</li>
+                  <li><strong>Penalties for Non-Compliance:</strong>
+                    <ul>
+                      <li>Fines</li>
+                      <li>Jail time (for contempt)</li>
+                      <li>Additional license penalties if you're the licensee</li>
+                    </ul>
+                  </li>
+                  <li><strong>Applies to Anyone:</strong> Includes other agents, brokers, clients, vendors</li>
+                </ul>
+                <p className="warning">
+                  <strong>If You're Summoned as Witness:</strong> You MUST appear or face legal consequences. 
+                  If you have concerns about testifying, consult an attorney but do not simply ignore the summons.
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>✍️ Step 6: Board Decision Requirements</h5>
+                <p className="warning">
+                  <strong>Decision of board must be by majority, in writing and signed by all members. 
+                  Copies sent to each interested party.</strong>
+                </p>
+                <ul>
+                  <li><strong>Majority Vote:</strong> More than half of Board members must agree</li>
+                  <li><strong>Written Decision Required:</strong> Oral decisions not valid</li>
+                  <li><strong>Signed by ALL Members:</strong> Every Board member must sign (even dissenters)</li>
+                  <li><strong>Decision Must Include:</strong>
+                    <ul>
+                      <li>Findings of fact (what happened)</li>
+                      <li>Conclusions of law (which rules were violated)</li>
+                      <li>Reasoning for decision</li>
+                      <li>Penalty or dismissal</li>
+                      <li>Effective date</li>
+                    </ul>
+                  </li>
+                  <li><strong>Copies Sent To:</strong>
+                    <ul>
+                      <li>Licensee being charged</li>
+                      <li>Licensee's attorney (if represented)</li>
+                      <li>Complainant</li>
+                      <li>Any other interested parties</li>
+                    </ul>
+                  </li>
+                  <li><strong>Service Method:</strong> Certified mail or hand delivery</li>
+                  <li><strong>Public Record:</strong> Decision becomes public record</li>
+                </ul>
+                <p className="highlight">
+                  <strong>Possible Outcomes:</strong>
+                  <ul>
+                    <li>Dismissal (no violation found)</li>
+                    <li>Letter of reprimand (warning, no suspension)</li>
+                    <li>Fine (monetary penalty)</li>
+                    <li>Suspension (temporary loss of license - 30/60/90 days or more)</li>
+                    <li>Revocation (permanent loss of license)</li>
+                    <li>Conditions (probation, additional CE, supervision, etc.)</li>
+                  </ul>
+                </p>
+              </div>
+
+              <div className="procedure-step">
+                <h5>📞 Step 7: Right to Appeal</h5>
+                <p className="warning">
+                  <strong>Decision may be appealed to Superior Court within 20 days following notification 
+                  of decision</strong>
+                </p>
+                <ul>
+                  <li><strong>20-Day Deadline:</strong> Must file appeal within 20 days of receiving decision</li>
+                  <li><strong>Strictly Enforced:</strong> Miss deadline = lose right to appeal</li>
+                  <li><strong>Count From:</strong> Date you received written decision (not date it was issued)</li>
+                  <li><strong>Where to Appeal:</strong> Massachusetts Superior Court</li>
+                  <li><strong>Appeal Process:</strong>
+                    <ul>
+                      <li>File notice of appeal with Superior Court</li>
+                      <li>Serve copy on Board of Registration</li>
+                      <li>Pay filing fees</li>
+                      <li>Submit record of proceedings</li>
+                      <li>File appellate brief</li>
+                    </ul>
+                  </li>
+                  <li><strong>Standard of Review:</strong>
+                    <ul>
+                      <li>Was Board decision supported by substantial evidence?</li>
+                      <li>Did Board follow proper procedures?</li>
+                      <li>Was decision arbitrary or capricious?</li>
+                      <li>Court does NOT re-hear case, only reviews Board's process</li>
+                    </ul>
+                  </li>
+                  <li><strong>During Appeal:</strong>
+                    <ul>
+                      <li>License suspension/revocation typically NOT stayed (remains in effect)</li>
+                      <li>Can request stay from court (requires showing of harm and likelihood of success)</li>
+                      <li>Appeal can take 6-18 months</li>
+                    </ul>
+                  </li>
+                  <li><strong>Appeal Outcomes:</strong>
+                    <ul>
+                      <li>Affirm Board decision (Board wins)</li>
+                      <li>Reverse Board decision (you win)</li>
+                      <li>Remand to Board for new hearing (do over)</li>
+                      <li>Modify penalty (reduce suspension, etc.)</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p className="warning">
+                  <strong>⚠️ CRITICAL:</strong> Do NOT miss the 20-day appeal deadline! Mark it on your 
+                  calendar immediately when you receive the decision. Consult an appellate attorney right away.
+                </p>
+              </div>
+            </div>
+
+            <div className="investigation-timeline">
+              <h5>⏱️ Typical Investigation Timeline:</h5>
+              <ul>
+                <li><strong>Complaint Filed:</strong> Day 0</li>
+                <li><strong>Board Review:</strong> 2-8 weeks (Board decides if complaint has merit)</li>
+                <li><strong>Investigation:</strong> 2-6 months (Board gathers evidence)</li>
+                <li><strong>Notice of Hearing:</strong> At least 10 days before hearing</li>
+                <li><strong>Hearing:</strong> 1 day to several days depending on complexity</li>
+                <li><strong>Decision:</strong> 4-12 weeks after hearing</li>
+                <li><strong>Total Time:</strong> 6 months to 2+ years from complaint to final decision</li>
+                <li><strong>If Appealed:</strong> Add 6-18 months</li>
+              </ul>
+            </div>
+
+            <div className="investigation-best-practices">
+              <h5>🎯 What to Do If You Receive a Board Complaint:</h5>
+              <ol>
+                <li><strong>DO NOT PANIC</strong> - Having a complaint filed doesn't mean you're guilty</li>
+                <li><strong>HIRE AN ATTORNEY IMMEDIATELY</strong> - Specializing in real estate licensing defense</li>
+                <li><strong>DO NOT CONTACT COMPLAINANT</strong> - Can make things worse</li>
+                <li><strong>PRESERVE ALL EVIDENCE</strong> - Do not delete emails, texts, documents</li>
+                <li><strong>NOTIFY YOUR BROKER</strong> - They need to know</li>
+                <li><strong>NOTIFY YOUR E&O INSURANCE</strong> - May cover legal fees</li>
+                <li><strong>DO NOT DISCUSS PUBLICLY</strong> - No social media posts about the case</li>
+                <li><strong>COOPERATE WITH BOARD</strong> - But through your attorney</li>
+                <li><strong>ORGANIZE YOUR DEFENSE</strong> - Gather all documents, witnesses, evidence</li>
+                <li><strong>PREPARE FOR HEARING</strong> - Practice testimony with attorney</li>
+                <li><strong>ATTEND ALL PROCEEDINGS</strong> - Show respect for process</li>
+                <li><strong>BE PROFESSIONAL</strong> - Dress appropriately, be respectful, tell truth</li>
+              </ol>
+            </div>
+
+            <div className="investigation-summary">
+              <h4>🎯 Board Investigation Process Summary:</h4>
+              <p className="warning">
+                <strong>The Board investigation process is formal, legal, and serious. Your license and career 
+                are at stake. Follow all procedures, meet all deadlines, and work with qualified legal counsel 
+                throughout the process.</strong>
+              </p>
+              <ul>
+                <li>✅ <strong>Complaint:</strong> Must be written and signed</li>
+                <li>✅ <strong>Notice:</strong> At least 10 days before hearing</li>
+                <li>✅ <strong>Due Process:</strong> No penalty until after hearing and finding</li>
+                <li>✅ <strong>Board Powers:</strong> Can summon witnesses and documents</li>
+                <li>✅ <strong>Court Enforcement:</strong> Superior Court can compel witness appearance</li>
+                <li>✅ <strong>Decision:</strong> Majority vote, written, signed by all members</li>
+                <li>✅ <strong>Appeal:</strong> 20 days to appeal to Superior Court</li>
+              </ul>
+              <p className="highlight">
+                <strong>Prevention is Best:</strong> The best way to handle a Board investigation is to never 
+                get one. Follow all laws, maintain high ethical standards, document everything, communicate 
+                clearly with clients, and when in doubt, consult your broker or attorney BEFORE acting.
+              </p>
+            </div>
+          </div>
         </div>
 
         <h3>16.6 Real Estate License Exemptions (Who Doesn't Need a License)</h3>
