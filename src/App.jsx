@@ -1,24 +1,17 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { sections as importedSections } from './content.jsx';
-import FlashcardMode from './FlashcardMode';
-
-// Sort sections by the number in their title (1-33)
-const sections = [...importedSections].sort((a, b) => {
-  const numA = parseInt(a.title.match(/^(\d+)\./)?.[1] || '999');
-  const numB = parseInt(b.title.match(/^(\d+)\./)?.[1] || '999');
-  return numA - numB;
-});
-import QuizMode from './QuizMode';
-import PracticeExamMode from './PracticeExamMode';
-import PersonalDashboard from './PersonalDashboard';
-import ScenarioMode from './ScenarioMode';
-import CalculatorMode from './CalculatorMode';
-import HelpModal from './HelpModal';
-import GamificationPanel from './GamificationPanel';
-import TableOfContents from './TableOfContents';
-import Breadcrumb from './Breadcrumb';
-import { useLocalStorage } from './useLocalStorage';
-import { useGamification } from './useGamification';
+import { sections } from './content/index.jsx';
+import FlashcardMode from './components/study/FlashcardMode';
+import QuizMode from './components/study/QuizMode';
+import PracticeExamMode from './components/study/PracticeExamMode';
+import PersonalDashboard from './features/dashboard/PersonalDashboard';
+import ScenarioMode from './features/scenarios/ScenarioMode';
+import CalculatorMode from './features/calculators/CalculatorMode';
+import HelpModal from './components/layout/HelpModal';
+import GamificationPanel from './components/gamification/GamificationPanel';
+import TableOfContents from './components/layout/TableOfContents';
+import Breadcrumb from './components/layout/Breadcrumb';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { useGamification } from './hooks/useGamification';
 
 export default function App() {
   const [activeId, setActiveId] = useLocalStorage('lastActiveSection', sections[0].id);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { scenarios } from './scenarioData';
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export default function ScenarioMode() {
   const [selectedScenario, setSelectedScenario] = useState(null);

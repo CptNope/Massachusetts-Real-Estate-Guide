@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { quizQuestions } from './studyData';
+import { quizQuestions } from '../study/studyData';
 
 export default function PerformanceAnalytics({ gamification }) {
   const [timeRange, setTimeRange] = useState('all'); // all, week, month

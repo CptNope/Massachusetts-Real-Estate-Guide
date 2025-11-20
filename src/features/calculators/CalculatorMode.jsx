@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EnhancedCMA from './EnhancedCMA';
+import EnhancedCMA from '../cma/EnhancedCMA';
 
 export default function CalculatorMode({ gamification }) {
   const [activeCalculator, setActiveCalculator] = useState('commission');

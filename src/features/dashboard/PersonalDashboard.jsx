@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import { sections as importedSections } from './content.jsx';
-import { useLocalStorage } from './useLocalStorage';
-import PerformanceAnalytics from './PerformanceAnalytics';
-
-// Sort sections by the number in their title (1-33)
-const sections = [...importedSections].sort((a, b) => {
-  const numA = parseInt(a.title.match(/^(\d+)\./)?.[1] || '999');
-  const numB = parseInt(b.title.match(/^(\d+)\./)?.[1] || '999');
-  return numA - numB;
-});
+import { sections } from '../../content/index.jsx';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import PerformanceAnalytics from '../../components/gamification/PerformanceAnalytics';
 
 export default function PersonalDashboard({ 
   masteredSections, 
