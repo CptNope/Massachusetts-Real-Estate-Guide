@@ -62,8 +62,8 @@ export const sections = [
         </ul>
       </>
     )
-  }
-{
+  },
+  {
     id: 'law-changes',
     icon: 'âš–ï¸',
     title: '2. 2025 MA Law & Form Changes',
@@ -82,7 +82,7 @@ export const sections = [
             <ul>
               <li>Inspection deadline (shorter windows can make an offer more attractive).</li>
               <li>
-                Repair thresholds \u2013 for example, buyer may only terminate if repair estimates exceed
+                Repair thresholds – for example, buyer may only terminate if repair estimates exceed
                 a certain dollar amount.
               </li>
               <li>
@@ -95,13 +95,13 @@ export const sections = [
           <li>Offers cannot be filtered or prioritized solely based on waiving inspection.</li>
         </ul>
 
-        <h3>2.2 Buyer-Agent Compensation \u2013 New 2025 MAR Forms</h3>
+        <h3>2.2 Buyer-Agent Compensation – New 2025 MAR Forms</h3>
         <ul>
           <li>Commissions are explicitly treated as fully negotiable.</li>
           <li>
             The offer now has a section specifying:
             <ul>
-              <li>How much the buyer\u2019s broker is to be paid.</li>
+              <li>How much the buyer’s broker is to be paid.</li>
               <li>Who pays that compensation (buyer, seller, or a combination).</li>
               <li>Any caps or fixed-fee structures the parties agree to.</li>
             </ul>
@@ -129,14 +129,14 @@ export const sections = [
             Requires <strong>written informed consent</strong> from all parties before it occurs.
           </li>
           <li>
-            The dual agent must remain neutral and cannot advocate for either side\u2019s negotiating
+            The dual agent must remain neutral and cannot advocate for either side’s negotiating
             position.
           </li>
         </ul>
       </>
     )
-  }
-{
+  },
+  {
     id: 'contract-law-fundamentals',
     icon: 'ðŸ“',
     title: '3. Contract Law Fundamentals',
@@ -694,9 +694,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-];
-{
+  },
+  {
     id: 'mls-participation-rule-2024',
     icon: 'ðŸ›ï¸',
     title: '4. Realtor MLS Participation Rule - August 17, 2024',
@@ -966,8 +965,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'two-contract-attorney',
     icon: 'âš–ï¸',
     title: '5. Two-Contract System & Attorney Role',
@@ -1174,8 +1173,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'transaction-cycle',
     icon: 'ðŸ”„',
     title: '6. The Transaction Cycle',
@@ -1307,8 +1306,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'agency-types',
     icon: 'ðŸ¤',
     title: '7. Types of Agency Relationships',
@@ -1972,8 +1971,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'agency-models',
     icon: 'ðŸ‘¥',
     title: '8. Designated vs Non-Designated Agency',
@@ -2282,8 +2281,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'agent-authority',
     icon: 'ðŸŽ¯',
     title: '9. Agent Authority Levels & Responsibilities to Principal',
@@ -2615,8 +2614,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'broker-relationship',
     icon: 'ðŸ¤',
     title: '10. Broker & Sales Associate Relationship',
@@ -2687,8 +2686,8 @@ export const sections = [
         </ul>
       </>
     )
-  }
-{
+  },
+  {
     id: 'buyer-representation-agreements',
     icon: 'ðŸ“',
     title: '11. Buyer Client Representation Agreements',
@@ -2948,8 +2947,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'agency-termination',
     icon: 'ðŸ”š',
     title: '12. Termination of Agency Relationships',
@@ -3509,8 +3508,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'fair-housing',
     icon: 'âš–ï¸',
     title: '13. Fair Housing Act - Complete Compliance Guide',
@@ -3917,8 +3916,8 @@ export const sections = [
         </div>
       </>
     )
-  }
-{
+  },
+  {
     id: 'property-condition-disclosure',
     icon: 'âš ï¸',
     title: '14. Property Condition - Required Disclosure',
@@ -4184,8 +4183,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'home-inspection-law',
     icon: 'ðŸ”',
     title: '15. Home Inspection Law & Consumer Protection',
@@ -4380,8 +4379,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'stigmatized-properties',
     icon: 'ðŸ‘»',
     title: '16. Stigmatized Properties',
@@ -4731,8 +4730,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'negotiable-terms',
     icon: 'ðŸ§¾',
     title: '17. Negotiable Contract Terms in MA',
@@ -4812,8 +4811,8 @@ export const sections = [
         </ul>
       </>
     )
-  }
-{
+  },
+  {
     id: 'commissions',
     icon: 'ðŸ’¸',
     title: '18. Commission Negotiation in Massachusetts',
@@ -4885,8 +4884,8 @@ export const sections = [
         </pre>
       </>
     )
-  }
-{
+  },
+  {
     id: 'valuation',
     icon: 'ðŸ’°',
     title: '19. Property Valuation Methods',
@@ -5468,8 +5467,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'financing',
     icon: 'ðŸ¦',
     title: '20. Financing Deep Dive',
@@ -7029,8 +7028,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'title-closing',
     icon: 'ðŸ“„',
     title: '21. Title & Closing Process',
@@ -8006,8 +8005,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'tax-implications',
     icon: 'ðŸ’µ',
     title: '22. Tax Implications for Buyers, Sellers & Investors',
@@ -8355,8 +8354,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'antitrust-associations',
     icon: 'âš–ï¸',
     title: '23. Antitrust Laws & Professional Associations',
@@ -8601,8 +8600,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'legal-protections',
     icon: 'âš–ï¸',
     title: '24. Legal Protections & MA Compliance',
@@ -9203,8 +9202,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'wisp',
     icon: 'ðŸ”’',
     title: '25. MA Privacy & Security Laws (WISP)',
@@ -9408,8 +9407,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'digital-compliance',
     icon: 'ðŸ“±',
     title: '26. Digital Compliance & Marketing',
@@ -9701,8 +9700,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'referrals',
     icon: 'ðŸ’°',
     title: '27. Referrals & Compensation Rules',
@@ -9807,8 +9806,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'insurance',
     icon: 'ðŸ›¡ï¸',
     title: '28. Insurance & Risk Management',
@@ -9896,8 +9895,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'professional-development',
     icon: 'ðŸŽ“',
     title: '29. Professional Development & Licensing',
@@ -11693,8 +11692,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'multi-state',
     icon: 'ðŸ—ºï¸',
     title: '30. Multi-State Licensing',
@@ -11779,8 +11778,8 @@ export const sections = [
         </p>
       </>
     )
-  }
-{
+  },
+  {
     id: 'investor',
     icon: 'ðŸ¦',
     title: '31. Investor Strategy View',
@@ -11841,8 +11840,8 @@ Always understand your agentâ€™s split and cap â€“ it influences incen
         </pre>
       </>
     )
-  }
-{
+  },
+  {
     id: 'exam-prep',
     icon: 'ðŸ“',
     title: '32. PSI Exam Guide & Content Review',
@@ -12207,8 +12206,8 @@ FHA Max: 31% housing, 43% total debt`}
         </pre>
       </>
     )
-  }
-{
+  },
+  {
     id: 'cheat',
     icon: 'ðŸ“Œ',
     title: '33. Global Cheat Sheet',
