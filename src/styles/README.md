@@ -54,20 +54,32 @@ src/styles/
 
 ### ✅ Completed
 
+**Phase 1 - Foundation:**
 - [x] Created modular file structure
-- [x] Extracted global styles (variables, reset)
-- [x] Extracted layout styles
+- [x] Extracted global styles (variables, reset, typography)
+- [x] Extracted layout styles (app structure, responsive)
 - [x] Extracted component styles (navigation, buttons, cards, forms)
-- [x] Extracted feature styles (calculator, CMA basics, charts)
+- [x] Extracted basic features (calculator, CMA, charts)
 - [x] Set up import system
 - [x] Tested build process
 
-### 🚧 In Progress
+**Phase 2 - Major Features:**
+- [x] Migrated study mode & flashcards
+- [x] Migrated quiz system
+- [x] Migrated dashboard & analytics
+- [x] Migrated scenario mode
 
-- [ ] Migrate remaining legacy styles from `index.legacy.css`
-- [ ] Add dashboard-specific styles
-- [ ] Add scenario mode styles
-- [ ] Add print styles to appropriate files
+**Phase 3 - Cross-Cutting Concerns:**
+- [x] Migrated all animations & keyframes
+- [x] Migrated utility classes
+- [x] Migrated print styles
+- [x] Added browser compatibility fixes
+
+### 🚧 Remaining
+
+- [ ] Migrate remaining CMA-specific features from legacy
+- [ ] Migrate responsive overrides
+- [ ] Migrate misc UI elements
 - [ ] Remove legacy file once migration is complete
 
 ## 📖 Usage Guide
