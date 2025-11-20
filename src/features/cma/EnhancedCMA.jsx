@@ -22,7 +22,8 @@ import {
   ExecutiveSummary,
   ComparisonMatrix,
   PriceComparisonChart,
-  AdjustmentBreakdown
+  AdjustmentBreakdown,
+  DataInfluencePanel
 } from './components';
 import {
   calcPricePerSqft,
@@ -36,6 +37,7 @@ import {
   generateRecommendations,
   calculateMarketTrend
 } from './utils/recommendations';
+import { generateEnhancedPrediction } from './utils/aiPredictionEngine';
 
 // Register Chart.js components
 ChartJS.register(
@@ -526,158 +528,71 @@ Keep it concise, professional, and data-driven. Use "you" to address the agent.`
     }
   };
 
-  // Enhanced AI Market Prediction Engine with Real Market Data
+  // Enhanced AI Market Prediction Engine with FRED Historical Data
   const generateAIPrediction = async () => {
     if (adjustedComps.length === 0) {
       showNotification('⚠️ Add comparables first to generate predictions', 'error');
       return;
     }
 
-    // Extract comparable data
-    const prices = adjustedComps.map(c => c.adjustedPrice);
-    const avgPrice = prices.reduce((sum, p) => sum + p, 0) / prices.length;
-    const recentTrend = calculateMarketTrend(adjustedComps);
+    setAiLoading(true);
     
-    // Market-adjusted trend multiplier
-    let trendMultiplier = recentTrend === 'rising' ? 1.03 : recentTrend === 'falling' ? 0.97 : 1.0;
-    
-    // Adjust based on market data
-    if (marketData.inventoryMonths < 3) {
-      trendMultiplier *= 1.01; // Seller's market boost
-    } else if (marketData.inventoryMonths > 6) {
-      trendMultiplier *= 0.99; // Buyer's market reduction
-    }
-    
-    // Interest rate impact
-    if (marketData.mortgageRateTrend < -0.2) {
-      trendMultiplier *= 1.005; // Falling rates boost demand
-    } else if (marketData.mortgageRateTrend > 0.2) {
-      trendMultiplier *= 0.995; // Rising rates slow market
-    }
-    
-    const predictedPrice = Math.round(avgPrice * trendMultiplier);
-    
-    // Confidence based on data quality
-    const stdDev = calculateStdDev(prices.map(p => parseFloat(p)));
-    const cv = stdDev / avgPrice;
-    const confidence = Math.max(0, Math.min(100, 100 - (cv * 100)));
-    
-    // Multi-period predictions (3, 6, 12 months)
-    const trendRates = {
-      rising: { three: 1.02, six: 1.04, twelve: 1.08 },
-      falling: { three: 0.98, six: 0.96, twelve: 0.92 },
-      stable: { three: 1.0, six: 1.0, twelve: 1.0 }
-    };
-    
-    const threeMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].three);
-    const sixMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].six);
-    const twelveMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].twelve);
-    
-    // Price per sqft analysis
-    const compsWithSqft = adjustedComps.filter(c => c.sqft && parseFloat(c.sqft) > 0);
-    const avgPricePerSqft = compsWithSqft.length > 0
-      ? Math.round(compsWithSqft.reduce((sum, c) => sum + (c.adjustedPrice / parseFloat(c.sqft)), 0) / compsWithSqft.length)
-      : 0;
-    
-    // Market velocity metrics
-    const avgDOM = adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length;
-    const marketVelocity = avgDOM < 20 ? 'hot' : avgDOM < 45 ? 'moderate' : 'slow';
-    
-    // Supply demand indicators
-    const competitionLevel = avgDOM < 15 ? 'high' : avgDOM < 30 ? 'moderate' : 'low';
-    
-    // Investment metrics
-    const annualAppreciation = ((twelveMonthPrediction / avgPrice - 1) * 100).toFixed(1);
-    const monthlyAppreciation = (annualAppreciation / 12).toFixed(2);
-    
-    // Risk assessment
-    const priceVariation = ((Math.max(...prices) - Math.min(...prices)) / avgPrice * 100).toFixed(1);
-    const riskLevel = priceVariation > 15 ? 'high' : priceVariation > 8 ? 'moderate' : 'low';
-    
-    // Seasonal adjustment (current month)
-    const currentMonth = new Date().getMonth();
-    const seasonalMultiplier = [0.95, 0.96, 1.0, 1.03, 1.05, 1.04, 1.02, 1.01, 1.0, 0.99, 0.97, 0.95][currentMonth];
-    const seasonalAdjustedPrice = Math.round(predictedPrice * seasonalMultiplier);
-    
-    // Generate market-aware recommendations
-    const recommendations = generateRecommendations(recentTrend, avgDOM, confidence, riskLevel, marketData);
-
-    const prediction = {
-      currentValue: Math.round(avgPrice),
-      predictedValue: predictedPrice,
-      threeMonth: threeMonthPrediction,
-      sixMonth: sixMonthPrediction,
-      twelveMonth: twelveMonthPrediction,
-      seasonalAdjusted: seasonalAdjustedPrice,
-      trend: recentTrend,
-      confidence: Math.round(confidence),
-      factors: {
-        compsAnalyzed: adjustedComps.length,
-        priceRange: Math.max(...prices) - Math.min(...prices),
-        avgDOM: Math.round(avgDOM),
-        pricePerSqft: avgPricePerSqft,
-        marketVelocity: marketVelocity,
-        competitionLevel: competitionLevel,
-        priceVariation: parseFloat(priceVariation),
-        riskLevel: riskLevel
-      },
-      investment: {
-        annualAppreciation: parseFloat(annualAppreciation),
-        monthlyAppreciation: parseFloat(monthlyAppreciation),
-        projectedEquity: twelveMonthPrediction - avgPrice
-      },
-      marketContext: {
-        mortgageRate: marketData.mortgageRate,
-        mortgageRateTrend: marketData.mortgageRateTrend,
-        medianPrice: marketData.medianPrice,
-        medianPriceTrend: marketData.medianPriceTrend,
-        inventoryMonths: marketData.inventoryMonths,
-        marketDays: marketData.avgDOM,
-        affordabilityIndex: marketData.affordabilityIndex,
-        buyerDemand: marketData.buyerDemand,
-        seasonalFactor: (marketData.seasonalFactor * 100 - 100).toFixed(1)
-      },
-      recommendations: recommendations,
-      chatGPTInsights: null,
-      hasGPTKey: !!openaiKey
-    };
-
-    // Set initial prediction
-    setAiPrediction(prediction);
-    setMarketTrend(recentTrend);
-    setPredictionConfidence(Math.round(confidence));
-    setShowAI(true);
-    
-    // Generate ChatGPT insights if API key is available
-    if (openaiKey) {
-      showNotification('🤖 Generating AI prediction with ChatGPT insights...', 'info');
+    try {
+      showNotification('🔄 Fetching historical market data from FRED...', 'info');
       
-      const gptInsights = await generateChatGPTInsights(prediction);
+      // Use enhanced prediction engine with historical FRED data
+      const prediction = await generateEnhancedPrediction(adjustedComps);
       
-      if (gptInsights) {
-        // Update prediction with GPT insights
-        setAiPrediction({
-          ...prediction,
-          chatGPTInsights: gptInsights
-        });
-        showNotification('✨ AI prediction enhanced with ChatGPT analysis! +100 XP', 'success');
-        if (gamification) {
-          gamification.addXP(100, 'ChatGPT-enhanced prediction');
-          gamification.recordActivity('chatgpt_prediction_used');
+      // Set initial prediction with historical data
+      setAiPrediction(prediction);
+      setMarketTrend(prediction.trend);
+      setPredictionConfidence(prediction.confidence);
+      setShowAI(true);
+      
+      // Show market strength in notification
+      const strengthLabel = prediction.marketStrength >= 70 
+        ? '🔥 Strong' 
+        : prediction.marketStrength >= 40 
+        ? '⚖️ Moderate' 
+        : '📉 Weak';
+      
+      // Generate ChatGPT insights if API key is available
+      if (openaiKey) {
+        showNotification('🤖 Enhancing with ChatGPT analysis...', 'info');
+        
+        const gptInsights = await generateChatGPTInsights(prediction);
+        
+        if (gptInsights) {
+          // Update prediction with GPT insights
+          setAiPrediction({
+            ...prediction,
+            chatGPTInsights: gptInsights,
+            hasGPTKey: true
+          });
+          showNotification(`✨ AI prediction with FRED data + ChatGPT! Market: ${strengthLabel} (${prediction.marketStrength}/100) +100 XP`, 'success');
+          if (gamification) {
+            gamification.addXP(100, 'ChatGPT + FRED prediction');
+            gamification.recordActivity('chatgpt_prediction_used');
+          }
+        } else {
+          showNotification(`🤖 AI prediction with FRED data! Market: ${strengthLabel} (${prediction.marketStrength}/100) +75 XP`, 'success');
+          if (gamification) {
+            gamification.addXP(75, 'FRED prediction');
+            gamification.recordActivity('ai_prediction_used');
+          }
         }
       } else {
-        showNotification('🤖 AI prediction generated! +75 XP (ChatGPT unavailable)', 'success');
+        showNotification(`🤖 AI prediction with FRED data! Market: ${strengthLabel} (${prediction.marketStrength}/100) +75 XP`, 'success');
         if (gamification) {
-          gamification.addXP(75, 'AI prediction generated');
+          gamification.addXP(75, 'FRED prediction');
           gamification.recordActivity('ai_prediction_used');
         }
       }
-    } else {
-      showNotification('🤖 AI prediction generated! +75 XP', 'success');
-      if (gamification) {
-        gamification.addXP(75, 'AI prediction generated');
-        gamification.recordActivity('ai_prediction_used');
-      }
+    } catch (error) {
+      console.error('AI Prediction Error:', error);
+      showNotification('⚠️ Error generating prediction with historical data', 'error');
+    } finally {
+      setAiLoading(false);
     }
   };
 
@@ -3886,20 +3801,27 @@ ${brandingEmail || ''}`;
             onSetupClick={() => setShowChatGPT(true)}
           />
 
+          {/* Show how historical market data influenced the prediction */}
+          <DataInfluencePanel prediction={aiPrediction} />
+
           <div className="ai-explanation">
-            <h4>💡 Enhanced AI Analysis</h4>
+            <h4>💡 Enhanced AI Analysis with Historical Data</h4>
             <p>
-              Our enhanced AI prediction engine analyzes {aiPrediction.factors.compsAnalyzed} comparable properties using advanced algorithms that consider:
+              Our enhanced AI prediction engine analyzes {aiPrediction.factors.compsAnalyzed} comparable properties combined with real-time Federal Reserve Economic Data (FRED) to provide market-intelligent forecasts:
             </p>
             <ul>
-              <li><strong>Market Trends:</strong> Pricing patterns and velocity indicators</li>
-              <li><strong>Seasonal Factors:</strong> Monthly market variations</li>
-              <li><strong>Supply & Demand:</strong> Competition levels and absorption rates</li>
-              <li><strong>Investment Metrics:</strong> Appreciation rates and equity projections</li>
-              <li><strong>Risk Assessment:</strong> Price variation and data quality</li>
+              <li><strong>Historical Market Data:</strong> Real mortgage rates, price trends, and inventory levels from FRED</li>
+              <li><strong>Market Trends:</strong> Pricing patterns adjusted by actual historical appreciation rates</li>
+              <li><strong>Seasonal Factors:</strong> Monthly market variations with economic indicators</li>
+              <li><strong>Supply & Demand:</strong> Competition levels informed by months of inventory supply</li>
+              <li><strong>Investment Metrics:</strong> Data-driven appreciation rates and equity projections</li>
+              <li><strong>Risk Assessment:</strong> Enhanced with employment and construction data</li>
             </ul>
             <p>
-              <strong>Confidence Score ({aiPrediction.confidence}%):</strong> Based on data consistency and comp quality. Higher scores = more reliable predictions.
+              <strong>Market Strength ({aiPrediction.marketStrength}/100):</strong> Calculated from mortgage rates, price trends, inventory, employment, and construction activity.
+            </p>
+            <p>
+              <strong>Confidence Score ({aiPrediction.confidence}%):</strong> Based on data consistency, comp quality, and {aiPrediction.dataQuality?.historical ? 'live' : 'simulated'} historical market data.
             </p>
           </div>
 
