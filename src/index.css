@@ -12083,3 +12083,521 @@ h3[id], h4[id] {
     gap: 0.75rem;
   }
 }
+/* ========================================
+   PROPERTY HISTORY & DEED RECORDS COMPONENT
+   ======================================== */
+
+/* Property History Panel */
+.property-history-panel {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.property-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.property-history-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+/* Address Display */
+.property-history-address {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.property-history-address strong {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.data-timestamp {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Loading State */
+.property-history-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+/* Error State */
+.property-history-error {
+  text-align: center;
+  padding: 2rem;
+  color: #ef4444;
+}
+
+.property-history-error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Tab Navigation */
+.property-history-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  overflow-x: auto;
+}
+
+.property-history-tabs .tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.property-history-tabs .tab:hover {
+  color: var(--text-primary);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.property-history-tabs .tab.active {
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Tab Content */
+.property-history-content {
+  min-height: 400px;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tab-header h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.stats {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stat-badge {
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.stat-badge.appreciation {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+/* Sales Timeline */
+.sales-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sale-entry {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  border-left: 4px solid #6366f1;
+}
+
+.sale-date {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.sale-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sale-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.sale-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.sale-type {
+  padding: 0.25rem 0.5rem;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 0.25rem;
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.sale-comparison {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.over-ask {
+  color: #10b981;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.under-ask {
+  color: #ef4444;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Deed Records */
+.deed-records-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.deed-section {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+}
+
+.deed-section h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.info-item span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Encumbrances */
+.encumbrance-item {
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+  border-left: 3px solid #f59e0b;
+  margin-bottom: 1rem;
+}
+
+.enc-type {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.enc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.enc-details .status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 0.25rem;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.enc-note {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 0.25rem;
+  font-style: italic;
+}
+
+/* Tax Table */
+.tax-table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.tax-table-header {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.tax-table-row {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.tax-year {
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.total-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.annual-tax {
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Modifications Timeline */
+.modifications-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modification-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  border-left: 4px solid #f59e0b;
+}
+
+.mod-year {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.mod-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mod-type {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mod-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Characteristics Grid */
+.characteristics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.char-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+}
+
+.char-item label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.char-item span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Data Source */
+.data-source {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: rgba(251, 191, 36, 0.1);
+  border-radius: 0.5rem;
+  border-left: 3px solid #fbbf24;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Property History Note */
+.property-history-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  border-left: 3px solid #3b82f6;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.property-history-note strong {
+  color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tax-table-header,
+  .tax-table-row {
+    grid-template-columns: 60px repeat(5, 1fr);
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .property-history-panel {
+    padding: 1rem;
+  }
+
+  .sale-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .modification-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tax-table-header,
+  .tax-table-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tax-table-header div:nth-child(n+3),
+  .tax-table-row div:nth-child(n+3) {
+    display: none;
+  }
+
+  .property-history-address {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .property-history-tabs {
+    gap: 0.25rem;
+  }
+
+  .property-history-tabs .tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+  .property-history-panel {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .deed-section,
+  .sale-entry,
+  .modification-entry,
+  .tax-table-row {
+    background: #0f172a;
+  }
+
+  .encumbrance-item {
+    background: #1e293b;
+  }
+}
