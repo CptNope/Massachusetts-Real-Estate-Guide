@@ -12926,3 +12926,314 @@ h3[id], h4[id] {
     height: 500px;
   }
 }
+/* ========================================
+   OPTIMIZED COMPARABLE PROPERTY FORMS
+   Grid-based responsive layout
+   ======================================== */
+
+/* Comparable Section Container */
+.comp-section {
+  background: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.comp-section:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+/* Comparable Header */
+.comp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.comp-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comp-header input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Optimized Comparable Form Grid */
+.comp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Full-width for address field */
+.comp-address-field {
+  grid-column: 1 / -1;
+}
+
+/* Primary metrics (price, beds, baths, sqft) - 4 columns */
+.comp-primary-metrics {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Secondary metrics (garage, condition, age, DOM) - 4 columns */
+.comp-secondary-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Additional features (pool, lot, location, view, upgrades) - 5 columns */
+.comp-additional-features {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+/* Input group styling */
+.comp-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comp-input-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.comp-input-group .label-icon {
+  font-size: 1rem;
+}
+
+.comp-input-group .label-required {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.comp-input-group .label-tooltip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #6366f1;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: help;
+  font-weight: 600;
+}
+
+.comp-input-group input,
+.comp-input-group select {
+  padding: 0.625rem 0.875rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.comp-input-group input:focus,
+.comp-input-group select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.comp-input-group input:hover,
+.comp-input-group select:hover {
+  border-color: #818cf8;
+}
+
+/* Input with prefix (price field) */
+.comp-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.comp-input-prefix {
+  position: absolute;
+  left: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.comp-input-wrapper input {
+  padding-left: 2rem;
+  width: 100%;
+}
+
+/* Notes section */
+.comp-notes-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.comp-notes-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.comp-notes-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: all 0.2s ease;
+}
+
+.comp-notes-section textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Load Example Button */
+.load-example-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.load-example-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.load-example-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .comp-primary-metrics {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+
+  .comp-secondary-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .comp-additional-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .comp-primary-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-secondary-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-additional-features {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-section {
+    padding: 1rem;
+  }
+
+  .comp-header h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comp-input-group label {
+    font-size: 0.8rem;
+  }
+
+  .comp-input-group input,
+  .comp-input-group select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .load-example-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .comp-section {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .comp-input-group input,
+  .comp-input-group select,
+  .comp-notes-section textarea {
+    background: #0f172a;
+    border-color: #334155;
+  }
+}
+
+/* Animation for loaded data */
+@keyframes comp-data-load {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comp-section.data-loaded {
+  animation: comp-data-load 0.4s ease-out;
+}
