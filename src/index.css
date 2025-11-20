@@ -2339,12 +2339,14 @@ html {
 
 .law-banner-text {
   flex: 1;
-  color: #78350f;
+  color: #713f12;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .law-banner-text strong {
-  color: #92400e;
+  color: #78350f;
+  font-weight: 700;
 }
 
 .law-banner-close {
@@ -8649,7 +8651,7 @@ h3[id], h4[id] {
   align-items: stretch;
 }
 
-/* Uniform styling for ALL buttons in CMA toolbar */
+/* Uniform styling for ALL buttons in CMA toolbar - WCAG AA Compliant */
 .cma-toolbar button {
   flex: 0 1 auto;
   min-width: 140px;
@@ -8658,20 +8660,32 @@ h3[id], h4[id] {
   padding: 0.75rem 1rem;
   white-space: nowrap;
   background: linear-gradient(135deg, #ffffff, #f8fafc);
-  border: 1px solid #cbd5e1;
+  border: 1px solid #94a3b8;
   border-radius: 0.5rem;
-  color: #334155;
+  color: #1e293b;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode button adjustments */
+:root[data-theme="dark"] .cma-toolbar button {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
 .cma-toolbar button:hover {
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  border-color: #94a3b8;
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  border-color: #64748b;
   transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .cma-toolbar button:hover {
+  background: linear-gradient(135deg, #334155, #1e293b);
+  border-color: #64748b;
 }
 
 .cma-toolbar button:active {
@@ -8679,7 +8693,7 @@ h3[id], h4[id] {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Special styling for mode toggle to show active state */
+/* Special styling for mode toggle to show active state - WCAG AA */
 .cma-toolbar .mode-toggle-btn {
   min-width: 160px;
   max-width: 200px;
@@ -8687,15 +8701,27 @@ h3[id], h4[id] {
 }
 
 .cma-toolbar .mode-toggle-btn.mode-learning {
-  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border-color: #2563eb;
+  color: #1e3a8a;
+}
+
+:root[data-theme="dark"] .cma-toolbar .mode-toggle-btn.mode-learning {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
   border-color: #3b82f6;
-  color: #1e40af;
+  color: #dbeafe;
 }
 
 .cma-toolbar .mode-toggle-btn.mode-professional {
-  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+  background: linear-gradient(135deg, #e9d5ff, #d8b4fe);
+  border-color: #9333ea;
+  color: #581c87;
+}
+
+:root[data-theme="dark"] .cma-toolbar .mode-toggle-btn.mode-professional {
+  background: linear-gradient(135deg, #581c87, #6b21a8);
   border-color: #a855f7;
-  color: #6b21a8;
+  color: #f3e8ff;
 }
 
 .cma-help-panel,
