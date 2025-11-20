@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/Massachusetts-Real-Estate-Guide/sw.js', { scope: '/Massachusetts-Real-Estate-Guide/' })})}
