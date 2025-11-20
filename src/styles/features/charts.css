@@ -1,0 +1,222 @@
+/* =============================================================================
+   CHARTS - Chart Visualization Styles
+   ============================================================================= */
+
+/* CMA Charts Panel */
+.cma-charts-panel {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 100%;
+}
+
+/* Charts Header */
+.charts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.charts-header h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Charts Summary */
+.charts-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+/* Chart Selector Tabs */
+.chart-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+}
+
+.chart-tab {
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1 1 auto;
+  min-width: 120px;
+  text-align: center;
+}
+
+.chart-tab:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.chart-tab.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+/* Chart Container */
+.chart-container {
+  min-height: 400px;
+}
+
+.chart-wrapper {
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+}
+
+.chart-wrapper h4 {
+  margin: 0 0 1.5rem;
+  color: #111827;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.chart-canvas {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+/* Chart Description */
+.chart-description {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(99, 102, 241, 0.05);
+  border-left: 4px solid #6366f1;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.chart-description strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Charts Footer */
+.charts-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.data-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Empty State */
+.charts-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.charts-empty p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+/* Dark Mode - Keep white background for consistency */
+@media (prefers-color-scheme: dark) {
+  .cma-charts-panel {
+    background: #ffffff;
+    border-color: #e5e7eb;
+  }
+
+  .charts-header {
+    border-bottom-color: #e5e7eb;
+  }
+
+  .charts-header h3 {
+    color: #1f2937;
+  }
+
+  .chart-container {
+    background: #f9fafb;
+  }
+
+  .charts-summary,
+  .chart-description {
+    background: rgba(99, 102, 241, 0.05);
+  }
+
+  .data-note {
+    background: rgba(251, 191, 36, 0.1);
+  }
+
+  .stat-label {
+    color: #6b7280;
+  }
+
+  .stat-value {
+    color: #1f2937;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .charts-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-selector {
+    flex-direction: column;
+  }
+
+  .chart-tab {
+    min-width: 100%;
+  }
+
+  .chart-canvas {
+    height: 300px;
+  }
+}

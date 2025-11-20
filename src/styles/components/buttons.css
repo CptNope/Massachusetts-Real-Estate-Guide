@@ -1,0 +1,42 @@
+/* =============================================================================
+   BUTTONS - Button Styles, Copy Buttons, Action Buttons
+   ============================================================================= */
+
+.copy-button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+/* Code block wrapper for copy button positioning */
+.code-block-wrapper {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.code-block-wrapper .copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+}

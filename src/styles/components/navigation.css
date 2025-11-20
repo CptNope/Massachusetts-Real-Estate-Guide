@@ -1,0 +1,50 @@
+/* =============================================================================
+   NAVIGATION - Sidebar Nav, Nav Buttons
+   ============================================================================= */
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: var(--text-nav);
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: var(--bg-nav-hover);
+}
+
+.nav-button-active {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-icon {
+  width: 1.3rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* App Footer */
+.app-footer {
+  padding: 1rem 2rem;
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}

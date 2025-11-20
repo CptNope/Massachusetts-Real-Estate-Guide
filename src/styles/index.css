@@ -1,0 +1,32 @@
+/* =============================================================================
+   MASSACHUSETTS REAL ESTATE GUIDE - MAIN STYLESHEET
+   Modular CSS Architecture
+   ============================================================================= */
+
+/* 1. Global Styles - Variables, Reset, Base */
+@import './global.css';
+
+/* 2. Layout - App Structure, Header, Sidebar */
+@import './layout.css';
+
+/* 3. Components - Reusable UI Elements */
+@import './components/navigation.css';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/forms.css';
+
+/* 4. Features - Feature-Specific Styles */
+@import './features/calculator.css';
+@import './features/cma.css';
+@import './features/charts.css';
+
+/* =============================================================================
+   LEGACY STYLES - TO BE MIGRATED
+   The remaining styles from the original index.css will be gradually
+   moved into the appropriate modular files above.
+   
+   TEMPORARY: Importing legacy file to ensure nothing breaks during migration.
+   As you move styles to the modular files, you can remove sections from
+   index.legacy.css until it's eventually empty and can be deleted.
+   ============================================================================= */
+@import '../index.legacy.css';
