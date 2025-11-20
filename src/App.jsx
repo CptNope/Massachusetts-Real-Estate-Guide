@@ -1,6 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { sections } from './content.jsx';
+import { sections as importedSections } from './content.jsx';
 import FlashcardMode from './FlashcardMode';
+
+// Sort sections by the number in their title (1-33)
+const sections = [...importedSections].sort((a, b) => {
+  const numA = parseInt(a.title.match(/^(\d+)\./)?.[1] || '999');
+  const numB = parseInt(b.title.match(/^(\d+)\./)?.[1] || '999');
+  return numA - numB;
+});
 import QuizMode from './QuizMode';
 import PracticeExamMode from './PracticeExamMode';
 import PersonalDashboard from './PersonalDashboard';
