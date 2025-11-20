@@ -24,6 +24,15 @@
 @import './features/dashboard.css';
 @import './features/scenarios.css';
 
+/* 5. Animations - Keyframes & Transitions */
+@import './animations.css';
+
+/* 6. Utilities - Helper Classes */
+@import './utilities.css';
+
+/* 7. Print Styles - Print Media Queries */
+@import './print.css';
+
 /* =============================================================================
    LEGACY STYLES - TO BE MIGRATED
    The remaining styles from the original index.css will be gradually
