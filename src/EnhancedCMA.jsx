@@ -4390,38 +4390,202 @@ ${brandingEmail || ''}`;
 
       {showHelp && (
         <div className="cma-help-panel">
-          <h3>📚 How to Use the CMA Calculator</h3>
+          <h3>📚 Complete CMA Calculator Guide</h3>
           <div className="help-content">
+            
             <div className="help-section">
-              <h4>Step 1: Enter Subject Property Details</h4>
-              <p>Input the property you're valuing: address, beds, baths, square footage, garage, condition, and age.</p>
+              <h4>🎯 Getting Started - Basic Workflow</h4>
+              <p><strong>Step 1:</strong> Enter Subject Property Details (address, beds, baths, sq ft, garage, condition, age)</p>
+              <p><strong>Step 2:</strong> Set Adjustment Values (defaults provided for MA - adjust for your market)</p>
+              <p><strong>Step 3:</strong> Enter 3 Comparable Sales (recent sales within 1 mile)</p>
+              <p><strong>Step 4:</strong> Analyze Results (adjusted values, average, recommended price range)</p>
+              <p><strong>Step 5:</strong> Export to PDF or Email to client</p>
             </div>
+
             <div className="help-section">
-              <h4>Step 2: Set Adjustment Values</h4>
-              <p>These represent market value per feature. Massachusetts defaults:</p>
+              <h4>🎓 Learning Mode vs 💼 Professional Mode</h4>
+              <p><strong>Learning Mode:</strong> Shows tooltips, guidance, and challenge opportunities. Perfect for students and new agents.</p>
+              <p><strong>Professional Mode:</strong> Clean interface without learning aids. Ideal for experienced agents and client presentations.</p>
+              <p>Toggle between modes using the button at the top of the toolbar.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>💾 Save/Load Module</h4>
+              <p><strong>Save Report:</strong> Store your CMA analysis with a custom name. All property data, adjustments, and comps are saved.</p>
+              <p><strong>Load Report:</strong> Retrieve previously saved CMAs. Edit and update as needed.</p>
+              <p><strong>Delete Report:</strong> Remove outdated analyses from your saved list.</p>
+              <p><em>Tip:</em> Use descriptive names like "123-Main-St-Boston-Jan2025" for easy identification.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>🎯 Market Templates Module</h4>
+              <p>Quick-load pre-configured adjustment values for different MA markets:</p>
               <ul>
-                <li>Bedroom: $20,000 | Bathroom: $15,000 | Sq Ft: $100</li>
-                <li>Garage: $15,000 | Condition Level: $10,000 | Age: $2,000/yr</li>
-                <li>Adjust based on your local market (urban areas higher)</li>
+                <li><strong>Boston Metro:</strong> Higher adjustments (urban, competitive market)</li>
+                <li><strong>Worcester Area:</strong> Moderate adjustments (balanced market)</li>
+                <li><strong>Springfield Region:</strong> Lower adjustments (more affordable market)</li>
+                <li><strong>Cape Cod:</strong> Seasonal considerations and location premiums</li>
+                <li><strong>Berkshires:</strong> Rural market adjustments</li>
+              </ul>
+              <p><em>Tip:</em> Templates provide starting points - always verify against recent local sales.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>⚡ Bulk Actions Module</h4>
+              <p><strong>Reset All:</strong> Clear all fields and start fresh</p>
+              <p><strong>Reset Comps Only:</strong> Keep subject property and adjustments, clear comparables</p>
+              <p><strong>Copy to Clipboard:</strong> Quick text summary for emails or notes</p>
+              <p><strong>Auto-Fill Sample:</strong> Load example data to explore the tool</p>
+              <p><em>Use Case:</em> Quickly test different scenarios or start over without losing adjustment values.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>🎨 Branding Module</h4>
+              <p>Customize your CMA reports with professional branding:</p>
+              <ul>
+                <li><strong>Agent Name:</strong> Your full name appears on reports</li>
+                <li><strong>License Number:</strong> MA license # for compliance</li>
+                <li><strong>Brokerage:</strong> Company name</li>
+                <li><strong>Contact Info:</strong> Phone, email, website</li>
+                <li><strong>Logo Upload:</strong> Add your headshot or company logo</li>
+              </ul>
+              <p><em>Tip:</em> Branding settings are saved automatically and apply to all future CMAs.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>📧 Email Module</h4>
+              <p><strong>Send to Client:</strong> Email the CMA directly from the tool</p>
+              <p><strong>Setup Required:</strong></p>
+              <ul>
+                <li>Configure SMTP settings (Gmail, Outlook, or custom)</li>
+                <li>Add API key for email service</li>
+                <li>Customize email template</li>
+              </ul>
+              <p><strong>Email Includes:</strong> Professional summary, property details, comps analysis, and your branding.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>📸 Photos Module</h4>
+              <p><strong>Upload Photos:</strong> Add property images to your CMA report</p>
+              <p><strong>Supported:</strong> Subject property photos, comparable property photos, neighborhood shots</p>
+              <p><strong>Organization:</strong> Photos are automatically organized by property</p>
+              <p><em>Tip:</em> Include 3-5 photos per property for comprehensive visual context.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>🗺️ Map Module</h4>
+              <p><strong>Visual Context:</strong> See subject property and comparables on an interactive map</p>
+              <p><strong>Features:</strong> Distance markers, neighborhood boundaries, proximity analysis</p>
+              <p><strong>Best Practice:</strong> Verify comps are within 1-mile radius (closer is better)</p>
+            </div>
+
+            <div className="help-section">
+              <h4>📊 Charts Module</h4>
+              <p><strong>Advanced Analytics:</strong> Visual representations of your CMA data</p>
+              <ul>
+                <li>Price comparison bar charts</li>
+                <li>Adjustment breakdown pie charts</li>
+                <li>Market trend line graphs</li>
+                <li>Price per square foot analysis</li>
+              </ul>
+              <p><em>Use Case:</em> Great for visual learners and client presentations.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>🏢 MLS Integration (Advanced)</h4>
+              <p><strong>Connect to MLS:</strong> Pull property data directly from Multiple Listing Service</p>
+              <p><strong>Requirements:</strong> MLS credentials and API access</p>
+              <p><strong>Benefits:</strong> Automatic population of property details and comparable sales</p>
+              <p><em>Note:</em> MLS integration requires brokerage-level API access.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>🔑 API Module</h4>
+              <p><strong>API Tokens:</strong> Configure integrations with third-party services</p>
+              <p><strong>Supported Services:</strong></p>
+              <ul>
+                <li>MLS systems (for property data)</li>
+                <li>Zillow/Redfin APIs (for market trends)</li>
+                <li>Email service providers (SendGrid, Mailgun)</li>
+                <li>Cloud storage (for photo hosting)</li>
               </ul>
             </div>
+
             <div className="help-section">
-              <h4>Step 3: Enter 3 Comparable Sales</h4>
-              <p>Find recent sales (last 3-6 months) within 1 mile. Toggle checkboxes to enable/disable comps.</p>
+              <h4>🤖 AI Predict Module</h4>
+              <p><strong>AI Market Analysis:</strong> Machine learning insights on market trends</p>
+              <p><strong>Predictions Include:</strong></p>
+              <ul>
+                <li>Future price trends (3-12 months)</li>
+                <li>Days on market estimates</li>
+                <li>Optimal listing price suggestions</li>
+                <li>Market condition assessment (hot/balanced/cool)</li>
+              </ul>
+              <p><em>Note:</em> AI predictions are estimates - always verify with local market knowledge.</p>
             </div>
+
             <div className="help-section">
-              <h4>Step 4: Analyze Results</h4>
-              <p>Review adjusted values, average, range, and recommended listing price (conservative to aggressive).</p>
+              <h4>⌨️ Keyboard Shortcuts</h4>
+              <p>Speed up your workflow with keyboard shortcuts:</p>
+              <ul>
+                <li><strong>?</strong> - Show/hide shortcuts menu</li>
+                <li><strong>Ctrl+S</strong> - Save current CMA</li>
+                <li><strong>Ctrl+P</strong> - Export to PDF</li>
+                <li><strong>Ctrl+E</strong> - Open email dialog</li>
+                <li><strong>Tab/Shift+Tab</strong> - Navigate between fields</li>
+              </ul>
             </div>
+
+            <div className="help-section">
+              <h4>🎮 Practice Challenges (Learning Mode)</h4>
+              <p><strong>Gamified Learning:</strong> Complete challenges to earn XP and badges</p>
+              <p><strong>Challenge Types:</strong></p>
+              <ul>
+                <li>Quick calculations (adjustment practice)</li>
+                <li>Scenario analysis (market conditions)</li>
+                <li>Accuracy challenges (find the right comps)</li>
+              </ul>
+              <p><em>Tip:</em> Challenges help reinforce CMA principles and exam prep.</p>
+            </div>
+
             <div className="help-best-practices">
-              <h4>🌟 Best Practices</h4>
+              <h4>🌟 CMA Best Practices</h4>
               <ul>
-                <li>✅ Use 3-6 recent sales (last 3-6 months)</li>
-                <li>✅ Choose similar properties within 1 mile</li>
-                <li>✅ Verify sale prices through official records</li>
-                <li>❌ Don't mix property types or use foreclosures with standard sales</li>
+                <li>✅ <strong>Timing:</strong> Use sales from last 3-6 months (6 months max)</li>
+                <li>✅ <strong>Proximity:</strong> Comps within 0.5-1 mile (closer is better)</li>
+                <li>✅ <strong>Similarity:</strong> Match property type, size (+/- 20%), bed/bath count</li>
+                <li>✅ <strong>Verification:</strong> Confirm sale prices through official records</li>
+                <li>✅ <strong>Adjustments:</strong> Be conservative - large adjustments reduce reliability</li>
+                <li>✅ <strong>Documentation:</strong> Note your sources and reasoning</li>
+                <li>❌ <strong>Avoid:</strong> Mixing foreclosures with standard sales</li>
+                <li>❌ <strong>Avoid:</strong> Using only listings (need actual sales)</li>
+                <li>❌ <strong>Avoid:</strong> Comps over 6 months old in active markets</li>
               </ul>
             </div>
+
+            <div className="help-section">
+              <h4>📱 Mobile & Tablet Use</h4>
+              <p>The CMA calculator is fully responsive:</p>
+              <ul>
+                <li><strong>Tablet:</strong> Full functionality with optimized layout</li>
+                <li><strong>Mobile:</strong> Streamlined interface for on-the-go use</li>
+                <li><strong>Touch-Friendly:</strong> Large buttons and easy navigation</li>
+              </ul>
+              <p><em>Tip:</em> Use tablet mode for property showings and client meetings.</p>
+            </div>
+
+            <div className="help-section">
+              <h4>💡 Pro Tips</h4>
+              <ul>
+                <li><strong>Adjustment Values:</strong> Derive from recent similar sales in your market</li>
+                <li><strong>Urban vs Suburban:</strong> Boston/Cambridge use higher adjustments than rural areas</li>
+                <li><strong>Condition Ratings:</strong> 5=Excellent, 4=Good, 3=Average, 2=Fair, 1=Poor</li>
+                <li><strong>Age Adjustment:</strong> $2,000/year is typical, but newer construction may command premium</li>
+                <li><strong>Present Multiple Scenarios:</strong> Show conservative, moderate, and aggressive pricing</li>
+                <li><strong>Market Context:</strong> Adjust recommendations based on inventory levels and demand</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       )}
