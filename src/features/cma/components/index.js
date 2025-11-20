@@ -8,3 +8,4 @@ export { ExecutiveSummary } from './ExecutiveSummary';
 export { ComparisonMatrix } from './ComparisonMatrix';
 export { PriceComparisonChart } from './PriceComparisonChart';
 export { AdjustmentBreakdown } from './AdjustmentBreakdown';
+export { AddressInput } from './AddressInput';

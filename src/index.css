@@ -11249,6 +11249,181 @@ h3[id], h4[id] {
   }
 }
 
+/* Address Input Component */
+.address-input-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.address-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.required-asterisk {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+.address-input-wrapper {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.address-input {
+  flex: 1;
+  transition: all 0.2s ease;
+}
+
+.address-input.validation-success {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.address-input.validation-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.address-input.validation-warning {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.address-input.validation-validating {
+  border-color: #3b82f6;
+}
+
+.address-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.validate-btn {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.validate-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.validating-spinner {
+  font-size: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+.address-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.address-suggestion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.address-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.address-suggestion-item:hover,
+.address-suggestion-item.selected {
+  background: var(--bg-highlight);
+}
+
+.suggestion-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.suggestion-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-main {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.suggestion-detail {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.address-validation-message {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.address-validation-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border-left: 3px solid #10b981;
+}
+
+.address-validation-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-left: 3px solid #ef4444;
+}
+
+.address-validation-message.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border-left: 3px solid #f59e0b;
+}
+
+.address-validation-message.validating {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  border-left: 3px solid #3b82f6;
+}
+
+.address-hint {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 /* Summary Grid */
 .summary-grid {
   display: grid;
