@@ -718,14 +718,14 @@ export default function EnhancedCMA({ gamification }) {
     }
   }, []);
 
-  // AI Market Prediction Engine
+  // Enhanced AI Market Prediction Engine
   const generateAIPrediction = () => {
     if (adjustedComps.length === 0) {
       showNotification('⚠️ Add comparables first to generate predictions', 'error');
       return;
     }
 
-    // Simple ML-inspired prediction algorithm
+    // Extract data
     const prices = adjustedComps.map(c => c.adjustedPrice);
     const avgPrice = prices.reduce((sum, p) => sum + p, 0) / prices.length;
     const recentTrend = calculateMarketTrend(adjustedComps);
@@ -739,22 +739,71 @@ export default function EnhancedCMA({ gamification }) {
     const cv = stdDev / avgPrice;
     const confidence = Math.max(0, Math.min(100, 100 - (cv * 100)));
     
-    // 3-month and 6-month predictions
-    const threeMonthPrediction = Math.round(predictedPrice * (recentTrend === 'rising' ? 1.02 : recentTrend === 'falling' ? 0.98 : 1.0));
-    const sixMonthPrediction = Math.round(predictedPrice * (recentTrend === 'rising' ? 1.04 : recentTrend === 'falling' ? 0.96 : 1.0));
+    // Multi-period predictions (3, 6, 12 months)
+    const trendRates = {
+      rising: { three: 1.02, six: 1.04, twelve: 1.08 },
+      falling: { three: 0.98, six: 0.96, twelve: 0.92 },
+      stable: { three: 1.0, six: 1.0, twelve: 1.0 }
+    };
+    
+    const threeMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].three);
+    const sixMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].six);
+    const twelveMonthPrediction = Math.round(predictedPrice * trendRates[recentTrend].twelve);
+    
+    // Price per sqft analysis
+    const compsWithSqft = adjustedComps.filter(c => c.sqft && parseFloat(c.sqft) > 0);
+    const avgPricePerSqft = compsWithSqft.length > 0
+      ? Math.round(compsWithSqft.reduce((sum, c) => sum + (c.adjustedPrice / parseFloat(c.sqft)), 0) / compsWithSqft.length)
+      : 0;
+    
+    // Market velocity metrics
+    const avgDOM = adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length;
+    const marketVelocity = avgDOM < 20 ? 'hot' : avgDOM < 45 ? 'moderate' : 'slow';
+    
+    // Supply demand indicators
+    const competitionLevel = avgDOM < 15 ? 'high' : avgDOM < 30 ? 'moderate' : 'low';
+    
+    // Investment metrics
+    const annualAppreciation = ((twelveMonthPrediction / avgPrice - 1) * 100).toFixed(1);
+    const monthlyAppreciation = (annualAppreciation / 12).toFixed(2);
+    
+    // Risk assessment
+    const priceVariation = ((Math.max(...prices) - Math.min(...prices)) / avgPrice * 100).toFixed(1);
+    const riskLevel = priceVariation > 15 ? 'high' : priceVariation > 8 ? 'moderate' : 'low';
+    
+    // Seasonal adjustment (current month)
+    const currentMonth = new Date().getMonth();
+    const seasonalMultiplier = [0.95, 0.96, 1.0, 1.03, 1.05, 1.04, 1.02, 1.01, 1.0, 0.99, 0.97, 0.95][currentMonth];
+    const seasonalAdjustedPrice = Math.round(predictedPrice * seasonalMultiplier);
+    
+    // Generate recommendations
+    const recommendations = generateRecommendations(recentTrend, avgDOM, confidence, riskLevel);
 
     const prediction = {
       currentValue: Math.round(avgPrice),
       predictedValue: predictedPrice,
       threeMonth: threeMonthPrediction,
       sixMonth: sixMonthPrediction,
+      twelveMonth: twelveMonthPrediction,
+      seasonalAdjusted: seasonalAdjustedPrice,
       trend: recentTrend,
       confidence: Math.round(confidence),
       factors: {
         compsAnalyzed: adjustedComps.length,
         priceRange: Math.max(...prices) - Math.min(...prices),
-        avgDOM: adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 0), 0) / adjustedComps.length
-      }
+        avgDOM: Math.round(avgDOM),
+        pricePerSqft: avgPricePerSqft,
+        marketVelocity: marketVelocity,
+        competitionLevel: competitionLevel,
+        priceVariation: parseFloat(priceVariation),
+        riskLevel: riskLevel
+      },
+      investment: {
+        annualAppreciation: parseFloat(annualAppreciation),
+        monthlyAppreciation: parseFloat(monthlyAppreciation),
+        projectedEquity: twelveMonthPrediction - avgPrice
+      },
+      recommendations: recommendations
     };
 
     setAiPrediction(prediction);
@@ -762,11 +811,49 @@ export default function EnhancedCMA({ gamification }) {
     setPredictionConfidence(Math.round(confidence));
     setShowAI(true);
     
-    showNotification('🤖 AI prediction generated! +50 XP', 'success');
+    showNotification('🤖 Enhanced AI prediction generated! +75 XP', 'success');
     if (gamification) {
-      gamification.addXP(50, 'AI prediction generated');
+      gamification.addXP(75, 'Enhanced AI prediction generated');
       gamification.recordActivity('ai_prediction_used');
     }
+  };
+  
+  // Generate actionable recommendations
+  const generateRecommendations = (trend, avgDOM, confidence, riskLevel) => {
+    const recs = [];
+    
+    // Pricing recommendations
+    if (trend === 'rising' && avgDOM < 20) {
+      recs.push({ type: 'pricing', icon: '💰', text: 'Consider listing at top of range - strong seller\'s market', priority: 'high' });
+    } else if (trend === 'falling' && avgDOM > 45) {
+      recs.push({ type: 'pricing', icon: '💰', text: 'Price competitively at or below average to attract buyers', priority: 'high' });
+    } else {
+      recs.push({ type: 'pricing', icon: '💰', text: 'Price near average comparable sales for optimal positioning', priority: 'medium' });
+    }
+    
+    // Timing recommendations
+    if (avgDOM < 15) {
+      recs.push({ type: 'timing', icon: '⏰', text: 'Excellent time to list - properties moving quickly', priority: 'high' });
+    } else if (avgDOM > 60) {
+      recs.push({ type: 'timing', icon: '⏰', text: 'Consider waiting for better market conditions or price aggressively', priority: 'medium' });
+    }
+    
+    // Marketing recommendations
+    if (avgDOM > 30) {
+      recs.push({ type: 'marketing', icon: '📢', text: 'Invest in professional photos and staging - longer time on market', priority: 'medium' });
+    }
+    
+    // Data quality recommendations
+    if (confidence < 70) {
+      recs.push({ type: 'data', icon: '📊', text: 'Add more comparables for more accurate predictions', priority: 'high' });
+    }
+    
+    // Risk recommendations
+    if (riskLevel === 'high') {
+      recs.push({ type: 'risk', icon: '⚠️', text: 'High price variation - review comp selection carefully', priority: 'high' });
+    }
+    
+    return recs;
   };
 
   const calculateMarketTrend = (comps) => {
@@ -3786,11 +3873,60 @@ ${brandingEmail || ''}`;
                 {((aiPrediction.sixMonth / aiPrediction.currentValue - 1) * 100).toFixed(1)}% change
               </p>
             </div>
+            {aiPrediction.twelveMonth && (
+              <div className="prediction-card highlight">
+                <h4>12-Month Forecast 📅</h4>
+                <div className="prediction-value">
+                  ${aiPrediction.twelveMonth.toLocaleString()}
+                </div>
+                <p className={aiPrediction.trend}>
+                  {((aiPrediction.twelveMonth / aiPrediction.currentValue - 1) * 100).toFixed(1)}% change
+                </p>
+              </div>
+            )}
+            {aiPrediction.seasonalAdjusted && (
+              <div className="prediction-card seasonal">
+                <h4>Seasonal Adjusted 🍂</h4>
+                <div className="prediction-value">
+                  ${aiPrediction.seasonalAdjusted.toLocaleString()}
+                </div>
+                <p>Current month adjustment</p>
+              </div>
+            )}
           </div>
 
+          {aiPrediction.investment && (
+            <div className="ai-investment-section">
+              <h4>💰 Investment Analysis</h4>
+              <div className="investment-metrics-grid">
+                <div className="metric-card">
+                  <div className="metric-icon">📈</div>
+                  <div className="metric-content">
+                    <span className="metric-label">Annual Appreciation</span>
+                    <span className="metric-value">{aiPrediction.investment.annualAppreciation}%</span>
+                  </div>
+                </div>
+                <div className="metric-card">
+                  <div className="metric-icon">📊</div>
+                  <div className="metric-content">
+                    <span className="metric-label">Monthly Growth</span>
+                    <span className="metric-value">{aiPrediction.investment.monthlyAppreciation}%</span>
+                  </div>
+                </div>
+                <div className="metric-card">
+                  <div className="metric-icon">💎</div>
+                  <div className="metric-content">
+                    <span className="metric-label">Projected Equity (12mo)</span>
+                    <span className="metric-value">${aiPrediction.investment.projectedEquity.toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="ai-factors">
-            <h4>📊 Analysis Factors</h4>
-            <div className="factors-grid">
+            <h4>📊 Market Analysis Factors</h4>
+            <div className="factors-grid-expanded">
               <div className="factor-item">
                 <span>Comparables Analyzed:</span>
                 <strong>{aiPrediction.factors.compsAnalyzed}</strong>
@@ -3801,27 +3937,84 @@ ${brandingEmail || ''}`;
               </div>
               <div className="factor-item">
                 <span>Average DOM:</span>
-                <strong>{Math.round(aiPrediction.factors.avgDOM)} days</strong>
+                <strong>{aiPrediction.factors.avgDOM} days</strong>
+              </div>
+              {aiPrediction.factors.pricePerSqft > 0 && (
+                <div className="factor-item">
+                  <span>Avg Price/SqFt:</span>
+                  <strong>${aiPrediction.factors.pricePerSqft}/sqft</strong>
+                </div>
+              )}
+              <div className="factor-item">
+                <span>Market Velocity:</span>
+                <strong className={`velocity-${aiPrediction.factors.marketVelocity}`}>
+                  {aiPrediction.factors.marketVelocity === 'hot' && '🔥 Hot'}
+                  {aiPrediction.factors.marketVelocity === 'moderate' && '⚖️ Moderate'}
+                  {aiPrediction.factors.marketVelocity === 'slow' && '❄️ Slow'}
+                </strong>
+              </div>
+              <div className="factor-item">
+                <span>Buyer Competition:</span>
+                <strong className={`competition-${aiPrediction.factors.competitionLevel}`}>
+                  {aiPrediction.factors.competitionLevel === 'high' && '🔴 High'}
+                  {aiPrediction.factors.competitionLevel === 'moderate' && '🟡 Moderate'}
+                  {aiPrediction.factors.competitionLevel === 'low' && '🟢 Low'}
+                </strong>
+              </div>
+              <div className="factor-item">
+                <span>Price Variation:</span>
+                <strong>{aiPrediction.factors.priceVariation}%</strong>
+              </div>
+              <div className="factor-item">
+                <span>Risk Level:</span>
+                <strong className={`risk-${aiPrediction.factors.riskLevel}`}>
+                  {aiPrediction.factors.riskLevel === 'high' && '⚠️ High'}
+                  {aiPrediction.factors.riskLevel === 'moderate' && '⚠ Moderate'}
+                  {aiPrediction.factors.riskLevel === 'low' && '✅ Low'}
+                </strong>
               </div>
             </div>
           </div>
 
+          {aiPrediction.recommendations && aiPrediction.recommendations.length > 0 && (
+            <div className="ai-recommendations">
+              <h4>💡 Actionable Recommendations</h4>
+              <div className="recommendations-list">
+                {aiPrediction.recommendations.map((rec, index) => (
+                  <div key={index} className={`recommendation-item priority-${rec.priority}`}>
+                    <span className="rec-icon">{rec.icon}</span>
+                    <div className="rec-content">
+                      <span className="rec-text">{rec.text}</span>
+                      <span className="rec-type">{rec.type}</span>
+                    </div>
+                    <span className={`rec-priority priority-${rec.priority}`}>
+                      {rec.priority === 'high' ? '🔴 High' : '🟡 Medium'}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="ai-explanation">
-            <h4>💡 How This Works</h4>
+            <h4>💡 Enhanced AI Analysis</h4>
             <p>
-              Our AI prediction engine analyzes your comparable properties using machine learning-inspired algorithms. 
-              It considers pricing trends, days on market, and market conditions to forecast future values.
+              Our enhanced AI prediction engine analyzes {aiPrediction.factors.compsAnalyzed} comparable properties using advanced algorithms that consider:
             </p>
+            <ul>
+              <li><strong>Market Trends:</strong> Pricing patterns and velocity indicators</li>
+              <li><strong>Seasonal Factors:</strong> Monthly market variations</li>
+              <li><strong>Supply & Demand:</strong> Competition levels and absorption rates</li>
+              <li><strong>Investment Metrics:</strong> Appreciation rates and equity projections</li>
+              <li><strong>Risk Assessment:</strong> Price variation and data quality</li>
+            </ul>
             <p>
-              <strong>Confidence Score:</strong> Higher scores indicate more reliable predictions based on consistent comparable data.
-            </p>
-            <p>
-              <strong>Market Trend:</strong> Determined by average DOM and pricing patterns in your comparables.
+              <strong>Confidence Score ({aiPrediction.confidence}%):</strong> Based on data consistency and comp quality. Higher scores = more reliable predictions.
             </p>
           </div>
 
           <button className="btn-secondary" onClick={() => setShowAI(false)} style={{ marginTop: '1rem' }}>
-            ✕ Close Prediction
+            ✕ Close Analysis
           </button>
         </div>
       )}
@@ -4809,51 +5002,77 @@ ${brandingEmail || ''}`;
           </div>
         </div>
 
-        <h4>Subject Property</h4>
+        <h4>🏠 Subject Property</h4>
         <div className="input-group">
-          <label htmlFor="subjectAddress">Address (Optional)</label>
+          <label htmlFor="subjectAddress">
+            <span className="label-icon">📍</span>
+            Property Address (Optional)
+            <span className="label-tooltip" data-tooltip="Full street address helps with accurate market analysis">?</span>
+          </label>
           <input
             id="subjectAddress"
             type="text"
             value={subjectAddress}
             onChange={(e) => setSubjectAddress(e.target.value)}
             className="calc-input"
-            placeholder="123 Main St, Boston, MA"
+            placeholder="e.g., 123 Main St, Boston, MA 02116"
           />
+          <p className="input-hint">💡 Include street, city, state, and ZIP for best results</p>
         </div>
 
         <div className="input-row">
           <div className="input-group">
-            <label htmlFor="subjectBeds">Bedrooms</label>
+            <label htmlFor="subjectBeds">
+              <span className="label-icon">🛏️</span>
+              Bedrooms
+              <span className="label-tooltip" data-tooltip="Number of bedrooms">?</span>
+            </label>
             <input
               id="subjectBeds"
               type="number"
+              min="0"
+              max="20"
               value={subjectBeds}
               onChange={(e) => setSubjectBeds(e.target.value)}
               className="calc-input"
+              placeholder="e.g., 3"
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="subjectBaths">Bathrooms</label>
+            <label htmlFor="subjectBaths">
+              <span className="label-icon">🚿</span>
+              Bathrooms
+              <span className="label-tooltip" data-tooltip="Total bathrooms (half baths = 0.5)">?</span>
+            </label>
             <input
               id="subjectBaths"
               type="number"
+              min="0"
+              max="20"
               step="0.5"
               value={subjectBaths}
               onChange={(e) => setSubjectBaths(e.target.value)}
               className="calc-input"
+              placeholder="e.g., 2.5"
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="subjectSqft">Square Feet</label>
+            <label htmlFor="subjectSqft">
+              <span className="label-icon">📐</span>
+              Square Feet
+              <span className="label-tooltip" data-tooltip="Total finished living area">?</span>
+            </label>
             <input
               id="subjectSqft"
               type="number"
+              min="0"
+              max="50000"
               value={subjectSqft}
               onChange={(e) => setSubjectSqft(e.target.value)}
               className="calc-input"
+              placeholder="e.g., 2,400"
             />
           </div>
         </div>
@@ -4948,47 +5167,89 @@ ${brandingEmail || ''}`;
           </div>
         </div>
 
-        <h4>Adjustment Values</h4>
+        <h4>⚖️ Adjustment Values</h4>
+        <p className="input-hint" style={{marginBottom: '1rem'}}>
+          💡 Set dollar amounts to adjust comparable prices. Typical MA ranges shown below.
+        </p>
         <div className="input-row">
           <div className="input-group">
-            <label htmlFor="bedAdj">Per Bedroom</label>
+            <label htmlFor="bedAdj">
+              <span className="label-icon">🛏️</span>
+              Per Bedroom
+              <span className="label-tooltip" data-tooltip="Typical: $5,000-15,000 per bedroom in MA">?</span>
+            </label>
             <div className="input-wrapper">
               <span className="input-prefix">$</span>
               <input
                 id="bedAdj"
                 type="number"
+                min="0"
+                max="100000"
+                step="1000"
                 value={bedAdjustment}
                 onChange={(e) => setBedAdjustment(e.target.value)}
                 className="calc-input"
+                placeholder="10,000"
               />
+            </div>
+            <div className="input-quick-fill">
+              <button className="quick-fill-btn" onClick={() => setBedAdjustment('5000')}>$5K</button>
+              <button className="quick-fill-btn" onClick={() => setBedAdjustment('10000')}>$10K</button>
+              <button className="quick-fill-btn" onClick={() => setBedAdjustment('15000')}>$15K</button>
             </div>
           </div>
 
           <div className="input-group">
-            <label htmlFor="bathAdj">Per Bathroom</label>
+            <label htmlFor="bathAdj">
+              <span className="label-icon">🚿</span>
+              Per Bathroom
+              <span className="label-tooltip" data-tooltip="Typical: $3,000-10,000 per full bath in MA">?</span>
+            </label>
             <div className="input-wrapper">
               <span className="input-prefix">$</span>
               <input
                 id="bathAdj"
                 type="number"
+                min="0"
+                max="100000"
+                step="1000"
                 value={bathAdjustment}
                 onChange={(e) => setBathAdjustment(e.target.value)}
                 className="calc-input"
+                placeholder="5,000"
               />
+            </div>
+            <div className="input-quick-fill">
+              <button className="quick-fill-btn" onClick={() => setBathAdjustment('3000')}>$3K</button>
+              <button className="quick-fill-btn" onClick={() => setBathAdjustment('5000')}>$5K</button>
+              <button className="quick-fill-btn" onClick={() => setBathAdjustment('8000')}>$8K</button>
             </div>
           </div>
 
           <div className="input-group">
-            <label htmlFor="sqftAdj">Per Sq Ft</label>
+            <label htmlFor="sqftAdj">
+              <span className="label-icon">📐</span>
+              Per Square Foot
+              <span className="label-tooltip" data-tooltip="Typical: $50-200/sqft in MA">?</span>
+            </label>
             <div className="input-wrapper">
               <span className="input-prefix">$</span>
               <input
                 id="sqftAdj"
                 type="number"
+                min="0"
+                max="1000"
+                step="10"
                 value={sqftAdjustment}
                 onChange={(e) => setSqftAdjustment(e.target.value)}
                 className="calc-input"
+                placeholder="100"
               />
+            </div>
+            <div className="input-quick-fill">
+              <button className="quick-fill-btn" onClick={() => setSqftAdjustment('75')}>$75</button>
+              <button className="quick-fill-btn" onClick={() => setSqftAdjustment('100')}>$100</button>
+              <button className="quick-fill-btn" onClick={() => setSqftAdjustment('150')}>$150</button>
             </div>
           </div>
 
@@ -5104,34 +5365,43 @@ ${brandingEmail || ''}`;
                 checked={comp1Active}
                 onChange={(e) => setComp1Active(e.target.checked)}
               />
-              {' '}Comparable #1
+              {' '}🏘️ Comparable #1
             </h4>
           </div>
           
           {comp1Active && (
             <>
               <div className="input-group">
-                <label htmlFor="comp1Price">Sale Price</label>
+                <label htmlFor="comp1Price">
+                  <span className="label-icon">💰</span>
+                  Sale Price
+                  <span className="label-required">*</span>
+                  <span className="label-tooltip" data-tooltip="Recent sale price (required for analysis)">?</span>
+                </label>
                 <div className="input-wrapper">
                   <span className="input-prefix">$</span>
                   <input
                     id="comp1Price"
                     type="number"
+                    min="0"
+                    max="100000000"
+                    step="1000"
                     value={comp1Price}
                     onChange={(e) => setComp1Price(e.target.value)}
                     className="calc-input"
+                    placeholder="e.g., 575,000"
                   />
                 </div>
               </div>
 
               <div className="input-row">
                 <div className="input-group">
-                  <label>Beds</label>
-                  <input type="number" value={comp1Beds} onChange={(e) => setComp1Beds(e.target.value)} className="calc-input" />
+                  <label><span className="label-icon">🛏️</span> Beds</label>
+                  <input type="number" min="0" max="20" value={comp1Beds} onChange={(e) => setComp1Beds(e.target.value)} className="calc-input" placeholder="3" />
                 </div>
                 <div className="input-group">
-                  <label>Baths</label>
-                  <input type="number" step="0.5" value={comp1Baths} onChange={(e) => setComp1Baths(e.target.value)} className="calc-input" />
+                  <label><span className="label-icon">🚿</span> Baths</label>
+                  <input type="number" min="0" max="20" step="0.5" value={comp1Baths} onChange={(e) => setComp1Baths(e.target.value)} className="calc-input" placeholder="2.5" />
                 </div>
                 <div className="input-group">
                   <label>Sq Ft</label>
