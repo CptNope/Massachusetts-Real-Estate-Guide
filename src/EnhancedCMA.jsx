@@ -3394,42 +3394,42 @@ ${brandingEmail || ''}`;
           onClick={() => setShowShortcuts(!showShortcuts)}
           title="Keyboard shortcuts (Press ?)"
         >
-          ⌨️
+          ⌨️ Shortcuts
         </button>
         <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowBulkActions(!showBulkActions)}
           title="Bulk actions & utilities"
         >
-          ⚡
+          ⚡ Bulk Actions
         </button>
         <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowBranding(!showBranding)}
           title="Branding & customization"
         >
-          🎨
+          🎨 Branding
         </button>
         <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowMap(!showMap)}
           title="Map view of properties"
         >
-          🗺️
+          🗺️ Map
         </button>
         <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowPhotos(!showPhotos)}
           title="Upload photos"
         >
-          📸
+          📸 Photos
         </button>
         <button 
           className="btn-secondary cma-help-btn"
           onClick={() => setShowCharts(!showCharts)}
           title="Advanced charts"
         >
-          📊
+          📊 Charts
         </button>
         <button 
           className="btn-success cma-help-btn"
@@ -3443,7 +3443,7 @@ ${brandingEmail || ''}`;
           onClick={() => setShowEmail(!showEmail)}
           title="Email report"
         >
-          📧
+          📧 Email
         </button>
         <button 
           className={`btn-primary cma-help-btn ${mlsConnected ? 'mls-connected' : ''}`}
