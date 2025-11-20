@@ -764,8 +764,73 @@ export default function EnhancedCMA({ gamification }) {
     buyerDemand: 'high' // low/moderate/high
   };
 
+  // ChatGPT Integration for AI Predictions
+  const generateChatGPTInsights = async (predictionData) => {
+    if (!openaiKey) return null;
+    
+    try {
+      setAiLoading(true);
+      
+      const prompt = `You are a professional real estate market analyst. Analyze this CMA data and provide expert insights:
+
+**Property Analysis:**
+- Average Comparable Price: $${predictionData.currentValue.toLocaleString()}
+- Predicted Value: $${predictionData.predictedValue.toLocaleString()}
+- Market Trend: ${predictionData.trend}
+- Comparables Analyzed: ${predictionData.factors.compsAnalyzed}
+- Average Days on Market: ${predictionData.factors.avgDOM}
+
+**Market Context:**
+- Current Mortgage Rate: ${predictionData.marketContext.mortgageRate}%
+- Inventory Levels: ${predictionData.marketContext.inventoryMonths} months
+- Buyer Demand: ${predictionData.marketContext.buyerDemand}
+- Affordability Index: ${predictionData.marketContext.affordabilityIndex}
+
+**Investment Metrics:**
+- Projected Annual Appreciation: ${predictionData.investment.annualAppreciation}%
+- 12-Month Forecast: $${predictionData.twelveMonth.toLocaleString()}
+
+Provide a professional 3-paragraph analysis covering:
+1. Current market conditions and what they mean for this property
+2. Investment outlook and price trajectory
+3. Specific actionable advice for buyers/sellers
+
+Keep it concise, professional, and data-driven. Use "you" to address the agent.`;
+
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${openaiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4',
+          messages: [
+            { role: 'system', content: 'You are an expert real estate market analyst providing professional insights.' },
+            { role: 'user', content: prompt }
+          ],
+          max_tokens: 500,
+          temperature: 0.7
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('OpenAI API request failed');
+      }
+
+      const data = await response.json();
+      setAiLoading(false);
+      
+      return data.choices[0].message.content;
+    } catch (error) {
+      console.error('ChatGPT Integration Error:', error);
+      setAiLoading(false);
+      return null;
+    }
+  };
+
   // Enhanced AI Market Prediction Engine with Real Market Data
-  const generateAIPrediction = () => {
+  const generateAIPrediction = async () => {
     if (adjustedComps.length === 0) {
       showNotification('⚠️ Add comparables first to generate predictions', 'error');
       return;
@@ -875,18 +940,47 @@ export default function EnhancedCMA({ gamification }) {
         buyerDemand: marketData.buyerDemand,
         seasonalFactor: (marketData.seasonalFactor * 100 - 100).toFixed(1)
       },
-      recommendations: recommendations
+      recommendations: recommendations,
+      chatGPTInsights: null,
+      hasGPTKey: !!openaiKey
     };
 
+    // Set initial prediction
     setAiPrediction(prediction);
     setMarketTrend(recentTrend);
     setPredictionConfidence(Math.round(confidence));
     setShowAI(true);
     
-    showNotification('🤖 Enhanced AI prediction generated! +75 XP', 'success');
-    if (gamification) {
-      gamification.addXP(75, 'Enhanced AI prediction generated');
-      gamification.recordActivity('ai_prediction_used');
+    // Generate ChatGPT insights if API key is available
+    if (openaiKey) {
+      showNotification('🤖 Generating AI prediction with ChatGPT insights...', 'info');
+      
+      const gptInsights = await generateChatGPTInsights(prediction);
+      
+      if (gptInsights) {
+        // Update prediction with GPT insights
+        setAiPrediction({
+          ...prediction,
+          chatGPTInsights: gptInsights
+        });
+        showNotification('✨ AI prediction enhanced with ChatGPT analysis! +100 XP', 'success');
+        if (gamification) {
+          gamification.addXP(100, 'ChatGPT-enhanced prediction');
+          gamification.recordActivity('chatgpt_prediction_used');
+        }
+      } else {
+        showNotification('🤖 AI prediction generated! +75 XP (ChatGPT unavailable)', 'success');
+        if (gamification) {
+          gamification.addXP(75, 'AI prediction generated');
+          gamification.recordActivity('ai_prediction_used');
+        }
+      }
+    } else {
+      showNotification('🤖 AI prediction generated! +75 XP', 'success');
+      if (gamification) {
+        gamification.addXP(75, 'AI prediction generated');
+        gamification.recordActivity('ai_prediction_used');
+      }
     }
   };
   
@@ -4168,6 +4262,51 @@ ${brandingEmail || ''}`;
                     </span>
                   </div>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {aiPrediction.chatGPTInsights && (
+            <div className="chatgpt-insights-section">
+              <div className="chatgpt-header">
+                <h4>✨ ChatGPT Professional Analysis</h4>
+                <span className="gpt-badge">Powered by GPT-4</span>
+              </div>
+              <div className="chatgpt-content">
+                {aiLoading ? (
+                  <div className="gpt-loading">
+                    <div className="loading-spinner"></div>
+                    <p>Analyzing market data with ChatGPT...</p>
+                  </div>
+                ) : (
+                  <div className="gpt-analysis">
+                    {aiPrediction.chatGPTInsights.split('\n\n').map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="chatgpt-footer">
+                <p className="gpt-disclaimer">
+                  💡 This analysis is AI-generated based on your CMA data and current market conditions. 
+                  Always verify with local expertise and current MLS data.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {!aiPrediction.chatGPTInsights && aiPrediction.hasGPTKey === false && (
+            <div className="chatgpt-prompt">
+              <div className="prompt-icon">💬</div>
+              <div className="prompt-content">
+                <h4>Want Deeper AI Insights?</h4>
+                <p>Configure your OpenAI API key to unlock ChatGPT-powered professional analysis with every prediction!</p>
+                <button 
+                  className="btn-primary btn-small"
+                  onClick={() => setShowChatGPT(true)}
+                >
+                  🔑 Setup ChatGPT
+                </button>
               </div>
             </div>
           )}
