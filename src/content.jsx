@@ -139,7 +139,7 @@ export const sections = [
   {
     id: 'negotiable-terms',
     icon: '🧾',
-    title: '3. Negotiable Contract Terms in MA',
+    title: '17. Negotiable Contract Terms in MA',
     subtitle: 'What can actually be negotiated in a Massachusetts deal',
     body: (
       <>
@@ -220,7 +220,7 @@ export const sections = [
   {
     id: 'commissions',
     icon: '💸',
-    title: '4. Commission Negotiation in Massachusetts',
+    title: '18. Commission Negotiation in Massachusetts',
     subtitle: '2025 rules, examples, and scripts',
     body: (
       <>
@@ -293,7 +293,7 @@ export const sections = [
   {
     id: 'broker-relationship',
     icon: '🤝',
-    title: '5. Broker & Sales Associate Relationship',
+    title: '10. Broker & Sales Associate Relationship',
     subtitle: 'Independent contractors, commission splits, caps, and obligations',
     body: (
       <>
@@ -365,7 +365,7 @@ export const sections = [
   {
     id: 'exam-prep',
     icon: '📝',
-    title: '6. PSI Exam Guide & Content Review',
+    title: '32. PSI Exam Guide & Content Review',
     subtitle: 'Complete guide to the Massachusetts real estate licensing exam',
     body: (
       <>
@@ -731,7 +731,7 @@ FHA Max: 31% housing, 43% total debt`}
   {
     id: 'investor',
     icon: '🏦',
-    title: '7. Investor Strategy View',
+    title: '31. Investor Strategy View',
     subtitle: 'How to use these rules strategically as an investor',
     body: (
       <>
@@ -793,7 +793,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'cheat',
     icon: '📌',
-    title: '8. Global Cheat Sheet',
+    title: '33. Global Cheat Sheet',
     subtitle: 'One dense block to memorize or print',
     body: (
       <>
@@ -823,7 +823,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'antitrust-associations',
     icon: '⚖️',
-    title: '11. Antitrust Laws & Professional Associations',
+    title: '23. Antitrust Laws & Professional Associations',
     subtitle: 'Federal Laws, Ethics, MLS, MAR, and NAR',
     body: (
       <>
@@ -1069,7 +1069,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'transaction-cycle',
     icon: '🔄',
-    title: '12. The Transaction Cycle',
+    title: '6. The Transaction Cycle',
     subtitle: 'From Offer to Closing - Timelines, Responsibilities & Milestones',
     body: (
       <>
@@ -1202,7 +1202,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'digital-compliance',
     icon: '📱',
-    title: '13. Digital Compliance & Marketing',
+    title: '26. Digital Compliance & Marketing',
     subtitle: 'E-Signatures, Do Not Call, TCPA, CAN-SPAM & COPPA',
     body: (
       <>
@@ -1495,7 +1495,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'multi-state',
     icon: '🗺️',
-    title: '14. Multi-State Licensing',
+    title: '30. Multi-State Licensing',
     subtitle: 'Expanding Your Practice to Neighboring States',
     body: (
       <>
@@ -1581,7 +1581,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'referrals',
     icon: '💰',
-    title: '15. Referrals & Compensation Rules',
+    title: '27. Referrals & Compensation Rules',
     subtitle: 'Referral Fees, Gifts to Clients & RESPA Compliance',
     body: (
       <>
@@ -1687,7 +1687,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'professional-development',
     icon: '🎓',
-    title: '16. Professional Development & Licensing',
+    title: '29. Professional Development & Licensing',
     subtitle: 'Continuing Education, Certifications & Career Growth',
     body: (
       <>
@@ -3484,7 +3484,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'insurance',
     icon: '🛡️',
-    title: '17. Insurance & Risk Management',
+    title: '28. Insurance & Risk Management',
     subtitle: 'E&O, Liability, Cyber & Fidelity Coverage',
     body: (
       <>
@@ -3573,7 +3573,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'legal-protections',
     icon: '⚖️',
-    title: '18. Legal Protections & MA Compliance',
+    title: '24. Legal Protections & MA Compliance',
     subtitle: 'Bonds, Protection Clauses, Chapter 93A & Trust Accounts',
     body: (
       <>
@@ -4175,7 +4175,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'wisp',
     icon: '🔒',
-    title: '19. MA Privacy & Security Laws (WISP)',
+    title: '25. MA Privacy & Security Laws (WISP)',
     subtitle: 'Written Information Security Program - Protecting Client Data',
     body: (
       <>
@@ -4380,7 +4380,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'two-contract-attorney',
     icon: '⚖️',
-    title: '20. Two-Contract System & Attorney Role',
+    title: '5. Two-Contract System & Attorney Role',
     subtitle: 'MA\'s Unique Process & Proper Legal Verbiage',
     body: (
       <>
@@ -4588,7 +4588,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'fair-housing',
     icon: '⚖️',
-    title: '21. Fair Housing Act - Complete Compliance Guide',
+    title: '13. Fair Housing Act - Complete Compliance Guide',
     subtitle: 'Protected classes, violations, penalties, advertising compliance, and your legal obligations',
     body: (
       <>
@@ -4996,7 +4996,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'valuation',
     icon: '💰',
-    title: '22. Property Valuation Methods',
+    title: '19. Property Valuation Methods',
     subtitle: 'CMA, cost approach, income approach, market approach - pricing properties accurately',
     body: (
       <>
@@ -5579,7 +5579,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'financing',
     icon: '🏦',
-    title: '23. Financing Deep Dive',
+    title: '20. Financing Deep Dive',
     subtitle: 'Loan types, down payments, approval process, qualification - understanding buyer financing',
     body: (
       <>
@@ -7140,7 +7140,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'title-closing',
     icon: '📄',
-    title: '24. Title & Closing Process',
+    title: '21. Title & Closing Process',
     subtitle: 'Title search, title insurance, closing documents, settlement statements - final transaction steps',
     body: (
       <>
@@ -8117,7 +8117,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'tax-implications',
     icon: '💵',
-    title: '25. Tax Implications for Buyers, Sellers & Investors',
+    title: '22. Tax Implications for Buyers, Sellers & Investors',
     subtitle: 'Capital gains, 1031 exchanges, depreciation, deductions - understanding real estate tax strategies',
     body: (
       <>
@@ -8466,7 +8466,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'agency-models',
     icon: '👥',
-    title: '26. Designated vs Non-Designated Agency',
+    title: '8. Designated vs Non-Designated Agency',
     subtitle: 'Business models, dual agency implications, and office protocols',
     body: (
       <>
@@ -8776,7 +8776,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'agency-types',
     icon: '🤝',
-    title: '27. Types of Agency Relationships',
+    title: '7. Types of Agency Relationships',
     subtitle: 'Express, implied, seller\'s, buyer\'s, customer, facilitator, dual agency, and subagent',
     body: (
       <>
@@ -9441,7 +9441,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'agent-authority',
     icon: '🎯',
-    title: '28. Agent Authority Levels & Responsibilities to Principal',
+    title: '9. Agent Authority Levels & Responsibilities to Principal',
     subtitle: 'Universal, general, and special agents - understanding scope of authority',
     body: (
       <>
@@ -9774,7 +9774,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'stigmatized-properties',
     icon: '👻',
-    title: '29. Stigmatized Properties',
+    title: '16. Stigmatized Properties',
     subtitle: 'Disclosure requirements for properties with psychological impacts - deaths, crimes, and paranormal claims',
     body: (
       <>
@@ -10125,7 +10125,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'agency-termination',
     icon: '🔚',
-    title: '30. Termination of Agency Relationships',
+    title: '12. Termination of Agency Relationships',
     subtitle: 'How agency relationships end - by acts of parties, operation of law, and legal consequences',
     body: (
       <>
@@ -10686,7 +10686,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'home-inspection-law',
     icon: '🔍',
-    title: '31. Home Inspection Law & Consumer Protection',
+    title: '15. Home Inspection Law & Consumer Protection',
     subtitle: 'May 1, 2001 law - Facts for Consumers brochure, agent responsibilities, inspector recommendations',
     body: (
       <>
@@ -10882,7 +10882,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'property-condition-disclosure',
     icon: '⚠️',
-    title: '32. Property Condition - Required Disclosure',
+    title: '14. Property Condition - Required Disclosure',
     subtitle: 'Seller disclosure duties, latent defects, building code violations, material defects definition',
     body: (
       <>
@@ -11149,7 +11149,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'buyer-representation-agreements',
     icon: '📝',
-    title: '33. Buyer Client Representation Agreements',
+    title: '11. Buyer Client Representation Agreements',
     subtitle: 'Exclusive vs. Open agreements, success fees, upfront retainers, commission structures',
     body: (
       <>
@@ -11410,7 +11410,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'mls-participation-rule-2024',
     icon: '🏛️',
-    title: '34. Realtor MLS Participation Rule - August 17, 2024',
+    title: '4. Realtor MLS Participation Rule - August 17, 2024',
     subtitle: 'NEW requirements for written agreements before touring homes, in-person and virtual tours',
     body: (
       <>
@@ -11681,7 +11681,7 @@ Always understand your agent’s split and cap – it influences incentives.`}
   {
     id: 'contract-law-fundamentals',
     icon: '📝',
-    title: '35. Contract Law Fundamentals',
+    title: '3. Contract Law Fundamentals',
     subtitle: 'Essential contract principles - types, elements, enforceability, and Statute of Frauds',
     body: (
       <>
