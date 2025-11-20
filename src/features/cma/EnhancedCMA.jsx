@@ -17,6 +17,7 @@ import {
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { cmaChallenges } from './cmaChallenges';
 import { marketTemplates, getTemplate } from './marketTemplates';
+import CMACharts from './components/CMACharts';
 import { 
   ChatGPTInsights,
   ExecutiveSummary,
@@ -5691,6 +5692,27 @@ ${brandingEmail || ''}`;
           </>
         )}
       </div>
+
+      {/* CMA Charts & Visualizations */}
+      {adjustedComps.length > 0 && (
+        <CMACharts 
+          comps={adjustedComps} 
+          subjectProperty={{
+            address: subjectAddress,
+            beds: subjectBeds,
+            baths: subjectBaths,
+            sqft: subjectSqft,
+            garage: subjectGarage,
+            condition: subjectCondition,
+            age: subjectAge,
+            pool: subjectPool,
+            lotSize: subjectLotSize,
+            location: subjectLocation,
+            view: subjectView,
+            upgrades: subjectUpgrades
+          }} 
+        />
+      )}
 
       <div className="calculator-explanation">
         <h4>How Enhanced CMA Works:</h4>
