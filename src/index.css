@@ -666,6 +666,7 @@ pre {
   font-size: 1.3rem;
   margin: 0 0 1.5rem;
   line-height: 1.5;
+  color: var(--text-primary);
 }
 
 .quiz-options {
@@ -686,6 +687,7 @@ pre {
   transition: all 0.2s ease;
   text-align: left;
   width: 100%;
+  color: var(--text-primary);
 }
 
 .quiz-option:not(:disabled):hover {
@@ -701,11 +703,13 @@ pre {
 .quiz-option.correct {
   border-color: #10b981;
   background: rgba(16, 185, 129, 0.1);
+  color: var(--text-primary);
 }
 
 .quiz-option.incorrect {
   border-color: #ef4444;
   background: rgba(239, 68, 68, 0.1);
+  color: var(--text-primary);
 }
 
 .option-letter {
@@ -732,6 +736,7 @@ pre {
 .option-text {
   flex: 1;
   font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .option-icon {
@@ -832,6 +837,7 @@ pre {
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 0 0.5rem;
+  color: var(--text-primary);
 }
 
 .score-message {
