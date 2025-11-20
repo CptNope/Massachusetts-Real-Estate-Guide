@@ -221,13 +221,14 @@ export default function EnhancedCMA({ gamification }) {
   const [reportPurpose, setReportPurpose] = useState('listing');
   
   // Subject Property - MUST BE DECLARED BEFORE USEEFFECTS THAT USE THEM
+  // Pre-populated with realistic Massachusetts property data
   const [subjectBeds, setSubjectBeds] = useState('3');
   const [subjectBaths, setSubjectBaths] = useState('2');
   const [subjectSqft, setSubjectSqft] = useState('1800');
   const [subjectGarage, setSubjectGarage] = useState('yes');
   const [subjectCondition, setSubjectCondition] = useState('good');
   const [subjectAge, setSubjectAge] = useState('10');
-  const [subjectAddress, setSubjectAddress] = useState('');
+  const [subjectAddress, setSubjectAddress] = useState('42 Maple Street, Newton, MA 02458');
   const [subjectPool, setSubjectPool] = useState('no');
   const [subjectLotSize, setSubjectLotSize] = useState('8000');
   const [subjectLocation, setSubjectLocation] = useState('3');
@@ -1362,7 +1363,7 @@ ${brandingEmail || ''}`;
   const [comp3Upgrades, setComp3Upgrades] = useState('poor');
   
   // Comparable 4
-  const [comp4Active, setComp4Active] = useState(false);
+  const [comp4Active, setComp4Active] = useState(true);
   const [comp4Price, setComp4Price] = useState('430000');
   const [comp4Beds, setComp4Beds] = useState('3');
   const [comp4Baths, setComp4Baths] = useState('2');
