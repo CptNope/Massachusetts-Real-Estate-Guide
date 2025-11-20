@@ -471,6 +471,40 @@ export default function EnhancedCMA({ gamification }) {
   const [brandingLicense, setBrandingLicense] = useState('');
   const [brandingColor, setBrandingColor] = useState('#3b82f6');
   
+  // Client Information - MUST BE DECLARED BEFORE USEEFFECTS THAT USE THEM
+  const [clientName, setClientName] = useState('');
+  const [preparedBy, setPreparedBy] = useState('');
+  const [brokerageName, setBrokerageName] = useState('');
+  const [reportPurpose, setReportPurpose] = useState('listing');
+  
+  // Subject Property - MUST BE DECLARED BEFORE USEEFFECTS THAT USE THEM
+  const [subjectBeds, setSubjectBeds] = useState('3');
+  const [subjectBaths, setSubjectBaths] = useState('2');
+  const [subjectSqft, setSubjectSqft] = useState('1800');
+  const [subjectGarage, setSubjectGarage] = useState('yes');
+  const [subjectCondition, setSubjectCondition] = useState('good');
+  const [subjectAge, setSubjectAge] = useState('10');
+  const [subjectAddress, setSubjectAddress] = useState('');
+  const [subjectPool, setSubjectPool] = useState('no');
+  const [subjectLotSize, setSubjectLotSize] = useState('8000');
+  const [subjectLocation, setSubjectLocation] = useState('3');
+  const [subjectView, setSubjectView] = useState('none');
+  const [subjectUpgrades, setSubjectUpgrades] = useState('average');
+  
+  // Adjustment Values - MUST BE DECLARED BEFORE USEEFFECTS
+  const [bedAdjustment, setBedAdjustment] = useState('20000');
+  const [bathAdjustment, setBathAdjustment] = useState('15000');
+  const [sqftAdjustment, setSqftAdjustment] = useState('100');
+  const [garageAdjustment, setGarageAdjustment] = useState('15000');
+  const [conditionAdjustment, setConditionAdjustment] = useState('10000');
+  const [ageAdjustment, setAgeAdjustment] = useState('2000');
+  const [domAdjustment, setDomAdjustment] = useState('500');
+  const [poolAdjustment, setPoolAdjustment] = useState('20000');
+  const [lotSizeAdjustment, setLotSizeAdjustment] = useState('5');
+  const [locationAdjustment, setLocationAdjustment] = useState('10000');
+  const [viewAdjustment, setViewAdjustment] = useState('25000');
+  const [upgradesAdjustment, setUpgradesAdjustment] = useState('15000');
+  
   // Load branding settings on mount
   useEffect(() => {
     const savedBranding = localStorage.getItem('cma_branding');
@@ -1465,26 +1499,6 @@ ${brandingEmail || ''}`;
     }
   };
   
-  // Client Information
-  const [clientName, setClientName] = useState('');
-  const [preparedBy, setPreparedBy] = useState('');
-  const [brokerageName, setBrokerageName] = useState('');
-  const [reportPurpose, setReportPurpose] = useState('listing');
-  
-  // Subject Property
-  const [subjectBeds, setSubjectBeds] = useState('3');
-  const [subjectBaths, setSubjectBaths] = useState('2');
-  const [subjectSqft, setSubjectSqft] = useState('1800');
-  const [subjectGarage, setSubjectGarage] = useState('yes');
-  const [subjectCondition, setSubjectCondition] = useState('good');
-  const [subjectAge, setSubjectAge] = useState('10');
-  const [subjectAddress, setSubjectAddress] = useState('');
-  const [subjectPool, setSubjectPool] = useState('no');
-  const [subjectLotSize, setSubjectLotSize] = useState('8000');
-  const [subjectLocation, setSubjectLocation] = useState('3');
-  const [subjectView, setSubjectView] = useState('none');
-  const [subjectUpgrades, setSubjectUpgrades] = useState('average');
-  
   // Comparable 1
   const [comp1Active, setComp1Active] = useState(true);
   const [comp1Price, setComp1Price] = useState('425000');
@@ -1581,20 +1595,7 @@ ${brandingEmail || ''}`;
   const [comp6View, setComp6View] = useState('park');
   const [comp6Upgrades, setComp6Upgrades] = useState('excellent');
   
-  // Adjustment values
-  const [bedAdjustment, setBedAdjustment] = useState('20000');
-  const [bathAdjustment, setBathAdjustment] = useState('15000');
-  const [sqftAdjustment, setSqftAdjustment] = useState('100');
-  const [garageAdjustment, setGarageAdjustment] = useState('15000');
-  const [conditionAdjustment, setConditionAdjustment] = useState('10000');
-  const [ageAdjustment, setAgeAdjustment] = useState('2000');
-  const [domAdjustment, setDomAdjustment] = useState('500');
-  const [poolAdjustment, setPoolAdjustment] = useState('20000');
-  const [lotSizeAdjustment, setLotSizeAdjustment] = useState('5');
-  const [locationAdjustment, setLocationAdjustment] = useState('10000');
-  const [viewAdjustment, setViewAdjustment] = useState('25000');
-  const [upgradesAdjustment, setUpgradesAdjustment] = useState('15000');
-
+  // Adjustment values and constants
   const conditionValues = { 'poor': 1, 'fair': 2, 'good': 3, 'excellent': 4 };
   const upgradesValues = { 'poor': 1, 'average': 2, 'good': 3, 'excellent': 4 };
   const viewValues = { 'none': 0, 'park': 1, 'mountain': 2, 'city': 2, 'water': 3 };
