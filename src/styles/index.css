@@ -19,6 +19,10 @@
 @import './features/calculator.css';
 @import './features/cma.css';
 @import './features/charts.css';
+@import './features/study-mode.css';
+@import './features/quiz.css';
+@import './features/dashboard.css';
+@import './features/scenarios.css';
 
 /* =============================================================================
    LEGACY STYLES - TO BE MIGRATED
