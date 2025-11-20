@@ -10,3 +10,8 @@ export { useBranding } from './useBranding';
 export { usePhotoUpload } from './usePhotoUpload';
 export { useHistory } from './useHistory';
 export { useFavorites } from './useFavorites';
+export { useUIState } from './useUIState';
+export { useSubjectProperty } from './useSubjectProperty';
+export { useCompProperties } from './useCompProperties';
+export { useChallenges } from './useChallenges';
+export { useClientInfo } from './useClientInfo';
