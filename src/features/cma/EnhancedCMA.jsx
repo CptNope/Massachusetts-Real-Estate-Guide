@@ -21,8 +21,17 @@ import {
   ChatGPTInsights,
   ExecutiveSummary,
   ComparisonMatrix,
-  PriceComparisonChart
+  PriceComparisonChart,
+  AdjustmentBreakdown
 } from './components';
+import {
+  calcPricePerSqft,
+  getConfidenceLevel,
+  calculateMedian,
+  calculateStdDev,
+  detectOutliers
+} from './utils/calculations';
+import { marketData as defaultMarketData } from './utils/marketData';
 
 // Register Chart.js components
 ChartJS.register(
@@ -38,62 +47,7 @@ ChartJS.register(
   Filler
 );
 
-// Visual Adjustment Breakdown Component
-const AdjustmentBreakdown = ({ comp, subject, adjustments }) => {
-  const breakdowns = [];
-  
-  // Beds
-  const bedDiff = parseInt(comp.beds) - parseInt(subject.beds);
-  if (bedDiff !== 0) {
-    breakdowns.push({ factor: 'Bedrooms', diff: bedDiff, value: bedDiff * parseInt(adjustments.bed), unit: 'bed' });
-  }
-  
-  // Baths
-  const bathDiff = parseFloat(comp.baths) - parseFloat(subject.baths);
-  if (bathDiff !== 0) {
-    breakdowns.push({ factor: 'Bathrooms', diff: bathDiff, value: bathDiff * parseInt(adjustments.bath), unit: 'bath' });
-  }
-  
-  // Sqft
-  const sqftDiff = parseInt(comp.sqft) - parseInt(subject.sqft);
-  if (sqftDiff !== 0) {
-    breakdowns.push({ factor: 'Square Footage', diff: sqftDiff, value: sqftDiff * parseFloat(adjustments.sqft), unit: 'sqft' });
-  }
-  
-  // Garage
-  if (comp.garage !== subject.garage) {
-    const garageAdj = comp.garage === 'yes' && subject.garage === 'no' ? -parseInt(adjustments.garage) : 
-                      comp.garage === 'no' && subject.garage === 'yes' ? parseInt(adjustments.garage) : 0;
-    if (garageAdj !== 0) {
-      breakdowns.push({ factor: 'Garage', diff: garageAdj > 0 ? '+1' : '-1', value: garageAdj, unit: '' });
-    }
-  }
-  
-  return (
-    <div className="adjustment-breakdown">
-      <h5>📊 Adjustment Breakdown</h5>
-      <div className="breakdown-items">
-        {breakdowns.map((item, idx) => (
-          <div key={idx} className={`breakdown-item ${item.value >= 0 ? 'positive' : 'negative'}`}>
-            <span className="breakdown-factor">{item.factor}</span>
-            <span className="breakdown-calc">
-              {item.diff > 0 ? '+' : ''}{item.diff} {item.unit} × ${Math.abs(item.value / (item.diff || 1)).toLocaleString()}
-            </span>
-            <span className="breakdown-result">
-              = {item.value >= 0 ? '+' : ''}${item.value.toLocaleString()}
-            </span>
-          </div>
-        ))}
-      </div>
-      <div className="breakdown-total">
-        <span>Total Adjustment:</span>
-        <span className="total-value">${breakdowns.reduce((sum, item) => sum + item.value, 0).toLocaleString()}</span>
-      </div>
-    </div>
-  );
-};
-
-// Learning Tooltip Component
+// Learning Tooltip Component (kept local as it's simple and UI-specific)
 const LearningTooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
   return (
@@ -102,54 +56,6 @@ const LearningTooltip = ({ text, children }) => {
       {show && <div className="tooltip-popup">{text}</div>}
     </div>
   );
-};
-
-// Helper to calculate price per sqft
-const calcPricePerSqft = (price, sqft) => {
-  const p = parseFloat(price) || 0;
-  const s = parseInt(sqft) || 1;
-  return s > 0 ? (p / s).toFixed(2) : 0;
-};
-
-// Helper to determine confidence level
-const getConfidenceLevel = (adjustedComps) => {
-  if (adjustedComps.length < 2) return { level: 'low', color: '#ef4444', text: '🔴 Low Confidence - Use 3+ comps' };
-  
-  const values = adjustedComps.map(c => c.adjustedPrice);
-  const avg = values.reduce((a, b) => a + b, 0) / values.length;
-  const range = Math.max(...values) - Math.min(...values);
-  const variance = range / avg;
-  
-  if (variance < 0.05) return { level: 'high', color: '#10b981', text: '🟢 High Confidence - Tight clustering' };
-  if (variance < 0.15) return { level: 'medium', color: '#f59e0b', text: '🟡 Medium Confidence - Moderate spread' };
-  return { level: 'low', color: '#ef4444', text: '🔴 Low Confidence - Wide variance' };
-};
-
-// Advanced statistics helpers
-const calculateMedian = (values) => {
-  const sorted = [...values].sort((a, b) => a - b);
-  const mid = Math.floor(sorted.length / 2);
-  return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
-};
-
-const calculateStdDev = (values) => {
-  const avg = values.reduce((a, b) => a + b, 0) / values.length;
-  const squaredDiffs = values.map(v => Math.pow(v - avg, 2));
-  const variance = squaredDiffs.reduce((a, b) => a + b, 0) / values.length;
-  return Math.sqrt(variance);
-};
-
-const detectOutliers = (adjustedComps) => {
-  if (adjustedComps.length < 3) return [];
-  
-  const values = adjustedComps.map(c => c.adjustedPrice);
-  const median = calculateMedian(values);
-  const stdDev = calculateStdDev(values);
-  
-  return adjustedComps.filter(comp => {
-    const zScore = Math.abs((comp.adjustedPrice - median) / stdDev);
-    return zScore > 2; // More than 2 standard deviations away
-  }).map(comp => comp.id);
 };
 
 export default function EnhancedCMA({ gamification }) {
@@ -548,21 +454,8 @@ export default function EnhancedCMA({ gamification }) {
     }
   }, []);
 
-  // Market Data Context (simulated from real market trends)
-  const marketData = {
-    mortgageRate: 6.89,
-    mortgageRateTrend: -0.11, // vs last week
-    medianPrice: 625000,
-    medianPriceTrend: 3.2, // YoY %
-    inventoryMonths: 2.3,
-    inventoryTrend: -15, // % from 2023
-    avgDOM: 32,
-    domTrend: -8, // vs last month
-    interestRateImpact: 'moderate', // low/moderate/high
-    seasonalFactor: [0.95, 0.96, 1.0, 1.03, 1.05, 1.04, 1.02, 1.01, 1.0, 0.99, 0.97, 0.95][new Date().getMonth()],
-    affordabilityIndex: 72, // 100 = perfect balance
-    buyerDemand: 'high' // low/moderate/high
-  };
+  // Use imported market data (can be extended/customized here if needed)
+  const marketData = defaultMarketData;
 
   // ChatGPT Integration for AI Predictions
   const generateChatGPTInsights = async (predictionData) => {

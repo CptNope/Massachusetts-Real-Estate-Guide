@@ -7,3 +7,4 @@ export { ChatGPTInsights } from './ChatGPTInsights';
 export { ExecutiveSummary } from './ExecutiveSummary';
 export { ComparisonMatrix } from './ComparisonMatrix';
 export { PriceComparisonChart } from './PriceComparisonChart';
+export { AdjustmentBreakdown } from './AdjustmentBreakdown';
