@@ -17,6 +17,12 @@ import {
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { cmaChallenges } from './cmaChallenges';
 import { marketTemplates, getTemplate } from './marketTemplates';
+import { 
+  ChatGPTInsights,
+  ExecutiveSummary,
+  ComparisonMatrix,
+  PriceComparisonChart
+} from './components';
 
 // Register Chart.js components
 ChartJS.register(
@@ -31,212 +37,6 @@ ChartJS.register(
   Legend,
   Filler
 );
-
-// Executive Summary Card Component
-const ExecutiveSummary = ({ comps, avgPrice, minPrice, maxPrice, recMin, recMax, confidence, clientName, address, mode }) => {
-  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  
-  return (
-    <div className="executive-summary print-section">
-      <div className="summary-header">
-        <div className="summary-title-section">
-          <h3>📋 Executive Summary</h3>
-          <p className="summary-date">{today}</p>
-        </div>
-        {clientName && <p className="summary-client">Prepared for: <strong>{clientName}</strong></p>}
-      </div>
-      
-      <div className="summary-grid">
-        <div className="summary-section">
-          <h4>Subject Property</h4>
-          <p className="summary-address">{address || 'Not specified'}</p>
-        </div>
-        
-        <div className="summary-section">
-          <h4>Market Analysis</h4>
-          <div className="summary-stats">
-            <div className="summary-stat-item">
-              <span className="stat-label">Comparables Analyzed:</span>
-              <span className="stat-value">{comps.length}</span>
-            </div>
-            <div className="summary-stat-item">
-              <span className="stat-label">Average Adjusted Value:</span>
-              <span className="stat-value highlight">${avgPrice.toLocaleString()}</span>
-            </div>
-            <div className="summary-stat-item">
-              <span className="stat-label">Value Range:</span>
-              <span className="stat-value">${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="summary-section recommendation-section">
-          <h4>Recommended Listing Range</h4>
-          <div className="summary-recommendation">
-            <div className="rec-item">
-              <span className="rec-label">Conservative:</span>
-              <span className="rec-value">${recMin.toLocaleString()}</span>
-            </div>
-            <div className="rec-divider">to</div>
-            <div className="rec-item">
-              <span className="rec-label">Aggressive:</span>
-              <span className="rec-value">${recMax.toLocaleString()}</span>
-            </div>
-          </div>
-        </div>
-        
-        <div className="summary-section">
-          <h4>Data Confidence</h4>
-          <div className={`confidence-badge ${confidence.level}`}>
-            {confidence.text}
-          </div>
-          {mode === 'learning' && (
-            <p className="confidence-explanation">
-              {confidence.level === 'high' ? 'Excellent data consistency. High reliability for pricing decisions.' :
-               confidence.level === 'medium' ? 'Moderate spread in values. Review comp selection carefully.' :
-               'Wide variance detected. Consider adding more comparables or verifying data accuracy.'}
-            </p>
-          )}
-        </div>
-      </div>
-      
-      <div className="summary-footer">
-        <p className="disclaimer-text">
-          <strong>Disclaimer:</strong> This analysis is for informational purposes only and should not be considered a formal appraisal. 
-          Final pricing decisions should consider additional market factors and professional guidance.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// Comparison Matrix Table Component
-const ComparisonMatrix = ({ comps, subject }) => {
-  return (
-    <div className="comparison-matrix">
-      <h4>📋 Comparison Matrix</h4>
-      <div className="matrix-scroll">
-        <table className="matrix-table">
-          <thead>
-            <tr>
-              <th className="matrix-header">Feature</th>
-              <th className="matrix-subject">Subject</th>
-              {comps.map(comp => (
-                <th key={comp.id} className="matrix-comp">Comp #{comp.id}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="feature-label">Sale Price</td>
-              <td className="subject-cell">-</td>
-              {comps.map(comp => (
-                <td key={comp.id} className="comp-cell">${(comp.price / 1000).toFixed(0)}K</td>
-              ))}
-            </tr>
-            <tr>
-              <td className="feature-label">Bedrooms</td>
-              <td className="subject-cell">{subject.beds}</td>
-              {comps.map(comp => (
-                <td key={comp.id} className={`comp-cell ${parseInt(comp.beds) !== parseInt(subject.beds) ? 'diff' : ''}`}>
-                  {comp.beds}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="feature-label">Bathrooms</td>
-              <td className="subject-cell">{subject.baths}</td>
-              {comps.map(comp => (
-                <td key={comp.id} className={`comp-cell ${parseFloat(comp.baths) !== parseFloat(subject.baths) ? 'diff' : ''}`}>
-                  {comp.baths}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="feature-label">Square Feet</td>
-              <td className="subject-cell">{subject.sqft}</td>
-              {comps.map(comp => (
-                <td key={comp.id} className={`comp-cell ${parseInt(comp.sqft) !== parseInt(subject.sqft) ? 'diff' : ''}`}>
-                  {comp.sqft}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="feature-label">Garage</td>
-              <td className="subject-cell">{subject.garage === 'yes' ? '✓' : '✗'}</td>
-              {comps.map(comp => (
-                <td key={comp.id} className={`comp-cell ${comp.garage !== subject.garage ? 'diff' : ''}`}>
-                  {comp.garage === 'yes' ? '✓' : '✗'}
-                </td>
-              ))}
-            </tr>
-            <tr className="adjustment-row">
-              <td className="feature-label">Adjustment</td>
-              <td className="subject-cell">-</td>
-              {comps.map(comp => (
-                <td key={comp.id} className={`comp-cell ${comp.adjustment >= 0 ? 'positive' : 'negative'}`}>
-                  {comp.adjustment >= 0 ? '+' : ''}${(comp.adjustment / 1000).toFixed(0)}K
-                </td>
-              ))}
-            </tr>
-            <tr className="total-row">
-              <td className="feature-label">Adjusted Value</td>
-              <td className="subject-cell">-</td>
-              {comps.map(comp => (
-                <td key={comp.id} className="comp-cell total">${(comp.adjustedPrice / 1000).toFixed(0)}K</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
-
-// Visual Price Comparison Chart Component
-const PriceComparisonChart = ({ comps, avgPrice, mode }) => {
-  const maxPrice = Math.max(...comps.map(c => c.adjustedPrice));
-  const minPrice = Math.min(...comps.map(c => c.adjustedPrice));
-  
-  return (
-    <div className="price-comparison-chart">
-      <h4>📊 Visual Price Comparison</h4>
-      <div className="chart-container">
-        <div className="chart-y-axis">
-          <span className="y-label">${(maxPrice / 1000).toFixed(0)}K</span>
-          <span className="y-label">${(avgPrice / 1000).toFixed(0)}K</span>
-          <span className="y-label">${(minPrice / 1000).toFixed(0)}K</span>
-        </div>
-        <div className="chart-bars">
-          {comps.map(comp => {
-            const height = ((comp.adjustedPrice - minPrice) / (maxPrice - minPrice)) * 100;
-            const isAvg = Math.abs(comp.adjustedPrice - avgPrice) / avgPrice < 0.02;
-            return (
-              <div key={comp.id} className="chart-bar-wrapper">
-                <div className="chart-bar-container">
-                  <div 
-                    className={`chart-bar ${isAvg ? 'near-avg' : ''}`}
-                    style={{ height: `${Math.max(height, 5)}%` }}
-                    title={`$${comp.adjustedPrice.toLocaleString()}`}
-                  >
-                    <span className="bar-value">${(comp.adjustedPrice / 1000).toFixed(0)}K</span>
-                  </div>
-                </div>
-                <span className="bar-label">#{comp.id}</span>
-              </div>
-            );
-          })}
-        </div>
-        {mode === 'learning' && (
-          <div className="chart-legend">
-            <span className="legend-item">📊 Taller bars = Higher adjusted value</span>
-            <span className="legend-item">🎯 Near average = More reliable</span>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
 // Visual Adjustment Breakdown Component
 const AdjustmentBreakdown = ({ comp, subject, adjustments }) => {
@@ -4266,50 +4066,12 @@ ${brandingEmail || ''}`;
             </div>
           )}
 
-          {aiPrediction.chatGPTInsights && (
-            <div className="chatgpt-insights-section">
-              <div className="chatgpt-header">
-                <h4>✨ ChatGPT Professional Analysis</h4>
-                <span className="gpt-badge">Powered by GPT-4</span>
-              </div>
-              <div className="chatgpt-content">
-                {aiLoading ? (
-                  <div className="gpt-loading">
-                    <div className="loading-spinner"></div>
-                    <p>Analyzing market data with ChatGPT...</p>
-                  </div>
-                ) : (
-                  <div className="gpt-analysis">
-                    {aiPrediction.chatGPTInsights.split('\n\n').map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="chatgpt-footer">
-                <p className="gpt-disclaimer">
-                  💡 This analysis is AI-generated based on your CMA data and current market conditions. 
-                  Always verify with local expertise and current MLS data.
-                </p>
-              </div>
-            </div>
-          )}
-
-          {!aiPrediction.chatGPTInsights && aiPrediction.hasGPTKey === false && (
-            <div className="chatgpt-prompt">
-              <div className="prompt-icon">💬</div>
-              <div className="prompt-content">
-                <h4>Want Deeper AI Insights?</h4>
-                <p>Configure your OpenAI API key to unlock ChatGPT-powered professional analysis with every prediction!</p>
-                <button 
-                  className="btn-primary btn-small"
-                  onClick={() => setShowChatGPT(true)}
-                >
-                  🔑 Setup ChatGPT
-                </button>
-              </div>
-            </div>
-          )}
+          <ChatGPTInsights
+            insights={aiPrediction.chatGPTInsights}
+            loading={aiLoading}
+            hasGPTKey={aiPrediction.hasGPTKey}
+            onSetupClick={() => setShowChatGPT(true)}
+          />
 
           <div className="ai-explanation">
             <h4>💡 Enhanced AI Analysis</h4>
