@@ -12,3 +12,4 @@ export { AddressInput } from './AddressInput';
 export { MarketHistoryCharts } from './MarketHistoryCharts';
 export { DataInfluencePanel } from './DataInfluencePanel';
 export { PropertyHistory } from './PropertyHistory';
+export { CMACharts } from './CMACharts';
