@@ -14373,3 +14373,172 @@ h3[id], h4[id] {
 .stat-box:nth-child(3) {
   animation-delay: 0.3s;
 }
+/* ========================================
+   FIX: Comparable Label Colors for Dark Backgrounds
+   White labels on colored comparable backgrounds
+   ======================================== */
+
+/* Override label colors for comparable sections with colored backgrounds */
+.comp-section .comp-input-group label,
+.comp-section .comp-notes-section label {
+  color: #f3f4f6 !important; /* Light gray - WCAG AAA on dark backgrounds */
+  font-weight: 700;
+}
+
+/* Ensure label icons are visible */
+.comp-section .comp-input-group .label-icon {
+  opacity: 1;
+}
+
+/* Keep required asterisk visible */
+.comp-section .comp-input-group .label-required {
+  color: #fca5a5 !important; /* Light red for visibility */
+  font-weight: 800;
+}
+
+/* Tooltip on dark background */
+.comp-section .comp-input-group .label-tooltip {
+  background: #ffffff;
+  color: #1f2937;
+  border: 2px solid #ffffff;
+}
+
+.comp-section .comp-input-group .label-tooltip:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Ensure placeholder text is visible in inputs */
+.comp-section .comp-input-group input::placeholder,
+.comp-section .comp-input-group select::placeholder,
+.comp-section .comp-notes-section textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Input text should remain dark on white input backgrounds */
+.comp-section .comp-input-group input,
+.comp-section .comp-input-group select,
+.comp-section .comp-notes-section textarea {
+  background: #ffffff;
+  color: #111827;
+  border: 2px solid #e5e7eb;
+}
+
+/* Focus states on inputs */
+.comp-section .comp-input-group input:focus,
+.comp-section .comp-input-group select:focus,
+.comp-section .comp-notes-section textarea:focus {
+  background: #ffffff;
+  color: #111827;
+  border-color: #6366f1;
+}
+
+/* Dark mode adjustments for comparable sections */
+@media (prefers-color-scheme: dark) {
+  /* Labels stay light in dark mode */
+  .comp-section .comp-input-group label,
+  .comp-section .comp-notes-section label {
+    color: #f3f4f6 !important;
+  }
+  
+  /* Inputs in dark mode */
+  .comp-section .comp-input-group input,
+  .comp-section .comp-input-group select,
+  .comp-section .comp-notes-section textarea {
+    background: #1f2937;
+    color: #f3f4f6;
+    border-color: #4b5563;
+  }
+  
+  .comp-section .comp-input-group input:focus,
+  .comp-section .comp-input-group select:focus,
+  .comp-section .comp-notes-section textarea:focus {
+    background: #111827;
+    color: #f3f4f6;
+    border-color: #6366f1;
+  }
+}
+
+/* Improve overall comparable section visibility */
+.comp-section {
+  /* Ensure backgrounds have good contrast with labels */
+  position: relative;
+}
+
+/* Make sure the colored left borders don't interfere with readability */
+.comp-section:nth-of-type(1),
+.comp-section:nth-of-type(2),
+.comp-section:nth-of-type(3),
+.comp-section:nth-of-type(4),
+.comp-section:nth-of-type(5),
+.comp-section:nth-of-type(6) {
+  /* Lighten the gradient backgrounds slightly for better label contrast */
+  background-size: 200% 100%;
+}
+
+/* Adjust gradient opacity for better readability */
+.comp-section:nth-of-type(1) {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.comp-section:nth-of-type(2) {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.comp-section:nth-of-type(3) {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.comp-section:nth-of-type(4) {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.comp-section:nth-of-type(5) {
+  background: linear-gradient(to right, rgba(236, 72, 153, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.comp-section:nth-of-type(6) {
+  background: linear-gradient(to right, rgba(6, 182, 212, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+/* Dark mode gradient adjustments */
+@media (prefers-color-scheme: dark) {
+  .comp-section:nth-of-type(1) {
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+
+  .comp-section:nth-of-type(2) {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+
+  .comp-section:nth-of-type(3) {
+    background: linear-gradient(to right, rgba(245, 158, 11, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+
+  .comp-section:nth-of-type(4) {
+    background: linear-gradient(to right, rgba(139, 92, 246, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+
+  .comp-section:nth-of-type(5) {
+    background: linear-gradient(to right, rgba(236, 72, 153, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+
+  .comp-section:nth-of-type(6) {
+    background: linear-gradient(to right, rgba(6, 182, 212, 0.08) 0%, rgba(31, 41, 55, 0.95) 100%);
+  }
+}
+
+/* Ensure header text (Comparable #1, etc.) is visible */
+.comp-section .comp-header h4 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+/* Checkbox styling for better visibility */
+.comp-section .comp-header input[type="checkbox"] {
+  accent-color: #ffffff;
+  cursor: pointer;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
