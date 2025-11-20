@@ -12607,12 +12607,12 @@ h3[id], h4[id] {
 
 /* CMA Charts Panel */
 .cma-charts-panel {
-  background: var(--bg-card);
+  background: #ffffff;
   border-radius: 1rem;
   padding: 1.5rem;
   margin: 1rem 0;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   max-width: 100%;
 }
 
@@ -12622,12 +12622,12 @@ h3[id], h4[id] {
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid #e5e7eb;
 }
 
 .charts-header h3 {
   margin: 0;
-  color: var(--text-primary);
+  color: #1f2937;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -12757,12 +12757,13 @@ h3[id], h4[id] {
 .charts-empty {
   text-align: center;
   padding: 3rem;
-  color: var(--text-secondary);
+  color: #6b7280;
 }
 
 .charts-empty p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  color: #374151;
 }
 
 .charts-empty button {
@@ -12852,24 +12853,40 @@ h3[id], h4[id] {
   }
 }
 
-/* Dark Mode Adjustments */
+/* Dark Mode Adjustments - Keep white background for consistency with other panels */
 @media (prefers-color-scheme: dark) {
   .cma-charts-panel {
-    background: #1e293b;
-    border-color: #334155;
+    background: #ffffff;
+    border-color: #e5e7eb;
+  }
+
+  .charts-header {
+    border-bottom-color: #e5e7eb;
+  }
+
+  .charts-header h3 {
+    color: #1f2937;
   }
 
   .chart-container {
-    background: #0f172a;
+    background: #f9fafb;
   }
 
   .charts-summary,
   .chart-description {
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(99, 102, 241, 0.05);
   }
 
   .data-note {
-    background: rgba(251, 191, 36, 0.15);
+    background: rgba(251, 191, 36, 0.1);
+  }
+
+  .stat-label {
+    color: #6b7280;
+  }
+
+  .stat-value {
+    color: #1f2937;
   }
 }
 
