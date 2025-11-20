@@ -5257,6 +5257,208 @@ Always understand your agent’s split and cap – it influences incentives.`}
     subtitle: 'Loan types, down payments, approval process, qualification - understanding buyer financing',
     body: (
       <>
+        <h3>Most Common Types of Purchase Loans - Quick Reference</h3>
+        <p className="highlight">
+          <strong>Essential Overview:</strong> Understanding the various loan types helps you guide buyers to 
+          the right financing option for their situation. Here's a quick reference of the most common purchase loans.
+        </p>
+
+        <div className="loan-types-overview">
+          <div className="loan-type-card">
+            <h4>📋 Conventional</h4>
+            <p>Traditional loans 15/20/30 year terms with Fixed Rates. 3% down payment</p>
+            <ul>
+              <li><strong>Down Payment:</strong> As low as 3% (typically 3-20%)</li>
+              <li><strong>Best For:</strong> Buyers with good credit (620+) and stable income</li>
+              <li><strong>Not government-backed</strong></li>
+              <li><strong>PMI required if less than 20% down</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🏠 FHA</h4>
+            <p>30 yr. loans backed by Federal Housing Administration / 3.5% down payment</p>
+            <ul>
+              <li><strong>Down Payment:</strong> 3.5% (credit score 580+) or 10% (credit score 500-579)</li>
+              <li><strong>Best For:</strong> First-time buyers, lower credit scores, lower income</li>
+              <li><strong>Government-insured</strong></li>
+              <li><strong>MIP (Mortgage Insurance Premium) required for life of loan if &lt;10% down</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🎖️ VA</h4>
+            <p>For Veteran's with eligibility. 100% financing</p>
+            <ul>
+              <li><strong>Down Payment:</strong> $0 (100% financing)</li>
+              <li><strong>Best For:</strong> Veterans, active duty military, eligible surviving spouses</li>
+              <li><strong>Government-guaranteed</strong></li>
+              <li><strong>No PMI required</strong></li>
+              <li><strong>Certificate of Eligibility needed</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🏡 Mass Housing</h4>
+            <p>Backed by State of MA, require buyers to take class. Traditionally 3% down payment but can 
+            now get up to 100% financing. Offers Rehab loans and will finance cost of de-leading homes with Lead Paint.</p>
+            <ul>
+              <li><strong>Down Payment:</strong> 3% traditional, but up to 100% financing available</li>
+              <li><strong>Best For:</strong> First-time buyers, moderate income, homes needing lead paint removal</li>
+              <li><strong>Requirements:</strong> Must take homebuyer education class</li>
+              <li><strong>Special Programs:</strong> Rehab loans, lead paint deleading financing</li>
+              <li><strong>Income limits apply</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🌾 USDA</h4>
+            <p>U.S. Department of Agriculture, specific rural areas only, 100% financing.</p>
+            <ul>
+              <li><strong>Down Payment:</strong> $0 (100% financing)</li>
+              <li><strong>Best For:</strong> Rural/suburban area buyers with moderate income</li>
+              <li><strong>Location Restrictions:</strong> Property must be in USDA-eligible rural area</li>
+              <li><strong>Income limits apply</strong></li>
+              <li><strong>Government-guaranteed</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>📊 Adjustable Rate Mortgage (ARM)</h4>
+            <p>Interest rate adjusts according to index of U.S. Treasury Securities</p>
+            <ul>
+              <li><strong>Rate Structure:</strong> Fixed for initial period (3, 5, 7, 10 years), then adjusts</li>
+              <li><strong>Best For:</strong> Buyers planning to move/refinance before adjustment period</li>
+              <li><strong>Lower initial rates than fixed</strong></li>
+              <li><strong>Risk:</strong> Payment can increase significantly after initial period</li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🏗️ Construction Loan</h4>
+            <p>Eventually converts over to conventional loan upon completion of construction.</p>
+            <ul>
+              <li><strong>Purpose:</strong> Finance land purchase and construction costs</li>
+              <li><strong>Draw Schedule:</strong> Funds released in stages as construction progresses</li>
+              <li><strong>Conversion:</strong> Converts to permanent mortgage upon completion</li>
+              <li><strong>Best For:</strong> Building custom homes or major renovations</li>
+              <li><strong>Requires detailed construction plans and budget</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🔧 203K Rehab Loan</h4>
+            <p>FHA loan allows buyers to include repairs/improvements in loan at time of purchase.</p>
+            <ul>
+              <li><strong>Purpose:</strong> Purchase + renovation costs in one loan</li>
+              <li><strong>Best For:</strong> Homes needing significant repairs/updates</li>
+              <li><strong>Types:</strong> Standard (major structural) or Limited (up to $35,000 repairs)</li>
+              <li><strong>Down Payment:</strong> 3.5% on total loan (purchase + repairs)</li>
+              <li><strong>Great for fixer-uppers</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🎈 Balloon Loan</h4>
+            <p>Short-term loan to be paid in full by maturity date. (7-10yrs)</p>
+            <ul>
+              <li><strong>Term:</strong> Typically 7-10 years</li>
+              <li><strong>Payment Structure:</strong> Low monthly payments based on 30-year amortization</li>
+              <li><strong>Balloon Payment:</strong> Entire remaining balance due at end of term</li>
+              <li><strong>Best For:</strong> Buyers expecting significant income increase or planning to sell</li>
+              <li><strong>Risk:</strong> Must refinance or pay off entire balance at maturity</li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🔄 Reverse Mortgage</h4>
+            <p>Homeowners 62 years or older can take a loan against their equity. Lump sum payment, 
+            monthly installment or open line of credit. NOT repaid to lender until owner dies, moves out or is in default.</p>
+            <ul>
+              <li><strong>Age Requirement:</strong> 62 years or older</li>
+              <li><strong>Payout Options:</strong> Lump sum, monthly payments, or line of credit</li>
+              <li><strong>No Monthly Payments:</strong> Loan not repaid until owner dies, moves, or defaults</li>
+              <li><strong>Best For:</strong> Seniors needing cash flow, want to age in place</li>
+              <li><strong>Must maintain property, pay taxes and insurance</strong></li>
+            </ul>
+          </div>
+
+          <div className="loan-type-card">
+            <h4>🏚️ HUD Homes</h4>
+            <p>Foreclosures of FHA homes by HUD. Agents must register to submit bids. Don't deal with 
+            general public. All homes sold "as-is". Early bidding for owner-occupied purchasers. Often offer to pay 
+            buyer's closing costs up to 6%.</p>
+            <ul>
+              <li><strong>What They Are:</strong> FHA foreclosures owned by HUD</li>
+              <li><strong>Agent Registration Required:</strong> Must register at HUDHomeStore.gov to submit bids</li>
+              <li><strong>Condition:</strong> Sold "as-is" (no repairs by seller)</li>
+              <li><strong>Priority Period:</strong> First 15-30 days for owner-occupied buyers only</li>
+              <li><strong>Incentives:</strong> Often offers up to 6% toward buyer's closing costs</li>
+              <li><strong>Bidding Process:</strong> Sealed bid auction, highest bid wins</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Quick Comparison Chart:</h4>
+        <div className="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Loan Type</th>
+                <th>Down Payment</th>
+                <th>Credit Score</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Conventional</strong></td>
+                <td>3-20%</td>
+                <td>620+</td>
+                <td>Good credit, stable income</td>
+              </tr>
+              <tr>
+                <td><strong>FHA</strong></td>
+                <td>3.5%</td>
+                <td>580+</td>
+                <td>First-time buyers, lower credit</td>
+              </tr>
+              <tr>
+                <td><strong>VA</strong></td>
+                <td>0%</td>
+                <td>No minimum</td>
+                <td>Veterans, military</td>
+              </tr>
+              <tr>
+                <td><strong>Mass Housing</strong></td>
+                <td>3% or 0%</td>
+                <td>Varies</td>
+                <td>First-time, moderate income</td>
+              </tr>
+              <tr>
+                <td><strong>USDA</strong></td>
+                <td>0%</td>
+                <td>640+</td>
+                <td>Rural areas, moderate income</td>
+              </tr>
+              <tr>
+                <td><strong>203K Rehab</strong></td>
+                <td>3.5%</td>
+                <td>580+</td>
+                <td>Fixer-upper properties</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="highlight">
+          <strong>Agent Tip:</strong> Have this quick reference memorized to guide buyers efficiently. 
+          Match loan type to buyer profile: Veterans→VA, Rural→USDA, Lower credit→FHA, 
+          Fixer-upper→203K, Good credit→Conventional. Always refer to licensed lender for specific qualification.
+        </p>
+
+        <hr />
+
         <h3>23.1 Conventional Loans</h3>
         <p className="highlight">
           Most common loan type for buyers with good credit and stable income. Not government-backed.
@@ -6395,6 +6597,208 @@ Always understand your agent’s split and cap – it influences incentives.`}
           <strong>Agent Tip:</strong> Develop relationships with 2-3 lenders from different categories (commercial 
           bank, credit union, mortgage banker, broker). This gives clients options and you backup when one falls 
           through. Know each lender's strengths: speed, rates, difficult loans, jumbo loans, etc.
+        </p>
+
+        <h3>23.16 Secondary Mortgage Market</h3>
+        <p className="highlight">
+          <strong>What is the Secondary Mortgage Market?</strong> A system that allows lenders to sell their 
+          loans to raise more cash and lend to new borrowers. Loans are "packaged" and sold in units by 
+          investment bankers, and stockbrokers to investors in the form of a "pass-through security."
+        </p>
+
+        <h4>How the Secondary Market Works:</h4>
+        <div className="process-flow">
+          <ol>
+            <li><strong>Origination:</strong> Lender makes loan to borrower in primary market</li>
+            <li><strong>Packaging:</strong> Multiple loans bundled together into mortgage-backed securities</li>
+            <li><strong>Sale:</strong> Sold to investors through Fannie Mae, Ginnie Mae, or Freddie Mac</li>
+            <li><strong>Capital Returns:</strong> Lender gets cash back to make new loans</li>
+            <li><strong>Investor Income:</strong> Investors receive borrowers' monthly payments</li>
+          </ol>
+        </div>
+
+        <h4>Why Secondary Market Matters:</h4>
+        <ul>
+          <li>💰 <strong>Liquidity:</strong> Frees up lender capital to make more loans</li>
+          <li>🏦 <strong>More Availability:</strong> Increases mortgage availability nationwide</li>
+          <li>📉 <strong>Lower Rates:</strong> Competition keeps rates lower</li>
+          <li>📊 <strong>Standardization:</strong> Creates uniform lending standards</li>
+          <li>🔄 <strong>Risk Distribution:</strong> Spreads risk among many investors</li>
+        </ul>
+
+        <h4>3 MAJOR INVESTORS IN SECONDARY MORTGAGE MARKET:</h4>
+        
+        <div className="secondary-market-investors">
+          <h5>1️⃣ Federal National Mortgage Association (FNMA or "Fannie Mae")</h5>
+          <div className="investor-box">
+            <p><strong>What it is:</strong> Owned by shareholders and managed independent of the government</p>
+            
+            <h6>Key Characteristics:</h6>
+            <ul>
+              <li><strong>Ownership:</strong> Publicly traded corporation (originally government-created 1938)</li>
+              <li><strong>Independence:</strong> Private company, but government-sponsored enterprise (GSE)</li>
+              <li><strong>Purpose:</strong> Buy mortgages from lenders to provide liquidity</li>
+              <li><strong>Loan Types:</strong> Buys conventional loans and FHA loans</li>
+              <li><strong>Standards:</strong> Sets conforming loan limits and underwriting guidelines</li>
+              <li><strong>Market Share:</strong> Largest player in secondary market</li>
+            </ul>
+
+            <h6>What Fannie Mae Does:</h6>
+            <ul>
+              <li>✅ Purchases conventional mortgages from lenders</li>
+              <li>✅ Purchases FHA-insured loans</li>
+              <li>✅ Packages loans into mortgage-backed securities (MBS)</li>
+              <li>✅ Sells MBS to investors worldwide</li>
+              <li>✅ Sets conforming loan limits (2025: $766,550 standard)</li>
+              <li>✅ Provides mortgage guidelines lenders must follow</li>
+            </ul>
+
+            <p className="info">
+              <strong>Historical Note:</strong> Created during Great Depression to expand homeownership. 
+              Privatized in 1968, but placed under conservatorship in 2008 financial crisis.
+            </p>
+          </div>
+
+          <h5>2️⃣ Government National Mortgage Association (GNMA or "Ginnie Mae")</h5>
+          <div className="investor-box">
+            <p><strong>What it is:</strong> A government-owned corporation created in 1968 when Fannie Mae 
+            became a private corporation</p>
+            
+            <h6>Key Characteristics:</h6>
+            <ul>
+              <li><strong>Ownership:</strong> 100% U.S. Government-owned (part of HUD)</li>
+              <li><strong>Full Faith & Credit:</strong> Only MBS backed by full faith of U.S. government</li>
+              <li><strong>Loan Types:</strong> Buys FHA loans and VA loans ONLY</li>
+              <li><strong>Mission:</strong> Support affordable housing for veterans and low/moderate-income families</li>
+              <li><strong>Guarantee:</strong> Guarantees timely payment to investors</li>
+            </ul>
+
+            <h6>What Ginnie Mae Does:</h6>
+            <ul>
+              <li>✅ Purchases FHA-insured mortgages</li>
+              <li>✅ Purchases VA-guaranteed mortgages</li>
+              <li>✅ Guarantees mortgage-backed securities</li>
+              <li>✅ Does NOT buy conventional loans</li>
+              <li>✅ Provides government backing to investors</li>
+              <li>✅ Lowest risk MBS available (government guarantee)</li>
+            </ul>
+
+            <p className="highlight">
+              <strong>Key Difference:</strong> Ginnie Mae ONLY deals with government-backed loans (FHA & VA), 
+              while Fannie Mae deals with conventional and FHA loans.
+            </p>
+          </div>
+
+          <h5>3️⃣ Federal Home Loan Mortgage Corporation (FHLMC or "Freddie Mac")</h5>
+          <div className="investor-box">
+            <p><strong>What it is:</strong> Deals primarily in conventional mortgages</p>
+            
+            <h6>Key Characteristics:</h6>
+            <ul>
+              <li><strong>Ownership:</strong> Publicly traded corporation (government-sponsored enterprise)</li>
+              <li><strong>Creation:</strong> Established 1970 to compete with Fannie Mae</li>
+              <li><strong>Loan Types:</strong> Focuses on conventional mortgages</li>
+              <li><strong>Purpose:</strong> Increase competition and liquidity in secondary market</li>
+              <li><strong>Standards:</strong> Works with Fannie Mae to set conforming standards</li>
+            </ul>
+
+            <h6>What Freddie Mac Does:</h6>
+            <ul>
+              <li>✅ Purchases conventional mortgages from lenders</li>
+              <li>✅ Particularly focuses on smaller lenders (credit unions, community banks)</li>
+              <li>✅ Packages loans into mortgage-backed securities</li>
+              <li>✅ Provides stability to mortgage market</li>
+              <li>✅ Follows same conforming loan limits as Fannie Mae</li>
+            </ul>
+
+            <p className="info">
+              <strong>Market Role:</strong> Created to provide competition to Fannie Mae and ensure no single 
+              entity dominated the secondary market. Also placed under conservatorship in 2008.
+            </p>
+          </div>
+        </div>
+
+        <h4>Fannie Mae vs. Ginnie Mae vs. Freddie Mac - Quick Comparison:</h4>
+        <div className="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Fannie Mae</th>
+                <th>Ginnie Mae</th>
+                <th>Freddie Mac</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ownership</strong></td>
+                <td>Private (GSE)</td>
+                <td>U.S. Government</td>
+                <td>Private (GSE)</td>
+              </tr>
+              <tr>
+                <td><strong>Loan Types</strong></td>
+                <td>Conventional & FHA</td>
+                <td>FHA & VA Only</td>
+                <td>Conventional (primarily)</td>
+              </tr>
+              <tr>
+                <td><strong>Created</strong></td>
+                <td>1938</td>
+                <td>1968</td>
+                <td>1970</td>
+              </tr>
+              <tr>
+                <td><strong>Government Backing</strong></td>
+                <td>Implicit (GSE status)</td>
+                <td>Explicit (full faith & credit)</td>
+                <td>Implicit (GSE status)</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Focus</strong></td>
+                <td>Large/national lenders</td>
+                <td>Government loans</td>
+                <td>Smaller/community lenders</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Why Agents Need to Know This:</h4>
+        <ul>
+          <li>📋 <strong>Conforming Limits:</strong> Fannie/Freddie set the conforming loan limits you'll reference daily</li>
+          <li>💰 <strong>Loan Eligibility:</strong> Understand which loans qualify for secondary market (better rates)</li>
+          <li>🏦 <strong>Lender Confidence:</strong> Loans that meet Fannie/Freddie standards close more reliably</li>
+          <li>📊 <strong>Market Impact:</strong> Secondary market changes affect buyer purchasing power</li>
+          <li>⚡ <strong>Rate Movements:</strong> MBS trading affects daily mortgage rate changes</li>
+          <li>🎯 <strong>Guidelines:</strong> Fannie/Freddie underwriting guidelines become lender requirements</li>
+        </ul>
+
+        <div className="example">
+          <h5>Real-World Example:</h5>
+          <p><strong>Scenario:</strong> Your buyer is applying for a $800,000 loan in Massachusetts</p>
+          <ul>
+            <li><strong>Conforming Limit (2025):</strong> $766,550 standard / $1,149,825 high-cost</li>
+            <li><strong>If in standard county:</strong> $800K exceeds limit = Jumbo loan (higher rate, stricter requirements)</li>
+            <li><strong>If in high-cost area:</strong> $800K within limit = Conforming loan (better rate, easier approval)</li>
+            <li><strong>Why it matters:</strong> Fannie/Freddie won't buy jumbo loans, so lenders charge more</li>
+            <li><strong>Agent value:</strong> Know county limits to advise on price ranges and financing</li>
+          </ul>
+        </div>
+
+        <p className="warning">
+          <strong>⚠️ Important:</strong> While lenders interact directly with these entities, your clients will 
+          never deal with Fannie Mae, Ginnie Mae, or Freddie Mac directly. However, every conforming loan they get 
+          is likely sold to one of these organizations within days or weeks of closing. This is normal and doesn't 
+          affect the borrower (though their servicer may change).
+        </p>
+
+        <p className="highlight">
+          <strong>Agent Takeaway:</strong> The secondary mortgage market is the engine that keeps mortgage money 
+          flowing. Without Fannie Mae, Ginnie Mae, and Freddie Mac buying loans, lenders would run out of money 
+          and mortgages would be scarce and expensive. Understanding this system helps you explain to clients why 
+          conforming loan limits matter, why their loan servicer might change, and how the broader mortgage market 
+          affects their financing options.
         </p>
 
         <p className="highlight">
