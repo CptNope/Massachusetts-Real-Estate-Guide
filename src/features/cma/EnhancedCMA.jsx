@@ -3466,7 +3466,148 @@ ${brandingEmail || ''}`;
         >
           🤖 AI Predict
         </button>
+        <button 
+          className={`btn-primary cma-help-btn ${openaiKey ? 'api-connected' : ''}`}
+          onClick={() => setShowChatGPT(!showChatGPT)}
+          title={openaiKey ? "ChatGPT Connected - AI Assistant Ready" : "Configure ChatGPT API Key"}
+        >
+          💬 {openaiKey ? 'ChatGPT ✓' : 'ChatGPT'}
+        </button>
       </div>
+
+      {showChatGPT && (
+        <div className="api-panel">
+          <h3>💬 ChatGPT Integration & AI Assistant</h3>
+          
+          <div className="api-intro">
+            <p><strong>Unlock AI-Powered Analysis:</strong> Connect your OpenAI API key to enable ChatGPT features!</p>
+            <p>Get instant market insights, property descriptions, and professional CMA narratives powered by AI.</p>
+          </div>
+
+          <div className="openai-config-section">
+            <h4>🔑 OpenAI API Key Configuration</h4>
+            
+            {openaiKey ? (
+              <div className="api-key-status connected">
+                <div className="status-indicator">
+                  <span className="status-icon">✅</span>
+                  <span className="status-text">API Key Connected</span>
+                </div>
+                <p>Your OpenAI API key is configured and ready to use!</p>
+                <div className="key-display">
+                  <code>{openaiKey.substring(0, 7)}...{openaiKey.substring(openaiKey.length - 4)}</code>
+                  <button 
+                    className="btn-danger btn-small"
+                    onClick={() => {
+                      if (confirm('Remove OpenAI API key?')) {
+                        setOpenaiKey('');
+                        localStorage.removeItem('openai_key');
+                        showNotification('🔑 API key removed', 'info');
+                      }
+                    }}
+                  >
+                    🗑️ Remove Key
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="api-key-setup">
+                <p><strong>Get Started:</strong></p>
+                <ol>
+                  <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">OpenAI Platform</a></li>
+                  <li>Create an API key (requires OpenAI account)</li>
+                  <li>Paste your API key below</li>
+                  <li>Save to unlock ChatGPT features (+20 XP)</li>
+                </ol>
+                
+                <div className="api-key-input-section">
+                  <label><strong>OpenAI API Key:</strong></label>
+                  <input
+                    type="password"
+                    value={openaiKey}
+                    onChange={(e) => setOpenaiKey(e.target.value)}
+                    placeholder="sk-..."
+                    className="calc-input"
+                  />
+                  <button 
+                    className="btn-success"
+                    onClick={saveOpenAIKey}
+                    disabled={!openaiKey}
+                  >
+                    💾 Save API Key (+20 XP)
+                  </button>
+                </div>
+
+                <div className="info-box">
+                  <p><strong>🔒 Privacy:</strong> Your API key is stored locally in your browser and never sent to our servers.</p>
+                  <p><strong>💰 Cost:</strong> You'll be charged by OpenAI based on your usage. Check <a href="https://openai.com/pricing" target="_blank" rel="noopener noreferrer">OpenAI pricing</a>.</p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="chatgpt-features-section">
+            <h4>✨ Available ChatGPT Features</h4>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">📝</div>
+                <h5>AI Property Descriptions</h5>
+                <p>Generate professional property descriptions automatically</p>
+                <span className="xp-badge">+40 XP</span>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📊</div>
+                <h5>AI Market Analysis</h5>
+                <p>Get intelligent insights on market trends and pricing</p>
+                <span className="xp-badge">+60 XP</span>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">📄</div>
+                <h5>AI Report Generation</h5>
+                <p>Create comprehensive CMA narratives with AI</p>
+                <span className="xp-badge">+75 XP</span>
+              </div>
+              <div className="feature-card">
+                <div className="feature-icon">💬</div>
+                <h5>AI Chat Assistant</h5>
+                <p>Ask questions about your CMA and get instant answers</p>
+                <span className="xp-badge">+10 XP per query</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="usage-tips-section">
+            <h4>💡 Tips for Best Results</h4>
+            <ul>
+              <li><strong>Be Specific:</strong> Provide detailed property information for better AI responses</li>
+              <li><strong>Review Output:</strong> Always review and edit AI-generated content before sending to clients</li>
+              <li><strong>Market Context:</strong> Add local market knowledge to AI suggestions</li>
+              <li><strong>Privacy:</strong> Avoid including sensitive client information in AI prompts</li>
+            </ul>
+          </div>
+
+          {openaiKey && (
+            <div className="quick-actions">
+              <h4>🚀 Quick Actions</h4>
+              <button className="btn-primary" onClick={() => {
+                showNotification('Coming soon: Generate property description', 'info');
+              }}>
+                Generate Property Description
+              </button>
+              <button className="btn-primary" onClick={() => {
+                showNotification('Coming soon: AI market analysis', 'info');
+              }}>
+                AI Market Analysis
+              </button>
+              <button className="btn-primary" onClick={() => {
+                showNotification('Coming soon: Generate CMA report', 'info');
+              }}>
+                Generate CMA Report
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {showAPI && (
         <div className="api-panel">
