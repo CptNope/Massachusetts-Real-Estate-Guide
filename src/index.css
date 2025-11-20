@@ -8341,6 +8341,26 @@ h3[id], h4[id] {
 .cma-enhanced {
   max-width: 1400px;
   margin: 0 auto;
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+/* Ensure calculator content is always visible */
+.calculator-container {
+  color: var(--text-primary) !important;
+  background: var(--bg-main) !important;
+  min-height: 100vh;
+}
+
+/* Fix white screen issue - ensure all calculator text is visible */
+.calculator-container * {
+  color: inherit;
+}
+
+.calculator-container input,
+.calculator-container select,
+.calculator-container button {
+  color: var(--text-primary);
 }
 
 .cma-print-header {
