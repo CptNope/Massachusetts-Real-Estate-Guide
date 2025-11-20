@@ -9,3 +9,4 @@ export { ComparisonMatrix } from './ComparisonMatrix';
 export { PriceComparisonChart } from './PriceComparisonChart';
 export { AdjustmentBreakdown } from './AdjustmentBreakdown';
 export { AddressInput } from './AddressInput';
+export { MarketHistoryCharts } from './MarketHistoryCharts';
