@@ -2280,6 +2280,21 @@ html {
   
   .cma-toolbar {
     justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .cma-help-btn {
+    min-width: 100px;
+    max-width: 140px;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.75rem;
+  }
+  
+  .mode-toggle-btn {
+    min-width: 120px;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.75rem;
   }
   
   .executive-summary {
@@ -8626,19 +8641,29 @@ h3[id], h4[id] {
 /* CMA Help and Documentation Styles */
 .cma-toolbar {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: var(--bg-highlight);
   border-radius: 0.5rem;
   border: 1px solid var(--border-color);
+  align-items: stretch;
 }
 
 .cma-help-btn {
-  flex: 1;
-  max-width: 200px;
-  font-size: 0.95rem;
+  flex: 0 1 auto;
+  min-width: 140px;
+  max-width: 180px;
+  font-size: 0.9rem;
   padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.mode-toggle-btn {
+  flex: 0 1 auto;
+  min-width: 160px;
+  max-width: 200px;
 }
 
 .cma-help-panel,
@@ -8799,11 +8824,21 @@ h3[id], h4[id] {
 /* Mobile responsive for help panels */
 @media (max-width: 768px) {
   .cma-toolbar {
-    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
   }
   
   .cma-help-btn {
-    max-width: none;
+    min-width: 120px;
+    max-width: 160px;
+    font-size: 0.85rem;
+    padding: 0.65rem 0.85rem;
+  }
+  
+  .mode-toggle-btn {
+    min-width: 140px;
+    max-width: 180px;
+    font-size: 0.85rem;
   }
   
   .cma-help-panel,
