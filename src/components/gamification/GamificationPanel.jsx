@@ -70,24 +70,20 @@ export default function GamificationPanel({ gamification }) {
         </div>
       </div>
 
-      {/* Achievements */}
-      <div className="achievements-section">
-        <h3>🏆 Achievements ({achievements.unlocked.length}/{achievements.total})</h3>
-        
-        <div className="achievements-grid">
-          {achievements.unlocked.map(achievement => (
-            <div key={achievement.id} className="achievement-item unlocked" title={achievement.description}>
-              <span className="achievement-icon">{achievement.icon}</span>
-              <span className="achievement-title">{achievement.title}</span>
+      {/* Achievements Preview - Link to Full Page */}
+      <div className="achievements-preview">
+        <h3>🏆 Achievements</h3>
+        <div className="achievement-summary">
+          <div className="achievement-progress">
+            <span className="progress-text">{achievements.unlocked.length} of {achievements.total} unlocked</span>
+            <div className="progress-bar-small">
+              <div 
+                className="progress-fill" 
+                style={{ width: `${(achievements.unlocked.length / achievements.total) * 100}%` }}
+              />
             </div>
-          ))}
-          
-          {achievements.locked.map(achievement => (
-            <div key={achievement.id} className="achievement-item locked" title={achievement.description}>
-              <span className="achievement-icon">🔒</span>
-              <span className="achievement-title">{achievement.title}</span>
-            </div>
-          ))}
+          </div>
+          <p className="achievement-hint">Click the 🏆 Achievements button above to view all achievements!</p>
         </div>
       </div>
 

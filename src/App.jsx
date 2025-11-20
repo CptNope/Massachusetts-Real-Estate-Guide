@@ -6,6 +6,7 @@ import PracticeExamMode from './components/study/PracticeExamMode';
 import PersonalDashboard from './features/dashboard/PersonalDashboard';
 import ScenarioMode from './features/scenarios/ScenarioMode';
 import CalculatorMode from './features/calculators/CalculatorMode';
+import AchievementsPage from './features/achievements/AchievementsPage';
 import HelpModal from './components/layout/HelpModal';
 import GamificationPanel from './components/gamification/GamificationPanel';
 import TableOfContents from './components/layout/TableOfContents';
@@ -318,6 +319,12 @@ export default function App() {
             📊 Dashboard
           </button>
           <button 
+            className={`mode-btn ${studyMode === 'achievements' ? 'active' : ''}`}
+            onClick={() => setStudyMode('achievements')}
+          >
+            🏆 Achievements
+          </button>
+          <button 
             className={`mode-btn ${studyMode === 'scenarios' ? 'active' : ''}`}
             onClick={() => setStudyMode('scenarios')}
           >
@@ -419,11 +426,18 @@ export default function App() {
             <PersonalDashboard
               masteredSections={masteredSections}
               reviewSections={reviewSections}
+              sections={sections}
               onToggleMastered={toggleMastered}
               onToggleReview={toggleReview}
               onClearAll={clearAllProgress}
               gamification={gamification}
             />
+          </main>
+        )}
+
+        {studyMode === 'achievements' && (
+          <main className="content content-full">
+            <AchievementsPage />
           </main>
         )}
 
