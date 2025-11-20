@@ -97,7 +97,6 @@ export default function EnhancedCMA({ gamification }) {
   const [showMap, setShowMap] = useState(false);
   const [showPhotos, setShowPhotos] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
-  const [showCharts, setShowCharts] = useState(false);
   const [showMLS, setShowMLS] = useState(false);
   const [showAPI, setShowAPI] = useState(false);
   const [showAI, setShowAI] = useState(false);
@@ -3240,13 +3239,6 @@ ${brandingEmail || ''}`;
           📸 Photos
         </button>
         <button 
-          className="btn-secondary cma-help-btn"
-          onClick={() => setShowCharts(!showCharts)}
-          title="Advanced charts"
-        >
-          📊 Charts
-        </button>
-        <button 
           className="btn-success cma-help-btn"
           onClick={exportToPDF}
           title="Export to PDF"
@@ -4109,22 +4101,6 @@ ${brandingEmail || ''}`;
               </button>
             </div>
           </div>
-        </div>
-      )}
-
-      {showCharts && (
-        <div className="charts-panel">
-          <h3>📊 Market Data - Charts Module Integrated!</h3>
-          <p className="panel-description">
-            Chart.js is now fully integrated. Charts will display real market data when CMA calculations are active.
-          </p>
-          <div className="chart-status">
-            <p>✅ Chart.js Successfully Loaded</p>
-            <p>📊 {adjustedComps.length} Comparables Available for Visualization</p>
-          </div>
-          <button className="btn-secondary" onClick={() => setShowCharts(false)} style={{ marginTop: '1rem' }}>
-            ✕ Close
-          </button>
         </div>
       )}
 
