@@ -8,7 +8,6 @@ import ScenarioMode from './features/scenarios/ScenarioMode';
 import CalculatorMode from './features/calculators/CalculatorMode';
 import AchievementsPage from './features/achievements/AchievementsPage';
 import HelpModal from './components/layout/HelpModal';
-import GamificationPanel from './components/gamification/GamificationPanel';
 import TableOfContents from './components/layout/TableOfContents';
 import Breadcrumb from './components/layout/Breadcrumb';
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -21,7 +20,6 @@ export default function App() {
   const [masteredSections, setMasteredSections] = useLocalStorage('masteredSections', []);
   const [reviewSections, setReviewSections] = useLocalStorage('reviewSections', []);
   const [showHelp, setShowHelp] = useState(false);
-  const [showGamification, setShowGamification] = useState(true);
   const gamification = useGamification();
   const [theme, setTheme] = useState(() => {
     // Load theme from localStorage or default to 'dark'
@@ -459,30 +457,6 @@ export default function App() {
           </main>
         )}
 
-        {/* Gamification Panel - Floating on Right Side */}
-        {showGamification && (
-          <aside className="gamification-sidebar">
-            <button 
-              className="gamification-toggle"
-              onClick={() => setShowGamification(false)}
-              title="Hide Progress"
-            >
-              ×
-            </button>
-            <GamificationPanel gamification={gamification} />
-          </aside>
-        )}
-
-        {/* Show Gamification Button when hidden */}
-        {!showGamification && (
-          <button 
-            className="show-gamification-btn"
-            onClick={() => setShowGamification(true)}
-            title="Show Progress & Achievements"
-          >
-            🏆
-          </button>
-        )}
       </div>
 
       <footer className="app-footer">
