@@ -323,9 +323,6 @@ const detectOutliers = (adjustedComps) => {
 };
 
 export default function EnhancedCMA({ gamification }) {
-  // Error boundary state
-  const [hasError, setHasError] = useState(false);
-  
   const [showHelp, setShowHelp] = useState(false);
   const [showDataSources, setShowDataSources] = useState(false);
   const [showChallenges, setShowChallenges] = useState(false);
@@ -333,29 +330,6 @@ export default function EnhancedCMA({ gamification }) {
   const [challengeStartTime, setChallengeStartTime] = useState(null);
   const [showChallengeComplete, setShowChallengeComplete] = useState(false);
   const [showSaveLoad, setShowSaveLoad] = useState(false);
-  
-  // Error handling
-  useEffect(() => {
-    const handleError = (error) => {
-      console.error('CMA Error:', error);
-      setHasError(true);
-    };
-    
-    window.addEventListener('error', handleError);
-    return () => window.removeEventListener('error', handleError);
-  }, []);
-  
-  if (hasError) {
-    return (
-      <div className="calculator-container">
-        <div className="error-message" style={{ padding: '2rem', textAlign: 'center' }}>
-          <h3>⚠️ CMA Calculator Error</h3>
-          <p>Sorry, there was an error loading the CMA calculator. Please refresh the page.</p>
-          <button onClick={() => setHasError(false)} className="btn-primary">Try Again</button>
-        </div>
-      </div>
-    );
-  }
   const [mode, setMode] = useState('learning'); // 'learning' or 'professional'
   const [showTemplates, setShowTemplates] = useState(false);
   const [currentTemplate, setCurrentTemplate] = useState('custom');
