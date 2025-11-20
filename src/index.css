@@ -8921,6 +8921,30 @@ h3[id], h4[id] {
   color: #f3e8ff;
 }
 
+/* Dark mode law change banner */
+:root[data-theme="dark"] .law-change-banner {
+  background: linear-gradient(135deg, #422006, #78350f);
+  border: 2px solid #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+:root[data-theme="dark"] .law-banner-text {
+  color: #fde68a;
+}
+
+:root[data-theme="dark"] .law-banner-text strong {
+  color: #fef3c7;
+  font-weight: 700;
+}
+
+:root[data-theme="dark"] .law-banner-close {
+  color: #fbbf24;
+}
+
+:root[data-theme="dark"] .law-banner-close:hover {
+  background: rgba(251, 191, 36, 0.15);
+}
+
 .cma-help-panel,
 .cma-data-sources-panel {
   background: var(--bg-card);
