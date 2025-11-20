@@ -13768,3 +13768,347 @@ h3[id], h4[id] {
   background-position: right 0.75rem center;
   background-size: 20px;
 }
+/* ========================================
+   COMPARABLE PROPERTY VISUAL DIFFERENTIATION
+   Unique colors and styles for each comp
+   ======================================== */
+
+/* Base comparable section - keep existing styles */
+.comp-section {
+  position: relative;
+}
+
+/* Add colored left border and subtle background tint for each comp */
+.comp-section:nth-of-type(1) {
+  border-left: 5px solid #3b82f6; /* Blue */
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.03) 0%, #ffffff 100%);
+}
+
+.comp-section:nth-of-type(2) {
+  border-left: 5px solid #10b981; /* Green */
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.03) 0%, #ffffff 100%);
+}
+
+.comp-section:nth-of-type(3) {
+  border-left: 5px solid #f59e0b; /* Amber */
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.03) 0%, #ffffff 100%);
+}
+
+.comp-section:nth-of-type(4) {
+  border-left: 5px solid #8b5cf6; /* Purple */
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.03) 0%, #ffffff 100%);
+}
+
+.comp-section:nth-of-type(5) {
+  border-left: 5px solid #ec4899; /* Pink */
+  background: linear-gradient(to right, rgba(236, 72, 153, 0.03) 0%, #ffffff 100%);
+}
+
+.comp-section:nth-of-type(6) {
+  border-left: 5px solid #06b6d4; /* Cyan */
+  background: linear-gradient(to right, rgba(6, 182, 212, 0.03) 0%, #ffffff 100%);
+}
+
+/* Colored header badges */
+.comp-section:nth-of-type(1) .comp-header h4::before {
+  content: "1";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.comp-section:nth-of-type(2) .comp-header h4::before {
+  content: "2";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.comp-section:nth-of-type(3) .comp-header h4::before {
+  content: "3";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #f59e0b;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.comp-section:nth-of-type(4) .comp-header h4::before {
+  content: "4";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #8b5cf6;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.comp-section:nth-of-type(5) .comp-header h4::before {
+  content: "5";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ec4899;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.comp-section:nth-of-type(6) .comp-header h4::before {
+  content: "6";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #06b6d4;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Hover effect - brighten the accent color */
+.comp-section:nth-of-type(1):hover {
+  border-left-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.comp-section:nth-of-type(2):hover {
+  border-left-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.comp-section:nth-of-type(3):hover {
+  border-left-color: #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.comp-section:nth-of-type(4):hover {
+  border-left-color: #7c3aed;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.comp-section:nth-of-type(5):hover {
+  border-left-color: #db2777;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+}
+
+.comp-section:nth-of-type(6):hover {
+  border-left-color: #0891b2;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+}
+
+/* Active/inactive visual state */
+.comp-section.inactive {
+  opacity: 0.65;
+  filter: grayscale(0.3);
+}
+
+.comp-section.inactive .comp-header h4::before {
+  background: #9ca3af !important;
+}
+
+.comp-section.inactive {
+  border-left-color: #9ca3af !important;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .comp-section:nth-of-type(1) {
+    background: linear-gradient(to right, rgba(59, 130, 246, 0.05) 0%, #1f2937 100%);
+  }
+
+  .comp-section:nth-of-type(2) {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.05) 0%, #1f2937 100%);
+  }
+
+  .comp-section:nth-of-type(3) {
+    background: linear-gradient(to right, rgba(245, 158, 11, 0.05) 0%, #1f2937 100%);
+  }
+
+  .comp-section:nth-of-type(4) {
+    background: linear-gradient(to right, rgba(139, 92, 246, 0.05) 0%, #1f2937 100%);
+  }
+
+  .comp-section:nth-of-type(5) {
+    background: linear-gradient(to right, rgba(236, 72, 153, 0.05) 0%, #1f2937 100%);
+  }
+
+  .comp-section:nth-of-type(6) {
+    background: linear-gradient(to right, rgba(6, 182, 212, 0.05) 0%, #1f2937 100%);
+  }
+}
+
+/* Add small color indicator to top-right corner */
+.comp-section::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.comp-section:nth-of-type(1)::after {
+  background: #3b82f6;
+}
+
+.comp-section:nth-of-type(2)::after {
+  background: #10b981;
+}
+
+.comp-section:nth-of-type(3)::after {
+  background: #f59e0b;
+}
+
+.comp-section:nth-of-type(4)::after {
+  background: #8b5cf6;
+}
+
+.comp-section:nth-of-type(5)::after {
+  background: #ec4899;
+}
+
+.comp-section:nth-of-type(6)::after {
+  background: #06b6d4;
+}
+
+/* Adjust header layout to accommodate numbered badge */
+.comp-section .comp-header h4 {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Remove emoji from header text since we have numbered badges */
+.comp-section .comp-header h4 {
+  font-size: 1.15rem;
+}
+
+/* Optional: Add colored focus ring to inputs matching comp color */
+.comp-section:nth-of-type(1) .comp-input-group input:focus,
+.comp-section:nth-of-type(1) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.comp-section:nth-of-type(2) .comp-input-group input:focus,
+.comp-section:nth-of-type(2) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.comp-section:nth-of-type(3) .comp-input-group input:focus,
+.comp-section:nth-of-type(3) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.comp-section:nth-of-type(4) .comp-input-group input:focus,
+.comp-section:nth-of-type(4) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.comp-section:nth-of-type(5) .comp-input-group input:focus,
+.comp-section:nth-of-type(5) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2);
+}
+
+.comp-section:nth-of-type(6) .comp-input-group input:focus,
+.comp-section:nth-of-type(6) .comp-input-group select:focus {
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+/* Print styles - maintain differentiation */
+@media print {
+  .comp-section:nth-of-type(1) {
+    border-left: 3px solid #3b82f6;
+  }
+
+  .comp-section:nth-of-type(2) {
+    border-left: 3px solid #10b981;
+  }
+
+  .comp-section:nth-of-type(3) {
+    border-left: 3px solid #f59e0b;
+  }
+
+  .comp-section:nth-of-type(4) {
+    border-left: 3px solid #8b5cf6;
+  }
+
+  .comp-section:nth-of-type(5) {
+    border-left: 3px solid #ec4899;
+  }
+
+  .comp-section:nth-of-type(6) {
+    border-left: 3px solid #06b6d4;
+  }
+  
+  .comp-section::after {
+    display: none;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .comp-section .comp-header h4::before {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+  }
+  
+  .comp-section {
+    border-left-width: 4px;
+  }
+}
+
+/* Accessibility - high contrast mode */
+@media (prefers-contrast: high) {
+  .comp-section {
+    border-left-width: 6px !important;
+  }
+  
+  .comp-section .comp-header h4::before {
+    border: 2px solid white;
+  }
+}
