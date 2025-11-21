@@ -1,0 +1,430 @@
+/* =============================================================================
+   GAMIFICATION & ACHIEVEMENTS - Level system, badges, notifications, progress
+   ============================================================================= */
+
+/* Gamification Sidebar */
+.gamification-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 1.5rem;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.gamification-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+.gamification-toggle:hover {
+  color: var(--text-primary);
+}
+
+.show-gamification-btn {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: var(--accent);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.show-gamification-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.gamification-container {
+  margin-top: 2rem;
+}
+
+/* Achievement Notifications */
+.achievement-notifications {
+  position: fixed;
+  top: 80px;
+  right: 340px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.achievement-notification {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 300px;
+  animation: slideInRight 0.5s ease, pulse 2s ease-in-out 0.5s;
+}
+
+.achievement-icon-large {
+  font-size: 2.5rem;
+}
+
+.achievement-notification h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.achievement-notification p {
+  margin: 0;
+}
+
+.achievement-desc {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Level & XP Progress */
+.gamification-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+}
+
+.level-badge {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(79, 158, 255, 0.3);
+}
+
+.level-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.level-text {
+  font-size: 0.7rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.xp-info {
+  flex: 1;
+}
+
+.xp-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.xp-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-input);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.xp-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  transition: width 0.5s ease;
+  border-radius: 6px;
+}
+
+.xp-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-item {
+  background: var(--bg-highlight);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.achievement-item {
+  aspect-ratio: 1;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.achievement-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-item.unlocked {
+  background: var(--accent-gradient);
+  box-shadow: 0 0 20px rgba(79, 158, 255, 0.3);
+}
+
+.achievement-item.locked {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
+.achievement-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.achievement-item.unlocked .achievement-icon {
+  color: white;
+}
+
+.achievement-name {
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.achievement-item.unlocked .achievement-name {
+  color: white;
+  font-weight: 600;
+}
+
+/* Achievement Badge Glow */
+.achievement-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
+  border-radius: 50%;
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Achievements Preview in Panel */
+.achievements-preview {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+}
+
+.achievements-preview h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+/* Achievements Section */
+.achievements-section {
+  margin-bottom: 1.5rem;
+}
+
+.achievements-section h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+/* Achievement List */
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievement-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s;
+}
+
+.achievement-list-item:hover {
+  border-color: var(--accent);
+  transform: translateX(8px);
+}
+
+/* Achievements Page */
+.achievements-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.achievements-page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.achievements-page-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 2.5rem;
+}
+
+.achievements-categories {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.achievement-category {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.achievement-category h2 {
+  margin: 0 0 1.5rem 0;
+  color: var(--accent);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-progress {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+/* Mobile Adjustments for Gamification */
+@media (max-width: 768px) {
+  .gamification-sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    top: auto;
+    bottom: 0;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .achievement-notifications {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .achievement-notification {
+    min-width: 250px;
+  }
+
+  .show-gamification-btn {
+    bottom: 1rem;
+    top: auto;
+    transform: none;
+  }
+
+  .show-gamification-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .gamification-sidebar,
+  .achievement-notifications,
+  .show-gamification-btn,
+  .gamification-toggle {
+    display: none !important;
+  }
+}

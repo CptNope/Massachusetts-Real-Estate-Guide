@@ -1,0 +1,324 @@
+/* =============================================================================
+   COMPARABLES & MATRIX - Comparable properties analysis and comparison tables
+   ============================================================================= */
+
+/* Comparable Section Container */
+.comp-section {
+  background: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.comp-section:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+/* Comparable Header */
+.comp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.comp-header h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.comp-remove-btn {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.comp-remove-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Comparable Form Grid */
+.comp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comp-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comp-input-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.comp-input-group input,
+.comp-input-group select {
+  padding: 0.625rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+}
+
+.comp-input-group input:focus,
+.comp-input-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 158, 255, 0.1);
+}
+
+/* Comparable Results */
+.comp-result-card {
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.comp-result-card h5 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.comp-result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.comp-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: var(--bg-card);
+  border-radius: 0.375rem;
+}
+
+.comp-result-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.comp-result-value {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
+
+/* Comparison Matrix Table */
+.comparison-matrix {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.comparison-matrix h3 {
+  margin: 0 0 1.5rem 0;
+  color: #111827;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.matrix-table thead {
+  background: #f9fafb;
+}
+
+.matrix-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.matrix-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #1f2937;
+}
+
+.matrix-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.matrix-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.matrix-property-col {
+  font-weight: 600;
+  color: #111827;
+}
+
+.matrix-value-positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.matrix-value-negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.matrix-value-neutral {
+  color: #6b7280;
+}
+
+.matrix-total-row {
+  background: #f3f4f6 !important;
+  font-weight: 700;
+}
+
+.matrix-total-row td {
+  padding: 1.25rem 1rem;
+  border-top: 2px solid #d1d5db;
+}
+
+/* Comparable Color Differentiation */
+.comp-section:nth-of-type(1) {
+  border-left-color: #3b82f6;
+  border-left-width: 5px;
+}
+
+.comp-section:nth-of-type(2) {
+  border-left-color: #10b981;
+  border-left-width: 5px;
+}
+
+.comp-section:nth-of-type(3) {
+  border-left-color: #f59e0b;
+  border-left-width: 5px;
+}
+
+.comp-section:nth-of-type(4) {
+  border-left-color: #ef4444;
+  border-left-width: 5px;
+}
+
+.comp-section:nth-of-type(5) {
+  border-left-color: #8b5cf6;
+  border-left-width: 5px;
+}
+
+.comp-section:nth-of-type(6) {
+  border-left-color: #ec4899;
+  border-left-width: 5px;
+}
+
+/* Ensure header text is visible on colored backgrounds */
+.comp-section .comp-header h4 {
+  color: var(--text-primary) !important;
+}
+
+/* Dark mode adjustments */
+:root[data-theme="dark"] .comparison-matrix {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .comparison-matrix h3 {
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .matrix-table thead {
+  background: var(--bg-highlight);
+}
+
+:root[data-theme="dark"] .matrix-table th {
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .matrix-table td {
+  color: var(--text-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .matrix-table tbody tr:hover {
+  background: var(--bg-highlight);
+}
+
+:root[data-theme="dark"] .matrix-property-col {
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .matrix-total-row {
+  background: var(--bg-highlight) !important;
+}
+
+:root[data-theme="dark"] .matrix-total-row td {
+  border-top-color: var(--border-color);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .comp-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-matrix {
+    padding: 1rem;
+  }
+
+  .matrix-table th,
+  .matrix-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .comp-remove-btn {
+    display: none !important;
+  }
+
+  .comp-section {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+
+  .comparison-matrix {
+    page-break-inside: avoid;
+  }
+
+  .matrix-table {
+    font-size: 0.875rem;
+  }
+}

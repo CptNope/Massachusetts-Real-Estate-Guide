@@ -20,6 +20,7 @@
 @import './features/cma.css';
 @import './features/cma-advanced.css';
 @import './features/cma-extras.css';
+@import './features/comparables.css';
 @import './features/charts.css';
 @import './features/study-mode.css';
 @import './features/quiz.css';
@@ -27,6 +28,7 @@
 @import './features/scenarios.css';
 @import './features/legal.css';
 @import './features/integrations.css';
+@import './features/gamification.css';
 
 /* 5. Animations - Keyframes & Transitions */
 @import './animations.css';
