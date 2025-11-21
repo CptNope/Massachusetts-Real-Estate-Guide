@@ -1,17 +1,19 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { sections } from './content/index.jsx';
-import FlashcardMode from './components/study/FlashcardMode';
-import QuizMode from './components/study/QuizMode';
-import PracticeExamMode from './components/study/PracticeExamMode';
-import PersonalDashboard from './features/dashboard/PersonalDashboard';
-import ScenarioMode from './features/scenarios/ScenarioMode';
-import CalculatorMode from './features/calculators/CalculatorMode';
-import AchievementsPage from './features/achievements/AchievementsPage';
 import HelpModal from './components/layout/HelpModal';
 import TableOfContents from './components/layout/TableOfContents';
 import Breadcrumb from './components/layout/Breadcrumb';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useGamification } from './hooks/useGamification';
+
+// Lazy load heavy features for better performance
+const FlashcardMode = lazy(() => import('./components/study/FlashcardMode'));
+const QuizMode = lazy(() => import('./components/study/QuizMode'));
+const PracticeExamMode = lazy(() => import('./components/study/PracticeExamMode'));
+const PersonalDashboard = lazy(() => import('./features/dashboard/PersonalDashboard'));
+const ScenarioMode = lazy(() => import('./features/scenarios/ScenarioMode'));
+const CalculatorMode = lazy(() => import('./features/calculators/CalculatorMode'));
+const AchievementsPage = lazy(() => import('./features/achievements/AchievementsPage'));
 
 export default function App() {
   const [activeId, setActiveId] = useLocalStorage('lastActiveSection', sections[0].id);
@@ -409,51 +411,65 @@ export default function App() {
 
         {studyMode === 'flashcards' && (
           <main className="content content-full">
-            <FlashcardMode gamification={gamification} />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading flashcards...</div>}>
+              <FlashcardMode gamification={gamification} />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'quiz' && (
           <main className="content content-full">
-            <QuizMode gamification={gamification} />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading quiz...</div>}>
+              <QuizMode gamification={gamification} />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'dashboard' && (
           <main className="content content-full">
-            <PersonalDashboard
-              masteredSections={masteredSections}
-              reviewSections={reviewSections}
-              sections={sections}
-              onToggleMastered={toggleMastered}
-              onToggleReview={toggleReview}
-              onClearAll={clearAllProgress}
-              gamification={gamification}
-            />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading dashboard...</div>}>
+              <PersonalDashboard
+                masteredSections={masteredSections}
+                reviewSections={reviewSections}
+                sections={sections}
+                onToggleMastered={toggleMastered}
+                onToggleReview={toggleReview}
+                onClearAll={clearAllProgress}
+                gamification={gamification}
+              />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'achievements' && (
           <main className="content content-full">
-            <AchievementsPage />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading achievements...</div>}>
+              <AchievementsPage />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'scenarios' && (
           <main className="content content-full">
-            <ScenarioMode gamification={gamification} />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading scenarios...</div>}>
+              <ScenarioMode gamification={gamification} />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'calculators' && (
           <main className="content content-full">
-            <CalculatorMode gamification={gamification} />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading calculators...</div>}>
+              <CalculatorMode gamification={gamification} />
+            </Suspense>
           </main>
         )}
 
         {studyMode === 'exam' && (
           <main className="content content-full">
-            <PracticeExamMode gamification={gamification} />
+            <Suspense fallback={<div className="loading-spinner-large" style={{textAlign: 'center', padding: '4rem'}}>Loading exam...</div>}>
+              <PracticeExamMode gamification={gamification} />
+            </Suspense>
           </main>
         )}
 
