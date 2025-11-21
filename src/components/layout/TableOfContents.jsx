@@ -50,11 +50,23 @@ export default function TableOfContents({ content }) {
       return allHeadings;
     };
 
+    // Reset headings immediately when content changes
+    setHeadings([]);
+
     // Wait for content to render, then extract headings
+    // Increased timeout to ensure React finishes rendering
     const timer = setTimeout(() => {
       const extracted = extractHeadings();
       setHeadings(extracted);
-    }, 100);
+      
+      // If no headings found, try again after a bit longer
+      if (extracted.length === 0) {
+        setTimeout(() => {
+          const retryExtracted = extractHeadings();
+          setHeadings(retryExtracted);
+        }, 200);
+      }
+    }, 150);
 
     return () => clearTimeout(timer);
   }, [content]);
