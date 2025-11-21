@@ -57,6 +57,8 @@ src/styles/
 - **`features/legal.css`** - Law banners, legal panels, contracts, mortgages, liens
 - **`features/integrations.css`** - MLS, ChatGPT, OpenAI, API tokens, AI predictions
 - **`features/cma-extras.css`** - Templates, branding, shortcuts, toggles, UI utilities
+- **`features/gamification.css`** - Achievements, XP, levels, badges, notifications
+- **`features/comparables.css`** - Comparable properties, comparison matrices, analysis
 
 ## 🔄 Migration Status
 
@@ -115,7 +117,15 @@ src/styles/
 - [x] Migrated toggle switches
 - [x] Migrated email & charts panel extras
 
-### 🚧 Remaining (~9,928 lines, 68%)
+**Phase 8 - Gamification & Comparables:**
+- [x] Migrated gamification sidebar & features
+- [x] Migrated achievement system & notifications
+- [x] Migrated level badges & XP progress
+- [x] Migrated comparable property sections
+- [x] Migrated comparison matrix tables
+- [x] Migrated comparable color coding
+
+### 🚧 Remaining (~9,048 lines, 62%)
 
 **Priority: Medium**
 - [ ] Additional CMA features (templates, reports, etc.)
