@@ -40,6 +40,20 @@ import {
 } from './utils/recommendations';
 import { generateEnhancedPrediction } from './utils/aiPredictionEngine';
 import { createCompStateManager, getCompPhotoStates } from './utils/compStateManager';
+import { 
+  createNotificationManager, 
+  NOTIFICATION_MESSAGES, 
+  validators 
+} from './utils/notificationHelpers';
+import {
+  generateMockAIResponse,
+  generateMockAIReport,
+  generateMockAIDescription,
+  generateMockAIInsights,
+  generateMockAIEmail,
+  formatCurrency,
+  calculateConfidenceMetrics
+} from './utils/aiMockHelpers';
 
 // Register Chart.js components
 ChartJS.register(
@@ -628,51 +642,19 @@ Keep it concise, professional, and data-driven. Use "you" to address the agent.`
     }, 1500);
   };
 
-  const generateMockAIResponse = (question) => {
-    const lowerQ = question.toLowerCase();
-    
-    if (lowerQ.includes('value') || lowerQ.includes('price')) {
-      return `Based on your CMA with ${adjustedComps.length} comparables, the estimated value range is $${Math.round(avgAdjustedValue - 15000).toLocaleString()} - $${Math.round(avgAdjustedValue + 15000).toLocaleString()}. The market appears to be ${marketTrend || 'stable'} based on the average days on market and pricing patterns.`;
-    }
-    if (lowerQ.includes('market') || lowerQ.includes('trend')) {
-      return `The current market trend is ${marketTrend || 'stable'}. This is determined by analyzing the average days on market (${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 'N/A'} days) and pricing patterns across your comparables.`;
-    }
-    if (lowerQ.includes('recommendation') || lowerQ.includes('suggest')) {
-      return `I recommend pricing the property at $${Math.round(avgAdjustedValue).toLocaleString()} based on the CMA analysis. Consider highlighting the property's best features and ensuring it's in excellent condition to maximize value. The current ${marketTrend || 'stable'} market conditions suggest this is a good time to list.`;
-    }
-    return `I'm an AI assistant for your CMA analysis. I can help explain valuations, market trends, and provide recommendations based on your comparable properties. What specific aspect of the CMA would you like to discuss?`;
-  };
+  // Using utility function (removed inline implementation - saved ~15 lines)
 
   const generateAIReport = () => {
     if (adjustedComps.length === 0) {
-      showNotification('⚠️ Add comparables first', 'error');
+      showNotification(NOTIFICATION_MESSAGES.NO_COMPS_REPORT, 'error');
       return;
     }
 
     setAiLoading(true);
     
-    // Mock AI report generation (in production, use OpenAI)
+    // Using utility function for mock AI report
     setTimeout(() => {
-      const report = `PROFESSIONAL MARKET ANALYSIS REPORT
-
-EXECUTIVE SUMMARY
-This Comparative Market Analysis (CMA) has been prepared for ${subjectAddress || 'the subject property'}. After analyzing ${adjustedComps.length} comparable properties in the area, we have determined an estimated market value range.
-
-PROPERTY VALUATION
-Based on our comprehensive analysis of ${adjustedComps.length} comparable sales, the estimated market value is:
-• Low Estimate: $${Math.round(avgAdjustedValue - 20000).toLocaleString()}
-• Mid-Range Value: $${Math.round(avgAdjustedValue).toLocaleString()}
-• High Estimate: $${Math.round(avgAdjustedValue + 20000).toLocaleString()}
-
-MARKET CONDITIONS
-The current market is trending ${marketTrend || 'stable'}. ${marketTrend === 'rising' ? 'Strong buyer demand and low inventory are driving prices upward.' : marketTrend === 'falling' ? 'Increased inventory and longer days on market indicate a cooling market.' : 'The market shows balanced conditions with consistent pricing and moderate activity.'}
-
-COMPARABLE ANALYSIS
-We analyzed ${adjustedComps.length} recent sales that are similar in size, condition, and location to the subject property. These comparables range from $${Math.min(...adjustedComps.map(c => c.adjustedPrice)).toLocaleString()} to $${Math.max(...adjustedComps.map(c => c.adjustedPrice)).toLocaleString()}, with an average of $${Math.round(avgAdjustedValue).toLocaleString()}.
-
-RECOMMENDATION
-Based on this analysis, we recommend ${marketTrend === 'rising' ? 'pricing competitively but not undervaluing the property given strong market conditions' : marketTrend === 'falling' ? 'strategic pricing to generate interest in a slower market' : 'pricing within the established range to attract qualified buyers'}. The property should be positioned to highlight its best features and generate strong buyer interest.`;
-
+      const report = generateMockAIReport(adjustedComps, { address: subjectAddress });
       setAiReport(report);
       setAiLoading(false);
       showNotification('✅ AI report generated! +75 XP', 'success');
@@ -688,14 +670,17 @@ Based on this analysis, we recommend ${marketTrend === 'rising' ? 'pricing compe
     setAiLoading(true);
     
     setTimeout(() => {
-      const desc = `Welcome to ${subjectAddress || 'this exceptional property'}! This beautifully maintained home offers ${subjectBeds || '3'} bedrooms and ${subjectBaths || '2'} bathrooms across ${subjectSqft || '1,800'} square feet of thoughtfully designed living space.
-
-Located in a ${marketTrend === 'rising' ? 'highly desirable and sought-after' : 'well-established'} neighborhood, this property combines comfort, convenience, and quality. ${subjectGarage === 'yes' ? 'The attached garage provides secure parking and additional storage space.' : ''} ${subjectCondition === 'excellent' ? 'The home is in pristine condition, move-in ready for discerning buyers.' : 'With some updates, this property offers tremendous potential for the right buyer.'}
-
-The current market valuation of approximately $${Math.round(avgAdjustedValue).toLocaleString()} reflects the property's excellent location, desirable features, and the ${marketTrend || 'stable'} market conditions. This is an outstanding opportunity for ${marketTrend === 'rising' ? 'buyers looking to invest in an appreciating market' : 'value-conscious buyers seeking quality at a fair price'}.
-
-Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split(',')[1]?.trim() || 'this wonderful community' : 'this wonderful community'}!`;
-
+      const subjectInfo = {
+        beds: subjectBeds,
+        baths: subjectBaths,
+        sqft: subjectSqft,
+        address: subjectAddress,
+        garage: subjectGarage,
+        condition: subjectCondition,
+        pool: subjectPool,
+        view: subjectView
+      };
+      const desc = generateMockAIDescription(subjectInfo);
       setAiDescription(desc);
       setAiLoading(false);
       showNotification('✅ AI description generated! +40 XP', 'success');
@@ -709,33 +694,11 @@ Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split
 
   const generateAIInsights = () => {
     if (adjustedComps.length === 0) {
-      showNotification('⚠️ Add comparables first', 'error');
+      showNotification(NOTIFICATION_MESSAGES.NO_COMPS, 'error');
       return;
     }
 
-    const insights = [
-      {
-        icon: '💰',
-        title: 'Pricing Strategy',
-        insight: `Price at $${Math.round(avgAdjustedValue).toLocaleString()} to align with ${adjustedComps.length} comparable sales. ${marketTrend === 'rising' ? 'Strong market supports premium pricing.' : marketTrend === 'falling' ? 'Competitive pricing recommended for faster sale.' : 'Fair pricing ensures steady buyer interest.'}`
-      },
-      {
-        icon: '📈',
-        title: 'Market Position',
-        insight: `${marketTrend === 'rising' ? 'Hot market! Expect strong buyer competition and potential multiple offers.' : marketTrend === 'falling' ? 'Cooling market. Plan for longer marketing period and negotiation.' : 'Balanced market provides stable conditions for both parties.'}`
-      },
-      {
-        icon: '🎯',
-        title: 'Competitive Edge',
-        insight: `${subjectCondition === 'excellent' ? 'Excellent condition is a major selling point - emphasize this!' : subjectCondition === 'good' ? 'Good condition competes well. Minor upgrades could boost value.' : 'Consider strategic improvements to maximize sale price.'}`
-      },
-      {
-        icon: '⏱️',
-        title: 'Time to Sell',
-        insight: `Average DOM in area: ${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 30} days. ${marketTrend === 'rising' ? 'Expect faster-than-average sale time.' : marketTrend === 'falling' ? 'Plan for extended marketing period.' : 'Normal timeline expected.'}`
-      }
-    ];
-
+    const insights = generateMockAIInsights(adjustedComps, { trend: marketTrend });
     setAiInsights(insights);
     showNotification('✅ AI insights generated! +60 XP', 'success');
     
@@ -880,66 +843,23 @@ Don't miss this chance to own a piece of ${subjectAddress ? subjectAddress.split
     setAiLoading(true);
     
     setTimeout(() => {
-      let subject = '';
-      let body = '';
+      const emailData = {
+        address: subjectAddress,
+        beds: subjectBeds,
+        baths: subjectBaths,
+        sqft: subjectSqft,
+        price: Math.round(avgAdjustedValue).toLocaleString(),
+        avgPrice: Math.round(avgAdjustedValue).toLocaleString(),
+        avgDOM: adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 30,
+        trend: marketTrend,
+        compCount: adjustedComps.length,
+        minValue: Math.round(avgAdjustedValue - 10000).toLocaleString(),
+        maxValue: Math.round(avgAdjustedValue + 10000).toLocaleString(),
+        recommendedPrice: Math.round(avgAdjustedValue).toLocaleString(),
+        agentName: brandingCompany || 'Your Real Estate Professional'
+      };
 
-      if (emailType === 'new_listing') {
-        subject = `Exciting New Listing: ${subjectAddress || 'Premium Property'}`;
-        body = `Hi {{firstName}},
-
-I wanted to reach out personally to let you know about an exceptional new listing that just hit the market!
-
-🏠 Property: ${subjectAddress || 'Beautiful Home'}
-💰 Price: $${Math.round(avgAdjustedValue).toLocaleString()}
-🛏️ ${subjectBeds || '3'} Beds | 🛁 ${subjectBaths || '2'} Baths | 📏 ${subjectSqft || '1,800'} sqft
-
-This property is located in a ${marketTrend === 'rising' ? 'highly sought-after' : 'desirable'} area and represents excellent value. ${marketTrend === 'rising' ? 'The market is hot right now, so I expect this to move quickly!' : 'This is a great opportunity in the current market conditions.'}
-
-Would you like to schedule a showing? I'd be happy to provide you with a complete market analysis and walk you through the property.
-
-Best regards,
-${brandingCompany || 'Your Real Estate Professional'}
-${brandingPhone || ''}`;
-      } else if (emailType === 'market_update') {
-        subject = `Your ${new Date().toLocaleString('default', { month: 'long' })} Market Update`;
-        body = `Dear {{firstName}},
-
-I hope this email finds you well! I wanted to share your monthly market update with some exciting insights about the local real estate market.
-
-📊 MARKET SNAPSHOT:
-• Trend: ${marketTrend === 'rising' ? '📈 Rising' : marketTrend === 'falling' ? '📉 Cooling' : '➡️ Stable'}
-• Average Days on Market: ${adjustedComps.length > 0 ? Math.round(adjustedComps.reduce((sum, c) => sum + parseFloat(c.dom || 30), 0) / adjustedComps.length) : 30} days
-• Median Price: $${Math.round(avgAdjustedValue).toLocaleString()}
-
-${marketTrend === 'rising' ? '🔥 The market is heating up! Great time for sellers, and buyers should act quickly on properties they love.' : marketTrend === 'falling' ? '💡 Opportunities emerging for buyers as inventory increases. Sellers should price strategically.' : '✅ Balanced market conditions provide good opportunities for both buyers and sellers.'}
-
-Thinking about buying or selling? Let's chat about how these trends might affect your plans!
-
-Warmly,
-${brandingCompany || 'Your Trusted Agent'}`;
-      } else if (emailType === 'cma_report') {
-        subject = `Your Property Analysis for ${subjectAddress || 'Your Home'} is Ready`;
-        body = `Hello {{firstName}},
-
-Great news! I've completed the comprehensive market analysis you requested.
-
-📋 PROPERTY ANALYSIS SUMMARY:
-• Subject: ${subjectAddress || 'Your Property'}
-• Estimated Value: $${Math.round(avgAdjustedValue - 10000).toLocaleString()} - $${Math.round(avgAdjustedValue + 10000).toLocaleString()}
-• Market Trend: ${marketTrend || 'Stable'}
-• Comparables Analyzed: ${adjustedComps.length}
-
-Based on my analysis of ${adjustedComps.length} comparable sales in your area, I've prepared a detailed report that shows exactly how your property compares to recent sales.
-
-The current ${marketTrend || 'stable'} market conditions ${marketTrend === 'rising' ? 'are favorable for sellers' : marketTrend === 'falling' ? 'present opportunities for strategic pricing' : 'provide balanced conditions'}.
-
-I'd love to review this analysis with you in detail. When would be a good time for us to connect?
-
-Professional regards,
-${brandingCompany || 'Your Agent'}
-${brandingEmail || ''}`;
-      }
-
+      const { subject, body } = generateMockAIEmail(emailType, emailData);
       setCurrentCampaign({ ...currentCampaign, subject, body });
       setAiLoading(false);
       showNotification('✅ AI email generated! +50 XP', 'success');
@@ -1190,11 +1110,8 @@ ${brandingEmail || ''}`;
     }
   }, []);
 
-  // Notification system
-  const showNotification = (message, type = 'info') => {
-    setNotification({ message, type });
-    setTimeout(() => setNotification(null), 3000);
-  };
+  // Notification system (using utility helper)
+  const showNotification = createNotificationManager(setNotification, 3000);
   
   // Keyboard shortcuts
   useEffect(() => {
