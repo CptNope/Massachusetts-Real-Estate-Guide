@@ -109,13 +109,29 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Manual chunks for better caching
-        manualChunks: {
-          // Vendor chunk for React and related libraries
-          'react-vendor': ['react', 'react-dom'],
-          // Chart.js in separate chunk
-          'charts': ['chart.js', 'react-chartjs-2'],
-          // Leaflet in separate chunk
-          'maps': ['leaflet'],
+        manualChunks: (id) => {
+          // Vendor chunks
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('chart.js') || id.includes('react-chartjs-2')) {
+              return 'charts';
+            }
+            if (id.includes('leaflet')) {
+              return 'maps';
+            }
+            if (id.includes('jspdf')) {
+              return 'pdf-vendor';
+            }
+            if (id.includes('@emailjs/browser')) {
+              return 'email-vendor';
+            }
+          }
+          // Study data in separate chunk
+          if (id.includes('studyData.js')) {
+            return 'studyData';
+          }
         },
         // Asset file naming
         assetFileNames: (assetInfo) => {

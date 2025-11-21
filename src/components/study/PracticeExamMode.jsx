@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { quizQuestions } from './studyData';
 
 export default function PracticeExamMode({ gamification }) {
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [examStarted, setExamStarted] = useState(false);
   const [examComplete, setExamComplete] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -127,6 +128,18 @@ export default function PracticeExamMode({ gamification }) {
   const isQuestionAnswered = (questionId) => {
     return selectedAnswers.hasOwnProperty(questionId);
   };
+
+  // Show loading state while data is being loaded
+  if (loading) {
+    return (
+      <div className="study-mode-container">
+        <div className="study-mode-header">
+          <h2>📝 Practice Exam Mode</h2>
+          <p>Loading exam questions...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Welcome screen
   if (!examStarted) {

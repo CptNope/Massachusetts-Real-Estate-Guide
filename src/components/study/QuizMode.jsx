@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { quizQuestions } from './studyData';
 
 export default function QuizMode({ gamification }) {
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -22,6 +23,14 @@ export default function QuizMode({ gamification }) {
   const [timeRemaining, setTimeRemaining] = useState(timeLimit);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
   const [questionTimes, setQuestionTimes] = useState([]);
+
+  // Lazy load quiz questions data
+  useEffect(() => {
+    import('./studyData').then(module => {
+      setQuizQuestions(module.quizQuestions);
+      setLoading(false);
+    });
+  }, []);
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
@@ -228,6 +237,18 @@ export default function QuizMode({ gamification }) {
     if (percentage >= 60) return { grade: 'D', message: 'You\'re getting there. More practice needed.' };
     return { grade: 'F', message: 'Keep studying. Review the material and try again.' };
   };
+
+  // Show loading state while data is being loaded
+  if (loading) {
+    return (
+      <div className="study-mode-container">
+        <div className="study-mode-header">
+          <h2>🎯 Quiz Mode</h2>
+          <p>Loading quiz questions...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (quizComplete) {
     const finalScoreValue = score;

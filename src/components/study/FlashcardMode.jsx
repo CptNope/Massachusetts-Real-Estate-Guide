@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { flashcards } from './studyData';
 import Flashcard from './Flashcard';
 
 export default function FlashcardMode() {
+  const [flashcards, setFlashcards] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [masteredCards, setMasteredCards] = useState(() => {
     const saved = localStorage.getItem('masteredFlashcards');
     return saved ? JSON.parse(saved) : [];
   });
   const [filterCategory, setFilterCategory] = useState('all');
+
+  // Lazy load flashcards data
+  useEffect(() => {
+    import('./studyData').then(module => {
+      setFlashcards(module.flashcards);
+      setLoading(false);
+    });
+  }, []);
 
   // Save mastered cards to localStorage
   useEffect(() => {
@@ -58,6 +67,18 @@ export default function FlashcardMode() {
       setCurrentIndex(0);
     }
   };
+
+  // Show loading state while data is being loaded
+  if (loading) {
+    return (
+      <div className="study-mode-container">
+        <div className="study-mode-header">
+          <h2>📚 Flashcard Mode</h2>
+          <p>Loading flashcards...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (filteredCards.length === 0) {
     return (

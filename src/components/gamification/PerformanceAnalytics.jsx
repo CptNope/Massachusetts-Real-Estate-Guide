@@ -1,8 +1,17 @@
-import React, { useState, useMemo } from 'react';
-import { quizQuestions } from '../study/studyData';
+import React, { useState, useMemo, useEffect } from 'react';
 
 export default function PerformanceAnalytics({ gamification }) {
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [timeRange, setTimeRange] = useState('all'); // all, week, month
+
+  // Lazy load quiz questions data
+  useEffect(() => {
+    import('../study/studyData').then(module => {
+      setQuizQuestions(module.quizQuestions);
+      setLoading(false);
+    });
+  }, []);
   
   // Get quiz history from localStorage
   const quizHistory = useMemo(() => {
