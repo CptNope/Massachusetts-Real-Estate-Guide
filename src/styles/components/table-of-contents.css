@@ -3,17 +3,16 @@
    ===================================================== */
 
 .table-of-contents {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.25rem;
   margin-bottom: 2rem;
-  max-width: 320px;
-  float: right;
-  margin-left: 2rem;
+  max-width: 100%;
+  width: 100%;
   position: relative;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table-of-contents.sticky {
@@ -36,7 +35,7 @@
 .toc-header h3 {
   margin: 0;
   font-size: 1rem;
-  color: var(--text-primary);
+  color: #1f2937;
   font-weight: 600;
 }
 
@@ -79,17 +78,17 @@
 }
 
 .toc-list::-webkit-scrollbar-track {
-  background: var(--bg-main);
+  background: #f1f5f9;
   border-radius: 3px;
 }
 
 .toc-list::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: #38bdf8;
   border-radius: 3px;
 }
 
 .toc-list::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
+  background: #0ea5e9;
 }
 
 /* List Items */
@@ -112,7 +111,7 @@
 .toc-item a {
   display: block;
   padding: 0.5rem 0.75rem;
-  color: var(--text-secondary);
+  color: #475569;
   text-decoration: none;
   border-radius: 4px;
   transition: all 0.2s ease;
@@ -187,9 +186,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .table-of-contents {
-    float: none;
     max-width: 100%;
-    margin-left: 0;
     margin-bottom: 2rem;
   }
 
@@ -223,50 +220,4 @@
   }
 }
 
-/* Dark Theme Enhancement */
-@media (prefers-color-scheme: dark) {
-  .table-of-contents {
-    background: rgba(30, 41, 59, 0.95);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-
-  .table-of-contents.sticky {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  }
-}
-
-/* Light Theme */
-.light-theme .table-of-contents {
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.light-theme .toc-item a {
-  color: #475569;
-}
-
-.light-theme .toc-item a:hover {
-  color: #0284c7;
-  background: rgba(2, 132, 199, 0.1);
-  border-left-color: #0284c7;
-}
-
-.light-theme .toc-item.active a {
-  color: #0284c7;
-  background: rgba(2, 132, 199, 0.15);
-  border-left-color: #0284c7;
-}
-
-.light-theme .back-to-top-btn {
-  background: #0284c7;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-}
-
-.light-theme .back-to-top-btn:hover {
-  background: #0369a1;
-  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
-}
+/* Always white background - no theme overrides needed */
