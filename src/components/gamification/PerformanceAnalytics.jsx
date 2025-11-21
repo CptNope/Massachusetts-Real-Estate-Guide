@@ -7,7 +7,7 @@ export default function PerformanceAnalytics({ gamification }) {
 
   // Lazy load quiz questions data
   useEffect(() => {
-    import('../study/studyData').then(module => {
+    import('../study/quizData').then(module => {
       setQuizQuestions(module.quizQuestions);
       setLoading(false);
     });

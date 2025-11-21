@@ -128,7 +128,17 @@ export default defineConfig({
               return 'email-vendor';
             }
           }
-          // Study data in separate chunk
+          // Study data split into 3 separate chunks for granular loading
+          if (id.includes('flashcardsData.js')) {
+            return 'flashcardsData';
+          }
+          if (id.includes('quizData.js')) {
+            return 'quizData';
+          }
+          if (id.includes('examData.js')) {
+            return 'examData';
+          }
+          // Legacy support (can be removed after confirming split works)
           if (id.includes('studyData.js')) {
             return 'studyData';
           }

@@ -14,6 +14,14 @@ export default function PracticeExamMode({ gamification }) {
     return saved ? JSON.parse(saved) : [];
   });
 
+  // Lazy load exam questions data
+  useEffect(() => {
+    import('./examData').then(module => {
+      setQuizQuestions(module.quizQuestions);
+      setLoading(false);
+    });
+  }, []);
+
   // Save exam history
   useEffect(() => {
     if (examHistory.length > 0) {

@@ -13,7 +13,7 @@ export default function FlashcardMode() {
 
   // Lazy load flashcards data
   useEffect(() => {
-    import('./studyData').then(module => {
+    import('./flashcardsData').then(module => {
       setFlashcards(module.flashcards);
       setLoading(false);
     });

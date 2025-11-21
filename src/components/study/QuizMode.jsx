@@ -26,7 +26,7 @@ export default function QuizMode({ gamification }) {
 
   // Lazy load quiz questions data
   useEffect(() => {
-    import('./studyData').then(module => {
+    import('./quizData').then(module => {
       setQuizQuestions(module.quizQuestions);
       setLoading(false);
     });
