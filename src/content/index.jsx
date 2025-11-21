@@ -39,6 +39,11 @@ import { section as maTenantLandlord } from './legal/37-ma-tenant-landlord.jsx';
 import { section as maEnvironmental } from './legal/38-ma-environmental.jsx';
 import { section as maHomestead } from './legal/39-ma-homestead.jsx';
 import { section as maTaxesStamps } from './legal/40-ma-taxes-stamps.jsx';
+import { section as transferOfTitle } from './transactions/41-transfer-of-title.jsx';
+import { section as realEstateMath } from './professional/42-real-estate-math.jsx';
+import { section as mortgageFinance } from './transactions/43-mortgage-finance.jsx';
+import { section as federalFairHousing } from './compliance/44-federal-fair-housing.jsx';
+import { section as contractLaw } from './fundamentals/45-contract-law.jsx';
 
 // Collect all sections
 const importedSections = [
@@ -81,10 +86,15 @@ const importedSections = [
   maTenantLandlord,
   maEnvironmental,
   maHomestead,
-  maTaxesStamps
+  maTaxesStamps,
+  transferOfTitle,
+  realEstateMath,
+  mortgageFinance,
+  federalFairHousing,
+  contractLaw
 ];
 
-// Sort sections by the number in their title (1-40)
+// Sort sections by the number in their title (1-45)
 // This ensures correct order even if files are reordered
 export const sections = [...importedSections].sort((a, b) => {
   const numA = parseInt(a.title.match(/^(\d+)\./)?.[1] || '999');
