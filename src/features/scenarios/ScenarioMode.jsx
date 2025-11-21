@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { scenarios } from './scenarioData';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
@@ -100,6 +100,44 @@ export default function ScenarioMode() {
   const filteredScenarios = difficultyFilter === 'all' 
     ? scenarios 
     : scenarios.filter(s => s.difficulty === difficultyFilter);
+
+  // Handle scenario completion when reaching an ending
+  useEffect(() => {
+    if (selectedScenario && currentNode) {
+      const node = selectedScenario.nodes[currentNode];
+      if (node && node.isEnding) {
+        // Check if we've already recorded this completion
+        const alreadyCompleted = completedScenarios.some(c => 
+          c.scenarioId === selectedScenario.id && 
+          c.endingNode === currentNode &&
+          c.date.split('T')[0] === new Date().toISOString().split('T')[0]
+        );
+        
+        if (!alreadyCompleted) {
+          const completion = {
+            scenarioId: selectedScenario.id,
+            outcome: node.outcome,
+            endingNode: currentNode,
+            date: new Date().toISOString(),
+            choices: history
+          };
+
+          const existing = completedScenarios.filter(c => c.scenarioId !== selectedScenario.id);
+          setCompletedScenarios([completion, ...existing]);
+
+          // Track discovered ending
+          const scenarioEndings = discoveredEndings[selectedScenario.id] || [];
+          if (!scenarioEndings.includes(currentNode)) {
+            setDiscoveredEndings({
+              ...discoveredEndings,
+              [selectedScenario.id]: [...scenarioEndings, currentNode]
+            });
+          }
+        }
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedScenario, currentNode]); // Only run when scenario or node changes
 
   // Scenario Selection Screen
   if (!selectedScenario) {
@@ -222,13 +260,6 @@ export default function ScenarioMode() {
 
   // Ending Screen
   if (node.isEnding) {
-    if (!completedScenarios.some(c => 
-      c.scenarioId === selectedScenario.id && 
-      c.date === new Date().toISOString().split('T')[0]
-    )) {
-      completeScenario(node.outcome);
-    }
-
     return (
       <div className="study-mode-container">
         <div className={`scenario-ending ${node.outcome}`}>
