@@ -39,6 +39,7 @@ import {
   calculateMarketTrend
 } from './utils/recommendations';
 import { generateEnhancedPrediction } from './utils/aiPredictionEngine';
+import { createCompStateManager, getCompPhotoStates } from './utils/compStateManager';
 
 // Register Chart.js components
 ChartJS.register(
@@ -372,25 +373,8 @@ export default function EnhancedCMA({ gamification }) {
   };
 
   const importMLSProperty = (property, compNumber) => {
-    const currentYear = new Date().getFullYear();
-    const age = currentYear - property.yearBuilt;
-    
-    // Map MLS data to CMA fields
-    const setActive = eval(`setComp${compNumber}Active`);
-    const setPrice = eval(`setComp${compNumber}Price`);
-    const setBeds = eval(`setComp${compNumber}Beds`);
-    const setBaths = eval(`setComp${compNumber}Baths`);
-    const setSqft = eval(`setComp${compNumber}Sqft`);
-    const setAge = eval(`setComp${compNumber}Age`);
-    const setDOM = eval(`setComp${compNumber}DOM`);
-
-    setActive(true);
-    setPrice(property.price.toString());
-    setBeds(property.beds.toString());
-    setBaths(property.baths.toString());
-    setSqft(property.sqft.toString());
-    setAge(age.toString());
-    setDOM(property.dom.toString());
+    // SECURITY FIX: Using safe state manager instead of eval()
+    compManager.importMLSProperty(compNumber, property);
 
     showNotification(`✅ Imported ${property.address} to Comp #${compNumber}! +15 XP`, 'success');
     if (gamification) {
@@ -1069,17 +1053,8 @@ ${brandingEmail || ''}`;
   const clearAllComps = () => {
     if (!confirm('Clear all comparable data? This cannot be undone.')) return;
     
-    setComp1Active(false); setComp2Active(false); setComp3Active(false);
-    setComp4Active(false); setComp5Active(false); setComp6Active(false);
-    
-    [1, 2, 3, 4, 5, 6].forEach(i => {
-      const setPrice = eval(`setComp${i}Price`);
-      const setBeds = eval(`setComp${i}Beds`);
-      const setBaths = eval(`setComp${i}Baths`);
-      const setSqft = eval(`setComp${i}Sqft`);
-      
-      setPrice(''); setBeds('3'); setBaths('2'); setSqft('1800');
-    });
+    // SECURITY FIX: Using safe state manager instead of eval()
+    compManager.clearAllComps();
     
     showNotification('🗑️ All comparables cleared. +5 XP', 'info');
     if (gamification) {
@@ -1408,6 +1383,48 @@ ${brandingEmail || ''}`;
   const [comp6Location, setComp6Location] = useState('4');
   const [comp6View, setComp6View] = useState('park');
   const [comp6Upgrades, setComp6Upgrades] = useState('excellent');
+  
+  // SECURITY: Safe comparable state manager (replaces dangerous eval() calls)
+  const compStates = {
+    // Comp 1
+    comp1Active, setComp1Active, comp1Price, setComp1Price, comp1Beds, setComp1Beds,
+    comp1Baths, setComp1Baths, comp1Sqft, setComp1Sqft, comp1Garage, setComp1Garage,
+    comp1Condition, setComp1Condition, comp1Age, setComp1Age, comp1DOM, setComp1DOM,
+    comp1Pool, setComp1Pool, comp1LotSize, setComp1LotSize, comp1Location, setComp1Location,
+    comp1View, setComp1View, comp1Upgrades, setComp1Upgrades, comp1Photo, setComp1Photo,
+    // Comp 2
+    comp2Active, setComp2Active, comp2Price, setComp2Price, comp2Beds, setComp2Beds,
+    comp2Baths, setComp2Baths, comp2Sqft, setComp2Sqft, comp2Garage, setComp2Garage,
+    comp2Condition, setComp2Condition, comp2Age, setComp2Age, comp2DOM, setComp2DOM,
+    comp2Pool, setComp2Pool, comp2LotSize, setComp2LotSize, comp2Location, setComp2Location,
+    comp2View, setComp2View, comp2Upgrades, setComp2Upgrades, comp2Photo, setComp2Photo,
+    // Comp 3
+    comp3Active, setComp3Active, comp3Price, setComp3Price, comp3Beds, setComp3Beds,
+    comp3Baths, setComp3Baths, comp3Sqft, setComp3Sqft, comp3Garage, setComp3Garage,
+    comp3Condition, setComp3Condition, comp3Age, setComp3Age, comp3DOM, setComp3DOM,
+    comp3Pool, setComp3Pool, comp3LotSize, setComp3LotSize, comp3Location, setComp3Location,
+    comp3View, setComp3View, comp3Upgrades, setComp3Upgrades, comp3Photo, setComp3Photo,
+    // Comp 4
+    comp4Active, setComp4Active, comp4Price, setComp4Price, comp4Beds, setComp4Beds,
+    comp4Baths, setComp4Baths, comp4Sqft, setComp4Sqft, comp4Garage, setComp4Garage,
+    comp4Condition, setComp4Condition, comp4Age, setComp4Age, comp4DOM, setComp4DOM,
+    comp4Pool, setComp4Pool, comp4LotSize, setComp4LotSize, comp4Location, setComp4Location,
+    comp4View, setComp4View, comp4Upgrades, setComp4Upgrades, comp4Photo, setComp4Photo,
+    // Comp 5
+    comp5Active, setComp5Active, comp5Price, setComp5Price, comp5Beds, setComp5Beds,
+    comp5Baths, setComp5Baths, comp5Sqft, setComp5Sqft, comp5Garage, setComp5Garage,
+    comp5Condition, setComp5Condition, comp5Age, setComp5Age, comp5DOM, setComp5DOM,
+    comp5Pool, setComp5Pool, comp5LotSize, setComp5LotSize, comp5Location, setComp5Location,
+    comp5View, setComp5View, comp5Upgrades, setComp5Upgrades, comp5Photo, setComp5Photo,
+    // Comp 6
+    comp6Active, setComp6Active, comp6Price, setComp6Price, comp6Beds, setComp6Beds,
+    comp6Baths, setComp6Baths, comp6Sqft, setComp6Sqft, comp6Garage, setComp6Garage,
+    comp6Condition, setComp6Condition, comp6Age, setComp6Age, comp6DOM, setComp6DOM,
+    comp6Pool, setComp6Pool, comp6LotSize, setComp6LotSize, comp6Location, setComp6Location,
+    comp6View, setComp6View, comp6Upgrades, setComp6Upgrades, comp6Photo, setComp6Photo
+  };
+  
+  const compManager = createCompStateManager(compStates);
   
   // Adjustment values and constants
   const conditionValues = { 'poor': 1, 'fair': 2, 'good': 3, 'excellent': 4 };
@@ -4028,29 +4045,24 @@ ${brandingEmail || ''}`;
                 </div>
               )}
             </div>
-            {[1, 2, 3, 4, 5, 6].map(i => {
-              const photo = eval(`comp${i}Photo`);
-              const setPhoto = eval(`setComp${i}Photo`);
-              const active = eval(`comp${i}Active`);
-              if (!active) return null;
-              return (
-                <div key={i} className="photo-upload-item">
-                  <label>Comparable #{i} Photo</label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => handlePhotoUpload(e, setPhoto)}
-                    className="file-input"
-                  />
-                  {photo && (
-                    <div className="photo-preview">
-                      <img src={photo} alt={`Comp ${i}`} />
-                      <button onClick={() => setPhoto('')} className="remove-photo">✕</button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            {/* SECURITY FIX: Using safe helper instead of eval() */}
+            {getCompPhotoStates(compStates).map(comp => (
+              <div key={comp.number} className="photo-upload-item">
+                <label>Comparable #{comp.number} Photo</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => handlePhotoUpload(e, comp.setPhoto)}
+                  className="file-input"
+                />
+                {comp.photo && (
+                  <div className="photo-preview">
+                    <img src={comp.photo} alt={`Comp ${comp.number}`} />
+                    <button onClick={() => comp.setPhoto('')} className="remove-photo">✕</button>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
           <button className="btn-secondary" onClick={() => setShowPhotos(false)} style={{ marginTop: '1rem' }}>
             ✕ Close
