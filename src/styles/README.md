@@ -55,6 +55,7 @@ src/styles/
 - **`features/dashboard.css`** - Dashboard stats, progress, section management
 - **`features/scenarios.css`** - Scenario cards, choices, endings, paths
 - **`features/legal.css`** - Law banners, legal panels, contracts, mortgages, liens
+- **`features/integrations.css`** - MLS, ChatGPT, OpenAI, API tokens, AI predictions
 
 ## 🔄 Migration Status
 
@@ -98,11 +99,14 @@ src/styles/
 - [x] Migrated interest calculations
 - [x] Migrated MA sales contracts
 
-### 🚧 Remaining (~11,118 lines, 76%)
+**Phase 6 - External Integrations:**
+- [x] Migrated MLS integration panel & features
+- [x] Migrated ChatGPT/OpenAI configuration & features
+- [x] Migrated API token management
+- [x] Migrated AI prediction panels
+- [x] Migrated photo & email upload panels
 
-**Priority: High**
-- [ ] MLS Integration styles (~500 lines)
-- [ ] ChatGPT/OpenAI integration styles (~500 lines)
+### 🚧 Remaining (~10,418 lines, 72%)
 
 **Priority: Medium**
 - [ ] Additional CMA features (templates, reports, etc.)
