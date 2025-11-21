@@ -34,6 +34,11 @@ import { section as examPrep } from './professional/32-exam-prep.jsx';
 import { section as cheat } from './professional/33-cheat.jsx';
 import { section as propertyOwnership } from './fundamentals/34-property-ownership.jsx';
 import { section as landUseControls } from './fundamentals/35-land-use-controls.jsx';
+import { section as maBoardLicensing } from './legal/36-ma-board-licensing.jsx';
+import { section as maTenantLandlord } from './legal/37-ma-tenant-landlord.jsx';
+import { section as maEnvironmental } from './legal/38-ma-environmental.jsx';
+import { section as maHomestead } from './legal/39-ma-homestead.jsx';
+import { section as maTaxesStamps } from './legal/40-ma-taxes-stamps.jsx';
 
 // Collect all sections
 const importedSections = [
@@ -71,10 +76,15 @@ const importedSections = [
   examPrep,
   cheat,
   propertyOwnership,
-  landUseControls
+  landUseControls,
+  maBoardLicensing,
+  maTenantLandlord,
+  maEnvironmental,
+  maHomestead,
+  maTaxesStamps
 ];
 
-// Sort sections by the number in their title (1-33)
+// Sort sections by the number in their title (1-40)
 // This ensures correct order even if files are reordered
 export const sections = [...importedSections].sort((a, b) => {
   const numA = parseInt(a.title.match(/^(\d+)\./)?.[1] || '999');
