@@ -19,6 +19,7 @@
 @import './features/calculator.css';
 @import './features/cma.css';
 @import './features/cma-advanced.css';
+@import './features/cma-extras.css';
 @import './features/charts.css';
 @import './features/study-mode.css';
 @import './features/quiz.css';

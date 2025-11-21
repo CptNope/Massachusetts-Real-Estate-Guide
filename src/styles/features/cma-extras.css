@@ -1,0 +1,472 @@
+/* =============================================================================
+   REMAINING CMA FEATURES & UI ELEMENTS - Templates, Branding, Shortcuts, etc.
+   ============================================================================= */
+
+/* =============================================================================
+   MARKET TEMPLATES PANEL
+   ============================================================================= */
+
+.market-templates-panel {
+  background: white;
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(245, 158, 11, 0.1);
+}
+
+.market-templates-panel h3 {
+  margin: 0 0 10px 0;
+  color: #f59e0b;
+}
+
+.templates-intro {
+  margin: 0 0 20px 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.template-card {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.template-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(245, 158, 11, 0.2);
+}
+
+.template-card.active {
+  border-color: #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(5, 150, 105, 0.05));
+}
+
+.template-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.template-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.active-badge {
+  background: #10b981;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.template-description {
+  margin: 0 0 10px 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.template-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 10px;
+}
+
+.template-stat {
+  font-weight: 600;
+  color: #f59e0b;
+  font-size: 0.875rem;
+}
+
+.template-type {
+  background: #e5e7eb;
+  color: #6b7280;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.template-notes {
+  margin: 10px 0 0 0;
+  font-size: 0.8rem;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.05);
+  padding: 8px;
+  border-radius: 4px;
+  border-left: 2px solid #10b981;
+  line-height: 1.4;
+}
+
+/* =============================================================================
+   BRANDING PANEL
+   ============================================================================= */
+
+.branding-panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.branding-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #111827;
+}
+
+.logo-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-preview {
+  width: 200px;
+  height: 80px;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+.logo-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.agent-info-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.color-picker-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.color-picker-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.color-picker-group input[type="color"] {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* =============================================================================
+   KEYBOARD SHORTCUTS MODAL
+   ============================================================================= */
+
+.keyboard-shortcuts-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.shortcuts-modal-content {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.shortcuts-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.shortcuts-modal-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.shortcuts-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+}
+
+.shortcuts-close:hover {
+  color: var(--accent);
+}
+
+.shortcuts-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.shortcut-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--bg-highlight);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.shortcut-item:hover {
+  background: var(--bg-input);
+  transform: translateX(4px);
+}
+
+.shortcut-description {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.shortcut-key {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================================================
+   MOTIVATION BOX
+   ============================================================================= */
+
+.motivation-box {
+  background: linear-gradient(135deg, rgba(79, 158, 255, 0.1), rgba(99, 102, 241, 0.1));
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.motivation-box p {
+  margin: 0;
+}
+
+/* =============================================================================
+   TOGGLE SWITCHES
+   ============================================================================= */
+
+.quiz-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #64748b;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--accent);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.toggle-switch input:focus + .toggle-slider {
+  box-shadow: 0 0 1px var(--accent);
+}
+
+/* =============================================================================
+   EMAIL PANEL ADDITIONS
+   ============================================================================= */
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.email-actions {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* =============================================================================
+   CHARTS PANEL ADDITIONS
+   ============================================================================= */
+
+.charts-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-selector button {
+  padding: 0.5rem 1rem;
+  background: var(--bg-highlight);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chart-selector button.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.chart-selector button:hover {
+  border-color: var(--accent);
+}
+
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h4 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+}
+
+/* =============================================================================
+   RESPONSIVE OVERRIDES
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .templates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shortcuts-modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .shortcut-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .chart-selector {
+    flex-direction: column;
+  }
+
+  .chart-selector button {
+    width: 100%;
+  }
+}
+
+/* =============================================================================
+   PRINT STYLES
+   ============================================================================= */
+
+@media print {
+  .market-templates-panel,
+  .branding-panel,
+  .keyboard-shortcuts-modal,
+  .motivation-box,
+  .quiz-mode-toggle,
+  .email-actions,
+  .chart-selector {
+    display: none !important;
+  }
+
+  .chart-container {
+    page-break-inside: avoid;
+  }
+}
