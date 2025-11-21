@@ -47,8 +47,13 @@ src/styles/
 ### Features (Feature-Specific)
 
 - **`features/calculator.css`** - Calculator tabs, results, explanations
-- **`features/cma.css`** - CMA tool, comparable sections, toolbars
+- **`features/cma.css`** - CMA tool, comparable sections, basic features
+- **`features/cma-advanced.css`** - CMA toolbar, help panels, challenges, library cards
 - **`features/charts.css`** - Chart panels, chart selectors, visualizations
+- **`features/study-mode.css`** - Flashcards, study mode toggle, stats
+- **`features/quiz.css`** - Quiz progress, questions, results, history
+- **`features/dashboard.css`** - Dashboard stats, progress, section management
+- **`features/scenarios.css`** - Scenario cards, choices, endings, paths
 
 ## 🔄 Migration Status
 
@@ -75,11 +80,27 @@ src/styles/
 - [x] Migrated print styles
 - [x] Added browser compatibility fixes
 
-### 🚧 Remaining
+**Phase 4 - CMA Advanced Features:**
+- [x] Migrated CMA toolbar system
+- [x] Migrated CMA help & data sources panels
+- [x] Migrated CMA challenges system
+- [x] Migrated CMA library cards
+- [x] Added responsive overrides for CMA components
 
-- [ ] Migrate remaining CMA-specific features from legacy
-- [ ] Migrate responsive overrides
-- [ ] Migrate misc UI elements
+### 🚧 Remaining (~11,610 lines, 80%)
+
+**Priority: High**
+- [ ] Legal/Contract panels (~3,000 lines)
+- [ ] MLS Integration styles (~500 lines)
+- [ ] ChatGPT/OpenAI integration styles (~500 lines)
+
+**Priority: Medium**
+- [ ] Additional CMA features (templates, reports, etc.)
+- [ ] Email integration styles
+- [ ] Additional responsive overrides
+
+**Priority: Low**
+- [ ] Misc UI elements & panels
 - [ ] Remove legacy file once migration is complete
 
 ## 📖 Usage Guide
