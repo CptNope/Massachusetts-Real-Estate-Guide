@@ -25,6 +25,7 @@
 @import './features/dashboard.css';
 @import './features/scenarios.css';
 @import './features/legal.css';
+@import './features/integrations.css';
 
 /* 5. Animations - Keyframes & Transitions */
 @import './animations.css';

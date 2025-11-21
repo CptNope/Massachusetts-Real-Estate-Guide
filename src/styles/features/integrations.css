@@ -1,0 +1,827 @@
+/* =============================================================================
+   INTEGRATION FEATURES - MLS, ChatGPT, OpenAI, and External APIs
+   ============================================================================= */
+
+/* =============================================================================
+   MLS INTEGRATION
+   ============================================================================= */
+
+.mls-panel {
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.mls-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mls-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mls-connected {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.mls-provider-info {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.mls-provider-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.mls-provider-info ul {
+  margin: 0.5rem 0 0 1.5rem;
+  padding: 0;
+}
+
+.mls-provider-info li {
+  margin: 0.25rem 0;
+  color: #374151;
+}
+
+.mls-credentials-form {
+  margin-top: 1.5rem;
+}
+
+.mls-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mls-connection-info {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mls-connection-info p {
+  margin: 0;
+  color: #065f46;
+  font-weight: 500;
+}
+
+.mls-search-form {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.mls-results {
+  margin-top: 1.5rem;
+}
+
+.mls-results h4 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+}
+
+.mls-results-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.mls-result-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.mls-result-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.mls-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mls-result-header strong {
+  color: #111827;
+  font-size: 1rem;
+}
+
+.mls-number {
+  font-size: 0.75rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.mls-result-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mls-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+.mls-detail-row span:first-child {
+  color: #6b7280;
+}
+
+.mls-detail-row strong {
+  color: #059669;
+  font-weight: 600;
+}
+
+.mls-import-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mls-info-section {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.mls-info-section h4 {
+  margin: 0 0 0.75rem 0;
+  color: #92400e;
+}
+
+.mls-info-text {
+  margin: 0.5rem 0;
+  color: #78350f;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.mls-requirements-list {
+  margin: 0.5rem 0 0.5rem 1.5rem;
+  padding: 0;
+  color: #78350f;
+  font-size: 0.875rem;
+}
+
+.mls-requirements-list li {
+  margin: 0.25rem 0;
+}
+
+.input-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* =============================================================================
+   CHATGPT / OPENAI INTEGRATION
+   ============================================================================= */
+
+.openai-config-section {
+  margin-bottom: 2rem;
+}
+
+.openai-config-section h4 {
+  margin: 0 0 1rem 0;
+  color: #374151;
+}
+
+.api-key-status {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.api-key-status.connected .status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-icon {
+  font-size: 1.5rem;
+}
+
+.status-text {
+  font-weight: bold;
+  color: #15803d;
+  font-size: 1.1rem;
+}
+
+.key-display {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.key-display code {
+  flex: 1;
+  background: #1f2937;
+  color: #86efac;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+.api-key-setup ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: #374151;
+  line-height: 1.8;
+}
+
+.api-key-setup ol li {
+  margin: 0.5rem 0;
+}
+
+.api-key-setup a {
+  color: #8b5cf6;
+  text-decoration: underline;
+}
+
+.api-key-input-section {
+  margin: 1.5rem 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.api-key-input-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.api-key-input-section input[type="password"] {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.chatgpt-features-section {
+  margin: 2rem 0;
+}
+
+.chatgpt-features-section h4 {
+  margin: 0 0 1.5rem 0;
+  color: #374151;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 1px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card h5 {
+  margin: 0.5rem 0;
+  color: #6d28d9;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: #5b21b6;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.xp-badge {
+  display: inline-block;
+  background: #fbbf24;
+  color: #92400e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.usage-tips-section {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 2rem 0;
+}
+
+.usage-tips-section h4 {
+  margin: 0 0 1rem 0;
+  color: #c2410c;
+}
+
+.usage-tips-section ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #9a3412;
+  line-height: 1.8;
+}
+
+.usage-tips-section li {
+  margin: 0.5rem 0;
+}
+
+.quick-actions {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+}
+
+.quick-actions h4 {
+  margin: 0 0 1rem 0;
+  color: #15803d;
+}
+
+.quick-actions button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-connected {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* =============================================================================
+   API TOKEN MANAGEMENT
+   ============================================================================= */
+
+.api-panel {
+  background: white;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.api-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #6d28d9;
+}
+
+.api-intro {
+  background: #f5f3ff;
+  border: 1px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.api-intro p {
+  margin: 0.5rem 0;
+  color: #5b21b6;
+}
+
+.tokens-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tokens-header h4 {
+  margin: 0;
+  color: #374151;
+}
+
+.token-create-form {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.token-create-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tokens-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.token-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.token-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.token-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.token-value {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.token-value code {
+  flex: 1;
+  background: #1f2937;
+  color: #10b981;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+.token-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.no-tokens {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+}
+
+.api-docs-section {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.api-docs-section h4 {
+  margin: 0 0 1rem 0;
+  color: #1e40af;
+}
+
+.api-endpoint {
+  background: white;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.api-endpoint h5 {
+  margin: 0 0 0.5rem 0;
+  color: #059669;
+  font-family: monospace;
+}
+
+.api-example {
+  margin: 0.5rem 0;
+}
+
+.api-example strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.api-example pre {
+  background: #1f2937;
+  color: #10b981;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+}
+
+.api-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(251, 191, 36, 0.1);
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* =============================================================================
+   AI PREDICTION PANEL
+   ============================================================================= */
+
+.ai-panel {
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+  border: 2px solid #06b6d4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+.ai-panel h3 {
+  margin: 0 0 1.5rem 0;
+  color: #0e7490;
+}
+
+.ai-btn {
+  background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.ai-btn:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490) !important;
+}
+
+.ai-prediction-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-confidence,
+.ai-trend {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-confidence h4,
+.ai-trend h4 {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+/* GPT Loading & Analysis Display */
+.gpt-loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.gpt-loading-spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border: 4px solid #d1fae5;
+  border-top: 4px solid #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.gpt-loading p {
+  color: #059669;
+  font-weight: 500;
+}
+
+.gpt-analysis {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  line-height: 1.8;
+}
+
+.gpt-analysis p {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.gpt-analysis p:last-child {
+  margin-bottom: 0;
+}
+
+.chatgpt-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #a7f3d0;
+}
+
+.gpt-disclaimer {
+  margin: 0;
+  padding: 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #065f46;
+  font-style: italic;
+}
+
+.chatgpt-prompt {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px dashed #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.prompt-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.prompt-content {
+  flex: 1;
+}
+
+.prompt-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.prompt-content p {
+  margin: 0 0 1rem 0;
+  color: #1e3a8a;
+  line-height: 1.6;
+}
+
+/* =============================================================================
+   PHOTO & EMAIL PANELS
+   ============================================================================= */
+
+.photos-panel,
+.email-panel,
+.charts-panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.photos-panel h3,
+.email-panel h3,
+.charts-panel h3 {
+  margin: 0 0 0.5rem 0;
+  color: #111827;
+}
+
+.panel-description {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.photo-upload-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.photo-upload-item label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.file-input {
+  padding: 0.5rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-input:hover {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+}
+
+.photo-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-photo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.remove-photo:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Small button utility */
+.btn-small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+}
+
+/* Print Styles */
+@media print {
+  .mls-panel,
+  .openai-config-section,
+  .api-panel,
+  .ai-panel,
+  .photos-panel,
+  .email-panel {
+    display: none !important;
+  }
+}
