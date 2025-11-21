@@ -1,0 +1,611 @@
+/* =============================================================================
+   LEGAL & CONTRACT PANELS - Law changes, contracts, mortgages, and legal info
+   ============================================================================= */
+
+/* MA Law Change Banner */
+.law-change-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+  animation: slideDown 0.3s ease;
+}
+
+.law-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.law-banner-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.law-banner-text {
+  flex: 1;
+  color: #713f12;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.law-banner-text strong {
+  color: #78350f;
+  font-weight: 700;
+}
+
+.law-banner-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #92400e;
+  padding: 0.25rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.law-banner-close:hover {
+  background: rgba(146, 64, 14, 0.1);
+  border-radius: 4px;
+}
+
+/* Dark mode law banner */
+:root[data-theme="dark"] .law-change-banner {
+  background: linear-gradient(135deg, #422006, #78350f);
+  border: 2px solid #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+:root[data-theme="dark"] .law-banner-text {
+  color: #fde68a;
+}
+
+:root[data-theme="dark"] .law-banner-text strong {
+  color: #fef3c7;
+  font-weight: 700;
+}
+
+:root[data-theme="dark"] .law-banner-close {
+  color: #fbbf24;
+}
+
+:root[data-theme="dark"] .law-banner-close:hover {
+  background: rgba(251, 191, 36, 0.15);
+}
+
+/* Legal Info Panel */
+.legal-info-panel {
+  background: white;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.legal-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.legal-panel-header h3 {
+  margin: 0;
+  color: #1e40af;
+}
+
+.legal-effective-date {
+  background: #dbeafe;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  color: #1e40af;
+}
+
+.legal-purpose {
+  background: #f0fdf4;
+  border: 2px solid #10b981;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-purpose h4 {
+  margin: 0 0 1rem 0;
+  color: #065f46;
+  font-size: 1.2rem;
+}
+
+.legal-purpose p {
+  margin: 0 0 1rem 0;
+  color: #047857;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.legal-reference {
+  background: white;
+  border-left: 4px solid #10b981;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.legal-reference p {
+  margin: 0;
+  color: #065f46;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.legal-reference strong {
+  color: #047857;
+}
+
+.legal-content h4 {
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.legal-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legal-item-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.legal-item-title strong {
+  color: #111827;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.legal-item p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.7;
+  padding-left: 2.25rem;
+}
+
+.legal-compliance-checklist {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.legal-compliance-checklist h4 {
+  margin: 0 0 0.75rem 0;
+  color: #065f46;
+}
+
+.legal-compliance-checklist ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.legal-compliance-checklist li {
+  margin: 0.5rem 0;
+  color: #047857;
+  font-weight: 500;
+}
+
+.legal-compliance-checklist li::before {
+  content: "✓ ";
+  margin-right: 0.5rem;
+}
+
+.legal-resources {
+  background: #f0f9ff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.legal-resources h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e40af;
+}
+
+.legal-resources p {
+  margin: 0;
+  color: #1e40af;
+  font-size: 0.9rem;
+}
+
+.legal-footer-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+/* Contract Elements Panel */
+.contract-info-panel {
+  background: white;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.contract-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #fde68a;
+}
+
+.contract-panel-header h3 {
+  margin: 0;
+  color: #92400e;
+}
+
+.contract-intro {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #78350f;
+  font-size: 1.05rem;
+  border-radius: 4px;
+}
+
+.contract-elements {
+  display: grid;
+  gap: 1rem;
+}
+
+.contract-element {
+  display: flex;
+  gap: 1rem;
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.contract-element:hover {
+  background: #fef9c3;
+  border-color: #fbbf24;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.15);
+}
+
+.element-number {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.element-content {
+  flex: 1;
+}
+
+.element-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #92400e;
+  font-size: 1.1rem;
+}
+
+.element-definition {
+  margin: 0 0 0.5rem 0;
+  color: #78350f;
+  font-weight: 600;
+}
+
+.element-note {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.element-note strong {
+  color: #b45309;
+}
+
+.contract-footer {
+  margin-top: 1.5rem;
+}
+
+.contract-tip {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #1e40af;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contract-tip strong {
+  color: #1e3a8a;
+}
+
+/* Contract Effects Panel */
+.contract-effects-panel {
+  background: white;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.effects-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #c4b5fd;
+}
+
+.effects-panel-header h3 {
+  margin: 0;
+  color: #6d28d9;
+}
+
+.effects-intro {
+  background: #f5f3ff;
+  border-left: 4px solid #8b5cf6;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #5b21b6;
+  font-size: 1.05rem;
+  border-radius: 4px;
+}
+
+.effects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.effect-card {
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.2s;
+  border: 2px solid;
+}
+
+.effect-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Contract Performance Panel */
+.contract-performance-panel {
+  background: white;
+  border: 2px solid #14b8a6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(20, 184, 166, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Contract Termination Section */
+.contract-termination-section {
+  background: #f0fdfa;
+  border: 2px solid #14b8a6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contract-termination-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #115e59;
+  font-size: 1.3rem;
+}
+
+/* Mortgage Theory Panel */
+.mortgage-theory-panel {
+  background: white;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Security & Debt Section */
+.security-debt-section {
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border: 2px solid #8b5cf6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.security-debt-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #6b21a8;
+  font-size: 1.3rem;
+}
+
+/* Note Provisions Section */
+.note-provisions-box {
+  background: white;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.note-provisions-box h5 {
+  margin: 0 0 1rem 0;
+  color: #6b21a8;
+  font-size: 1.1rem;
+}
+
+/* Release of Lien Section */
+.release-lien-section {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border: 2px solid #10b981;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.release-lien-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #065f46;
+  font-size: 1.3rem;
+}
+
+/* Interest Calculation Section */
+.interest-calculation-section {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 2px solid #f59e0b;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.interest-calculation-section h4 {
+  margin: 0 0 1.25rem 0;
+  color: #92400e;
+  font-size: 1.3rem;
+}
+
+/* MA Sales Contracts Panel */
+.sales-contracts-panel {
+  background: white;
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.sales-contracts-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #047857;
+}
+
+.two-contract-system {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contract-box {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.contract-1 {
+  border-left: 5px solid #10b981;
+}
+
+.contract-2 {
+  border-left: 5px solid #059669;
+}
+
+.contract-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.contract-box h4 {
+  margin: 0.5rem 0 0.5rem 0;
+  color: #065f46;
+  font-size: 1.2rem;
+}
+
+.contract-subtitle {
+  margin: 0 0 1rem 0;
+  color: #047857;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.contract-elements-list {
+  margin-top: 1rem;
+}
+
+.contract-elements-list h5 {
+  margin: 0 0 0.75rem 0;
+  color: #047857;
+}
+
+/* Print Styles */
+@media print {
+  .law-change-banner,
+  .legal-info-panel,
+  .contract-info-panel,
+  .contract-effects-panel,
+  .contract-performance-panel,
+  .mortgage-theory-panel,
+  .sales-contracts-panel {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .law-banner-close,
+  .legal-footer-actions {
+    display: none !important;
+  }
+}
