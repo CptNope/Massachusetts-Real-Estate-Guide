@@ -32,6 +32,8 @@ import { section as multiState } from './professional/30-multi-state.jsx';
 import { section as investor } from './professional/31-investor.jsx';
 import { section as examPrep } from './professional/32-exam-prep.jsx';
 import { section as cheat } from './professional/33-cheat.jsx';
+import { section as propertyOwnership } from './fundamentals/34-property-ownership.jsx';
+import { section as landUseControls } from './fundamentals/35-land-use-controls.jsx';
 
 // Collect all sections
 const importedSections = [
@@ -67,7 +69,9 @@ const importedSections = [
   multiState,
   investor,
   examPrep,
-  cheat
+  cheat,
+  propertyOwnership,
+  landUseControls
 ];
 
 // Sort sections by the number in their title (1-33)
