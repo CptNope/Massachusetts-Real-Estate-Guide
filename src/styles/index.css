@@ -29,6 +29,7 @@
 @import './features/legal.css';
 @import './features/integrations.css';
 @import './features/gamification.css';
+@import './features/miscellaneous.css';
 
 /* 5. Animations - Keyframes & Transitions */
 @import './animations.css';
