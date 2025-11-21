@@ -56,6 +56,7 @@ src/styles/
 - **`features/scenarios.css`** - Scenario cards, choices, endings, paths
 - **`features/legal.css`** - Law banners, legal panels, contracts, mortgages, liens
 - **`features/integrations.css`** - MLS, ChatGPT, OpenAI, API tokens, AI predictions
+- **`features/cma-extras.css`** - Templates, branding, shortcuts, toggles, UI utilities
 
 ## 🔄 Migration Status
 
@@ -106,7 +107,15 @@ src/styles/
 - [x] Migrated AI prediction panels
 - [x] Migrated photo & email upload panels
 
-### 🚧 Remaining (~10,418 lines, 72%)
+**Phase 7 - CMA Extras & UI Elements:**
+- [x] Migrated market templates panel
+- [x] Migrated branding panel
+- [x] Migrated keyboard shortcuts modal
+- [x] Migrated motivation boxes
+- [x] Migrated toggle switches
+- [x] Migrated email & charts panel extras
+
+### 🚧 Remaining (~9,928 lines, 68%)
 
 **Priority: Medium**
 - [ ] Additional CMA features (templates, reports, etc.)
