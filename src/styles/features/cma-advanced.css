@@ -1,0 +1,649 @@
+/* =============================================================================
+   CMA ADVANCED FEATURES - Enhanced CMA Tools, Help, Challenges, Integrations
+   ============================================================================= */
+
+/* CMA Toolbar */
+.cma-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  align-items: stretch;
+}
+
+/* Uniform styling for ALL buttons in CMA toolbar - WCAG AA Compliant */
+.cma-toolbar button {
+  flex: 0 1 auto;
+  min-width: 140px;
+  max-width: 180px;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #94a3b8;
+  border-radius: 0.5rem;
+  color: #1e293b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode button adjustments */
+:root[data-theme="dark"] .cma-toolbar button {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+.cma-toolbar button:hover {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  border-color: #64748b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] .cma-toolbar button:hover {
+  background: linear-gradient(135deg, #334155, #1e293b);
+  border-color: #64748b;
+}
+
+.cma-toolbar button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Special styling for mode toggle to show active state - WCAG AA */
+.cma-toolbar .mode-toggle-btn {
+  min-width: 160px;
+  max-width: 200px;
+  font-weight: 600;
+}
+
+.cma-toolbar .mode-toggle-btn.mode-learning {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border-color: #2563eb;
+  color: #1e3a8a;
+}
+
+:root[data-theme="dark"] .cma-toolbar .mode-toggle-btn.mode-learning {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  border-color: #3b82f6;
+  color: #dbeafe;
+}
+
+.cma-toolbar .mode-toggle-btn.mode-professional {
+  background: linear-gradient(135deg, #e9d5ff, #d8b4fe);
+  border-color: #9333ea;
+  color: #581c87;
+}
+
+:root[data-theme="dark"] .cma-toolbar .mode-toggle-btn.mode-professional {
+  background: linear-gradient(135deg, #581c87, #6b21a8);
+  border-color: #a855f7;
+  color: #f3e8ff;
+}
+
+/* CMA Help Panel & Data Sources Panel */
+.cma-help-panel,
+.cma-data-sources-panel {
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.cma-help-panel h3,
+.cma-data-sources-panel h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.75rem;
+}
+
+.help-content,
+.data-sources-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.help-section,
+.data-source {
+  padding: 1.25rem;
+  background: var(--bg-highlight);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--accent);
+}
+
+.help-section h4,
+.data-source h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.help-section p,
+.data-source p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.help-section ul,
+.data-source ul,
+.data-collection-steps ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.help-section li,
+.data-source li,
+.data-collection-steps li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.help-best-practices {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+}
+
+.help-best-practices h4 {
+  margin: 0 0 1rem 0;
+  color: #10b981;
+}
+
+.help-best-practices ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-best-practices li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.help-best-practices li:last-child {
+  border-bottom: none;
+}
+
+.data-collection-steps {
+  padding: 1.5rem;
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+  border: 2px solid var(--accent);
+}
+
+.data-collection-steps h4 {
+  margin: 0 0 1rem 0;
+  color: var(--accent);
+}
+
+.data-collection-steps ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+}
+
+.data-collection-steps li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin: 1rem 0;
+}
+
+.data-collection-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.api-note {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+  border: 2px solid #3b82f6;
+  border-radius: 0.75rem;
+  font-style: italic;
+}
+
+.api-note p {
+  margin: 0;
+}
+
+.api-note strong {
+  color: #3b82f6;
+}
+
+/* CMA Challenges System */
+.cma-challenges-panel {
+  background: var(--bg-card);
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.cma-challenges-panel h3 {
+  margin: 0 0 0.5rem 0;
+  color: #10b981;
+}
+
+.challenges-intro {
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  background: var(--bg-highlight);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-card.beginner {
+  border-left: 4px solid #10b981;
+}
+
+.challenge-card.intermediate {
+  border-left: 4px solid #f59e0b;
+}
+
+.challenge-card.advanced {
+  border-left: 4px solid #ef4444;
+}
+
+.challenge-card.expert {
+  border-left: 4px solid #8b5cf6;
+}
+
+.challenge-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.challenge-card-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.difficulty-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.difficulty-badge.beginner {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.difficulty-badge.intermediate {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+}
+
+.difficulty-badge.advanced {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.difficulty-badge.expert {
+  background: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+  border: 1px solid #8b5cf6;
+}
+
+.challenge-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.challenge-objectives {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.challenge-objectives h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.challenge-objectives ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: square;
+}
+
+.challenge-objectives li {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.challenge-start-btn,
+.challenge-view-btn {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.challenge-start-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.challenge-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.challenge-view-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.challenge-view-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-highlight);
+}
+
+/* Active Challenge Banner */
+.active-challenge-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.challenge-info {
+  flex: 1;
+}
+
+.challenge-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: #10b981;
+}
+
+.challenge-info p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.challenge-progress-bar {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.progress-bar-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.progress-bar-track {
+  height: 8px;
+  background: var(--bg-input);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.3s ease;
+}
+
+.challenge-cancel-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #ef4444;
+  border-radius: 0.5rem;
+  color: #ef4444;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.challenge-cancel-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Challenge Complete Modal */
+.challenge-complete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounceIn 0.6s ease-out;
+}
+
+.modal-content h3 {
+  margin: 0 0 1rem 0;
+  color: #10b981;
+  font-size: 2rem;
+}
+
+.modal-content p {
+  margin: 0 0 2rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-actions button {
+  padding: 0.875rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: none;
+  color: white;
+}
+
+.modal-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.modal-secondary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.modal-secondary:hover {
+  border-color: var(--accent);
+  background: var(--bg-highlight);
+}
+
+/* CMA Library Cards */
+.cma-library-card {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cma-library-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(99, 102, 241, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cma-library-card:hover::after {
+  opacity: 1;
+}
+
+.cma-library-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  border-color: var(--accent);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .cma-toolbar {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .cma-toolbar button {
+    min-width: 120px;
+    max-width: 160px;
+    font-size: 0.85rem;
+    padding: 0.65rem 0.85rem;
+  }
+  
+  .cma-toolbar .mode-toggle-btn {
+    min-width: 140px;
+    max-width: 180px;
+  }
+  
+  .cma-help-panel,
+  .cma-data-sources-panel,
+  .cma-challenges-panel {
+    padding: 1.25rem;
+  }
+  
+  .help-section,
+  .data-source,
+  .data-collection-steps {
+    padding: 1rem;
+  }
+
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .active-challenge-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .challenge-progress-bar {
+    width: 100%;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .cma-toolbar,
+  .cma-help-panel,
+  .cma-data-sources-panel,
+  .cma-challenges-panel,
+  .active-challenge-banner,
+  .challenge-complete-modal {
+    display: none !important;
+  }
+}
