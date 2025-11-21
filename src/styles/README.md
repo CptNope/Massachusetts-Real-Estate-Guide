@@ -54,6 +54,7 @@ src/styles/
 - **`features/quiz.css`** - Quiz progress, questions, results, history
 - **`features/dashboard.css`** - Dashboard stats, progress, section management
 - **`features/scenarios.css`** - Scenario cards, choices, endings, paths
+- **`features/legal.css`** - Law banners, legal panels, contracts, mortgages, liens
 
 ## 🔄 Migration Status
 
@@ -87,10 +88,19 @@ src/styles/
 - [x] Migrated CMA library cards
 - [x] Added responsive overrides for CMA components
 
-### 🚧 Remaining (~11,610 lines, 80%)
+**Phase 5 - Legal & Contract Panels:**
+- [x] Migrated MA law change banners
+- [x] Migrated legal info panels
+- [x] Migrated contract elements & effects panels
+- [x] Migrated mortgage theory panels
+- [x] Migrated security & debt sections
+- [x] Migrated note provisions & lien releases
+- [x] Migrated interest calculations
+- [x] Migrated MA sales contracts
+
+### 🚧 Remaining (~11,118 lines, 76%)
 
 **Priority: High**
-- [ ] Legal/Contract panels (~3,000 lines)
 - [ ] MLS Integration styles (~500 lines)
 - [ ] ChatGPT/OpenAI integration styles (~500 lines)
 
